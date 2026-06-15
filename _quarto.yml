@@ -8,8 +8,6 @@ website:
   description: "Personal website and blog of Andrés Gutiérrez"
   navbar:
     left:
-      - text: "Home"
-        href: index.qmd
       - text: "Publications"
         href: publications.qmd
       - text: "Projects"
