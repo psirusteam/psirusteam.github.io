@@ -6,6 +6,7 @@ website:
   title: "Andrés Gutiérrez"
   site-url: https://psirusteam.github.io
   description: "Personal website and blog of Andrés Gutiérrez"
+  search: true
   navbar:
     left:
       - text: "Publications"
@@ -16,14 +17,10 @@ website:
         href: software.qmd
       - text: "Blog"
         href: blog.qmd
-    right:
-      - icon: github
-        href: https://github.com/psirusteam
-      - icon: rss
-        href: blog.xml
 
 format:
   html:
     theme: cosmo
+    css: styles.css
     toc: true
     lang: en

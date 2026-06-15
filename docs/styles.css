@@ -1,0 +1,255 @@
+/* Visual layer for the Quarto site. Structure stays in Quarto. */
+
+:root {
+  --site-bg: #f6f9fc;
+  --site-surface: #ffffff;
+  --site-surface-soft: #eef5fb;
+  --site-text: #243043;
+  --site-heading: #101c32;
+  --site-muted: #66758a;
+  --site-border: #dce6f0;
+  --site-accent: #0b72c9;
+  --site-accent-dark: #075aa1;
+  --site-accent-soft: #e7f2fc;
+  --site-shadow: 0 18px 44px rgba(16, 28, 50, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(11, 114, 201, 0.12), transparent 30rem),
+    linear-gradient(180deg, #ffffff 0%, var(--site-bg) 28rem);
+  color: var(--site-text);
+  font-feature-settings: "kern", "liga";
+}
+
+a {
+  color: var(--site-accent-dark);
+  font-weight: 650;
+  text-decoration-color: rgba(11, 114, 201, 0.3);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--site-accent);
+  text-decoration-color: var(--site-accent);
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--site-border);
+  box-shadow: 0 8px 28px rgba(16, 28, 50, 0.06);
+  min-height: 68px;
+}
+
+.navbar-brand,
+.navbar-title {
+  color: var(--site-heading);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.navbar-nav .nav-link {
+  color: #33415a;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--site-accent-dark);
+}
+
+#quarto-search {
+  color: var(--site-heading);
+}
+
+main.content {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(220, 230, 240, 0.9);
+  border-radius: 8px;
+  box-shadow: var(--site-shadow);
+  margin-top: 1.4rem;
+  margin-bottom: 2.5rem;
+  padding: clamp(1.2rem, 2.5vw, 2.4rem);
+}
+
+.quarto-title-banner {
+  background: transparent;
+}
+
+.quarto-title h1,
+h1,
+h2,
+h3,
+h4 {
+  color: var(--site-heading);
+  letter-spacing: 0;
+}
+
+h1 {
+  font-weight: 820;
+}
+
+h2 {
+  border-bottom: 1px solid var(--site-border);
+  padding-bottom: 0.35rem;
+}
+
+p,
+li {
+  line-height: 1.72;
+}
+
+strong {
+  color: var(--site-heading);
+}
+
+code {
+  background: var(--site-accent-soft);
+  border: 1px solid rgba(11, 114, 201, 0.14);
+  border-radius: 5px;
+  color: #0a4e89;
+  padding: 0.08rem 0.28rem;
+}
+
+pre {
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(16, 28, 50, 0.05);
+}
+
+pre code {
+  background: transparent;
+  border: 0;
+}
+
+.quarto-about-jolla {
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  padding-top: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.quarto-about-jolla .about-entity {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%);
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  box-shadow: var(--site-shadow);
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+}
+
+.quarto-about-jolla .about-image {
+  border: 6px solid #ffffff;
+  box-shadow: 0 16px 34px rgba(16, 28, 50, 0.14);
+}
+
+.quarto-about-jolla .about-contents {
+  max-width: 48rem;
+}
+
+.quarto-about-jolla .about-contents p:first-child {
+  color: var(--site-accent-dark);
+  font-size: 1.08rem;
+  font-weight: 750;
+}
+
+.about-links {
+  gap: 0.6rem;
+}
+
+.about-link {
+  background: #ffffff;
+  border: 1px solid var(--site-border);
+  border-radius: 999px;
+  color: var(--site-heading);
+  font-weight: 700;
+  padding: 0.45rem 0.8rem;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.about-link:hover {
+  border-color: rgba(11, 114, 201, 0.45);
+  color: var(--site-accent-dark);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.quarto-listing {
+  margin-top: 1rem;
+}
+
+.quarto-listing .listing-title {
+  font-weight: 760;
+}
+
+.quarto-listing .listing-title a {
+  color: var(--site-heading);
+}
+
+.quarto-listing .listing-title a:hover {
+  color: var(--site-accent-dark);
+}
+
+.quarto-listing .listing-date,
+.quarto-listing .listing-description,
+.quarto-listing .listing-categories {
+  color: var(--site-muted);
+}
+
+.quarto-category {
+  background: var(--site-accent-soft);
+  border: 1px solid rgba(11, 114, 201, 0.18);
+  border-radius: 999px;
+  color: #0a4e89;
+  font-weight: 700;
+}
+
+#TOC {
+  border-left: 2px solid var(--site-border);
+}
+
+#TOC a {
+  color: var(--site-muted);
+}
+
+#TOC a:hover,
+#TOC .active {
+  color: var(--site-accent-dark);
+}
+
+.table {
+  border-color: var(--site-border);
+}
+
+.table thead {
+  background: var(--site-surface-soft);
+  color: var(--site-heading);
+}
+
+blockquote {
+  border-left: 4px solid var(--site-accent);
+  color: #42516a;
+}
+
+@media (max-width: 767.98px) {
+  .navbar {
+    min-height: 60px;
+  }
+
+  main.content {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    margin-top: 0.5rem;
+    padding: 1.1rem;
+  }
+
+  .quarto-about-jolla .about-entity {
+    box-shadow: 0 10px 24px rgba(16, 28, 50, 0.08);
+  }
+}
