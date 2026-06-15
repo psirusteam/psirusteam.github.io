@@ -1,255 +1,482 @@
-/* Visual layer for the Quarto site. Structure stays in Quarto. */
+/* ==========================================================
+   Estilo sobrio para blog académico / data science en Quarto
+   Paleta azulada original, sin negrilla
+   Tipografía moderna: Inter + Source Serif 4
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Source+Serif+4:wght@400&display=swap");
 
 :root {
-  --site-bg: #f6f9fc;
+  --site-bg: #f3f7fb;
   --site-surface: #ffffff;
-  --site-surface-soft: #eef5fb;
-  --site-text: #243043;
-  --site-heading: #101c32;
-  --site-muted: #66758a;
-  --site-border: #dce6f0;
-  --site-accent: #0b72c9;
-  --site-accent-dark: #075aa1;
-  --site-accent-soft: #e7f2fc;
-  --site-shadow: 0 18px 44px rgba(16, 28, 50, 0.08);
+  --site-surface-soft: #f7fbfd;
+  --site-text: #36455b;
+  --site-heading: #000000;
+  --site-muted: #6f7f93;
+  --site-border: #d9e5ef;
+  --site-accent: #1167a7;
+  --site-accent-2: #19a0a5;
+  --site-accent-soft: #e6f5f6;
+  --site-shadow: 0 14px 36px rgba(16, 24, 39, 0.07);
 }
+
+/* Base general */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background:
-    radial-gradient(circle at top left, rgba(11, 114, 201, 0.12), transparent 30rem),
-    linear-gradient(180deg, #ffffff 0%, var(--site-bg) 28rem);
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
   color: var(--site-text);
+  background: linear-gradient(180deg, #fbfdff 0%, var(--site-bg) 34rem);
   font-feature-settings: "kern", "liga";
 }
 
+/* Eliminar negrilla en todo el sitio */
+
+*,
+strong,
+b,
+.fw-bold,
+.fw-semibold,
+.navbar-title,
+.navbar-nav .nav-link,
+.quarto-listing .listing-title,
+.quarto-category,
+.listing-category,
+.about-link,
+.btn,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400 !important;
+}
+
+/* Contenedor principal */
+
+#quarto-content {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+main.content {
+  max-width: 780px;
+  margin: 1.5rem auto 2.8rem auto;
+  padding: clamp(1.2rem, 2.4vw, 2.4rem);
+  background: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  box-shadow: var(--site-shadow);
+}
+
+/* Tipografía */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  color: #000000 !important;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2.05rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin-top: 2.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--site-border);
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+}
+
+h4 {
+  font-size: 1.05rem;
+}
+
+p,
+li {
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+/* Enlaces */
+
 a {
-  color: var(--site-accent-dark);
-  font-weight: 650;
-  text-decoration-color: rgba(11, 114, 201, 0.3);
-  text-underline-offset: 0.18em;
+  color: var(--site-accent);
+  text-decoration: none;
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
-  color: var(--site-accent);
-  text-decoration-color: var(--site-accent);
+  color: #0a4f82;
+  text-decoration: underline;
 }
+
+/* Barra de navegación */
 
 .navbar {
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid var(--site-border);
-  box-shadow: 0 8px 28px rgba(16, 28, 50, 0.06);
-  min-height: 68px;
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-bottom: 1px solid var(--site-border) !important;
+  box-shadow: none;
+  min-height: 64px;
 }
 
-.navbar-brand,
+.navbar,
+.navbar *,
+.navbar-nav .nav-link,
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover,
+#quarto-search {
+  color: #000000 !important;
+}
+
 .navbar-title {
-  color: var(--site-heading);
-  font-weight: 800;
-  letter-spacing: 0;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  background: linear-gradient(90deg, var(--site-accent), var(--site-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+.navbar-title:hover {
+  background: linear-gradient(90deg, var(--site-accent), var(--site-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  text-decoration: none;
 }
 
 .navbar-nav .nav-link {
-  color: #33415a;
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.9rem;
   padding-left: 1rem !important;
   padding-right: 1rem !important;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  color: var(--site-accent-dark);
+  color: #000000 !important;
 }
 
-#quarto-search {
-  color: var(--site-heading);
+/* Listado del blog */
+
+.quarto-listing {
+  margin-top: 1.5rem;
 }
 
-main.content {
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(220, 230, 240, 0.9);
-  border-radius: 8px;
-  box-shadow: var(--site-shadow);
-  margin-top: 1.4rem;
-  margin-bottom: 2.5rem;
-  padding: clamp(1.2rem, 2.5vw, 2.4rem);
+.quarto-listing .listing-title {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.2rem;
 }
 
-.quarto-title-banner {
-  background: transparent;
+.quarto-listing .listing-title,
+.quarto-listing .listing-title a,
+.quarto-listing .listing-title a:hover {
+  color: #000000 !important;
 }
 
-.quarto-title h1,
-h1,
-h2,
-h3,
-h4 {
-  color: var(--site-heading);
-  letter-spacing: 0;
+.quarto-listing .listing-description {
+  color: var(--site-muted);
+  font-size: 0.94rem;
 }
 
-h1 {
-  font-weight: 820;
+.quarto-listing .listing-date,
+.quarto-listing .listing-categories {
+  color: var(--site-muted);
+  font-size: 0.84rem;
 }
 
-h2 {
-  border-bottom: 1px solid var(--site-border);
-  padding-bottom: 0.35rem;
+.quarto-category,
+.listing-category {
+  background: var(--site-accent-soft) !important;
+  border: 1px solid rgba(25, 160, 165, 0.22) !important;
+  border-radius: 999px !important;
+  color: #075f63 !important;
+  font-size: 0.76rem;
+  padding: 0.15rem 0.5rem;
 }
 
-p,
-li {
-  line-height: 1.72;
+/* Metadatos del post */
+
+.quarto-title-meta {
+  color: var(--site-muted);
+  font-size: 0.84rem;
+  margin-top: 1rem;
 }
 
-strong {
-  color: var(--site-heading);
-}
+/* Código */
 
 code {
+  color: #075f63;
   background: var(--site-accent-soft);
-  border: 1px solid rgba(11, 114, 201, 0.14);
+  border: 1px solid rgba(25, 160, 165, 0.18);
   border-radius: 5px;
-  color: #0a4e89;
   padding: 0.08rem 0.28rem;
+  font-size: 0.92em;
 }
 
 pre {
+  background: var(--site-surface-soft);
   border: 1px solid var(--site-border);
   border-radius: 8px;
-  box-shadow: 0 12px 28px rgba(16, 28, 50, 0.05);
+  padding: 1rem;
+  font-size: 0.84rem;
+  box-shadow: none;
 }
 
 pre code {
   background: transparent;
   border: 0;
+  color: inherit;
+  padding: 0;
 }
 
-.quarto-about-jolla {
-  align-items: center;
-  gap: clamp(1.5rem, 5vw, 4rem);
-  padding-top: clamp(0.5rem, 2vw, 1.5rem);
-}
+/* Tablas */
 
-.quarto-about-jolla .about-entity {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%);
-  border: 1px solid var(--site-border);
-  border-radius: 8px;
-  box-shadow: var(--site-shadow);
-  padding: clamp(1.1rem, 2vw, 1.6rem);
-}
-
-.quarto-about-jolla .about-image {
-  border: 6px solid #ffffff;
-  box-shadow: 0 16px 34px rgba(16, 28, 50, 0.14);
-}
-
-.quarto-about-jolla .about-contents {
-  max-width: 48rem;
-}
-
-.quarto-about-jolla .about-contents p:first-child {
-  color: var(--site-accent-dark);
-  font-size: 1.08rem;
-  font-weight: 750;
-}
-
-.about-links {
-  gap: 0.6rem;
-}
-
-.about-link {
-  background: #ffffff;
-  border: 1px solid var(--site-border);
-  border-radius: 999px;
-  color: var(--site-heading);
-  font-weight: 700;
-  padding: 0.45rem 0.8rem;
-  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
-}
-
-.about-link:hover {
-  border-color: rgba(11, 114, 201, 0.45);
-  color: var(--site-accent-dark);
-  text-decoration: none;
-  transform: translateY(-1px);
-}
-
-.quarto-listing {
+table,
+.table {
+  font-size: 0.9rem;
+  border-color: var(--site-border);
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.quarto-listing .listing-title {
-  font-weight: 760;
-}
-
-.quarto-listing .listing-title a {
-  color: var(--site-heading);
-}
-
-.quarto-listing .listing-title a:hover {
-  color: var(--site-accent-dark);
-}
-
-.quarto-listing .listing-date,
-.quarto-listing .listing-description,
-.quarto-listing .listing-categories {
-  color: var(--site-muted);
-}
-
-.quarto-category {
+.table thead,
+thead {
   background: var(--site-accent-soft);
-  border: 1px solid rgba(11, 114, 201, 0.18);
-  border-radius: 999px;
-  color: #0a4e89;
-  font-weight: 700;
+  color: var(--site-heading);
+  border-bottom: 2px solid var(--site-border);
 }
+
+tbody tr {
+  border-bottom: 1px solid var(--site-border);
+}
+
+/* Figuras */
+
+figure {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+figcaption {
+  color: var(--site-muted);
+  font-size: 0.84rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Citas */
+
+blockquote {
+  border-left: 4px solid var(--site-accent);
+  padding-left: 1rem;
+  color: #42516a;
+  background: var(--site-surface-soft);
+  font-style: italic;
+}
+
+/* Tabla de contenidos */
 
 #TOC {
   border-left: 2px solid var(--site-border);
 }
 
-#TOC a {
-  color: var(--site-muted);
-}
-
+#TOC a,
 #TOC a:hover,
 #TOC .active {
-  color: var(--site-accent-dark);
+  color: #000000 !important;
+  font-weight: 400 !important;
 }
 
-.table {
-  border-color: var(--site-border);
+/* Footer */
+
+.nav-footer {
+  border-top: 1px solid var(--site-border);
+  background: var(--site-bg);
+  color: var(--site-muted);
+  font-size: 0.9rem;
 }
 
-.table thead {
-  background: var(--site-surface-soft);
-  color: var(--site-heading);
+/* Botones */
+
+.btn {
+  border-radius: 5px;
+  font-weight: 400 !important;
 }
 
-blockquote {
-  border-left: 4px solid var(--site-accent);
-  color: #42516a;
+.btn-primary {
+  background-color: var(--site-accent);
+  border-color: var(--site-accent);
 }
+
+.btn-primary:hover {
+  background-color: #0a4f82;
+  border-color: #0a4f82;
+}
+
+/* Página About con plantilla Jolla */
+
+div.quarto-about-jolla {
+  background: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 8px;
+  box-shadow: var(--site-shadow);
+  max-width: 820px;
+  margin: 2rem auto 2.8rem auto !important;
+  padding: clamp(1.5rem, 3vw, 2.5rem) !important;
+  text-align: center !important;
+}
+
+div.quarto-about-jolla > img.about-image {
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--site-border);
+  height: 110px !important;
+  width: 110px !important;
+  object-fit: cover;
+  margin-bottom: 1.5rem !important;
+}
+
+div.quarto-about-jolla .quarto-title h1.title {
+  color: #000000 !important;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 400 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1rem !important;
+}
+
+div.quarto-about-jolla .quarto-title h1.title::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 3px;
+  margin: 1rem auto 2rem auto;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--site-accent), var(--site-accent-2));
+}
+
+div.quarto-about-jolla main.content {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  max-width: 760px;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+div.quarto-about-jolla main.content p {
+  color: var(--site-text);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  text-align: center !important;
+}
+
+div.quarto-about-jolla .about-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.65rem !important;
+  justify-content: center !important;
+  margin-top: 1rem;
+  padding: 0 !important;
+}
+
+div.quarto-about-jolla .about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #ffffff;
+  border: 1px solid var(--site-border);
+  border-radius: 999px;
+  color: #000000 !important;
+  font-size: 0.82rem;
+  font-weight: 400 !important;
+  padding: 0.52rem 0.9rem;
+  text-decoration: none;
+}
+
+div.quarto-about-jolla .about-link:hover {
+  background: var(--site-accent-soft);
+  border-color: rgba(25, 160, 165, 0.42);
+  color: #000000 !important;
+  text-decoration: none;
+}
+
+/* Responsive */
 
 @media (max-width: 767.98px) {
+  body {
+    font-size: 15.5px;
+    background: #ffffff;
+  }
+
+  #quarto-content {
+    max-width: none;
+  }
+
+  main.content {
+    max-width: none;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.1rem;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
   .navbar {
     min-height: 60px;
   }
 
-  main.content {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  div.quarto-about-jolla {
     border-left: 0;
     border-right: 0;
     border-radius: 0;
-    margin-top: 0.5rem;
-    padding: 1.1rem;
+    box-shadow: none;
+    margin: 0 !important;
+    padding: 1.25rem !important;
   }
 
-  .quarto-about-jolla .about-entity {
-    box-shadow: 0 10px 24px rgba(16, 28, 50, 0.08);
+  div.quarto-about-jolla > img.about-image {
+    height: 90px !important;
+    width: 90px !important;
+  }
+
+  div.quarto-about-jolla .quarto-title h1.title {
+    font-size: 2rem;
   }
 }
