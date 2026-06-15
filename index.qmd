@@ -1,6 +1,6 @@
 ---
 title: "Andrés Gutiérrez"
-image: images/profile.jpeg
+image: images/surveyverse.png
 about:
   template: jolla
   image-width: 12em
