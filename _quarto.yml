@@ -4,6 +4,8 @@ project:
 
 website:
   title: "Andrés Gutiérrez"
+  site-url: https://psirusteam.github.io
+  description: "Personal website and blog of Andrés Gutiérrez"
   navbar:
     left:
       - text: "Home"
@@ -12,6 +14,15 @@ website:
         href: publications.qmd
       - text: "Projects"
         href: projects.qmd
+      - text: "Software"
+        href: software.qmd
+      - text: "Blog"
+        href: blog.qmd
+    right:
+      - icon: github
+        href: https://github.com/psirusteam
+      - icon: rss
+        href: blog.xml
 
 format:
   html:

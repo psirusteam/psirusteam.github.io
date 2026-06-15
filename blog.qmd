@@ -1,0 +1,10 @@
+---
+title: "Blog"
+listing:
+  contents: "posts/*.qmd"
+  sort: "date desc"
+  type: default
+  categories: true
+---
+
+Short notes, tutorials, and reflections on household surveys, official statistics, small area estimation, poverty measurement, and data analysis with R.

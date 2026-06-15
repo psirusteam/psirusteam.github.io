@@ -1,22 +1,29 @@
 ---
 title: "Andrés Gutiérrez"
+image: images/profile.jpeg
+about:
+  template: jolla
+  image-width: 12em
+  image-shape: round
+  image-alt: "Profile picture of Andrés Gutiérrez"
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/psirusteam
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/andresgutierrez1984
+    - icon: mortarboard
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=HajkarwAAAAJ&hl=en
+    - icon: envelope
+      text: Email
+      href: mailto:YOUR-EMAIL
 ---
 
-# Andrés Gutiérrez
+ECLAC Regional Adviser on Social Statistics - Elected Member of the International Statistical Institute - Former VP of the International Association of Survey Statisticians
 
-Welcome to my personal website.
+I am a statistician working on household surveys, official statistics, survey sampling, small area estimation, poverty measurement, and social data analysis.
 
-I am a statistician working on household surveys, official statistics, small area estimation, poverty measurement, and social data analysis.
+My work focuses on the development and application of statistical methods to support evidence-based public policy, particularly in the context of national statistical systems and official statistics.
 
-## Areas of work
-
-- Household surveys
-- Survey sampling
-- Small area estimation
-- Multilevel models
-- Poverty measurement
-- Data analysis with R
-
-## About this site
-
-This website gathers information about my publications, projects, teaching activities, and technical materials.
