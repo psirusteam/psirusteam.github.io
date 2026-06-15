@@ -1,0 +1,14 @@
+---
+title: "Publications"
+---
+
+# Publications
+
+This section presents selected books, papers, technical documents, and methodological materials.
+
+## Selected topics
+
+- Household survey methods
+- Small area estimation
+- Poverty measurement
+- Official statistics

@@ -1,0 +1,15 @@
+---
+title: "Projects"
+---
+
+# Projects
+
+This section summarizes selected methodological and applied statistical projects.
+
+## Main areas
+
+- Small area estimation
+- Household survey analysis
+- Population modeling
+- Social indicators
+- Statistical capacity building

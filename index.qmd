@@ -1,0 +1,22 @@
+---
+title: "Andrés Gutiérrez"
+---
+
+# Andrés Gutiérrez
+
+Welcome to my personal website.
+
+I am a statistician working on household surveys, official statistics, small area estimation, poverty measurement, and social data analysis.
+
+## Areas of work
+
+- Household surveys
+- Survey sampling
+- Small area estimation
+- Multilevel models
+- Poverty measurement
+- Data analysis with R
+
+## About this site
+
+This website gathers information about my publications, projects, teaching activities, and technical materials.
