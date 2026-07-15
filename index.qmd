@@ -2,9 +2,9 @@
 title: "Andrés Gutiérrez"
 image: images/surveyverse.png
 about:
-  template: jolla
-  image-width: 12em
-  image-shape: round
+  template: trestles
+  image-width: 16em
+  image-shape: rounded
   image-alt: "Profile picture of Andrés Gutiérrez"
   links:
     - icon: github
@@ -18,12 +18,14 @@ about:
       href: https://scholar.google.com/citations?user=HajkarwAAAAJ&hl=en
     - icon: envelope
       text: Email
-      href: mailto:YOUR-EMAIL
+      href: mailto:hagutierrezro@gmail.com
 ---
 
-ECLAC Regional Adviser on Social Statistics - Elected Member of the International Statistical Institute - Former VP of the International Association of Survey Statisticians
+I am a statistician specializing in household surveys, survey sampling and small area estimation. Since 2017, I have served as Regional Adviser on Social Statistics at the United Nations Economic Commission for Latin America and the Caribbean (UN ECLAC), where I provide technical assistance to national statistical offices across the region. 
 
-I am a statistician working on household surveys, official statistics, survey sampling, small area estimation, poverty measurement, and social data analysis.
+My work focuses on developing and applying rigorous statistical methods to improve the design, analysis, and use of household surveys, strengthen official statistics, and support evidence-based public policy, with particular emphasis on social indicators. I am an Elected Member of the International Statistical Institute and a former Vice-President of the International Association of Survey Statisticians.
 
-My work focuses on the development and application of statistical methods to support evidence-based public policy, particularly in the context of national statistical systems and official statistics.
+
+
+
 

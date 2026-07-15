@@ -1,0 +1,18 @@
+---
+title: "Books"
+---
+
+
+I am a passionate reseracher on sampling methods, household surveys, analysis of complex survey data. So, I have published some books related to those matters. 
+
+## [Survey Sampling](https://psirusteam.github.io/SurveySamplingBook/){target="_blank"} 
+
+This is the place to start if you want to learn about sampling methods and how to apply them in a real life context with the R software.
+
+## [Household Surveys Analysis with R](https://psirusteam.github.io/HouseholdSurveysR/){target="_blank"} 
+
+If you are analysing some household survey data, the R software is the right tool to use.
+
+## [Diseño y Análisis Estadístico de las Encuestas de Hogares en América Latina](https://www.cepal.org/es/publicaciones/68737-diseno-analisis-estadistico-encuestas-hogares-america-latina){target="_blank"} 
+
+Written in Spanish, this book deals with the exact topics that a sampling methodologist is faced in a dayly basis.

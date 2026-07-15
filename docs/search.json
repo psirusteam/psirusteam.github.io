@@ -77,6 +77,34 @@
     "text": "This is my first blog post.\nI will use this space to share short notes, examples, tutorials, and reflections on household surveys, official statistics, small area estimation, poverty measurement, and data analysis with R."
   },
   {
+    "objectID": "books.html",
+    "href": "books.html",
+    "title": "Books",
+    "section": "",
+    "text": "I am a passionate reseracher on sampling methods, household surveys, analysis of complex survey data. So, I have published some books related to those matters."
+  },
+  {
+    "objectID": "books.html#survey-sampling",
+    "href": "books.html#survey-sampling",
+    "title": "Books",
+    "section": "Survey Sampling",
+    "text": "Survey Sampling\nThis is the place to start if you want to learn about sampling methods and how to apply them in a real life context with the R software."
+  },
+  {
+    "objectID": "books.html#household-surveys-analysis-with-r",
+    "href": "books.html#household-surveys-analysis-with-r",
+    "title": "Books",
+    "section": "Household Surveys Analysis with R",
+    "text": "Household Surveys Analysis with R\nIf you are analysing some household survey data, the R software is the right tool to use."
+  },
+  {
+    "objectID": "books.html#diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina",
+    "href": "books.html#diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina",
+    "title": "Books",
+    "section": "Diseño y Análisis Estadístico de las Encuestas de Hogares en América Latina",
+    "text": "Diseño y Análisis Estadístico de las Encuestas de Hogares en América Latina\nWritten in Spanish, this book deals with the exact topics that a sampling methodologist is faced in a dayly basis."
+  },
+  {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "Blog",
@@ -88,14 +116,7 @@
     "href": "index.html",
     "title": "Andrés Gutiérrez",
     "section": "",
-    "text": "ECLAC Regional Adviser on Social Statistics - Elected Member of the International Statistical Institute - Former VP of the International Association of Survey Statisticians\nI am a statistician working on household surveys, official statistics, survey sampling, small area estimation, poverty measurement, and social data analysis.\nMy work focuses on the development and application of statistical methods to support evidence-based public policy, particularly in the context of national statistical systems and official statistics."
-  },
-  {
-    "objectID": "index.html#social-statistics-survey-sampling",
-    "href": "index.html#social-statistics-survey-sampling",
-    "title": "Andrés Gutiérrez",
-    "section": "",
-    "text": "Building tools and methods for transparent, reproducible, and reliable survey statistics.\n\nAbout me View projects"
+    "text": "I am a statistician specializing in household surveys, survey sampling and small area estimation. Since 2017, I have served as Regional Adviser on Social Statistics at the United Nations Economic Commission for Latin America and the Caribbean (UN ECLAC), where I provide technical assistance to national statistical offices across the region.\nMy work focuses on developing and applying rigorous statistical methods to improve the design, analysis, and use of household surveys, strengthen official statistics, and support evidence-based public policy, with particular emphasis on social indicators. I am an Elected Member of the International Statistical Institute and a former Vice-President of the International Association of Survey Statisticians."
   },
   {
     "objectID": "posts/2026-06-15-second-post.html",

@@ -5,10 +5,12 @@ project:
 website:
   title: "Andrés Gutiérrez"
   site-url: https://psirusteam.github.io
-  description: "Personal website and blog of Andrés Gutiérrez"
+  description: "Blog of Andrés Gutiérrez"
   search: true
   navbar:
     left:
+      - text: "Books"
+        href: books.qmd
       - text: "Publications"
         href: publications.qmd
       - text: "Projects"
