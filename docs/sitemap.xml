@@ -2,34 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://psirusteam.github.io/software.html</loc>
-    <lastmod>2026-07-16T16:50:47.460Z</lastmod>
-  </url>
-  <url>
-    <loc>https://psirusteam.github.io/projects.html</loc>
-    <lastmod>2026-06-15T16:22:03.441Z</lastmod>
-  </url>
-  <url>
-    <loc>https://psirusteam.github.io/posts/2026-06-15-first-post.html</loc>
-    <lastmod>2026-06-15T18:41:01.983Z</lastmod>
-  </url>
-  <url>
-    <loc>https://psirusteam.github.io/books.html</loc>
-    <lastmod>2026-07-15T16:33:55.195Z</lastmod>
-  </url>
-  <url>
-    <loc>https://psirusteam.github.io/blog.html</loc>
-    <lastmod>2026-06-15T18:39:29.636Z</lastmod>
-  </url>
-  <url>
-    <loc>https://psirusteam.github.io/index.html</loc>
-    <lastmod>2026-07-15T20:07:27.034Z</lastmod>
+    <lastmod>2026-07-16T19:24:28.750Z</lastmod>
   </url>
   <url>
     <loc>https://psirusteam.github.io/posts/2026-06-15-second-post.html</loc>
     <lastmod>2026-06-15T18:45:18.523Z</lastmod>
   </url>
   <url>
+    <loc>https://psirusteam.github.io/index.html</loc>
+    <lastmod>2026-07-15T20:07:27.034Z</lastmod>
+  </url>
+  <url>
+    <loc>https://psirusteam.github.io/blog.html</loc>
+    <lastmod>2026-06-15T18:39:29.636Z</lastmod>
+  </url>
+  <url>
+    <loc>https://psirusteam.github.io/books.html</loc>
+    <lastmod>2026-07-16T19:17:43.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://psirusteam.github.io/posts/2026-06-15-first-post.html</loc>
+    <lastmod>2026-06-15T18:41:01.983Z</lastmod>
+  </url>
+  <url>
     <loc>https://psirusteam.github.io/publications.html</loc>
-    <lastmod>2026-07-16T16:53:15.772Z</lastmod>
+    <lastmod>2026-07-16T19:26:38.513Z</lastmod>
   </url>
 </urlset>

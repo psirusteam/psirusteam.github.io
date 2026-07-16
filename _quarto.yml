@@ -11,12 +11,10 @@ website:
     left:
       - text: "Books"
         href: books.qmd
-      - text: "Publications"
-        href: publications.qmd
-      - text: "Projects"
-        href: projects.qmd
       - text: "Software"
         href: software.qmd
+      - text: "Publications"
+        href: publications.qmd
       - text: "Blog"
         href: blog.qmd
 

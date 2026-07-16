@@ -4,105 +4,35 @@
     "href": "software.html",
     "title": "Software",
     "section": "",
-    "text": "Andrés Gutiérrez (2018). “TeachingSampling: Selection of Samples and Parameter Estimation in Finite Population.” CRAN."
+    "text": "These software projects support the practical implementation of survey sampling methods, sample size planning, and coordination of complex survey designs. They are written mainly for R users who need transparent, reproducible tools for designing samples, evaluating precision, and carrying out survey operations in applied statistical work."
   },
   {
     "objectID": "software.html#teachingsampling",
     "href": "software.html#teachingsampling",
     "title": "Software",
-    "section": "",
-    "text": "Andrés Gutiérrez (2018). “TeachingSampling: Selection of Samples and Parameter Estimation in Finite Population.” CRAN."
+    "section": "TeachingSampling",
+    "text": "TeachingSampling\n\n\n\n\nThis R package provides tools for selecting probabilistic samples and making design-based inferences from finite populations. It is especially useful for teaching and applied work because it connects core sampling designs with practical estimation procedures, allowing users to draw samples, compute estimators, and understand how sampling decisions affect survey results."
   },
   {
     "objectID": "software.html#samplesize4surveys",
     "href": "software.html#samplesize4surveys",
     "title": "Software",
     "section": "samplesize4surveys",
-    "text": "samplesize4surveys\n\nAndrés Gutiérrez (2018). “samplesize4surveys: Sample Size Calculations for Complex Surveys.” CRAN."
+    "text": "samplesize4surveys\n\n\n\n\nThis R package helps compute sample sizes for complex surveys under different inferential goals, including estimation of means, totals, proportions, variances, and regression-related quantities. It is designed for survey planners who need to account for finite populations, design effects, confidence levels, margins of error, statistical power, and other practical constraints before data collection begins."
   },
   {
     "objectID": "software.html#samplingcoordination",
     "href": "software.html#samplingcoordination",
     "title": "Software",
     "section": "SamplingCoordination",
-    "text": "SamplingCoordination\n\nAndrés Gutiérrez (2018). “samplesize4surveys: Sample Size Calculations for Complex Surveys.” CRAN."
+    "text": "SamplingCoordination\n\n\n\n\nThis R package supports the coordination of samples in complex rotating survey designs. It includes tools related to rotating panels, overlap control, coordinated selection, and redistribution of primary sampling units, helping survey teams manage repeated samples over time while balancing renewal, continuity, and operational constraints."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "This section summarizes selected methodological and applied statistical projects."
-  },
-  {
-    "objectID": "projects.html#main-areas",
-    "href": "projects.html#main-areas",
-    "title": "Projects",
-    "section": "Main areas",
-    "text": "Main areas\n\nSmall area estimation\nHousehold survey analysis\nPopulation modeling\nSocial indicators\nStatistical capacity building"
-  },
-  {
-    "objectID": "projects.html#areas-of-expertise",
-    "href": "projects.html#areas-of-expertise",
-    "title": "Projects",
-    "section": "Areas of expertise",
-    "text": "Areas of expertise\n\nHousehold survey design and analysis\nSurvey sampling\nSmall area estimation\nPoverty and inequality measurement\nSmall area estimation\nMultilevel models\nOfficial statistics\nStatistical capacity building\nData analysis with R"
-  },
-  {
-    "objectID": "projects.html#current-interests",
-    "href": "projects.html#current-interests",
-    "title": "Projects",
-    "section": "Current interests",
-    "text": "Current interests\nI am particularly interested in the integration of survey data, administrative records, geospatial information, and statistical models to improve the production of social indicators at detailed geographic levels."
-  },
-  {
-    "objectID": "projects.html#selected-work",
-    "href": "projects.html#selected-work",
-    "title": "Projects",
-    "section": "Selected work",
-    "text": "Selected work\n\nMethodological work on household surveys and official statistics.\nTraining materials on survey analysis with R.\nApplications of small area estimation for poverty and social indicators.\nTechnical assistance to national statistical offices."
-  },
-  {
-    "objectID": "posts/2026-06-15-first-post.html",
-    "href": "posts/2026-06-15-first-post.html",
-    "title": "Welcome to my blog",
+    "objectID": "posts/2026-06-15-second-post.html",
+    "href": "posts/2026-06-15-second-post.html",
+    "title": "Welcome to my second second post",
     "section": "",
     "text": "This is my first blog post.\nI will use this space to share short notes, examples, tutorials, and reflections on household surveys, official statistics, small area estimation, poverty measurement, and data analysis with R."
-  },
-  {
-    "objectID": "books.html",
-    "href": "books.html",
-    "title": "Books",
-    "section": "",
-    "text": "I am a passionate reseracher on sampling methods, household surveys, analysis of complex survey data. So, I have published some books related to those matters."
-  },
-  {
-    "objectID": "books.html#survey-sampling",
-    "href": "books.html#survey-sampling",
-    "title": "Books",
-    "section": "Survey Sampling",
-    "text": "Survey Sampling\nThis is the place to start if you want to learn about sampling methods and how to apply them in a real life context with the R software."
-  },
-  {
-    "objectID": "books.html#household-surveys-analysis-with-r",
-    "href": "books.html#household-surveys-analysis-with-r",
-    "title": "Books",
-    "section": "Household Surveys Analysis with R",
-    "text": "Household Surveys Analysis with R\nIf you are analysing some household survey data, the R software is the right tool to use."
-  },
-  {
-    "objectID": "books.html#diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina",
-    "href": "books.html#diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina",
-    "title": "Books",
-    "section": "Diseño y Análisis Estadístico de las Encuestas de Hogares en América Latina",
-    "text": "Diseño y Análisis Estadístico de las Encuestas de Hogares en América Latina\nWritten in Spanish, this book deals with the exact topics that a sampling methodologist is faced in a dayly basis."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Short notes, tutorials, and reflections on household surveys, official statistics, small area estimation, poverty measurement, and data analysis with R.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to my blog\n\n\n\nR\n\nofficial statistics\n\nhousehold surveys\n\n\n\n\n\n\n\n\n\nJun 15, 2026\n\n\nAndrés Gutiérrez\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to my second second post\n\n\n\nR\n\nofficial statistics\n\nhousehold surveys\n\n\n\n\n\n\n\n\n\nJun 15, 2026\n\n\nAndrés Gutiérrez\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -112,9 +42,23 @@
     "text": "I am a statistician specializing in household surveys, survey sampling and small area estimation. Since 2017, I have served as Regional Adviser on Social Statistics at the United Nations Economic Commission for Latin America and the Caribbean (UN ECLAC), where I provide technical assistance to national statistical offices across the region.\nMy work focuses on developing and applying rigorous statistical methods to improve the design, analysis, and use of household surveys, strengthen official statistics, and support evidence-based public policy, with particular emphasis on social indicators. I am an Elected Member of the International Statistical Institute and a former Vice-President of the International Association of Survey Statisticians."
   },
   {
-    "objectID": "posts/2026-06-15-second-post.html",
-    "href": "posts/2026-06-15-second-post.html",
-    "title": "Welcome to my second second post",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Short notes, tutorials, and reflections on household surveys, official statistics, small area estimation, poverty measurement, and data analysis with R.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to my blog\n\n\n\nR\n\nofficial statistics\n\nhousehold surveys\n\n\n\n\n\n\n\n\n\nJun 15, 2026\n\n\nAndrés Gutiérrez\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to my second second post\n\n\n\nR\n\nofficial statistics\n\nhousehold surveys\n\n\n\n\n\n\n\n\n\nJun 15, 2026\n\n\nAndrés Gutiérrez\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "books.html",
+    "href": "books.html",
+    "title": "Books",
+    "section": "",
+    "text": "My books and teaching notes focus on survey sampling, household surveys, small area estimation, and the analysis of complex survey data. They are written for students, researchers, and practitioners who need to connect statistical theory with the practical decisions involved in designing, implementing, and analyzing surveys.\nSeveral of these materials were created with reproducible workflows in mind. They combine methodological explanations, applied examples, and R code so readers can move from concepts to implementation without losing sight of the statistical assumptions behind each method.\n\nDiseño y Análisis Estadístico de las Encuestas de Hogares en América Latina\n\n\n\n\nWritten in Spanish, this book addresses the methodological and operational questions that arise in the design and analysis of household surveys in Latin America, including sampling frames, sample design, weighting, estimation, variance estimation, data quality, and the production of official statistics from complex survey data.\n\n\n\n\nEstrategias de Muestreo: Diseño de Encuestas y Estimación de Parámetros\n\n\n\n\nWritten in Spanish, this book provides a broad introduction to probability sampling, sample design, and parameter estimation, covering classical and modern strategies such as simple random sampling, stratified sampling, cluster sampling, multistage designs, unequal probability sampling, calibration, and model-assisted estimation, with applied examples in R.\n\n\n\n\nSurvey Sampling\nThis book is an introductory resource for learning the foundations of survey sampling and applying them with R, moving from basic ideas such as populations, samples, estimators, and sampling weights to reproducible examples that help readers compare designs, simulate finite populations, and understand how design choices affect precision and bias.\n\n\nHousehold Surveys Analysis with R\nThis book focuses on the analysis of household survey data using R, with emphasis on sampling weights, stratification, clustering, domains of analysis, uncertainty estimation, and the production of reliable descriptive statistics, indicators, tables, and visual summaries from complex survey microdata.\n\n\nModelos Bayesianos con R y STAN\nThis book introduces Bayesian modeling with R and Stan, combining statistical ideas with computational practice to help readers build, fit, check, and interpret probabilistic models involving prior distributions, likelihoods, posterior inference, hierarchical structures, simulation, and model diagnostics."
+  },
+  {
+    "objectID": "posts/2026-06-15-first-post.html",
+    "href": "posts/2026-06-15-first-post.html",
+    "title": "Welcome to my blog",
     "section": "",
     "text": "This is my first blog post.\nI will use this space to share short notes, examples, tutorials, and reflections on household surveys, official statistics, small area estimation, poverty measurement, and data analysis with R."
   },

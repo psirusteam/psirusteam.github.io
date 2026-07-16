@@ -97,16 +97,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Books</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
-<span class="menu-text">Publications</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
-<span class="menu-text">Projects</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./software.html"> 
 <span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./blog.html"> 
@@ -128,9 +124,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#survey-sampling" id="toc-survey-sampling" class="nav-link active" data-scroll-target="#survey-sampling">Survey Sampling</a></li>
+  <li><a href="#diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina" id="toc-diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina" class="nav-link active" data-scroll-target="#diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina">Diseño y Análisis Estadístico de las Encuestas de Hogares en América Latina</a></li>
+  <li><a href="#estrategias-de-muestreo-diseño-de-encuestas-y-estimación-de-parámetros" id="toc-estrategias-de-muestreo-diseño-de-encuestas-y-estimación-de-parámetros" class="nav-link" data-scroll-target="#estrategias-de-muestreo-diseño-de-encuestas-y-estimación-de-parámetros">Estrategias de Muestreo: Diseño de Encuestas y Estimación de Parámetros</a></li>
+  <li><a href="#survey-sampling" id="toc-survey-sampling" class="nav-link" data-scroll-target="#survey-sampling">Survey Sampling</a></li>
   <li><a href="#household-surveys-analysis-with-r" id="toc-household-surveys-analysis-with-r" class="nav-link" data-scroll-target="#household-surveys-analysis-with-r">Household Surveys Analysis with R</a></li>
-  <li><a href="#diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina" id="toc-diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina" class="nav-link" data-scroll-target="#diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina">Diseño y Análisis Estadístico de las Encuestas de Hogares en América Latina</a></li>
+  <li><a href="#modelos-bayesianos-con-r-y-stan" id="toc-modelos-bayesianos-con-r-y-stan" class="nav-link" data-scroll-target="#modelos-bayesianos-con-r-y-stan">Modelos Bayesianos con R y STAN</a></li>
   </ul>
 </nav>
     </div>
@@ -156,18 +154,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>I am a passionate reseracher on sampling methods, household surveys, analysis of complex survey data. So, I have published some books related to those matters.</p>
-<section id="survey-sampling" class="level2">
-<h2 class="anchored" data-anchor-id="survey-sampling"><a href="https://psirusteam.github.io/SurveySamplingBook/" target="_blank">Survey Sampling</a></h2>
-<p>This is the place to start if you want to learn about sampling methods and how to apply them in a real life context with the R software.</p>
+<p>My books and teaching notes focus on survey sampling, household surveys, small area estimation, and the analysis of complex survey data. They are written for students, researchers, and practitioners who need to connect statistical theory with the practical decisions involved in designing, implementing, and analyzing surveys.</p>
+<p>Several of these materials were created with reproducible workflows in mind. They combine methodological explanations, applied examples, and R code so readers can move from concepts to implementation without losing sight of the statistical assumptions behind each method.</p>
+<section id="diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina" class="level3">
+<h3 class="anchored" data-anchor-id="diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina"><a href="https://www.cepal.org/es/publicaciones/68737-diseno-analisis-estadistico-encuestas-hogares-america-latina" target="_blank">Diseño y Análisis Estadístico de las Encuestas de Hogares en América Latina</a></h3>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="images/books/Encuestas.png" class="img-fluid" style="width:70.0%"></p>
+</div><div class="column" style="width:60%;">
+<p>Written in Spanish, this book addresses the methodological and operational questions that arise in the design and analysis of household surveys in Latin America, including sampling frames, sample design, weighting, estimation, variance estimation, data quality, and the production of official statistics from complex survey data.</p>
+</div>
+</div>
 </section>
-<section id="household-surveys-analysis-with-r" class="level2">
-<h2 class="anchored" data-anchor-id="household-surveys-analysis-with-r"><a href="https://psirusteam.github.io/HouseholdSurveysR/" target="_blank">Household Surveys Analysis with R</a></h2>
-<p>If you are analysing some household survey data, the R software is the right tool to use.</p>
+<section id="estrategias-de-muestreo-diseño-de-encuestas-y-estimación-de-parámetros" class="level3">
+<h3 class="anchored" data-anchor-id="estrategias-de-muestreo-diseño-de-encuestas-y-estimación-de-parámetros"><a href="https://psirusteam.github.io/EstrategiasDeMuestreo/" target="_blank">Estrategias de Muestreo: Diseño de Encuestas y Estimación de Parámetros</a></h3>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="images/books/Muestreo.png" class="img-fluid" style="width:70.0%"></p>
+</div><div class="column" style="width:60%;">
+<p>Written in Spanish, this book provides a broad introduction to probability sampling, sample design, and parameter estimation, covering classical and modern strategies such as simple random sampling, stratified sampling, cluster sampling, multistage designs, unequal probability sampling, calibration, and model-assisted estimation, with applied examples in R.</p>
+</div>
+</div>
 </section>
-<section id="diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina" class="level2">
-<h2 class="anchored" data-anchor-id="diseño-y-análisis-estadístico-de-las-encuestas-de-hogares-en-américa-latina"><a href="https://www.cepal.org/es/publicaciones/68737-diseno-analisis-estadistico-encuestas-hogares-america-latina" target="_blank">Diseño y Análisis Estadístico de las Encuestas de Hogares en América Latina</a></h2>
-<p>Written in Spanish, this book deals with the exact topics that a sampling methodologist is faced in a dayly basis.</p>
+<section id="survey-sampling" class="level3">
+<h3 class="anchored" data-anchor-id="survey-sampling"><a href="https://psirusteam.github.io/SurveySamplingBook/" target="_blank">Survey Sampling</a></h3>
+<p>This book is an introductory resource for learning the foundations of survey sampling and applying them with R, moving from basic ideas such as populations, samples, estimators, and sampling weights to reproducible examples that help readers compare designs, simulate finite populations, and understand how design choices affect precision and bias.</p>
+</section>
+<section id="household-surveys-analysis-with-r" class="level3">
+<h3 class="anchored" data-anchor-id="household-surveys-analysis-with-r"><a href="https://psirusteam.github.io/HouseholdSurveysR/" target="_blank">Household Surveys Analysis with R</a></h3>
+<p>This book focuses on the analysis of household survey data using R, with emphasis on sampling weights, stratification, clustering, domains of analysis, uncertainty estimation, and the production of reliable descriptive statistics, indicators, tables, and visual summaries from complex survey microdata.</p>
+</section>
+<section id="modelos-bayesianos-con-r-y-stan" class="level3">
+<h3 class="anchored" data-anchor-id="modelos-bayesianos-con-r-y-stan"><a href="https://psirusteam.github.io/bookdownBayesiano/" target="_blank">Modelos Bayesianos con R y STAN</a></h3>
+<p>This book introduces Bayesian modeling with R and Stan, combining statistical ideas with computational practice to help readers build, fit, check, and interpret probabilistic models involving prior distributions, likelihoods, posterior inference, hierarchical structures, simulation, and model diagnostics.</p>
 
 
 </section>

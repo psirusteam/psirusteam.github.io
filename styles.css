@@ -17,20 +17,20 @@
   --site-accent-soft: #e6f5f6;
   --site-shadow: 0 14px 36px rgba(16, 24, 39, 0.07);
   --site-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
-  --site-font-size: 1rem;
-  --site-font-size-mobile: 1rem;
-  --site-font-size-small: 0.9rem;
-  --site-font-size-meta: 0.82rem;
+  --site-font-size: 0.92rem;
+  --site-font-size-mobile: 0.94rem;
+  --site-font-size-small: 0.84rem;
+  --site-font-size-meta: 0.76rem;
   --site-line-height: 1.5;
-  --site-h1-size: 2rem;
-  --site-h2-size: 1.55rem;
-  --site-h3-size: 1.25rem;
-  --site-h4-size: 1.1rem;
-  --site-h1-size-mobile: 1.75rem;
-  --site-h2-size-mobile: 1.35rem;
-  --site-h3-size-mobile: 1.15rem;
-  --site-home-title-size: 2rem;
-  --site-home-title-size-mobile: 1.75rem;
+  --site-h1-size: 1.72rem;
+  --site-h2-size: 1.32rem;
+  --site-h3-size: 1.08rem;
+  --site-h4-size: 1rem;
+  --site-h1-size-mobile: 1.55rem;
+  --site-h2-size-mobile: 1.22rem;
+  --site-h3-size-mobile: 1.05rem;
+  --site-home-title-size: 1.72rem;
+  --site-home-title-size-mobile: 1.55rem;
 }
 
 /* Base general */
@@ -133,13 +133,15 @@ li {
 /* Enlaces */
 
 a {
+  background: none;
   color: var(--site-accent);
   text-decoration: none;
   text-underline-offset: 0.2em;
 }
 
 a:hover {
-  color: #0a4f82;
+  background: none;
+  color: var(--site-accent);
   text-decoration: underline;
 }
 
@@ -163,7 +165,7 @@ a:hover {
 
 .navbar-title {
   font-family: var(--site-font-family);
-  font-size: calc(1rem + 2pt);
+  font-size: calc(var(--site-font-size) + 2pt);
   letter-spacing: -0.01em;
   background: linear-gradient(90deg, var(--site-accent), var(--site-accent-2));
   -webkit-background-clip: text;
@@ -180,7 +182,7 @@ a:hover {
 }
 
 .navbar-nav .nav-link {
-  font-size: var(--site-font-size-small);
+  font-size: 0.9rem;
   padding-left: 1rem !important;
   padding-right: 1rem !important;
 }
@@ -331,13 +333,40 @@ blockquote {
 
 #TOC {
   border-left: 2px solid var(--site-border);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+#TOC ul,
+#TOC ol {
+  gap: 0.32rem;
+}
+
+#TOC li {
+  margin-bottom: 0.32rem;
+}
+
+#TOC .nav-link {
+  font-size: 0.9rem !important;
+  line-height: 1.5;
+  padding-bottom: 0.26rem;
+  padding-top: 0.26rem;
 }
 
 #TOC a,
 #TOC a:hover,
 #TOC .active {
   color: #000000 !important;
+  font-size: 0.9rem !important;
   font-weight: 400 !important;
+}
+
+.sidebar nav[role="doc-toc"] a,
+.sidebar nav[role="doc-toc"] .nav-link {
+  font-size: 0.9rem !important;
+  line-height: 1.5;
+  padding-bottom: 0.26rem;
+  padding-top: 0.26rem;
 }
 
 /* Footer */
