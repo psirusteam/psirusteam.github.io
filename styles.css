@@ -229,6 +229,24 @@ a:hover {
   padding: 0.15rem 0.5rem;
 }
 
+/* Publications */
+
+.publication-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.publication-list li {
+  margin-bottom: 0.95rem;
+  padding-left: 1.6rem;
+  text-indent: -1.6rem;
+}
+
+.publication-list li::before {
+  color: var(--site-muted);
+  content: "– ";
+}
+
 /* Metadatos del post */
 
 .quarto-title-meta {
