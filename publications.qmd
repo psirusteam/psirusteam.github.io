@@ -5,6 +5,8 @@ title: "Publications"
 
 ## 2026
 
+- Andrés Gutiérrez and Pedro Luis do Nascimento Silva (2026). "[Analysis of Household Survey Data](https://unstats.un.org/UNSDWebsite/statcom/session_57/documents/BG-3k-Handbook_on_Surveys_of_Household_and_Individuals-E.pdf){target="_blank"}." *UN Handbook of Surveys on Households and Individuals: Foundations and Emerging Approaches*, chapter 9, pp. 111–148. United Nations Statistics Division.
+
 - Andrés Gutiérrez and Giovany Babativa-Márquez (2026). "[Encuestas de posenumeración censal: fundamentos estadísticos para su diseño y análisis](https://www.cepal.org/es/publicaciones/85913-encuestas-posenumeracion-censal-fundamentos-estadisticos-su-diseno-analisis){target="_blank"}." *Serie de estudios estadísticos*, 111.
 
 ## 2025

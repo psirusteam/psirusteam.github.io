@@ -2,9 +2,7 @@
 title: "Books"
 ---
 
-My books and teaching notes focus on survey sampling, household surveys, small area estimation, and the analysis of complex survey data. They are written for students, researchers, and practitioners who need to connect statistical theory with the practical decisions involved in designing, implementing, and analyzing surveys.
-
-Several of these materials were created with reproducible workflows in mind. They combine methodological explanations, applied examples, and R code so readers can move from concepts to implementation without losing sight of the statistical assumptions behind each method.
+My books and teaching notes are written for researchers, and practitioners who need to connect statistical theory with the practical decisions involved in designing, implementing, and analyzing surveys. Several of these materials were created with reproducible workflows in mind. They combine methodological explanations, applied examples, and R code so readers can move from concepts to implementation.
 
 ### [Diseño y Análisis Estadístico de las Encuestas de Hogares en América Latina](https://www.cepal.org/es/publicaciones/68737-diseno-analisis-estadistico-encuestas-hogares-america-latina){target="_blank"}
 
