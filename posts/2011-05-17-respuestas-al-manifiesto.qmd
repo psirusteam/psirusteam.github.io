@@ -1,0 +1,56 @@
+---
+title: "Respuestas al manifiesto"
+author: "Andrés Gutiérrez"
+date: "2011-05-17"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Algún lector anónimo escribe lo siguiente:
+
+> Andrés,
+>
+>
+> Para impulsar estas ideas, hay que empezar por el principio.
+>
+>
+> ¿De qué sirve una escuela con buenos profesores pero alumnos malos, desmotivados? definitivamente la prioridad 1 se debe enfocar en formar excelentes estudiantes motivados por el quehacer científico porque de nada sirve inflarse por inflarse.
+>
+>
+> ¿Cuántos profesores motivan a sus estudiantes para estudiar en las mejores escuelas del mundo en el departamento de estadística en Colombia? Los dedos de una mano son demasiados para hacer la cuenta.
+>
+>
+> ¿Qué intercambios interfacultades con prestigiosas universidades con área en estadística maneja la Universidad Nacional de Colombia?
+>
+>
+> Hay algunas de sus premisas que deben ser estudiadas en detalle antes de echarlas a ruedo porque como casi todo en la vida, se necesitan pre-requisitos. Todas ellas hablan de un después de un Estadístico ya formado y NO en formación, por ejemplo dígame usted, para quién va dirigido el Workshop que hace la USTA?, porque los alumnos de allá presentan trabajos muy regulares y ellos tanto como los de la nacional asisten muy poco sabiendo que vienen excelentes profesores reconocidos internacionalmente a dar conferencias de muy alto nivel, por favor seamos consistentes en los sueños, primero lo primero. No confundamos el VERDADERO desarrollo científico nacional en estadística con el crecimiento desmesurado de la misma.
+>
+>
+> Saludes!
+
+Querido lector anónimo... gracias por su comentario... Permítame responder a sus acotaciones:
+
+¿De qué sirve una escuela con buenos profesores pero alumnos malos, desmotivados?
+
+Me parece muy importante su pregunta, que a la vez resalta su punto de vista sobre nuestra práctica académica. Sin embargo, quisiera reiterarle que si existen buenos profesores y alumnos malos, entonces es muy discutible el calificativo de. Por otro lado, en mi experiencia recorriendo las facultades (o departamentos) de estadística en Colombia (sí, a mi corta edad soy bien destacado en Bogotá, Medellín, Cordoba, Tolima, entre otras, y conozco la excelente labor que se adelante en cada una de esas escuelas) me he encontrado con excelentes profesores y excelentes alumnos. Así que, en honor a la verdad, me permito contradecirle puesto que lo que yo veo, a diferencia suya, es un conglomerado de alumnos motivados, apoyados por unos excelentes profesores. Pero, respondiendo a su pregunta, y suponiendo que así fuera, una escuela con buenos profesores y malos alumnos sirve como caldo de cultivo para que los que se creen buenos profesores profundicen más y se bajen de la nube, porque seguramente, si hay malos alumnos es porque los profesores son aún más malos. Después de que los excelentes profesores se den cuenta de su verdadero estatus, entonces verán que sus alumnos no son malos. Pero, una vez más, eso no es lo que pasa en el país.
+
+¿Cuántos profesores motivan a sus estudiantes para estudiar en las mejores escuelas del mundo en el departamento de estadística en Colombia?
+
+No lo sé, pero creo que la mayoría. Si le sirve de algo, cuando yo estudiaba en el pregrado y maestría, el 80% de mis profesores alguna vez me mencionaron que yo debía salir a estudiar en el exterior. Además, me impulsaron y patrocinaron con dinero para presentar mis trabajos de muestreo en el exterior. Resultado de esto, conocí a profesores internacionales que me ofrecieron becas para estudiar en Europa. No me fui, porque creo que el papel que debo jugar está al pie de mi familia, que en ese momento atravesaba una difícil situación de victimización por la violencia en Colombia. Si de algo le sirve, estoy seguro de que la mayoría de estudiantes colombianos en el exterior fueron motivados por los buenos profesores para aceptar el reto de estudiar en las mejores escuelas del mundo. Como organizador de los Workshop de la USTA, he tenido el agrado de conocer a personalidades muy importantes de la estadística en el mundo y mi sorpresa ha sido grata al escuchar del buen desarrollo de estudiantes colombianos en sus facultades. Así, que una vez más, me permito contradecirlo. Los profesores sí motivan a sus estudiantes. Por otra parte, me sorprende saber que usted tenga tantos dedos en su mano.
+
+¿Qué intercambios inter-facultades con prestigiosas universidades con área en estadística maneja la Universidad Nacional de Colombia?
+
+No lo sé, pero en el caso de la USTA tenemos convenios activos con la Universidad De Buenos Aires, con la UNAM y con varias universidades de Chile. Este semestre recibimos dos estudiantes de estadística en intercambio desde la UNAM y dos muchachas de acá van a terminar sus estudios en universidades de Brasil. Si eso lo hacemos nosotros con cuatro años, me imagino que la Universidad Nacional de Colombia debe tener muchos más convenios. Aunque las estadísticas exactas son desconocidas para mí. Pero creo que los invitados al simposio dan cuenta de las excelentes relaciones que tienen la UNAL con otros departamentos en el mundo.
+
+¿Para quién va dirigido el Workshop que hace la USTA?
+
+Para estadísticos egresados y en formación. Siempre hay un par de cursos introductorios y un par de cursos avanzados. Y siempre hay espacio para que los muchachos presentes sus trabajos resultantes de investigaciones pequeñas surgidas en los semilleros de investigación.
+
+Los alumnos de allá (USTA) presentan trabajos muy regulares y ellos tanto como los de la nacional asisten muy poco sabiendo que vienen excelentes profesores reconocidos internacionalmente a dar conferencias de muy alto nivel.
+
+Tres cosas, la primera es que, a no ser que usted sea parte del equipo de docentes en la USTA (que no creo), se abstenga de lanzar esa clase de juicios con respecto a la clase de trabajos de los alumnos de la USTA. La segunda es que me permito informarle que los alumnos de la USTA son muy buenos y están siendo reconocidos localmente por su compromiso y entrega. Prueba de esto son muchas convocatorias de trabajo a la decanatura y a mi oficina, pidiendo alumnos para trabajar. Por otro lado, le garantizo que los alumnos de la USTA son muy buenos pues han sido formados por mí, por Jorge Ortiz, por Francisco Rincón, por Felipe Ortiz, por Hanwen Zhang, entre otros. Y déjeme decirle que nosotros conformamos una excelente planta docente, reconocida a nivel local. Y como somos buenos profesores, consideramos que nuestros alumnos son buenos. En tercer lugar, si los invitados internacionales vienen a dar conferencia de altísimo nivel, es más que entendible que los alumnos no asistan a esas conferencias y prefieran asistir a conferencias más descifrables.
+
+No confundamos el VERDADERO desarrollo científico nacional en estadística con el crecimiento desmesurado de la misma.
+
+¿A qué se referirá usted con el verdadero desarrollo científico nacional? Tal vez a sus múltiples artículos en revistas indexadas internacionalmente, o a sus muchos libros publicados por editoriales de punta, o a su extensa participación como invitado en eventos mundialmente reconocidos. Si es así, déjeme felicitarle de todo corazón. Así como yo quiero ser cabeza de ratón, usted ha decidido se cola de león y es muy respetable. Sin embargo, en estas metas no estoy contemplando nada de procesos investigativos (que sí son muy importantes) sino cosas más terrenales y vulgares (pero aún más importantes) como el afianzamiento de nuestro gremio y la unión generada e institucionalizada en una asociación de PROFESIONALES (no de investigadores) en estadística. Le invito a crear su propia asociación de Investigadores de alto nivel en estadística. Estoy seguro que los dedos de su mano le alcanzarán para contar los posibles miembros. Por lo demás, no sobra invitarlo a que haga parte de nuestro esfuerzo que tendrá muchas manos unidas en pro de nuestros profesionales.

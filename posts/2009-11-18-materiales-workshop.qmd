@@ -1,0 +1,23 @@
+---
+title: "Materiales Workshop"
+author: "Andrés Gutiérrez"
+date: "2009-11-18"
+categories:
+  - "Estadística"
+---
+
+Haciendo clic en los enlaces correspondientes encontrará el material de los cursillos y conferencias de los invitados internacionales al first international Workshop on Applied Statistics.
+
+Pedro Silva:
+
+[Análisis avanzado de datos muestrales](http://www.box.net/shared/9x9z8rlsk1)
+
+.
+
+Julio singer:
+
+[Teoría asintótica.](http://www.box.net/shared/d9yr5tkbmp)
+
+Victor Guerrero:
+
+[Series de tiempo.](http://www.box.net/shared/ggns1bv764)

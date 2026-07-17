@@ -1,0 +1,41 @@
+---
+title: "El paquete TeachingSampling"
+author: "Andrés Gutiérrez"
+date: "2009-03-16"
+categories:
+  - "Estadística"
+---
+
+*¡Ojalá él estuviera aquí! Seguro que se sentiría muy feliz al saber que unos de nuestros sueños se ha cumplido…*
+
+Estimado colega, estimado profesor, estimado lector. Con mucha alegría permítanme presentarles el nuevo paquete **[TeachingSampling](http://www.cran.r-project.org/web/packages/TeachingSampling/)**, desarrollado por mí en la Facultad de Estadística de la Universidad Santo Tomás, aunque un poco lejos de sus oficinas. En el CRAN de R existen un par de paquetes complementarios con respeto al muestreo; éstos son el paquete **[Survey](http://www.cran.r-project.org/web/packages/survey/)** escrito por Thomas Lumley, de la Universidad de Washington y el paquete **[Sampling](http://www.cran.r-project.org/web/packages/sampling/)** escrito por Yves Tillé de la Universidad de Neuchatel. Excelentes paquetes, excelente programación y excelentes ejemplos. Sin embargo ninguno de ellos tiene el enfoque con el que yo aprendí muestreo y con el que quiero enseñarlo.
+
+> La documentación del paquete, [haciendo clic acá](http://www.cran.r-project.org/web/packages/TeachingSampling/TeachingSampling.pdf) y el archivo ZIP para la instalación manual, [haciendo clic acá](http://www.cran.r-project.org/bin/windows/contrib/r-release/TeachingSampling_0.7.6.zip).
+
+Es cierto, el muestreo y la inferencia en poblaciones finitas se distancian un poco de la estadística clásica y del pensamiento tradicional. Precisamente, por esta razón, el estudiante debe aprender, no sólo a manejar un software, sino a implementar los procesos muestrales en su mente sin que se pueda dar lugar a la confusión. ¿Cómo hacerlo? Mi respuesta es empezar desde lo básico… desde la medida, la probabilidad, las sigma-álgebras y el espacio muestral. En algunas cátedras de muestreo y en algunos textos, ni siquiera se menciona el concepto de Soporte. A mi entender, el estudiante debe asimilar en primer lugar este concepto para adentrase, después, en temas más complejos como las estrategias de muestreo y sus posibles variaciones.
+
+Otro tema de suprema importancia es separar el diseño muestral del algoritmo de muestreo. Un diseño muestral es simplemente una distribución de probabilidad multivariante sobre un soporte, mientras que un algoritmo de muestreo es una manera de seleccionar muestras aleatorias que respeten el diseño de muestreo. Esto conlleva a que para un diseño de muestreo específico puedan existir múltiples algoritmos muestreo. Por supuesto, la forma de seleccionar la muestra implica directamente que la forma matemática del estimador que se utilice se vea alterada automáticamente por la escogencia de un diseño de muestreo, formándose así una dupla que se conoce como estrategia de muestreo.
+
+El proceso no termina en memorizar qué es una estrategia de muestreo y sus infinitas variaciones. Una vez que se ha planteado el diseño de muestreo, que se ha seleccionado una muestra, mediante un algoritmo de muestreo, que se ha recopilado la información de las unidades seleccionadas en la muestra, se deben computar las estimaciones resultantes. Sin embargo, cuando yo hablo de estimaciones estoy inmediatamente refiriéndome a variación estadística. Por tanto junto con las estimaciones de los totales o las medias, es indispensable también publicar el coeficiente de variación estimado. Este concepto es vital para la buena práctica del muestreo.
+
+Por otra parte, como lo asegura Sharon Lohr, una estrategia muestral siempre es susceptible de mejora. En particular, cuando se trata de incorporar información auxiliar (discreta o continua), ya sea en la etapa de diseño o en la etapa de estimación. El estudiante debe entender que la incorporación de información auxiliar no siempre es viable ya sea por motivos logísticos o porque con ésta no se logra mejorar la estrategia de muestreo en términos de la eficiencia estadística.
+
+En ocasiones, la cátedra de muestreo se me antoja muy, pero muy matizada con la cátedra de programación computacional. Aunque no es posible hablar de investigación en muestreo sin habilidades computacionales, sí es posible lograr que el estudiante aprenda la teoría y ejecute una buena práctica sin necesidad de recorrer ese tortuoso camino de programación, que no a todos se nos facilita de la misma manera. La suma de las anteriores razones me llevó a plantear este programa en R, que ahora es una realidad y, que ejecuta los cálculos computacionales necesarios para la enseñanza del muestreo, respetando los conceptos arriba expuestos.
+
+1. Distintos algoritmos de muestreo para diseños muestrales específicos
+
+2. Estimaciones resultantes junto con la varianza y el coeficiente de variación estimado para las estrategias de muestreo
+
+3. Incorporación de información auxiliar discreta. Muestreo estratificado y estimador de post-estratificación.
+
+4. Incorporación de información auxiliar discreta. Muestreo de probabilidad proporcional y estimador de regresión general.
+
+5. Requerimientos de estimaciones en dominios. Estimación en subgrupos poblacionales. Dominios o post-estratos
+
+6. Diseños muestrales por conglomerados y en varias etapas
+
+7. Calibración de estimadores. Método IPFP y de regresión
+
+Espero que este paquete pueda servirles de mucha utilidad, ya sea enseñando, aprendiendo o utilizándolo en sus propias investigaciones.
+
+PD: Agradezco al profesor Campo Elías Pardo por su apoyo y paciencia incondicional para la compilación del paquete y a Daniel Rodríguez, en primer lugar por su gran amistad, y por su interés, motivación y ayuda en el desarrollo de este paquete a pesar de la gran distancia.

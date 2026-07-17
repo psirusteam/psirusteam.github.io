@@ -1,0 +1,41 @@
+---
+title: "Regression discontinuity plots with R (using ggplot2)"
+author: "Andrés Gutiérrez"
+date: "2014-11-15"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+In public policy evaluation sometimes we use a [regression discontinuity](http://en.wikipedia.org/wiki/Regression_discontinuity_design) analysis in order to estimate the impact of an intervention.
+
+Long story short, we suppose that there is a threshold (real value of a design variable) for which we can divide the population of interest into two groups. So, for those individuals that have values higher than the threshold, a public policy is applied. After the implementation of the policy, we measure the variable of interest for both groups. If the variable of interest has changed its behavior, we can claim that the policy had an impact in the target group.
+
+For those like me who make consulting in public policy, and use R as a default statistical software, the ggplot2 package is a valuable tool in order to visualize the possible changes in the behavior of the variable of interest. I took some scenarios [from these slides](https://web.archive.org/web/20190920010321/http://faculty.smu.edu/kyler/courses/7312/presentations/baumer/Baumer_RD.pdf) and created a proper code in ggplot2.
+
+No statistical significance:
+
+```r
+library(ggplot2)
+threshold = 10.5
+
+group1<-data.frame(time1=1:20,score1=(c(10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100,105)),
+                   interv1=(factor(rep(0:1,each=10))))
+group1$score1<-jitter(group1$score1,factor=12)
+
+ggplot(group1, aes(time1, score1, color = factor(interv1))) +
+  geom_point() + stat_smooth(method = "lm") +
+  geom_vline(xintercept=c(threshold), linetype=3)
+```
+
+So, the final plot is:
+
+Main and interaction effect:
+
+```r
+group4<-data.frame(time4=1:20,score4=c(50:59,80,85,90,95,100,105,110,115,120,125), interv4=(factor(rep(0:1,each=10)))) group4$score4<-jitter(group4$score4,factor=20) ggplot(group4, aes(time4, score4, color = factor(interv4))) +
+  geom_point() + stat_smooth(method = "lm") +
+  geom_vline(xintercept=c(threshold), linetype=3)
+```
+
+So, the final plot is:

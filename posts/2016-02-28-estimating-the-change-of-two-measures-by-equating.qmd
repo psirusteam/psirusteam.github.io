@@ -1,0 +1,75 @@
+---
+title: "Estimating the change of two measures by equating"
+author: "Andrés Gutiérrez"
+date: "2016-02-28"
+categories:
+  - "Estadística"
+  - "IRT"
+  - "Probability"
+  - "Stats"
+---
+
+Suppose that we have a survey (baseline + follow-up) in which we ask to some people about a variable of interest. If we follow that cohort, or even some if we ask later to some other people, we can estimate the net change of that very variable in the scale of the baseline by means of equating the two distributions. I know, we usually do not care about the scale. We are used to subtract averages and that's it. However, if we want to compute a scale from the baseline, we should refine our techniques and begin to use some other tools.
+
+For example, you can transform your data to have mean equals to one. This way, you can track the changes on the distribution (in the follow-up) by focusing in the amount (and direction) of change. Therefore, in the baseline your indicator equals one, but in the follow-up it could be, for example, 1.2 or 0.7. Then in the first case, it implies that the distribution of the variable of interest (in the follow-up ) has moved to the right with respect to the baseline distribution. Conversely, if the indicator is less than one, then the distribution of the variable of interest (in the follow-up) has moved to the left with respect to the baseline distribution. The exciting thing about this method is that you can estimate that very change in a unified scale (the one induced by the baseline).
+
+This method uses the [equating technique](https://en.wikipedia.org/wiki/Equating) and I have written the following R function in order to estimate the change in the follow up.
+
+> ```r
+> # linear equating function
+> equating <- function(A, B, FUNC){
+>
+>   x <- FUNC(A)
+>   y <- FUNC(B)
+>
+>   # Descriptives 
+>   mux <- mean(x)
+>   sdx <- sd(x)
+>   muy <- mean(y)
+>   sdy <- sd(y)
+>   # Data standardization
+>   x.s <- as.numeric(scale(x))
+>   y.s <- as.numeric(scale(y))
+>   # Union
+>   xy <- FUNC(c(A, B))
+>   xy.s <- as.numeric(scale(xy))
+>   # X in the joint scale
+>   x1 <- xy.s[1:length(x)]
+>   # Y in the joint scale
+>   y1 <- xy.s[(length(x) + 1):length(xy)]
+>   # Mean/sigma for the fist set of data
+>   b1 <- (sd(x) / sd(x1))
+>   b0 <- mean(x) - b1 * mean(x1)
+>   # X in X scale
+>   x1.s <- b0 + b1 * x1
+>   # Y in X scale
+>   y1.s <- b0 + b1 * y1
+>   return(list(Baseline = mux , FollowUp = mean(y1.s)))
+> }
+> ```
+
+For example, let's suppose that we have measured 20 people (both at baseline and follow-up). If we apply a transformation that centers data at one (dividing each entry by the mean of the data), then the mean of the scaled data will be one, for the baseline. When we equate the follow-up, we realise that, in the follow-up, there is a increase of 0.202 in the indicator with respect to the scale induced by the baseline distributions. The following code shows how to perform the equating.
+
+> ```r
+> ## A function that divides data by the mean 
+> scaledAverage <- function(x){
+>   return(x/mean(x))
+> }
+> ```
+>
+> ```r
+> ## Data
+> A <- c(10, 11, 12, 10, 10, 11, 11, 7, 11, 10, 9, 10, 5, 6, 9, 12, 9, 13, 9, 8)
+> B <- c(12, 11, 12, 11, 13, 10, 11, 9, 13, 14, 13, 13, 11, 13, 13, 12, 10, 7, 12, 12)
+>
+> ## The change in the baseline scale
+> equating(A, B, scaledAverage)
+> ```
+
+Of course, you can use this method with different functions. You can even standardise the data and then create an indicator equal to zero in the baseline and finally compute the change in the follow-up. In this very example, the change was of 0.97. That is, as data are normalised in the baseline, the standard deviation is one. Then, regarding the baseline scale, there is a positive change of almost one standard deviation. Note that this is superb useful when it comes to estimate the impact of a public policy. This change was computed by using the following line of code.
+
+> ```r
+> equating(A, B, scale)
+> ```
+
+PD: I am grateful to Dora and Areli for such valuable suggestions.

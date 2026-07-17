@@ -1,0 +1,23 @@
+---
+title: "Cuatro errores comunes"
+author: "Andrés Gutiérrez"
+date: "2009-04-06"
+categories:
+  - "Estadística"
+---
+
+1. Dada (pffff, ¿quién se la dio?) una muestra aleatoria de $ n $ variables con distribución normal $(\mu, \sigma^2)$ ¿Cuál es la distribución de la media muestral? La respuesta más común es que si la varianza es conocida, entonces la media muestral tiene una distribución normal; si la varianza es desconocida, entonces la media muestral sigue una distribución $ t $-Student con $ n-1$ grados de libertad.
+
+R: / Falso. John Cook afirma que nuestra ignorancia acerca de $\sigma $ no cambia la distribución de los datos. Una combinación lineal de variables aleatorias con distribución normal es otra variable aleatoria con distribución normal y punto.
+
+2. Si $[3,4]$ es un intervalo de confianza del 95% para el parámetro $\theta $, entonces la probabilidad de que el parámetro se encuentre en ese intervalo específico es de 0.95.
+
+R: / Falso. En primer lugar los extremos de los intervalos de confianza son variables aleatorias. La interpretación de los intervalos de confianza frecuentistas se refiere al intervalo de la distribución muestral para $\theta $ tal que, dados los datos observados, se podría esperar que el 5%de las futuras estimaciones de $\theta $ no pertenecieran a dicho intervalo. La interpretación del enunciado estaría correcta si se tratase de intervalos de credibilidad.
+
+3. El valor $ p $ es la probabilidad de rechazar la hipótesis nula.
+
+R: / Falso. El enfoque tradicionalista, de Fisher, Neyman y Pearson, sugiere fijar una hipótesis primaria $ H_0$ y una hipótesis alternativa $ H_a $. Después de determinar una estadística apropiada $ T(Y)$, se procede a calcular la significación observada, más conocida como valor $ p $ y definido como $\Pr{T(Y)>T(Yobs)|\theta, H_0}$. Si el valor $ p $ es más pequeño que un error Tipo I predeterminado, entonces la hipótesis $ H_0$ se rechaza.
+
+4. Si el valor $ p $ es mayor que el error Tipo I, entonces $ H_0$ se acepta.
+
+R: / Falso, muy falso. Una cosa es que los datos no ofrezcan evidencia en contra de $ H_0$ y otra es que $ H_0$ sea cierta. Y de una cosa a la otra hay mucho, pero mucho, muchísmo camino. Lo repito una vez más no es lo mismo… nunca será lo mismo. Carlin (1996) lo explica de la siguiente manera. Un valor $ p $ pequeño indica que la hipótesis alternativa tiene un poder de explicación significativamente mayor. Sin embargo, un valor $ p $ grande no sugiere que las dos hipótesis sean equivalentes, sino que se carece de evidencia para afirmar que no lo són.

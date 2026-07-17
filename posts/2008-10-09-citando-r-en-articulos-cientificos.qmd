@@ -1,0 +1,12 @@
+---
+title: "Citando R en artículos científicos"
+author: "Andrés Gutiérrez"
+date: "2008-10-09"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Es cierto que R es el más usado de los lenguajes estadísticos en los artículos de publicaciones seriadas. Sin embargo, también es cierto que, aunque es un software gratis, es necesario citarlo si lo hemos usado para usufructúo personal. No nos cuesta nada abrir el programa y darle la siguiente instrucción:
+
+citation()   El resultado será:  R Development Core Team (2008). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. ISBN 3-900051-07-0, URL http://www. R-project.org.    Si se está trabajndo en LaTeX, específicamente con el módulo BibTeX, el resultado será el siguiente: @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Development Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2008}, note = {{ISBN} 3-900051-07-0}, url = {http://www. R-project.org}, } Si además de usar el ambiente de R, hemos recurrido a la utilización de algún paquete avalado por CRAN, la siguiente instrucción dará cuenta de la forma de citación pertinente citation("pckgname") Por ejemplo, al usar el paquete MASS, citation("MASS") dará el siguiente resultado: Venables, W. N. & Ripley, B. D. (2002) Modern Applied Statistics with S. Fourth Edition. Springer, New York. ISBN 0-387-95457-0 Y para BibTeX en LaTeX: @Book{, title = {Modern Applied Statistics with S}, author = {W. N. Venables and B. D. Ripley}, publisher = {Springer}, edition = {Fourth}, address = {New York}, year = {2002}, note = {ISBN 0-387-95457-0}, url = {http://www.stats.ox.ac.uk/pub/MASS4}, } Ya no hay excusa para no citar R, el más grande contribuidor de la ciencia estadística computacional en los últimos tiempos.

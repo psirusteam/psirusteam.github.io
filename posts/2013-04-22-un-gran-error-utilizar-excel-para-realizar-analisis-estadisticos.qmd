@@ -1,0 +1,21 @@
+---
+title: "Un gran error: utilizar Excel para realizar análisis estadísticos"
+author: "Andrés Gutiérrez"
+date: "2013-04-22"
+categories:
+  - "Estadística"
+---
+
+Hace poco leí una discusión que debo traer a colación en este espacio. Lo hago porque sé que muchos de nosotros utilizamos hojas de cálculo para realizar nuestros análisis estadísticos. Aunque el título de la entrada se refiere a MS Excel, usted también puede caer en este error si usa hojas de cálculo en programas estadísticos más sofisticados como Minitab, SPSS, StatGraphics, entre otros.
+
+Sin embargo, el estadístico que utiliza MS Excel está cometiendo, quizás sin saberlo, un gran error puesto que se ha mostrado ([acá](http://spssca.com/yahoo_site_admin/assets/docs/The_Risk_of_Using_Spreadsheets_for_Statistical_Analysis.148153413.pdf) y [acá](http://www.pages.drexel.edu/~bdm25/excel2007.pdf)) que MS Excel no arroja estimaciones correctas para algunos modelos estadísticos. En particular, el NIS ([National Institute of Standards and Technology](http://www.nist.gov)) provee varios conjuntos de datos para que los analistas de información estadística corroboren que sus modelos y sus herramientas están calibrados y por ende, el proceso de estimación e inferencia sea correcto. En algunos modelos de regresión no lineal, entre otros, el desempeño de MS Excel no es el mejor.
+
+Ahora, los usuarios de hojas de cálculo en MS Excel, o en cualquier otro software estadístico, deben saber que existen políticas de análisis estandarizadas, como las normas ISO, entre otras, que propenden por el buen uso de los modelos estadísticos. Entre estas características están la reproducibilidad (replicar o reproducir un análisis por cualquier persona ajena al estudio) de los resultados obtenidos y la trazabilidad (serie de procedimientos que permiten seguir el proceso de evolución de un producto en cada una de sus etapas). Es decir que, aunque el software sea correcto en sus estimaciones, se debe garantizar las anteriores características, lo cual es imposible a no ser que el error humano sea minimizado.
+
+Por lo anterior, si en su empresa o institución usted quiere cumplir a satisfacción con los estándares internacionales de análisis de datos, es menester que empiece a documentar todos sus procesos con la utilización de sintaxis estadística que le permita reproducir sus análisis repetidas veces y obtener siempre los mismos resultados.
+
+Esto es fundamental, por ejemplo, en el sector de evaluación de políticas públicas, en donde todo debería estar documentado. Hace algunos años, como asesor del gobierno en temas de muestreo, me enfrenté a una situación parecida. El consultor privado, había seleccionado una muestra, a mi juicio no probabilística (puesto que algunos municipios del país sospechosamente había ya sido seleccionados en varios ejercicios anteriores), aunque él declaraba que en efecto era probabilística. Yo requerí que por favor me enviase los códigos computacionales que había utilizado para inducir esa muestra. La respuesta del consultor: "no tengo el código". Además de sospechoso, todo el asunto culminó con una política interna en donde se exige que el consultor, no sólo socialice los códigos de los análisis estadísticos (como regresiones, método multivariados, etc.) sino que, sustente incluso la selección de una muestra.
+
+Por último, [como un ejemplo actual de esta problemática](http://finance.fortune.cnn.com/2013/04/17/rogoff-reinhart-excel-errors/), tenemos a dos reconocidos investigadores de Harvard, Reinhart y Rogoff (este último en la foto del encabezado de esta entrada), que utilizaron hojas de cálculo para sustentar una teoría económica de austeridad que ha impactado todo el mundo occidental. Ellos concluyeron en 2010, con ayuda de MS Excel, que cuando la deuda de un país alcanza el 90% de su producto interno bruto, el crecimiento económico decrece significativamente. Tiempo después, [un estudiante los desmintió](http://www.bbc.co.uk/news/magazine-22223190) y esto ha generado una respuesta mediática bastante grande.
+
+¡Piénselo dos veces cuando abra el MS Excel! No quisiera usted estar en los zapatos desacreditados de estos dos investigadores que ahora, andan dando entrevistas de porqué sí o porqué no omitieron en el análisis algunos datos.

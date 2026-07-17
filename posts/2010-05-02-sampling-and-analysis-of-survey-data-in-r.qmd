@@ -1,0 +1,13 @@
+---
+title: "Sampling and analysis of survey data in R"
+author: "Andrés Gutiérrez"
+date: "2010-05-02"
+categories:
+  - "Estadística"
+---
+
+A few years ago when I was attending sampling I and sampling II at Universidad Nacional de Colombia, in Bogotá, I wondered if, as in traditional statistical methods - such as regression, correlation analysis or t tests – there would be some software that would make estimation of totals or means for different sampling designs. My search began in SPSS, Minitab, Statgraphics, among others. The result was disappointing but motivating. Indeed, at that time did not exist a friendly software to make inferences about the total or means. Now, thanks to the advantages of R and SAS there are multiple choices that allows you to focus on the survey design and overlook the difficult task of programming.
+
+[By clicking here, you will find a presentation](http://www.box.net/shared/8ukg04i8uq) that includes, in this first installment, the design and analysis of a survey for basic sampling designs. The inference is implemented with the help of a sampling frame of elements. This can be a useful aid for both students and teachers of sampling surveys, but can also be used by professionals in the design and analysis of surveys.
+
+The aim of the presentation is to know the advantages and disadvantages of the main strategies of sampling when elements sampling frames are available. Topics: R, Marco and Lucy, Bernoulli sampling, simple random sampling, simple random sampling with replacement, systematic sampling.

@@ -1,0 +1,17 @@
+---
+title: "El mejor empleo del mundo"
+author: "Andrés Gutiérrez"
+date: "2009-02-02"
+categories:
+  - "Estadística"
+---
+
+Francisco García, estudiante de la Licenciatura de Ciencias y Técnicas Estadísticas de la Universidad de Granada (España), me ha contactado y me dado una muy buena noticia: se refiere a un artículo que es resultado de un estudio que concluye que los estadísticos tienen los mejores empleos de EE. UU. Me alegro profundamente por nuestra profesión y por nuestros colegas americanos (escribo americanos porque estoy seguro que este fenómeno se repite a lo largo de todo continente americano).
+
+Francisco escribe:
+
+> Entro en tu blog a menudo, la cosa es que esta mañana he entrado en la página de la titulación y en el panel de noticias entre otras venía el siguiente artículo ([de clic acá para ver el artículo](http://online.wsj.com/article/SB123119236117055127.html)). Lo he visto y me ha parecido interesante enviártelo por si no lo habías visto. Es un estudio que han realizado donde evalúan 200 carreras profesionales en EEUU. En primera posición se encuentra matemáticas, pero lo más importante [y lo] que llama la atención es que en tercera posición se encuentra Estadística. Aquí nos ha llamado mucho la atención porque los estadísticos en España no son muy conocidos, de hecho la Diplomatura de Estadística y la Licenciatura son completamente desconocidas para todo el mundo, y en el campo profesional tienes que desplazarte a las principales ciudades españolas como Madrid, Barcelona, Valencia, para poder encontrar una ocupación que supere la administración de oficina de una empresa.
+
+Yo añado lo siguiente:
+
+En primer lugar, no es raro que los estadísticos Norteamericanos estén muy bien posicionados, no sólo económicamente pues el estudio tuvo en cuenta cinco criterios inherentes a cualquier trabajo, a saber: entorno y ambiente, ingreso, demandas físicas, estrés y perspectivas de empleo. Pienso que éste es un resultado de la cultura de la unidad gestionada a través de sus asociaciones estadísticas que, en efecto, sí sirven para muchas cosas. Yo estoy seguro que si en el mundo de habla hispana nos unimos de igual forma, el resultado será el mismo. No quiero decir con esto que hagamos un vulgar pastiche de la ASA, sino que imitemos, de forma conveniente, su capacidad de unificación y trabajo en equipo. En segundo lugar, me alegra sobremanera que, cada día que pasa, son más y más los comentarios y correos electrónicos que recibe este blog. Esto es prueba de que éste es un espacio en donde los estadísticos (y gente relacionada con el oficio de la estadística) de habla hispana se unen para discutir, opinar y criticar. Lo anterior quiere decir que sí es posible y este blog, valga escribirlo una vez más, es prueba de la unidad.

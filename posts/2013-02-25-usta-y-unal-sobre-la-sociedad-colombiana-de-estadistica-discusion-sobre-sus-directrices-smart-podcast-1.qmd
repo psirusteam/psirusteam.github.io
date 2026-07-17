@@ -1,0 +1,25 @@
+---
+title: "USTA y UNAL sobre la Sociedad Colombiana de Estadística: discusión sobre sus directrices... (SMART - Podcast #1)"
+author: "Andrés Gutiérrez"
+date: "2013-02-25"
+categories:
+  - "Estadística"
+---
+
+[Sociedad Colombiana de Estadística: discusión sobre sus directrices](http://www.gutierrezandres.com/wp-content/uploads/2013/02/PGM-01-SMARTH-20-02-13.mp3)
+
+La semana pasada se transmitió el primer programa de SMART (*Statistics, Mathematics, Academics and Radio Transmission*) con un nuevo formato de debate Este programa es producido por la Facultad de Estadística de la Universidad Santo Tomás. Los siguientes, fueron los invitados al programa:
+
+- Profesor Luis Alberto López Pérez (UNAL), PosDoctor en la universidad de California y doctor en estadística experimental de la universidad de sao Paulo, con experiencia en la docencia de mas de 20 años. Investigador y ex director curricular de la carrera de estadística en la universidad nacional.
+
+- Profesor Jorge Ortiz Pinilla (USTA), Doctor en informática - opción estadística - de la universidad de Nancy en Francia, Docente de la Universidad Santo Tomás sede Bogotá y por mas de 30 años docente de la universidad nacional de Colombia, con investigaciones y libros publicados.
+
+- Profesora Violeta Rosa Zuluaga (USTA), Cadena Administradora de Empresas de la Universidad Javeriana, especialista en Finanzas, especialista en mercadeo de capitales y Magister en Administración. Experiencia en áreas comerciales, y del mercado del sector real y financiero. Diez años de experiencia docente tanto en posgrado como en pregrado.
+
+- Profesor Andrés Gutiérrez (USTA), Decano de la Facultad de Estadística de la Universidad Santo Tomás, candidato a Doctor y Magister de estadística de la Universidad Nacional, autor de artículos y producción bibliográfica, con experiencia como consultor estadístico en el sector público y privado.
+
+- Denis López, estadístico de la Universidad Nacional, con mas de 25 años de experiencia laboral del sector público y privado, promotor del software libre y miembro de la [fundación corre libre](http://www.correlibre.org/co/). Asesor en temas de aseguramiento de la calidad estadística del DANE.
+
+- Jose Fernando Zea (USTA), magister en estadística, experiencia laboral en el sector público y privado docente de la Universidad Santo Tomás.
+
+- J. Andrés Flórez Gutíerrez (USTA), estudiante de estadística de la Universidad Santo Tomás de séptimo semestre.

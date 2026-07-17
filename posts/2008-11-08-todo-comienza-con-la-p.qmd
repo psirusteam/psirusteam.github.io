@@ -1,0 +1,30 @@
+---
+title: "Todo comienza con la \"p\""
+author: "Andrés Gutiérrez"
+date: "2008-11-08"
+categories:
+  - "Estadística"
+  - "Probability"
+---
+
+Andrew Gelman comenta que John Cook comenta que,
+
+Existe sólo un símbolo importante en estadística, $ p $. El mismo símbolo representa todo. Simplemente se debe usarlo y darse cuenta cuál $ p $ es cual, pues pueden provenir de diferentes contextos… Un ejemplo claro en donde $ p $ representa cuatro funciones distintas en una sola ecuación es el siguiente:
+
+$ p(\theta|x)=p(x|\theta)\frac{p(\theta)}{p(x)}$
+
+Usualmente, la regla de Bayes no requiere de mucha explicación. Sin embargo, en la anterior ecuación cada p denota funciones que son totalmente diferentes, aunque compartan el mismo símbolo. Los autores prefieren este tipo de escritura para evadir la notación engorrosa que requeriría la escritura completamente explícita.
+
+A veces, la sobrecarga de la decimonovena letra del alfabeto se convierte en un lastre y los estadísticos cambian de notación y de alfabeto y usan la contraparte griega $\pi $. Aunque esto a veces hace las cosas un poco más confusas.
+
+En su libro, *Bayesian Data Analysis*, Andrew Gelman, explica por qué la notación simple, con el uso (a veces abuso) de la letra p es más rigurosa de lo que, a simple vista, pueda parecer y comenta que,
+
+En realidad no me gusta la notación que la mayoría de los estadísticos usan… $ f $, para distribuciones de muestreo, $\pi $, para distribuciones a priori y $ L $, para verosimilitudes. Este estilo de notación se desvía de lo que realmente es importante. La notación no debería depender del orden en que las distribuciones son especificadas. Todas ellas son distribuciones de probabilidad, eso es lo realmente importante.
+
+Esto tiene sentido, aún más cuando se estudian las propiedades estadísticas de los estimadores desde el punto de vista de la teoría de la medida. Siendo así, el símbolo p se refiere a una notación para una medida de probabilidad, quizás inducida por un elemento aleatorio. De hecho, en la ecuación que determina la regla de Bayes, cada una de las $ p $ son medidas de probabilidad que no comparten el mismo espacio de medida (ni la misma $\sigma $-álgebra, ni el mimo espacio muestral ).
+
+De hecho, todo queda claro al realizar un diagrama que permita ver el espacio de salida y el espacio de llegada de los elementos aleatorios que inducen (si es el caso), cada una de las distribuciones de probabilidad. Por otra parte, Bob Carpenter, concluye que
+
+[Una vez resuelto el problema de identificación de los espacios] la notación estadística depende en gran manera del contexto y aunque la regla de Bayes no necesite de mucha explicación, es necesario conocerlo todo acerca del contexto para poder interpretar las funciones que la conforman… El problema se hace mucho más agudo para los estadísticos novatos, pero eso se resuelve con la práctica. Una vez que uno sabe lo que está haciendo, se vuelve obvia la referencia de la distribución $ p $.
+
+Por lo anterior, es natural que algunos de los textos clásicos de estadística matemática, parezcan olvidar el contexto de las diferentes medidas de probabilidad. En realidad no es que lo olviden, lo que pasa es que los autores no son novatos y asumen que el lector sigue la idea de la referencia de la $ p $ en cuestión. Sin embargo, y lo digo por mi y sólo por mí, sería mejor que no asumieran esa idea. De esta manera, el estudio de estos textos sería un poco menos denso.

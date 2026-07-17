@@ -1,0 +1,24 @@
+---
+title: "El sofisma frecuentista"
+author: "Andrés Gutiérrez"
+date: "2010-04-25"
+categories:
+  - "Estadística"
+---
+
+Milan Kundera, "antiguo colaborador" expresa algunos de mis razonamientos en su magnífica obra: Primero: definición del espacio muestral:
+
+> Existe en el reino de lo posible una cantidad infinita de amores no realizados por otros hombres.
+
+Segundo: Definición del concepto de variable aleatoria y realización:
+
+> Hace siete años se produjo casualmente en el hospital de la ciudad de Teresa un caso de enfermedad cerebral… en la ciudad había cinco hoteles, pero Tomás fue a parar justo a aquel donde trabajaba Teresa, casualmente le sobró un poco de tiempo para ir al restaurante. Teresa casualmente estaba de servicio y casualmente atendió la mesa de Tomas, hizo falta que se produjeran seis casualidades para empujar a tomas hacia Teresa, como si él mismo no tuviera ganas.
+
+Tercero: Teoría de los sucesos aleatorios y falencias frecuentistas:
+
+> ¿Cómo podía saberlo? ¿Cómo podía comprobarlo? Cualquier colegial podía hacer experimentos durante la clase de física y comprobar si determinada hipótesis científica es cierta. Pero el hombre dado que vive sólo una vida, nunca tiene la posibilidad de comprobar una hipótesis mediante un experimento y por eso nunca llega a averiguar si debía haber prestado oído a un sentimiento o no…
+>
+>
+> El hombre nunca puede saber qué debe querer porque vive sólo una vida y no tiene modo de compararla con sus vidas precedentes ni enmendarla en sus vidas posteriores.
+
+!!! Gracias Milan!!!

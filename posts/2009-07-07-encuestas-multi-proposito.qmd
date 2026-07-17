@@ -1,0 +1,27 @@
+---
+title: "Encuestas multi-propósito"
+author: "Andrés Gutiérrez"
+date: "2009-07-07"
+categories:
+  - "Estadística"
+---
+
+Si los estad¶³sticos te¶oricos hacen caso omiso al reto de enfrentar las
+
+encuestas multi-prop¶osito, entonces el vac¶³o existente entre ellos y
+
+los estad¶³sticos pr¶acticos se har¶a cada vez m¶as grande. El dise~no y
+
+an¶alisis de encuestas multivariantes debe ser una de las pr¶oximas
+
+¶areas de mayor investigaci¶on.
+
+T. M. F. Smith (1976)
+
+> Si los estadísticos teóricos hacen caso omiso al reto de enfrentar las encuestas multi-propósito, entonces el vacío existente entre ellos y los estadísticos prácticos se hará cada vez más grande. El diseño y análisis de encuestas multivariantes debe ser una de las próximas áreas de mayor investigación.
+>
+>
+>
+> T. M. F. Smith (1976)
+
+[Haciendo clic acá](http://predictive.files.wordpress.com/2008/12/2009-estimation-stage.pdf) encontrará un reciente artículo que reúne una introducción a la motivación de investigación que hizo uno de los personajes más influyentes en la escena estadística mundial, el profesor Smith, quien discutió acerca de los fundamentos de la teoría del muestreo, desde sus primeros años hasta las últimas tendencias en cuanto a predicción y estimación en poblaciones finitas. En sus múltiples artículos, Smith afirmó que en el muestreo, los problemas univariados (estimación de un parámetro desconocido para una sola característica de interés) se encuentran en unas cuantas ramas de aplicación, limitadas a encuestas de opinión pública, muestreo industrial de aceptación y muestreo en auditorías. Sin embargo, la gran mayoría de encuestas que se realizan alrededor del mundo son de tipo multi-propósito (estimación de varios parámetros desconocidos para varias características de interés). El profesor Smith tuvo en cuenta la limitación que presentan los grandes textos clásicos del muestreo al no considerar este tipo de estudios ni incluirlos en sus páginas y llamó la atención a los teóricos del muestreo a realizar investigación formal en este tipo de tópicos como lo muestra la motivación al principio de esta entrada.

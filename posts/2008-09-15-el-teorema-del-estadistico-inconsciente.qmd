@@ -1,0 +1,20 @@
+---
+title: "El teorema del estadístico inconsciente"
+author: "Andrés Gutiérrez"
+date: "2008-09-15"
+categories:
+  - "Estadística"
+  - "Probability"
+---
+
+La esperanza de una variable aleatoria, uno de los conceptos más importantes y poderosos de la teoría estadística, parecería tener dos definiciones distintas, dependiendo del nivel académico en que sea vista. Por una parte, está la definición desde el punto de vista de la teoría de la medida. Por ejemplo, Shao (2003, p. 11) afirma que la esperanza o valor esperado de una variable aleatoria continua X está dado por la siguiente expresión:
+
+$\E(X)=\int_{Omega}XdP. $
+
+Sin embargo, la anterior definición difiere con la de un libro de texto clásico de probabilidad como Mood, Graybill & Boes (1963, p. 69), en donde la esperanza de una variable aleatoria estáa dada por la siguiente expresión:
+
+$\E(X)=\int_{\mathbb{R}}xf_X(x) dx. $
+
+Es claro que las dos definiciones no concuerdan a simple vista y la demostración de este resultado no es trivial ni obvia. [Haciendo clic acá](http://predictive.files.wordpress.com/2008/09/esperanza.pdf) encontrará un manuscrito que escribí para que yo mismo pudiera entender este gran resultado. Para ello, he hecho un breve repaso de algunos resultados útiles de la teoría de la medida. Espero que la demostración sea clara y, por qué no, sirva para tenerla a la mano cuando alguien nos pregunte acerca de la equivalencia de estas definiciones.
+
+[Jhon Cook](http://www.johndcook.com/blog/2008/06/27/two-definitions-of-expectation/) afirma que el resultado que liga a estas dos definiciones es llamado la **ley del estadístico inconsciente**puesto que éste es aplicado tan frecuentemente que se hace de manera inconsciente e indiferente. Él ha escrito una prueba en cuatro renglones, que sinceramente no entendí (aunque, con toda seguridad, es una prueba muy bien estructurada). Esa entrada de Jhon Cook fue la motivación para desarrollar esta demostración que es un poco más terrenal y hace uso de conceptos más básicos.

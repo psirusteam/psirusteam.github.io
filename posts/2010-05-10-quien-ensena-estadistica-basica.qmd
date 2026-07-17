@@ -1,0 +1,17 @@
+---
+title: "¿Quién enseña estadística básica?"
+author: "Andrés Gutiérrez"
+date: "2010-05-10"
+categories:
+  - "Estadística"
+---
+
+En respuesta a un [muy citado artículo del profesor Meng](http://predictive.files.wordpress.com/2010/05/tast-2009.pdf) en 2009 (Temido y deseado, ¿qué hacemos ahora y durante los próximos 50 años?), el doctor [Frank Soler escribió un corto ensayo](http://predictive.files.wordpress.com/2010/05/tast-2010.pdf) acerca de uno de los puntos críticos de los que habla Meng. En esta ocasión, Soler toca el tema de los profesores que enseñan estadística básica (refiriéndose a los cursos que se desarrollan en carreras como ingeniería o economía). En su ensayo, afirma que, a pesar de ser una ciencia joven, la estadística ha tenido un crecimiento asombroso, de alguna manera, representado en el número de estudiantes que se enrolan en un curso introductorio. En sus cálculos, él asume que anualmente cuatro mil estudiantes asisten a los cursos básicos de estadística que ofrece el departamento de matemáticas y estadística de la institución donde labora. Para servir estos cursos, alrededor de 20 o más profesores son contratados como docentes y de estos, sólo seis tienen un diploma de pregrado en estadística, el resto del cuerpo docente lo constituyen matemáticos con poca experiencia en el manejo de datos.
+
+El doctor Meng, en su artículo hace un llamado a corregir este tipo de situaciones, y es un llamado específico a los estadísticos para que enseñen estadística en todos los niveles y afirma que
+
+> Los profesores estadísticos más competentes (en el sentido profesional y pedagógico) deberían enseñar cursos de estadística básica
+
+Al respecto, yo creo que es posible que esta situación mejore en el corto plazo. En la Universidad Santo Tomás existe un departamento de ciencias básicas encargado de los cursos de matemáticas y estadística introductoria. Con el pasar del tiempo, la Facultad de Estadística está tomando esos cursos de servicios y los está administrando con su propio cuerpo docente. Cabe aclarar que la mayoría de docentes son estadísticos, aunque hay unos cuantos matemáticos que tienen una muy buena perspectiva del manejo de datos. Los cursos básicos no pueden ser abandonados a la deriva y tienen que ser una motivación para que el estudiante sea un mejor profesional… Ahora, esto sólo se logra si los docentes les hablan del trabajo estadístico en el día a día, del manejo de la información y de cómo su profesión se ve involucrada con la nuestra y, como consecuencia directa, su impacto en los niveles de la sociedad o de la empresa. En este momento, la Facultad atiende por semestre a más de dos mil estudiantes y ya empieza a fortalecerse como un cuerpo serio dentro de la institución.
+
+El problema ahora no es atraer a los estudiantes a tomar un curso de estadística. De alguna manera, cada vez más el manejo cuantitativo de datos en el mundo profesional hace que los estudiantes se vean en la obligación de tomar esta clase de cursos. Por el contrario, el problema ahora es quién está dictando esos cursos… Deben hacerse los esfuerzos necesarios para que estos cursos estén a cargo de personas idóneas que entiendan la problemática estadística y no sólo se limiten a exponer fórmulas matemáticas sin sentido práctico, puesto que, como lo afirma Soler, estamos en el momento de la masa crítica y nuestra atención sobre este tema puede determinar si la estadística será deseada o temida en 50 años.

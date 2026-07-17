@@ -1,0 +1,11 @@
+---
+title: "Diagrama de torta"
+author: "Andrés Gutiérrez"
+date: "2009-08-26"
+categories:
+  - "Estadística"
+---
+
+Tukey estaría orgulloso de esta clase de gráficos porque simplemente no hay nada que explicar... los datos hablan por sí solos de la realidad que hay detrás de este contexto...
+
+Tomado de: http://tongodeon.livejournal.com/583338.html

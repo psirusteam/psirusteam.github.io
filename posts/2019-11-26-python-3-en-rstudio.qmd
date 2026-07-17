@@ -1,0 +1,24 @@
+---
+title: "Python 3 en RStudio"
+author: "Andrés Gutiérrez"
+date: "2019-11-26"
+categories:
+  - "Python"
+  - "Software"
+---
+
+*Interfaz de Python con RStudio*
+
+Hace algunos años que tenía la tarea pendiente de involucrarme con este lenguaje de programación. Mi experiencia con `Python `se puede resumir en que muchas veces intenté utilizarlo (en la academia, en mi trabajo, en investigaciones) pero siempre me veía abrumado con un sinfín de programas en mi computador que venían con las recomendaciones de instalación típicas. Al descargar [Anaconda](https://www.anaconda.com/distribution/) inmediatamente se abre una suite que trae una cantidad de aplicaciones como `Spyder`, `Jupyter`, `R`, entre otros. Pero, ¿y dónde está Python? Ya quiero comenzar a programar y no es intuitivo en dónde se debe escribir el código. Quienes como yo son nativos de `R `podrán entenderme. En general, para usar `R`, simplemente se descarga del CRAN y listo, ¡a programar! En últimas, si se quiere ser más exquisito, se descarga `RStudio `y listo, ¡a usarlo! Con `Python `es diferente y me negaba a tener que ocupar espacio de memoria en mi computador con programas que no iba a usar.
+
+Sin embargo, con las nuevas actualizaciones de `RStudio`, que ahora traen una interfaz para `Python`, descubrí que efectivamente sí podría empezar a utilizarlo en mi MAC. El proceso de configuración es bastante sencillo. Ahí les va.
+
+1. Instalar [Python3](https://www.python.org/downloads/).
+
+2. Es posible que el computador tenga una versión anterior a `Python`, por lo tanto hay que hacer algunas configuraciones en el **terminal**. Ademas vamos a descargar [pip](https://pypi.org/project/pip/)(el sistema de gestión estándar utilizado para instalar y administrar librerías escritas en `Python`) para poder cargar las librerías necesarias. - `which python3 ` - `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` - `python3 get-pip.py`
+
+3. Desde el mismo terminal se descargan e instalan las librerías. Para hacer análisis de datos las librerías [`numpy`](https://numpy.org/), [`pandas `](https://pandas.pydata.org/) y [`matplotlib `](https://matplotlib.org/) son imprescindibles. - `pip3 install numpy ` - `pip3 install pandas ` - `pip3 install matplotlib`
+
+4. Luego vamos a RStudio e instalamos la libreria `reticulate`, que es la interfaz para Python. Se debe asegurar que desde RStudio el enlace se haga con la versión apropiada de Python 3. Así que en RStudio ejecutamos las siguientes dos líneas de código: - `library(reticulate)` - `use_python("/ruta_de_Python3/python3", required = T)` - `py_config()`
+
+Bien, es hora de ir a `RStudio > Archivo > Nuevo Script de Python `y listo. Les iré contando cómo es mi experiencia con este lenguaje. Aunque en primera instancia puedo asegurar que la interfaz con `RStudio `es bastante potente, las ayudas de las funciones marchan bien, los gráficos aparecen en el panel usual y `RMarkdown `se ejecuta bien con códigos conjuntos de `R `y `Python`.

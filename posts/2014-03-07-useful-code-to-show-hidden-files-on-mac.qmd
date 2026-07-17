@@ -1,0 +1,19 @@
+---
+title: "Useful code to show hidden files on Mac"
+author: "Andrés Gutiérrez"
+date: "2014-03-07"
+categories:
+  - "Estadística"
+---
+
+Sometimes when you are using RStudio, it automatically creates a. RHistory file that it is not visible to you. To show hidden files on Mac just type the following command on your terminal:
+
+```
+defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder
+```
+
+To hide those files, just type the following code on your terminal:
+
+```
+defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder
+```

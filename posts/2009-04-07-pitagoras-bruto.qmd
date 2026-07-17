@@ -1,0 +1,79 @@
+---
+title: "¡Pitágoras bruto!"
+author: "Andrés Gutiérrez"
+date: "2009-04-07"
+categories:
+  - "Estadística"
+---
+
+En esta semana de reflexión les dejo este mensaje [anónimo](https://web.archive.org/web/20090414025650/http://predictive.wordpress.com/2008/08/27/nueva-revista-de-estadistica/#comments) que llegó a mi correo electrónico… En verdad me ha hecho pensar mucho… ahí les va:
+
+> Ya lo afirma Andrew Gelman en su excelente libro *Teaching Statistics*, si Pitágoras hubiese estudiado estadística… YO opino que si eso hubiese pasado, él nunca habría postulado tan grande estupidez (aunque en realidad fueron sus discípulos quienes enunciaron tal falacia). Falacia y gran mentira puesto que desde hoy yo he tumbado el famoso teorema de Pitágoras. Como decía un gran maestro en una gran universidad… *me acabo de tomar un tinto y he tumbado* la teoría milenaria de Pitágoras. De paso, voy a demandar al ministerio de educación por lavarle la mente a los indefensos niños… pobres criaturas que nada pueden hacer ante la conspiración de un gobierno que no tiene en cuenta el desarrollo de tan grande y todopoderosa ciencia… la estadística.
+>
+>
+> Voy a publicar mi descubrimiento en una gran revista… [no en una *revistica*](2009-02-10-publicaciones-colombianas-online.qmd) como esas que han salido en [el último año](https://web.archive.org/web/20090414025650/http://predictive.wordpress.com/2008/08/27/nueva-revista-de-estadistica/) en Colombia, dizque para incentivar la investigación de mediocres profesorcitos que jamás saldrán de Cundinamarca… lo mío es grande, es muy grande y digno de la alta alcurnia de la literatura estadística… tal vez JASA o la Royal se ajustan a lo que yo quiero. Si mi universidad me patrocina, me voy directo a las *Joint Statistical Meetings* que tendrán lugar en Washington… esa será la oportunidad que la ciencia estaba esperando… conocerme a mí. De otra forma, si no consigo apoyo, pues renuncio y me largo al otro lado del charco. Yo sé que allá, en el marco de alguna conferencia del simposio internacional de estadística expondré mi descubrimiento y será muy fácil conseguir trabajo en una universidad de renombre que merezca todo mi saber y mi excelente carisma.
+>
+>
+> Por otro lado, voy a callarle el pico de una vez por todas a todos aquellos que no creen en la [significación estadística](2009-01-26-mala-practica-de-las-pruebas-de-hipotesis.qmd)… ¡Brutos!... deberían entregar el título… sobre todo ese tal Andrés que, siendo estadístico, le echa pestes y pestes a la ciencia que le da de comer... estoy harto de los blogs y de páginas mediocres que discuten sumitas, resticas y, a lo más, derivadas… ¿y yo qué? Jamás me han mencionado en esas entradas, lo cual demuestra la mediocridad del autor.
+>
+>
+> Bueno, al grano… después de muchas simulaciones, he descubierto que el teorema de Pitágoras carece de sentido estadístico… es decir, es una mentira. Por ahí dicen y recalcan que la estadística debe tener sentido desde el punto de vista del usuario… jajajaja… que error tan grave… a continuación lo demostraré. Es más, lo demostraré en **R**.
+>
+>
+> Me encontré los siguientes datos, que provienen de Pitágoras… yo no sé… pero no me importa la teoría de ese tío… a mí me importan los datos. Los datos de las dos variables explicativas, que las llaman catetos, son
+>
+>
+>
+> > x
+>
+> [1] 2.731734 2.063456 1.254018 2.084789 1.301384 1.938547 2.549817 1.144791
+>
+> [9] 1.947545 2.067407 2.493400 2.074311 2.816731 2.457791 2.093760
+>
+> > z
+>
+> [1] 7.234464 6.297769 8.205349 8.614326 7.502430 4.783516 4.360439 6.457423
+>
+> [9] 4.766488 6.089330 6.560284 6.691666 4.075007 4.113226 4.387267
+>
+> Y los datos de la variable respuesta, que la llaman hipotenusa o algo así, son
+>
+>
+>
+> > y2
+>
+> [1] 59.79984 43.91974 68.90031 78.55295 57.98006 26.63999 25.51499 43.00886
+>
+> [9] 26.51234 41.35411 49.25436 49.08116 24.53966 22.95936 23.63194
+>
+> Me han pagado una suma considerable de dinero para crear un modelo… muy fácil… un modelo lineal… un modelo de regresión… un modelo estadístico.
+>
+>
+>
+> >Call:
+>
+> lm(formula = y2 ~ x + z)
+>
+> Coefficients:
+>
+> Estimate Std. Error t value Pr(>|t|)
+>
+> b0 -40.9131 4.3625 -9.378 7.13e-07 ***
+>
+> x 4.5446 1.2352 3.679 0.00315 **
+>
+> z 12.3628 0.4192 29.490 1.44e-12 ***
+>
+> ---
+>
+> Multiple R-squared: 0.988, Adjusted R-squared: 0.986
+>
+> Con un ajuste del 98% he descubierto que
+>
+>
+> $\hat{Y}=-40.91+4.54X+12.36Z $
+>
+>
+> Que nadie me diga que mi modelo no está bien. Bueno, queridos "colegas"… [voy a patentar](https://web.archive.org/web/20090206234717/http://predictive.wordpress.com/2008/07/06/patentes-bayesianas/) esto… Adios.
+
+Mi respuesta: La regresión múltiple es una herramienta muy potente, incluso sirve para enorgullecer más al estadístico. Qué vaina!!! [Que viva la humildad del gremio](2009-04-04-la-humildad-del-gremio.qmd)!!!

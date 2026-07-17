@@ -1,0 +1,47 @@
+---
+title: "Identificabilidad en modelos bayesianos mixtos y el teorema fundamental de las Cadenas de Markov… ¿puedo usar WinBUGS?"
+author: "Andrés Gutiérrez"
+date: "2012-04-28"
+categories:
+  - "Estadística"
+---
+
+Bien, este es el escenario general… Se tiene un modelo mixto y acudiendo a la fama, uso y fácil e intuitiva programación de WinBUGS, se definen distribuciones previas no informativas para los parámetros del modelo y además para los hiper-parámetros del modelo. Luego se realiza la inferencia Bayesiana. Por ejemplo, suponga el siguiente modelo mixto:
+
+$ y_{ij}|\beta, u_i, \sigma^2_e \sim Normal(\beta+u_i, \sigma^2_e)$ en donde $ u_isim Normal(0, \sigma^2)$
+
+Siendo así, se reescribe la función la función de densidad posterior como el producto de las verosimilitudes con las densidades previas de los parámetros, $\beta $ y $\sigma^2_e $, y de los hiper-parámetros, $\sigma^2$. De esta forma, se tiene que
+
+$ p(\beta, \mathbf{u}, \sigma^2_e, \sigma^2|\mathbf{y}) propto p(\mathbf{y}|\beta, \mathbf{u}, \sigma^2_e) p(\mathbf{u}|\sigma^2) p(\beta) p(\sigma^2_e) p(\sigma^2)$
+
+Una definición muy usada para la distribución previa de los parámetros es la siguiente:
+
+$ p(\beta, \sigma^2_e|\mathbf{y}) propto 1/\sigma^{2}_e $
+
+Con esta distribución previa no informativa, se acude a la multiplicación de todas las verosimilitudes con las distribuciones previas y se utiliza el análisis condicional y el algoritmo de Gibbs para "supuestamente" construir una Cadena de Markov cuya distribución estacionaria coincide exactamente con la distribución posterior. Sin embargo, cuando se utilizan distribuciones previas impropias para los parámetros, resulta que la distribución posterior es también impropia. Lo anterior está demostrado en Hill (1965, Journal of the American Statistical Association, 60, pp 806-825). Por lo anterior, aunque se utilice el algoritmo de Gibbs, la distribución posterior carecerá de sentido puesto que no es integrable y esto implica que no existe una distribución condicional conjunta que coincida con las distribuciones condicionales creadas al utilizar el algoritmo de Gibbs.
+
+Las consecuencias de lo anterior no se hacen esperar. Máxime teniendo en cuenta que el teorema fundamental de las cadenas de Markov, sobre el cual se basa todo el andamiaje de los métodos MCMC, afirma que una cadena de Markov tiene distribución estacionaria si y sólo si todos sus estados son persistentes no nulos y, en ese caso, esa distribución es única. Ahora, un estado es persistente nulo si la esperanza del tiempo medio de recurrencia es infinita. Es decir, en este caso, cuando se presenta un estado persistente no nulo, la cadena de Markov generada mediante el algoritmo de Gibbs no converge en distribución. Sin embargo, dada nuestra restricción para verificar hipótesis en el infinito, es posible que observemos que la cadena ha entrado en una región de muy alta probabilidad, la cual es razonable. Sin embargo, si pudiésemos realizar y observar infinitas realizaciones de la cadena, nos daríamos cuenta de que en realidad esa convergencia jamás se presentó y nunca se presentará.
+
+En conclusión, dado que la distribución posterior es impropia, entonces las cadenas de Markov inducidas por el algoritmo de Gibbs son recurrentes nulas y por tanto no convergerán en distribución. Lo anterior puede ser pasado por alto por la mayoría de estadísticos al utilizar la facilidad del entorno de programación de WinBUGS. Más aún, en esta situación, las aproximaciones de Monte Carlo resultantes pueden parecer completamente razonables, lo cual nos pone en una situación bastante peligrosa puesto que el muestreador de Gibbs nos guiará a inferencias plausibles sobre una distribución que no existe. Por lo tanto, antes de escribir su código en WinBUGS y antes de definir las distribuciones previas de los parámetros es aconsejable realizar un estudio de sensibilidad sobre estas distribuciones previas y sobre todo definirlas de tal forma que sean integrables a priori, como por ejemplo distribuciones normales centradas en cero, pero con una varianza muy grande, o inversas-gama con parámetros muy pequeños. De esta forma, esas distribuciones previas se hacen no informativas de antemano e integrables a priori.
+
+Mejor dicho, cuando escriba su código en WinBUGS, por favor sea cuidadoso y evite usar la siguiente asignación para las distribuciones previas:
+
+```
+Beta ~ dflat()
+Sigma ~ dflat()
+```
+
+En vez de lo anterior mejor asigne las siguientes distribuciones previas:
+
+```
+Beta ~ dnorm(0, 0.0001)
+Sigma ~ dgamma(0.01, 0.01)
+```
+
+Para mayor información acerca de este fenómeno desafortunado, puede remitirse a los siguientes artículos (si no puede conseguirlos en internet, envíeme un correo y yo los comparto con usted):
+
+**– Ibrahim, J. G., and Laud, P. W. (1991), On Bayesian Analysis of Generalized Linear Models Using Jeffreys's Prior, Journal of the American Statistical Association, 86, 981-986.**
+
+**– Hobert, J. P. and Casella, G. (1996), The Effect of Improper Priors on Gibbs Sampling in Hierarchical Linear Mixed Models James P. Hobert and George Casella, Journal of the American Statistical Association, 91, 436.**
+
+**– Gelfand, A. E. and Sahu, S. K (1999), Identiﬁability, Improper Priors, and Gibbs Sampling for Generalized Linear Models, Journal of the American Statistical Association 94, 445 (Mar., 1999), pp. 247-253.**

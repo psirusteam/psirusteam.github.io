@@ -1,0 +1,103 @@
+---
+title: "La aproximación al último conglomerado (parte 2: dominios y estratos)"
+author: "Andrés Gutiérrez"
+date: "2019-06-12"
+categories:
+  - "Encuestas"
+  - "Muestreo"
+  - "R"
+  - "Software"
+---
+
+**Photo by: ** [Matthew Henry](https://burst.shopify.com/@matthew_henry)
+
+Llevo más de diez años escribiendo en este blog acerca de las [importantes implicaciones](2019-05-28-mas-importante-que-el-principio-de-representatividad.qmd) de no tener en cuenta el diseño de muestreo en el análisis de las encuestas. Muchas veces he escrito incluso acerca de las consecuencias en la estimación en términos de sesgo y precisión. [En una entrada anterior](2019-06-08-subgrupos-poblacionales-en-muestreo.qmd) definí las diferencias y similitudes entre los tipos de subgrupos poblacionales que rodean la práctica del diseño y análisis de las encuestas; [una de las diferencias más importantes](2019-06-08-tecnicas-basicas-de-estimacion-en-dominios-vs-enfoque-de-postestratificacion-teachingsampling.qmd) recae en el cálculo de los errores estándar en la estimación de dominios y estratos. En resumen, existe un precio que debe pagarse cuando se desconoce la membresía de los individuos al subgrupo poblacional; es decir, cuando se realiza una estimación en dominios, la varianza es más grande y cuando se realizan estimaciones en estratos, la varianza es mucho menor. Por otro lado, algo que nunca he mencionado en este blog, es que esas diferencias teóricas se encuentran matizadas en la práctica, puesto que en la realidad de las Oficinas Nacionales de Estadística se utilizan programas computacionales que utilizan aproximaciones en la estimación de los errores estándar de los estimadores de interés. [Antes había escrito acerca del uso de las aproximaciones](2019-06-10-la-aproximacion-al-ultimo-conglomerado-parte-1.qmd), en particular abordé el tema de la técnica del último conglomerado, que es utilizada por la mayoría de programas computacionales.  En todas las entradas que se relacionan con este tema hay un común denominador: cuando se trata de estimar la varianza de un estimador, la estimación dentro de los estratos arroja menores coeficientes de variación que la estimación dentro de los dominios. Y es que hay un precio que hay que pagar ante el desconocimiento de la membresía de las unidades del marco de muestreo a los subgrupos poblacionales. En particular, el estimador de la varianza del último conglomerado cumple con esta regla. El autor de la librería `survey` de `R`, plantea que cuando se trata de la estimación en dominios, la varianza involucra una cierta cantidad de ceros para todas aquellas unidades que no pertenecen al dominio.
+
+> Operationally, this means that variance estimation in a subset of a survey design object in R needs to involve [several]zero contributions to an estimating equation... For simpler design objects, the observations outside the domain are discarded by `subset()`, and zero entries are added at the time of variance estimation.
+>
+> Thomas Lumley, 2010. Complex Surveys: a Guide to Analyzing Using R.
+
+Recuerde que la forma funcional de la aproximación del último conglomerado es la siguiente:  $\wide\hat{\Var}(\hat{t}_y)=\sum_{h=1}^H \frac{n_{Ih}}{n_{Ih} -1}\sum_{i \in sI_h}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h} \right)^2$  Cuando se requiere una estimación sobre un subgrupo poblacional que coincide con un estrato $ h'$ (o es una agregación de estratos), y teniendo en cuenta que los individuos de las UPMs que no son de este estrato tomarán un valor nulo, tanto en para la estimación del total, como para la aproximación de la varianza, entonces la forma de la aproximación se escribe de la siguiente manera:  $\wide\hat{\Var}(\hat{t}_y)=\frac{n_{Ih'}}{n_{Ih'} -1}\sum_{i \in sI_h'}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h'} \right)^2 + \sum_{h \neq h'} \frac{n_{Ih}}{n_{Ih} -1}\sum_{i \in sI_h}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h} \right)^2=\frac{n_{Ih'}}{n_{Ih'} -1}\sum_{i \in sI_h'}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h'} \right)^2$  La anterior igualdad se tiene puesto que $\sum_{h \neq h'} \frac{n_{Ih}}{n_{Ih} -1}\sum_{i \in sI_h}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h} \right)^2=0$, dado que $\breve{t}_{y_i} =0$ en estas UPMs que no pertenecen al estrato $ h'$. Sin embargo, esta reducción en la varianza no se tiene cuando los subgrupos poblacionales son dominios, puesto que $\breve{t}_{y_i} \neq 0$. Es decir, la cuantificación del precio que se debe pagar ante el desconocimiento de la membresía de las unidades al subgrupo es $\sum_{h \neq h'} \frac{n_{Ih}}{n_{Ih} -1}\sum_{i \in sI_h}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h} \right)^2$.
+
+Estas propiedades son fácilmente verificables haciendo uso del software. A continuación, usaré la base de datos `apistrat` de la librería `survey` para mostrar que cuando se define un diseño de muestreo estratificado, la varianza de los dominios es mayor que la varianza en los estratos. Partamos entonces por cargar el ambiente de programación, subir las bases de datos y definir un diseño de muestreo con UPMs, estratos y pesos.
+
+```
+rm(list = ls())
+library(survey)
+library(srvyr)
+
+data(api)
+
+D1 <- apistrat %>% 
+  as_survey_design(id = dnum, 
+                   strata = stype, 
+                   weights = pw,
+                   nest = TRUE)
+```
+
+A continuación voy a crear una nueva base de datos que está filtrada por una categoría del estrato `stype == "M"` y con esta base de datos voy a definir el mismo diseño de muestreo anterior.
+
+```
+strt.api <- apistrat %>% filter(stype == "M")
+D1s <- strt.api %>% 
+  as_survey_design(id = dnum, 
+                   strata = stype, 
+                   weights = pw,
+                   nest = TRUE)
+```
+
+Ahora voy a hacer los cálculos utilizando ambas bases de datos: la original y la filtrada por el estrato. Dado que el filtro se hizo por un estrato, esperaría encontrar el mismo valor para la estimación puntual y el mismo valor para la estimación de la varianza, puesto que en el caso de la base original, todos los individuos que estén por fuera del estrato tendrán un valor de cero y no contribuyen a la varianza; en el caso de la base filtrada, estos individuos no existen. En efecto, así es para `stype == "M"`:
+
+HTML generated using hilite.me
+
+```
+D1s %>% group_by(stype) %>% 
+   summarise(Total = survey_total(api00))
+
+# A tibble: 1 x 3
+  stype   Total Total_se
+  <fct>   <dbl>    <dbl>
+1 M     648059.   24898.
+
+D1 %>% group_by(stype) %>%
+   summarise(Total = survey_total(api00))
+
+# A tibble: 3 x 3
+  stype    Total Total_se
+  <fct>    <dbl>    <dbl>
+1 E     2981655.  301196.
+2 H      472494.   27808.
+3 M      648059.   24898.
+```
+
+Ahora vamos a realizar un proceso similar con los dominios. En particular, voy a crear una nueva base de datos que está filtrada por una categoría de un dominio `awards == "Yes"` y con esta base de datos voy a definir el mismo diseño de muestreo usado anteriormente.
+
+```
+dmns.api <- apistrat %>% filter(awards == "Yes")
+D1d <- dmns.api %>% 
+  as_survey_design(id = dnum, 
+                   strata = stype, 
+                   weights = pw,
+                   nest = TRUE)
+```
+
+Por último voy a hacer los cálculos utilizando ambas bases de datos: la original y la filtrada por el dominio. Dado que el filtro **no** se hizo por un estrato, esperaría encontrar el mismo valor para la estimación puntual, pero un valor de varianza más grande en la base que no está filtrada, puesto que en el caso de la base original, todos los individuos que estén por fuera del dominio tendrán un valor de cero y estarán mezclados dentro de los estratos con otros individuos con valores distintos de cero, contribuyendo a la varianza; en el caso de la base filtrada, estos individuos no existen. En efecto, así es para `awards == "Yes"`:
+
+```
+D1d %>% group_by(awards) %>%
+  summarise(Total = survey_total(api00))
+
+# A tibble: 1 x 3
+  awards    Total Total_se
+  <fct>     <dbl>    <dbl>
+1 Yes    2684904.  223778.
+
+D1 %>% group_by(awards) %>%
+  summarise(Total = survey_total(api00))
+
+# A tibble: 2 x 3
+  awards    Total Total_se
+  <fct>     <dbl>    <dbl>
+1 No     1417304.  192228.
+2 Yes    2684904.  266503.
+```

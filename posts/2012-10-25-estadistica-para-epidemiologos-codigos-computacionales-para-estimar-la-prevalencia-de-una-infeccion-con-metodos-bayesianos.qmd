@@ -1,0 +1,127 @@
+---
+title: "(Estadística para epidemiólogos) Códigos computacionales para estimar la prevalencia de una infección con métodos bayesianos"
+author: "Andrés Gutiérrez"
+date: "2012-10-25"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+[En una entrada anterior](2012-09-25-estadistica-para-epidemiologos-estimando-la-prevalencia-de-una-infeccion-con-metodos-bayesianos.qmd) se describió la teoría Bayesiana sobre la cual descansa la inferencia conjunta de la sensibilidad y especificidad de una prueba diagnóstica y de la prevalencia de la infección. En esta entrada se discuten dos aproximaciones computacionales a este problema. La primera soportada en la plataforma WinBUGS, que realiza los procesos de Monte Carlo de forma automática. La segunda, sustentada en R, en donde el muestreo de Gibbs se realiza de forma "manual". A continuación encuentra el código en WinBUGS:
+
+```
+model {
+x1~dbin(p,n)
+x2~dbin(q,n)
+p.z1 <- eta*pi/p
+p.z2 <- ((1-eta)*pi)/(1-p)
+p <- (eta*pi)+(1-teta)*(1-pi)
+q <- 1-p
+
+#priors 
+pi ~ dbeta(1,1)
+eta ~ dbeta(8,8) 
+teta ~ dbeta(999,1) 
+
+#Latent 
+z1 ~ dbin(p.z1,x1)
+z2 ~ dbin(p.z2,x2)
+}
+```
+
+```
+DATA list(x1=25, x2=75, n=100)
+```
+
+Alguien se preguntará acerca de los valores en las distribuciones previas. Pues bien, definimos una distribución no informativa para la prevalencia de la enfermedad, es decir **pi ~ dbeta(1,1)**. Suponemos que la sensibilidad de la prueba diagnóstica puede ser bien modelada con una distribución en donde el 90% de la densidad abarque el intervalo (0.3, 0.7), con una moda en 0.5. Por lo tanto, **eta ~ dbeta(8,8)**. Por último, asumamos que esta prueba tiene una especificidad muy cercana a uno. Entonces, **teta ~ dbeta(999,1)**. En general, encontramos que la siguiente es la densidad posterior de la prevalencia que tiene media 0.5601 con error estándar de 0.1548 y con intervalo de credibilidad posterior de (0.3268, 0.9219).
+
+Los mismos resultados se encuentran ejecutando el siguiente programa escrito en R:
+
+```
+rm(list=ls(all=TRUE))
+N=100#Población
+x1=25#Enfermos pimarios
+x2=75#No enfermos primarios
+```
+
+```
+a.eta=1
+b.eta=1
+a.teta=1
+b.teta=1
+a.pi=1
+b.pi=1
+```
+
+```
+nsim=1000
+valores=matrix(NA,nsim,6)
+p.val=rep(NA,nsim)
+p.val[1]=x1/N
+pi.val=rep(NA,nsim)
+pi.val[1]=0.5
+eta.val=rep(NA,nsim)
+eta.val[1]=0.5
+teta.val=rep(NA,nsim)
+teta.val[1]=0.5
+zeta1=rep(NA,nsim)
+zeta1[1]=5
+zeta2=rep(NA,nsim)
+zeta2[1]=5
+```
+
+```
+zeta1.fun <- function(x1, p, eta, pi)
+{
+p.z1 = eta*pi/p
+if(0<p.z1 && p.z1<1) {zeta1.now <- rbinom(1, x1, p.z1)}
+if(p.z1 <= 0) {zeta1.now <- 0}
+if(p.z1 >= 1) {zeta1.now <- x1}
+return(zeta1.now)
+}
+```
+
+```
+zeta2.fun <- function(x2, p, eta, pi)
+{
+p.z2 = (1-eta)*pi/(1-p)
+if(0<p.z2 && p.z2<1) {zeta2.now <- rbinom(1, x2, p.z2)}
+if(p.z2 <= 0) {zeta2.now <- 0}
+if(p.z2 >= 1) {zeta2.now <- x2}
+return(zeta2.now)
+}
+```
+
+```
+for (i in 1:nsim){
+p.val[i+1]=eta.val[i]*pi.val[i]+(1-teta.val[i])*(1-pi.val[i])
+zeta1[i+1]=zeta1.fun(x1, p.val[i], eta.val[i], pi.val[i])
+zeta2[i+1]=zeta2.fun(x2, p.val[i], eta.val[i], pi.val[i])
+eta.val[i+1]=rbeta(1,zeta1[i]+a.eta,zeta2[i]+b.eta)
+teta.val[i+1]=rbeta(1,x2-zeta2[i]+a.teta,x1-zeta1[i]+b.teta)
+pi.val[i+1]=rbeta(1,zeta1[i]+zeta2[i]+a.pi,x1+x2-zeta1[i]-zeta2[i]+b.pi)
+valores[i,1]=p.val[i]
+valores[i,2]=zeta1[i]
+valores[i,3]=zeta2[i]
+valores[i,4]=eta.val[i]
+valores[i,5]=teta.val[i]
+valores[i,6]=pi.val[i]
+}
+```
+
+```
+colnames(valores)=c("p","zeta1","zeta2","eta","teta","pi")
+colMeans(valores)
+```
+
+```
+pi.pos <- quantile(pi.val, c(0.025, 0.05, 0.25, 0.5, 0.75, 0.95, 0.975))
+eta.pos <- quantile(eta.val, c(0.025, 0.05, 0.25, 0.5, 0.75, 0.95, 0.975))
+teta.pos <- quantile(teta.val, c(0.025, 0.05, 0.25, 0.5, 0.75, 0.95, 0.975))
+```
+
+```
+list(pi.pos=pi.pos, eta.pos=eta.pos, teta.pos=teta.pos)
+```
+
+Estos códigos computacionales fueron desarrollados por el autor de este blog, en conjunto con Carlos Reyes de la Facultad de Estadística de la USTA y son de libre uso y su distribución debe ser no comercial. Por supuesto, si se utiliza el código, debe citar esta fuente en la respectiva bibliografía.

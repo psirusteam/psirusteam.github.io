@@ -2,93 +2,86 @@
 title: "Publications"
 ---
 
+My research focuses on the practical implementation of survey sampling methods, the analysis of complex survey data, and the use of small area estimation and related model-based methods to produce disaggregated indicators.
 
-## 2026
+## Selected Publications
 
-- Andrés Gutiérrez and Pedro Luis do Nascimento Silva (2026). "[Analysis of Household Survey Data](https://unstats.un.org/UNSDWebsite/statcom/session_57/documents/BG-3k-Handbook_on_Surveys_of_Household_and_Individuals-E.pdf){target="_blank"}." *UN Handbook of Surveys on Households and Individuals: Foundations and Emerging Approaches*, chapter 9, pp. 111–148. United Nations Statistics Division.
+::: {.publication-timeline}
 
-- Andrés Gutiérrez and Giovany Babativa-Márquez (2026). "[Encuestas de posenumeración censal: fundamentos estadísticos para su diseño y análisis](https://www.cepal.org/es/publicaciones/85913-encuestas-posenumeracion-censal-fundamentos-estadisticos-su-diseno-analisis){target="_blank"}." *Serie de estudios estadísticos*, 111.
+- 2026. "[Analysis of Household Survey Data](https://unstats.un.org/UNSDWebsite/statcom/session_57/documents/BG-3k-Handbook_on_Surveys_of_Household_and_Individuals-E.pdf){target="_blank"}." Andrés Gutiérrez and Pedro Luis do Nascimento Silva. In *UN Handbook of Surveys on Households and Individuals: Foundations and Emerging Approaches*, chapter 9, pp. 111-148. United Nations Statistics Division.
 
-## 2025
+- 2026. "[Encuestas de posenumeración censal: fundamentos estadísticos para su diseño y análisis](https://www.cepal.org/es/publicaciones/85913-encuestas-posenumeracion-censal-fundamentos-estadisticos-su-diseno-analisis){target="_blank"}." Andrés Gutiérrez and Giovany Babativa-Márquez. *Serie de Estudios Estadísticos*, no. 111.
 
-- Alejandra Arias-Salazar, Andrés Gutiérrez, Stalyn Guerrero-Gómez, Xavier Mancero, Natalia Rojas-Perilla, and Hanwen Zhang (2025). "[Small Area Estimation for Composite Indicators: The Case of Multidimensional Poverty Incidence](https://doi.org/10.1177/0282423X241300751){target="_blank"}." *Journal of Official Statistics*, 41(1), pp. 35–59.
-- Andres Gutierrez and Xavier Mancero (2025). "[A brief history of household surveys in Latin America](https://isi-iass.org/home/wp-content/uploads/Survey_Statistician_2025_July_N92_02.pdf){target="_blank"}." *The Survey Statistician*, 92.
-- Andres Gutierrez, Xavier Mancero, and Stalyn Guerrero (2025). "[Estimación en áreas pequeñas de los indicadores de pobreza en América Latina: una aplicación basada en modelos de regresión multinivel con posestratificación](https://www.cepal.org/es/publicaciones/81385-estimacion-areas-pequenas-indicadores-pobreza-america-latina-aplicacion-basada){target="_blank"}." *CEPAL - Estudios Estadísticos*, No. 109.
+- 2025. "[Small Area Estimation for Composite Indicators: The Case of Multidimensional Poverty Incidence](https://doi.org/10.1177/0282423X241300751){target="_blank"}." Alejandra Arias-Salazar, Andrés Gutiérrez, Stalyn Guerrero-Gómez, Xavier Mancero, Natalia Rojas-Perilla, and Hanwen Zhang. *Journal of Official Statistics*, 41(1), pp. 35-59.
 
-## 2024
+- 2025. "[Estimación en áreas pequeñas de los indicadores de pobreza en América Latina: una aplicación basada en modelos de regresión multinivel con posestratificación](https://www.cepal.org/es/publicaciones/81385-estimacion-areas-pequenas-indicadores-pobreza-america-latina-aplicacion-basada){target="_blank"}." Andrés Gutiérrez, Xavier Mancero, and Stalyn Guerrero. *CEPAL - Estudios Estadísticos*, no. 109.
 
-- FAO (2024). "[Estimation of the prevalence of moderate and severe food insecurity in Chilean municipalities using small area estimation methods](https://openknowledge.fao.org/handle/20.500.14283/cd1350en){target="_blank"}." FAO.
-- Andrés Gutiérrez and Sabrina Juran (2024). "[Desagregación de indicadores de planificación familiar mediante técnicas de estimación en áreas pequeñas: los casos de Colombia y el Perú](https://www.cepal.org/es/publicaciones/69029-desagregacion-indicadores-planificacion-familiar-mediante-tecnicas-estimacion){target="_blank"}." CEPAL - Documentos de Proyectos.
-- Andrés Gutiérrez and Sabrina Juran (2024). "[Desagregación de indicadores de planificación familiar con modelos de estimación en áreas pequeñas en el Ecuador, Guatemala y el Perú](https://www.cepal.org/es/publicaciones/81189-desagregacion-indicadores-planificacion-familiar-modelos-estimacion-areas){target="_blank"}." CEPAL - Documentos de Proyectos.
-- INCAP, MIDES, SESAN, CEPAL (2024). "[Desagregación de Indicadores sobre el Estado Nutricional Materno e Infantil en Municipios usando Metodologías de Estimación de Áreas Pequeñas en Guatemala](https://www.incap.int/incap5/files/docman-files/publicaciones-incap/informe-estado-nut-materno-GUT.pdf){target="_blank"}."
-- Cristian Tellez-Piñerez, Leonardo Trujillo, Andrés Gutiérrez-Rojas, and Juan Sosa (2024). "[Small area estimation using multiple imputation in three-parameter logistic models](https://soche.cl/chjs/volumes/15/ChJS-15-01-01.pdf){target="_blank"}." *Chilean Journal of Statistics*, 15(1).
+- 2015. "[The Use of Working Variables in the Bayesian Modeling of Mean and Dispersion Parameters in Generalized Nonlinear Models with Random Effects](https://doi.org/10.1080/03610918.2013.770529){target="_blank"}." Andrés Gutiérrez. *Communications in Statistics - Simulation and Computation*, 44(1), pp. 168-195.
 
-## 2023
+- 2014. "[The Estimation of Gross Flows in Complex Surveys with Random Nonresponse](https://www150.statcan.gc.ca/n1/pub/12-001-x/2014002/article/14113-eng.htm){target="_blank"}." Andrés Gutiérrez, Leonardo Trujillo, and Pedro Luis do Nascimento Silva. *Survey Methodology*, 40(2), pp. 285-321.
 
-- CEPAL (2023). "[Diseño y análisis estadístico de las encuestas de hogares de América Latina](https://www.cepal.org/es/publicaciones/68737-diseno-analisis-estadistico-encuestas-hogares-america-latina){target="_blank"}." Metodologías de la CEPAL.
-- Andrés Gutiérrez, Xavier Mancero, Gabriel Nieto, Felipe Molina, and Diego Lemus (2023). "[Modelos de unidad para la generación de mapas de pobreza a nivel subnacional](https://www.cepal.org/es/publicaciones/48668-modelos-unidad-la-generacion-mapas-pobreza-nivel-subnacional){target="_blank"}." *CEPAL - Estudios Estadísticos*, No. 105.
-- ISWGHS - CEPAL (2023). "[Nota de orientación sobre la evaluación y minimización del impacto de una crisis en la calidad de las encuestas: enfoques aprendidos de la pandemia de COVID-19](https://unstats.un.org/iswghs/documents/Guia_de_Orientacion_COVID_esp.pdf){target="_blank"}."
-- ISWGHS - ECLAC (2023). "[Guidance Note on Assessing and Minimizing the Impact of a Crisis on Survey Quality: Approaches Learned from the COVID-19 Pandemic](https://unstats.un.org/iswghs/documents/Guidance_Note_Survey_Quality_Covid19.pdf){target="_blank"}."
+:::
 
-## 2022
+## Full Publication List
 
-- Andrés Bustamante, Marcela Cabezas, Andrés Gutiérrez, David Niculcar, and Joaquín Nilo (2022). "[Informalidad laboral en tiempos de la COVID-19: análisis del mercado laboral chileno](https://www.ilo.org/es/publications/informalidad-laboral-en-tiempos-de-la-covid-19-analisis-del-mercado-laboral){target="_blank"}." *OIT Cono Sur – Informes Técnicos*, 27, pp. 138.
-- Joseph Friedman, Mirza Balaj, Nazrul Islam, Youyang Gu, Petra Nahmia, Carolina Santamaría-Ulloa, Andres Gutierrez Rojas, Kumanan Rasanathan, et al. (2022). "[Inequalities in COVID-19 mortality: defining a global research agenda](https://doi.org/10.2471/BLT.22.288211){target="_blank"}." *Bulletin of the World Health Organization*, 100(10), pp. 648–650.
-- Andrés Gutiérrez, Xavier Mancero, and Stalyn Guerrero (2022). "[Poverty mapping in Latin America: ECLAC experiences on small area estimation](https://doi.org/10.3233/SJI-220037){target="_blank"}." *Statistical Journal of the IAOS*, 38(3), pp. 1021–1033.
-- Cristian Tellez-Piñerez, Leonardo Trujillo, Andrés Gutiérrez, and Juan Sosa (2022). "[Small area estimation using multiple imputation in three-parameter logistic models](http://arxiv.org/abs/2211.01457){target="_blank"}." arXiv, No. arXiv:2211.01457.
+::: {.publication-timeline}
 
-## 2021
+- 2025. "[A Brief History of Household Surveys in Latin America](https://isi-iass.org/home/wp-content/uploads/Survey_Statistician_2025_July_N92_02.pdf){target="_blank"}." Andrés Gutiérrez and Xavier Mancero. *The Survey Statistician*, no. 92.
 
-- CEPAL (2021). "[Encuestas de ingresos y gastos de los hogares: experiencias recientes en América Latina y el Caribe](https://www.cepal.org/es/publicaciones/46898-encuestas-ingresos-gastos-hogares-experiencias-recientes-america-latina-caribe){target="_blank"}."
-- Economic Commission for Latin America and the Caribbean (2021). "[Subnational Poverty Estimates for Latin America](https://www.cepal.org/en/publications/47572-subnational-poverty-estimates-latin-america){target="_blank"}." ECLAC Statistical Briefings, ECLAC.
-- MDSF and CEPAL (2021). "[Estimaciones Comunales de Pobreza por ingresos en Chile Mediante Métodos de Estimación en Áreas Pequeñas](https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/pobreza-comunal/2020/Informe_SAE_2020.pdf){target="_blank"}." División Observatorio Social.
+- 2024. "[Estimation of the Prevalence of Moderate and Severe Food Insecurity in Chilean Municipalities Using Small Area Estimation Methods](https://openknowledge.fao.org/handle/20.500.14283/cd1350en){target="_blank"}." Food and Agriculture Organization of the United Nations. FAO.
 
-## 2020
+- 2024. "[Desagregación de indicadores de planificación familiar mediante técnicas de estimación en áreas pequeñas: los casos de Colombia y el Perú](https://www.cepal.org/es/publicaciones/69029-desagregacion-indicadores-planificacion-familiar-mediante-tecnicas-estimacion){target="_blank"}." Andrés Gutiérrez and Sabrina Juran. *CEPAL - Documentos de Proyectos*.
 
-- Economic Commission for Latin America and the Caribbean (2020). "[Recommendations for the Publication of Official Statistics from Household Surveys in the Context of the Coronavirus Disease (COVID-19) Pandemic](https://www.cepal.org/en/publications/45382-recommendations-publication-official-statistics-household-surveys-context){target="_blank"}." United Nations, No. ECLAC COVID-19 Reports.
-- Economic Commission for Latin America and the Caribbean (2020). "[Recommendations for Eliminating Selection Bias in Household Surveys During the Coronavirus Disease (COVID-19) Pandemic](https://www.cepal.org/en/publications/45553-recommendations-eliminating-selection-bias-household-surveys-during-coronavirus){target="_blank"}." ECLAC COVID-19 Reports, United Nations.
-- Economic Commission for Latin America and the Caribbean (2020). "[Continuity of household surveys after the coronavirus disease (COVID-19) pandemic](https://www.cepal.org/en/publications/46521-continuity-household-surveys-after-coronavirus-disease-covid-19-pandemic){target="_blank"}." United Nations, pp. 6.
+- 2024. "[Desagregación de indicadores de planificación familiar con modelos de estimación en áreas pequeñas en el Ecuador, Guatemala y el Perú](https://www.cepal.org/es/publicaciones/81189-desagregacion-indicadores-planificacion-familiar-modelos-estimacion-areas){target="_blank"}." Andrés Gutiérrez and Sabrina Juran. *CEPAL - Documentos de Proyectos*.
 
-## 2019
+- 2024. "[Desagregación de Indicadores sobre el Estado Nutricional Materno e Infantil en Municipios usando Metodologías de Estimación de Áreas Pequeñas en Guatemala](https://www.incap.int/incap5/files/docman-files/publicaciones-incap/informe-estado-nut-materno-GUT.pdf){target="_blank"}." INCAP, MIDES, SESAN, and CEPAL.
 
-- Andrés Gutiérrez and Xavier Mancero (2019). "[Criterios de calidad en la estimación de indicadores a partir de encuestas de hogares. Una aplicación a la migración internacional](https://www.cepal.org/es/publicaciones/45681-criterios-calidad-la-estimacion-indicadores-partir-encuestas-hogares-aplicacion){target="_blank"}." Series de la CEPAL - Estudios Estadísticos, CEPAL, pp. 56.
+- 2024. "[Small Area Estimation Using Multiple Imputation in Three-Parameter Logistic Models](https://soche.cl/chjs/volumes/15/ChJS-15-01-01.pdf){target="_blank"}." Cristian Tellez-Piñerez, Leonardo Trujillo, Andrés Gutiérrez, and Juan Sosa. *Chilean Journal of Statistics*, 15(1).
 
-## 2018
+- 2023. "[Modelos de unidad para la generación de mapas de pobreza a nivel subnacional](https://www.cepal.org/es/publicaciones/48668-modelos-unidad-la-generacion-mapas-pobreza-nivel-subnacional){target="_blank"}." Andrés Gutiérrez, Xavier Mancero, Gabriel Nieto, Felipe Molina, and Diego Lemus. *CEPAL - Estudios Estadísticos*, no. 105.
 
-- Andrés Gutiérrez, Hanwen Zhang, Cristian Tellez, and Stalyn Guerrero (2018). "[Calibrated Bayesian shrinkage of finite population totals in survey sampling](https://doi.org/10.1080/09720510.2017.1367477){target="_blank"}." *Journal of Statistics and Management Systems*, 21(2), pp. 225–249.
-- David Trafimow, Valentin Amrhein, Corson N. Areshenkoff, Carlos J. Barrera-Causil, Eric J. Beh, Yusuf K. Bilgiç, Roser Bono, Michael T. Bradley, et al. (2018). "[Manipulating the Alpha Level Cannot Cure Significance Testing](https://doi.org/10.3389/fpsyg.2018.00699){target="_blank"}." *Frontiers in Psychology*, 9, pp. 699.
+- 2023. "[Nota de orientación sobre la evaluación y minimización del impacto de una crisis en la calidad de las encuestas: enfoques aprendidos de la pandemia de COVID-19](https://unstats.un.org/iswghs/documents/Guia_de_Orientacion_COVID_esp.pdf){target="_blank"}." ISWGHS and CEPAL. United Nations Statistics Division.
 
-## 2016
+- 2023. "[Guidance Note on Assessing and Minimizing the Impact of a Crisis on Survey Quality: Approaches Learned from the COVID-19 Pandemic](https://unstats.un.org/iswghs/documents/Guidance_Note_Survey_Quality_Covid19.pdf){target="_blank"}." ISWGHS and ECLAC. United Nations Statistics Division.
 
-- Andrés Gutiérrez, Hanwen Zhang, and Cristian Montaño (2016). "[Calculo del tamaño de muestra para la estimación de una varianza en poblaciones finitas con funciones en R](https://doi.org/10.15332/s2027-3355.2016.0001.06){target="_blank"}." *Comunicaciones en Estadística*, 9(1), pp. 109.
-- Hugo Andrés Gutiérrez (2016). "[Estrategias de muestreo: diseño de encuestas y estimación de parámetros](https://books.google.com/books?id=UlVmE5pkRwIC){target="_blank"}." Ediciones de la U.
-- Hugo Andrés Gutiérrez, Hanwen Zhang, and Nelson Rodriguez (2016). "[The Performance of Multivariate Calibration on Ratios, Means and Proportions](https://doi.org/10.15446/rce.v39n2.55424){target="_blank"}." *Revista Colombiana de Estadística*, 39(2), pp. 281.
+- 2022. "[Informalidad laboral en tiempos de la COVID-19: análisis del mercado laboral chileno](https://www.ilo.org/es/publications/informalidad-laboral-en-tiempos-de-la-covid-19-analisis-del-mercado-laboral){target="_blank"}." Andrés Bustamante, Marcela Cabezas, Andrés Gutiérrez, David Niculcar, and Joaquín Nilo. *OIT Cono Sur - Informes Técnicos*, no. 27, p. 138.
 
-## 2015
+- 2022. "[Inequalities in COVID-19 Mortality: Defining a Global Research Agenda](https://doi.org/10.2471/BLT.22.288211){target="_blank"}." Joseph Friedman, Mirza Balaj, Nazrul Islam, Youyang Gu, Petra Nahmia, Carolina Santamaría-Ulloa, Andrés Gutiérrez, Kumanan Rasanathan, et al. *Bulletin of the World Health Organization*, 100(10), pp. 648-650.
 
-- Andres Gutierrez (2015). "[The Use of Working Variables in the Bayesian Modeling of Mean and Dispersion Parameters in Generalized Nonlinear Models with Random Effects](https://doi.org/10.1080/03610918.2013.770529){target="_blank"}." *Communications in Statistics - Simulation and Computation*, 44(1), pp. 168–195.
+- 2022. "[Poverty Mapping in Latin America: ECLAC Experiences on Small Area Estimation](https://doi.org/10.3233/SJI-220037){target="_blank"}." Andrés Gutiérrez, Xavier Mancero, and Stalyn Guerrero. *Statistical Journal of the IAOS*, 38(3), pp. 1021-1033.
 
-## 2014
+- 2021. "[Subnational Poverty Estimates for Latin America](https://www.cepal.org/en/publications/47572-subnational-poverty-estimates-latin-america){target="_blank"}." Economic Commission for Latin America and the Caribbean. *ECLAC Statistical Briefings*. ECLAC.
 
-- Hugo Andrés Gutiérrez, Leonardo Trujillo, and PL. d N. Silva (2014). "[The estimation of gross flows in complex surveys with random nonresponse](https://www150.statcan.gc.ca/n1/pub/12-001-x/2014002/article/14113-eng.htm){target="_blank"}." *Survey Methodology*, 40(2), pp. 285–321.
+- 2021. "[Estimaciones Comunales de Pobreza por ingresos en Chile Mediante Métodos de Estimación en Áreas Pequeñas](https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/pobreza-comunal/2020/Informe_SAE_2020.pdf){target="_blank"}." MDSF and CEPAL. División Observatorio Social.
 
-## 2012
+- 2020. "[Recommendations for the Publication of Official Statistics from Household Surveys in the Context of the Coronavirus Disease (COVID-19) Pandemic](https://www.cepal.org/en/publications/45382-recommendations-publication-official-statistics-household-surveys-context){target="_blank"}." Economic Commission for Latin America and the Caribbean. *ECLAC COVID-19 Reports*. United Nations.
 
-- Andrés Gutiérrez and Jorge Ortiz (2012). "Emparejamiento de paneles y clasificación de la ausencia de respuesta en la Pesquisa Mensal de Emprego usando funciones en R." 73(237).
+- 2020. "[Recommendations for Eliminating Selection Bias in Household Surveys During the Coronavirus Disease (COVID-19) Pandemic](https://www.cepal.org/en/publications/45553-recommendations-eliminating-selection-bias-household-surveys-during-coronavirus){target="_blank"}." Economic Commission for Latin America and the Caribbean. *ECLAC COVID-19 Reports*. United Nations.
 
-## 2011
+- 2020. "[Continuity of Household Surveys after the Coronavirus Disease (COVID-19) Pandemic](https://www.cepal.org/en/publications/46521-continuity-household-surveys-after-coronavirus-disease-covid-19-pandemic){target="_blank"}." Economic Commission for Latin America and the Caribbean. United Nations.
 
-- Hugo Andrés Gutiérrez and Hanwen Zhang (2011). "[Hierarchical Design-Based Estimation in Stratified Multipurpose Surveys](https://revistas.unal.edu.co/index.php/estad/article/view/29927){target="_blank"}." *Revista Colombiana de Estadística*, pp. 18.
+- 2019. "[Criterios de calidad en la estimación de indicadores a partir de encuestas de hogares: una aplicación a la migración internacional](https://www.cepal.org/es/publicaciones/45681-criterios-calidad-la-estimacion-indicadores-partir-encuestas-hogares-aplicacion){target="_blank"}." Andrés Gutiérrez and Xavier Mancero. *CEPAL - Estudios Estadísticos*, p. 56.
 
-## 2010
+- 2018. "[Calibrated Bayesian Shrinkage of Finite Population Totals in Survey Sampling](https://doi.org/10.1080/09720510.2017.1367477){target="_blank"}." Andrés Gutiérrez, Hanwen Zhang, Cristian Tellez, and Stalyn Guerrero. *Journal of Statistics and Management Systems*, 21(2), pp. 225-249.
 
-- Andrés Gutiérrez and Hanwen Zhang (2010). "[A note about graphical representations to capture the consumer’s perception of a brand](https://doi.org/10.1080/09720502.2010.10700675){target="_blank"}." *Journal of Interdisciplinary Mathematics*, 13(1), pp. 17–40.
-- Hanwen Zhang, Andres Gutierrez, and Edilberto Cepeda (2010). "[Confidence and credibility intervals for the difference of two proportions](https://revistas.unal.edu.co/index.php/estad/article/view/29810){target="_blank"}." *Revista Colombiana de Estadística*, 33(1), pp. 63–68.
+- 2018. "[Manipulating the Alpha Level Cannot Cure Significance Testing](https://doi.org/10.3389/fpsyg.2018.00699){target="_blank"}." David Trafimow, Valentin Amrhein, Corson N. Areshenkoff, Carlos J. Barrera-Causil, Eric J. Beh, Yusuf K. Bilgiç, Roser Bono, Michael T. Bradley, et al. *Frontiers in Psychology*, 9, article 699.
 
-## 2009
+- 2016. "[Cálculo del tamaño de muestra para la estimación de una varianza en poblaciones finitas con funciones en R](https://doi.org/10.15332/s2027-3355.2016.0001.06){target="_blank"}." Andrés Gutiérrez, Hanwen Zhang, and Cristian Montaño. *Comunicaciones en Estadística*, 9(1), p. 109.
 
-- Andres Gutierrez and Hanwen Zhang (2009). "[Análisis bayesiano para la diferencia de dos proporciones usando R](https://doi.org/10.46661/revmetodoscuanteconempresa.2129){target="_blank"}." *Revista de Metodos Cuantitativos para la Economia y la Empresa*, 8(1), pp. 50–70.
-- Hugo Andrés Gutiérrez (2009). "[Estimation Stage in Survey Sampling: A Multiparameter Approach](https://revistas.unal.edu.co/index.php/estad/article/view/29755){target="_blank"}." *Revista Colombiana de Estadística*, pp. 19.
-- Hugo Andrés Gutiérrez and F Jay Breidt (2009). "[Estimation of the Population Total using the Generalized Difference Estimator and Wilcoxon Ranks](https://revistas.unal.edu.co/index.php/estad/article/view/29757){target="_blank"}." *Revista Colombiana de Estadística*, pp. 21.
+- 2016. "[The Performance of Multivariate Calibration on Ratios, Means and Proportions](https://doi.org/10.15446/rce.v39n2.55424){target="_blank"}." Andrés Gutiérrez, Hanwen Zhang, and Nelson Rodriguez. *Revista Colombiana de Estadística*, 39(2), p. 281.
 
+- 2012. "Emparejamiento de paneles y clasificación de la ausencia de respuesta en la Pesquisa Mensal de Emprego usando funciones en R." Andrés Gutiérrez and Jorge Ortiz. 73(237).
 
+- 2011. "[Hierarchical Design-Based Estimation in Stratified Multipurpose Surveys](https://revistas.unal.edu.co/index.php/estad/article/view/29927){target="_blank"}." Andrés Gutiérrez and Hanwen Zhang. *Revista Colombiana de Estadística*, p. 18.
+
+- 2010. "[A Note about Graphical Representations to Capture the Consumer's Perception of a Brand](https://doi.org/10.1080/09720502.2010.10700675){target="_blank"}." Andrés Gutiérrez and Hanwen Zhang. *Journal of Interdisciplinary Mathematics*, 13(1), pp. 17-40.
+
+- 2010. "[Confidence and Credibility Intervals for the Difference of Two Proportions](https://revistas.unal.edu.co/index.php/estad/article/view/29810){target="_blank"}." Hanwen Zhang, Andrés Gutiérrez, and Edilberto Cepeda. *Revista Colombiana de Estadística*, 33(1), pp. 63-68.
+
+- 2009. "[Análisis bayesiano para la diferencia de dos proporciones usando R](https://doi.org/10.46661/revmetodoscuanteconempresa.2129){target="_blank"}." Andrés Gutiérrez and Hanwen Zhang. *Revista de Métodos Cuantitativos para la Economía y la Empresa*, 8(1), pp. 50-70.
+
+- 2009. "[Estimation Stage in Survey Sampling: A Multiparameter Approach](https://revistas.unal.edu.co/index.php/estad/article/view/29755){target="_blank"}." Andrés Gutiérrez. *Revista Colombiana de Estadística*, p. 19.
+
+- 2009. "[Estimation of the Population Total Using the Generalized Difference Estimator and Wilcoxon Ranks](https://revistas.unal.edu.co/index.php/estad/article/view/29757){target="_blank"}." Andrés Gutiérrez and F. Jay Breidt. *Revista Colombiana de Estadística*, p. 21.
+
+:::

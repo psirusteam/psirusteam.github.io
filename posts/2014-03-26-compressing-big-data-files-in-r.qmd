@@ -1,0 +1,18 @@
+---
+title: "Compressing big data files in R"
+author: "Andrés Gutiérrez"
+date: "2014-03-26"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Right now I am working with a big data file (+ 1million rows and several columns). Let's suppose that the name of the file is bigdata.txt. The size of this file is around 128MB; thus copying it into my Dropbox is not a good idea. However, after compressing my file in R, now the size of the compressed file decreased dramatically (3.5Mb).
+
+To do so, after reading the original file (the big one) in R, just write the following code in R:
+
+```
+system("gzip bigdata.txt")
+```
+
+The code creates a new file bigdata.txt.gz and you can read it with the read.table function.

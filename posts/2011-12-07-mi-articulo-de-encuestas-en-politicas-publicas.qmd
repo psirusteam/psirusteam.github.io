@@ -1,0 +1,12 @@
+---
+title: "Mi artículo de encuestas en políticas públicas"
+author: "Andrés Gutiérrez"
+date: "2011-12-07"
+categories:
+  - "Colombia"
+  - "Estadística"
+---
+
+[El número 18 del Boletín Política Pública Hoy](http://sinergia.dnp.gov.co/Sinergia/Archivos/24074971-584e-4945-8362-ec5238c690c3/Boletin_Politica_Publica_Hoy_18.pdf) incluye un artículo acerca de los criterios que se deben utilizar cuando se planea hacer una encuesta probabilística en evaluciones de políticas públicas. Mediante ejemplos reales, y desde un punto de vista subjetivo y personal, introduzco cada una de las caracterizaciones más importantes que el estadístico y su equipo deben tener en cuenta al momento de planear una encuesta en este contexto.
+
+Sin ninguna, fórmula matemática y con mucha carreta para que genere una mayor comprensión, este artículo coadyuvará en la estandarización de las buenas prácticas que se deben generar desde nuestro gremio. [El artículo lo pueden descargar acá](http://gutierrezandres.files.wordpress.com/2011/12/boletin_muestreo_ag.pdf).

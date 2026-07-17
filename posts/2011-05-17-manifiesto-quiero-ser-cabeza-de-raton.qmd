@@ -1,0 +1,30 @@
+---
+title: "Manifiesto: quiero ser cabeza de ratón"
+author: "Andrés Gutiérrez"
+date: "2011-05-17"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Quiero ser cabeza de ratón… No me interesa cambiar el mundo… quiero impactar en mi país y en mi región… Desde hoy y en los próximos treinta años voy a:
+
+1. Impulsar la creación de la Asociación Colombiana de Estadísticos.
+
+2. Ayudar en el posicionamiento y estabilización del gremio a través de la publicación y divulgación de ofertas laborales y de investigación en un portal institucional liderado por un consejo de facultades de estadística en Colombia.
+
+3. Promover la institucionalización de la tarjeta profesional para los estadísticos.
+
+4. Motivar la creación de un programa de posgrado en metodología de encuestas.
+
+5. Posicionar la Revista Comunicaciones en Estadística.
+
+6. Organizar un encuentro bienal de Estadística Aplicada, patrocinado por la Asociación Colombiana de Estadísticos, y promovido por las universidades públicas y privadas y también por las empresas privadas y los institutos de estadísticas oficiales.
+
+7. Crear una editorial de libros de texto en estadística.
+
+Y lo más ambicioso y controvertido:
+
+8. Impulsar la acreditación de los estadísticos en Colombia. Eso promoverá más competencia y más calidad… El estadístico graduado debe acreditarse ante un consejo de expertos. Algo así como los exámenes de la SOA en actuaría… Pues bien, habrán exámenes de la ACE en estadística. El que no los quiera presentar va a quedar en desventaja frente a los que sí nos acreditemos. Muchos estadísticos hispanoamericanos vendrán de otros países para acreditarse e Colombia.
+
+Claro, no puedo hacerlo solo… sería imposible… Le pido a Dios que me ayude y a los lectores de este espacio que piensen en estas ocho opciones y que apoyen nuestros esfuerzos en este largo y tedioso proceso. Surgirán muchas críticas y rivalidades…. No me importa, me la juego por el gremio. En últimas, las ventajas son mucho más claras y los beneficiados no seremos nosotros directamente, sino la próxima generación de estadísticos.

@@ -1,0 +1,41 @@
+---
+title: "¿Cómo simular una regresión logística?"
+author: "Andrés Gutiérrez"
+date: "2013-08-15"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Durante el semestre que acaba de pasar, dirigí dos trabajos de grados que estaban relacionados con algunas propiedades de la regresión logística. De paso diré que la regresión logística me ha sorprendido por sus inesperadas propiedades (como por ejemplo ser robusta ante los diseños de muestreo complejos). En este periplo por las propiedades de este tipo de modelos, nos encontramos con un problema nada inocuo. La correcta simulación del modelo.
+
+Suponga que se tiene una variable auxiliar, que para este caso, seguirá una distribución normal de media 20 y varianza 4. Ahora, queremos generar una variable dicotómica, tal que el LOGIT de la esperanza está inducida por un modelo lineal de la forma -5+0.3X (intercepto -5, pendiente 0.3). Luego, la manera INCORRECTA de generar la respuesta dicotómica es la siguiente:
+
+```
+x <- rnorm(1000, 20, 4)
+p <- exp(-5+0.3*x)/(1+exp(-5+0.3*x))
+p
+
+y 0.5)
+y
+```
+
+Por alguna razón, denominada como el [problema de la separación completa](http://artsandsciences.sc.edu/poli/sites/default/files/Zorn_PA_Final.pdf), cuando se quiere realizar la estimación de los parámetros del modelo logístico, se genera una serie de errores.
+
+```
+glm(y~x, family=binomial(link="logit"))
+
+1: glm.fit: algorithm did not converge
+2: glm.fit: fitted probabilities numerically 0 or 1 occurred
+```
+
+La forma CORRECTA de simular la variable respuesta es mediante el uso de la función **rbinom**, así:
+
+```
+y <- rbinom(1000, 1, p)
+y
+
+glm(y~x, family=binomial(link="logit"))
+```
+
+De cierta forma, cuando se simula la variable respuesta de la forma incorrecta, se está perdiendo la aleatoriedad de la variable, puesto que se crea una relación determinística entre las probabilidades de éxito y los valores de la variable. Por esta razón, el algoritmo de estimación de Newton-Raphson no converge, pues la función de verosimilitud no tendrá máximo. Este problema se evade fácilmente cuando, por medio de la función **rbinom**, se garantiza la aleatoriedad de la variable respuesta.

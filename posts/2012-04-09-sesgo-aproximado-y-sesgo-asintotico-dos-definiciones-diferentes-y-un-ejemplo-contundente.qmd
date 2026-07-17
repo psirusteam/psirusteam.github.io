@@ -1,0 +1,29 @@
+---
+title: "Sesgo aproximado y sesgo asintótico… dos definiciones diferentes y un ejemplo contundente"
+author: "Andrés Gutiérrez"
+date: "2012-04-09"
+categories:
+  - "Estadística"
+---
+
+Me escribió un colega - a quien respeto y admiro y le mando un saludo grande desde Colombia - inquiriendo acerca del ejemplo de sesgo asintótico y consistencia que escribí [en esta entrada anterior](2012-03-22-contraejemplos-de-consistencia-e-insesgamiento-asintotico.qmd). En un muy bonito cruce de correos, logramos discernir algunas cuestiones que no son para nada evidentes en lo que tiene que ver con las definiciones clásicas del sesgo asintótico
+
+Pues bien, entre las definiciones de insesgamiento asintótico tenemos:
+
+1. Que la media de la distribución límite de $ n^{1/2} (T_n-\theta)$ sea nula.
+
+2. Que el $\lim_{nto \infty} \E(T_n - \theta)$ tienda a cero.
+
+La definición 1 fue la que utilicé para escribir [la entrada anterior](2012-03-22-contraejemplos-de-consistencia-e-insesgamiento-asintotico.qmd) y la definición 2 es la aparece en la mayoría de libros. La definición 1, la tomé del libro de Shao (Mathematical Statistics) y me gusta porque un estimador no necesariamente debe tener esperanza para ser un buen estimador… ¿Es confuso? De ninguna manera, suponga que el parámetro de interés es la razón entre dos medias, definido como $\theta=\mu_x/\mu_y $. Para este ejemplo, que entre otras cosas resulta ser uno de los problemas más abordados en la práctica estadística, un estimador usual estaría dado por la razón entre los promedios muestrales, definido como $ T_n=\bar{X}_n/\bar{Y}_n $. Es cierto, aunque este estimador es muy usado, resulta que, en términos generales, la esperanza de $ T_n $ no está definida. Es más, no está definida para ningún *n*y por lo tanto, según la definición 2, no sería asintóticamente insesgado. Nótese que, si $ X_n $ y $ Y_n $ son independientes con distribución normal (0,1), entonces $ X_n/Y_n $ converge en distribución a una variable aleatoria Cauchy, que no tiene esperanza.
+
+Lo anterior abre el camino a una pregunta muy capciosa,
+
+**Dado que no se puede hallar el sesgo exacto de un estimador ¿será posible definir un sesgo asintótico?**
+
+Y es que a veces, estas definiciones asintóticas nos pueden hacer caer en contradicciones. Por ejemplo, uno podría pensar que para una estadística que no tiene esperanza no se debería poder hablar de sesgo (asintótico o no), pues el sesgo no está definido y, en ese caso, hablar de insesgamiento no tendría sentido. Sin embargo, ese razonamiento es equivocado, puesto que como bien lo sabemos, el estimador $ T_n=\bar{X}_n/\bar{Y}_n $ es asintóticamente insesgado, aunque carezca de una esperanza y sesgo exactos. De hecho este es un muy buen ejemplo de por qué la definición 1 es apropiada: bajo esa definición es posible hablar de sesgo asintótico de una estadística cuyo sesgo no existe.
+
+Probemos que efectivamente $ T_n=\bar{X}_n/\bar{Y}_n $ es asintóticamente insesgado. En primer lugar sabemos que, por la ley fuerte de los grandes números, $\bar{X}_n $ converge casi seguro a $\mu_x $; de igual forma, $\bar{Y}_n $ converge casi seguro a $\mu_y $. Por otro lado, es bien sabido que $ g(X, Y)=X/Y $ es una función medible y por lo tanto, dado que $(\bar{X}_n, \bar{Y}_n)$ converge casi seguro a $(\mu_x, \mu_y)$, entonces $ g(X, Y)$ converge casi seguro a $ g(\mu_x, \mu_y)=\mu_x/\mu_y $. Por último, la convergencia casi seguro implica convergencia en distribución y se tiene la prueba.
+
+Un comentario final es que la esperanza es una cantidad exacta y tal vez es confuso hablar de aproximaciones a la esperanza. Ahora, yo creo que la confusión aumenta cuando uno le mete un límite a algo que en principio no debería tenerlo. Es que una cosa es el límite de una sucesión de número y otra cosa son los modos de convergencia en probabilidad. Al hablar de asintóticamente, uno no solamente está pensando en un límite simple, sino en una sucesión de variables aleatorias, y sus funciones de distribución, que se hace cada vez más grande a medida que *n* crece. Las dos cosas son diferentes y si se piensa en que una esperanza es exacta, tiene sentido y mucho hablar de la distribución límite y de su media, en vez de calcular el límite simplemente.
+
+En la misma línea del anterior comentario, Shao afirma que la definición dos no se debería llamar sesgo asintótico, sino sesgo aproximado. Esto último aclara muchas cosas al entender que una cosa es asintótico y otra cosa es aproximado.

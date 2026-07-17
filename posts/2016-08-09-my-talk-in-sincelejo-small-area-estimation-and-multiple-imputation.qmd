@@ -1,0 +1,11 @@
+---
+title: "My talk in Sincelejo - Small area estimation and multiple imputation"
+author: "Andrés Gutiérrez"
+date: "2016-08-09"
+categories:
+  - "Estadística"
+---
+
+[My second talk in Sincelejo](https://drive.google.com/open?id=0ByzoHkgSB8F3alhNUFpHdzNQNFk) deals with fascinating topics: Statistical methods in education in conjunction with sample surveys and small area estimation. I am leading this research since last year, and the results are very consistent.
+
+Maybe the future of the assessment of education will rest on this kind of predictive methods. In fact, the use of plausible values trough multiple imputations is (sort of) a predictive method. That technique assumes that items not answered (by design) by students could be imputed with the help of auxiliary variables. We use small area methods to predict the performance of provinces in mathematic tests.

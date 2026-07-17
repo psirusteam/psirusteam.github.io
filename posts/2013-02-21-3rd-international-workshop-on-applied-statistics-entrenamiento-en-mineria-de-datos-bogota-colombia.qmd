@@ -1,0 +1,158 @@
+---
+title: "3rd International Workshop on Applied Statistics (Entrenamiento en minería de datos) Bogotá - Colombia)"
+author: "Andrés Gutiérrez"
+date: "2013-02-21"
+categories:
+  - "Colombia"
+  - "Estadística"
+  - "R"
+---
+
+## [**INSCRIPCIONES ABIERTAS YA**](https://web.archive.org/web/20240527213655/http://estadistica.usta.edu.co/)
+
+Luego de cinco años de iniciado su funcionamiento, y de haber organizado ya los dos primeros eventos internacional en el área estadística, denominados First and Second International Workshop on Applied Statistics, los cuales han sido muy exitosos, gracias a la calidad de los docentes internacionales que participaron, a los múltiples acercamientos con diferentes instituciones académicas y privadas, también las jornadas académicas con invitados locales las cuales han permitido dar una mayor visibilidad a la facultad y a la investigación en el país. Además, se ha tenido la oportunidad de presentar en diversos eventos ponencias a nivel nacional e internacional, la Facultad de Estadística de la Universidad Santo Tomás, desea realizar su tercer evento de carácter internacional, aportando al proceso de consolidación académica tanto del programa como de la institución.
+
+El evento, estará enmarcado en uno de los temas de mayor auge a nivel mundial en el área estadística, como lo es la minería de datos (o Data Mining), para ello contamos con cuatro invitados internacionales dominadores del tema y de sus diversas aplicaciones. También, le permitirá a la facultad de estadística realizar un acercamiento a diversas empresas y universidades reconocidas a nivel mundial como la Universida de París, Ecole Nationale Supérieure des Télécommunications de Paris y TELECOM-ParisTech.
+
+# Entrenadores invitados
+
+#### Georges Hébrail
+
+Professeur Ecole Nationale Supérieure des Télécommunications de Paris Département Informatique et Réseaux
+
+Doctorat d'Informatique (Université Paris XI Orsay) (1987) - DEA d'Informatique de l'Université Paris XI Orsay (1983) - Diplôme d'Ingénieur de l'Ecole Nationale Supérieure des Télécommunications de Paris (1984) - Diplôme de l'Ecole Polytechnique (1982)
+
+#### Emmanuel Viennet
+
+Professeur des Universités Chef du département Réseaux et Télécommunications (IUT de Villetaneuse) *Institut Galilée - Université Paris 13*
+
+Mes activités de recherche se déroulent dans l'équipe Analyse et Traitement d'Informations Visuelles du L2TI et portent sur la fouille de données (data mining), la reconnaissance statistique des formes, l'apprentissage numérique et les réseaux connexionnistes. Ces derniers temps, je m'intéresse en particulier à la fouille de données dans les réseaux sociaux.
+
+#### Ludovic Lebart
+
+Formación: Doctor (de Estado) en Ciencias Matemáticas. (U. Pierre et Marie Curie, Paris, 1976) *Doctor 3r ciclo, Estadística Matemática. (Paris, 1966)**Ingeniero civil (1964)*
+
+# PROGRAMA
+
+#### DÍA 1. (10 de abril)
+
+- Inscripciones y entrega de materiales. (8:00 am – 5:00 pm)
+
+- Conferencia 1. (5:00 pm – 6:00 pm) (Andrés Gutiérrez. Decano Facultad de Estadística. Universidad Santo Tomás)
+
+- Conferencia 2. (6:30 pm – 7:30 pm) (Jorge Ortiz. Docente – Investigador. Universidad Santo Tomás)
+
+#### DÍA 2. (11 de abril)
+
+8:00 am – 9:30 am
+
+- Cursillo1. Ludovic Lebart... Minería de textos y semiometría.
+
+- Cursillo 2. Georges Hebrail –Fr. … New advances in data mining: streaming and distributed data.
+
+- Cursillo 3. Emmanuel Viennet – Fr... Análisis de redes sociales con minería de datos.
+
+9:30 am – 10:00 am
+
+- Refrigerio
+
+10:00 am – 12:00 pm
+
+- Cursillo1. Ludovic Lebart –Fr... Minería de textos y semiometría.
+
+- Cursillo 2. Georges Hebrail –Fr... New advances in data mining: streaming and distributed data.
+
+- Cursillo 3. Emmanuel Viennet – Fr... Análisis de redes sociales con minería de datos.
+
+6:00 pm – 7:00 pm
+
+- Inauguración del evento
+
+7:00 pm – 8:00 pm
+
+- Conferencia inaugural (Ludovic Lebart - Fr)
+
+8:00 pm – 8:30 pm
+
+- Acto social
+
+#### DÍA 3. (12 de abril)
+
+8:00 am – 9:30 am
+
+- Cursillo1. Ludovic Lebart –Fr... Minería de textos y semiometría.
+
+- Cursillo 2. Georges Hebrail –Fr... New advances in data mining: streaming and distributed data.
+
+- Cursillo 3. Emmanuel Viennet – Fr... Análisis de redes sociales con minería de datos.
+
+9:30 am – 10:00 am
+
+- Refrigerio
+
+10:00 am – 12:00 pm
+
+- Cursillo1. Ludovic Lebart –Fr... Text Mining.
+
+- Cursillo 2. Georges Hebrail –Fr... New advances in data mining: streaming and distributed data.
+
+- Cursillo 3. Emmanuel Viennet – Fr... Análisis de redes sociales con minería de datos.
+
+4:00 pm – 6:00 pm
+
+- Ciclo de ponencias
+
+6:00 pm – 7:00 pm
+
+- Conferencia Georges Hebrail –Fr... Mining data in smart grids.
+
+7:00 pm – 7:30 pm
+
+- Refrigerio
+
+7:30 pm – 8:30 pm
+
+- Derly Almanza – Col. Minería de datos en el sector financiero.
+
+#### DIA 4. (13 de abril)
+
+8:00 am – 9:30 am
+
+- Cursillo1. Ludovic Lebart –Fr... Minería de textos y semiometría.
+
+- Cursillo 2. Georges Hebrail –Fr... New advances in data mining: streaming and distributed data.
+
+- Cursillo 3. Emmanuel Viennet – Fr... Análisis de redes sociales con minería de datos.
+
+9:30 am – 10:00 am
+
+- Refrigerio
+
+10:00 am – 11:30 pm
+
+- Cursillo1. Ludovic Lebart –Fr... Text Mining.
+
+- Cursillo 2. Georges Hebrail –Fr... New advances in data mining: streaming and distributed data.
+
+- Cursillo 3. Emmanuel Viennet – Fr... Análisis de redes sociales con minería de datos.
+
+11:30 am – 12:30 pm
+
+- Conferencia de cierre. Emmanuel Viennet – Fr... Detección de comunidades y aprendizaje en redes sociales.
+
+12:30 – 1:00 pm
+
+- Acto social
+
+# Valor de la inversión
+
+| Columna 1 | Columna 2 |
+| --- | --- |
+| **Tipo de asistente** | **Valor Individual** |
+| Estudiante USTA | $ COL 150.000 |
+| Estudiante Externo | $ COL 180.000 |
+| Profesor USTA | $ COL 200.000,00 |
+| Profesores y profesionales externos | $ COL 250.000,00 |
+| Participante con ponencia* | $ COL 120.000,00 |
+
+* Las ponencias deben estar enmarcadas en cualquier área de la disciplina estadística (no necesariamente en Data Mining)

@@ -1,0 +1,22 @@
+---
+title: "The success of #PredictiveCOL"
+author: "Andrés Gutiérrez"
+date: "2014-06-16"
+categories:
+  - "Colombia"
+  - "Estadística"
+---
+
+**[#PredictiveCOL](https://web.archive.org/web/20140730203514/http://www.gutierrezandres.com/predictivecol) not just predicted the winner (Santos), but also we were so close to the final values. This was the most accurate methodology in the Colombian presidential election.**
+
+This is a not a long story. Initially, we wanted to create a predictive model in order to involve young students of statistics in the role of this beautiful profession. However, we moved forward and we realized that because of this model, young students were interested in politics. This is a major achieve.
+
+We began collecting data in order to aggregate statistics from the pollsters. Then, first run came. Although the predictions were not as accurate as we wanted, we had the opportunity to calibrate the model for the second run. This was one of the most valuable things: we learned from mistakes. Life gives this kind of shots. And if I'm not wrong, that's what it's all about in statistics.
+
+So, the final results were Santos 51%, Zuluaga 45% and blank 4%. Our predictions were Santos 49%, Zuluaga 44% and blank 7%.
+
+This kind of prediction is reliable and accurate. It is political bias-free. The prior distribution was correctly elicited, and the caliper constant in the exponential decreasing model (that weighted the polls) was also calibrated. We also learned even about sampling strategies for second run survey samples. In second runs, it is not just going outside and ask people about voting intention, we must "rake" the sampling weights.
+
+Note that none of the polls reported in the media was accurate ([table from wikipedia](https://en.wikipedia.org/wiki/2014_Colombian_presidential_election, _2014)). So, with our bayesian approach we were able to predict the results of this close race. #PredictiveCOL not just predicted the winner (Santos), but also we were so close to the final values. This was the most accurate methodology.
+
+Finally, the success of the #PredictiveCOL lies in that, with the excuse of forecasting and statistics, people are involving with more passion in politics and now we see young people reviewing journals and news seeking for explanations about the electoral setting and so on. That little effort could change the future of my environment (people around me and connections in social networks) and, for the long term, it could indeed change the future of my dear Colombia.

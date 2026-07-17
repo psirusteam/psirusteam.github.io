@@ -1,0 +1,17 @@
+---
+title: "La distribución de Kumaraswamy"
+author: "Andrés Gutiérrez"
+date: "2009-11-29"
+categories:
+  - "Estadística"
+---
+
+Esta distribución propuesta por Poondi Kumaraswamy en 1980, tiene una forma similar a la de la distribución Beta, está restringida al intervalo [0,1] y resulta muy simple puesto que su forma es cerrada; al contrario de la distribución Beta cuya expresión, como lo afirma Jhon D. Cook, no puede ser reducida a funciones elementales a menos que sus dos parámetros sean enteros. La función de densidad está dada por
+
+$ f(x; a, b)=abx^{a-1}(1-x^a) ^{b-1}$
+
+Un resultado importante es que si Y tiene una distribución Beta(1, b), entonces
+
+$ Y^{1/a} \sim Beta(a, b)$
+
+Sin embargo, [Jhon D. Cook](http://www.johndcook.com/blog/2009/11/24/kumaraswamy-distribution/) afirma que la aproximación de los parámetros de las dos distribuciones no implica que la forma resultante de la distribución de Kuramaswani no sea equivalente a la forma de la distribución beta. En R, esta distribución está implementada en el paquete VGAM y la instrucción rkumar genera números aleatorios desde esta distribución. El gráfico de esta entrada se generó mediante la utilización de [este código](http://predictive.files.wordpress.com/2009/11/untitled1.pdf).

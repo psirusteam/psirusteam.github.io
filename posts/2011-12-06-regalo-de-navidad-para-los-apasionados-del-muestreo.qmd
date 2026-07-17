@@ -1,0 +1,15 @@
+---
+title: "Regalo de navidad para los apasionados del muestreo"
+author: "Andrés Gutiérrez"
+date: "2011-12-06"
+categories:
+  - "Estadística"
+---
+
+Llegó diciembre con su alegría y yo les tengo dos compendios de libre acceso que le resultarán fascinantes a todos aquellos que quieren aprender más de muestreo y que, sobre todo, no entienden por qué algunos dicen que el muestreo es una técnica rara que poco o nada tiene que ver con el desarrollo de la ciencia estadística y los modelos. Pues nada más falso, el muestreo esta circunscrito dentro de la ciencia estadística y tiene como base a, nada más y nada menos, la probabilidad.
+
+1. El primer regalo es un compendio, que lo pueden encontrar gratis en el repositorio ArXiV, y es una publicación del Instituto Internacional de Estadística, llamada [métodos bayesianos que los frecuentistas deberían conocer](http://gutierrezandres.files.wordpress.com/2011/12/bayesian-methods.pdf). Este compendio tiene temas tan interesantes como calibración bayesiana, distribuciones previas objetivas, métodos bayesianos en polítcas públicas, muestreo desde una perspectiva bayesiana, y el impacto de las técnicas bayesianas en el diseño y análisis de encuestas.
+
+2. El segundo regalo es otro compendio, que lo pueden encontrar gratis en la página del Pakistan Journal of Statistics, con sendas discusiones acerca de la [contribución de Ken Brewer al muestreo](http://gutierrezandres.files.wordpress.com/2011/12/brewers.pdf). Ken Brewer es reconocido por tratar de unificar los modelos estadísticos con las técnicas de estimación estándares en muestreo, a través de sus llamados estimadores cosméticos.
+
+Vale la pena que los imprima y los lea. Feliz navidad y un saludo desde Colombia.

@@ -1,0 +1,27 @@
+---
+title: "Bradley Efron sobre genes y micro-arreglos... Inferencia a gran escala (Parte 1)"
+author: "Andrés Gutiérrez"
+date: "2011-06-23"
+categories:
+  - "Estadística"
+---
+
+Hace unas semanas el [Journal of Official Statistics](http://www.jos.nu) me envió el último libro de [Bradley Efron](http://en.wikipedia.org/wiki/Bradley_Efron) (BE), [Large-Scale Inference](http://www.amazon.com/Large-Scale-Inference-Estimation-Prediction-Mathematical/dp/0521192498/ref=sr_1_7?s=books&ie=UTF8&qid=1308857663&sr=1-7), para hacerle una reseña. A parte de que es una gran dignidad hacerle una reseña a este autor, inventor del Bootstrap y el único estadístico ganador de la Medalla Nacional de las Ciencias (el más grande honor científico en los Estados Unidos), voy a dedicar un par de entradas para abarcar este tema que es realmente apasionante y concluir con la reseña. La idea es que con sus comentarios se enriquezca la reseña.
+
+En primer lugar, algo realmente digno de mencionar es la diferenciación que hace BE acerca de la historia de la estadística como una disciplina reconocida:
+
+1. La era de Quetelet y sus sucesores, en la cual se utilizaron enormes conjuntos de datos, provenientes de censos, para resolver preguntas simples pero muy importantes: ¿nacen más mujeres que hombres? ¿La tasa de mortalidad de los niños está aumentando?
+
+2. El periodo clásico de Pearson, Neyman, Fisher y Hotelling, gigantes intelectuales que desarrollaron una teoría de inferencia estadística tan buena que es capaz de sacar hasta la última gota de información en experimentos científicos. Las preguntas en este periodo seguían siendo simples: ¿El tratamiento A es mejor que el tratamiento B? Sin embargo, estas nuevas metodologías están supeditadas a los pequeños conjuntos de datos que los investigadores pudiesen recolectar.
+
+3. La era de la producción científica masiva, en donde las nuevas tecnologías, tipificadas por los micro-arreglos, que permiten la producción de datos de un tamaño que el propio Quetelet envidiaría. Esta era está acompañada por muchísimas preguntas y quizás miles de estimaciones y pruebas de hipótesis que el estadístico debe resolver. Definitivamente, no es la clase de trabajo que el estadístico clásico tenía en mente.
+
+**Abordando el problema**
+
+Los dos primeros capítulos del libro tratan el problema general. Cuando se tiene una gran masa de datos, el enfoque que se debe utilizar es multivariante. De manera tradicional, el enfoque más utilizado es el de máxima verosimilitud. Sin embargo, que sea el más utilizado no implica que sea el correcto. BE cita el trabajo de Stein en 1955 que conmovió las bases de la estadística con un resultado que asegura que, para dimensiones mayores a dos, el estimador de máxima verosimilitud puede ser mejorado en términos del error cuadrático total esperado. Más adelante, Stein desarrolló junto con James un estimador basado en la metodología de Bayes empírico, que domina al estimador de máxima verosimilitud, para cualquier escogencia de distribución previa. Aunque el estimador de James-Stain sea mejor, lo cierto es que para algunas circunstancias subestima al parámetro de interés, razón por la cual es a veces preferido el uso del estimador de máxima verosimilitud. El primer capítulo, así como a lo largo de todo el texto, hace énfasis en el desarrollo de problemas, teóricos y prácticos, que contextualizan la lectura.
+
+**Micro-arreglos**
+
+Mediante un ejemplo de micro- arreglos, el segundo capítulo aborda la problemática de las pruebas de hipótesis para grandes masas de datos. Este ejemplo, enmarcado en un estudio de cáncer de próstata, mide los niveles de expresión para *6033* genes en *102* pacientes, *50* controles y *52* tratamientos. De esta manera, se establece una matriz de dimensión *6033 X 102*, con entradas *x_ij*, concernientes al nivel de expresión del gen *i* en el paciente *j*. El interés está en conocer si algún gen hace diferencia en el desarrollo de cáncer de próstata, entre controles y tratamientos. Para esto, la estadística clásica recomendaría el uso de la prueba t para cada uno de los 6033 genes, para probar la hipótesis nula *Ho: el gen es nulo*. Bajo los supuestos clásicos de muestreo de una distribución normal, la estadística de prueba normalizada tendrá distribución normal estándar. Suponiendo que la expresión genética es independiente para cada gen, entonces un histograma de los *6033* valores de las estadísticas de prueba, y basado en la hipótesis nula, debería ajustar a una curva de densidad normal estándar. Las barras que no ajustan indican sospecha de la no nulidad del gen.
+
+El enfoque frecuentista a este tipo de problemas está basado en el uso de los límites de Bonferroni, al ajustar el valor crítico de *0.05* a *0.05/6033*. Sin embargo, este acercamiento subestima el número total de genes no nulos. Por otra parte, al proponer distribuciones previas para la probabilidad de que el gen sea nulo y para la probabilidad de que el gen sea no-nulo, se crea un enfoque Bayesiano, al suponer una verosimilitud para los datos, que permite además permite estimar la tasa de descubrimientos falsos.

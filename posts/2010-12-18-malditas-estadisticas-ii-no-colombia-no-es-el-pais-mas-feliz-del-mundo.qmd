@@ -1,0 +1,58 @@
+---
+title: "Malditas estadísticas II (No, Colombia no es el país más feliz del mundo)"
+author: "Andrés Gutiérrez"
+date: "2010-12-18"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Y conoceréis la verdad, y la verdad os hará libres (Juan 8:32)
+
+Hace unos años tuve el privilegio de trabajar en una empresa de investigación de mercado que, además de encuestas de mercadeo, realizaba sondeos de opinión mediante interceptación geográfica. En una capacitación, el gerente de aquella compañía me hizo saber orgulloso que ellos habían realizado un estudio de felicidad en Colombia, el cual había arrojado un sorprendente resultado.
+
+En aquella ocasión Colombia fue catalogada como la nación más feliz del mundo. En aquella ocasión este resultado paso inadvertido ante mi, como muchas otras cosas importantes, y supuse que aquel comentario hacía parte del ego sin precedentes de aquel individuo. Hoy, años después me he puesto a recapacitar acerca de este estudio. Estadístico de profesión, tengo valiosas herramientas para analizar datos y extraer información valiosa.
+
+Aunque no soy sociólogo, en los últimos meses he aprendido a examinar los sucesos un poco más subjetivamente. Hoy, años después ese comentario aturde mi corazón y desearía con todas mis fuerzas que el resultado del estudio fuera real y que esta entrada no se tuviese que escribir; máxime teniendo en cuenta que el autor de la misma, en realidad es una tipificación clara del comportamiento colombiano, tratando de ser feliz evadiendo la realidad.
+
+En la [página de Colombia es pasión](http://www.colombia.travel/es/turista-internacional/colombia/noticias/537-colombia-el-segundo-pais-mas-feliz-del-mundo), es posible leer lo siguiente:
+
+> Tierra maravillosa de gente amable... en el ranking de las naciones más felices del mundo, Colombia ocupa el segundo lugar... en el mundo no hay una nacionalidad más feliz que la colombiana.
+
+Este extracto fue escrito como conclusión al estudio británico desarrollado por la organización New Economics Foundation (NEF), el cual presenta los llamativos resultados condensados en su ranking. Acerca de esto, [Andrew Simms](http://www.caracol.com.co/nota.aspx?id=308330), uno de los directivos de la organización declara que:
+
+>... este indice desnuda la economía hasta su concepto más básico: lo que usamos (recursos) y lo que obtenemos; vidas más o menos largas, más o menos felices... El orden en el que aparecen los países puede que contradiga la intuición, pero esto se debe a que los políticos se han perdido al dejarse guiar por modelos matemáticos abstractos de una economía que tiene poco que ver con el mundo real...
+>
+>
+> En el [reporte oficial del índice de felicidad mundial](http://www.happyplanetindex.org/public-data/files/happy-planet-index-2-0.pdf), se describe en detalle cómo se lleva a cabo el estudio, las metodologías utilizadas, el cálculo del índice, entre otros aspectos técnicos. Allí se afirma que este índice representa una medida eficiente del bienestar contrastada con el impacto ambiental de las unidades de muestreo sobre su entorno. Este cálculo parece estar soportado en una extensa bibliografía científica y merece ser considerado como una medida robusta de lo que el estudio intenta investigar.
+
+Lo anterior, sería cierto si tan sólo, y como en muchos otros estudios estadísticos, se asegurara una estrategia representativa sobre la población. En el caso de Colombia, ya hemos tenido bastante con los sondeos de opinión pública que yerran sobremanera en la predicción de los resultados de interés. En esta ocasión, creo que está pasando exactamente lo mismo, y por lo tanto mis objeciones acerca de esta medición no están basadas en las fórmulas matemáticas o los métodos estadísticos utilizados sino, una vez más, en la estrategia de muestreo que se utiliza para acceder a los respondientes.
+
+En el apéndice de este documento se revela que, para este y otros tipos de estudio, es un reto llegar a las comunidades rurales y las comunidades pobres en los países en vía de desarrollo (entre los cuales se encuentra Colombia) y que el método estándar será la metodología logística utilizada por Gallup. [Bla, bla, bla](2010-06-08-meta-analisis-estadistico-de-encuestas-electorales-en-colombia-el-fenomeno-de-familias-en-accion.qmd)... ya sabemos que estas empresas colombianas de investigación de opinión no tienen una marcada rigurosidad en términos de muestreo y pues bien, este argumento técnico es suficiente para controvertir el resultado.
+
+Es bien sabido que en este país, aunque debieran tener un gran impacto, las metodologías estadísticas no son lo suficientemente respetadas como para controvertir algo y los gerentes de estas empresas se excusarán en cualquier argumento logístico como para hacer que la discusión parezca una perogrullada. Pues bien, saliendo un poco por la tangente, hoy quiero traer a colación algunas realidades que, tal vez y sólo tal vez, los respondientes olvidaron (resultan ser argumentos surgidos de estadísiticas oficiales) y que fácilmente permitirían conocer la realidad de nuestro país.
+
+En materia de repartición de la riqueza, Hector Rincón (ex-luciernaga) afirmó [en su columna de opinión](2009-08-29-malditas-estadisticas.qmd) en la entonces revista cambio:
+
+> En números gruesos en Colombia hay 20'200.00 pobres. Llámese pobres, según los tecnócratas que hacen las investigaciones, a aquellos ciudadanos que pertenecen a familias de cuatro miembros promedio que no alcanzan a recibir entre todos 1'086.000 pesos de ingresos mensuales. Hagan cuentas: 1'086.000 dividido cuatro, igual 271.500 pesos por cabeza. Cada mes. De pobres así de pobres tenemos 20'200.000, que equivalen a toda la población de Bogotá, Medellín, Cali, Barranquilla, Bucaramanga y Pereira juntas.
+>
+>
+> Y en indigencia, las cifras no desgarran sino que desgarran y subvierten y queman. De indigentes tenemos 7'900.000 colombianos. Llámese indigentes aquellos ciudadanos que pertenecen a familias de cuatro miembros en promedio y que no alcanzan a recibir entre todos 468.000 pesos mensuales. Hagan cuentas: 468.000 pesos dividido cuatro, igual 117.000 pesos por cabeza. Cada mes. De indigentes así tenemos 7'900.000, que equivalen a la población de Bogotá más la de Armenia más la de Popayán.
+
+En materia de estabilidad social
+
+> Codhes estima que hay unos 4 millones de desplazados en Colombia, Acción Social reporta que tiene inscritas a 2,6 millones de personas. Los éxodos en masa indican que hay una presión violenta contra población civil en muchas regiones del país
+
+En materia de compromiso estatal
+
+> La Asociación de familiares de detenidos y desaparecidos en Colombia, Asfaddes, calcula que en que en este país desaparecen en promedio dos personas al día. Hasta 2006, Asfaddes logró documentar unos 15 mil casos de desaparecidos en Colombia, pero las estadísticas que manejan la Fiscalía General de la Nación y el Instituto Nacional de Medicina Legal y Ciencias Forenses, ya superaron por amplio margen el balance de la asociación. Esos consolidados registran que más de 50 mil personas están aún desaparecidas.
+
+En materia de buen gobierno por la gente
+
+> Según estadísticas de la Oficina Anticorrupción, los 3,9 billones de pesos que en procesos de contratación van a parar a los bolsillos de los corruptos alcanzarían para pagarle 10 semestres de carrera universitaria a 80 mil jóvenes colombianos, con un valor de 5 millones de pesos cada semestre. Esta cifra la estableció la Oficina Anticorrupción, tras conocer una encuesta realizada por Transparencia por Colombia y la Universidad Externado a 560 empresarios que contratan con el Estado. Los cálculos del Ministerio Público y del Zar Anticorrupción indican que los recursos con los que se quedan los corruptos equivalen a la financiación de dos años de la seguridad democrática; podrían ser subsidios de vivienda por valor de 11,5 millones de pesos para 347 mil familias de escasos recursos o cubrir la educación de 325 mil niños. Se calcula que el 12,9 por ciento de los recursos contratados se van en pagos de sobornos, del total de 30 billones de pesos de contratos que ejecuta la Nación. Tan solo el 8 por ciento de los encuestados que conocen de hechos de corrupción los denuncian.
+
+En materia de seguridad
+
+> El Instituto Nacional de Medicina Legal reveló hubo un repunte "escandaloso" de 16% en la tasa de homicidio y las muertes totalizaron los 17.000 casos. El informe anual sobre las muertes en Colombia, "Forensis", da cuenta que los homicidios pasaron de 15.250 casos en 2008 a 17.717 el año pasado, lo que representó un aumento bruto de 2.467 personas muertas o 16,2% de un año a otro. La principal causa de muerte violenta se da por el uso de arma de fuego con un equivalente a 78,1% o 13.851 casos. La primera causal es la "violencia interpersonal" con 11,7% o 2.080 de los casos, seguido por la "violencia sociopolítica" con 6,2% o 1.103 homicidios
+
+Con estas escandalosas cifras (malditas estadísticas) ¿cómo es posible que se nos declare el país más feliz del mundo? Retomando la introducción de esta entrada, pienso que sufrimos de una felicidad efímera que sirve como escudo inconsiente para evadir la terrible realidad que nos aqueja. Lo supongo, simplemente, porque mi familia y yo hemos sido (somos) víctimas de la violencia en Colombia y por mucho tiempo traté de evadir esta oscura realidad. Si me hubiesen preguntado en aquel entonces si yo era feliz, hubiese respondido con un sí rotundo. Lo triste de la historia colombiana, a diferencia de la mía propia, es que tardaremos mucho tiempo en reconocer la realidad… sin realidad no habrá verdad, y sin verdad no habrá reparación… la verdad es importante porque repara a las victimas… y mientras más se dilate este duro proceso, más tardaremos en convertirnos en una sociedad realmente feliz.

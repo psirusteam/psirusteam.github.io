@@ -1,0 +1,38 @@
+---
+title: "Second Workshop on Applied Statistics: Topics on Bayesian Data Analysis"
+author: "Andrés Gutiérrez"
+date: "2010-12-04"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+La **International Association of Survey Statisticians** junto con la **Facultad de Estadística de la Universidad Santo Tomás** han aprobado la organización de uno de los eventos más esperados por la comunidad estadística colombiana, el Workshop on Applied Statistics. Este evento bienal que tendrá lugar en la sede principal de la Universidad en la primera semana de febrero de 2011, en su segunda entrega tendrá como tema principal la estadística bayesiana y sus aplicaciones haciendo memoria a las palabras de Andrew Gelman (a mi leal saber y entender, el estadístico más influyente en el mundo actual) cuando afirmó que:
+
+> #### Hoy en día es posible ser no Bayesiano (non-Bayesian), pero dados los avances en métodos bayesianos aplicados de las dos décadas pasadas, ser anti bayesiano (anti-Bayesian) ya no es una opción...
+
+Este evento se caracteriza porque todos los invitados internacionales, además de conferencias, darán cursillos intensivos sobre temas de punta en la investigación de la estadística aplicada. Lo anterior es muy interesante puesto que el participante será educado personalmente por un equipo estadístico de reconocimiento internacional. Siendo esa la filosofía del evento, desde este espacio, es pertinente invitar a toda la comunidad nacional e internacional a hacerse partícipe de este evento. Entre los invitados internacionales están:
+
+- **Mike Daniels** (Director del Departamento de Estadística de la Universidad de Florida en Gainesville, EE. UU.) - Cursillo: modelos de antedependencia para datos longitudinales binarios con aplicación a la prevención del cáncer
+
+- **Raquel Prada** (Profesora Asociada del Departamento de Matemáticas Aplicadas y Estadística de la Universidad de Califonia, EE. UU.) - Cursillo: Ajuste de modelos de series de tiempo utilizando el enfoque bayesiano.
+
+- **Eduardo Gutiérrez** (Ganador del Jan Tinbergen Award, otorgado por el International Statistical Institute y profesor de la UNAM, México) - Cursillo: Introducción a la estadística bayesiana.
+
+Entre los invitados nacionales están:
+
+- **Víctor López: ** Director de la Escuela de Estadística de la Universidad Nacional de Colombia - Sede Medellín
+
+- **Fabio Nieto: ** Director de investigación del Departamento de Estadística de la Universidad Nacional de Colombia - Sede Bogotá
+
+Las inscripciones estarán abiertas hasta la inauguración del evento. Realmente, los precios son muy asequibles y es una gran oportunidad para que la comunidad estadística se haga presente.
+
+1. Estudiantes de pregrado: 100 mil pesos
+
+2. Profesionales: 150 mil pesos
+
+3. Participantes con poster o ponencia aprobada: 100 mil
+
+La convocatoria de ponencias y posters está abierta a partir de la fecha y pueden enviar sus resúmenes al correo electrónico del nuevo director del Centro de Investigaciones y Estudios Estadísticos (CIEES), señor Yesid Rodríguez. Asimismo, para cualquier inquietud pueden comunicarse al siguiente correo electrónico:
+
+## [heivarrodriguez@usantotomas.edu.co](mailto:heivarrodriguez@usantotomas.edu.co)

@@ -1,0 +1,31 @@
+---
+title: "¿Qué tan rico eres?... Estadísticas en Colombia"
+author: "Andrés Gutiérrez"
+date: "2010-05-13"
+categories:
+  - "Estadística"
+---
+
+El portal de Internet [Global Rich](http://globalrichlist.com/) apoyado en el Grupo de Investigación sobre el Desarrollo del Banco Mundial implementa en su página un interesante cálculo acerca de qué tan rico puede ser usted, comparado con el grueso de la población mundial. Usted sólo tiene que saber sus ingresos mensuales, multiplicarlos por 12 para llegar a una cifra anual y convertirlos a dólares. Una vez que se digite la cifra, entonces aparecerá un gráfico que le informa acerca de su situación de riqueza. Al respecto, el creador de la página afirma que es un ejercicio de caridad puesto que
+
+> El objetivo no es hacer sentir a la gente con dinero, sino motivarlos a donar algo de su dinero extra a obras de caridad, cuando descubren que no son parte de la gran mayoría de personas que no gana más de dos dólares diarios.
+
+También afirma que
+
+> Estamos obsesionados con la riqueza, pero calculamos qué tan ricos somos mirando las cifras de quienes tienen más dinero que nosotros. Esto hace que nos sintamos pobres y nos hace darnos cuenta de que, de hecho, (quienes tienen acceso a la página web) la mayoría de nosotros está dentro de la minoría privilegiada
+
+Algunos datos interesantes son
+
+- Con 8 dólares usted podría comprar 15 manzanas orgánicas o 25 árboles frutales para que los agricultores en Honduras puedan cultivar y vender fruta en el mercado local.
+
+- Con 30 dólares usted podría comprar un DVD Boxset ER o un kit de primeros auxilios para un pueblo de Haití.
+
+- Con 73 dólares usted podría comprar un teléfono móvil nuevo o una nueva clínica móvil para atender a los huérfanos del SIDA en Uganda.
+
+- Con 2400 dólares usted podría comprar un TV de alta definición de segunda generación o brindar educación a toda una generación de niños en un pueblo de Angola.
+
+Ahora, con respecto a Colombia y su riqueza, [Rodolfo Arango comenta](http://www.elespectador.com/columna158167-pobreza-miseria-y-autonomia) lo siguiente:
+
+> De los colombianos pobres ocho millones viven en la miseria. Los indigentes cuentan con menos de dos mil pesos al día para satisfacer sus necesidades básicas. Las cifras son escandalosas. Muestran la enorme desigualdad entre los mejor y los peor situados en la sociedad. No en vano el índice Gini, que contrasta el ingreso del quintil más rico de la población con el ingreso del quintil más pobre, coloca al país después de Brasil como uno de los más desiguales de Latinoamérica.
+
+¡Ahora que usted se siente un poco más rico, puede empezar a ayudar a otros!

@@ -1,0 +1,23 @@
+---
+title: "La ley de Newcomb-Benford en contra del fraude"
+author: "Andrés Gutiérrez"
+date: "2009-07-28"
+categories:
+  - "Estadística"
+---
+
+Estimado colega estadístico, las columnas de la siguiente tabal describen el territorio de algunos países del planeta. Una de las dos columnas es verdadera y la otra columna es falsa. Cuando observa la siguiente tabla de datos, ¿podría decir con exactitud cuál de las columnas es verdadera?
+
+Intrigado por una charla del maestro Pericchi y con la buena fortuna de encontrarme leyendo por esos días la sección *Teachers corner* en *The American Statistician*, me ha llamado la atención fervorosamente la ley de Benford En palabras del propio Pericchi, esta ley, al igual que muchas otras cumple con el teorema de Good, que afirma que en las ciencias exactas, las leyes y resultados más importantes llevan el nombre de la segunda persona que lo estudió. Por ejemplo, el estimador de Horvitz-Thompson fue descubierto en primer lugar por Narain, sin embargo no lleva su nombre.
+
+Volviendo al tema, la ley a la que hago referencia fue descubierta en 1881 por el astrónomo Simon Newcomb cuando notó que las páginas más desgatadas en los libros de logaritmos estaban en los primeros dígitos (nótese que es natural pensar que la distribución de los números es uniforme). Retomando a Newcomb, esta ley fue popularizada en 1938 por el físico Frank Benford quien recopiló más de veinte mil datos y llegó a conclusiones semejantes: la frecuencia de repetición del primer dígito, en los números de su estudio, era mucho mayor para los guarismos 1, 2, 3, y mostraba una tendencia decreciente para los restantes dígitos.
+
+En general, la ley de Newcomb-Benford afirma que la distribución de probabilidad del primer dígito sigue una distribución, no uniforme, dada por
+
+$\Pr(d)=\log(d+1)-\log(d)$
+
+para $ d= 1,2, \ldots,9$ y esta probabilidad es invariante ante transformaciones de escala de medición. A continuación presento las probabilidades para cada uno de los dígitos
+
+Como se puede notar, la probabilidad del uno es de alrededor 0.3, mientras que la del cuatro es de más o menos 0.1 y la del nueve está alrededor de 0.05.
+
+Este magnífico resultado ha sido utilizado en detección del fraude para declaraciones de impuestos ([ver aquí](http://www.thulasidas.com/col/w2008-01-Benford_FINAL.pdf)) y también en detección de fraudes en registros electorales como en Venezuela o en Iran ([ver aquí](http://www.stat.columbia.edu/~cook/movabletype/archives/2009/06/statistical_tes.html)). De hecho, el profesor Mebane tiene un excelente ensayo acutalizado periódicamente con respecto a las dudosas elecciones recientes en Iran ([ver aquí](http://www-personal.umich.edu/~wmebane/note18jun2009.pdf)).

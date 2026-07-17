@@ -1,0 +1,13 @@
+---
+title: "Muestreo y análisis de encuestas en R (Parte II)"
+author: "Andrés Gutiérrez"
+date: "2010-05-13"
+categories:
+  - "Estadística"
+---
+
+[Haciendo clic acá encontrará la segunda part](http://www.box.net/shared/8aq4s3628c) e del curso seminario de muestreo y análisis de encuestas en R. En esta entrega, se profundiza en el diseño y estimación de encuestas con marcos muestrales para elementos pero con la bondad de que se conocen los valores de una característica de información continua para los elementos del marco de muestreo.
+
+El objetivo de la presentación es utilizar la información auxiliar continua de manera adecuada en la implementación de una estrategia de muestreo con o sin reemplazo. Los temas son: muestreo de Poisson, muestreo PPT con reemplazo, muestreo piPT sin reemplazo y diseños exponenciales
+
+PD: La primera entrega de esta serie de presentaciones ha sido todo un éxito. En unas pocas semanas cientos de colegas han accedido al documento y lo han descargado de Internet.

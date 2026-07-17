@@ -1,0 +1,17 @@
+---
+title: "Que no y que no y que no… ¡No es estratificado, es por cuotas!"
+author: "Andrés Gutiérrez"
+date: "2011-07-13"
+categories:
+  - "Estadística"
+---
+
+DG me escribe lo siguiente: Andrés, le escribo para sugerirle que incluya [este artículo](http://www.semana.com/nacion/cosa-pinta-buena/157934-3.aspx) en su blog. Puede ser un error, pero si no lo es, la comunidad estadística debe manifestarse de alguna manera.
+
+Se trata de una encuesta de percepción para la alcaldía de Bogotá, esta medición la realizó la firma encuestadora Ipsos Napoleón Franco y en la ficha técnica se puede encontrar esta descripción del diseño de muestreo: "**Tipo de la muestra: Muestreo no probabilístico, aleatorio estratificado, por conglomerados**."
+
+Lo único que puedo decir es "no hay derecho"… No hay derecho a que una firma tan respetable y de tanta trayectoria cometa este tipo de errores. Puede no serlo, pero a mi parecer no se trata de un error tipográfico sino de un intento de darle un estatus de ciencia a una encuesta que es simplemente una medición de percepción al azar. Se me antoja que, en este escenario, es muy aplicable el viejo y conocido refrán "**confunde y reinarás**". Es una más de las expresiones de autenticidad de los empresario latinoamericanos.
+
+[Andrew Gelman afirma](http://www.stat.columbia.edu/~cook/movabletype/archives/2011/06/a_surveys_not_a.html) que una encuesta no es una encuesta, a no ser que se describa cómo fueron recolectados los datos y cómo se hizo el análisis de la información. De hecho, no es posible confiar en ningún reporte técnico que no explique la manera de recolección de la información; pero en este caso vale la pena, no sólo desestimar los resultados de la medición, sino también rechazar este tipo de prácticas que sólo confunden a la opinión pública. Si esta, o cualquier otra firma, contratara con el Estado para realizar un levantamiento de información que resultara ser "no probabilístico, pero aleatorio estratificado", sí habría herramientas para levantar algún tipo de acción judicial. Es algo así como que se contratara un puente de concreto y el contratista entregara un puente de madera; algo como que se contratara una troncal en una gran ciudad y [se entregara un camino de herradura](http://www.elespectador.com/articulo185562-los-nule-y-26); algo como que se contratara un dique para resistir el embate del invierno, [y el dique se rompiera a las pocas semanas de haberse contruido](http://www.elcolombiano.com/BancoConocimiento/E/en_dos_semanas_estaria_reparado_canal_del_dique_santos/en_dos_semanas_estaria_reparado_canal_del_dique_santos.asp). Qué vaina que los Colombianos nos acostumbremos a estas instancias tan mediocres.
+
+Insisto, si hubiese una asociación de estadísticos en Colombia, podríamos hacer mucho ruido y tomar medidas conjuntas, como por ejemplo enviar una nota de protesta ante el Consejo Nacional Electoral, para que frene este tipo de prácticas hediondas. Pero ya habrá tiempo para eso… mientras tanto, seguiré escribiendo estas entradas para que alimenten la indignación de nuestro adormecido "gremio".

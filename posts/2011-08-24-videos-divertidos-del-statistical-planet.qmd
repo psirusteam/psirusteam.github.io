@@ -1,0 +1,21 @@
+---
+title: "Videos divertidos del Statistical Planet"
+author: "Andrés Gutiérrez"
+date: "2011-08-24"
+categories:
+  - "Estadística"
+---
+
+El Grupo de conocimiento público de la American Statistical Association (ASA) realizó un concurso de videos llamado "promoción de la práctica y profesión de la Estadística". A continuación el video más bayesiano.
+
+[YouTube](https://www.youtube.com/watch?v=TNHJM_ZdxSM&w=425&h=350)
+
+Este es un video en el que el cantante no se explica cómo es la situación de dos personas que estadísticamente comen un pollo, pero en la realidad uno de ellos comió dos pollos, mientras que el otro no comió nada.
+
+[YouTube](https://www.youtube.com/watch?v=hwd544YmzJ4&w=425&h=350)
+
+Y este es un video que bien podría ser el cabezote de un infomercial.
+
+[YouTube](https://www.youtube.com/watch?v=7GQblT8Bf5w&w=425&h=350)
+
+Hay muchos otros videos divertidos (y otros no tanto) [acá](www.amstat.org/youtube/index.cfm).

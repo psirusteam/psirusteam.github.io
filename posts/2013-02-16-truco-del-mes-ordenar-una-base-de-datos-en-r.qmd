@@ -1,0 +1,51 @@
+---
+title: "Truco del mes: ordenar una base de datos en R"
+author: "Andrés Gutiérrez"
+date: "2013-02-16"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Los lunes en la tarde es un tiempo de ocio administrativo para mí... Cierro las puertas de la oficina y me concentro en asesorar a los estudiantes que realizan investigaciones conmigo... Cada lunes sucede lo mismo... es una de esas cosas que me sacan de quicio, pero a la vez me hacen reír: "¿es *order* o es *sort*?" - le pregunto al estudiante de turno. "Jum" - responde el estudiante.
+
+Es sistemático, la misma pregunta, la misma respuesta, el mismo profesor, diferentes estudiantes. Y es que resulta que, dado que me gusta el muestreo, las bases de datos son el pan de cada lunes. Por supuesto, el software de rigor es **R**.
+
+Mi reacción ante esa situación siempre es la misma: llamar a Jorge Ortiz, para que me refresque la memoria. La reacción de Jorge, curiosamente, también es exactamente igual en cada ocasión: "Andrés, le envié un correo con un ejemplo"... Ahora que lo pienso bien, siempre es el mismo correo, y el mismo ejemplo.
+
+Para todos ustedes, desde mi correo electrónico, el ejemplo de Jorge:
+
+```
+# ---- Ejemplo de base de datos Base con 4 variables: Id, A, B, C
+N = 100
+Base = data.frame(Id = 1:N, A = rbinom(N, 5, 0.5), B = rnorm(N, 160, 10), C = runif(N, 100, 200))
+
+View(Base)
+```
+
+Como pueden notar, esta base de datos tiene cuatro variables y el objetivo es ordenarla por la variable B. Ahora, viene lo que realmente es importante, la función que hace el ordenamiento es
+
+*order*
+
+.
+
+```
+# ---- Se quiere ordenar la base por por la columna B
+Orden_B = order(Base$B)
+BaseOrdenada = Base[Orden_B,]
+
+View(BaseOrdenada)
+```
+
+Y listo... Además, para ordenar de forma anidada sólo se debe añadir una segunda variable (o tantas variables como sea necesario) a la función
+
+*order*
+
+:
+
+```
+Orden_AC = order(Base$A, Base$C)
+BaseOrdenada_AC = Base[Orden_AC,]
+
+View(BaseOrdenada_AC)
+```

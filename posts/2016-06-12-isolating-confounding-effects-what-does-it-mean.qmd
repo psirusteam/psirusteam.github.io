@@ -1,0 +1,97 @@
+---
+title: "Isolating confounding effects - What does it mean?"
+author: "Andrés Gutiérrez"
+date: "2016-06-12"
+categories:
+  - "Estadística"
+  - "Teaching"
+---
+
+Have you heard (or read) to those geeks (econometricians and statisticians) talking about **controlling for**some variable in a study? The origin of this practice lies on the design of experiments: when you plan an experimental study, you try to randomise units according to categories that you know that are important.
+
+For example, let's assume that you want to assess the effect of some treatment over some population of humans. You know that the age of the individual is important when it comes to prove the effectivity of the treatment. Then, your experiment must be carried out by means of randomisation over age categories; that is you define, say, 2 categories, then you fit your model and everything is alright. Isn't it? Let's take a look at some scenarios. First, if you stratified by age and then you drew a sample for every stratum, then your model must look like this:
+
+$$ y_i = \beta_1D_{1i} + \beta_2D_{2i} + \varepsilon_i $$
+
+Where $ D_{1i}=1-D_{2i}$ and $ D_{1i}$ is defined to be a dummy variable regarding the membership of unit $ i $ to the first stratum. Now, if you didn't stratify (because of you ignored that this specific treatment provides differential result by age category), then your model should look like this:
+
+$$ y_i = \beta_0 + \varepsilon_i $$
+
+It is straightforward to note that when you fit the first model, the estimated response is $\hat{y}_1$, if unit belongs to stratum 1, or $\hat{y}_2$, if unit belongs to stratum 2. However, when you fit the second model, the estimated response is always $\hat{y}$.
+
+So, once you have fitted these two models, you realise that the relationship between residuals and age category is not the same. That is, in the second model, the variable age has a strong effect over the residuals. Why? Because of the **effect** of this variable is absorbed by residuals; in other words your model didn't take into account the effect of this variable; that is to say, your model is not **controlling for the effect** of this variable.
+
+Here I present some R code useful to reproduce the previous plots.
+
+```r
+y[D1 == 1] <- rnorm(sum(D1), 10, 1)
+y[D2 == 1] <- rnorm(sum(D2), 5, 1)
+
+plot(y)
+
+e1 <- resid(lm(y ~ 0 + D1 + D2))
+e2 <- resid(lm(y ~ 1))
+D1 <- as.factor(D1)
+datos <- data.frame(y = y, D = D1, e1 = e1, e2 = e2)
+
+library(ggplot2)
+library(gridExtra)
+
+p1 <- ggplot(data = datos, aes(D, e1)) + geom_boxplot() +
+  ggtitle("Distribution of residuals for model 1")
+p2 <- ggplot(data = datos, aes(D, e2)) + geom_boxplot() +
+  ggtitle("Distribution of residuals for model 2")
+
+grid.arrange(p1, p2, nrow = 1)
+```
+
+In addition, when it comes to causal inference or more sophisticated studies, isolating confounding variables is very important, because you want a well formulated model with correct and precise estimated effects. For example, let's assume that the actual relation between the response variable and a causal variable $ D $ is given by
+
+$$ y_i = \beta_0 + \beta_1D_{i} +\beta_2 x_i + \varepsilon_i $$
+
+Where $ x $ is a covariate. Then, if you control for the effect of that covariate, the estimate of $\beta_1$ (the causal effect) will be precise as you can see in the next code:
+
+```r
+N <- 1000
+D <- rbinom(N, 1, 0.3)
+
+x <- runif(N, 1, 100)
+e <- rnorm(N, 0, 10)
+y <- 10 + 5 * D + 3 * x + e
+
+plot(x, y)
+plot(y)
+
+m1 <- lm(y ~ D + x)
+m1
+```
+
+```
+Call
+```
+
+:
+
+```r
+lm(formula = y ~ D + x)
+
+Coefficients:
+(Intercept)            D            x
+     10.225        5.431        2.993
+```
+
+On the other hand, if you do **not** control for the effect of that covariate, the estimate of $\beta_1$ (the causal effect) will be **biased** as you can see in the next code:
+
+```r
+m2 <- lm(y ~ D)
+m2
+
+Call:
+lm(formula = y ~ D)
+
+Coefficients:
+(Intercept)           D1
+    160.200        8.967
+```
+
+Finally, note that the residuals of both models have different behaviours, the correlation of the covariate with the residuals of the right model is null, while the correlation of the covariate with the residuals of the wrong model is very large.

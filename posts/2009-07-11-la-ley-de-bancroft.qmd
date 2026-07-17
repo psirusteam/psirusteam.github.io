@@ -1,0 +1,9 @@
+---
+title: "La ley de Bancroft"
+author: "Andrés Gutiérrez"
+date: "2009-07-11"
+categories:
+  - "Estadística"
+---
+
+John D. Cook afirma que para encontrar la pendiente de una línea de regresión sobre un conjunto de datos, una muy buena aproximación es ajustar una línea que contemple el primer punto y el último punto. Esto se conoce como la ley de Bancroft (1944, 1964, 1972). Para más información ver [la argumentación de John D. cook aquí](http://www.johndcook.com/blog/2009/06/29/bancrofts-rule/).

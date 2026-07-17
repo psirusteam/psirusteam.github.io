@@ -1,0 +1,17 @@
+---
+title: "Significación estadística no es lo mismo que relevancia científica"
+author: "Andrés Gutiérrez"
+date: "2009-04-16"
+categories:
+  - "Estadística"
+---
+
+He empezado la lectura de un libro que me recomendaron: *The cult of statistical significance* de Ziliak & McCloskey (2008)... simplemente estoy chequeando algunos de sus apartados. En general, el libro tiene un buen punto y es el que le da el nombre al título de esta entrada... aunque definitivamente los autores son enemigos de todas las ideas de Fisher, el libro se basa en una crítica científica a la mala costumbre de los estadísticos en el juzgamiento de hipótesis. Y tiene razón. ¿Por qué las decisiones científicas están restringidas a un espacio discreto binario ${0,1}$ inducido por una regla de decisión? Los autores del libro sugieren que tendría más sentido científico que las decisiones estuvieran sujetas a una función de perdida continua en el intervalo $(0,1)$.
+
+Tiene sentido, máxime cuando a la hora de realizar contrastes sea cual sea la rama de aplicación (econometría, mercadeo, epidemiología, ciencia política, etc.), siempre se utiliza la misma regla de decisión que Fisher impuso hace varias décadas: Si el valor $ p $ es menor que 0.05, entonces rechace la hipótesis. Pero la verdad que todos sabemos, y a veces no queremos aceptar, es otra. A continuación un ejemplo detallado adaptado de las primeras páginas del libro.
+
+Imagínese que usted y su pequeño niño de cuatro años caminan por una de las aceras de la ciudad. Se detienen en una esquina y compran un perro caliente (*hot dog*). El vendedor del carrito de perros lo atiende muy amablemente y le da justo lo que usted pidió. El semáforo se va a poner en rojo pero usted se atreve a cruzar la calle. **Situación número uno**: cuando va a llegar a la otra acera, usted se da cuenta que el vendedor olvidó colocar mostaza en su perro. Si usted y su hijo se atreven a devolverse y cruzar la calle esquivando carros, motos y tracto mulas, existe una probabilidad – digamos 0.95 – de que logren tener la mostaza en su perro caliente sin que haya ocurrido ningún accidente. **Situación número dos**: cuando usted va a llegar a la otra acera, usted se da cuenta que olvido a su hijo y cuando voltea su mirada, el niño está intentando cruzar la calle. Inmediatamente usted se devuelve esquivando carros, motos y tracto mulas. Existe una probabilidad de 0.95 de que usted alcance a su hijo y llegue a la otra acera de la calle sano y salvo.
+
+Dos situaciones con dos premios distintos, la mostaza o su hijo, y con la misma probabilidad. La significación estadística ignora esta diferencia puesto que las dos decidiones son iguales en cuanto a la probabilidad de "éxito". Ambas variables NIÑO y MOSTAZA son significativas si $ p<0.05$ y la conclusión sería: Existen dos razones, que son igualmente importantes, para cruzar la calle.
+
+Tiene su punto, un muy buen punto.

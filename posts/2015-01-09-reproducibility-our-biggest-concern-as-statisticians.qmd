@@ -1,0 +1,19 @@
+---
+title: "Reproducibility: our biggest concern as statisticians"
+author: "Andrés Gutiérrez"
+date: "2015-01-09"
+categories:
+  - "Estadística"
+  - "Public Policy Evaluation"
+  - "Stats"
+---
+
+What do identify scientists? In a nutshell, if you claim yourself as a scientist, your scientific results must be reproducible and they could be replicated. That's it.
+
+In my consulting work, I've had this concern since the very first moment. It would be not surprise anybody that as statistician we concern about reproducibility. However, I've noticed how some people say that "I am very theoretical and that statistics is a practical profession". I cannot buy that crap. As statisticians, we can discuss whether a methodology is appropriate or not, or whether there exist some other methodologies for a problem to be solved. But, having chosen a methodology, we must assure that, with the same data, our results may be reproducible.
+
+In survey sampling, that could be a tremendous headache because when a sample is selected, how do you assure that: 1) the selected sample is indeed random and 2) if we want to replicate the sample, how do you ensure that those very individuals are always included in the sample? The quick answer is the use of a seed. However, as methodologies are improved constantly, and softwares are being updated year after year, it is almost impossible to ensure that a sample selected today, would be the same 4 years later.
+
+Regina Nuzzo, won the ASA award in statistical reporting excellence by its Nature paper: [Scientific method: Statistical Errors](http://www.nature.com/polopoly_fs/1.14700!/menu/main/topColumns/topLeftColumn/pdf/506150a.pdf). Her point is not about survey samples but statistical inference and the use of p-values; and she shows how our most valuable tool for hypothesis testing is not as reliable as we may think. On the other hand, if you find this discussion interesting, you cannot avoid [this reading](http://www.nature.com/news/weak-statistical-standards-implicated-in-scientific-irreproducibility-1.14131) that claims that one quarter of studies that meet statistical standards may be false.
+
+So, next time that you apply some statistical methodology, think twice: fist think about the properness of the methodology; second, think about how to make it reproducible.

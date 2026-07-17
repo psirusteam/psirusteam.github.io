@@ -1,0 +1,17 @@
+---
+title: "Probabilidad… ¿una verdad inútil o una mentira útil?"
+author: "Andrés Gutiérrez"
+date: "2010-11-02"
+categories:
+  - "Estadística"
+---
+
+En la última charla que sostuve con el profe Jorge, él me hacía los siguientes comentarios que me hicieron ver un poquito más allá de lo que inicialmente entendía. Se trata acerca de la probabilidad frecuentista y recalco que esta entrada no pretende otra cosa que profundizar un poco más en el concepto de esta valiosa herramienta matemática. Espero poder expresarme en estas cortas líneas con la misma sencillez que caracteriza al profe Jorge.
+
+Suponga que una persona llamada AAA visita al médico. El doctor escucha pacientemente la sintomatología de su interlocutor y como resultado de la consulta ordena ciertos exámenes que dilucidarán un poco el complejo escenario, puesto que todo parece indicar que AAA puede padecer de gripa. En últimas, el razonamiento inconsciente del médico está enfoca do en encontrar la probabilidad de que el paciente AAA padezca la enfermedad. En este caso, desde el punto de vista frecuentista, se abren dos vertientes.
+
+1. Uno de los objetivos es encontrar la probabilidad de que AAA padezca la enfermedad. Luego, se debería hacer un cociente entre las personas con gripa y las personas que presentaron una sintomatología similar. En este caso, AAA es parte del denominador de esta división y para encontrar esta probabilidad deberíamos saber si AAA hace parte del numerador o no. Sin embargo, lo anterior resultaría inocuo puesto que sabiendo si AAA es parte del numerador, se estaría asegurando que AAA padece la enfermedad. En este caso, este cálculo verdadero resulta en una verdad inútil.
+
+2. En la misma vía, planteando un escenario más realista, al desconocer si AAA padece de la enfermedad, se debería realizar un cociente entre las personas con gripa y las personas que presentaron una sintomatología similar; sin embargo, esta vez AAA no hace parte ni del numerador ni del denominador. En este caso, se tiene un valor que, literalmente, no es la probabilidad de que AAA padezca de la enfermedad, puesto que un sujeto está siendo excluido del cálculo. Luego, tendríamos una mentira útil en el diagnóstico del paciente.
+
+Y usted qué prefiere una Mentira útil o una verdad inútil?.

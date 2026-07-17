@@ -1,0 +1,28 @@
+---
+title: "#PredictiveCOL (Update #2)"
+author: "Andrés Gutiérrez"
+date: "2014-03-31"
+categories:
+  - "Colombia"
+  - "Estadística"
+---
+
+This is the second update of our [predictions for the Colombian presidential run](https://web.archive.org/web/20140730203514/http://www.gutierrezandres.com/predictivecol). Finally we have the definitive voter's card, published by Colombian Registrar's Office. That said, this is the posterior distribution of vote intention:
+
+Now, if election were held today, this is the SNAPSHOT (mere opinion) of the run.
+
+On the other hand, having into account the auxiliary information, this is the forecast of the election for the day to be held (May 25, 2014)
+
+Our simulations allow to predict some interesting parameters:
+
+The probability that Santos wins with more than 50% of the votes (which ensures that there will be no second run) is 2.02%.
+
+1. The probability that Peñalosa defeats Santos in the first run is 0.04%.
+
+2. The probability that Peñalosa defeats Zuluaga is 56.85%.
+
+3. Undecided voters would not be blank voters.
+
+So, with today's info, we can claim that there will be 2nd run and the contender of Santos could be Peñalosa or (maybe?) Zuluaga.
+
+Stay tuned!!!

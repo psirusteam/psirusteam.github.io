@@ -1,0 +1,38 @@
+---
+title: "Si las elecciones fueran hoy (y además 1, 2, 3, etc.)… Peñalosa gana (P=0.973)"
+author: "Andrés Gutiérrez"
+date: "2011-09-08"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Esta serie de entradas buscan analizar, a manera de ejemplo, la adjudicación de distribuciones previas en un *análisis bayesiano* de tipo electoral. Los resultados son meramente ilustrativos y no deberían inducir ninguna intención de voto.
+
+Antes de que comience a leer, le quiero aclarar dos cosas: la primera es que el título de esta entrada no expresa mi intención de voto, y la segunda es que tanto los análisis como los resultados y discusiones de todas las entradas publicadas en este blog están protegidos por un *copyright* y usted es libre de leer, comentar y compartir esta información. Lo único que se pide es que se cite la fuente.
+
+Aunque no estoy de acuerdo con la metodología de muestreo de la mayoría de las encuestas electorales, pienso que la acumulación de la información es de alguna forma ilustrativa. En esta entrada se realiza un análisis bayesiano acerca de la intención de voto para las próximas elecciones de la alcaldía de Bogotá, ciudad donde yo resido. El ejercicio es meramente académico y voy a actualizar los resultados de manera sistemática hasta el día de las elecciones.
+
+El análisis electoral desde el enfoque bayesiano puede parecer sencillo. En una primera instancia, se trata de conocer la probabilidad de éxito de un candidato, que aplicada a una población específica se traduce en la intención de voto hacia el candidato. Como hay varios candidatos en la disputa, entonces es conveniente suponer que el fenómeno puede ser descrito muy bien mediante el uso de una distribución multinomial. Como el parámetro en este caso es un vector de probabilidades, es adecuado suponer una distribución previa de tipo Dirichlet para este vector. Por lo tanto, haciendo uso del teorema de Bayes, la distribución posterior del parámetro será también de tipo Dirichlet.
+
+En esta primera entrada, desarrollaremos un análisis básico con base en una primera encuesta realizada del por la firma Ipsos – Napoleón Franco, en donde según el [portal WEB de la revista Semana](http://www.semana.com/nacion/petro-penalosa-empate-intencion-voto/162549-3.aspx) se afirma que:
+
+>.
+
+Con base en esta información, y teniendo en cuenta que hubo 604 respondientes, se afina la distribución previa que es Dirichlet con parámetros 133 (igual a 604*0.22), 133 (604*0.22), 72 (604*0.12) y 64 (604*0.09), para los candidatos Peñalosa, Petro, Mockus y Parody, respectivamente. En las entradas posteriores se analizarán otras distribuciones previas que pueden ser más convenientes y/o tener ventajas en el análisis.
+
+Por otro lado, según la última encuesta electoral reportada por un medio de comunicación, correspondiente a la realizada por la firma Centro Nacional de Consultoría, entre el 30 de agosto y el primero de Septiembre, y publicada por el [portal WEB de ElTiempo.com](http://m.eltiempo.com/elecciones-2011/alcaldias-2011/bogota/penalosa-lidera-encuesta-realizada-por-centro-nacional-de-consultoria/10274446/1) afirma que:
+
+>.
+
+Como se trata de la encuesta más reciente, supondremos que estos datos corresponden a la realización de una distribución multinomial.
+
+Es bien sabido que el análisis conjugado, señala que la distribución posterior del parámetro es de tipo Dirichlet, que en este ejercicio particular, tiene parámetros 353, 302, 192 y 164, para los candidatos Peñalosa, Petro, Mockus y Parody, respectivamente. Después de realizar cien mil simulaciones de Monte Carlo y chequear la convergencia de las cadenas y todo lo otro que se deba chequear, los resultados se presentan a continuación:
+
+Luego, la distribución posterior estima que Peñalosa será el ganador. Nada nuevo hasta acá. La novedad es que realicé un análisis para determinar la probabilidad posterior de que el parámetro de Peñalosa fuese mayor que el parámetro de Petro. Esta probabilidad es del orden de 0.97. Luego, la probabilidad de victoria de Peñalosa sobre Petro al día de hoy y, aunque sea muy difícil, suponiendo que los datos son válidos, es de 0.97.
+
+PD: El análisis se complementa considerando todos los candidatos en la contienda electoral. Este análisis sólo tuvo en cuenta los cuatro primeros en intención de voto.
+
+PD2: Entre muchas otras razones, para que estos análisis sean válidos es necesario suponer que 1) el muestreo es aleatorio simple (mejor si es con reemplazo) 2) el modelo es correcto, 3) en este país las firmas encuestadoras sí hacen diseños probabilísticos para seleccionar una muestra, 4) El respondiente va a votar, 5) Va a votar por quien dijo que iba a votar.
+
+PD3: Gracias a las reflexiones de los comentaristas esta entrada ha sufrido valiosos cambios que ayudaron a darle un enfoque más ilustrativo y académico.

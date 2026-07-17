@@ -1,0 +1,9 @@
+---
+title: "Agenda estadística 2010"
+author: "Andrés Gutiérrez"
+date: "2010-01-23"
+categories:
+  - "Estadística"
+---
+
+Actualizada la agenda estadística mundial para este 2010. Simplemente debe dar clic en la pestaña de arriba.

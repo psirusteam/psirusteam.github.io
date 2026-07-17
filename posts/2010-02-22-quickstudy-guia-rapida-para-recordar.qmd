@@ -1,0 +1,9 @@
+---
+title: "! QuickStudy: Guía rápida para recordar!"
+author: "Andrés Gutiérrez"
+date: "2010-02-22"
+categories:
+  - "Estadística"
+---
+
+En el [blog de Diego Méndez](http://metodologiacomportamiento.wordpress.com/2009/05/23/cuaderno-de-trabajo-quick-study-statistics/) encontré [este resumen de los principios básicos de la estadística](http://predictive.files.wordpress.com/2010/02/qs-stats-1572226498.pdf) para un curso introductorio... Diego afirma:

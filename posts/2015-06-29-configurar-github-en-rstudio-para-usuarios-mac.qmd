@@ -1,0 +1,32 @@
+---
+title: "Configurar GitHub en RStudio (para usuarios MAC)"
+author: "Andrés Gutiérrez"
+date: "2015-06-29"
+categories:
+  - "Estadística"
+  - "GitHub"
+---
+
+Siga las siguientes instrucciones para crear una cuenta en github y empezar a crear, modificar y actualizar proyectos en RStudio. Usted puede implementar una gran cantidad de proyectos que incluyen: paquetes para R, presentaciones, libros, artículos, etc. Además puede interactuar con proyectos de otros usuarios y sugerir cambios y actualizaciones.
+
+1. Instale las últimas versiones de [R](http://cran.r-project.org/bin/macosx/) y de [RStudio](http://www.rstudio.com/products/rstudio/download/).
+
+2. Cree una cuenta en [github](https://github.com) y recuerde su *username* y su *email*.
+
+3. En el sitio web de GitHub, cree un nuevo proyecto haciendo clic en el ícono + y recuerde la dirección web del proyecto.
+
+4. Descargue e instale [git](http://git-scm.com/download/mac).
+
+5. Abra el terminal y digite las siguientes líneas de código:
+
+6. En RStudio cree un nuevo proyecto, escoja *version control*, y de clic en Git. En *repository URL* pegue la dirección web de su proyecto en GitHub. Haciendo clic en *browse* escoja en dónde quiere ubicar el proyecto de manera local en su computador. Finalmente haga clic en *create project*.
+
+7. Haga clic en *tools > shell*y digite las siguientes líneas de código:
+
+8. Ahora cree su primer documento del proyecto. En particular cree un archivo R y digite cualquier comando computacional sencillo. Guarde este archivo en la carpeta que escogió en el anterior paso.
+
+9. Haga clic en *tools > version control > commit*seleccione el archivo que acaba de crear. Debe también escribir alguna descripción sencilla en la venta derecha superior y haga clic en *commit*.
+
+10. Ahora haga clic en *push* y espere a que RStudio sincronice la versión web.
+
+Si todo ha salido bien usted notará que en su cuenta de github en internet, los cambios han sido actualizados.

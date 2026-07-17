@@ -1,0 +1,92 @@
+---
+title: "Sampling weights and multilevel modeling in R"
+author: "Andrés Gutiérrez"
+date: "2017-06-15"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+So many things [have been said about weighting](http://www.nber.org/papers/w18859.pdf), but on my personal view of statistical inference processes, you do have to weight. From a single statistic until a complex model, you have to weight, because of the probability measure that induces the variation of the sample comes from an (almost always) complex sampling design that you should not ignore. Weighting is a complex issue that has been discussed by several authors in recent years. The social researchers have no found consensus about the appropriateness of the use of weighting when it comes to the fit of statistical models. Angrist and Pischke (2009, p. 91) claim that *few things are as confusing to applied researchers as the role of sample weights. Even now, 20 years post-Ph. D., we read the section of the Stata manual on weighting with some dismay*.
+
+Anyway, despite the fact that researchers do not have consensus on when to weight, the reality is that you have to be careful when doing so. For example, when it comes to estimating totals, means or proportions, you can use the inverse probability as a way for weighting, and it looks like every social researcher agrees to weight in order to estimate this kind of descriptive statistics. The rationale behind this practice is that you suppose that every unit belonging to the sample represents itself and many others that were not selected in the sample.
+
+When using weights to estimate parameter models, you have to keep in mind the nature of the sampling design. For example, when it comes to estimates multilevel parameters, you have to take into account not only the final sampling unit weights but also the first sampling unit weights. For example, let's assume that you have a sample of students, selected from a national frame of schools. Then, we have two sets of weights, the first one regarding schools (notice that one selected school represents itself as well as others not in the sample) and the second one regarding students.
+
+Let's assume that in the finite population we have 10.000 students and 40 schools. For the sake of my example, let's consider that you have selected 500 students allocated in 8 schools. For the sake of easiness, let's think that a simple random sample is used (I know, this kind of sampling design is barely used) to select students. Think about it, if you take into account only the student's weights to fit your multilevel model, you will find that you are estimating parameters with an expanded sample that represents 10.000 students that are allocated in a sample of just eight schools. So, any conclusion stated will be wrong. For example, when performing a simple analysis of variance, the percentage of variance explained by the schools will be extremely low, because of you are expanding the sample of schools. Now, if you take into account both sets of weights (students and schools), you will find yourself fitting a model with expanded samples that represent 10.000 students and 40 schools (which is good).
+
+Unfortunately, as far as I know, the R suitcase lacks of a package that performs this kind of design-based inference to fitting multilevel models. So, right about now, we can unbiasedly estimate model parameters, but when it comes to estimate standard errors (from a design-based perspective) we need to use other computational resources and techniques like bootstrapping or Jackknife. According to the assumption of independence, most of the applied statistical methods cannot be used to analyze this kind of data directly due to dependency among sampled observation units. Inaccurate standard errors may be produced if no adjustment is made when analyzing complex survey data
+
+When it comes to educational studies (based on large-assessment tests), we can distinguish (at least) four set of weights: total student weight, student house-weight, student [senate-weight](http://www.ierinstitute.org/fileadmin/Documents/IERI_Monograph/IERI_Monograph_Volume_05_Technical_Notes.pdf) and school weight. TIMMS team [claims that](http://www.iea.nl/sites/default/files/irc/IRC-2013_Liou_Hung.pdf)*total student weight is appropriate for single-level student-level analyses. Student house weight, also called normalized weight, is used when analyses are sensitive to sample size. Student house weight is essentially a linear transformation of total student weight so that the sum of the weights is equal to the sample size. Student Senate weight is used when analyses involve more than one country because it is total student weight scaled in such a way that all students' senate weights sum to 500 (or 1000) in each country. School weight should be used when analyzing school-level data, as it is the inverse of the probability of selection for the selected school*.
+
+## R workshop
+
+We will use the student house-weight to fit a multilevel model. As stated before, the sum of these weights is equal to the sample. For the R workshop, we will use PISA 2012 data ([available in the OECD website](http://www.oecd.org/pisa/pisaproducts/pisa2012database-downloadabledata.htm)). I have done a filter for the Colombian case and saved this data to be directly compatible with R ([available here](https://drive.google.com/open?id=0ByzoHkgSB8F3T2pDcU9mOUh0Z0U)). Let's load the data into R.
+
+```
+rm(list = ls())
+library(dplyr)
+library(ggplot2)
+library(lme4)
+
+setwd("/your working directory")
+load("PisaCol. RData")
+
+head(names(PisaCol))
+summary(PisaCol$STRATUM)
+```
+
+Now, we create an object containing the student house-weights and summarize some results based on that set of weights. Notice that the total student weights are stored in the column **W_FSTUWT** of the PISA database. I recall you that I am working with the first plausible value of the mathematics test and that score will be defined as our (dependent) variable of interest for the modeling.
+
+```
+n <- nrow(PisaCol)
+PisaCol$W_HOUSEWHT <- n * PisaCol$W_FSTUWT / sum(PisaCol$W_FSTUWT)
+
+PisaCol %>%
+  group_by(STRATUM) %>%
+  summarise(avg1 = weighted.mean(PV1MATH, w = W_HOUSEWHT),
+            avg2 = weighted.mean(PV2MATH, w = W_HOUSEWHT))
+```
+
+We use the function **lmer** of the **lme4**package to obtain the estimation of the model coefficients in the null model (where schools are defined as independent variables).
+
+```
+##################
+### Null model ###
+##################
+
+HLM0 <- lmer(PV1MATH ~ (1 | SCHOOLID), data = PisaCol,
+             weights = W_HOUSEWHT)
+coef(HLM0)
+summary(HLM0)
+
+# 62.81% of the variance is due to students
+# 37.19% of the variance is due to schools
+100 * 3569 / (3569 + 2113)
+```
+
+As you may know, the PISA index of economic, social and cultural status has a strong relationship to student achievement, so it is a good idea to control for this variable in a more refined model.
+
+```
+#################
+### ESCS mdel ###
+#################
+
+HLM1 <- lmer(PV1MATH ~ ESCS + (1 + ESCS | SCHOOLID), data = PisaCol,
+             weights = W_HOUSEWHT)
+coef(HLM1)
+summary(HLM1)
+
+# After contoling for ESCE, 34.58% of the variance is due to schools
+100 * (96.12 + 1697.36) / (3392.58 + 96.12 + 1697.36)
+```
+
+So then, in summary: we have 3569 units of within-schools variance (63%), after controlling for ESCE that figure turns out to 3392 units (student background explains 5% of that variation). We have 2113 (37%) units of between-school variances, after controlling for ESCE that figure turns out to 1793 (student background explains 15% of that variation). The following code makes a graph that summarizes the relationship of the student achievement with ESCE.
+
+```
+ggplot(data = PisaCol, aes(x = ESCS, y = PV1MATH, size = W_HOUSEWHT)) +
+  theme_minimal() + geom_point() + theme(legend.position="none")
+
+ggplot(data = PisaCol, aes(x = ESCS, y = PV1MATH, size = W_HOUSEWHT)) +
+  geom_point(aes(colour = SCHOOLID)) + theme(legend.position="none")
+```

@@ -1,0 +1,94 @@
+---
+title: "Item Response Theory Models in R and JAGS: simulation and bayesian estimation of 1PL models"
+author: "Andrés Gutiérrez"
+date: "2015-06-02"
+categories:
+  - "Estadística"
+  - "IRT"
+  - "R"
+  - "Stats"
+---
+
+In my job this kind of models are our daily bread. Item response theory models are used to asses the quality of education, and if you are serious about educational or psychological measurement, this kind of models are mandatory.
+
+First of all, IRT models are just that: stochastic models. There is nothing mysterious behind them, because they have a close link with generalized linear models. At the end a latent ability for each examinee is estimated along with item difficulties. According to Hambleton (1991) The 1PL model can be written as the probability that i-th examinee answers item j-th correctly. That is:
+
+$$ logit(\Pr(\theta_i)) = \theta_i - b_j $$
+
+Where $\theta_i $ is the ability of i-th examinee and $ b_j $ is the with item difficulty. So, in order to simulate 500 responses to 10 items that follow this model, you can run this piece of code in R:
+
+```r
+rm(list = ls())
+library(boot)
+p <- 10
+n <- 500
+
+theta = seq(from = -3, to = 3, length.out = n)
+b <- seq(from = -3, to = 3, length.out = p)
+
+pr <- y <- matrix(NA, nrow = n, ncol = p)
+
+for(i in 1:p){
+  x <- theta - b[i]
+  pr[, i] <- inv.logit(x)
+  y[, i] <- rbinom(n, 1, pr[, i])
+}
+```
+
+Now, in order to obtain a bayesian-based estimate for the parameters of this model using JAGS, you should install JAGS (click here to read a previous post about it). After requiring some R libraries, you just run the following piece of code. Note that the bayesian specification of the model supposes that abilities follow a standard normal distribution and difficulties follow non-informative priors.
+
+```r
+library(R2jags)
+library(coda)
+library(lattice)
+library(R2WinBUGS)
+library(rjags)
+library(superdiag)
+
+SimuRasch <- y
+n <- nrow(SimuRasch)
+p <- ncol(SimuRasch)
+
+SimuRasch.model <-function() {
+  for (i in 1:n){
+    for (j in 1:p){
+      Y[i, j] ~ dbern(prob[i, j])
+      logit(prob[i, j]) <- theta[i] - b[j]
+    }
+    theta[ i ] ~ dnorm(0, 1) 
+  }
+  for (j in 1:p) {
+    b[j] ~ dnorm(mu, tau)
+  } 
+  mu ~ dnorm(1, 0.000001)
+  tau ~ dgamma(0.000001, 0.000001)
+}
+
+SimuRasch.data <- list("Y", "n", "p")
+SimuRasch.param <- c("b")
+SimuRasch.inits <- function(){list("b"=rep(1,p))}
+set.seed(123)
+
+SimuRasch.fit <- jags(data=SimuRasch.data, inits=SimuRasch.inits, SimuRasch.param, 
+                n.chains=1, n.iter=1000, n.burnin=100,
+                n.thin=2, model.file=SimuRasch.model)
+
+print(SimuRasch.fit)
+```
+
+Now, you can also estimate the parameters of the model using frequentist approaches. For example, you can use ltm and eRm libraries to obtain similar results.
+
+```r
+library(ltm)
+```
+
+```r
+library(eRm)
+```
+
+```r
+m1.r = RM(SimuRasch)
+summary(m1.r)
+m1.l =rasch(SimuRasch, IRT.param = TRUE)
+summary(m1.l)
+```

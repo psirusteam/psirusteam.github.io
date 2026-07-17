@@ -1,0 +1,54 @@
+---
+title: "Resultados desagregados y agregados en la misma tabla (R: :dplyr)"
+author: "Andrés Gutiérrez"
+date: "2019-06-13"
+categories:
+  - "R"
+  - "Software"
+---
+
+Algunos lectores de este blog valoran la facilidad de procesamiento de tablas de algunos programas populares como `SPSS`. Más allá de la facilidad del manejo de sus procedimientos, la versatilidad de las tablas resultantes es evidente. Para los que, como yo, queremos aplicar todo en `dplyr`, existe una solución al problema de la generación de tablas desagregadas con una estadística de resumen sobre la base de datos entera; algo así como un gran total, o gran media, o gran algo. Este problema fue planteado primero en StackOverflow [(ver acá)](https://stackoverflow.com/questions/51090929/add-baseline-grand-total-with-group-by-in-dplyr) y en esta entrada se presenta una adaptación.
+
+Lo primero que se puede considerar es crear la tabla desagregada con el comando `group_by`, luego generar la medida de resumen sobre toda la base de datos, para finalmente pegar las consultas con el comando `rbind`. Considere el siguiente código que genera la tabla deseada:
+
+HTML generated using hilite.me
+
+```
+library(dplyr)
+data("mtcars")
+
+p1 <- mtcars %>% 
+  group_by(cyl) %>%
+  summarise(mean(mpg))
+
+p2 <- mtcars %>% 
+  summarise(mean(mpg))
+
+as.data.frame(rbind(p1, c("Total", unlist(p2))))
+
+    cyl        mean(mpg)
+1     4             26.6
+2     6             19.7
+3     8             15.1
+4 Total           20.1
+```
+
+La solución más eficiente es utilizar el comando `mutate_at` y `bind_rows` sobre la base de datos original y después agruparlos, para finalmente obtener la tabla deseada.
+
+HTML generated using hilite.me
+
+```
+mtcars %>% 
+  mutate_at(vars(cyl), funs(as.character(.))) %>%
+  bind_rows(mutate(., cyl = "Total")) %>%
+  group_by(cyl) %>%
+  summarise(mean(mpg))
+
+# A tibble: 4 x 2
+  cyl   `mean(mpg)`
+  <chr>       <dbl>
+1 4            26.7
+2 6            19.7
+3 8            15.1
+4 Total        20.1
+```

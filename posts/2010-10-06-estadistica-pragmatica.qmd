@@ -1,0 +1,23 @@
+---
+title: "Estadística pragmática"
+author: "Andrés Gutiérrez"
+date: "2010-10-06"
+categories:
+  - "Estadística"
+---
+
+[En este estupendo artículo](http://www.stat.cmu.edu/~kass/papers/bigpic.pdf), Robert Kass afirma que las marcadas diferencias entre las corrientes bayesiana y frecuentista han socavado - más que ayudado - al aprendizaje de la ciencia estadística. El frecuentista critica al bayesiano porque realiza inferencias subjetivas al escoger la distribución a priori de los parámetros de interés; el bayesiano critica al frecuentista porque la interpretación de confianza y significación sólo tiene sentido cuando se tiene en cuenta un número grande de experimentos controlados: por ejemplo, un intervalo de confianza del 95% se interpreta como que al calcular ese mismo intervalo 100 veces en muestras aleatorias, entonces 95 intervalos contendrán al parámetro de interés.
+
+La verdad es que en la vida real, estos conceptos bayesianos o frecuentistas son de vital importancia y han ayudado a resolver cientos de miles de problemas de investigación. Por esto, Kass afirma que los estadísticos prácticos modernos deben tener una mente abierta para apreciar el papel que juegan los supuestos teóricos y no para recitar correctamente la interpretación de un intervalo de confianza. Así que, Kass hace un llamado para entrar en una especie de filosofía moderna que él llama, pragmatismo estadístico y que se basa en los siguientes puntos:
+
+1. Los intervalos de confianza, la significación estadística y la probabilidad a posteriori son todas herramientas inferenciales valiosas.
+
+2. Las situaciones de azar simple pueden suplir las intuiciones básicas acerca de la probabilidad de un evento.
+
+3. Las frecuencias de largo plazo son importantes matemáticamente, tienen sentido interpretativo y pedagógico, sin embargo, es posible la asignación de probabilidades a eventos únicos: por ejemplo, que en un intervalo de confianza esté el parámetro de interés.
+
+4. La interpretación subjetiva de la probabilidad a posteriori es importante para entender la inferencia bayesiana, pero no es fundamental en su uso.
+
+5. Las inferencias estadísticas de todo tipo usan modelos estadísticos que requieren supuestos: las variables aleatorias, los intervalos de confianza y las probabilidades a posteriori viven en el mundo irreal de la teoría y se usan para concluir acerca del comportamiento de los datos reales.
+
+El docente avezado debe tener en cuenta que el mundo real está constituido por los datos recolectados y que el mundo fantástico, muy útil y matemáticamente fundamentado pero en últimas irreal, está ligado a modelos probabilísticos de los cuales se extrae una muestra aleatoria para realizar inferencias acerca de uno o varios parámetros que definen el comportamiento estructural de un modelo supuesto. De esta manera, por ejemplo, en el mundo real se tiene acceso al promedio muestral de un conjunto de datos; en el mundo irreal, se tiene un estimador llamado, equis barra, que no denota una cantidad fija sino una variable aleatoria.

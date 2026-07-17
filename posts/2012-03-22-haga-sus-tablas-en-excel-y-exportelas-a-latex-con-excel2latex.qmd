@@ -1,0 +1,9 @@
+---
+title: "Haga sus tablas en Excel y expórtelas a LaTeX con Excel2Latex"
+author: "Andrés Gutiérrez"
+date: "2012-03-22"
+categories:
+  - "Estadística"
+---
+
+Pues sí, así como lo lee… Ya basta de hacer sus tablas en Excel para después pasarrlas a LaTeX utilizando los tediosos entornos *tabular* y*table*. No hay nada más complicado que encontrar aquel error en la tabla que no permite que el documento se ejecute pertinentemente. Pues bien, abra google, digite Excel2Latex y baje este complemento (También lo [puede descargar desde acá](http://www.ctan.org/tex-archive/support/excel2latex)) que de seguro le aliviara, en alguna medida, esta tediosa tarea. Descomprima el archivo. Corra la macro y, cuando necesite exportar alguna tabla, simplemente selecciónela y vaya a la pestaña complementos para ejecutarlo.

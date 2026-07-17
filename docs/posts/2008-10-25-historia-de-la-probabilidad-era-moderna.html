@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Andrés Gutiérrez">
+<meta name="dcterms.date" content="2008-10-25">
+
+<title>Historia de la probabilidad (Era moderna) – Andrés Gutiérrez</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Andrés Gutiérrez</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../books.html"> 
+<span class="menu-text">Books</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../software.html"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">1920-1930</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Historia de la probabilidad (Era moderna)</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Probability</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Andrés Gutiérrez </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 25, 2008</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Siglo XX</strong></p>
+<p>El siglo XX se ha caracterizado por los avances de la <a href="http://es.wikipedia.org/wiki/Tecnolog%C3%ADa">tecnología</a>; <a href="http://es.wikipedia.org/wiki/Medicina">medicina</a> y <a href="http://es.wikipedia.org/wiki/Ciencia">ciencia</a> en general; fin de la esclavitud (al menos nominalmente); liberación de la mujer en la mayor parte de los países; pero también por crisis y despotismos humanos, que causaron efectos tales como las <a href="http://es.wikipedia.org/wiki/Guerra_mundial">Guerras Mundiales</a>; el <a href="http://es.wikipedia.org/wiki/Genocidio">genocidio</a> y el <a href="http://es.wikipedia.org/wiki/Etnocidio">etnocidio</a>, las políticas de <a href="http://es.wikipedia.org/wiki/Exclusi%C3%B3n">exclusión</a> social y la generalización del <a href="http://es.wikipedia.org/wiki/Desempleo">desempleo</a> y de la <a href="http://es.wikipedia.org/wiki/Pobreza">pobreza</a>. Como consecuencia, se profundizaron las inequidades en cuanto al desarrollo social, económico y tecnológico y en cuanto a la distribución de la riqueza entre los países, y las grandes diferencias en la calidad de vida de los habitantes de las distintas regiones del mundo. En los últimos años del siglo, especialmente a partir de <a href="http://es.wikipedia.org/wiki/1989">1989</a>-<a href="http://es.wikipedia.org/wiki/1991">1991</a> con el derrumbe de los regímenes colectivistas de <a href="http://es.wikipedia.org/wiki/Europa">Europa</a>, comenzó el fenómeno llamado <a href="http://es.wikipedia.org/wiki/Globalizaci%C3%B3n">globalización</a> o mundialización.</p>
+<section id="section" class="level1">
+<h1>1920-1930</h1>
+<p>En los años de la gran Guerra (primera guerra mundial entre 1914 y 1918) la probabilidad y la estadística se esparcieron por todos lados. Durante la guerra, la investigación en probabilidad casi se detiene por causa de que la gente se enlistaba en los servicios armados. <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Pearson</a>, <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Lévy</a> y <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Wiener</a> trabajaron en balística, <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Jeffreys</a> en meteorología e <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Yule</a> en administración.</p>
+<ul>
+<li><p>En 1900 <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Hilbert/">David Hilbert</a> propuso un conjunto de <a href="http://aleph0.clarku.edu/~djoyce/hilbert/problems.html">problemas</a> para el siglo 20. El sexto problema fue, “tratar… por medio de axiomas, aquellas ciencias físicas en las cuales las matemáticas juegan un papel importante; en primer lugar están la teoría de la probabilidad y la mecánica.” <a href="https://web.archive.org/web/20260317083125/https://jeff560.tripod.com/m.html">La teoría de la medida</a>, que jugaría un papel muy importante en la axiomatización de la probabilidad, fue creada por <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Borel/">Borel</a>, <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Lebesgue/">Lebesgue</a> entre otros.</p></li>
+<li><p>Desde diferentes campos surgieron contribuciones que eventualmente encontraron lugar en la teoría de los procesos estocásticos. En física, <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Einstein/">Einstein</a> y <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Smoluchowski/">Smoluchovski</a> trabajaron en el movimiento <a href="https://web.archive.org/web/20260220124513/https://jeff560.tripod.com/b.html">Browniano</a>. <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Bachelier/">Bachelier</a> desarrolló un modelo similar aplicado a la especulación financiera; alternamente, el actuario <a href="http://en.wikipedia.org/wiki/Ernest_Filip_Oskar_Lundberg">Lundberg</a> desarrolló una teoría de riesgo colectivo. –la enfermedad de la malaria y la migración de los mosquitos fueron el foco principal de la investigación de <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Pearson</a> originado en el problema de la <a href="https://web.archive.org/web/20260310145716/https://jeff560.tripod.com/r.html">caminata aleatoria</a>. <a href="http://en.wikipedia.org/wiki/Ronald_Ross">Ronald Ross</a> y <a href="http://en.wikipedia.org/wiki/Anderson_Gray_McKendrick">A. G. McKendrick</a>, sin la referencia del anterior trabajo de <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Daniel Bernoulli</a>, crearon modelos matemáticos de epidemias.</p></li>
+<li><p>Aunque <a href="http://en.wikipedia.org/wiki/Gregor_Mendel">Mendel</a> no usó la probabilidad en su trabajo sobre genética (publicado en 1866), sus ideas fueron probabilizadas cuando <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Pearson</a>, <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Yule</a> y <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Fisher</a> investigaron si los principios de la genética podrían racionalizar los hallazgos de los biometristas.</p></li>
+<li><p><a href="http://en.wikipedia.org/wiki/Charles_Spearman">Charles Spearman</a> (1863-1945) impulsó la correlación y esta empezó a ser parte importante de la sicología. Entre las contribuciones a la estadística estuvieron la <a href="https://web.archive.org/web/20260310145716/https://jeff560.tripod.com/r.html">correlación de rangos</a> y el <a href="https://web.archive.org/web/20260408144245/https://jeff560.tripod.com/f.html">análisis factorial</a>. <a href="http://en.wikipedia.org/wiki/Godfrey_Thomson">Godfrey Thomson</a> fue un crítico severo del análisis factorial de la inteligencia basado en el trabajo de Spearman. En la década de 1930 <a href="http://www.indiana.edu/~intell/lthurstone.shtml">Louis L. Thurstone</a> desarrolló el análisis factorial múltiple.</p></li>
+<li><p>En economía, especialmente en los Estados unidos, los métodos cuantitativos empezaron a ser más prominentes. Las figuras más importantes fueron Warren Persons, <a href="http://en.wikipedia.org/wiki/Irving_Fisher">Irving Fisher</a>, <a href="http://en.wikipedia.org/wiki/Wesley_Clair_Mitchell">Wesley Mitchell</a> and <a href="http://en.wikipedia.org/wiki/Henry_Ludwell_Moore">H. L. Moore</a>. La mayoría de su trabajo se clasificaría en el análisis de series de tiempo.</p></li>
+<li><p>Las aplicaciones industriales en probabilidad empezaron con el trabajo de <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Erlang/">Erlang</a> sobre congestión de sistemas telefónicos, el ancestro de la <a href="https://web.archive.org/web/20251116012233/https://jeff560.tripod.com/q.html">teoría de colas</a>.</p></li>
+<li><p>Los desarrollos institucionales incluyen, en 1911 la creación del departamento de estadísticas aplicadas en UCL encabezado por <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Pearson</a>. <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Yule</a>, podría ser llamado “el primer estadístico moderno”.</p></li>
+</ul>
+<p><strong>1920-1930</strong></p>
+<p>La mayoría de las personas que dominaron la probabilidad y la estadística tuvieron un impacto temprano. De ellos, el individuo que tuvo un mayor impacto fue <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Fisher</a> en estadística. El alemán era el idioma tradicional en la literatura científica de la época. Sin embargo, Fisher escribía en inglés pues creía que la época de escritura alema había terminado con Gauss.</p>
+<ul>
+<li><p>Los avances en probabilidad incluyeron refinamientos del <a href="https://web.archive.org/web/20251226073238/https://jeff560.tripod.com/c.html">teorema central del límite</a> (<a href="http://en.wikipedia.org/wiki/Jarl_Waldemar_Lindeberg">Lindeberg</a> hizo una muy importante contribución) y de la <a href="https://web.archive.org/web/20260305095113/https://jeff560.tripod.com/l.html">ley fuerte de los grandes números</a> y nuevos resultados incluían la <a href="https://web.archive.org/web/20260305095113/https://jeff560.tripod.com/l.html">ley del algoritmo dominado</a>. Hubo contribuciones de la mayoría de los países del continente europeo; por ejemplo, <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Mazurkiewicz/">Mazurkiewicz</a> de Polonia y en 1935 <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Turing/">Turing</a> repitió el trabajo de Lindeberg sin saber de su publicación.</p></li>
+<li><p>Los fundamentos de la probabilidad recibieron mucha atención y ciertas posiciones encontraron expresiones clásicas: la interpretación lógica de la probabilidad (grado de creencia razonable) fue propuesta por los filósofos de Cambridge, <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Johnson/">W. E. Johnson</a>, <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Keynes/">J. M. Keynes</a> y <a href="http://www.ditext.com/broad/cdbroad.html">C. D. Broad</a>, y presentada a una audiencia científica por <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Jeffreys</a>; el punto de vista <a href="https://web.archive.org/web/20260408144245/https://jeff560.tripod.com/f.html">frecuentista</a> fue desarrollado por <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">von Mises</a>.</p></li>
+<li><p>En estadística, <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">R. A. Fisher</a> generó nuevas ideas sobre <a href="https://web.archive.org/web/20260201120621/https://jeff560.tripod.com/e.html">estimación</a> y juzgamiento de <a href="https://web.archive.org/web/20260422132814/https://jeff560.tripod.com/h.html">hipótesis</a> y su trabajo de diseño experimental movió este tópico desde los linderos hasta el centro de la estadística. Sus <a href="http://psychclassics.yorku.ca/Fisher/Methods/">Métodos estadísticos para investigadores</a> (1925) fue el libro más influyente del siglo 20.</p></li>
+<li><p><a href="http://en.wikipedia.org/wiki/Walter_A._Shewhart">W. A. Shewhart</a> (<a href="http://www.asq.org/join/about/history/shewhart.html">ASQ</a>) fue el pionero del <a href="https://web.archive.org/web/20251116012233/https://jeff560.tripod.com/q.html">control de calidad</a>, el cual se convirtió en una aplicación muy importante de la estadística en la industria.</p></li>
+</ul>
+<p><strong>1930-1940</strong></p>
+<p>En contra de una economía en recession y de una política desastrosa, hubo importantes desarrollos en probabilidad, teoría estadística y sus aplicaciones. En la Unión Soviética, a los matemáticos les iba mayor que a los economistas o a los genetistas y pudieron salir de su país y publicar en revistas internacionales; así <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Kolmogorov</a> y <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Khinchin</a> publicaron en Alemania, donde precisamente los judíos fueron expulsados de la academia desde 1934.</p>
+<ul>
+<li><p>En probabilidad, los principales desarrollos fueron la axiomatización de la <a href="https://web.archive.org/web/20251113013258/https://jeff560.tripod.com/p.html">probabilidad</a> por <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Kolmogorov</a> y el desarrollo de la teoría de los <a href="https://web.archive.org/web/20260217110036/https://jeff560.tripod.com/s.html">procesos estocásticos</a> por él y por <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Khinchin</a>. Su trabajo es usualmente visto como el comienzo de la probabilidad moderna.</p></li>
+<li><p>En los fundamentos de la probabilidad, <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Bruno de Finetti</a> y Frank Ramsey (1903-1930) (<a href="https://mathshistory.st-andrews.ac.uk/Biographies/Ramsey/">St.&nbsp;Andrews</a>, <a href="http://www.fil.lu.se/sahlin/ramsey/">N.-E. Sahlin</a>) trabajaron en la probabilidad subjetiva. Ramsey empezó con el criticismo de la escuela de lógica de Cambridge, en particular Keynes. Una superestructura estadística no se dio sino años <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">después</a>. <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Jeffreys</a> dio un tratamiento complete a la estadística fundamentado en su noción lógica de la probabilidad, aunque la forma prevaleciente era la <a href="https://web.archive.org/web/20251226073238/https://jeff560.tripod.com/c.html">clásica</a>.</p></li>
+<li><p>Biometrika detuvo la publicación de la investigación biológica y se enfocó en la estadística teórica. El <a href="http://www.imstat.org/history.htm">Instituto de estadística matemática</a> fue fundado en 1930 y su revista, <a href="http://www.imstat.org/history.htm">The Annals of Mathematical Statistics</a> apareció en 1933. El primer laboratorio de estadística en los Estados Unidos fue creado en Iowa por <a href="http://en.wikipedia.org/wiki/George_W._Snedecor">Snedecor</a> en 1933. Snedecor fue fuertemente influenciado por <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Fisher</a>.</p></li>
+<li><p>En el campo de la inferencia estadística, el mayor desarrollo fue la teoría del juzgamiento de <a href="https://web.archive.org/web/20260422132814/https://jeff560.tripod.com/h.html">hipótesis</a> de <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Neyman</a>-Pearson. El <a href="https://web.archive.org/web/20260317083125/https://jeff560.tripod.com/m.html">análisis multivariado</a> se convirtió en una material identificable, formada por contribuciones como la <a href="https://web.archive.org/web/20241204173847/https://jeff560.tripod.com/w.html">distribución Wishart</a> (1928), <a href="http://www.amstat.org/about/statisticians/index.cfm?fuseaction=biosinfo&amp;BioID=7">los componentes principales de Haro</a> ld Hotelling (1933) y la <a href="https://web.archive.org/web/20251226073238/https://jeff560.tripod.com/c.html">correlación canónica</a> (1936) y el <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">análisis</a><a href="https://web.archive.org/web/20260217120428/https://jeff560.tripod.com/d.html">discriminante de Fisher</a> (1936).</p></li>
+<li><p>Las aplicaciones de las matemáticas y estadísticas a la economía se juntaron en el movimiento <a href="https://web.archive.org/web/20260201120621/https://jeff560.tripod.com/e.html">econométrico</a>. Entre los líderes de la década de 1930 estuvieron <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Tinbergen/">Jan Tinbergen</a> y <a href="http://nobelprize.org/economics/laureates/1969/frisch-autobio.html">Ragnar Frisch</a>. Los econometristas que ganaron el premio Nobel en economía son Engle, Granger, Haavelmo, Heckman, Klein, McFadden.</p></li>
+</ul>
+<p><strong>1940-1950</strong></p>
+<p>Entre los millones de muertos de la segunda Guerra mundial se contaron algunos matemáticos y estadísticos. <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Doeblin/">Doeblin</a> es el más famoso de los finados; uno de los libros de <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Neyman</a> está dedicado a la memoria de diez colegas y amigos. Esta guerra incentivó el estudio de la probabilidad y la estadística. Al final de la Guerra, muchas personas se encontraron trabajando como estadísticos, hubo nuevas aplicaciones y la importancia de esta material fue más ampliamente reconocida.</p>
+<ul>
+<li><p>Las persecuciones Nazis y la segunda guerra mundial empujaron la migración de muchos estadísticos a los Estados Unidos. Algunas de las más importantes figures de la probabilidad en la postguerra en Estados Unidos son: <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Feller</a>, <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Kac/">M. Kac</a> (<a href="http://www.genealogy.math.ndsu.nodak.edu/html/id.phtml?id=17851">MGP</a>), <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Wald</a>, <a href="http://www.asq.org/about-asq/who-we-are/bio_box.html">G. E. P. Box</a> (<a href="http://www.genealogy.ams.org/html/id.phtml?id=42226">MGP</a>), <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Cochran/">W. G. Cochran</a> (<a href="http://www.amstat.org/about/statisticians/index.cfm?fuseaction=biosinfo&amp;BioID=21">ASA</a>) (<a href="http://www.genealogy.ams.org/html/id.phtml?id=25897">MGP</a>), <a href="http://www.nap.edu/readingroom/books/biomems/whoeffding.pdf">W. Hoeffding</a> (<a href="http://www.genealogy.math.ndsu.nodak.edu/html/id.phtml?id=20681">MGP</a>), <a href="http://www.amstat.org/about/statisticians/bios/hartleyho.pdf">H. O. Hartley</a> (<a href="http://www.genealogy.math.ndsu.nodak.edu/html/id.phtml?id=20670">MGP</a>), F. J. Anscombe (<a href="http://www.imstat.org/bulletin/Bulletin31_1.pdf">Obit. p.&nbsp;17</a>) (<a href="http://www.genealogy.math.ndsu.nodak.edu/html/id.phtml?id=62936">MGP</a>), <a href="http://www.math.washington.edu/~sheetz/Obituaries/zwbirnbaum.html">Z. W. Birnbaum</a> (<a href="http://www.genealogy.math.ndsu.nodak.edu/html/id.phtml?id=28292">MGP</a>) y <a href="http://www.amstat.org/about/statisticians/index.cfm?fuseaction=biosinfo&amp;BioID=8">O. Kempthorne</a> (<a href="http://www.genealogy.ams.org/html/id.phtml?id=43260">MGP</a>).</p></li>
+<li><p>Los <a href="https://web.archive.org/web/20251108132247/https://jeff560.tripod.com/n.html">métodos no-paramétricos</a> empezaron a ser sistemáticamente estudiados, usando técnicas de la teoría de la inferencia estadística; <a href="http://www.asap.unimelb.edu.au/bsparcs/aasmemoirs/pitman.htm">E. J. G. Pitman</a> fue un pionero importante. Las pruebas estadísticas para el juzgamiento de hipótesis vinieron de no-estadísticos como <a href="http://en.wikipedia.org/wiki/Charles_Spearman">Spearman</a> (<a href="https://web.archive.org/web/20260310145716/https://jeff560.tripod.com/r.html">rangos</a>) o <a href="http://www.umass.edu/wsp/statistics/tales/wilcoxon.html">Wilcoxon</a> (<a href="https://web.archive.org/web/20241204173847/https://jeff560.tripod.com/w.html">prueba de Wilcoxon)</a>. El repertorio conocido de las <a href="https://web.archive.org/web/20260217110036/https://jeff560.tripod.com/s.html">pruebas del signo</a>, <a href="https://web.archive.org/web/20251113013258/https://jeff560.tripod.com/p.html">pruebas de permutación</a> y <a href="https://web.archive.org/web/20251129102941/https://jeff560.tripod.com/k.html">la prueba de Kolmogorov-Smirnov</a> se expandieron rápidamente en el medio.</p></li>
+<li><p>El análisis moderno de <a href="https://web.archive.org/web/20251215071646/https://jeff560.tripod.com/t.html">series de tiempos</a> vino de la unión de la teoría de los procesos estocásticos, la teoría de la predicción y la teoría de la inferencia estadística. Uno de los principales pioneros de esta década fue <a href="http://en.wikipedia.org/wiki/M._S._Bartlett">M. S. Bartlett</a>. En la década de 1950 <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Tukey</a> fue una figura importante. En la década de 1960, <a href="http://en.wikipedia.org/wiki/Rudolf_Kalman">Kalman</a> (<a href="https://web.archive.org/web/20251129102941/https://jeff560.tripod.com/k.html">filtro de Kalman</a>) y los sistemas de ingeniería hicieron importantes contribuciones y en la década de 1970, los métodos de <a href="http://en.wikipedia.org/wiki/George_EP_Box">G. E. P. Box</a> y <a href="http://en.wikipedia.org/wiki/Gwilym_Jenkins">G. M. Jenkins</a> (<a href="https://web.archive.org/web/20260220124513/https://jeff560.tripod.com/b.html">Box-Jenkins</a>) fueron adoptados en la economía y los negocios.</p></li>
+</ul>
+<p><strong>1950-1980</strong></p>
+<p>Este es un periodo de expansión, más países, más gente, más departamentos, más libros, más revistas. Los computadores empiezan a tener un gran impacto.</p>
+<ul>
+<li><p>Los departamentos existents de estadística se expanden. Nuevas instituciones son creadas, entre ellas el Laboratorio estadístico en <a href="http://www.statslab.cam.ac.uk/History/2history.html">Cambridge</a> en 1947 y el <a href="http://www.stat.harvard.edu/anniversary/">departamento de estadística</a> en Harvard en 1958.</p></li>
+<li><p>El alcance de la teoría de la probabilidad se incrementa con el nacimiento de nuevos subcampos como <a href="https://web.archive.org/web/20251116012233/https://jeff560.tripod.com/q.html">la teoría de colas</a> y la <a href="https://web.archive.org/web/20260310145716/https://jeff560.tripod.com/r.html">teoría de la renovación</a>. El libro de <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Feller</a> Introduction to Probability Theory hizo un impacto muy grande en el mundo de habla inglesa pues promovió el estudio de tópicos más avanzados como las <a href="https://web.archive.org/web/20260317083125/https://jeff560.tripod.com/m.html">cadenas de Markov</a>.</p></li>
+<li><p>En material estadística hubo un renacimiento Bayesiano. En Estados Unidos, <a href="https://web.archive.org/web/20260220124513/https://jeff560.tripod.com/b.html">la teoría de decisión Bayesiana</a> reflejó la influencia de la <a href="https://web.archive.org/web/20260217120428/https://jeff560.tripod.com/d.html">teoría de la decisión</a> de <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Wald</a>.</p></li>
+<li><p><a href="http://www.amstat.org/about/statisticians/index.cfm?fuseaction=biosinfo&amp;BioID=4">W. Edwards Deming</a> continúo el trabajo de <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Shewhart</a> en control de calidad y fue muy efectivo a la hora de adoptar estos métodos en la industria.</p></li>
+<li><p><a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Laplace</a> y <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Quetelet</a> vieron el trabajo de los censos como posibles aplicaciones de la probabilidad pero el uso de la teoría estadística para recopilación de información oficial llegó sólo después de las actividades de <a href="http://newton.nap.edu/books/0309055415/html/117.html">Morris Hansen</a> (<a href="http://www.census.gov/prod/2003pubs/oh-hanse.pdf">ver entrevista</a>) en la oficina de censos de Estados Unidos.</p></li>
+</ul>
+<p><strong>1980 + (Los efectos del computador)</strong></p>
+<p>Este periodo describe el efecto impactante de los ordenadores en el desarrollo de métodos estadísticos desde su advenimiento, en la década de 1950 y el dramático cambio en la historia de la probabilidad y la estadística en las recientes décadas. Al final del siglo 19, las <a href="http://www.xnumber.com/xnumber/mechanical2.htm">máquinas mecánicas calculadoras</a> proveyeron el material para la investigación de <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Pearson</a> y <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Fisher</a> y la construcción de sus <a href="https://web.archive.org/web/20260217110036/https://jeff560.tripod.com/s.html">tablas estadísticas</a>. Con la disponibilidad de los computadores, las viejas actividades tomaron menos tiempo y nuevas actividades fueron posibles.</p>
+<ul>
+<li><p>Las tablas estadísticas de números aleatorios fueron mucho más fáciles de producir y luego desaparecieron pues su función fue sometida a los paquetes estadísticos.</p></li>
+<li><p>Una gran masa de datos, más grande que en épocas pasadas, puede ser analizada.</p></li>
+<li><p>El <a href="https://web.archive.org/web/20260217120428/https://jeff560.tripod.com/d.html">Data mining</a> exhaustivo es posible.</p></li>
+<li><p>Modelos y métodos más complejos pueden ser usados. Los nuevos métodos se han diseñado con idea de la implementación computacional. Por ejemplo, la familia de los <a href="https://web.archive.org/web/20260414152920/https://jeff560.tripod.com/g.html">modelos lineales generalizados</a> vinculada al programa GLIM (ver <a href="http://stats.ma.ic.ac.uk/jan01/public_html/">John Nelder</a> <a href="http://www.royalsoc.ac.uk/DServe/dserve.exe?dsqIni=Dserve.ini&amp;dsqApp=Archive&amp;dsqCmd=Show.tcl&amp;dsqSearch=RefNo=='EC/1981/28'&amp;dsqDb=Catalog">FRS</a>).</p></li>
+<li><p>En el siglo 20 cuando <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Student</a> (1908) escribió sobre la media normal y <a href="http://www.economics.soton.ac.uk/staff/aldrich/Figures.htm">Yule</a> (1926) escribió sobre las correlaciones sin sentido, ellos usaron experimentos basados en muestras y en la década de 1920 valió la pena producir tablas de <a href="https://web.archive.org/web/20260310145716/https://jeff560.tripod.com/r.html">números aleatorios</a>. Esto cambió con la introducción de los métodos asistidos por el computador para la generación de números pseudo-aleatorios, más aún los métodos de <a href="https://web.archive.org/web/20260317083125/https://jeff560.tripod.com/m.html">Monte-Carlo</a> (introducidos por <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Von_Neumann/">von Neumann</a> y <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Ulam/">Ulam</a>) fueron posibles.</p></li>
+<li><p>Desde 1980 los métodos de Monte Carlo han sido estudiados y usados directamente en el análisis de datos. En la inferencia clásica, el <a href="https://web.archive.org/web/20260220124513/https://jeff560.tripod.com/b.html">bootstrap</a> ha sido prominente.</p></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/psirusteam\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

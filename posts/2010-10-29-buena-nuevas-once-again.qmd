@@ -1,0 +1,11 @@
+---
+title: "Buena nuevas once again"
+author: "Andrés Gutiérrez"
+date: "2010-10-29"
+categories:
+  - "Estadística"
+---
+
+Según [este informe de la sección de finanzas de CNN](https://web.archive.org/web/20240619032116/https://money.cnn.com/galleries/2010/pf/jobs/1010/gallery.best_jobs_least_stress.moneymag/3.html), la profesión de estadístico en Estados Unidos ocupa el tercer lugar entre los trabajos menos estresantes. La noticia dice así:
+
+> El buen equilibrio entre el pensamiento individual y la colaboración en grupo ayuda a pasar el día rápidamente para los estadísticos. Pero la oportunidad de trabajar en una variedad de entornos y al mismo tiempo el desarrollo de soluciones a problemas complejos, hace que los trabajadores se sientan realmente contentos. Por supuesto, un buen sueldo y seguridad en el empleo no duelen tanto.

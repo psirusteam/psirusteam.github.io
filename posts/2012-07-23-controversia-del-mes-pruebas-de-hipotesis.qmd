@@ -1,0 +1,19 @@
+---
+title: "Controversia del mes: pruebas de hipótesis"
+author: "Andrés Gutiérrez"
+date: "2012-07-23"
+categories:
+  - "Estadística"
+---
+
+Imagen de https://web.archive.org/web/20120103003929/http://1pixel2.es/2009/05/17/mama-me-han-metido-algo-en-la-copa/
+
+En el último número de [Significance](http://www.significancemagazine.org/view/index.html), Baker & Mudge proponen realizar pruebas de hipótesis minimizando las oportunidades de obtener falsos positivos y falsos negativos. Hoy discutiré algunos aspectos interesantes de su artículo que llamaron mi atención.
+
+Ellos argumentan que la hipótesis nula siempre es falsa. Este es el argumento de muchos pensadores que se cuestionan acerca de la validez de las pruebas estadísticas como las conocemos hoy. Si usted está haciendo pruebas de hipótesis justo en este instante, pregúntese acerca de sus hipótesis nulas. Son ciertas? seguramente no. Por ejemplo, considere una prueba sobre una media en un proceso industrial. La hipótesis nula podría ser que la vida media de un componente es de 120 días. Pues bien, esa afirmación es del todo falsa pues, como lo menciona [Gelman](http://www.stat.columbia.edu/~gelman/research/published/francis8.pdf), no tiene sentido cuando el espacio paramétrico es continuo.
+
+Yo diría muy burdamente que existe una validez práctica muy importante. Aún cuando las hipótesis nulas no sean estrictamente verdaderas. Piense en una diferencia de medias, para la cual se realiza una prueba a dos colas. Obviamente resulta imposible pensar en que la hipótesis nula (la resta de las medias es nula) es verdadera, en sentido estricto. Sin embargo, es muy plausible que el efecto sea tan pequeño que de lo mismo pensar en que la hipótesis nula sea verdadera. Incluso, es posible pensar - sin ser bayesiano - que exista una diferencia entre cero (la supuesta diferencia de medias) y la verdadera diferencia de medias, para la cual su medida de probabilidad sea nula... si la anterior frase le quedó sonando, piénselo muy bien puesto que, en el mundo frecuentista, los parámetros no son variables aleatorias sujetas a medidas de probabilidad; pero, en el mundo bayesiano, esto tiene todo el sentido.
+
+Para rematar, esto señores se preguntan ¿de dónde sale ese numerito alpha? ¿[por qué es siempre igual a 0.05](https://web.archive.org/web/20131203020938/http://www.gutierrezandres.com/archives/2130)? Esa es una pregunta que ojalá muchos estudiantes realizaran en clase. Si usted es estudiante le recomiendo que la formule en clase. Realmente no tiene sentido que en todas las disciplinas ese valor sea el mismo. Si usted está realizando pruebas psicométricas, el valor es 0.05; si está haciendo una prueba de hipótesis en un experimento con animales, el valor es el mismo 0.05; si se trata de una prueba sobre microarreglos en genética, el valor es idéntico. Pareciera un guarismo arbitrario impuesto por los profesores de estadística. Yo creo que así es. Concuerdo con los autores en que ni tiene ningún fundamento lógico. De hecho, el anónimo [Student advertía de](http://www.deirdremccloskey.com/docs/jsm.pdf) los peligros de confundir ajuste estadístico con importancia.
+
+¿Y cuál es su opinión?

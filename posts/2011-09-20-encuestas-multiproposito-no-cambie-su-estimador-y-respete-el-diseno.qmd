@@ -1,0 +1,19 @@
+---
+title: "Encuestas multipropósito… no cambie su estimador y respete el diseño"
+author: "Andrés Gutiérrez"
+date: "2011-09-20"
+categories:
+  - "Estadística"
+---
+
+En la mayoría de encuestas multipropóstio, el estadístico se enfrenta con el dilema de la utilización del estimador. Es decir, su encuesta tiene ciertos tópicos que son necesarios e importantes y con los cuales usted ha propuesto la mejor opción en términos del diseño de muestreo. En la mayoría de ocasiones este diseño de muestreo induce probabilidades de inclusión (o de selección) que guían la escogencia del estimador. De esta forma, usted decide utilizar esta estrategia para estimar todos los parámetros de interés. Sin embargo, usted puede preguntarse ¿por qué utilizar la misma estrategia de muestreo para la estimación de todos los parámetros?
+
+Es una pregunta muy válida… De hecho, estoy seguro que todos los que hemos seleccionado muestras la hemos formulado, al menos de forma silenciosa. Yo he tenido esa pregunta desde hace mucho tiempo y la respuesta que encuentro es que no hay por qué considerar la misma estrategia de estimación para todos los parámetros. Por supuesto, con respecto al diseño de muestreo, es imposible cambiar nada. En primera instancia, no es plausible formular distintos diseños de muestreo para una misma encuesta. Ahora, es posible cambiar el estimador. Sin embargo, esta tarea debe realizarse con mucha precaución.
+
+Suponga que su encuesta viene de un diseño de muestreo con probabilidad proporcional al tamaño de una característica de interés. Usted ha escogido hacer un diseño de muestreo PPT porque conoce la buena relación de la característica de interés con la característica auxiliar. Ahora, usted también conoce que no todas las características de interés están relacionadas con la característica auxiliar. Por tanto, usted cree que puede pensar que sería loable suponer que el diseño de muestreo no sea PPT sino MAS. Es decir, para algunos parámetros usted asume que es muy bueno usar el PPT, para otros usted asume que sería muy bueno el MAS. Hasta ahí no problema en asumir y suponer.
+
+Sin embargo, si la solución que usted propone es cambiar el estimador inducido por el PPT, por el estimador de expansión (definido como N veces Y barra), inducido por el MAS, debe estar consciente de que eso induce sesgo en el estimador, sin importar si hay o no correlación con la característica auxiliar. El siguiente histograma muestra la distribución de muestreo del estimador inducido por el PPT, para una característica de interés que no tiene muy buena correlación con la característica auxiliar del PPT. La línea roja indica el valor del parámetro (desconocido en el momento de la encuesta) y la línea azul indica la esperanza del estimador. Las dos líneas coinciden puesto que el estimador es insesgado.
+
+Por otro lado, el siguiente histograma muestra la distribución de muestreo del estimador de expansión, para la misma característica de interés que no tiene buena correlación con la característica auxiliar del PPT. La línea roja indica el valor del parámetro y la línea azul indica la esperanza del estimador. Las dos líneas no coinciden puesto que el estimador es sesgado bajo un diseño PPT; de hecho bajo cualquier diseño de muestreo que no sea MAS.
+
+Así que, piénselo dos veces antes de hacer esta maniobra que puede hacer que, a pesar de su buena voluntad, las estimaciones sean malas. Ahora, existen otros enfoques para cambiar de estimador. Por ejemplo, los estimadores de calibración son una opción.

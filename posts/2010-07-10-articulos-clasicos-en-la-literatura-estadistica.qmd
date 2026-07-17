@@ -1,0 +1,109 @@
+---
+title: "Artículos clásicos en la literatura estadística"
+author: "Andrés Gutiérrez"
+date: "2010-07-10"
+categories:
+  - "Estadística"
+---
+
+En el [blog](http://xianblog.wordpress.com/2010/06/25/top-15-all-timers/) de [Christian Robert](http://www.ceremade.dauphine.fr/~xian/M2classics) se ha publicado una encuesta acerca de los artículos que se debieran considerar como clásicos de la literatura estadística. Su idea es escoger 15 artículos para que sus alumnos los expongan en un seminario. A continuación la lista de artículos competidores.
+
+1. On the problem of the most efficient test of statistical hypotheses. **J. Neyman & E. S. Pearson.** Philosophical Trans. Royal Statistical Society London (1933)
+
+2. The design of optimum multifactorial experiments.**R. L. Plackett & J. Burman.** Biometrika (1946)
+
+3. The estimation of location and scale parameters of a continuous population of any given form. **J. Pitman.** Biometrika (1939)
+
+4. Regression models and life-table. **D. R. Cox.** J. Royal Statistical Society (1972)
+
+5. Bootstrap methods: another look at the jackknife. **B. Efron.** Annals of Statistics (1979)
+
+6. On stationary processes in the plane. **P. Whittle.** Biometrika (1954)
+
+7. The comparative advantages of systemic and randomized arrangements in the design of agricultural and biological experiments. **F. Yates.** Biometrika (1939)
+
+8. Periodogram analysis and continous spectra.**M. S. Bartlett.** Biometrika (1950)
+
+9. Testing for serial correlation in least square regression. **J. Durbin & G. S. Watson.** Biometrika (1950)
+
+10. Monte Carlo sampling methods using Markov chains and their applications. **W. K. Hastings.** Biometrika (1970)
+
+11. The multiple recapture census for closed populations and incomplete 2k contingency tables. **S. E. Fienberg.** Biometrika (1972)
+
+12. On the mathematical foundations of theoretical statistics. **R. A. Fisher.** Philosophical Trans. Royal Statistical Society London (1922)
+
+13. Algorithm AS 136: A K-Means Clustering Algorithm. **J. Hartigan & M. Wong.**Applied Statistics (1979)
+
+14. Bayes Estimates for the Linear Model. **D. V. Lindley & A. F. M. Smith.** J. Royal Statistical Society (1972)
+
+15. Marginalisation paradoxes in Bayesian and structural inference. **A. P. Dawid, M. Stone & J. Zidek.** J. Royal Statistical Society (1973)
+
+16. Maximum likelihood from incomplete data via the EM algorithm. **A. P. Dempster, N. M. Laird and D. B. Rubin.** J. Royal Statistical Society (1977)
+
+17. Regression shrinkage and selection via the lasso. **R. Tibshirani.** J. Royal Statistical Society (1996)
+
+18. The future of data analysis**. J. W. Tukey.** Annals of Mathematical Statistics (1962)
+
+19. On Rereading. **R. A. Fisher.** L. Savage Annals of Statistics (1976)
+
+20. Estimation of the mean of a multivariate normal distribution. **C. Stein.** Annals of Statistics (1981)
+
+21. Estimation of a bounded mean. **G. Casella & W. Strawderman.** Annals of Statistics (1981)
+
+22. Projection pursuit. **P. J. Huber.** Annals of Statistics (1985)
+
+23. On the Foundations of Statistical Inference. **A. Birnbaum.**J. American Statistical Assoc. (1962)
+
+24. Testing a point null hypothesis: the irreconciability of p-values and evidence. **J. O. Berger & T. Sellke.** J. American Statistical Assoc. (1987)
+
+25. Sampling-based approaches to calculating marginal densities. **A. Gelfand & A. F. M. Smith.** J. American Statistical Assoc. (1990)
+
+26. Adapting to unknown smoothness via wavelet shrinkage. **D. Donoho & I. Johnstone.** J. American Statistical Assoc. (1995)
+
+Al respecto, [Andrew Gelman](http://www.stat.columbia.edu/~gelman/) en su [blog](http://www.stat.columbia.edu/~cook/movabletype/archives/2010/07/the_greates_wor.html) afirma que él añadiría a la lista de artículos clásicos los siguientes escritos:
+
+1. **Neyman** (1935). Statistical problems in agricultural experimentation (with discussion).
+
+2. **Tukey** (1972). Some graphic and semigraphic displays.
+
+3. **Akaike** (1973). Information theory and an extension of the maximum likelihood principle.
+
+4. **Lindley and Smith** (1972). Bayes estimates for the linear model (with discussion
+
+5. **Rubin** (1976). Inference and missing data
+
+6. **Wahba** (1978). Improper priors, spline smoothing and the problem of guarding against model errors in regression.
+
+7. **Rubin**(1980). Using empirical Bayes techniques in the law school validity studies (with discussion).
+
+8. **Imbens and Angrist** (1994). Identification and estimation of local average treatment effects.
+
+Es una muy buena idea, digna de imitar en nuestros espacios académicos. Me imagino a algunos profesores experimentados dirigiendo este tipo de seminarios. Yo sería el primero en el aula de clases y pediría exponer el artículo de Efron o alguno de Rubin. Si yo fuera el personaje que dirigiera este espacio, que obligatoriamente estaría contextualizado en el muestreo, la siguiente sería la lista de artículos (en orden cronológico) que yo considero clásicos e influyentes para mí:
+
+1. **Horvitz, D. G and Thompson, D. J.** (1952) A Generalization of Sampling without Replacement from a Finite Population.
+
+2. **Sarndal, C. E.** (1972) Sample Survey vs. General Statistical Theory: Estimation of the Population Mean.
+
+3. **Smith, T. M. F.** (1976) Foundations of Survey Sampling.
+
+4. **Isaki, C. T and Fuller, W.** (1982) Survey Design under the Regression Superpopulation Model.
+
+5. **Sugden and Smith** (1984) Ignorable and Informative Designs in Survey Sampling Inference.
+
+6. **Deville, J. C and Sarndal, C. E.**(1992) Calibration Estimators in Survey Sampling.
+
+7. **Estevao, V. and Hidiroglou, M. and Sarndal, C. E.** (1995) Methodological Principles for a Generalized Estimation System at Statistics Canada.
+
+8. **Wu, C, Sitter and R. R.** A (2001) Model-Calibration Approach to Using Complete Auxiliary Information from Survey Data.
+
+9. **Holmberg, A. Flisberg, P, Ronnqvist, M.** (2002) On the Choice of Optimal Sampling Design with Several Important Variables.
+
+10. **Matei, A. and Tillé, Y.** (2005) Evaluation of variance approximations and estimators in unequal probability sampling with maximum entropy.
+
+11. **Bautista, L.**(2005) Estrategia de muestreo para la estimación de la tasa de favoritismo en la elección presidencial.
+
+12. **Rao. J. N. K.** (2005) Interplay between Sample Survey Theory and Practice: An Appraisal.
+
+13. **Deville, J. C and Lavalleé, P**. (2006) Indirect Sampling: The Foundations of the Generalized Weight Share Method.
+
+Otro artículo que vale la pena mencionar en cualquier cátedra de estadística es el [famoso Sunset Salvo](2009-04-04-la-humildad-del-gremio.qmd) (1985) de **John Tukey**, debería ser una lectura obligatoria en las ceremonias de grado de los nuevos profesionales en estadística. Si usted tiene uno o varios artículos que han influenciado su desarrollo profesional no dude en comentarlos, queremos escuchar de usted y de su experiencia. ¿Danielov? ¿Iván? ¿Parce? ¿Zea? ¿Duini? ¿Yesid? ¿Alex? ¿Alguien más? … ¿Sabotage?

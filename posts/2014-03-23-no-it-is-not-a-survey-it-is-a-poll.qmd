@@ -1,0 +1,25 @@
+---
+title: "No, it is not a survey, it is a poll!"
+author: "Andrés Gutiérrez"
+date: "2014-03-23"
+categories:
+  - "Estadística"
+  - "R"
+  - "Stats"
+---
+
+I disagree with all of the political analysts when it comes to Colombian Presidential Elections (CPE). Everybody start to talk, chat and conclude about what is happening and what is going to happen if elections would be held today. Of course the source of that conclusions (by the way, misleading conclusions!!!) are the political polls carried out by consulting firms (pollsters) in Colombia.
+
+What am I talking 'bout? For example, [this post in La Silla website](http://lasillavacia.com/historia/datexco-inflo-penalosa-46932) is full of junk. I am sorry, it is the truth. Everything is just junk. I have one technical reason to say so: if the sampling strategy is not representative of the whole population of interest, then anything you would claim about the elections is just… wait for it … junk. That post in La Silla is a beautiful example of this sad reality. The author expose one firm, arguing that the sample is biased in one city, and a lot of other reasons. Those reasons lack of sense to me because of the lack of representativity of the sample. That is, you cannot nag a poll, neither you can praise a poll. A poll is a poll, is not a survey. It is just a set of answers collected by means of non probabilistic sampling. And… if the sampling is not probabilistic the whole results are not subject to any kind of judging.
+
+In case you did not know, the technical information in most of opinion polls is … wait for it … junk. Why? Because in order to design a valid sampling strategy you should assure that every person in the population has a non null inclusion probability. However, the "sampling" strategies of these kind of polls are characterised by: 1) Face to face interview or 2) Phone interview. In case 1, I assure you: the sampling design is not probabilistic unless it were focused on households selections. In many occasions, pollsters hire people who stay in the corners waiting to interview for pedestrians. In case 2, a potential voter who does not have phone is not even considered to be part of the sample, violating the inclusion principle.
+
+Now, just for a moment let's assume that the sampling strategy is actually a probabilistic one. In this case you need an extra ingredient: the sample size. Now, in order to have accurate real estimates, with real margin of errors, your sample size should not be minor to 6500 interviews (I will explain this sample size later, maybe in another post). If you take a look, the sample sizes of these polls are in average 1200 interviews. From one side or another, the conclusion is that a poll is not a subject to any kind of technical or scientific judgment.
+
+However, LaSilla criticise the sample and the pollster. Again: it cannot be done! Just remember that the electoral reality in Colombia is divided in two sources: the opinion vote and the vote yielded by the political machine. These polls are focused in the first source of votes: opinion. If Bogotá was weighted or was not, is not even a matter of scientific discussion.
+
+However, it is always possible to confuse your readers with your own confusion.
+
+PS: If you read carefully, you will realise that the author of the post has not any technical (statistical) skills on those topic of polls. However, according to that post, Mr. Prieto (Santos' manager of the electoral campaign) is also misleading his conclusions. Anybody still reading? The manager of a presidential campaign cannot take decisions based on … wait for it … junk!
+
+PSS: Just an insight. Have you ever wondered why the heck the polls are always asking "if the elections were held today…" No way pollsters! Elections are not gonna held today, they are gonna held in May!

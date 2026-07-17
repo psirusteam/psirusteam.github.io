@@ -1,0 +1,25 @@
+---
+title: "Si piensa en posgrado, que sea en estadística"
+author: "Andrés Gutiérrez"
+date: "2009-08-11"
+categories:
+  - "Estadística"
+---
+
+Gracias a dos colegas lectores de este blog, me encontré con [este artículo](http://www.nytimes.com/2009/08/06/technology/06stats.html?_r=1&hp) escrito recientemente en uno de los periódicos más influyentes del mundo. La lectura se me antoja amena, máxime cuando se trata de testimonios reales de personas interesantes haciendo estadística en campos interesantes que, valga decirlo, están un poco alejados de la práctica Latinoamericana pero en los que, en honor a la esperanza, nosotros jugaremos un papel crucial en la puesta en marcha de nuevas técnicas en nuevos campos que deben abrir gracias al rotundo avance del pensamiento estadístico.
+
+Haciendo un paréntesis, lo anterior me recuerda al razonamiento de un excelente maestro mío que afirmaba que hace poco el mundo giraba en torno del pensamiento matemático y las personas del común exclamaban frases como. Sin embargo, en los últimos tiempos la gente tiende a aceptar cada vez con más frecuencia el pensamiento estadístico y ahora han cambiado su cliché por algo como. Este fenómeno se debe al impacto tan tremendo que ha tenido el pensamiento estadístico en la mayoría de áreas del conocimiento.
+
+Retomando el artículo, en él se habla de que la estadística es muy útil en las aplicaciones prácticas y bla, bla, bla (cosa que ya sabíamos y que debemos tener claro)… Lo que realmente me interesó del artículo fueron frases tan transcendentales como las siguientes:
+
+- "Yo sigo afirmando que el trabajo más sexy en los próximos 10 años será el de estadístico, y no estoy bromeando"
+
+- "Un estadístico puede ganar U $ 125.000 dólares al año (equivalentes a 250 millones de pesos colombianos, que se convierten en 21 millones de pesos mensuales) después de egresar del doctorado" [Ver acá para mayor comprensión](http://portodaamerica.blogspot.com/2009/02/el-presidente-uribe-viene-sao-paulo.html).
+
+- "Estamos entrando rápidamente en un mundo en donde todo puede ser monitoreado y medido. Sin embargo, el verdadero problema está en la habilidad humana para usar, analizar y darle sentido a esos datos"
+
+- "Una mejora del dos por ciento puede enorme cuando se hacen cosas millones o billones de veces"
+
+- "La clave está en dejar a los computadores hacer lo que mejor hacen: manejar conjuntos de datos de manera masiva y, dejar hacer a los humanos lo que para ellos es más fácil: explicar las anomalías en los datos "
+
+Para el buen entendedor pocas palabras… Sin embargo, el plan de negocios está ahí… ¿quién lo va a capitalizar? Y también que sea esta la ocasión para agradecer a Jessica Rodríguez por la información.

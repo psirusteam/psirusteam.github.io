@@ -1,0 +1,12 @@
+---
+title: "My paper in RBE - Panel Matching in PME"
+author: "Andrés Gutiérrez"
+date: "2014-04-08"
+categories:
+  - "Colombia"
+  - "Estadística"
+---
+
+[This paper](http://gutierrezandres.files.wordpress.com/2014/04/rbes237.pdf)
+
+present useful R functions that perform matching of panels in the Brasilian labor force survey (Pesquisa Mensal de Emprego - PME). Hope you enjoy it!

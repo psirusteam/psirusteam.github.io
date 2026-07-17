@@ -1,0 +1,12 @@
+---
+title: "My article in RCE... Modelación paramétrica de factores de expansión en encuestas complejas"
+author: "Andrés Gutiérrez"
+date: "2013-02-02"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+El principio de representatividad afirma que el vector de probabilidades de inclusión debe tener un comportamiento estructural similar al del vector de observaciones de la característica de interés. En encuestas complejas, en donde se utilizan procesos de conglomeración y estratificación, generalmente no se cumple tal principio. Por lo anterior, y dado el carácter multipropósito de las encuestas que brindan estadísticas oficiales, se hace necesario profundizar acerca de la forma como se ponderan las observaciones para cumplir con los requisitos de mínima variación en la estimación de totales poblaciones. En este artículo se explora una metodología que permite modelar los factores de expansión, inducidos por el diseño de muestreo, para cumplir con el principio de representatividad y mejorar los coeficientes de variación para unos nuevos estimadores de totales de las variables que conforman una encuesta compleja.
+
+Para acceder al artículo completo, dar clicl [en el siguiente link](http://revistas.usta.edu.co/index.php/estadistica/article/view/184).

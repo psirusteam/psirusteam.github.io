@@ -1,0 +1,23 @@
+---
+title: "Mala práctica de las pruebas de hipótesis"
+author: "Andrés Gutiérrez"
+date: "2009-01-26"
+categories:
+  - "Estadística"
+---
+
+[Jim Berger](http://www.stat.duke.edu/~berger/p-values.html) ha diseñado un [software](http://www.stat.duke.edu/~berger/applet2/pvalue.html) que demuestra que las interpretaciones usuales acerca de los p-valores pueden ser erradas. La ayuda para manejar el software se encuentra en [este documento](http://www.stat.duke.edu/~berger/applet2/applet.pdf).
+
+Al respecto, John Cook hace una lista de cinco autores que tienen puntos de vista muy críticos acerca de la práctica e interpretación usual del estadístico con respecto al procedimiento de las pruebas de hipótesis.
+
+1. [Andrew Gelman](http://www.stat.columbia.edu/~cook/movabletype/archives/2004/12/type_1_type_2_t.html): En la realidad, la hipótesis nula es siempre falsa. ¿Es el tratamiento A igual de efectivo al tratamiento B? Seguramente no. Está claro que antes de la realización de un experimento deben existir algunas diferencias que se pueden manifestar con un número suficiente de datos.
+
+2. [Jim Berger](http://www.stat.duke.edu/~berger/p-values.html): Un p-valor pequeño implica que los datos recolectados son inverosímiles bajo la hipótesis nula. Sin embargo, también pueden serlo bajo la hipótesis alternativa. Las comparaciones de las hipótesis deberían estar condicionadas a la realización de los datos.
+
+3. [Stephen Ziliak and Deirdra McCloskey](http://www.amazon.com/gp/product/0472050079?ie=UTF8&tag=theende-20&linkCode=xm2&camp=1789&creativeASIN=0472050079): La significación estadística no es lo mismo que la significación científica. La cuestión más importante para la ciencia es el tamaño de un efecto y no si existe o no tal efecto.
+
+4. William Gosset: El error estadístico es sólo uno de los componentes del error real y quizás sea un componente pequeño.
+
+5. [John Ioannidis](http://www.johndcook.com/blog/2008/02/07/most-published-research-results-are-false/): p-valores pequeños no implican una probabilidad pequeña de que la hipótesis nula sea incorrecta. En una revisión de estudios médicos se encontró que el 74% de los estudios con p-valores menores que 0.05 llegaban a conclusiones erróneas.
+
+Algun extremista diría que la herramienta de las pruebas de hipótesis y de sus respectivos p-valores es una mala herramienta. Mi punto de vista es que cuándo se entiende que un [p-valor es una variable aleatoria](https://web.archive.org/web/20091106102040/http://predictive.wordpress.com/2008/08/19/p-valores-aleatorios/), entonces las conclusiones y por consiguiente la toma de decisiones se hace con más cuidado. Sin embargo existe otra herramienta estadística que puede ser usada como complemento a los p-valores. Se trata de los factores de Bayes que son la razón entre las probabilidades a posteriorí de las dos hipótesis dada la realización de los datos. Según John Cook, los factores de Bayes no tienen las debilidades de las pruebas de hipótesis, especialmente las que señalan los criticismos de Jim Berger y John Ioannidis.

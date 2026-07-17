@@ -1,0 +1,11 @@
+---
+title: "Por email"
+author: "Andrés Gutiérrez"
+date: "2009-11-03"
+categories:
+  - "Estadística"
+---
+
+Por email
+
+Enviado desde mi BlackBerry de Movistar

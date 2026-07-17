@@ -1,0 +1,67 @@
+---
+title: "Del dicho al hecho: Consistencia, eficiencia e insesgamiento"
+author: "Andrés Gutiérrez"
+date: "2009-05-21"
+categories:
+  - "Estadística"
+---
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Las siguientes deficiniciones matemáticas están adaptadas del libro de
+
+*Teoría de estimación puntual*
+
+de Lehman (Wiley, 1983).
+
+**Insesgamiento: **
+
+Sea $ T $ un estimador del parámetro de interés $\theta in Theta $. Se dice que $ T $ es insesgado si y sólo si se cumple que
+
+$\E(T-\theta)=0$
+
+**Insesgamiento asintótico: **
+
+Sea $ T_n $ una secuencia de estimadores del parámetro de interés $\theta in Theta $. Se dice que $ T_n $ es asintóticamente insesgados si la distribución límite de $ n^{1/2}(T-\theta)$ tiene media nula.
+
+**Consistencia: **
+
+Sea $ T_n; n>1$ una secuencia de estimadores del parámetro de interés $\theta in Theta $. Se dice que la secuencia $ T_n $ es consistente si y sólo si para todo $\theta in Theta $ y para todo $\varepsilon>0$ se cumple que
+
+$ Lim_{n rightarrow \infty} P(|T_n-\theta|\geq \varepsilon)=0$
+
+**Eficiencia: **
+
+Sean $ T_1$ y $ T_2$ estimadores del parámetro de interés $\theta in Theta $. Se dice que $ T_1$ domina a $ T_2$ si para todo $\theta in Theta $
+
+$\E [(T_1-\theta)^2]\leq \E [(T_1-\theta)^2]$
+
+Y se define la eficiencia relativa como
+
+$ e(T_1, T_2)=\frac{ \E [(T_1-\theta)^2]}{ \E [(T_2-\theta)^2]}$
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Hace pocos días asistí a una charla enmarcada dentro de un seminario informal en donde el expositor, uno de los más reconocidos investigadores estadísticos del ámbito nacional, manifestaba la dificultad que significaba traducir la simbología matemática de los fundamentos de la teoría estadística, con su perfecto andamiaje, a la vida práctica. Él se refería a términos como la completitud de un estimador o incluso la misma suficiencia, como conceptos que si bien encajan perfectamente en la abstracción matemática, en la práctica no son nada fáciles de explicar.
+
+No en vano él es una de las personas más influyentes en el desarrollo de la estadística en Colombia y uno de los mejores profesores universitarios. Esa amalgama de investigador y buen profesor es difícil encontrarla en una sola persona. Su avidez para reconocer esa dificultad debe motivarnos a cambiar las estrategias docentes en los cursos tanto de servicios externos a otras facultades como internos en un programa de estadística. Por otro lado, Jhon D. Cook, uno de los estadísticos más leídos en el mundo, también manifestó a finales del año pasado que ha tenido grandes dificultades a la hora de explicar términos como sesgo, consistencia o suficiencia en una clase de estadística en pregrado y que su estrategia radica en construir pseudo-códigos computacionales para la idea práctica de cada uno de estos conceptos.
+
+Y es que una de las formas más óptimas para que un estudiante asimile conceptos tan teóricos y a veces tan disímiles es el aprendizaje a través del código computacional. De esta manera, no sólo se está introduciendo al estudiante al mundo de la habilidad lógica matemática en una demostración sino que al mismo tiempo ese mismo estudiante puede reconocer fácilmente las propiedades de los estimadores que le ayudaran a decidir en la vida práctica. Y es que aunque la vieja regla de Hajek sigue teniendo vigencia -
+
+##### Los estimadores con un sesgo considerable son pobres sin importar qué otras propiedades puedan tener.
+
+- ésta no resuelve nada en presencia de dos estimadores tales que uno es insesgado y el otro es levemente sesgado ¿cuál estimador debo escoger? Retomando a Cook, supóngase que se desean comparar dos estimadores de la varianza de una muestra aleatoria de variables con densidad Normal de media 5 y varianza 81; por ejemplo, el estimador de máxima verosimilitud
+
+$\hat{\sigma}^2=\frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})$
+
+Y el clásico estimador insesgado
+
+$ S^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})$
+
+Que algo quede muy claro. La muestra es una y sólo una… ¿cuál es el mejor estimador? En términos computacionales, y adaptando el ejercicio práctico de Cook, la siguiente gráfica muestra la propiedad de consistencia de los dos estimadores: Ambos conservan esta propiedad; es decir a medida que el tamaño de muestra crece, los valores de las estimaciones se acercan al verdadero valor 81 con una muy alta probabilidad. En estos términos los dos estimadores son igualmente aceptables.
+
+Por otro lado, la propiedad del insesgamiento está relacionada directamente con la esperanza matemática del estimador, en términos de su distribución de muestreo. La siguiente gráfica fue realizada de la siguiente manera: Para un tamaño de muestra fijo $ n=10$, se estima el parámetro de interés. Ahora, este ejercicio se realiza una vez, dos veces, tres veces, …, muchas veces. En cada repetición se calcula el promedio de las estimaciones y se gráfica (siempre manteniendo el tamaño de muestra fijo). Nótese que en un momento dado ambas líneas parecen convergar a un valor. Por supuesto el estimador insesgado converge a 81, el verdadero valor, mientras que el sesgado converge a un valor inferior.
+
+John Cook se pregunta si ésta es una prueba fehaciente de que el estimador insesgado resulta mejor que su competidor. Él afirma que aunque el promedio el estimador converja al verdadero valor 81, eso no significa que las estimaciones individuales sean buenas. Es posible que un estimador insesgado arroje estimaciones individuales ridículas pero en promedio converja al verdadero valor. Una vez más, el número de muestras seleccionadas en la vida real es uno y sólo uno. Así que esta propiedad no basta para escoger un estimador. Paso seguido, la eficiencia. En la siguiente gráfica se aprecia que el error cuadrático medio del estimador insesgado está alrededor de 1500, siendo más alto que el error cuadrático medio del estimador sesgado, que se encuentra alrededor de 1200. Las anteriores cantidades se pueden calcular teóricamente: para el estimador insesgado, resulta ser igual a 1458 y para el sesgado resulta ser 1246.
+
+[Haciendo clic acá](http://predictive.files.wordpress.com/2009/05/estimadores_sintax.pdf) encontrará el código computacional en R con el que se desarrollo el anterior ejercicio.

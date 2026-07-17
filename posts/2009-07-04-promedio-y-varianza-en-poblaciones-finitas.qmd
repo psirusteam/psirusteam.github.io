@@ -1,0 +1,13 @@
+---
+title: "Promedio y varianza en poblaciones finitas"
+author: "Andrés Gutiérrez"
+date: "2009-07-04"
+categories:
+  - "Estadística"
+---
+
+Seguramente todos alguna vez nos hemos preguntado de dosnde viene tanto la formaula del promedio como la expresión para la varianza. Lo cierto es que con la definicón del promedio no tiene ningún problema puesto que es natural, lógica y plausible. Por otro lado, la formulación de la varianza no es directa. Para los que hemos tenido la oportunidad de dictar un curso básico, siempres hay dos o tres alumnos que enuentran complicado esta definición, el restante la toma sin chistar, pero sin preguntarse, a la vez, por su origen.
+
+En inferencia de poblaciones finitas, tanto design-based (Leslie Kish, Cochran) como model-assited based (Särndal) como model-based (Valliant, Royal, Skinner) es imprescindible conocer el espíritu de estas definiciones porque, al fin y al cabo, lo que se quieren estimar o predecir son totales, medias y varianzas.
+
+[Haciendo clic acá](http://predictive.files.wordpress.com/2009/07/var.pdf) encontrará un excelente artículo del profesor Jorge Ortiz que hace un recuento del promedio aritmético y la varianza en grupos finitos de datos. Les aseguro, que después de realizar la lectura, les quedará un deseo por transmitir en clase (como docente o como alumno) el verdadero espíritu de tan usadas medidas.

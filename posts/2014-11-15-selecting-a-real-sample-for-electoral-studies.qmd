@@ -1,0 +1,64 @@
+---
+title: "Selecting a Real Sample for Electoral Studies"
+author: "Andrés Gutiérrez"
+date: "2014-11-15"
+categories:
+  - "Colombia"
+  - "Estadística"
+  - "R"
+---
+
+What is the sample size required to achieve a particular margin of error in electoral studies? Professor [Leonardo Bautista found](http://www.emis.de/journals/RCE/V28/V28_1_39Bautista.pdf) that at least 15.000 people should be interviewed, distributed in 6.200 blocks, 80 municipalities and 4 strata. That is a lot of people! — In average, 188 persons per municipality. — Now, do the math. If a single (face to face) interview cost US 40 (in average), then the total cost of the survey should be around US 600.000. That's a lot of money!
+
+Now, in order to explain this sample size approach, we could make some basic computations in R, by using my new still-in-construction package: [samplesize4surveys](http://cran.r-project.org/web/packages/samplesize4surveys/index.html). In particular, we could estimate the Kish design-effect (DEFF) in a multi-stage sampling design (assuming that 1) the variance estimator works well at the municipality level and 2) the total number of voters is know). This way, by using micro-data from the last presidential election in Colombia, the adjusted Intraclass Correlation Coefficient (ICC) for the winner (Santos) is 0.069. Remember that $ DEFF \approx 1+(M-1)\rho $.
+
+Where M is defined to be the average number of interviews per municipality. Firstly, you must call the necessary packages for this to work. Also, you must download the [micro-data](https://www.dropbox.com/s/i5ok3hiaiwhlk5m/VotaPer. Rdata) and the [aggregated municipality data](https://www.dropbox.com/s/fyopzvq5l3gkdna/VotaMuni. Rdata).
+
+```r
+library(TeachingSampling)library(samplesize4surveys)library(stratification)setwd("/. . ./ Your Folder")load("VotaPer. Rdata")load("VotaMuni. Rdata")
+```
+
+Now you have to compute the ICC for the winner (Santos). As I said before, the adjusted intraclass correlation coefficient is 0.069. That means Santos is not explained by municipalities, and there is a lot of homogeneity between clusters. In other words, Santos won almost everywhere.
+
+```r
+# 1) Compute the ICC for multistage surveys# We use the ICC funtion of the samplesize4surveys package#boxplot(VotaPer$santos ~ VotaPer$muni)
+rho_santos = ICC(VotaPer$santos,VotaPer$muni)$ICC
+rho_santos
+```
+
+Next step: compute the required sample size for this sampling plan. As every pollster claims, the margin of error is 3%, the confidence is 95%. In average, we want to select no more than 200 people per municipality.
+
+```r
+# 2) Compute the Sample Size in order to estimate the vote intention for Santos# The margin of error: 3%. The confidence: 95%.# Total of Colombian voters: N = 14416863# Municipalities: NI = 1149 (Consulates included)# Maximum average (interviews) per municipality M = 200# The result is a table of possible sample sizes from 5 to 5 (by) until M
+
+N <- nrow(VotaPer)
+NI <- length(levels(as.factor(VotaPer$muni)))
+sam2p <- ss2s4p(N, p = mean(VotaPer$santos), conf = 0.95, me = 0.03, M = 200,by = 5, rho = rho_santos)View(sam2p)
+```
+
+As a result of sam2p, and taking into account the findings of Bautista, if we want to select 80 municipalities, we should need n = 14.727 interviews around the country, distributed in 80 municipalities. Thus, 186 interviews per municipality (in average). This sampling plan yields DEFF = 13.91. (Yes, you could choose any plan of this table! I really like the one that yields a DEFF = 6.23 with n = 6604 and 87 municipalities.)
+
+Now, let's stratify! We use the Lavalle-Hidiroglou method and we obtain 4 strata. I don't know why, but at this point the stratification does not yield similar results than the paper of my dear and always-respected professor Leonardo Bautista. I am obtaining a different configuration along the strata; however, I am sure about my computations.
+
+```r
+# 4) Optimal stratification (Municipality level)# Generalized Lavallee-Hidiroglou (1998) methodstrata <- strata. LH(x = VotaMuni$total, n = 80, Ls = 4)
+VotaMuni$H <- strata$stratumID
+Nh=strata$Nh
+nh=strata$nh
+```
+
+Now, by using my package [TeachingSampling](http://cran.r-project.org/web/packages/TeachingSampling/index.html), we select a piPS sample (without replacement) where the measure of size is defined to be the total of voters in the municipality.
+
+```r
+# 5) Without replacement proportional to size sampling# Selection of municipalities within strata# Measure of size: total of voters per municpality
+
+VotaMuni$total <- rowSums(VotaMuni[,3:14])sum(VotaMuni$total)
+res <- S. STpiPS(VotaMuni$H, VotaMuni$total, nh)
+sam <- res[,1]sample <- VotaMuni[sam,]View(sample)
+```
+
+The rest is up to you: allocating the sample size within municipalities (maybe a power allocation would be nice), selecting households within segments and bla, bla, bla.
+
+Finally, in this blog I have insistently recalled that election polls do not have to be treated as survey samples. However, there is one question to be addressed… Does it really pay to carry out a real (US 600.000) survey sample? By real I mean a sample where all of the units in the population have a non-null inclusion probability. My answer is No, it does not. I would not waste my money and effort taking a snapshot of the election if it were held today. Why? Because the answers that people give today are mere opinions, not votes. The real survey is taking place at the voting station. And, as you should consider, from today until the real day of the election, opinions may vary and decisions are not yet consolidated.
+
+However, Colombian pollsters can do better. Keep doing the polls and 1) Increase the dispersion of the sample, 2) Increase the sample size, 3) Do the polls more frequently, 4) Stop lying about artificial margins of errors and confidence, 5) Dare to make face to face interviews, 6) If you are doing telephone interviews, control your quotes by labor force status (not only by socio-demographic patterns). Polls are raw material (for people like me) in order to [model the vote intention trough bayesian models](https://web.archive.org/web/20140730203514/http://www.gutierrezandres.com/predictivecol). Oh!!! 7) Hire statisticians: they can perform good Bayesian models. I can post your [ads in here](https://web.archive.org/web/20141220033322/http://www.gutierrezandres.com/jobs).

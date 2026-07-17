@@ -1,0 +1,11 @@
+---
+title: "Todo sobre causalidad en 40 páginas"
+author: "Andrés Gutiérrez"
+date: "2009-11-29"
+categories:
+  - "Estadística"
+---
+
+En primer lugar, aprovecho este espacio para promocionar la lectura de [Statistics Surveys](http://www.i-journals.org/ss/index.php), una revista patrocinada por la ASA, la sociedad Bernoulli, el IMS, entre otros. El objetivo de esta publicación anual es hacer un recuento exhaustivo de las áreas concernientes a la estadística teórica y aplicada.
+
+En segundo lugar, y dado mi reciente sesgo por la cultura de la causalidad, quiero recomendar la lectura del artículo [Causal inference in statistics: An overview](http://www.i-journals.org/ss/viewarticle.php?id=57&layout=abstract), escrito por Judea Pearl del departamento de ciencias de la computación de la UCLA. El artículo hace hincapié en los cambios paradigmáticos que deben llevarse a cabo para pasar de un simple análisis estadístico tradicional a un análisis causal *per se*. Y es que, una vez más una cosa es una cosa y otra cosa es otra cosa.

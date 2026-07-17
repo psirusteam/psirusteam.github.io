@@ -1,0 +1,25 @@
+---
+title: "Estimadores de máxima cuasiverosimilitud en muestreo bifásico"
+author: "Andrés Gutiérrez"
+date: "2009-06-30"
+categories:
+  - "Estadística"
+---
+
+Los estimadores ¶optimos de calibraci¶on utilizan informaci¶on auxiliar completa para
+
+producir estimaciones m¶as e¯cientes. Cuando no se dispone de este recurso, una
+
+alternativa es realizar un muestreo en dos fases para recopilar la informaci¶on auxi-
+
+liar en una primera fase y despu¶es utilizarla en el dise~no o estimaci¶on de la segunda
+
+fase. Se compara la e¯ciencia de los estimadores ¶optimos de calibraci¶on, cuando
+
+la relaci¶on entre la variable de estudio y las variables de informaci¶on auxiliar es
+
+lineal y log-lineal. En este ¶último caso se utilizan m¶etodos de cuasi-verosimilitud
+
+para la estimaci¶on de los par¶ametros del modelo de super-poblaci¶on.
+
+Los estimadores óptimos de calibración (Wu & Sitter) utilizan información auxiliar completa para producir estimaciones más eficientes. Cuando no se dispone de este recurso, una alternativa es realizar un muestreo en dos fases para recopilar la información auxiliar en una primera fase y después utilizarla en el diseño o estimación de la segunda fase. [Haciendo clic acá](http://predictive.files.wordpress.com/2009/06/2009-cuasiverosimilitud.pdf) encontrará un reciente artículo (a manera de revisión) en donde se compara la eficiencia de los estimadores óptimos de calibración, cuando la relación entre la variable de estudio y las variables de información auxiliar es lineal y log-lineal. En este último caso se utilizan métodos de cuasi-verosimilitud para la estimación de los parámetros del modelo de super-población.

@@ -1,0 +1,15 @@
+---
+title: "Manual de soluciones de teoría Bayesiana"
+author: "Andrés Gutiérrez"
+date: "2009-10-30"
+categories:
+  - "Estadística"
+---
+
+En las últimas décadas, la teoría estadística se ha visto enriquecida por un nuevo tipo de pensamiento, que según David Salsburg ([The Lady Testing Tea](2009-04-26-the-lady-tasting-tea.qmd)), fue desechado llevado al punto en que el investigador que manifestara su gusto por esta corriente era directamente discriminado y tildado de no riguroso. Pues bien lo tiempos han cambiado, y la verdad sea dicha, la estadística Bayesiana se ha convertido en un baluarte gigante de los métodos cuantitativos.
+
+Algunas personas me han escrito desde diferentes países de Latino-américa y en cierta forma algunos de esos correos buscan algún tipo de dirección en cuanto a estadística bayesiana se refiere. La verdad sea dicha, en muchos casos el investigador que intenta usar un método bayesiano en un área de aplicación debe sacar lo mejor de sí y ponerse en la tarea de aprender de forma individual. Para todos aquellos (no estadísticos) que están interesados, de alguna manera muy apasionados, por aprender estadística bayesiana, les digo que sí es posible hacerlo. En realidad, por el momento, no existe algún texto estándar porque el subjetivismo juega parte importante en el aprendizaje de esta materia. De hecho, valdría la pena publicar un libro en español de análisis bayesiano que estuviera enfocado en métodos aplicados a problemas del día a día (Ver más abajo). Mientras alguien se anima les dejo dos herramientas de trabajo para su quehacer autodidacta. Se trata de dos solucionarios: [el primero, escrito por Andrew Gelman](http://www.stat.columbia.edu/~gelman/book/solutions2/solutions2.pdf) para la segunda edición de ***Bayesian Data Analysys***, [el segundo escrito por Robert & Marin](http://www.ceremade.dauphine.fr/~xian/BCS/solutions.pdf) para su libro ***The Bayesian Core***.
+
+PD1: Confieso que desde hoy me pondré a la tarea de terminar esta grandiosa idea de plasmar en un texto académico mi visión de la estadística bayesiana.
+
+PD2: En pocos días saldrá al mercado [mi primer libro](http://www.7is7.com/otto/countdown.html?year=2009&month=11&date=10&hrs=21&ts=12&min=0&sec=0&tz=local&lang=es&show=dhms&mode=r&cdir=down&bgcolor=%23003300&fgcolor=WHITE&title=Lanzamiento%20libro%20--%20Estrategias%20de%20muestreo%3A%20Dise%F1o%20de%20ecnuestas). Gracias a todos ustedes por interesarse tanto en el muestreo. De veras, infinitas gracias.

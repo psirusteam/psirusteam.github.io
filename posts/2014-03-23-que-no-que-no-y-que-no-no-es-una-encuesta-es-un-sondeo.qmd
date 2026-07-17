@@ -1,0 +1,23 @@
+---
+title: "¡Que no, que no y que no! No es una encuesta, es un sondeo"
+author: "Andrés Gutiérrez"
+date: "2014-03-23"
+categories:
+  - "Estadística"
+---
+
+No puedo estar de acuerdo con todos los analistas políticos cuando se trata de las elecciones presidenciales colombianas. Todo el mundo empieza a hablar, conversar y concluir sobre lo que está sucediendo y lo que va a suceder si las elecciones se celebraran hoy. Por supuesto, la fuente de que las conclusiones (por cierto, engañosas conclusiones!) son los sondeos políticos llevadas a cabo por empresas de consultoría en Colombia.
+
+¿De qué estoy hablando? Por ejemplo, [este post en el sitio web de La Silla](http://lasillavacia.com/historia/datexco-inflo-penalosa-46932) está lleno de basura. Lo siento, es la verdad. Todo es simplemente basura. Tengo una razón técnica para decirlo: si la estrategia de muestreo no es representativa de toda la población de interés, entonces cualquier cosa que se pueda afirmar acerca de las elecciones es... basura. Ese post es un bello ejemplo de esta triste realidad. El autor expone a una firma consultar colombiana, con el argumento de que la muestra está sesgada en una ciudad, y un montón de otras razones. Esas razones no tienen sentido debido a la falta de representatividad de la estrategia de muestreo. Es decir, usted no puede criticar un sondeo y tampoco puede exaltarlo. Una sondeo es un sondeo, no es una encuesta probabilística. Es sólo un conjunto de respuestas recolectadas por medio de un muestreo no probabilístico. Y, si el muestreo es no probabilístico, los resultados no están sujetos a ningún tipo de juicio.
+
+Por si no lo sabía, la información técnica en la mayoría de los sondeos de opinión es… basura. ¿Por qué? Porque para diseñar una estrategia de muestreo válida, usted debe asegurarse de que cada persona de la población tiene una probabilidad no nula de ser incluida en la muestra. Sin embargo, las estrategias de "muestreo" de este tipo de sondeos se caracterizan por: 1) hacer las entrevistas cara a cara o 2) hacer las entrevistas telefónicamente. En el caso 1, se lo aseguro: el diseño de muestreo no es probabilístico, a no ser que la selección se enfoque en los hogares. En muchas ocasiones, los firmas encuestadoras contratan personas que se paran en las esquinas esperando transeúntes desprevenidos. en el caso 2, un votante potencial que no tiene teléfono ni siquiera se considera como parte de la muestra, violando el principio de inclusión.
+
+Ahora, sólo por un momento vamos a suponer que la estrategia de muestreo es realmente probabilística. En este caso es necesario un ingrediente extra: el tamaño de la muestra. Ahora, con el fin de contar con estimaciones precisas y confiables, que respeten un márgenes de error reales, su tamaño de la muestra no debe ser menor de 6.500 entrevistas (explicaré este tamaño de muestra más adelante, tal vez en otro post). Si usted echa un vistazo, los tamaños de muestra de estos sondeos son en promedio de 1.200 entrevistas. De una u otra forma, la conclusión es que un sondeo no es objeto de ningún tipo de juicio técnico o científico.
+
+Sin embargo, LaSilla critica a la muestra y al encuestador. Una vez más: no se puede hacer! Sólo recuerde que la realidad electoral en Colombia está dividía en dos fuentes: el voto de opinión y el voto inducido por la maquinaria política. Estos sondeos se centran en la primera fuente de votos: la opinión. Si Bogotá fue ponderada o no lo fue, no es una cuestión de debate científico.
+
+Sin embargo, siempre es posible confundir a sus lectores con su propia confusión.
+
+PD: Si usted lee con atención, se dará cuenta de que el autor de la entrada no tiene ninguna habilidad técnica estadística en cuanto al tema de los sondeos. Sin embargo, de acuerdo a ese post de La Silla, el Sr. Prieto (director de la campaña electoral de Santos) también está tergiversando (?) las conclusiones. Así es, el gerente de una campaña presidencial no puede tomar decisiones con... basura!
+
+PD2: Sólo una reflexión. ¿Se ha preguntado por qué diablos las firmas encuestadoras siempre preguntan "si las elecciones fueran hoy…". ¡No puede ser! Las elecciones no son hoy, ¡las elecciones son en Mayo!

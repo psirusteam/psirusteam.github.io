@@ -1,0 +1,51 @@
+---
+title: "Encuesta de prefactibilidad para posgrados en Estadística Aplicada"
+author: "Andrés Gutiérrez"
+date: "2013-05-27"
+categories:
+  - "Estadística"
+---
+
+Después de seis años de prestar servicios a nivel de pregrado, la Facultad de Estadística de la Universidad Santo Tomás (USTA) se propone incursionar en la educación continuada a nivel de posgrados. Esta Facultad está enmarcada en la División de Ciencias Económicas y Administrativas de la USTA y su programa de pregrado tiene un sesgo importante hacia la estadística aplicada.
+
+En primer lugar, permítanos presentarle la **Especialización en Estadística Aplicada**. Este programa de posgrado tiene una duración de dos semestres y está dirigido a profesionales de diferentes disciplinas que quieran ser entrenados en los métodos de análisis estadístico. Después de cursar y aprobar las materias de la especialización, el egresado podrá utilizar la estadística con facilidad y propiedad en su disciplina y en otros campos del saber. El programa académico es el siguiente:
+
+Algunas de las materias electivas que se ofrecerán, dependiendo del perfil de la cohorte, son:
+
+* Software estadístico
+
+* Minería de datos
+
+* Big Data y redes sociales
+
+* Marketing y Branding
+
+* Seis Sigma y control de calidad
+
+* Scoring y modelos de riesgo financiero
+
+* Evaluación de políticas públicas
+
+* Psicometría
+
+* Demografìa
+
+* Cálculo actuarial
+
+* Educación en estadística
+
+* Diseño experimental
+
+En segundo lugar, presentamos la **Maestría en Estadística Aplicada**. En principio, este programa permite una migración expedita desde el programa de especialización. Este programa de posgrado tiene una duración de cuatro semestres y está dirigido a profesionales de diferentes disciplinas que quieran dominar y conocer a profundidad las técnicas científicas inducidas por el pensamiento estadístico. Después de cursar y aprobar las materias de la maestría, el egresado estará en capacidad de desarrollar nuevas metodologías de investigación, que a su vez podrá implementar con facilidad en su trabajo.
+
+El núcleo básico de este programa de posgrado es el mismo de la Especialización en Estadística Aplicada, por lo que el egresado de la especialización podrá migrar a la maestría con celeridad y sin necesidad de cursar materias de nivelación. El siguiente es el plan de estudios:
+
+**Además de las electivas ofrecidas en la especialización**, el estudiante de la Maestría en Estadística Aplicada, dependiendo del perfil de la cohorte, podrá optar por las siguientes electivas:
+
+* Análisis estadístico de microarreglos y genética * Análisis de encuestas complejas * Métodos Kernel y Spline * Modelos epidemiológicos * Teoría de respuesta al ítem * Geoestadística y Krigging * Bootstrap y Jackknife * Análisis de datos panel * Análisis de datos funcionales * Econometría avanzada
+
+Para la Facultad de Estadística de la USTA es inmensamente importante su opinión crítica y respetuosa acerca de estas opciones de educación. Queremos prestar un servicio de calidad y creemos que podemos mejorar con su valiosa opinión. Con base en lo anteriormente expuesto, hemos diseñado una encuesta de prefactibiliad - cuyo trámite no debería tomarle más de tres minutos - que nos permitirá enfocarnos en las variables realmente importantes para que los programas tengan la mejor calidad posible.
+
+De antemano agradecemos su interés. Si usted quiere participar en la encuesta, puede hacer clic en el siguiente enlace:
+
+# [**¡Ir a la encuesta!**](https://www.surveymonkey.com/s/XRVFLPQ)

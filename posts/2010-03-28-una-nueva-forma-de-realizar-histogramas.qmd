@@ -1,0 +1,53 @@
+---
+title: "Una nueva forma de realizar histogramas"
+author: "Andrés Gutiérrez"
+date: "2010-03-28"
+categories:
+  - "Estadística"
+---
+
+Denby y Mallows (2010) afirman que al construir un histograma, es muy común que todas las barras tengan el mismo ancho. Otra opción, no tan usada en la vida práctica (puesto que los softwares comerciales no lo tienen implementado), es que las barras de los histogramas tengan la misma área, implicando directamente que no necesariamente tengan el mismo ancho. La primera opción (el mismo ancho para todas las barras) suaviza las regiones de alta densidad y su comportamiento es pobre cuando la distribución tiene picos pronunciados. Por otro lado, la segunda opción (misma área en todas las barras) suaviza en regiones de baja densidad y su comportamiento es pobre a la hora de identificar datos extremos.
+
+En un excelente trabajo computacional, [Denby y Mallows (2010) han desarrollado una excelente idea](http://pubs.research.avayalabs.com/pdfs/ALR-2007-003-paper.pdf) para la construcción de histogramas que evade los defectos de los anteriores enfoques. Su trabajo (además de generalizar los anteriores enfoques) se basa en la realización de varios cortes diagonales en la función de distribución y puede ser fácilmente implementado por los usuarios familiarizados con el lenguaje de S-Plus o de R. A propósito de este nuevo método, ellos dan los siguientes tres ejemplos en donde se comprueba el buen funcionamiento del histograma con cortes diagonales.
+
+Primer ejemplo: Función de distribución (ecdf) para intervalos de tiempo. El histograma (histogram) estándar no muestra los dos pequeños picos, el histograma de igual área (e-a) esconde los datos atípicos a la izquierda de la función de distribución. El enfoque propuesto (dhist) muestra ambos efectos.
+
+Segundo ejemplo: Función de distribución para una razón. El histograma estándar no muestra la punta en el dato *x=20.2*. Los otros dos histogramas sí lo muestran.
+
+Tercer ejemplo: Función de distribución de unos datos simulados. El histograma propuesto sí muestra la punta cercana a *x=7* y también los valores extremos a la derecha de la distribución.
+
+La implementación computacional se realiza mediante la función dhist ([descargar acá](http://www.box.net/shared/napicxlusf)). Básicamente, sus argumentos son: x, el conjunto de datos; a, el factor de escala (para un histograma estándar, esta argumento debe ser igual a 0.0001*iqr(x), para el histograma de iguales áreas debe ser igual a 1000*iqr(Taxes) y para la nueva propuesta es 10*iqr(Taxes)); nbin, el número de barras en el histograma. A continuación se muestra el código en R y las salidas para histogramas de las variables Ingreso e Impuestos de la población Lucy del paquete TeachingSampling.
+
+```
+library(TeachingSampling)
+data(Lucy)
+attach(Lucy)
+```
+
+```
+# Función de distribución empírica para las dos variables
+plot(ecdf(Income))
+plot(ecdf(Taxes))
+```
+
+```
+# Histograma tradicional
+dhist(Income,nbin=14,a=0.0001*iqr(Income))
+dhist(Taxes,nbin=14,a=0.0001*iqr(Taxes))
+```
+
+```
+# Histograma de igual área
+dhist(Income,nbin=14,a=1000*iqr(Income))
+dhist(Taxes,nbin=14,a=1000*iqr(Taxes))
+```
+
+```
+# Histograma propuesto
+dhist(Income,nbin=14,a=10*iqr(Income))
+dhist(Taxes,nbin=14,a=10*iqr(Taxes))
+```
+
+Histogramas para la variable Ingreso:
+
+Histogramas para la variable Impuesto:

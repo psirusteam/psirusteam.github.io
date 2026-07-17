@@ -1,0 +1,38 @@
+---
+title: "Sublime Text 3: an alternative to RStudio"
+author: "Andrés Gutiérrez"
+date: "2016-10-17"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+It was a Saturday morning; I was lecturing my students of my Item Response Theory class when I decided to run some R scripts to introduce my students with the [JAGS](http://mcmc-jags.sourceforge.net) syntax and the estimation of parameters in a Bayesian logistic regression setup.
+
+As it was usual, I opened [RStudio](https://www.rstudio.com) because it was my favorite R interface. So when I tried to run a Bayesian sampler with five chains in JAGS, it appeared that damn message: .
+
+So I was there, the lecture was completely stopped because of RStudio. However, knowing about those annoying disadvantages of RStudio I asked some colleagues about some other interfaces of R. The answer was convincing: Sublime Text is an editor designed for people that are serious when it comes to programming, not only in R but any other language.
+
+So, I am just spreading the word about this editor, but I am not trying to convince you to abandon RStudio. If you want to give a try, just follow this simple steps:
+
+- Of course, you install R (https://www.r-project.org)
+
+- Install Sublime Text 3 (https://www.sublimetext.com)
+
+- Cmd + Shift + P, then type Package Control and install it.
+
+- Cmd + Shift + P, then type "Install Package", look for SublimeREPL and install it.
+
+- Cmd + Shift + P, then type "Install Package", look for R-Box and install it.
+
+- Cmd + Shift + P, then type "Install Package", look for SendTextPlus and install it.
+
+- Cmd + Shift + P, then type "Install Package" look for R-Snippets and install it.
+
+- Cmd + Shift + P, then type "Set Syntax: R Extended".
+
+- Cmd + Shift + P, then type "SendTextPlus: Choose Program" and select R.
+
+- Enjoy! Write your code and Cmd + Enter to send your lines to R.
+
+You can also send your code to R within Sublime Text by using REPL. Cmd + Shift + P, then type "SublimeREPL: R" and that's it. Please, comment your experience. You can be sure that trying this editor is worthwhile.

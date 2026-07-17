@@ -1,0 +1,17 @@
+---
+title: "Bradley Efron sobre genes y micro-arreglos… Inferencia a gran escala (Parte 2)"
+author: "Andrés Gutiérrez"
+date: "2011-07-12"
+categories:
+  - "Estadística"
+---
+
+**Algoritmos para chequear la significión estadística**
+
+El tercer capítulo del libro de BE empieza abordando el tema de las pruebas de hipótesis que se realizan simultáneamente. El autor hace una reseña del libro *Simultaneous Statistical inference*, escrito por Rupert Miller en 1966, y concluye que este gran aporte, que es en esencia de tipo frecuentista, se enfoca en el control del error tipo I y se enfoca en situaciones de comparaciones múltiples para situaciones de casos entre dos y diez. Por supuesto, con los avances científicos, ahora se tiene que considerar comparaciones múltiples con muchos más individuos. Con base en lo anterior, este capítulo, a manera de repaso obligatorio, aborda algunos algoritmos que se utilizan para controlar el error tipo I.
+
+Antes de empezar el recuento de los procedimientos de comparaciones múltiples, el autor discute el uso y abuso de los *valores p*, que suponen un lenguaje universal para las pruebas de hipótesis estadísticas. Análogamente, plantea su similitud con los *valores z*, que se definen como la función inversa de la función de distribución de una normal estándar, evaluada en la realización del *valor p*. Algunas caracterizaciones de los procedimientos son visibles a simple vista con la realización de un histograma, dado que, bajo la hipótesis nula, los valores p tienen distribución uniforme en el intervalo cero-uno, y los valores z, tienen distribución normal estándar. Por ejemplo, es posible chequear las discrepancias que se presentan entre las barras del histograma y la distribución teórica, como picos o colas pesadas.
+
+Luego, el autor presenta la tasa de error *family-wise* (*FWER*, por sus siglas en inglés), definida como la probabilidad de realizar al menos un falso rechazo en una familia de pruebas de hipótesis. Un procedimiento de control FWER es un algoritmo que, al ingresar una familia de valores p, arroja una lista de hipótesis nulas aceptadas y rechazadas, sujeta a que la FWER sea menor o igual al error tipo I.
+
+Los límites de Bonferroni son un claro ejemplo de un algoritmo de control, el cual no requiere del supuesto de independencia entre los valores p. El procedimiento de Sidák presenta mejores resultados que los límites de Bonferroni, pero supone independencia. El procedimiento de Holm presenta un mejor desempeño, puesto que sus regiones de rechazo son más grandes. Luego, el autor introduce los algoritmos paso a paso y los algoritmos basados en permutaciones.

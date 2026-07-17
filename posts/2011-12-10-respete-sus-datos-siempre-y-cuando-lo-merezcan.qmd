@@ -1,0 +1,15 @@
+---
+title: "Respete sus datos, siempre y cuando lo merezcan"
+author: "Andrés Gutiérrez"
+date: "2011-12-10"
+categories:
+  - "Estadística"
+---
+
+Hace poco tuve la oportunidad de realizar una asesoría a una entidad privada que tenía sendos dilemas acerca de una metodología estadística que debían emplear para establecer un indicador. Sin entrar en mucho detalle, les comento que la cuestión se trataba básicamente de si eliminar o no un conjunto de observaciones influyentes. Este indicador no era otra cosa que una medida de tendencia central. Como cualquiera de nosotros puede pensar, la primera opción es el cálculo del promedio. Pero, como hay observaciones influyentes entonces se pensaba también en una mediana, o incluso en la eliminación de estas observaciones para el cálculo de un pseudo-promedio.
+
+No es un problema de fácil solución y prueba de ello son los miles de miles de publicaciones teóricas que se circunscriben en el tema de las observaciones influyentes. Sin embargo mi opinión técnica sobre el tema es la siguiente: respeta sus datos, siempre y cuando lo merezcan. Esto quiere decir que si, efectivamente, después de un proceso de verificación de la información y después de establecer que el valor que se dice influyente es una medición real de un individuo de la población, entonces el proceso que se debería seguir en el cálculo de los indicadores de interés está supeditado al simple cálculo. En pocas palabras, si sus datos son confiables, pues entonces no los modifique, ni los mire. La realidad es que en muchas ocasiones sí hay datos influyentes para estas medidas de tendencia central y eso está bien. Si los datos se eliminaran, entonces estaríamos circunscritos a una gran manipulación de la población original. Y lo anterior tiene consecuencias funestas en el análisis de la información.
+
+En algunas ocasiones, el análisis de datos influyentes se realiza para que el modelo ajuste mejor y para obtener mejores indicadores. Es común encontrar procesos de ajuste de modelos en vez de procesos transparentes de análisis de información. Esta es una grave falta y tal vez ha nacido desde las aulas de clase puesto que poca atención se le presta a los datos y se hace mucho hincapié en las medidas de ajuste del modelo. Tendemos a calificar mejor a aquellos modelos que arrojan un coeficiente de correlación o determinación muy alto. Pero en la vida real, no podemos ser influidos por este tipo de pensamiento, puesto que si quisiéramos ajustar un modelo con un buen R2, entonces simplemente afirmamos que la mayoría de datos son influyentes y quedarnos sólo con dos datos. Le aseguro que al ajustar un modelo de regresión con dos datos, el R2 va a ser muy muy alto.
+
+Y usted ¿qué está haciendo en su trabajo?, ¿ajustando modelos? o ¿analizando la realidad de sus datos?

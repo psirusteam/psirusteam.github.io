@@ -1,0 +1,118 @@
+---
+title: "Multilevel Modeling of Educational Data using R (Part 1)"
+author: "Andrés Gutiérrez"
+date: "2016-10-12"
+categories:
+  - "Education"
+  - "Estadística"
+  - "R"
+  - "Stats"
+---
+
+Linear models fail to recognize the effect of clustering due to intraclass correlation accurately. However, under some scenarios force you to take into account that units are clustered into subgroups that at the same time are nested within larger groups. The typical example is the analysis of standardized tests, where students are grouped in schools, and schools are grouped into districts, while districts are part of a whole system (state or country).
+
+When data is coming from a hierarchical structure, the proper way to analyze it is via multilevel modeling (Goldstein, 1995). Between other advantages, multilevel modeling allows you to correctly estimate the relative variation in the test score due to the effect of clustering. In other words, you can decompose the variance into two parts: the one coming from students and the one coming from schools, by fitting a regression model per group. That allows you to make proper inferences when it comes to the source of variation of the outcome measure.
+
+For example, the following graph shows a scatter plot between the test score and the socio-economic status of the students. If you consider the left side of the chart below, you realize a linear relationship indeed; however, when you take a closer look, it is evident that the same model does not hold within schools (different colors identify different schools).
+
+Let's assume that we want to fit a two-level model: the first level is related to schools, and the second level describes students within schools. The following code allows simulating a hierarchical structure over a population of five schools and a hundred students per school. Notice that the test score is somehow related to the socio-economic status (SES) of the student.
+
+```
+rm(list = ls())
+```
+
+```
+library(ggplot2)
+library(gridExtra)
+library(lme4)
+library(sjPlot)
+library(dplyr)
+```
+
+```
+set.seed(123)
+```
+
+```
+#####
+```
+
+```
+N <- 100 #Number of students per school
+sigma <- 200
+```
+
+```
+x1 <- runif(N, 10, 40)
+x2 <- runif(N, 25, 55)
+x3 <- runif(N, 40, 70)
+x4 <- runif(N, 55, 85)
+x5 <- runif(N, 70, 100)
+```
+
+```
+y1 <- 20 + 0 * x1 + rnorm(N, 0, sigma)
+y2 <- 40 + 10 * x2 + rnorm(N, 0, sigma)
+y3 <- 60 + 20 * x3 + rnorm(N, 0, sigma)
+y4 <- 80 + 30 * x4 + rnorm(N, 0, sigma)
+y5 <- 100 + 40 * x5 + rnorm(N, 0, sigma)
+```
+
+```
+ID <- rep(LETTERS[1:5], each = N)
+```
+
+```
+test <- data.frame(SES = c(x1, x2, x3, x4, x5), 
+ Score = c(y1, y2, y3, y4, y5), ID = ID)
+```
+
+When analyzing data with such a type of hierarchical structures, the researcher always should fit a null model to decompose the variation due to schools. The following expression gives the functional form of this model:
+
+$ y_{ij} = \alpha_{j} + \varepsilon_{ij}$ $\alpha_{j} = \alpha_0 + u_{j}$
+
+This model allows decomposing the source of total variation into two parts: the one due to students (within schools) and the one due to schools (test score between all of the schools). The R code to fit this null multilevel model to data is given next:
+
+```
+HLM0 <- lmer(Score ~ (1 | ID), data = test)
+coef(HLM0)
+summary(HLM0)
+```
+
+```
+# 96% - Between-schools variance
+# 4% - Within-schools variance
+100 * 87346 / (87346 + 1931757)
+```
+
+By examining the estimates of the random effects' variance we note that the percentage of variation accounted for the school (intraclass correlation) is nearly 96%; while the proportion of variance accounted for students is almost 4%. The null model claims that high achievers belong to particular schools and low achievers are not part of those specific schools. In other words, the school determines the test outcome.
+
+The previous unconditional model fails to include relevant variables, such as the socio-economic status (SES) associated to every student. The following expressions give a more elaborated model involving random intercepts and random slopes for each of the schools:
+
+$ y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$ $\alpha_{j} = \alpha_0 + u_{j}$ $\beta{j} = \beta_0 + v_{j}$
+
+The R code that allows fitting this model is shown below.
+
+```
+HLM1 <- lmer(Score ~ SES + (SES | ID), data = test)
+coef(HLM1)
+summary(HLM1)
+```
+
+```
+# 1% - BS variance
+# 99% - WS variance
+100 * 40400.24 / (40400.24 + 257.09 + 1.65)
+```
+
+```
+# Percentage of variation explained by SES between schools
+1 - ((257.09 + 1.65) / 1931757)
+```
+
+```
+# Percentage of variation explained by SES within schools
+1 - (40400.24 / 87346)
+```
+
+On the one hand, we note that the SES explains 99% of the between-schools variance; on the other hand, the SES explains 53% of the within-schools variance. What does it mean? School segregation. That is, wealthy students belong to rich schools, and poor students belong to poor schools. Moreover, affluent students far exceed the performance of poor students.

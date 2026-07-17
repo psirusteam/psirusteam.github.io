@@ -1,0 +1,27 @@
+---
+title: "La causalidad y la paradoja de Simpson"
+author: "Andrés Gutiérrez"
+date: "2009-11-08"
+categories:
+  - "Estadística"
+---
+
+He estado cavilando acerca de la dramática situación por la cual está pasando nuestra querida patria Colombia con el presidente de nuestra hermana república Venezolana… sí, todo el tema de las bases militares de Estados Unidos en Suramérica, en donde vienen y van todo tipo de argumentos, incluso [argumentos de tipo estadístico](2009-09-29-efecto-causal-o-simplemente-asociacion.qmd). Por supuesto, es natural que en un blog latinoamericano de contenidos estadísticos se hable de temas estadísticos… Es bien sabido que el presidente Hugo Chavez tienen a la mano gran cantidad de estudios que "prueban" lo efectos colaterales de la política colombiana. Sin embargo, no se puede aprovechar este tipo de situaciones para malversar la significación estadística y por ende generar conclusiones equivocadas.
+
+Una vez más retomo el ejemplo tabacalero. Fueron años y años de lucha estadística contra el imperio (ese sí que es un imperio) del tabaco. Aunque los estudios indicaban una fuerte asociación entre el cáncer de pulmón o garganta y el hábito de fumar, esto no indica que haya una relación de causalidad. Es decir no se puede concluir que el cigarrillo es la causa del cáncer. Algo que me sorprende es que incluso figuras de renombre histórico como Jerzy Neyman y el controvertido [Ronald Fisher](2009-04-25-fisher-facho.qmd) negaran esta relación causal. Es más Fisher publicó varios artículos, entre ellos "*Cigarretes, Cáncer and Statistics*" y "*Cancer and Smoking*", defendiendo su punto de vista. Por supuesto, estas grandes figuras estaban equivocadas puesto que Doll y Hill (1954) probaron la causalidad del hábito de fumar con el cáncer mediante un gigantesco estudio prospectivo. Nótese que esta verdad no causa ningún tipo de alboroto entre los fumadores en estos tiempos.
+
+Empecemos por decir que quienes hemos estudiado matemáticas básicas, es decir la gran mayoría de lectores, nos hemos encontrado con los principios de la lógica. Basta recordar los famosos valores de verdad, Falso, Verdadero y sus combinaciones, usando operaciones lógicas como la conjunción o disyunción, que dan origen a las intrincadas tablas de verdad. De allí se desprenden las tautologías y las contradicciones. Bien, en ese mundo de tablas de verdad todo funciona… pero qué pasa si en vez de tener sólo dos valores de verdad se tuvieran tres: Falso, Verdadero y Quizás. En el mundo de la lógica matemática la implicación material (A implica B, entonces no B implica no A) es un verdadero problema, como bien lo anotaba Bertrand Russel, formalizador de la lógica simbólica y ganador del premio nobel de literatura por sus fundamentos de filosofía. Pero en la vida real no se puede seguir este razonamiento tan simple. Es más, la lógica aristotélica es completamente inútil en la vida práctica: la siguiente afirmación es una aseveración bastante pobre. De hecho, los sucesos cotidianos no están enmarcados en esta clase de lógica, ni en la lógica matemática. ¿Cómo se explica, desde la lógica matemática, que algunos vasos de vidrio no se rompan al caer? Luego, para que la lógica tuviera sentido en la vida práctica humana debería tenerse la certeza de que un efecto A causa un efecto en B *para todos los individuos del planeta*.
+
+Por lo tanto utilizar este tipo de lógica en la vida real es como afirmar que porque el coeficiente de regresión es significativo estadísticamente, entonces el efecto de éste causa algún tipo de comportamiento inusual en la variable de interés. Esta afirmación es fuerte, pero el mensaje que quiero hacer llegar a la comunidad es claro. Está bien hablar de asociación y fuerte correlación. No está bien inferir algún tipo de causalidad simplemente porque el p-valor del coeficiente del modelo es significativo al 5%. De hecho, la causalidad se debe establecer, con cierto nivel de error, después de que las múltiples investigaciones y el control sobre terceras variables se puedan establecer efectivamente en varios escenarios experimentales. Por supuesto, no quiero decir con esto que el estadístico está vetado para establecer causalidades. Simplemente estoy diciendo que un p-valor no es suficiente.
+
+Qué mejor ejemplo de la mala práctica inferencial que la paradoja de Simpson. Se trata de un fenómeno en donde los datos pereciesen probar lo contrario a la verdad. Por ejemplo, suponga que usted realiza un estudio clínico que está enfocado en probar dos tratamientos contra los cálculos renales (divididos en grandes y pequeños). Los datos son los siguientes:
+
+| Columna 1 | Columna 2 | Columna 3 |
+| --- | --- | --- |
+|  | ***Tratamiento A*** | ***Tratamiento B*** |
+| ***Cálculos pequeños*** | 93% (81/87) | 87% (234/270) |
+| ***Cálculos grandes*** | 73% (192/263) | 69% (55/80) |
+
+A simple vista podríamos suponer que, para ambos tipos de cálculos, el tratamiento A es más efectivo que el tratamiento B. Sin embargo, haciendo la suma de las columnas, llegamos a que la efectividad del tratamiento A (78%, 273/350) es menor que la del tratamiento B (83%, 289/350). Este mal entendido se da porque no se ha controlado efectivamente una variable de confusión. Así que, el estadístico tiene una responsabilidad ética muy grande. En cuestión de causalidad, un estudio no es suficiente la mayoría de las veces.
+
+PD: Fisher jamás reconoció que fumar causa cáncer.

@@ -1,0 +1,33 @@
+---
+title: "A riesgo de quedar mal… Ayuda con series de tiempo"
+author: "Andrés Gutiérrez"
+date: "2010-03-26"
+categories:
+  - "Estadística"
+---
+
+Angélica Batista escribe:
+
+Hola,
+
+Buscando sobre series de tiempo me encontré con el blog de ustedes. Soy bióloga, llevo poco de graduada, y con el trabajo que desarrollo me encuentro con uno de mis mayores dolores de cabeza: No se analizar series temporales. Resulta que es algo que no explican en la universidad, consideran que a los economistas les resulta más interesante, pero en la biología son muchos los análisis de patrones de variables ecológicas relacionadas con el tiempo.
+
+Resulta que por costos se deben reducir las frecuencias con las que se toman datos de diferentes variables en campo (llámese mar abierto). Durante 17 años se habían venido tomando datos 4 veces por mes, algunas semanas de algunos meses no se tomaron datos, por condiciones ambientales difíciles. Me dicen: <<da tu opinión, ¿crees que pudiéramos reducir la cantidad de salidas de campo al mes o al año, sin que esto implique que los resultados se alteren significativamente?>>
+
+Bueno, lo que hice fue tomar lápiz y papel, dibuje una gráfica de la variable de interés vs el tiempo en años, y les dibuje el escenario real de toma de datos. Les dije: Se me ocurrió que si las curvas no difieren significativamente entre sí, al menos entre la distribución real y al menos hasta la de una vez por mes, podría interpretar como qué características de tendencia y estacionalidad de la curva de la variable de interés en el tiempo pueden verse reflejadas tomando datos una vez por mes así como cuatro veces por mes. Y notando qué tan diferentes son entre sí, entonces se concluiría que se pierde información sobre esos atributos de las curvas.
+
+Me dijeron, ¡perfecto! Hazlo… nunca he hecho nada parecido, solo analizar poblaciones de bichos. Así que he buscado y me encontré con series de tiempo, al no tener suficientes conocimientos al respecto me chocó mucho la forma que debo ingresar los datos a algún programa estadístico que me ayude a resolver la duda.
+
+¿Qué puedo hacer? ¿Me pueden ayudar? ¿Qué me recomiendan leer?
+
+*Our reply: *
+
+Sin ser expertos en el manejo de series temporales, y corriendo un gran riesgo al escribir esto, las sugerencias son:
+
+1. Hay que mirar de qué periodicidad es la estacionalidad: si es semanal, entonces no se pueden omitir mediciones semanales. Sólo si la periodicidad es mayor a semanal (por ejemplo mensual) cabe la posibilidad de omitir mediciones semanales sin mayor pérdida de información con respecto a la estacionalidad. Si la periodicidad es mensual, no se deben tomar mediciones cada dos meses o cada tres meses, porque eso ocultaría la estacionalidad, conduciendo a conclusiones erróneas.
+
+2. Si va a omitir datos, hay que asegurarse que los datos siguen siendo igualmente esparcidos en el tiempo. Es decir, se mide siempre cada dos semanas, o siempre cada cuatro semanas, pero que no ocurra que a veces mide cada semana, a veces cada dos semanas.
+
+3. Ahora, el punto más importante es cómo saber si las curvas no cambian mucho en términos de la tendencia (en la metodología que usted explicó a su jefe o compañeros de trabajo). Hay herramientas estadísticas sofisticadas para ver eso, dadas tus condiciones, sugiero que hagas simplemente un suavizamiento. Y la razón es que las técnicas de suavizamiento permiten una mejor visualización de la tendencia, y así puedes fácilmente comparar la tendencia de las diferentes series y ver si la tendencia cambia mucho a medida que cambias la frecuencia con que toma las mediciones.
+
+Ahora, agradecemos de antemano si otros colegas que lean esto pueden comentar acerca de una mejor solución.

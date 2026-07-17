@@ -1,0 +1,27 @@
+---
+title: "Consejos para beamer y LaTeX en Gmail"
+author: "Andrés Gutiérrez"
+date: "2012-02-10"
+categories:
+  - "Estadística"
+---
+
+Natalia Rojas me escribe lo siguiente que quiero compartir con ustedes por su gran utilidad:
+
+> Hola Andrés, te pongo un link de una herramienta bien práctica en el uso de presentaciones en beamer, veo que publicas sobre estas ayudas tecnológicas
+>
+>
+>
+> http://wiki2beamer.sourceforge.net/
+>
+>
+>
+> Y otro de algo que quizá te puede interesar, es el manejo de LaTeX en gmail que quizá lo conoces
+>
+>
+>
+> http://alexeev.org/gmailtex.html
+>
+>
+>
+> Sólo son sugerencias prácticas!!

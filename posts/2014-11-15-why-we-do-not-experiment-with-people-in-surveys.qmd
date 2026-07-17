@@ -1,0 +1,20 @@
+---
+title: "Why we do not experiment with people in surveys?"
+author: "Andrés Gutiérrez"
+date: "2014-11-15"
+categories:
+  - "Estadística"
+  - "Stats"
+---
+
+Today I was giving a lecture on sample surveys and observational studies. When I was saying that surveys involving people are only observational and do not take part into the experimental world, some people refused to accept that fact. They argued that some researchers actually do experiments with people in the context of public policy. I do not agree with that because of:
+
+1. In the survey context we are worried about making inferences of parameters that describe the whole finite population. That's it. Then we must randomise in order to select a representative sample.
+
+2. In a experiment we want to prove some kind of hypothesis and, in real life (with real people) it is often common to choose (purposively) the sample, in order to eliminate the possible bias induced by exogenous variables.
+
+Why we purposively define the sample in an experiment? Because we want to keep away the noise and we want our set up to be able to detect the effects of our variables of interest. This way, it is clear that when experimenting it is barely possible to estimate the parameters of the whole population of interest. Then, we conclude that a survey is only observational and should not be confused with experimentation, even when some famous research is carried out there.
+
+So, what happens with impact evaluation of public policies? In that context, we often talk of counterfactuals and that sound experimental. Ok, it is possible to make surveys in cuasi-experimental set ups, but in those cases, we must realise that we are not controlling who receives the intervention and who does not. That way we could generalise the findings to specific populations: the treated population and the untreated population. This is a mix of methodologies, and note that it is not technically an experiment.
+
+For example, think about a survey conducted in order to estimate the percentage of people with a condition in Colombia. Then, a sample is selected (using randomisation) and we conclude about that parameter of interest. However, we may carry out an experiment with some people having the condition. Then we restrict our sample. We want people of certain ages, and living in some specific conditions. Then we randomise and some people receive a treatment, some people receive nothing. Note that we are not estimating population parameters. Then, after that pilot, the government decides to implement a public policy to people with that condition. After some time, we want to prove the impact of that specific intervention in the whole population. Then we plan a survey. We select a representative sample of people with that specific condition and we match them to similar people without that condition.

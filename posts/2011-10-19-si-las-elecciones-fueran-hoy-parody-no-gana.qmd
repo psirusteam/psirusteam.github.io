@@ -1,0 +1,50 @@
+---
+title: "Si las elecciones fueran hoy… Parody no gana"
+author: "Andrés Gutiérrez"
+date: "2011-10-19"
+categories:
+  - "Colombia"
+  - "Estadística"
+---
+
+Claro, suponiendo mil cosas que no necesariamente se cumplen. [Según este artículo](http://feeds.univision.com/feeds/article/2011-10-07/encuestas-revelan-cabeza-a-cabeza?refPath=/noticias/ultimas-noticias/), la intención de voto para la alcaldía de Bogotá está repartida de la siguiente manera: <<*Petro, del movimiento independiente Progresistas, se ubicó con 24% en el primer lugar de las preferencias de los electores, según un muestreo realizado por la firma Gallup Colombia. Peñalosa, que se postula por el Partido Verde y el Partido Social de Unidad Nacional (Partido de La U), se situó segundo con 21%, de acuerdo con el sondeo divulgado por el diario El Espectador. En el tercer lugar se ubicó la ex senadora Gina Parody, con 18%.*>>
+
+Si asumimos una distribución previa no informativa (
+
+[Dirichlett](http://en.wikipedia.org/wiki/Dirichlet_distribution)
+
+con parámetros constantes e iguales y cercanos a la unidad), se tienen las siguientes estimaciones posteriores, en las cuales no involucré a los restantes candidatos porque no tuve tiempo de buscar la información.
+
+| Columna 1 | Columna 2 | Columna 3 | Columna 4 |
+| --- | --- | --- | --- |
+| **Candidato** | **Estimación** | **Límite inferior** | **Límite superior** |
+| Parody | 29% | 24% | 33% |
+| Peñalosa | 33% | 28% | 38% |
+| Petro | 38% | 33% | 43% |
+
+La anterior tabla da un resumen de la distribución posterior de la intención de voto para los anteriores candidatos. De alguna forma u otra, observando con detenimiento los límites de credibilidad, es posible concluir que… cualquier cosa podría pasar. Sin embargo, es claro que la menor opción la tiene Gina Parody. La siguiente figura da cuenta de la distribución posterior para cada candidato y es posible observar que efectivamente hay un empate técnico puesto que hay traslape entre las densidades poblacionales.
+
+Bajo este escenario, la probabilidad posterior de que Gina Parody le gane a Peñalosa es de tan solo 0.126. La probabilidad posterior de que Parody le gane a Petro es aún más baja, 0.011. Por último la probabilidad posterior de que Peñalosa le gane a Petro es de 0.1286.
+
+Por otro lado, acudiendo a la encuesta de Datexco y suponiendo que no se inventaron la mitad de las encuestas (no lo digo yo, [lo dicen las denuncias suscitadas acá](http://www.lasillavacia.com/historia/ex-colaboradores-de-datexco-dicen-que-la-firma-invento-encuestas-para-opinometro-de-el-tiem)). Entonces, es posible utilizar esta información para crear un escenario más preciso incluyéndola a manera de información previa informativa. Puesto que, si observó bien en la tabla de estimaciones, existe mucha variabilidad en la distribución posterior y eso explica por qué los intervalos de credibilidad son tan anchos. La información de la [encuesta de Datexco](http://feeds.univision.com/feeds/article/2011-10-07/encuestas-revelan-cabeza-a-cabeza?refPath=/noticias/ultimas-noticias/) dice así: << *En tanto, otra encuesta de la firma Datexco también divulgada el viernes y contratada por el diario El Tiempo, ubicó primero a Peñalosa, con 20,9%; segundo a Petro, con 16,4%, y tercera a Parody, con 14,1%.* >>
+
+Si asumimos una distribución previa informativa (
+
+[Dirichlett](http://en.wikipedia.org/wiki/Dirichlet_distribution)
+
+con parámetros desiguales y relacionados con la intención de voto en la encuesta de Datexco), se tienen las siguientes estimaciones posteriores:
+
+| Columna 1 | Columna 2 | Columna 3 | Columna 4 |
+| --- | --- | --- | --- |
+| **Candidato** | **Estimación** | **Límite inferior** | **Límite superior** |
+| Parody | 28% | 24% | 31% |
+| Peñalosa | 37% | 33% | 40% |
+| Petro | 35% | 31% | 38% |
+
+Este escenario es un poco más claro, con menos variabilidad, puesto que la distribución posterior ha recogido los efectos de la distribución previa. Sin embargo, aunque es má claro estadísticamente, no lo es políticamente. Bueno, dependiendo de la filiación política de cada quién. Por lo menos, a mí me parece un mal escenario. Puesto que yo voy a votar por … En fin, esto sea como sea, el siguiente gráfico muestra un panorámica más clara de la intención de voto posterior.
+
+También es posible calcular la probabilidad posterior de que Parody le gane a Peñalosa, ese valor es de 0.00104. Muy pequeño. La probabilidad posterior de que Parody venza a Petro es de 0.00784. Y la probabilidad posterior de que Peñalosa obtenga una victoria sobre Petro es de 0.72. Bueno, como dicen por ahí, la verdadera encuesta es el día de las elecciones. Bla, bla, bla… Por supuesto, si salen más encuestas, haré más predicciones chimbas. No con el fin de predecir nada, sino con el de realizar un análisis de sensibilidad sobre las propuestas en las distribuciones previas. Estén sintonizados con el blog ese día de las elecciones. Con cada reporte de la registraduría estaré realizando una nueva estimación. Esto con el fin de cotejar el poder del enfoque bayesiano que permitiría proclamar al ganador con antelación al conteo total.
+
+Por otro lado, quisiera saber cuál es la técnica súper avanzada para afirmar que hay un empate técnico. Dicen los gerentes de las encuestadoras que hay un empate técnico entre Peñalosa y Petro. Esta conclusión la realizan al sumar y restar el error de muestreo a las estimaciones puntuales. Pero bueno, desde mi humilde punto de vista, creo que falta multiplicar el error estándar (si es que es el error del que se está hablando) por un percentil relacionado con una distribución que dé cuenta del modelo probabilístico detrás del cálculo. Ahora, ese error de muestreo ¿qué es? ¿Cómo es posible hablar de error de muestreo cuando no hay ningún muestreo por detrás? Yo conozco las respuestas a esas preguntas, pero no creo que los gerentes de esas firmas lo sepan y por tanto el engañador ignorante engaña al más ignorante. Podemos estar haciendo negocios sucios… En fin, para no dejarlos preocupados, sí es posible hablar de error incluso cuando no hay ningún muestreo probabilístico. ¿Los dejé peor de asustados?
+
+Por último… 1) Piense su voto… no se deje influenciar por propuestas populistas que ya mucho daño le hicieron a la ciudad. 2) Ayude a pensar en cómo hacemos para enseñarles a los ignorantes colombianos, en materia de estadística, cómo se interpreta un error y con qué cuidado se deberían interpretar estos resultados electorales. Mire que los ignorantes son muchos y que si lográramos permear los medios de comunicación con este mensaje, le haríamos un bien al pueblo a la hora de elegir. Además muchos se interesarían más por la estadística.

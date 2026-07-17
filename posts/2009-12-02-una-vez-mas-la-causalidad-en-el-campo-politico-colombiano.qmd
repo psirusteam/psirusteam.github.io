@@ -1,0 +1,46 @@
+---
+title: "Una vez más, la causalidad en el campo político colombiano"
+author: "Andrés Gutiérrez"
+date: "2009-12-02"
+categories:
+  - "Estadística"
+---
+
+El periódico El Espectador ha publicado una columna llamada <<[una cooperación contraproducente](http://www.elespectador.com/impreso/internacional/articuloimpreso175299-una-cooperacion-contraproducente?page=0,0)>> concerniente a una investigación que ha generado revuelo internacional y que ha sido materia de discusión en dos ocasiones en este blog. El columnista introduce al lector descuidado con las siguientes palabras:
+
+> Intrigados por el volumen de denuncias que por años han señalado que la ayuda militar estadounidense en Colombia contribuía a la violación de los Derechos Humanos, dos jóvenes investigadores de la Universidad de Nueva York (NYU) y de la Universidad de Harvard se hicieron hace algunos meses una pregunta: ¿Existe una relación directa entre la cantidad de ayuda militar a Colombia y los actos de violencia de los grupos armados?
+
+Nótese que en la introducción de su artículo, los dos jóvenes investigadores declaran lo siguiente:
+
+> "La ayuda militar norteamericana produce el aumento diferencial en ataques paramilitares, mientras que no afecta los ataques de la guerrilla.
+
+En la misma columna el inteligente periodista les pregunta lo siguiente:
+
+> *Dada la complejidad del conflicto colombiano, ¿cómo pueden estar tan seguros de que el incremento en la violencia paramilitar es producido por la ayuda de EE. UU.? ¿No podría ser, por ejemplo, respuesta a ganancias por tráfico de cocaína?*
+>
+>
+> Algo maravilloso de tener buenas fuentes de datos sobre el conflicto y otro número de factores que podrían estar influenciando las dinámicas del conflicto —por ejemplo, la cantidad de coca cultivada en los municipios— es que nos permite realizar controles de diferentes maneras. A partir de imágenes satelitales, hicimos unos análisis en zonas de Colombia donde nunca habían sido reportados cultivos de coca: encontramos un incremento de violencia paramilitar.
+>
+>
+> *¿Qué otras variables controlaron para demostrar que había una relación causa efecto entre la ayuda militar estadounidense y la violencia paramilitar?*
+>
+>
+> *Temíamos que, en lugar de ser la ayuda la que generara la violencia, fuera el incremento paramilitar el que provocara el aumento en la ayuda norteamericana. Sin embargo, descartamos esa posibilidad comparando el nivel de ayuda militar destinada a Colombia y la dada a otros países fuera de Latinoamérica. Ahí descubrimos que Estados Unidos incrementó su ayuda a Colombia, Egipto o Indonesia en el marco de la lucha contra el terror y no por fenómenos propios de cada país.*
+>
+>
+> *Pese a ser parte de la guerra contra el "terror", ustedes sostienen que la ayuda militar estadounidense ni incrementa ni disminuye los ataques violentos de la guerrilla.*
+>
+>
+> Exacto. Si pensamos que los dos principales objetivos de la ayuda militar norteamericana son la lucha contrainsurgente (en términos de aplastar a la guerrilla) y la lucha antinarcóticos (en reducción de cultivos de coca), lo que encontramos es que ninguno de estos objetivos está siendo alcanzado.
+
+Esta investigación será presentada en el Centro para el desarrollo global y está en proceso de revisión de pares para ser publicada en una revista científica. Mis comentarios siguen siendo los mismos de las entradas: [La causalidad y la paradoja de Simpson](2009-11-08-la-causalidad-y-la-paradoja-de-simpson.qmd) y [¿Efecto causal o simplemente asociación?](2009-09-29-efecto-causal-o-simplemente-asociacion.qmd) Sin embargo, quisiera replicar las palabras de uno de los más reconocidos estadísticos y analistas políticos en Estados Unidos acerca de este trabajo de investigación, [Andrew Gelman](http://www.stat.columbia.edu/~gelman/). Su respuesta a las supuestas causas del conflicto paramilitar son las siguientes:
+
+> En primer lugar, yo [Gelman] sigo prefiriendo el lenguaje de asociación antes que especular acerca de la causalidad. Ahora, para llegar a los detalles: mi modelo alternativo de las bases es el siguiente: El conflicto en Colombia aumentó durante la década del 2000 y la ayuda militar de EE. UU, en Colombia y en otros lugares, también se incrementó durante ese período. La mayoría de los ataques de los paramilitares (y, por tanto, la mayor parte del aumento de los ataques de los paramilitares) se produjo cerca de las bases militares. Por lo tanto, no estoy tan impresionado por el argumento de "tendencia diferencial en el tiempo". No es sorprendente (pero no obstante cabe señalarlo) que hay menos ataques de la guerrilla cerca de bases militares. Pero todo esto no significa que los ataques de los paramilitares no se han aumentado en la ausencia de ayuda de EE. UU.
+>
+>
+> Sin embargo, nada de esto contradice su historia [la de los dos investigadores] política principal, que es que el ejército colombiano está implicado en ataques de los paramilitares, y que la ayuda de EE. UU. es un facilitador para este tipo de violencia. Mi historia es coherente con su historia de causalidad – la ayuda de EE. UU. genera más recursos para los militares y aumenta los ataques paramilitares. También es coherente con una historia causal diferente, que dice así: más conflicto, más ataques de paramilitares y por ende más ayuda de EE. UU. para evitar que la situación empeore.
+>
+>
+> …Yo creo que sería más defendible, desde un punto de vista estadístico y econométrico, demostrar la asociación y poner el balón en la cancha.
+
+Aprovecho para saludar a Ronald Herrera y a Iván Díaz… gracias por su involuntario aporte desde Facebook. Asimismo, comparto y celebro sus ideas de "Léase el artículo [[Bases, bullets and ballots](http://www.santafe.edu/~snaidu/papers/090808_bases_bullets_FULL.pdf)] con precaución", no sólo ese sino todos.

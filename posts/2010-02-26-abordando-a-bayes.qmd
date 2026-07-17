@@ -1,0 +1,31 @@
+---
+title: "Abordando a Bayes"
+author: "Andrés Gutiérrez"
+date: "2010-02-26"
+categories:
+  - Estadística
+---
+
+Francisco escribe:
+
+> Soy un estudiante *erasmus* de España que está en Gante, Bélgica. En estos momentos estoy haciendo mi *master thesis* sobre *computer vision*. Nunca pensé que esto iba a estar tan ligado a la estadística. Mis conocimientos de esta son pocos, aunque voy conociendo un poco mejor este mundo.
+>
+> Por ejemplo, estoy intentando implementar un sistema de múltiples hipótesis (*multitarget tracking*) que consiste en tener una serie de hipótesis almacenadas con sus respectivos estados a la vez que voy obteniendo datos y, con base en eso, hacer una elección sobre a qué hipótesis pertenece un nuevo estado; y claro, necesito una base importante de estadística y de probabilidad bayesiana.
+>
+> La cuestión era si podrías recomendarme alguna página, libro, etc., que me facilitara familiarizarme con el tema y entender este complejo mundo.
+
+*Mi respuesta*:
+
+Es increíble cómo la estadística se viene convirtiendo en una herramienta indispensable para la investigación actual en los diferentes campos del saber. Ya lo decía el visionario H. G. Wells en la frase que motivó este blog:
+
+> Llegará el día en que el pensamiento estadístico será una condición tan necesaria para la convivencia eficiente como la capacidad de leer y escribir.
+
+Aún más increíble es el lugar que está tomando la estadística bayesiana en la investigación interdisciplinaria actual. Ya lo diría el famoso analista político y estadístico Andrew Gelman:
+
+> En estos días es posible ser no bayesiano [frecuentista], pero ser antibayesiano ya no es una opción.
+
+Los días en que se tildaba al bayesiano de hereje ya han quedado atrás. Más bien, el pensamiento estadístico actual está virando cada vez más en la dirección bayesiana, como bien lo ejemplifica el caso de Francisco. Por otro lado, no existen probabilidades bayesianas (de seguro que Kolmogorov jamás pensó en axiomatizar la probabilidad bayesiana :)); la probabilidad es una sola, pero el enfoque estadístico de *a priori* o *a posteriori* es lo que distingue a la estadística bayesiana de la clásica.
+
+Ahora, el enfoque bayesiano va de la mano con los métodos numéricos y la estadística computacional. Así que, Francisco, aprovechando tu énfasis, utiliza lo mejor de tus habilidades de programación porque sería como querer manejar un avión con una licencia de motociclista. Empieza por leer la segunda edición del libro de Gelman ([Bayesian Data Analysis](http://www.stat.columbia.edu/~gelman/book/), publicado por CRC en 2003). Después descárgate el [WinBUGS](https://www.mrc-bsu.cam.ac.uk/software/bugs-project) y el software [R](http://cran.r-project.org/); de seguro encontrarás muchas cosas novedosas si sigues atentamente la lectura de la tercera edición del libro de Carlin & Louis ([Bayesian Methods for Data Analysis](http://www.amazon.com/Bayesian-Methods-Analysis-Chapman-Statistical/dp/1584886978), publicado por CRC en 2009). Y, pues, lo único que debes hacer es practicar y practicar.
+
+Mucha suerte con tu maestría.

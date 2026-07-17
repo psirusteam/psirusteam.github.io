@@ -1,0 +1,9 @@
+---
+title: "¿Qué tan insignificante es la significación estadística?"
+author: "Andrés Gutiérrez"
+date: "2011-04-13"
+categories:
+  - "Estadística"
+---
+
+Como algunos de ustedes habrán leído acerca [del caso Zicam](2011-01-16-cuando-la-significacion-estadistica-apesta-el-caso-zicam.qmd), la corte suprema de EE. UU. ha omitido [un concepto desfavorable](http://www.supremecourt.gov/opinions/10pdf/09-1156.pdf) para los estadísticos puristas que se aferran fervientemente a los valores *p*. En pocas palabras, el concepto afirma que la divulgación de posibles efectos colaterales en el uso de fármacos no debe basarse solamente en la significación estadística. [Luis Pericchi ha escrito esta interesante nota](http://www.johndcook.com/SupremeCourtRuling2.pdf) que devela, desde el punto de vista de la teoría de la decisión, que la inferencia estadística también debería depender del propósito del estudio y de las consecuencias de las decisiones que se tomarán.

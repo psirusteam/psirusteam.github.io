@@ -1,0 +1,23 @@
+---
+title: "Relaciones de las distribuciones de probabilidad"
+author: "Andrés Gutiérrez"
+date: "2009-01-02"
+categories:
+  - "Estadística"
+---
+
+Que sea esta la oportunidad para desearle a cada uno de los lectores de este blog un muy Feliz año acompañado de todo tipo de bendiciones y logros realizados.
+
+Abro el año con este gráfico realizado por John D. Cook acerca de las relaciones de las distribuciones de probabilidad. Según Cook, el gráfico está [inspirado en un artículo](http://predictive.files.wordpress.com/2009/01/distri.pdf) de Lewis y McQueston publicado en TAS (The American Statistician) en donde los autores muestran en un gráfico mucho más extenso y completo cómo cada una de las distribuciones de probabilidad univariadas se relacionan y forman familias según las propiedades que tengan.
+
+Entre las propiedades que parametrizan las distibuciones de probabilidad se encuentran las siguientes:
+
+1. Propiedad de combinación lineal; por ejemplo, la suma de variables aleatorias normales independientes resulta tener una distribución normal
+
+2. Propiedad de convolución; por ejemplo, una variable aleatoria con ditribución Chi cuadrado y con $ n $ grados de libertad puede venir de la suma de $ n $ variables independientes con distribución Chi cuadrado y con un grado de libertad
+
+3. Propiedad del producto; por ejemplo, el producto de lognormales resulta tener una distribución lognormal
+
+4. Propiedad de la inversa; por ejemplo, Si una variable aleatoria tiene distribución F, su inversa aritmética también tendrá distribución F
+
+Este tipo de ayudas visuales son muy importantes y brindan al estadístico un nivel de comprensión mucho más amplio y son un claro ejemplo de que uno no siempre tiene que saber todo… Sin embargo, sí debe saber en dónde buscar.

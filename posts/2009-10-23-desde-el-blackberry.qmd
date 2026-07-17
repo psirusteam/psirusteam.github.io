@@ -1,0 +1,9 @@
+---
+title: "Desde el BlackBerry"
+author: "Andrés Gutiérrez"
+date: "2009-10-23"
+categories:
+  - "Estadística"
+---
+
+Con la nueva tecnologia, es posible escribir mis apuntes de estadística cuando los tengo en mente.

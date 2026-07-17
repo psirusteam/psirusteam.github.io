@@ -1,0 +1,25 @@
+---
+title: "La humildad del gremio"
+author: "Andrés Gutiérrez"
+date: "2009-04-04"
+categories:
+  - "Estadística"
+---
+
+He tenido tiempo de pensarlo muy bien… y me ratifico… **los métodos estadísticos deben tener validez teórica desde el punto de vista del usuario**. Aún más, mi opinión es que en nuestro gremio nos hemos encargado de promover una falsa imagen matizada de altivez. Yo soy el primero de ellos y, voluntaria y públicamente confieso mi rebelde actitud. Aunque ésta ya fue denunciada alguna vez en el artículo de despedida de John Tukey, el famoso [Sunset Salvo](http://www.biostat.jhsph.edu/~yonchen/Sunset%20Salvo.pdf).
+
+Tukey hizo explícito que ese tipo de actitud logra que nos marginemos de ayudar a las personas que de veras nos necesitan. A continuación reproduzco algunos apartes de su grandioso ensayo.
+
+> La altivez es el peligro más grande que puede acompañar al análisis estadístico de los datos. De hecho, ese sentimiento de debería ser combatido una y otra y otra vez debido a las siguientes razones:
+>
+>
+>
+> 1. Los datos no necesariamente deben contener la respuesta. La combinación de datos más un gran deseo de obtener una respuesta no garantiza que una respuesta razonable pueda ser encontrada en un conjunto de datos.
+> 2. Incluso, los datos no necesariamente deben contener una apariencia de respuesta.
+> 3. Debemos reportar estas apariencias como tales y abstenernos de etiquetarlas como respuestas.
+>
+>
+>
+> Es muy peligroso pensar que el estadístico puede resolver todos los problemas del mundo; sin embargo, aunque los que podemos hacer es limitado, podemos ayudar a muchas personas en variados campos del saber. Si de algo debemos enorgullecernos es de que, en algunas ocasiones, lo que se puede hacer con nuestra ayuda es mucho mejor de lo que se haría si no estuviéramos presentes – sin importar que tan simple o complejas sean las ideas que hayamos utilizado para hacer las cosas de una mejor manera.
+
+He tenido tiempo de pensarlo muy bien… y me ratifico… **seguimos muy cómodos en nuestro*sitio de confort***. Tal vez sea la falta de humildad, o la altivez – a la que hacía referencia Tukey, tal vez sea otra situación. Lo importante es que seguimos como hace unos cuantos años… Por cierto, me enteré de que el [Consejo Nacional de Profesionales en Economía](http://www.conalpe.gov.co/), entidad regida por el ministerio de educación de Colombia, peleó por la reglamentación de una ley que no permitiera a otro tipo de profesionales dictar las cátedras de microeconomía, macroeconomía, entre otras. Y, ¿en dónde está nuestro **consejo profesional de estadística**?... desde acá no se ve.

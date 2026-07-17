@@ -1,0 +1,27 @@
+---
+title: "Leslie's Advice on Statistical Design"
+author: "Andrés Gutiérrez"
+date: "2014-12-03"
+categories:
+  - "Estadística"
+  - "Public Policy Evaluation"
+  - "Stats"
+---
+
+An [old issue of Statistical Science](http://projecteuclid.org/download/pdf_1/euclid.ss/1032209665) includes an interview with Leslie Kish by Frankel and King. Leslie was the most influential statistician in the field of Survey Sampling and Statistical Design in the past century. I wan to stress out these words of mere wisdom:
+
+> Now we are at a very important point. How does statistical design differ from statistical analysis? The reason you need courses in statistical design is because the universe is not independently, identically distributed (i.i.d.), but complex.
+>
+> All universes—physical, chemical, social—none is a well-mixed urn.
+>
+> The second point is that because we are dealing with these complex universes in a complex way, we must select complex samples from these complex universes. Because we have design effects, we must have large samples.
+>
+> We live and die by the central limit theorem because of this complexity and because we must have roughly normal distributions for inferences based on statistics from complex samples.
+>
+> On the first page of the typical statistics textbook you read: "Given *n* random vari- ables drawn from a population, independently and identically distributed, to estimate the mean, etc."
+>
+> Every word in that sentence is misleading.
+>
+> Samples are not given. They must be selected, assigned or captured, and the sample size is not fixed. In surveys, sample size is almost always a random variable, and the data are not i.i.d. And usually, you are not sampling from a single population, but from a composite of different subpopulations.
+>
+> Furthermore, we don't produce a single estimate; we produce a whole host of estimates, so that whole story is wrong.

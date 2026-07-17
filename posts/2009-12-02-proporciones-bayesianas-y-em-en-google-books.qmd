@@ -1,0 +1,13 @@
+---
+title: "Proporciones bayesianas y EM en Google Books"
+author: "Andrés Gutiérrez"
+date: "2009-12-02"
+categories:
+  - "Estadística"
+---
+
+Una variante de nuestro trabajo acerca de la inferencia bayesiana en el problema de la diferencia de dos proporciones - enfocada en la investigación de mercados (específicamente en pruebas de empaque o *packaging test*) - ha sido publicado por la [Revista de métodos cuantitativos para la economía y la empresa](http://www.upo.es/RevMetCuant/). Esta revista es la única publicación en español que aparece referenciada en el [raking australiano](http://www.austms.org.au/tiki-read_article.php?articleId=31) de revistas de estadística.
+
+El artículo trata un caso de estudio en donde se quiere poner a prueba el cambio del empaque de un producto posicionado en su categoría de mercado. Con estadística frecuentista tradicional se llegaría a la conclusión de que no es conveniente cambiar de empaque. Con los métodos bayesianos (diferencia de proporciones y pruebas de independencia) se sugiere que la mejor estrategia está en cambiar el empaque. Este artículo está basado en un conjunto de funciones en R ([ver acá](../software.qmdpropbayes/)) que ayudan a implementar un análisis bayesiano exacto y/o simulado y están disponibles haciendo clic acá. [El artículo está disponible acá.](http://predictive.files.wordpress.com/2008/12/revmetcuant.pdf)
+
+Por otro lado, [Estrategias de muestreo](../books.qmd) (EM) ya aparece en Google Books ([ver acá](http://books.google.es/books?id=UlVmE5pkRwIC&lpg=PP1&pg=PP1#v=onepage&q=&f=false)) y muy pronto podrá ser adquirido de forma electrónica.

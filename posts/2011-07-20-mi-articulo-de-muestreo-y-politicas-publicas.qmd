@@ -1,0 +1,11 @@
+---
+title: "Mi artículo de muestreo y políticas públicas"
+author: "Andrés Gutiérrez"
+date: "2011-07-20"
+categories:
+  - "Estadística"
+---
+
+Muy amablemente, la Dirección de Evaluación de Políticas Públicas, del Departamento Nacional de Planeación, me ha invitado a ser partícipe, mediante un artículo, en su publicación **[Política Pública Hoy](http://sinergia.dnp.gov.co/PortalDNP/default.aspx?txtAplicacion=Sinergia&txtUrl=http://sinergia.dnp.gov.co/Sinergia/Boletines.aspx)**. Antés de someterlo quisiera que ustedes los revisaran y me hicieran llegar sus comentarios a mi [correo](mailto:contacto@gutierrezandres.com).
+
+[El artículo lo pueden descargar acá](http://gutierrezandres.files.wordpress.com/2011/07/muestreo-pp.pdf).

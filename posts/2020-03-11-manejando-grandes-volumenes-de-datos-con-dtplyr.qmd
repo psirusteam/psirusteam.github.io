@@ -1,0 +1,37 @@
+---
+title: "Manejando grandes volúmenes de datos con dtplyr"
+author: "Andrés Gutiérrez"
+date: "2020-03-11"
+categories:
+  - "Estadística"
+---
+
+Definitivamente dplyr es un motor de análisis de datos muy potente y flexible. Durante años lo he usado con éxito, hasta tal punto que he dejado de lado completamente cualquier otro tipo de sintaxis. Los pipes **%>%** ya están incorporados en mi genética de programación. Sin embargo, uno de los problemas de dplyr es que no se maneja muy bien ante grandes volúmenes de información. Existen otras opciones en R, por ejemplo el paquete data.table, que es bastante potente. Sin embargo la concepción de las consultas es totalmente diferente, no utiliza pipes y hay que pasar por una curva larga de aprendizaje. Hadley Wickham ha escrito el paquete [dtplyr](https://dtplyr.tidyverse.org) que permite seguir utilizando la sintaxis de dplyr, aunque la computación se realiza en data.table. A mi gusto es un traductor muy potente.
+
+Bien, empecemos con un ejemplo rápido. Voy a cargar un censo con alrededor de 30 millones de registros y 100 variables.
+
+```
+rm(list = ls())
+
+library(data.table)
+library(dtplyr)
+library(dplyr, warn.conflicts = FALSE)
+
+censo <- readRDS("YourData.rds")
+```
+
+El siguiente paso es convertir esos datos que acabo de cargar al formato apropiado para dtplyr.
+
+```
+censo_lazy <- lazy_dt(censo)
+```
+
+¡Listo! Es así de fácil, ahora podemos utilizar la sintaxis de siempre sobre este nuevo objeto. La computación es infinitamente más rápida que al utilizar dplyr.
+
+```
+censo_lazy %>% 
+  group_by(Ciudad) %>%
+  summarise(average = mean(Escolaridad))
+```
+
+Por ejemplo, una consulta un poco más robusta le toma a dtplyr **1.01 minutos**, mientras que la misma consulta en dplyr se ejecuta en... Bueno, ya llevo esperando más de seis horas y no termina de ejecutarse el código.

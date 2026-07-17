@@ -1,0 +1,61 @@
+---
+title: "Not a good advice (On regression over principal axis)"
+author: "Andrés Gutiérrez"
+date: "2016-06-08"
+categories:
+  - "Estadística"
+  - "Teaching"
+---
+
+Some time ago, someone told me about a robust methodology that was used in order to select the significant variables on a factor. Long story short: he was performing some factor analysis and he wanted to know which variables were more important than others on that very factor.
+
+The good advice was: define a model between the factor scores and the variables on the data set and then use a stepwise regression methodology in order to identify which variables were significant. This way, his response variable was defined to be the factor score on every unit and the explanatory variables were exactly the same variables used to perform the factor analysis.
+
+So, I wrote some R code and found the obvious thing. Take a look. First I perform a principal component analysis on a data set.
+
+```r
+data("iris")
+attach(iris)
+Ex1 <- iris[, 1:4]
+
+library(ade4)
+Ex1 <- as.matrix(scale(Ex1))
+acp4 <- dudi.pca(Ex1,scannf=F,nf=10) ### Analisis de componentes principales
+print(acp4$c1) # column normed scores - principal axes
+#score <- Ex1 %*% as.matrix(acp4$co)
+score <- acp4$li # row normed scores
+```
+
+Then I fitted the model by using the first principal component as the response variable.
+
+```r
+datos <- data.frame(Ex1, score = score[, 1])
+model <- lm(score ~ 0 + ., data = datos)
+summary(model)
+```
+
+Then I found that every variable were significant. I repeated the exercise for the second, third and fourth factor and I found the same behaviour: every variable was significant for every factor. It is not over, I found that the values of regression coefficients were exactly the same to those defining the factor loads.
+
+```r
+cbind(model$coefficients, acp4$c1[, 1])
+
+                   [,1]       [,2]
+Sepal. Length  0.5228115  0.5210659
+Sepal. Width  -0.2702498 -0.2693474
+Petal. Length  0.5823575  0.5804131
+Petal. Width   0.5667489  0.5648565
+```
+
+Then, I realised that by definition a factor is defined to be a linear combination of the variables. That way, it is evident that every variable is not only significant but share the same value of regression coefficients and factor loads. So, if the response is defined as
+
+$$ F = a_1X_1 + a_2X_2 + a_3X_3 + a_4X_4$$
+
+Then the regression coefficients of the following model
+
+$$ F \sim \beta \mathbf{X}$$
+
+must have this solution
+
+$$\beta = \mathbf{a} = (a_1, a_2, a_3, a_4)$$
+
+So, at the end, it was not such a good advice.

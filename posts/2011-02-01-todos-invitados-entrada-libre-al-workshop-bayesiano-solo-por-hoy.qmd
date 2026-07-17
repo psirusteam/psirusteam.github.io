@@ -1,0 +1,13 @@
+---
+title: "Todos invitados... entrada libre al workshop bayesiano (sólo por hoy)"
+author: "Andrés Gutiérrez"
+date: "2011-02-01"
+categories:
+  - "Estadística"
+---
+
+Efectivamente, la entrada es libre... sólo tiene que [inscribirse acá](http://eventos.usta.edu.co/inscripcion_web.cfm? EVENTO=16) y pagar una módica suma ( menor o igual a 150mil pesos... eso es estadísticamente insignificante) y podrá entrar libremente al evento y ser partícipe de esta reunión de profesionales y estudiantes de la ciencia estadística. Piénselo bien... la estadística bayesiana es una herramienta fundamental en cuestiones de análisis de la información. Si usted no tiene idea de qué eso de estadística bayesiana puede ingresar al curso de ***Introducción a la estadística bayesiana***, si ya tiene algunas bases sobre la materia puede ingresar al curso de ***Series de tiempo bayesianas*** o al curso de ***Inferencia bayesiana en datos longitudinales***.
+
+Si quiere saber más acerca de quiénes son los cursillistas o conferencistas vea [acá el nuevo brochure del evento](http://www.gutierrezandres.com/blog/?attachment_id=1747)... Todavía está a tiempo; asista y participe que, además de enriquecer sus conocimientos y tomar ventaja profesional, estará apoyando la dinámica de nuestra profesión. No le importe quién es el organizador, sólo piense en que unidos, podemos consolidar un gremio de profesionales con sólidas bases para hacer de la nuestra, una mejor profesión. Participe en este evento, en el Simposio de la Nacional, en la Escuela de Verano en Medellín... Bienvenidos todos los eventos de estadística en Colombia, que desafotunadamente son muy pocos.
+
+Les recuerdo que el [Second Workshop on Applied Statistics](2011-01-19-programacion-del-workshop-en-estadistica-bayesiana-bogota-colombia.qmd) es organizado por la [Facultad de Estadística](http://www.usta.edu.co/index.php?option=com_content&view=article&id=66) de la Universidad Santo Tomás, y patrocinado por la [International Association of Survey Statisticians](https://web.archive.org/web/20190607032949/http://isi.cbs.nl/iass/allUK.htm), que tendrá lugar desde el 3 de febrero en Bogotá. ¿[y usted ya se inscribió](http://eventos.usta.edu.co/inscripcion_web.cfm? EVENTO=16)?

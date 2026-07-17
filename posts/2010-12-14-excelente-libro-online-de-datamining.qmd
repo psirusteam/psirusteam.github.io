@@ -1,0 +1,14 @@
+---
+title: "Excelente libro online de DataMining"
+author: "Andrés Gutiérrez"
+date: "2010-12-14"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+La minería de datos trata de explicar el pasado y predecir el futuro por medio del análisis de datos. Este es un campo multidisciplinario que combina la estadística, el aprendizaje de la máquina, la inteligencia artificial y tecnología de base de datos. El valor de las aplicaciones de minería de datos se estima que será muy alta. Muchas empresas han almacenado grandes cantidades de datos a través de años de funcionamiento, y con la minería de datos se es capaz de extraer un conocimiento muy valioso de estos datos. Las empresas son capaces de aprovechar los conocimientos extraídos a más clientes, más ventas y mayores ganancias. Esto también es válido en los campos de ingeniería y medicina.
+
+En el siguiente enlace encontrará un excelente libro online acerca de este tema. Además trae ejemplos y ejercicios muy valiosos.
+
+https://web.archive.org/web/20180902220811/http://chem-eng.utoronto.ca/~datamining/dmc/data_mining_map.htm

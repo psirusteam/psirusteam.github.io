@@ -1,0 +1,9 @@
+---
+title: "4IWAS - Who are those guys?"
+author: "Andrés Gutiérrez"
+date: "2015-04-19"
+categories:
+  - "Estadística"
+---
+
+The 4th IWAS is coming this week. [Check out this short document](https://drive.google.com/file/d/0B5jzgJCq5sU9U01IRWlRU3h4MzA/view?usp=sharing) (in spanish) to see who are those guys that will give you personal training on statistics and public policy evaluation.

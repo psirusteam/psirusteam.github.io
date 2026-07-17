@@ -1,0 +1,9 @@
+---
+title: "Échantillonnage et estimation"
+author: "Andrés Gutiérrez"
+date: "2010-08-05"
+categories:
+  - "Estadística"
+---
+
+Je voudrais remercier les personnes qui, d'une maniere ou d'une autre, m'ont aidé à introduit le monde des enquêtes et échantillonnage... Mes remerciements à David Ospina Botero, Ana Milena Salamanca, Leonardo Bautista et à Leonardo Trujillo.

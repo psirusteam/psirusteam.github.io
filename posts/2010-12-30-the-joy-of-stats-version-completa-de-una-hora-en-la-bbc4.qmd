@@ -1,0 +1,11 @@
+---
+title: "The Joy of stats... Versión completa de una hora en la BBC4"
+author: "Andrés Gutiérrez"
+date: "2010-12-30"
+categories:
+  - "Estadística"
+---
+
+[YouTube](https://www.youtube.com/watch?v=oOOmqHzkkOo)
+
+Primero [fue el trailer](2010-11-29-visualizacion-de-datos.qmd), a continuación, [había clips](2010-12-12-the-joy-of-stats-mas-de-hans-rosling.qmd), y ahora el programa de la BBC4 completo de una hora. The Joy of Stats con Hans Rosling (de Gapminder) está disponible ahora en YouTube!

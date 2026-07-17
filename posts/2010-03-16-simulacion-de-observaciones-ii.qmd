@@ -1,0 +1,17 @@
+---
+title: "Simulación de observaciones II"
+author: "Andrés Gutiérrez"
+date: "2010-03-16"
+categories:
+  - "Estadística"
+---
+
+En algunas entradas anteriores (ver [acá](2010-01-23-simulacion-de-observaciones.qmd) y [acá](2009-05-26-super-armamento-y-municion-para-la-generacion-de-datos.qmd)) se discutía un método que, a pesar de ser muy antiguo, es muy efectivo a la hora de simular observaciones de cualquier distribución con o sin forma conocida. Asumo que este método es enseñado a los alumnos de estadística en los cursos de computación o simulación estadística. A decir verdad, yo tomé ese curso en mi pregrado en estadística (hace no más de cinco años) y jamás me topé con algún ejercicio como este... Seguramente las cosas se han replanteado y se le ha dado a ese curso la verdadera importancia que merece mediante la actualización de sus contenidos.
+
+En este orden de ideas, y teniendo en cuenta que tanto la práctica como la investigación teórica en estadística están tomando un matiz bayesiano, este tipo de cursos computacionales debe ser uno de los más importantes. Ahora, yo sé (y lo digo porque he sido parte activa del comité curricular del pregrado en estadística en la universidad donde laboro) que replantear estos contenidos no es tarea fácil... pero no es imposible. Sencillamente, además de las destrezas matemáticas, el estadístico moderno (bayesiano o frecuentista) debe tener cierto tipo de habilidades computacionales si quiere tener éxito en su vida práctica profesional.
+
+En fin, escribiendo la sección de métodos bayesianos jerárquicos en el modelo de Poisson con aprioris gamma, me encontré con otra linda distribución. Su forma funcional se presenta a continuación:
+
+$ p(\alpha mid \theta_i, \beta, \mathbf{Y}) propto \prod_{i=1}^n \frac{\theta_i^{\alpha-1}}{Gamma(\alpha)}\alpha^{a-1}\exp{-\alpha b}$
+
+Lamentablemente, ni R ni Winbugs la tiene implementada. La solución: [el método de la grilla](http://predictive.files.wordpress.com/2009/05/simu.pdf). Esta sencilla técnica una vez más nos saca del problema de la simulación de observaciones bajo cualquier distribución. Además es posible conocer la forma estructural que toma la densidad de probabilidad (ver imagen), y saber que aunque se trata de una forma conocida. [En este sencillo documento](http://predictive.files.wordpress.com/2010/03/poisson.pdf) se encuentra tanto la teoría como el código computacional en R para la simulación de observaciones de esta linda distribución.

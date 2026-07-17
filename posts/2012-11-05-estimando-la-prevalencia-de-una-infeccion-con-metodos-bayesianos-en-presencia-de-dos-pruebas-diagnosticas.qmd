@@ -1,0 +1,87 @@
+---
+title: "Estimando la prevalencia de una infección con métodos Bayesianos en presencia de dos pruebas diagnósticas"
+author: "Andrés Gutiérrez"
+date: "2012-11-05"
+categories:
+  - "Estadística"
+---
+
+Siguiendo con nuestra aproximación epidemiológica a la estimación de la prevalencia de una infección (ver [acá](2012-09-25-estadistica-para-epidemiologos-estimando-la-prevalencia-de-una-infeccion-con-metodos-bayesianos.qmd) y [acá](2012-10-25-estadistica-para-epidemiologos-codigos-computacionales-para-estimar-la-prevalencia-de-una-infeccion-con-metodos-bayesianos.qmd)), tenemos el caso en donde se tiene al alcance la realización de dos pruebas diagnósticas para la misma enfermedad. Cada prueba diagnóstica es realizada en todos los individuos de la muestra aleatoria.
+
+En este escenario, surgen muchos más parámetros de interés: el primero y más importante sigue siendo la prevalencia de la enfermedad, que puede ser estimada con los datos de las dos pruebas; también están las sensibilidades de las dos pruebas, y las especificidades de las pruebas. Además, surgen nuevas variables latentes representando el número de individuos que en realidad sí están enfermos, y a la vez clasificados en la siguiente tabla:
+
+De esta manera, Yi representa el número real de enfermos de Xi, para todo i=1,2,3,4. Antes de abordar la verosimilitud, examinemos algunos parámetros básicos y su definición en este contexto. El parámetro principal es la prevalencia de la enfermedad dado por:
+
+$\pi=\Pr(D=1)$
+
+En donde D es una variable dicotómica que toma el valor cero, si el individuo no está enfermo, y uno, si el individuo realmente está enfermo. Los dos siguientes son las probabilidades de que el resultado de las pruebas sea positivo. Por tanto,
+
+$ p_1=\Pr(T_1=1)$ $ p_2=\Pr(T_2=1)$
+
+Ahora, las sensibilidades de las pruebas diagnósticas se definen como:
+
+$ eta_1=\Pr(T_1=1|D=1)$ $ eta_2=\Pr(T_2=1|D=1)$
+
+Por último, las especificidades de las pruebas se definen como:
+
+$\theta_1=\Pr(T_1=0|D=0)$ $\theta_2=\Pr(T_2=0|D=0)$
+
+Ahora, es necesario encontrar las distribuciones condicionales de las variables latentes. Es fácil notar que Z_i|X_i (para i=1,2,3,4) tiene distribución binomial. Para i=1, se tiene que la probabilidad de éxito en Z_1|X_1 está dada por:
+
+$\Pr(D=1|t_1=1, T_2=1)=\frac{pieta_1eta_2}{\Pr(T_1=1, T_2=2)}$
+
+Ahora, utilizando el teorema de probabilidad total y suponiendo independencia entre las pruebas diagnósticas, se tiene que:
+
+$\Pr(T_1=1, T_2=2)= \Pr(T_1=1, T_2=2|D=1)\Pr(D=1)+\Pr(T_1=1, T_2=2|D=0)\Pr(D=0)$ $= \Pr(T_1=1|D=1)\Pr(T_2=2|D=1)\Pr(D=1)+\Pr(T_1=1|D=0)\Pr(T_2=2|D=0)\Pr(D=0)$ $= eta_1eta_2\pi+(1-\pi)(1-\theta_1)(1-\theta_2)$
+
+Retomando, la probabilidad de éxito en ese primer caso estaría dada por
+
+$ P_{111}=\Pr(D=1|T_1=1, T_2=1)=\frac{pieta_1eta_2}{eta_1eta_2\pi+(1-\pi)(1-\theta_1)(1-\theta_2)}$.
+
+Similarmente, la probabilidad de éxito en Z_2|X_2 está dada por:
+
+$ P_{110}=\Pr(D=1|T_1=1, T_2=0)=\frac{pieta_1(1-eta_2)}{eta_1(1-eta_2)\pi+(1-\pi)(1-\theta_1)\theta_2}$
+
+La probabilidad de éxito en Z_3|X_3 está dada por:
+
+$ P_{101}=\Pr(D=1|T_1=0, T_2=1)=\frac{\pi(1-eta_1) eta_2}{(1-eta_1)(1-eta_2)\pi+(1-\pi)(1-\theta_2)\theta_1}$
+
+Por último, la probabilidad de éxito en Z_4|X_4 está dada por:
+
+$ P_{100}=\Pr(D=1|T_1=0, T_2=0)=\frac{\pi(1-eta_1)(1-eta_2)}{(1-eta_1)(1-eta_2)\pi+(1-\pi)\theta_2\theta_1}$
+
+En resumen, se tiene la siguiente distribución para las variables latente:
+
+$ Z_1|X_1 \sim Binom(X_1, P_{111})$ $ Z_2|X_2 \sim Binom(X_2, P_{110})$ $ Z_3|X_3 \sim Binom(X_3, P_{101})$ $ Z_4|X_4 \sim Binom(X_4, P_{100})$
+
+Ahora, volvamos a nuestra tabla de eventos de pruebas y enfermedad. ¿Cuántos posible resultados hay en la anterior tabla de contingencia? En realidad existen ocho, puesto un individuo puede ser clasificado en cada una de las cuatro celdas (resultantes del cruce de las pruebas diagnósticas) y además el individuo puede estar o no enfermo. Luego, la verosimilitud será necesariamente un producto de ocho factores. No voy a realizar toda el álgebra para estos ocho casos, pero sí quiero revisarla para el primero. Entonces, para esta celda la probabilidad de éxito está dada por:
+
+$\Pr(T_1=1, T_2=1, D=1)=\Pr(T_1=1, T_2=1|D=1)\Pr(D=1)$ $=\Pr(T_1=1|D=1)\Pr(T_2=1|D=1)\Pr(D=1)=eta_1eta_2\pi $
+
+Haciendo un análisis similar para los restantes siete casos de la tabla de contingencias, se tienen las siguientes probabilidades en cada celda
+
+$\Pr(T_1=1, T_2=1, D=1)=eta_1eta_2\pi $ $\Pr(T_1=1, T_2=1, D=0)=(1-\theta_1)(1-\theta_2)(1-\pi)$ $\Pr(T_1=1, T_2=0, D=1)=eta_1(1-eta_2)\pi $ $\Pr(T_1=1, T_2=0, D=0)=(1-\theta_1)\theta_2(1-\pi)$ $\Pr(T_1=0, T_2=1, D=1)=(1-eta_1) eta_2\pi $ $\Pr(T_1=0, T_2=1, D=0)=\theta_1(1-\theta_2)(1-\pi)$ $\Pr(T_1=0, T_2=0, D=1)=(1-eta_1)(1-eta_2)\pi $ $\Pr(T_1=0, T_2=0, D=0)=\theta_1\theta_2(1-\pi)$
+
+Por lo anterior, la verosimilitud de la distribución multinomial es proporcional a la siguiente expresión
+
+$ l(\mathbf{X}, \mathbf{Z}|\mathbf{eta}, \mathbf{\theta}, \pi) propto (pieta_1eta_2)^{Z_1}((1-\theta_1)(1-\theta_2)(1-\pi))^{X_1-Z_1}(eta_1(1-eta_2)\pi)^{Z_2}((1-\theta_1)\theta_2(1-\pi))^{X_2-Z_2}((1-eta_1) eta_2\pi)^{Z_3}(\theta_1(1-\theta_2)(1-\pi))^{X_3-Z_3}((1-eta_1)(1-eta_2)\pi)^{Z_4}(\theta_1\theta_2(1-\pi))^{X_4-Z_4}$
+
+Vamos al análisis Bayesiano de esta problemática que incluye el modelamiento de las sensibilidades y especificidades de las pruebas, la prevalencia de la infección y las variables latentes. Como se acostumbra, para todos los parámetros vamos a definir distribuciones previas en la familia beta, así:
+
+$ eta_1 \sim Beta(a_{eta_1}, b_{eta_1})$ $ eta_2 \sim Beta(a_{eta_2}, b_{eta_2})$ $\theta_1 \sim Beta(a_{\theta_1}, b_{\theta_1})$ $\theta_2 \sim Beta(a_{\theta_2}, b_{\theta_2})$ $\pi \sim Beta(a_{\pi}, b_{\pi})$
+
+Por lo tanto, siguiendo la regla de Bayes, la distribución posterior de los parámetros está dada por el producto de la verosimilitud con todas las distribuciones previas de los parámetros de interés. Luego, recurriendo a los principios de simulación mediante métodos de Monte Carlo y al aplicar el muestreo de Gibbs, podemos simular desde las condicionales posteriores que sí tienen una forma cerrada. De esta manera, se tiene que:
+
+1. Las distribuciones posteriores de las sensibilidades están dadas por:
+
+$ eta_1|\mathbf{X}, \mathbf{Z} \sim Beta(Z_1+Z_2+a_{eta_1}, Z_3+Z_4+b_{eta_1}, )$ $ eta_2|\mathbf{X}, \mathbf{Z} \sim Beta(Z_1+Z_3+a_{eta_2}, Z_2+Z_4+b_{eta_2}, )$
+
+2. Las distribuciones posteriores de las especificidades están dadas por:
+
+$\theta_1|\mathbf{X}, \mathbf{Z} \sim Beta(X_3+X_4-Y_3-Y_4+a_{\theta_1}, X_1+X_2-Z_1-Z_2+b_{\theta_1}, )$ $\theta_2|\mathbf{X}, \mathbf{Z} \sim Beta(X_2+X_4-Y_2-Y_4+a_{\theta_2}, X_1+X_3-Z_1-Z_3+b_{\theta_2}, )$
+
+3. La distribución posterior de la prevalencia de la enfermedad está dada por:
+
+$\pi|\mathbf{X}, \mathbf{Z} \sim Beta(Y_1+Y_2+Y_3+Y_4+a_{\pi}, N-Y_1-Y_2-Y_3-Y_4+b_{\pi})$
+
+Haciendo uso de los anteriores resultados, se ejecuta el procedimiento de inferencia mediante métodos de Monte Carlo con el muestreo de Gibbs.

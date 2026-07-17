@@ -244,6 +244,55 @@ a:hover {
   text-indent: -1.6rem;
 }
 
+.publication-timeline {
+  margin: 1.15rem 0 2.35rem;
+}
+
+.publication-timeline ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  position: relative;
+}
+
+.publication-timeline ul::before {
+  background: linear-gradient(180deg, transparent 0%, var(--site-border) 8%, var(--site-border) 92%, transparent 100%);
+  bottom: 0.35rem;
+  content: "";
+  left: 0.38rem;
+  position: absolute;
+  top: 0.35rem;
+  width: 1px;
+}
+
+.publication-timeline li {
+  margin: 0 0 1.15rem 0;
+  padding-left: 2rem;
+  position: relative;
+  text-indent: 0;
+}
+
+.publication-timeline li::before {
+  background: var(--site-surface);
+  border: 2px solid var(--site-accent);
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px var(--site-surface);
+  content: "";
+  height: 0.52rem;
+  left: 0.13rem;
+  position: absolute;
+  top: 0.42rem;
+  width: 0.52rem;
+}
+
+.publication-timeline li > p {
+  margin: 0;
+}
+
+.publication-timeline li:last-child {
+  margin-bottom: 0;
+}
+
 .publication-list li::before {
   color: var(--site-muted);
   content: "– ";

@@ -1,0 +1,16 @@
+---
+title: "Power of a Test and Sample Size in Complex Surveys"
+author: "Andrés Gutiérrez"
+date: "2015-05-02"
+categories:
+  - "Estadística"
+  - "Public Policy Evaluation"
+  - "R"
+  - "Stats"
+---
+
+There are many approaches to computing sample size. In public policy evaluation, for example, one is usually tented to check if there is statistical evidence on the impact of a intervention over a population of interest. This vignette is devoted to explain the issues that you commonly find when computing sample sizes.
+
+You may have been fooled for some people telling you do not need a large sample size. The sample size is an issue that you have to pay a lot of attention. The conclusions of your study could have been misleaded because you draw a sample with no enough size. For example, from last figure, one may conclude that with a sample size close to 600, the power of the test is as low as 30%. That is simple unacceptable in social research.
+
+[I have published a post in RPubs with technical details and you can read it here](http://rpubs.com/hagutierrezro/78833).

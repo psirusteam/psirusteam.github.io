@@ -1,0 +1,11 @@
+---
+title: "ggplot2 en la WEB… una versión virtual de los más potentes gráficos en R"
+author: "Andrés Gutiérrez"
+date: "2009-11-22"
+categories:
+  - "Estadística"
+---
+
+[YouTube](https://www.youtube.com/watch?v=_haIgb4nFFY&hd=1&w=425&h=350)
+
+Uno de los más famosos paquetes de R es ggplot2… su creador, [Hadley Wickham](http://had.co.nz/), profesor de estadística de Rice University, afirma que el espíritu de este acercamiento gráfico está basado en [la gramática de los gráficos](https://web.archive.org/web/20100603003757/http://blog.had.co.nz/2009/05-26-grammar-of-graphics.html) (que básicamente trata de incorporar lo mejor de varios tipos de gráficos y deja a un lado lo peor) y en un intento de proveer modelos potentes para la producción sencilla de gráficos complejos. Ahora, el joven autor ha creado este sitio WEB en donde se puede encontrar una interfaz amigable del paquete ggplot2.

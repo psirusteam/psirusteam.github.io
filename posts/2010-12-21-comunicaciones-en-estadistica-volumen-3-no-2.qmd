@@ -1,0 +1,34 @@
+---
+title: "Comunicaciones en Estadística Volumen 3 No. 2"
+author: "Andrés Gutiérrez"
+date: "2010-12-21"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+[En este quinto número consecutivo de la revista Comunicaciones en Estadísti­ca](http://comunicacionesenestadistica.usta.edu.co/) nos encontramos frente a un cisma generado por la globalización del conoci­miento estadístico. El día 20 de octubre de 2010, el mundo celebró el día mundial de la estadística. Desde la Facultad de Estadística de la Universidad Santo Tomás esperamos que sea la primera de muchas celebraciones como reconocimiento al valor y aporte de los profesionales en estadística en el mundo. Esta es una inicia­tiva de las Naciones Unidas, y su objetivo es celebrar el papel y la importancia de la estadística y dar a conocer muchos de los logros de las estadísticas oﬁciales. Estas celebraciones tuvieron lugar alrededor de todo el mundo tanto en los insti­tutos nacionales de estadística como en las instituciones educativas que imparten conocimiento estadístico en formación profesional y posgradual.
+
+En concatenación con lo anterior, y gracias a la buena recepción que la revista Comunicaciones en Estadística ha tenido en el medio nacional e internacio­nal, presentamos con orgullo ante ustedes este quinto número que presenta cinco artículos que tratan con temas de interés en las diferentes áreas del conocimiento estadístico. Es así como Correa presenta una metodología basada en la tasa de descubrimientos falsos para la detección de observaciones inﬂuyentes. Este pro­cedimiento reduce la complejidad del diagnóstico y en el artículo se presenta la programación en el software estadístico R.
+
+El artículo de Rincón Rodríguez, presenta un caso de estudio acerca de la iden­tiﬁcación de la presencia de variabilidad espacio-temporal en la temperatura del agua en Santa Marta, ciudad costera ubicada al norte de Colombia. El trabajo desarrollado consiste en la formulación de modelos aditivos con estructura de co­varianza dependiente del tiempo y del espacio. Este enfoque permite detectar que un modelo lineal clásico no captura toda la variabilidad conjunta necesaria para modelar este tipo de datos.
+
+Jiménez propone en su trabajo una nueva función de densidad simétrica que pue­de ser utilizada como modelo probabilístico para datos cuyo histograma describa simetría y alta curtosis. Esta nueva función de densidad describe una buena al­ternativa cuando, para este tipo de datos, las pruebas estadísticas rechazan la hipótesis de normalidad. El artículo ofrece una aplicación concerniente al cambio Dolar/Euro y propone la estimación de los parámetros por medio del método de los momentos.
+
+En una continuación de un artículo anterior publicado en esta revista, Rincón Suarez presenta un método para determinar un grupo de observaciones inﬂuyen­tes para la suma de cuadrados del error en la formulación de modelos de rango completo. Además del desarrollo teórico, el artículo se ve complementado con un ejemplo empírico para datos simulados e incluye toda la programación pertinente en el sofware estadístico SAS.
+
+Por último, Pinilla y Zhang presentan una valiosa discusión acerca de la inclusión de la igualdad en la hipótesis nula. Este artículo pretende mostrar algunas de las contradicciones prácticas que se pueden presentar cuando el investigador, al momento de formular las hipótesis de su estudio, omite la inclusión de la igualdad en la hipótesis nula.
+
+Entre otros aspectos, es importante resaltar que la Universidad Santo Tomás ha aprobado la organización del Second Workshop on Applied Statistics, evento que tendrá lugar en la sede principal de la Universidad en la primera semana de febre­ro de 2011, cuyo tema principal será la estadística bayesiana y sus aplicaciones. Este evento se caracterizará porque todos los invitados internacionales, además de conferencias, darán cursillos intensivos sobre temas de punta en la investigación de la estadística aplicada. Lo anterior es muy interesante puesto que el partici­pante será educado personalmente por un equipo estadístico de reconocimiento internacional. Siendo esa la ﬁlosofía del evento, desde la dirección de la revista Comunicaciones en Estadística, es pertinente invitar a toda la comunidad nacional e internacional a hacerse partícipe de este evento. Entre los invitados internacionales están:
+
+> - Mike Daniels (Director del Departamento de Estadística de la Universidad de Florida en Gainesville, EE. UU.) -Cursillo: modelos de antedependencia para datos longitudinales binarios con aplicación a la prevención del cáncer de mama.
+>
+>
+>
+> - Raquel Prada (Profesora Asociada del Departamento de Matemáticas Apli­cadas y Estadística de la Universidad de Califonia, EE. UU.) -Cursillo: Ajuste de modelos de series de tiempo utilizando el enfoque bayesiano.
+>
+>
+>
+> - Eduardo Gutiérrez (Ganador del Jan Tinbergen Award, otorgado por el In­ternational Statistical Institute y profesor de la UNAM, México) -Cursillo: Introducción a la estadística bayesiana.
+
+Desde la Facultad de Estadística de la Universidad Santo Tomás les agradece­mos por los gratos comentarios que hemos recibido. Esperamos que este número sea aceptable para nuestros lectores y que sus artículos impulsen la cultura de investigación estadística en nuestras aulas de clase.

@@ -1,0 +1,180 @@
+---
+title: "Efectivamente, el estimador de Horvitz-Thompson es insesgado (nuevas funciones en TeachingSampling)"
+author: "Andrés Gutiérrez"
+date: "2011-03-07"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+En los parciales de muestreo, a veces acostumbro a pedirle al estudiante que demuestre o refute mediante un contraejemplo algunas afirmaciones. Por ejemplo, una de mis favoritas es la siguiente:
+
+##### "Demuestre o refute: El estimador de Horvitz-Thompson es insesgado para cualquier diseño de muestreo"
+
+Es claro que el estimador de Horvitz-Thompson es insesgado pues así lo dice un resultado cuya demostración es sencilla. Sin embargo, cuando el estudiante se encara con este tipo de ejercicios, debe pensar si la afirmación es correcta o si existe algún contraejemplo que pueda refutarla. En la búsqueda de contraejemplo, es posible plantearse diversos tipos de situaciones.
+
+Por ejemplo, están los diseños de muestreo sin reemplazo de tamaño fijo, los diseños de muestreo sin reemplazo de tamaño aleatorio y los diseños de muestreo con reemplazo de tamaño fijo. En los dos primeros escenarios, no existe ningún inconveniente, puesto que el profesor siempre utilizará estos casos para ilustrar que efectivamente el estimador de Horvitz-Thompson es insesgado. Sin embargo, un desafío importante al que se enfrentan los estudiantes es al tratar de mostrar el insesgamiento de este estimador en diseños de muestreo con reemplazo.
+
+Como resultado de esta búsqueda, muchos estudiantes se detienen en el escenario de muestras con reemplazo y concluyen que el estimador de Horvitz-Thompson es sesgado cuando se tienen diseños con reemplazo. La verdad, son muchos los estudiantes que llegan a esta conclusión. Ahora, no estoy diciendo que estos estudiantes no hayan comprendido efectivamente el funcionamiento del estimador. A lo que me refiero es que es un deber del docente, plasmar e ilustrar en estos escenarios el comportamiento del estimador puesto que es muy fácil llegar a conclusiones erradas. Tal vez este sencillo ejemplo sea de utilidad para docentes o estudiantes que quieran profundizar en la técnica de Horvitz-Thompson bajo muestreos con reemplazo. Se ilustrarán algunas nuevas funciones del paquete TeachingSampling en su versión 2.0.1 para ilustrar el ejemplo.
+
+A continuación ilustraré el razonamiento equivocado:
+
+Suponga que se tiene una población *U* de tamaño *N=3* y que el diseño de muestreo es con reemplazo de tamaño fijo *m=2*. En este escenario, el soporte contiene 6 posibles muestras. Dado que se trata de un muestreo con reemplazo, definamos la probabilidad de selección de las unidades como 0.9, 0.05 y 0.05 para cada elemento. Luego, es sencillo calcular las probabilidades de inclusión de primer orden, así como las probabilidades de selección de las muestras (dadas por la distribución multinomial). Para esto utilizamos la función pWr y comprobamos que, en efecto, la suma de estas probabilidades sea uno.
+
+```
+> library(TeachingSampling)
+> pk <- c(0.9,0.05,0.05)
+> pk
+[1] 0.90 0.05 0.05
+```
+
+```
+> pik <- 1-(1-pk)^m
+> pik
+[1] 0.9900 0.0975 0.0975
+```
+
+```
+> p <- pWR(3,2,pk)
+> p
+[1] 0.8100 0.0900 0.0900 0.0025 0.0050 0.0025
+```
+
+```
+> sum(p)
+[1] 1
+```
+
+Ahora, asumamos que la característica de interés toma los valores 10, 20 y 30 para cada elemento. Luego, el total poblacional es 60. Utilizando la función SupportWR se obtienen las posibles muestras de este diseño:
+
+```
+> Q <- SupportWR(N,m)
+> Q
+[,1] [,2]
+[1,]    1    1
+[2,]    1    2
+[3,]    1    3
+[4,]    2    2
+[5,]    2    3
+[6,]    3    3
+```
+
+La función nk arroja el número de veces que un elemento es seleccionado en las muestras:
+
+```
+> IndWR <- nk(3,2)
+> IndWR
+     [,1] [,2] [,3]
+[1,]    2    0    0
+[2,]    1    1    0
+[3,]    1    0    1
+[4,]    0    2    0
+[5,]    0    1    1
+[6,]    0    0    2
+```
+
+Justo acá se presenta el inconveniente en donde es fácil confundirse. Alguien podría pensar: ok, el primer elemento ha sido seleccionado dos veces para la primera, luego el estimador debería incluir la información de este elemento dos veces. Con esto en mente, los posibles valores de la característica de interés son:
+
+```
+> Qy <- SupportWR(N,m, ID=y)
+> Qy
+[,1] [,2]
+[1,]   10   10
+[2,]   10   20
+[3,]   10   30
+[4,]   20   20
+[5,]   20   30
+[6,]   30   30
+```
+
+Por lo tanto, utilizando la función HT, se calculan los seis posibles valores para el estimador de Horvitz-Thompson, y en las muestras donde algún elemento se repite, también se repite la información en el estimador:
+
+```
+> HT1<- HT(Qy[1,], pik[Q[1,]])
+> HT2<- HT(Qy[2,], pik[Q[2,]])
+> HT3<- HT(Qy[3,], pik[Q[3,]])
+> HT4<- HT(Qy[4,], pik[Q[4,]])
+> HT5<- HT(Qy[5,], pik[Q[5,]])
+> HT6<- HT(Qy[6,], pik[Q[6,]])
+```
+
+```
+> Est <- c(HT1, HT2, HT3, HT4, HT5, HT6)
+```
+
+Teniendo cada estimación se tiene la siguiente salida, que da cuenta de los valores de y, los valores del estimador y la probabilidad de selección de las muestras:
+
+```
+> data.frame(IndWR, Est, p)
+  X1 X2 X3       Est      p
+1  2  0  0  20.20202 0.8100
+2  1  1  0 215.22922 0.0900
+3  1  0  1 317.79332 0.0900
+4  0  2  0 410.25641 0.0025
+5  0  1  1 512.82051 0.0050
+6  0  0  2 615.38462 0.0025
+```
+
+El último paso es multiplicar los valores de las estimaciones por el de las probabilidades de selección de las muestras y sumarlos. Este valor difiere del parámetro de interés y por lo tanto el alumno concluye que el estimador de Horvitz-Thompson no es insesgado para diseños con reemplazo.
+
+```
+> sum(Est*p)
+[1] 69.46387
+> sum(y)
+[1] 60
+```
+
+Pero, un momento, todo aquel que ha pasado por un curso de muestreo ha hecho aquella demostración en donde se expande la suma en la muestra al universo, se incluyen las variables Ik y se tiene que en esperanza, el estimador de Horvitz-Thompson reproduce el total de la población. Esa demostración no está supeditada al tipo de muestreo que se realice.
+
+A continuación expondré la forma correcta de ilustrar el insesgamiento en diseños con reemplazo. En primer lugar, la clave del ejemplo es darse cuenta que la fundamentación teórica del estimador está centrada en las variables aleatorias Ik que sólo toman dos valores: uno, si el individuo pertenece a la muestra y cero, en otro caso. Esto indica que si el elemento fue incluido en la muestra una vez, la variable Ik toma el valor uno, si el elemento fue incluido en la muestra más una vez, la variable Ik sigue tomando el valor uno. Lo anterior indica que el estimador de Horvitz-Thompson sólo incluye una vez la información de los elementos repetidos. Utilizando la función IkWR se tiene esta matriz de variables Ik para el muestreo con reemplazo.
+
+```
+> Ind <- IkWR(N,m)
+> Ind
+     [,1] [,2] [,3]
+[1,]    1    0    0
+[2,]    1    1    0
+[3,]    1    0    1
+[4,]    0    1    0
+[5,]    0    1    1
+[6,]    0    0    1
+```
+
+Utilizando la función HT, se calculan los seis posibles valores para el estimador de Horvitz-Thompson, y en las muestras donde algún elemento se repite sólo se incluye esta información una sola vez:
+
+```
+> HT1<- HT(y[Ind[1,]==1], pik[Ind[1,]==1])
+> HT2<- HT(y[Ind[2,]==1], pik[Ind[2,]==1])
+> HT3<- HT(y[Ind[3,]==1], pik[Ind[3,]==1])
+> HT4<- HT(y[Ind[4,]==1], pik[Ind[4,]==1])
+> HT5<- HT(y[Ind[5,]==1], pik[Ind[5,]==1])
+> HT6<- HT(y[Ind[6,]==1], pik[Ind[6,]==1])
+```
+
+```
+> Est <- c(HT1, HT2, HT3, HT4, HT5, HT6)
+```
+
+Teniendo cada estimación se tiene la siguiente salida, que da cuenta de los valores de y, los valores del estimador y la probabilidad de selección de las muestras:
+
+```
+> data.frame(Ind, Est, p)
+  X1 X2 X3       Est      p
+1  1  0  0  10.10101 0.8100
+2  1  1  0 215.22922 0.0900
+3  1  0  1 317.79332 0.0900
+4  0  1  0 205.12821 0.0025
+5  0  1  1 512.82051 0.0050
+6  0  0  1 307.69231 0.0025
+```
+
+El último paso es multiplicar los valores de las estimaciones por el de las probabilidades de selección de las muestras y sumarlos.
+
+```
+> sum(Est*p)
+[1] 60
+> sum(y)
+[1] 60			
+```
+
+Ahora sí, efectivamente, se ilustra que el estimador de Horvitz-Thompson es insesgado para diseños con reemplazo.

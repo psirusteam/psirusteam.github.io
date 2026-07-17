@@ -1,0 +1,12 @@
+---
+title: "Mi artículo de muestreo en Comunicaciones en Estadística 2011"
+author: "Andrés Gutiérrez"
+date: "2011-08-08"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Una estrategia de muestreo es una dupla compuesta de un diseño de muestreo y un estimador, en este artículo se tratará el problema de escoger una estrategia de muestreo representativa para las variables auxiliares con el fin de aumentar la precisión de las estimaciones del total de una variable de interés en una población finita. Aunque existen diseños de muestreo y estimadores que inducen estrategias representativas, se concluye, por medio de una simulación de Monte Carlo que, en términos de eficiencia, no siempre es mejor utilizar un estimador de calibración bajo un diseño de muestreo balanceado, como uno podría suponer.
+
+El artículo lo pueden descargar haciendo [clic acá](http://comunicacionesenestadistica.usta.edu.co/documents/vol4n1/pdf/A3.pdf).

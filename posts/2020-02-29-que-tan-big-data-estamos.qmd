@@ -1,0 +1,43 @@
+---
+title: "¿Qué tan Big Data estamos?"
+author: "Andrés Gutiérrez"
+date: "2020-02-29"
+categories:
+  - "Estadística"
+---
+
+**Por: Gigi.**
+
+No es ninguna novedad que estamos en la plena época de *Big Data*, época donde cada segundo se produce millones y millones de datos de toda clase, época donde al decir que somos *data* *scientist*s suena mucho más misterioro y poderoso que unos simples *estadísticos* o *analista de datos*. Los colegas hablan de SVM o *random forest* y asentimos con la cabeza mientras que por dentro pensamos -qué 🉐 ㊗️ 🈳 🈳 será, juro que mañana me pongo a estudiar eso-. El análisis de datos está impactando en la sociedad con novedosos métodos y deslumbrantes gráficas; sin embargo, sigue habiendo retos, y uno que me topé recientemente tiene que ver con la consecución de datos.
+
+Todo empezó con el temible coronavirus que tiene al mundo entero en tristeza y paranoia en estos días. Los contagiados y fallecidos empezaron a aparecer poco después del 20 de enero. Hace algunos días (cuando ya había datos de 30 días consecutivos) pensé en hacer unos pronósticos a ver qué tal resultaban. Para eso obviamente necesito los datos, una búsqueda rápida en internet me guió a [esta página](https://mp.weixin.qq.com/s/_0D8ENb-4lGm4UV16Ok28A), donde se describe la librería nCov2019 para el software R (disponible solo en GitHub) y cómo extraer la información del número de casos, número de muertes, etc. para diferentes regiones y países (ups, esta página está en chino 😓, ustedes pueden ver esta página en inglés [aquí](https://towardsdatascience.com/an-r-package-to-explore-the-novel-coronavirus-590055738ad6).)
+
+La serie que quiero pronosticar es el número diario de muertes. Para ajustar un modelo, naturalmente lo primero que hice fue ver la gráfica de la serie. Al ver la gráfica me pregunto: ¿qué pasó con el día 12 de febrero? 😱 Es muy grande comparado con los valores históricos. Según los datos, ese día hubo 254 muertes, siendo que en días pasados escasamente llega al valor 100.
+
+Inmediatamente sospeché de la veracidad de ese dato. Esta librería nCov2019 actualiza su base de datos desde la página http://news.qq.com/zt2020/page/feiyan.htm, de la gigante informática Tencent, una de las más consultadas en China. Entonces debería estar bien (claro que con el gobierno chino nunca se sabe 🤭). Busqué en internet a ver si hay algo que explicara esa elevada cifra, y aparecieron diferentes teorías, sin una explicación contundente. Así que pensé en consultar otras fuentes de información, y allí empezaron mis confusiones.
+
+En temas de salud, la Organización Mundial de la Salud debería ser una fuente confiable. Efectivamente, en la página de dicha organización hay mucha información sobre prevención, consejos para viajes, investigaciones científicas, etc., pero en cuanto a los datos que estoy buscando, la presentación no es muy eficiente para los usuarios. En [esta página](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/), se encuentran los reportes diarios desde el 21 de enero, en total 37 reportes. Cada reporte contiene los datos diarios contagiados y fallecidos acumulados, los últimos reportes también contienen el número de casos nuevos. Eso significa que para recopilar los datos que necesito, tengo que revisar los 37 reportes y anotar los datos uno por uno 😩. Hice el ejercicio y comparé estos datos con los de la librería nCov2019, y encuentro que en general coinciden las dos informaciones, excepto por los primeros 4 datos (al inicio de la epidemia) y el dato del 14 de febrero (nCov2019 reporta 143 casos y la OMS 121, exactamente el mismo dato del día anterior, así que sospecho que sea un error involuntario por parte de la OMS). Así que concluyo que en general, los datos de nCov2019 coinciden con los de la OMS.
+
+Continué con las búsquedas de información, y llegué a la página de [worldmeters](https://www.worldometers.info/), en sus propias palabras, "*Worldometer es propiedad de Dadax, una compañía independiente. No tenemos afiliación política, gubernamental o corporativa*". Allí encontré la siguiente gráfica para el número diarios de muertes en el mundo.
+
+Obviamente la anterior gráfica no coincide con la información de la librería nCov19 (la misma de la OMS). Aquí no se observa el comportamiento extraño del día 12 de febrero, pues apenas registra 146 fallecidos, muy inferior al valor de 254. ¿A qué se debe la diferencia? No lo sé. Deberían coincidir, pues Worldmeters afirma que la información proviene de entes de salud de China (Comisión Nacional de Salud de la República Popular China y la Comisión de Salud de la provincia de Hubei, China), las mismas entidades entre las cuales Tencent nutre sus informaciones.
+
+¿Qué otra información encontré sobre datos de coronavirus? pues algo que seguramente ustedes ya han visto en las noticias o las redes sociales: el elegante tablero dinámico elaborado por la prestigiosa Universidad Johns Hopkins.
+
+El tablero está disponible [aquí](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6), donde los usuarios pueden interactuar con el mapa y conocer información y gráficas relacionadas con la epidemia en todo el mundo.
+
+Como mi objetivo es conocer el número diarios de fallecidos, y ver si coinciden con las otras fuentes mencionadas anteriormente, visité la página de Github donde se encuentran [todos los datos usados para este tablero](https://github.com/CSSEGISandData/COVID-19). Los datos que yo necesito (número diario de fallecidos en China) están [aquí](https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv). Estos datos están para muchas regiones y paises del mundo, así que después de algunas operaciones sobre la base de datos, obtuve el número diario de fallecidos en China. Y, ¿adivinen qué? Los datos son muy diferentes que los de Tencent y los de Worldmeter. Finalmente decido que usaré los de Tencent! A continuación muestro una gráfica comparativa de las tres fuentes de información.
+
+¿Por qué los datos de la Universidad Johns Hopkins son tan diferentes que los otros? Pueden ustedes observar que en las siguientes fechas: febrero 12, 21, 23, el número de fallecidos es cero, lo cual es muy distante de la realidad; también observen que el día después de estos valores nulos, se presenta un valor muy alto, lo que me hace pensar que hubo muchos casos de fallecidos que no fueron incluidos en el dato del mismo día, sino en el dato del día siguiente. ¿Razones de eso? No lo sé. ¿Desactualización? ¿Diferencia horaria? Lo que sí sé es que no usaré los datos de Johns Hopkins para hacer mis pronósticos, esos 0 van a dañar mi modelo!
+
+Finalmente dejo aquí algunas de mis reflexiones:
+
+- **Volumen de datos ≠ calidad de datos.** Sí, tenemos muchos datos, pero aún falta una vigilancia sobre su recolección, procesamiento y publicación. ¿Hay alguna entidad estatal que desempeñe esta función? ¿Para qué sirven tantos modelos si no estamos seguros de la calidad de ellos?
+
+- **¡No me llame científico de datos, soy solo un analista!**. La *data science* no solo incluye los modelos y algoritmos, también debe incluir la revisión rigurosa de la obtención y la fuente de los datos. Así que no me llame por favor *data scientist*, analista de datos describe mejor lo que hago.
+
+- **¡Quiero los micro datos!** Me hubiera gustado encontrar los micro datos de todos los casos contagiados y fallecidos de Coronavirus. Imaginen todo lo que se puede hacer: análisis de cluster, análisis de sobre vida, modelos de regresión, o unas simples gráficas de barras serían geniales, ¡pero no! No hay micro datos 😿.
+
+Concluyo con una adaptación del discurso de Martin Luther King **I have a dream**. Aquí va:
+
+> *I have a dream that one day all statistician will rise up and live out the true meaning of our profesion: "We hold these truths to be self-evident; that all data should be recollected and analysed unbiasedly." I have a dream that one day on a global plataform, the eastern and western countries will be able to share their data at the table of transparency, solidarity and fellowship.*

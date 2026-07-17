@@ -1,0 +1,99 @@
+---
+title: "Consejos PhD"
+author: "Andrés Gutiérrez"
+date: "2008-12-13"
+categories:
+  - "Estadística"
+---
+
+**Michael Steele**, profesor del departamento de estadística de la escuela de Wharton, adscrita a la universidad de Pensilvania, ha escrito una serie de consejos a sus alumnos de doctorado que, en particular, me han dado mucho ánimo y han levantado mi espíritu después de un pequeño debacle académico y emocional. Estos comentarios tienen una gran trascendencia pues vienen de una persona experimentada que ha dedicado su vida entera a la enseñanza de esta linda rama del saber. A continuación mi resumen personal de los consejos de este sabio personaje.
+
+# Proceso vs. Producto…
+
+Un estudiante de doctorado demora cuatro, cinco o (tristemente) seis años en obtener el título de Doctor en estadística. Esta es una fracción importante de la vida adulta y, seguramente, todos esperamos que este periodo sea divertido. Para algunas personas el tiempo de estudio en el doctorado es uno de los periodos más felices, libres y más creativos de sus vidas. Específicamente, no debería existir conflicto alguno entre divertirse y obtener un título de doctorado. De hecho, si el proceso no es divertido, el estudiante debería considerar un Plan B.
+
+La vida de un profesor es muy parecida a la vida de una persona que hace veinte o treinta doctorados (si se dedica a la docencia exclusivamente). Si el primer doctorado no es divertido, es improbable pensar que los restantes los serán.
+
+# Superando los obstáculos…
+
+Cualquier programa de doctorado tiene unos pocos requerimientos que pueden parecer estúpidos, o que realmente son estúpidos. Siempre existirán algunos retos por los que se debe atravesar antes de unirse al gremio de los doctores. Sin embargo, estas barreras han ido cayendo con el transcurso de los años. En la década de 1970, en la universidad de Stanford, los exámenes de calificación se realizaban sin la ayuda de apuntes, tres horas en la mañana, tres horas en la tarde – un día por cada materia de estudio. La mitad de los estudiantes no pasaba el examen, que sólo tenía dos posibles resultados: aprobado o no. En algunas universidades no se requiere examen de calificación sino uno o dos artículos publicados en revistas indexadas.
+
+# Escribiendo la tesis…
+
+Existe un consenso que ha evolucionado en los últimos veinte años: **La manera más efectiva para escribir una tesis de doctorado en estadística es no escribir una tesis**, o al menos no escribir una tesis de la forma clásica. La estrategia consiste en enfocar los esfuerzos hacia la publicación de artículos y someterlos a revistas indexadas tan pronto como sea posible. Se espera que durante el tercer y cuarto año, el estudiante pueda crear varios trabajos que puedan ser publicados. De esta forma, la tesis concluida sólo requerirá grapar todos los artículos (obviamente con una cantidad respetable de material conectivo). Esta práctica se debería convertir en una costumbre, los profesores asistentes enfrentan tanta presión por publicar que ellos necesitan mostrar desde el primer día al menos un par de artículos.
+
+# ¿Cómo empezar?
+
+Aquí empiezan las buenas noticias… Usted ya comenzó. Usted está justo aquí. Hay todo un departamento conformado por personas que:
+
+1. le ayudarán a tomar el primer paso hacia la identificación de un problema,
+
+2. lo entrenarán en la creación un primer nuevo resultado,
+
+3. le sugerirán cómo este primer resultado podría ser generalizado para seguir trabajando,
+
+4. le indicarán cuándo será suficiente para empezar a escribir una tesis
+
+5. trabajarán cerca de usted para poner el primer artículo en una forma tal que cumpla con los estándares de publicación científica y
+
+6. examinarán este primer artículo a través del proceso de publicación
+
+Durante casi toda su vida, los profesores del departamento pasan por este proceso dos o tres veces al año. Por definición, esta tarea deber ser muy divertida para todo estudiante y profesor. Usted no se debe preocupar por:
+
+- Encontrar un problema: Esta clase de cosas deben venir incorporadas con las corbatas de los profesores del departamento. Ahora es responsabilidad del profesor identificar un área de estudio para profundizar y trabajar con usted en el desarrollo concreto de esta área
+
+Sin embargo, usted necesita traer a la fiesta los siguientes elementos:
+
+- Tres horas diarias de investigación genuina (lápiz en mano)
+
+- Dos horas diarias de lectura genuina
+
+Jamás se ha escuchado de un estudiante que haya trabajado así durante cinco días a la semana por dos o tres años que no haya conseguido concluir su tesis. Trabajar más está bien si esto lo hace sentir bien. Pero, trabajar menos es arriesgado.
+
+# Buscando problemas…
+
+No existe una estrategia de selección de problemas que esté garantizada. Como decía Frank Spitzer, profesor de la Universidad de Cornell: **"Lo importante no es el teorema sino el fenómeno que origina el teorema".** En términos prácticos el plan es el siguiente:
+
+- **Considere casi todo problema de interés**
+
+- ****Familiarícese con los resultados claves.** Si existen demostraciones, apréndalas. Si existen cálculos computacionales, replíquelos.**
+
+- ****Encuentre y arregle las definiciones erradas.** Este es un verdadero problema en el trabajo aplicado. Tome la clásica historia y pregúntese si realmente se ajusta al estado de la naturaleza.**
+
+- ****Identifique el problema central del área de estudio.** Exprese el problema en sus propias palabras y encontrará distinciones que no fueron notadas en trabajos anteriores.**
+
+- ****Enfóquese.**Recuérdelo, enfóquese en el problema, luego, el mismo problema lo llevará por rutas que no han sido consideradas.**
+
+- ****Una vez que encuentre resultados teóricos concretos o empíricos, así sean modestos, escríbalos en****$ LaTeX $****
+
+- ******Relájese un poco.**No se preocupe acerca de cómo encajar las pequeñas piezas del rompecabezas. Eventualmente éstas encajarán.****
+
+- ******Hable con otros acerca de lo que usted está haciendo.**Aprendemos demasiado cuando tratamos de explicar a otros nuestro trabajo.****
+
+- ******Ese primer artículo tomará un buen tiempo, por lo general mucho mayor al que toma el segundo artículo.******
+
+# Mientras tanto…
+
+Usted debe ser honesto con usted mismo y con sus profesores acerca de sus expectativas en el mediano plazo. Una vez que las cosas estén saliendo bien, usted estará publicando dos o tres artículos al año. Pero, mientras tanto:
+
+- Si usted está atendiendo su tesis, **usted debe ser el mejor ciudadano de su comunidad**. Es esencial que usted hacer un trabajo honorable en la enseñanza de los cursos que tenga a cargo.
+
+- **Consiga asistencia para construir una página WEB** donde pueda poner algo acerca de su personalidad. Sin embargo, el principal propósito de una página WEB académica es publicar los logros académicos. Específicamente, publique sus artículos en la WEB tan pronto como estén listos para ser sometidos a una revista internacional. Asegúrese de que el formato (Word o PDF) sea el indicado.
+
+- **Gane premios**. En su departamento, facultad o universidad. Pero, no **sienta que usted debería ganarse algún premio**. Sólo el trabajo duro garantiza su éxito. Note que ASA y la IMS otorgan viajes y materiales.
+
+- **[Dé charlas grandiosas](https://web.archive.org/web/20101101094609/http://predictive.wordpress.com/2008/05/03/seis-simples-tecnicas-para-la-presentacion-de-datos/)**[.](https://web.archive.org/web/20101101094609/http://predictive.wordpress.com/2008/05/03/seis-simples-tecnicas-para-la-presentacion-de-datos/) En esta materia, mucha práctica nunca es suficiente. Recuerde que una charla debe tener un comienzo y un final, que debe identificar los conceptos y resultados claves, que debe terminar justo a tiempo y que debe agradecer al auditorio para que le aplaudan a tiempo.
+
+Cuatro principio excéntricos
+
+Recuerde que la estrategia óptima es publicar lo que tiene tan rápido como sea posible. Aquí tiene unos principios que le ayudarán en el proceso editorial
+
+1. Si su artículo fue publicado una vez, pues sencillamente vale la pena publicarlo dos veces. Profundice este concepto. Encuentre ejemplos de los estadísticos TOP. No se trata de reproducirlo todo con una máquina Xerox.
+
+2. Un artículo necesita contenido técnico e histórico.
+
+3. Si un editor le aconseja cambiar algo, la estrategia óptima es cambiarlo y enviarle el documento nuevamente tan pronto como sea posible, digamos en un día o máximo en una semana.
+
+4. Si usted escribe un artículo que es rechazado, no se preocupe. Recuerde que la vida es aleatoria. Tome en cuenta los comentarios de los árbitros, léalos cuidadosamente, haga los cambios pertinentes y [envíelo de nuevo a otra revista](https://web.archive.org/web/20101101170152/http://predictive.wordpress.com/links/). Un vez más, este proceso hágalo rápido. Cierre el ciclo en una semana como máximo.
+
+***Gracias Michael Steele, ¡qué palabras tan reconfortantes!***

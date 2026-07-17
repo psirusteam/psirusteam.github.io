@@ -1,0 +1,98 @@
+---
+title: "Utlizando JAGS y RJAGS (en MAC)"
+author: "Andrés Gutiérrez"
+date: "2013-11-23"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Durante mis clases de estadística bayesiana, procuro que los estudiantes construyan sus propios MCMC, para los distintos modelos estadísticos que se consideran en el curso. Sin embargo, una ayuda importante para los estudiantes y el profesor es el manejo de softwares alternativos y automáticos que ejecutan los MCMC rápidamente. Es así como WinBUGS se convierte en un recurso importante en la clase a la hora de introducir modelos avanzados.
+
+Si hay algo que me fascina de este programa es su facilidad de programación. Es muy intuitivo: se define la verosimilitud, luego se definen las distribuciones previas y listo. Sin embargo, WinBUGS tiene dos grandes defectos: 1) es lento, muy lento y 2) no es posible introducir un gran conjunto de datos al software de manera automática.
+
+Esto hace que todos los ejemplos en clase sean con muy pocos datos y a la larga el estudiante desestimará, no sólo el software, sino las metodologías bayesianas, porque en la vida real hay muchos muchos datos.
+
+Para los usuarios de Windows, este no es un inconveniente pues hay programas que ejecutan el código desde R. Pero para otros sistemas operativos, es necesario ejecutar WinBUGS a través de un emulador (como Wine). Esto de los emuladores no me atrae porque al fin y al cabo uno está siempre necesitando de Windows para poder hacer algún proceso. Por eso decidí migrar a JAGS, que es un software muy parecido a WinBUGS, su programación es casi idéntica, es multiplataforma y también permite su ejecución desde R.
+
+Por alguna extraña razón en internet no pude encontrar un manual claro que me permitiera ejecutar JAGS desde R (de hecho, la sola ejecución de JAGS no es clara aún para mí). Estos son los pasos que debe seguir para que todo le funcione bien en Mac:
+
+1. Descargue la última versión de JAGS para Mac. Está disponible en [este link](http://sourceforge.net/projects/mcmc-jags/files/). Se trata de un instalador (archivo DMG) que en este momento se encuentra en su versión 3.3.0.
+
+2. Dentro de ese archivo, usted encuentra un ejecutable que tiene extensión PKG. Haga clic y siga las instrucciones de instalación.
+
+3. Abra el terminal del MAC y escriba simplemente JAGS, luego enter. Deberá aparecer un mensaje de bienvenida. Si no aparece el mensaje, entonces hizo algo mal. Asegúrese de que tenga privilegios de administrador y vuelva a instalar JAGS (pasos 1 y 2).
+
+4. Abra R y descargue los siguientes paquetes, junto con sus dependencias: R2jags, coda, lattice, R2WinBUGS, rjags, superdiag, mcmcplots.
+
+Y listo, ya estamos listos para correr JAGS desde R. Para ilustrarlo voy a poner un ejemplo muy simple de un modelo lineal para los datos de Lucy (de mi paquete TeachingSampling). Pero antes voy a hablarles de las características de JAGS en R.
+
+- El modelo (el mismo de WinBUGS) debe ejecutarse dentro de una función. En este caso, con los datos de Lucy, queremos estimar los parámetros de un modelo cuya variable dependiente es Income, explicado por Taxes y Employees.
+
+######### Creación del modelo en JAGS #######
+
+Lucy.model <- function(){
+
+for(i in 1: N){
+
+Income [i]~dnorm(mu [i], tau)
+
+mu [i]<- alpha + beta1*Taxes [i] + beta2*Employees [i]
+
+}
+
+# Distribuciones previas
+
+alpha~dnorm(0, 0.01)
+
+beta1~dnorm(0, 0.01)
+
+beta2~dnorm(0, 0.01)
+
+tau~dgamma(0.01, 0.01)
+
+}
+
+####### fin del modelo en JAGS ########
+
+- De igual forma, es necesario definir: 1) Una lista con los nombres de las variables. 2) Un vector de caracteres con los nombres de los parámetros de interés. 3) Dentro de una función, una lista con los valores iniciales para las cadenas. 4) Una semilla de generación de números aleatorios. Todo lo anterior se define en cuatro líneas en R, así:
+
+Lucy.data <- list("Income", "Taxes", "Employees", "N")
+
+Lucy.param <- c("alpha", "beta1", "beta2")
+
+Lucy.inits <- function(){list("alpha"=c(20), "beta1"=c(-0.1), "beta2" =c(-.02))}
+
+set.seed(123)
+
+- Por último, se ejecuta todo con ayuda de la función jags, que depende de los datos, los valores iniciales, los parámetros, el número de cadenas, el número de simulaciones en cada cadena, el número de simulaciones que se quieren quemar, el salto sistemático en las simulaciones y por último es modelo. Para este caso particular, la ejecución es así:
+
+Lucy.fit <- jags(data=Lucy.data, inits=Lucy.inits, Lucy.param, n.chains=3, n.iter=10000, n.burnin=1000, n.thin=10, model.file=Lucy.model)
+
+print(Lucy.fit)
+
+Realmente es muy sencillo. A continuación les presento el todo el código en R para la estimación de estos parámetros en Lucy:
+
+library(R2jags) library(coda) library(lattice) library(R2WinBUGS) library(rjags) library(superdiag) library(mcmcplots)
+
+####Carga de los datos library(TeachingSampling) data(Lucy) attach(Lucy) N <- nrow(Lucy)
+
+######### Creación del modelo en JAGS ####### Lucy.model <- function(){ for(i in 1: N){ Income [i]~dnorm(mu [i], tau) mu [i]<- alpha + beta1*Taxes [i] + beta2*Employees [i] } # Distribuciones previas alpha~dnorm(0, 0.01) beta1~dnorm(0, 0.01) beta2~dnorm(0, 0.01) tau~dgamma(0.01, 0.01) } ####### fin del modelo en JAGS ########
+
+Lucy.data <- list("Income", "Taxes", "Employees", "N") Lucy.param <- c("alpha", "beta1", "beta2") Lucy.inits <- function(){list("alpha"=c(20), "beta1"=c(-0.1), "beta2" =c(-.02))} set.seed(123)
+
+Lucy.fit <- jags(data=Lucy.data, inits=Lucy.inits, Lucy.param, n.chains=3, n.iter=10000, n.burnin=1000, n.thin=10, model.file=Lucy.model)
+
+print(Lucy.fit) plot(Lucy.fit) traceplot(Lucy.fit)
+
+########################## #######Diagnóstico para la convergencia de las cadenas
+
+Lucy.fit.mcmc <- as.mcmc(Lucy.fit) summary(Lucy.fit.mcmc)
+
+xyplot(Lucy.fit.mcmc) densityplot(Lucy.fit.mcmc) autocorr.plot(Lucy.fit.mcmc)
+
+gelman.plot(Lucy.fit.mcmc) geweke.diag(Lucy.fit.mcmc) geweke.plot(Lucy.fit.mcmc) raftery.diag(Lucy.fit.mcmc) heidel.diag(Lucy.fit.mcmc)
+
+superdiag(Lucy.fit.mcmc, burnin = 100) denplot(Lucy.fit.mcmc, parms = c("alpha", "beta1", "beta2")) traplot(Lucy.fit.mcmc, parms = c("alpha", "beta1", "beta2"))
+
+caterplot(Lucy.fit.mcmc) caterplot(Lucy.fit.mcmc, parms = c("alpha", "beta1", "beta2"), labels = c("Intercept", "Taxes", "Employees")) caterplot(Lucy.fit.mcmc, parms = c("beta2"))

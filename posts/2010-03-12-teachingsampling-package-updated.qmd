@@ -1,0 +1,61 @@
+---
+title: "TeachingSampling package updated"
+author: "Andrés Gutiérrez"
+date: "2010-03-12"
+categories:
+  - "Estadística"
+---
+
+Now it is available the latest version (v. 1.4.9) of the TeachingSampling package. Many colleagues, students and different people (both national and international) have contributed greatly to the development of this package. Although, I must admit that there are still some things that must be adjusted (such as the English grammar in the manual of the package), this entry is dedicated to realize some of these developments that have occurred since the first version (v. 0.7.6).
+
+- From (v.0.7.6) to (v.0.8.1) à The first correction was made by an Ukrainian colleague; on that occasion we had to adjust the programming of the sample selection under the systematic sampling design, in addition to this there were adjusted some drafting errors in the manual.
+
+- From (v.0.8.1) to (v.1.0.2) à Changes in this version included the adaptation of a function that generates all possible samples from a with-replacement design (having into account the order of selection) and the implementation of a function that allows the calculation of optimal inclusion probabilities in sampling design with multiple characteristics of interest.
+
+- From (v.1.0.2) to (v.1.1.9) à For this third version, Jorge Ortiz developed a method of handling large masses of sampling tables, resulting from estimations in R, for the automatic editing with LaTeX. This process is done using the functions DataFr and TbLatex.
+
+- From (v.1.1.9) to (v.1.4.9) à In this update the undergraduate students of the Statistics Faculty in the Universidad Santo Tomás were participating. Helbert Novoa skillfully developed a function that allows the calculation of the second-order inclusion probabilities matrix. Using this function, there we performed another function that calculates the variance-covariance matrix of the sample membership indicator variables (the matrix Delta_kl). As a teaching strategy, it is possible to check that, for any specific sampling designs, the entries outside the diagonal are negative. There were programmed another function that allows to calculate the theoretical variance (yes, the double sum expression) of the Horvitz-Thompson estimator for any sampling design. Moreover Jorge Ortiz developed a function that allows the generation of all samples with replacement (where the order does not matter) that allows the definition of the sample support for any fixed-size sampling design with replacement.
+
+Finally, I emphasize - in a limited example - how useful this package may be in order to clarify basic concepts that must be rooted in the first classes of a course of sampling. In particular, I will refer to sampling with replacement: A sampling design is said with replacement if the resulting samples may contain repeated elements. Thus, the student may assert - incorrectly - that the set of all possible samples with replacement of size *m = 2* in a population of size *N = 3* is given by:
+
+[,1] [,2]
+
+[1, ] 1 1
+
+[2, ] 1 2
+
+[3, ] 1 3
+
+[4, ] 2 1
+
+[5, ] 2 2
+
+[6, ] 2 3
+
+[7, ] 3 1
+
+[8, ] 3 2
+
+[9, ] 3 3
+
+The popular belief says that the number of possible with-replacement samples is equal to *N ^ m*. Well, this is not precisely true. Using the function SupportWR we realize that the number of samples, in a well-defined sampling support, is smaller.
+
+> SupportWR(3,2)
+
+[,1] [,2]
+
+[1, ] 1 1
+
+[2, ] 1 2
+
+[3, ] 1 3
+
+[4, ] 2 2
+
+[5, ] 2 3
+
+[6, ] 3 3
+
+Then the teacher can introduce the theoretical definition of the sampling design with replacement (that is not in Särndal et.al. 1992, but it is in Tillé 2006) and claim that the number of samples in the real support is equal to *(M + m-1) combined (m)* and that even if every element has equal probability of selection *pk = 1 / N*, not all samples are equally likely. This, results directly by linking the with-replacement sampling design to the multinomial distribution.
+
+Finally, as a positive balance, I have to say that the TeachingSampling package, which was intended as a classroom tool for the professor of survey sampling, is being used by professionals and practitioner statisticians working for official institutions and marketing companies.

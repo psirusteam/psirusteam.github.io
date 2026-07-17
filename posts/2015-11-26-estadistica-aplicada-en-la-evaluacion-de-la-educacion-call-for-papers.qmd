@@ -1,0 +1,35 @@
+---
+title: "Estadística aplicada en la evaluación de la educación - Call for papers"
+author: "Andrés Gutiérrez"
+date: "2015-11-26"
+categories:
+  - "Colombia"
+  - "Estadística"
+  - "IRT"
+  - "Stats"
+  - "Teaching"
+---
+
+La [**Revista Comunicaciones en Estadística**](http://revistas.usantotomas.edu.co/index.php/estadistica) ha alcanzado en muy poco tiempo una connotación importante en el ámbito local. Como prueba de ello, la revista fue aceptada en el ***Current Index to Statistics*** y además ***Colciencias***decidió clasificarla en la **categoría B**en**Publindex**. Este es un gran logro para su consejo editorial, en cabeza de la profesora Hanwen Zhang, que repercutirá en un mejor posicionamiento de los proceso estadísticos en Colombia.
+
+Muy amablemente he sido invitado a ser editor de un número especial en 2016 cuyo tema particular será "**la estadística aplicada en la evaluación de la educación**". Por medio de este espacio quiero hacer un llamado a todos los investigadores que deseen hacer parte de este número para que sometan artículos (teóricos o metodológicos) que implementen técnicas estadísticas en el contexto educativo. Entre otros, algunos temas de interés pueden ser:
+
+- modelos de teoría de respuesta al ítem,
+
+- modelos multinivel y jerárquicos,
+
+- modelos de equiparación de escalas,
+
+- imputación múltiple,
+
+- estimación de parámetros con muestras complejas,
+
+- modelos espacio-temporales,
+
+- técnicas estadísticas en economía de la educación,
+
+- econometría causal,
+
+- creación o modelación de indicadores educativos con técnicas estadísticas.
+
+Los investigadores interesados deberán enviar sus artículos en formato PDF al correo: agutierrez@icfes.gov.co. El plazo para el envío de los artículos será el día 10 de marzo de 2016. Los idiomas oficiales del número especial serán español, portugués e inglés. El proceso editorial iniciará con la revisión de los artículos por parte del comité científico, seguido de la evaluación doblemente ciega por pares académicos. El número saldrá publicado (de forma impresa y en internet) el 15 de Junio de 2016.

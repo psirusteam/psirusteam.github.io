@@ -1,0 +1,15 @@
+---
+title: "Fisher Facho"
+author: "Andrés Gutiérrez"
+date: "2009-04-25"
+categories:
+  - "Estadística"
+---
+
+Algunos de los primeros artículos de R. A. Fisher son altamente matemáticos. El artículo del coeficiente de correlación, que K. Pearson publicó en Biometrika, es denso con respecto a la notación matemática. Una página típica de esas está llena de formulas, al menos en un 50%. Sin embargo, hubo artículos en los que ninguna fórmula matemática aparecía entre líneas. Por ejemplo, en uno de ellos, él discute las distintas formas en las que la teoría de Darwin, de adaptación aleatoria, se adecuaba a las estructuras anatómicas más adecuadas. En otro artículo, él especula sobre la evolución de la preferencia sexual. Fisher se unió al movimiento de la [Eugenesia](http://es.wikipedia.org/wiki/Eugenesia) y en 1917 una editorial en *Eugenics Review, * en donde hacía un llamado para la creación de una política nacional para
+
+> incrementar la tasa de natalidad de las clases profesionales y entre los artistas más hábiles y desalentar los nacimientos entre las clases bajas
+
+Su argumento era que las políticas gubernamentales que ayudaban a las personas pobres ayudaban a que estas clases procrearan y pasaran sus genes a la siguiente generación, mientras que las preocupaciones de la clase media, en términos de seguridad económica, hacían que los matrimonios se postergaran y las familias no fueran grandes en número.
+
+Adaptado de "The Lady Tasting Tea (Salsburg 2002)"

@@ -1,0 +1,11 @@
+---
+title: "Guide for writing good functions in R"
+author: "Andrés Gutiérrez"
+date: "2014-03-11"
+categories:
+  - "Estadística"
+  - "R"
+  - "Stats"
+---
+
+Have you ever wondered how the heck do the programmers of R write the code behind the summary function? Have you noted that summary performs well in a vector, linear model, anova, etc. Well, I am right now writing an R package to compute sample sizes under different scenarios and [this guide](http://cran.r-project.org/doc/contrib/Leisch-CreatingPackages.pdf) was very useful to me.

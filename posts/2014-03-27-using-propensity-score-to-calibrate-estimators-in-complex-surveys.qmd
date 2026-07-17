@@ -1,0 +1,12 @@
+---
+title: "Using propensity score to calibrate estimators in complex surveys"
+author: "Andrés Gutiérrez"
+date: "2014-03-27"
+categories:
+  - "Colombia"
+  - "Estadística"
+---
+
+In [this paper](http://gutierrezandres.files.wordpress.com/2014/03/propensity.pdf), published by DANE's journal, we review some adjusted estimators of the population total by means of the Propensity Score (PS) technique to address nonresponse. In order to evaluate the performance of this approach, Monte Carlo simulations were implemented under without replacement proportional to size sampling (PIPS). We also used the proposed estimators in the Great Integrated Household Survey and compare the estimators in terms of bias and efficiency.
+
+Here ([PROPENSITY.pdf](http://gutierrezandres.files.wordpress.com/2014/03/articulo_propensity.pdf)) you can download a draft version of the paper.

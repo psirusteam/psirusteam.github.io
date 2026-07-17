@@ -1,0 +1,15 @@
+---
+title: "LaTeX en Apuntes de Estadística"
+author: "Andrés Gutiérrez"
+date: "2008-09-11"
+categories:
+  - "Estadística"
+---
+
+Es increíble que los muchachos de WordPress piensen en todo… Ahora es posible añadir códigos de LaTeX a los post que así lo requieran. Esperemos que este blog siga conservando su estilo característico… un mínimo de fórmulas para una mejor comprensión de los temas. Le siguiente es un ejemplo… alguna fórmula sin contexto.
+
+$\hat{\theta}= \sum_k \dfrac{y_k}{\pi_k}$
+
+Para acceder a este tipo de escritura en el blog no es necesario encerrar entre signos pesos seguidos de la palabra LaTeX la expresión matemática que se quiera publicar. Es decir:
+
+`$ your-latex-code-here $`

@@ -1,0 +1,9 @@
+---
+title: "Correlaciones"
+author: "Andrés Gutiérrez"
+date: "2009-11-15"
+categories:
+  - "Estadística"
+---
+
+##### Fuente: Wikipedia

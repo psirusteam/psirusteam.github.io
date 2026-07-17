@@ -1,0 +1,123 @@
+---
+title: "Writing Books with R and knitr"
+author: "Andrés Gutiérrez"
+date: "2015-02-07"
+categories:
+  - "Estadística"
+  - "R"
+  - "Teaching"
+---
+
+I am writing this post on behalf people who, like me, do not find any valuable stuff in the web, when trying to compile big documents in R with the knitr library.
+
+[knitr](http://yihui.name/knitr/) is a basic tool for the statistician. It combines [LaTeX](http://en.wikipedia.org/wiki/LaTeX) and R in an single environment. It is useful to create elegant reports, papers, and related stuff. You gotta have [RStudio](http://www.rstudio.com) for knitr to run. You can find a lot of [examples, manuals, etc](http://yihui.name/knitr/demo/minimal/). in the web. However, when it comes to write big documents, such as books, or thesis, the stuff you can find on the web is limited.
+
+First, the goal is to compile a book, with two chapters and the bibliography. You gotta create three different files (. Rnw). In RStudio, open three files in *File - New File - R Sweave*. One file is destined to be the **main** file where you will compile the book. The remaining files are just the two **chapters**. You must have a **.bib** file, for your references to be created. These files must be in the same folder in your PC (or MAC).
+
+So, the **main** file will contain the basic LaTeX packages for your document to run. In this particular case, I just need Harvard for the references. The class of the document must be book (or some other class that allows chapter environment). From this **main** file, we will call the chapters to compile the book. So, the body of this file is as follows:
+
+> ```r
+> \documentclass{book}
+> ```
+>
+> ```r
+> \usepackage[full]{harvard}
+> ```
+>
+> ```r
+> \begin{document}
+> ```
+>
+> ```r
+> \bibliographystyle{agsm}
+> ```
+>
+> ```r
+> \Sexpr{knit_child('cap1. Rnw')}
+> ```
+>
+> ```r
+> \Sexpr{knit_child('cap2. Rnw')}
+> ```
+>
+> ```r
+> \bibliography{LibroBib}
+> ```
+>
+> ```r
+> \end{document}
+> ```
+
+You may notice that the code **knit_child** is calling the chapters of the book. Having said that, we must write the chapters and save it with a proper name. In this particular case, I will save them as **cap1. Rnw** and **cap2. Rnw**. The content of **cap1. Rnw**is as follows:
+
+> ```r
+> \chapter{Intro}
+> ```
+>
+> ```r
+> This chunk below is from the child document.
+> ```
+>
+> ```r
+> <<cap1, out.width='2in'>>=
+> ```
+>
+> ```r
+> 1+1
+> ```
+>
+> ```r
+> rnorm(5)
+> ```
+>
+> ```r
+> plot(1)
+> ```
+>
+> ```r
+> boxplot(1:10)
+> ```
+>
+> ```r
+> str(mtcars)
+> ```
+>
+> ```r
+> @
+> ```
+
+In this first chapter I included some R code and some graphics. The content of **cap2. Rnw**is:
+
+> ```r
+> \chapter{Basic Stuff}
+> ```
+>
+> ```r
+> This chunk below is from the child document.
+> ```
+>
+> ```r
+> <<cap2, out.width='2in'>>=
+> ```
+>
+> ```r
+> x <- c(1, 2, 3)
+> ```
+>
+> ```r
+> w <- c(0.5, 0.4, 0.1)
+> ```
+>
+> ```r
+> sample(x, 10, replace = T, prob = w)
+> ```
+>
+> ```r
+> @
+> ```
+>
+> ```r
+> \citeasnoun{Loh} says that the best sampling scheme is not yet invented.
+> ```
+
+In this second chapter I included some references. Finally the bibliography file, that is called **LibroBib.bib**, contains the some references. After compilation this is [the final PDF](https://drive.google.com/a/unal.edu.co/file/d/0BxK3FSG_SPG_aG41N0ZNRkxFbU0/view?usp=sharing).

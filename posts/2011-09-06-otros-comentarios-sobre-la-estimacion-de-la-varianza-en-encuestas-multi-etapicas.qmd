@@ -1,0 +1,35 @@
+---
+title: "Otros comentarios sobre la estimación de la varianza en encuestas multi-etápicas"
+author: "Andrés Gutiérrez"
+date: "2011-09-06"
+categories:
+  - "Estadística"
+---
+
+Siguiendo con la estimación de la varianza en encuestas multi-etápicas, los programas computacionales como SAS, WesVar, entre otros, utilizan una aproximación, sesgada, para obtener esta cifra. Esta aproximación, solo tienen en cuenta la varianza de los totales estimados en la primera etapa, suponiendo que el muestreo en la primera etapa es aleatorio simple. Para la estimación de un total, suponiendo un diseño de muestreo en dos etapas, la fórmula que induce una estimación insesgada es la siguiente:
+
+La expresión que utilizan los paquetes computacionales es la primera parte de la anterior expresión, es decir:
+
+Y existe otra aproximación común, que se tiene al suponer que el muestreo en la primera etapa fue con reemplazo. La expresión de la estimación (sesgada) de la varianza en este caso es la siguiente:
+
+Retomando las ideas del ejercicio anterior, simulé dos escenarios que se pueden encontrar en la vida real, para características de interés en el contexto de investigación social y económica. El primer escenario, está conformado por mil unidades primarias de muestreo, dentro de las cuales hay contenidos diez mil individuos en cada una de ellas. La distribución de la característica de interés es simétrica con forma gaussiana.
+
+Para este escenario, se simularon distintos valores de la fracción de muestreo y submuestreo en la primera y segunda etapa, *f1* y *f2*, respectivamente. Y como criterio de comparación, se utilizó el promedio de la razón entre la varianza real (estimación insesgada) con las aproximaciones sugeridas. Resultados iguales a uno, indican que la aproximación es igual de precisa que la estimación insesgada, resultados mayores que uno indican que se presenta una subestimación de la varianza real y resultados menores que uno, indican que se presenta una sobreestimación de la varianza. Por supuesto, [como ya se explicó antes](2011-08-29-cuidado-con-la-estimacion-de-la-varianza-sas-pc-carp-sudaan-wesvar-y-r-pueden-arrojar-malos-resultados.qmd), se quisiera llegar al mismo nivel de precisión, pero en caso de no poder alcanzarlo, el peor panorama corresponde a la subestimación de la varianza. Es decir, es mejor que la aproximación sobreestime la varianza y no al contrario. El siguiente cuadro muestra los resultados obtenidos para la aproximación de SAS y otros paquetes.
+
+Se nota que la aproximación es buena cuando en la primera etapa se selecciona una muestra pequeña de unidades primarias y en la segunda etapa se selecciona una muestra grande de unidades secundarias. Lo cual concuerda con el comentario que asegura lo siguiente: *.* Ahora, como el estimador de SAS, y otros paquetes, es básicamente la primera parte del estimador insesgado, entonces también es posible calcular el porcentaje de varianza, y tener una idea del sesgo. Se ve claramente que esta aproximación es óptima para tamaños de muestra pequeños en la primera etapa.
+
+De igual manera, se comparó el estimador insesgado con el estimador que tiene en cuenta el reemplazo. Se nota que, al contrario de la anterior aproximación, este estimador nunca subestima la varianza real y funciona mejor cuando el tamaño de muestra en la primera etapa y en la segunda etapa es pequeño.
+
+El segundo escenario, está conformado por cien unidades primarias de muestreo, dentro de las cuales hay contenidos cien mil individuos en cada una de ellas. La distribución de la característica de interés es sesgada, como es usual en muchas encuestas económicas y sociales.
+
+Para este escenario, se simularon distintos valores de la fracción de muestreo y submuestreo en la primera y segunda etapa, f1 y f2, respectivamente. Y como criterio de comparación, se utilizó el promedio de la razón entre la varianza real (estimación insesgada) con las aproximaciones sugeridas. Resultados iguales a uno, indican que la aproximación es igual de precisa que la estimación insesgada, resultados mayores que uno indican que se presenta una subestimación de la varianza real y resultados menores que uno, indican que se presenta una sobreestimación de la varianza. El siguiente cuadro muestra los resultados obtenidos para la aproximación de SAS y otros paquetes.
+
+Se nota que la aproximación es decente cuando en la primera etapa se selecciona una muestra pequeña de unidades primarias y en la segunda etapa se selecciona una muestra grande de unidades secundarias. De igual forma, también es posible calcular el porcentaje de varianza. Se observa que esta aproximación es mejor para tamaños de muestra pequeños en la primera etapa.
+
+Por último, se comparó el estimador insesgado con el estimador que tiene en cuenta el reemplazo. Se nota que, al contrario de la anterior aproximación, este estimador nunca subestima la varianza real y funciona mejor cuando el tamaño de muestra en la primera etapa y en la segunda etapa es pequeño.
+
+¡ESPERE UN MOMENTO!
+
+Ahora, aunque los resultados anteriores son muy claros, no significa que el diseño de muestreo deba estar supeditado a la utilización de la aproximación de la varianza. Como lo muestra el siguiente cuadro, en términos de eficiencia, cuando se utiliza el estimador de Horvitz-Thompson, hay Menor varianza cuando la fracción de muestreo en la primera etapa es alta y, de igual forma, cuando la fracción de muestreo en la última etapa es alta. A continuación se presenta la razón de coeficientes de variación estimados entre el mínimo de la tabla y el resto. Se nota que el mínimo es coeficiente de variación se presenta cuando las dos fracciones de muestreo son altas. Cuando la fracción de muestreo de la primera etapa es baja, como el caso en donde las aproximaciones son buenas, el estimador es altamente variable y pierde eficiencia. A continuación se muestra los resultados de la razón de coeficientes de variación reales para ambos escenarios, 1 y 2, respectivamente.
+
+Por lo tanto, lo primero que se debe plantar es una muy buena estrategia de muestreo que asegure que la varianza del estimador es pequeña, luego, si se da el caso, utilizar la aproximación de la varianza. Pero si no se da el caso, se debe omitir la utilización de estas expresiones que subestiman la varianza.

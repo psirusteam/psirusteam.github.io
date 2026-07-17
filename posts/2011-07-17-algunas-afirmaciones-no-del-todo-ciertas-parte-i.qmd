@@ -1,0 +1,17 @@
+---
+title: "Algunas afirmaciones no del todo ciertas (parte I)"
+author: "Andrés Gutiérrez"
+date: "2011-07-17"
+categories:
+  - "Estadística"
+---
+
+En muchas ocasiones, debido a mi trabajo, reviso, evalúo y audito muchas propuestas de metodologías de encuestas que abordan una determinada problemática. Me he encontrado con algunas afirmaciones que si bien, pueden llegar a ser ciertas bajo el debido contexto, son utilizadas como clichés y relleno en la propuesta metodológicas. A continuación tres de ellas:
+
+1. <<**El muestreo estratificado es el mejor método de muestreo**>> No necesariamente, ya Leonardo Bautista había abordado este tema, esta afirmación la he encontrado en una gran cantidad de propuestas técnicas que utilizan, obviamente, este tipo de diseño de muestreo. Ahora, aunque en esas propuestas la opción de estratificar es adecuada, no es cierto estrictamente que el muestreo estratificado sea el mejor. De hecho, la varianza del diseño aleatorio estratificado puede llegar a ser más grande cuando no hay una clara homogeneidad en el comportamiento de la característica de interés dentro de los estratos.
+
+2. <<**La asignación de probabilidades desiguales inducen sesgo al estimador**>> Esta frase es cierta, siempre y cuando el estimador que se utilice sea el estimador de expansión, es decir N veces y barra. La frase pierde su validez cuando se utiliza el estimador de Hansen-Hurwitz, para el caso de muestreos con reemplazo, o cuando se utiliza el estimador de Horvitz-Thompson, en muestreos sin reemplazo. Ahora, lo natural es que si el diseño es con probabilidades desiguales, pues no se utilice el estimador de expansión.
+
+3. <<**Los conglomerados de tamaño desigual aumentan la varianza de estimador**>> Es por esto que, en encuestas probabilísticas, se crean conglomerados pequeños, a nivel de manzana, o subsección cartográfica, e incluso hogares. Esta es una práctica muy pertinente, siempre y cuando el muestreo de los conglomerados sea aleatorio simple sin reemplazo. Por supuesto, como la varianza del estimador de expansión está en función de la varianza de los totales de los conglomerados, entonces si hay harta variación en los tamaños, habrá harta variación en los totales y por consiguiente la varianza del estimador será alta. De otra forma, si se tiene conocimiento de una característica de información auxiliar a nivel de conglomerados, es posible definir un diseño de muestreo con conglomerados muy desiguales en tamaño, pero que al final induzcan una muy pequeña varianza en el estimador, incluso más pequeña que la del muestreo aleatorio simple con conglomerados iguales en tamaño.
+
+PD: En algunos estudios de consumo, una característica de información auxiliar muy correlacionada con los totales (cantidad de consumo total) de los conglomerados es el tamaño mismo de los conglomerados. Es muy cierto que el consumo está correlacionado con el tamaño del conglomerado, pues entre más personas haya en el conglomerado, mayor el consumo, y viceversa. De hecho, en los libros clásicos de muestreo, a las características de información auxiliar se les llama variables de tamaño, justamente porque se derivan del tamaño de los conglomerados.

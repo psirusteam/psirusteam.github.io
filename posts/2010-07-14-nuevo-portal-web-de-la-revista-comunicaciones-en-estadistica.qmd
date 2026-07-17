@@ -1,0 +1,32 @@
+---
+title: "Nuevo portal WEB de la Revista Comunicaciones en Estadística"
+author: "Andrés Gutiérrez"
+date: "2010-07-14"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+La Facultad de Estadística de la Universidad Santo Tomás ha lanzado el nuevo portal de internet de su publicación semestral, la Revista Comunicaciones en Estadística. Nuevo portal, nuevo número, nuevo volumen. El link para acceder es el siguiente.
+
+[**http://comunicacionesenestadistica.usta.edu.co**](http://comunicacionesenestadistica.usta.edu.co)
+
+La verdad que el trabajo del equipo de ingenieros de la USTA es limpio y el diseño es fácil. Lo que quisimos hacer con esta nueva propuesta de navegación es crear un portal en donde el autor, el lector, el estudiante y el profesor, se sintieran a gusto en un entorno sencillo pero agradable. La visualización FLASH de los artículos brinda una experiencia de navegación interesante, cómoda, fácil y rápida. La versión es Beta, así que está en prueba; sin embargo, esperamos de todo corazón que disfruten esta nueva página.
+
+La verdad es que nos enorgullece sobremanera la publicación de este cuarto número consecutivo de la Revista Comunicaciones en Estadística. Hace dos años que empezamos este proyecto editorial y, aunque al principio fue difícil, hemos sabido llamar la atención de la comunidad Estadística en Colombia y en la región Latinoamericana. Con lo anterior, el posicionamiento de nuestra publicación es mucho mejor y hemos logrado una buena calidad editorial, que cada vez más es reconocida por lo lectores de la revista y, que deseamos conservar a lo largo de los artículos publicados. Para este número, los artículos son:
+
+- Afijación óptima de tamaños de muestra en muestreo aleatorio estratificado vía programación matemática.
+
+- Una revisión de la metodología de estimación a través de muestreo por cadenas referenciales para las proporciones de una población oculta.
+
+- Intervalos de predicción para pronósticos no paramétricos de la inflación colombiana.
+
+- Una revisión de los modelos de volatilidad estocástica.
+
+- Distribución Poisson-Pascal generalizada utilizando el algoritmo de Panjer.
+
+Si usted está interesado en publicar un artículo en nuestra revista, no dude en escribir a
+
+[**revistaestadistica@usantotomas.edu.co**](mailto:revistaestadistica@usantotomas.edu.co)
+
+Apoye este producto, recuerde que no es un producto ligado a una institución, es un producto ligado al desarrollo de la ciencia estadística en Colombia. Gracias por leernos y por divulgar y difundir este esfuerzo que es de estadísticos para estadísticos (de formación o de profesión). Gracias por su apoyo.

@@ -1,0 +1,16 @@
+---
+title: "LaTeX for statisticians"
+author: "Andrés Gutiérrez"
+date: "2014-11-25"
+categories:
+  - "Estadística"
+  - "Stats"
+---
+
+What do successful statisticians do in real life? I think that success relies in effective communication. All of the time, we are in broadcast mode: our ideas, results and analysis yield to decision making and it is up to us to find compelling ways to seed our beliefs in those statistical analyses into the mind of our employers, contractors, partners, etc.
+
+As some of us need to write technical reports, we prefer to use specialized software, such as LaTeX or HTML. After some exhaustive search, I realized that almost all of the material in the web is focused in writing equations. However, as statisticians, we need some further stuff. For example, we occasionally need to attach the source of some computational code in R or SPSS or SAS. We also present our research in conferences and we need Beamer, or maybe we need to design a poster or just write our Curriculum Vitae.
+
+[In these slides](http://gutierrezandres.files.wordpress.com/2014/08/slideslatex.pdf), we tried to put all of our needs (as statisticians) regarding LaTeX. This is a course in our Faculty of Statistics that is intended to teach our students how to deal with technical reports, slides, papers, books, posters, etc.
+
+If you find it useful feel free to use the slides in your seminars or classes. Just remember that credit must be given to the authors. These slides are under a Creative Common License.

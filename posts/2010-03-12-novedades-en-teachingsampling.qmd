@@ -1,0 +1,61 @@
+---
+title: "Novedades en TeachingSampling"
+author: "Andrés Gutiérrez"
+date: "2010-03-12"
+categories:
+  - "Estadística"
+---
+
+Ya está disponible la más reciente versión (v. 1.4.9) del paquete para la enseñanza del muestreo TeachingSampling. Muchos colegas, alumnos y conocidos (a nivel nacional e internacional) han contribuido grandemente al desarrollo de este paquete. Aunque debo reconocer que todavía faltan algunas cosas de forma que se deben ajustar (como por ejemplo la gramática inglesa en el manual del paquete), esta entrada está dedicada a observar algunos de esos avances ocurridos desde la primera versión (v. 0.7.6).
+
+- De (v.0.7.6) a (v.0.8.1) à La primera corrección la hizo una colega de Ucrania, en esa ocasión se debió ajustar la programación de la selección de muestras bajo un diseño de muestreo sistemático; además de esto se ajustaron algunos errores de redacción en los ejemplos del manual.
+
+- De (v.0.8.1) a (v.1.0.2) à Los cambios en esta versión incluían la adaptación de una función que generara todas las posibles muestras con reemplazo (en donde el orden de selección sí importa) y la implementación de una función que permitiera el cálculo de probabilidades de inclusión óptimas en un diseño de muestreo con múltiples características de interés.
+
+- De (v.1.0.2) a (v.1.1.9) à Para esta tercera entrega Jorge Ortiz desarrolló un método que permite el manejo de grandes masas de tablas de muestreo, resultantes de estimaciones en R, para la edición automática en LaTeX. Este proceso se hace mediante las funciones DataFr y TbLatex.
+
+- De (v.1.1.9) a (v.1.4.9) à En esta actualización participaron los estudiantes del pregrado en estadística de la universidad Santo Tomás. Helbert Novoa hábilmente desarrolló una función que permite el cálculo de la matriz de probabilidades de inclusión de segundo orden. Mediante el uso de esta función, se desarrollaron rápidamente una función que permite calcular la matriz de varianzas-covarianzas Delta (y comprobar que, si el diseño de muestreo es medible, las entradas por fuera de la diagonal son negativas) y otra función que permite calcular la varianza teórica (sí, la de la doble suma) del estimador de Horvitz-Thompson para cualquier tipo de diseño muestral. Por otra parte Jorge Ortiz desarrolló la función que permite la generación de todas las muestras con reemplazo (en donde el orden no importa) lo que permite tener acceso al soporte de muestreo para cualquier tipo de diseño muestral de tamaño fijo con reemplazo.
+
+Por último, quiero enfatizar - mediante un ejemplo limitado - lo útil que este paquete puede resultar para aclarar los conceptos básicos que se deben arraigar en las primeras clases de un curso de muestreo. En particular, me voy a referir al muestreo con reemplazo: Un diseño de muestreo se dice con reemplazo si las muestras resultantes pueden contener elementos repetidos. De esta manera, es posible que el estudiante afirme – incorrectamente - que el conjunto de todas las posibles muestras con reemplazo de tamaño *m=2* en una población de tamaño *N=3* está dada por:
+
+[,1] [,2]
+
+[1, ] 1 1
+
+[2, ] 1 2
+
+[3, ] 1 3
+
+[4, ] 2 1
+
+[5, ] 2 2
+
+[6, ] 2 3
+
+[7, ] 3 1
+
+[8, ] 3 2
+
+[9, ] 3 3
+
+Lo anterior, resulta de la creencia popular que afirma que el número de muestras con reemplazo es igual a *N^m*. Pues bien, nada más falso que esta creencia. Utilizando la función SupportWR nos damos cuenta que en realidad el número de muestras, que dan origen al soporte de muestreo, es más reducido.
+
+> SupportWR(3,2)
+
+[,1] [,2]
+
+[1, ] 1 1
+
+[2, ] 1 2
+
+[3, ] 1 3
+
+[4, ] 2 2
+
+[5, ] 2 3
+
+[6, ] 3 3
+
+Es aquí en donde el docente puede introducir la definición teórica del diseño muestral con reemplazo (que no está en Särndal 1992, pero sí está en Tillé 2006) y afirmar que el número de muestras en el verdadero soporte es *(M+m-1) combinado (m)* y que, incluso si cada elemento tiene igual probabilidad de selección *pk=1/N*, no todas las muestras del soporte tienen la misma probabilidad de selección. Lo anterior, resulta directamente de vincular el diseño de muestreo con reemplazo a la distribución multinomial.
+
+Como balance positivo se tiene que el paquete TeachingSampling, que fue pensado como protagonista en la enseñanza del muestreo y en el aula de clase, está siendo utilizado por profesionales en la vida práctica, en la vida real, que necesitan una herramienta eficiente para la selección de muestras y la estimación de parámetros en poblaciones finitas (léase, en las poblaciones reales).

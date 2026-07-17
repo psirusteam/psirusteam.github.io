@@ -1,0 +1,17 @@
+---
+title: "La competencia de SAS"
+author: "Andrés Gutiérrez"
+date: "2009-12-01"
+categories:
+  - "Estadística"
+---
+
+SAS, una de las [100 mejores empresas para trabajar](https://web.archive.org/web/20250320103528/https://money.cnn.com/magazines/fortune/bestcompanies/2008/snapshots/29.html) enfrenta un gran reto en términos de estabilidad del share de mercado que tiene (más del 90% de las Fortune 500 utilizan este software estadístico) y mantenimiento de la utilidad de más de 2.26 billones de dólares al año. La competencia no solamente viene del lado de software de uso libre como [R](http://www.nytimes.com/2009/01/07/technology/business-computing/07program.html) y/o [Python](http://www.python.org/) sino que también de parte de otras compañías como SPPS y WPS.
+
+Desde que [IBM adquirió a SPSS](http://www-03.ibm.com/press/us/en/pressrelease/27936.wss) la competencia se puso aún más ruda por el mercado de 9 billones de dólares anuales del negocio de software para análisis estadístico predictivo. La negociación se concretó por una cifra cercana a los 1.2 billones de dólares y por simple sentido común, [ningún CEO da 1.2 billones](http://www.msnbc.msn.com/id/34207028/ns/business-businessweekcom/) de verdes de no ser porque planea sacar una utilidad muy muy grande. Sin embargo, IBM también [ha adquirido a Cognos](http://www.acceso.com/display_release.html?id=44852) y planea integrarlo con el viejo SPSS para dar una recia pelea en términos de cultura predictiva entre los gerentes que, en últimas, son el *core* de negocios de SAS. Por lo tanto, SAS debe prepararse desde todo flanco para evitar que un gigante como IBM le eche mano a sus clientes. Seguramente SAS, como en otras situaciones, sabrá hacerle frente a las arremetidas de IBM, SAP, Oracle y Microsoft.
+
+Por otro lado está [WPS](http://teamwpc.co.uk/home), el clon de SAS que permite ejecutar el código que se escribe en el legunaje de SAS. Por ejemplo, los procedimientos PROC REG y PROC LOGISTIC se implementan sin ningún problema en este software. Aunque existe una disputa legal iniciada por el gigante del software analítico predictivo, la compañía que distribuye WPS también ha dado la pelea y ha tenido una gran acogida en al WEB.
+
+Por último, R, la gran sorpresa de las última década, es un software de uso libre y entidades tan prestigiosas como la Universidad de Stanford y Google lo utilizan para desarrollar sus análisis estadísticos. Cada día más y más personas están uniéndose a está red de desarrollo libre y, por ende, más instituciones están recurriendo a sus grandiosos servicios. Para contrarrestar los efectos de esta gran burbuja, SAS, al igual que SPSS y WPS, implementó una modificación en su software de tal forma que el código escrito en R pueda ejecutarse desde SAS.
+
+Acá nada está escrito, amanecerá y veremos en donde termina estabilizándose la balanza y para qué lado. Por lo pronto, si SAS o IBM quisieran acceder a mis servicios podríamos empezar a negociar, tal vez una pauta en este blog le ayude a ganar a SAS su feroz batalla contra IBM, o a IBM a tener más usuarios que SAS.

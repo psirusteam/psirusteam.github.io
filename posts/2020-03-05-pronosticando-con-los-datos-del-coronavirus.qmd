@@ -1,0 +1,37 @@
+---
+title: "Pronosticando con los datos del Coronavirus"
+author: "Andrés Gutiérrez"
+date: "2020-03-05"
+categories:
+  - "Estadística"
+---
+
+Por: Gigi.
+
+Hace poco más de un mes, apareció de la nada (al menos no hay una teoría consensuada de dónde salió). El mundo ha conocido un nuevo enemigo, el [coronavirus](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_outbreak) (COVID-19). Las bolsas de valores esta semana han sido afectadas en gran medida; sin hablar del turismo, la economía y la paranoia generalizada. Los contagiados y fallecidos empezaron a aparecer poco después del 20 de enero. El día 19 de febrero (cuando ya había datos de 31 días consecutivos) pensé en hacer unos pronósticos a ver qué tal resultaban. Específicamente, el objetivo es **pronosticar el número de fallecidos diarios sen China** y_t (no acumulados, sino fallecidos ocurridos diariamente).
+
+Consideré dos modelos bastante sencillos: un modelo de regresión, y un modelo ARIMA con variable exógena. Pueden pensar en este ejercicio para un primer curso de series de tiempo o un segundo curso de econometría. Los datos utilizados fueron obtenidos del paquete nCov2019 en R, disponible solo en GitHub (pueden consultar algunas de mis reflexiones sobre la obtención de datos de coronavirus [aquí](2020-02-29-que-tan-big-data-estamos.qmd)). La variable exógena que elegí para pronosticar el número de muertes es el número diario de casos confirmados de coronavirus (x_t) y también la misma y_t, pero rezagada. Los 31 datos que tenía en ese momento se comportan de la siguiente forma:
+
+De la gráfica sí puedo ver alguna relación, aunque un correlograma cruzado sería más informativo. Aquí la tenemos:
+
+Observando esta gráfica, decidí incluir en los modelos el número de casos hasta 3 rezagos atrás, es decir, en los modelos para y_t, incluí x_(t−1), x_(t−2) y x_(t−3). Es importante que la x entre al modelo **rezagado**, porque si quiero pronosticar el valor de y para mañana, debo utilizar los valores de x ocurridos en días pasados. Por esta razón, aunque en el correlograma cruzado se observa una correlación contemporanea importante (la barra más alta), no incluyo a x_t en los modelos para y_t para pronosticar el número de fallecidos de mañana, pues si lo hago, tendría que conocer el número de casos confirmados de mañana!!
+
+Otro aspecto para tener en cuenta es el valor del 12 de febrero, el día cuando se observaron más de 15 mil nuevos casos y más de 250 fallecidos (valores que se alejan mucho de los demás días). Este tipo de observaciones atípicas en series de tiempo se pueden modelar con un análisis de intervención, dependiendo del impacto de estos valores sobre el futuro. La gráfica muestra que el efecto es solo en el 12 de febrero, después de ese día, el comportamiento de ambas series no parece estar afectado. Así que simplemente incluí una variable Dummy para ese día, la llamé d.24 porque es el día número 24.
+
+Así las cosas, para el número de fallecidos y_t, tengo estos dos modelos:
+
+- Modelo de regresión donde las variables exógenas son: x_(t−1), x_(t−2) y x_(t−3), y_(t−1) y d.24.
+
+- Modelo ARIMA con variables exógenas: x_(t−1), x_(t−2) y x_(t−3) y d.24. El modelo ARIMA lo elegí simplemente como el modelo que minimice el criterio de Akaike.
+
+Definidos los modelos, el cálculo del pronóstico no significa ningún problema. Así que obtuve los dos pronósticos para el 20 de febrero. **El modelo de regresión predijo 115 fallecidos, mientras que el modelo ARIMA predijo 117**. Son valores muy similares tal como sospechaba, porque son modelos muy similares, solo que con enfoques diferentes.
+
+En la siguiente gráfica, muestro el ajuste de los dos modelos:
+
+Al día siguiente, el dato oficial en la página de la gigante informática China [Tencent](https://xw.qq.com/) indica que **durante el 20 de febrero fallecieron 118 personas por coronavirus.** Así que los pronósticos estuvieron muy bien. Esto me motivó a continuar haciendo pronósticos diariamente. Ustedes pueden ver los pronósticos que he obtenido desde el 20 de febrero hasta el 29 de febrero junto con los valores reales observados:
+
+Hubo unos pronósticos buenos y unos muy malos. Vale la pena destacar el comportamiento del día 23 de febrero; el valor real del número de fallecidos fue de 150, muy diferente al comportamiento bajista que venía mostrando. Pero el valor de mi variable exógena no mostró ese comportamiento, así que no me sorprende que los modelos no hayan pronosticado bien para ese día, simplemente no había manera. Lo que sí está en mis manos es cómo pronosticar para el día siguiente (24 de febrero), o sea, qué tratamiento le doy a este valor de 150 fallecidos del 23 de febrero, lo incluyo como una Dummy porque considero que es un dato atípico sin efectos futuros, o lo considero como el inicio de un cambio de comportamiento? No tengo amigos médicos infectólogos que me ayudaran a tomar la decisión, así que lancé una moneda y opté por lo segundo. Veinticuatro horas después, me di cuenta que lo mejor era incluir una Dummy para el dato de 23 de febrero porque el valor de 23 de febrero no parece impactar sobre el día siguiente. Por eso el pronóstico de 24 estuvo tan malo.
+
+En general, los dos pronósticos malos fueron para el 23 y 24, para los demás días me parecen valores aceptables. El error porcentual medio de los pronósticos para el modelo de regresión es 33%, y para el modelo ARIMA es 32%. Pero si omitimos los pronósticos de estos dos días malos, estos valores caen al 25% y 22% (aún me parece muy grandes, pero considerando la simpleza de los dos modelos, pienso que no les puedo exigir demasiado).
+
+Concluyo destacando que pronosticar no es fácil. Piense usted, muchas ramas de la estadística se dedican a estimar parámetros poblacionales que jamás serán conocidos, así que nadie le puede decir con certeza que la estimación que usted calculó está mal. En cambio, nos jugamos el pellejo cuando pronosticamos, porque el futuro llegará y sabremos con certeza si lo hicimos bien o no!

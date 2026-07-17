@@ -1,0 +1,35 @@
+---
+title: "¿Cómo piensan los consumidores?... Midiendo el Brand Equity de una marca con métodos estadísticos"
+author: "Andrés Gutiérrez"
+date: "2013-08-13"
+categories:
+  - "Estadística"
+---
+
+[Haciendo clic acá](https://estadisticaccbas.uaa.mx/moodle/file.php/1/revista/rev_2/index.html) ([acá una versión en PDF simple](http://gutierrezandres.files.wordpress.com/2013/08/articulo-v3.pdf)) encontrará (en las páginas 4-7) un acercamiento estadístico a la medición del Brand Equity de una marca (problema determinante en la investigación de mercados). Este acercamiento se realiza acogiendo una técnica multivariante simple y es de aplicación inmediata para los investigadores en esta disciplina. El código computacional para la implementación de esta metodología se encuentra a continuación (suponiendo que TABLA es la tabla de contingencias de Marcas por Atributos):
+
+### Analisis de componentes principales
+
+acp4 <- dudi.pca(TABLA, scannf=F, nf=10)
+
+#Metodología propuesta con las primeras dos componentes
+
+w=acp4$ eig
+
+q=w/sum(w)
+
+i=(q [1]*(acp4$ c1$ CS1)+q [2]*(acp4$ c1$ CS2))/sum(q [1:2])
+
+l=i/sum(i)
+
+#Importancia de cada atributo para el Brand Equity de la categoría l
+
+#Construcción del índice
+
+Ind0=scale(Total)%*%l
+
+Ind1=(exp(Ind0))/(1+(exp(Ind0)))*100
+
+#Índice final
+
+Ind1

@@ -1,0 +1,13 @@
+---
+title: "Creating R packages in RStudio"
+author: "Andrés Gutiérrez"
+date: "2014-03-08"
+categories:
+  - "Estadística"
+  - "R"
+  - "Stats"
+---
+
+RStudio is a powerful tool in hands of the applied statistician. For example, you can create beautiful documents using KnitR, which combine both LaTeX and R; you also can make beautiful presentations with Markdown. However, RStudio also serves as a friendly platform to create R packages. The following video will guide you in this easy quest.
+
+[YouTube](http://www.youtube.com/watch?v=9PyQlbAEujY?rel=0)

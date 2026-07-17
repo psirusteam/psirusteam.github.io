@@ -1,0 +1,390 @@
+---
+title: "Propensity Score Matching in R (My first post in blogger)"
+author: "Andrés Gutiérrez"
+date: "2014-11-14"
+categories:
+  - "Estadística"
+  - "Public Policy Evaluation"
+  - "R"
+  - "Stats"
+---
+
+My first post in blogger is about Propensity Score Matching (PSM) in R. In this post I will introduce the R packages MatchIt and Zelig. The first one is devoted to perform different PSM algorithms and the other one is used in order to estimate the average treatment effect (ATE) and the effect of the treatment on the treated (ATT). First of all, I will simulate a population where some individuals receive the treatment, and the remaining ones do not.
+
+```r
+rm(list=ls())
+```
+
+```r
+library(MatchIt)
+```
+
+```r
+library(Zelig)
+```
+
+```r
+N <- 1000
+```
+
+```r
+x1 <- round(rnorm(N,20,4))
+```
+
+```r
+x2 <- round(rnorm(N,80,10))
+```
+
+```r
+f <- 1 + 1*x1 - 0.28*x2
+```
+
+```r
+p <- exp(f)/(1+exp(f))plot(p)
+```
+
+```r
+z <- rbinom(N,1, p)table(z)
+```
+
+```r
+y <- rep(0, times=N)
+```
+
+```r
+# Different values for y over z# The mean difference for y is 5000
+```
+
+```r
+y[z == 1] <- 9000 + 2*x1[z == 1] + 0.5*x2[z == 1]
+```
+
+```r
+y[z == 0] <- 4000 + 2*x1[z == 0] + 0.5*x2[z == 0]
+```
+
+```r
+y <- jitter(y, amount=1000,factor=2)
+```
+
+```r
+Data <- data.frame(y=y, x1=x1, x2=x2, z)
+```
+
+```r
+# The treatment population
+```
+
+```r
+Treats <- subset(Data, z == 1)
+```
+
+```r
+colMeans(Treats)
+```
+
+```r
+# The control population
+```
+
+```r
+Control <- subset(Data, z == 0)colMeans(Control)
+```
+
+```r
+# Computing the real effect of the treatment
+```
+
+```r
+model <- lm(y ~ z + x1 + x2,data=Data)
+```
+
+```r
+Effect <- model$coeff[2] Effect
+```
+
+Then I will run a logistic regression in order to estimate the propensity scores. That is the probability of receiving the treatment.
+
+```r
+# The propensity scores
+```
+
+```r
+ps.model <- glm(z ~ x1 + x2,family = binomial(link = "logit"),data = Data)
+```
+
+```r
+plot(ps.model$fitted)summary(ps.model)
+```
+
+```r
+Data$ps <- ps.model$fitted table(Data$z)
+```
+
+```r
+hist(Data$ps[z==1])
+```
+
+```r
+hist(Data$ps[z==0])
+```
+
+After that, one may use different matching algorithms. Exact matching is a technique used to match individuals based on the exact values of covariates.
+
+```r
+# Exact matching
+```
+
+```r
+m1.ps <- matchit(ps.model, method="exact",data=Data)
+```
+
+```r
+summary(m1.ps, covariates = T)
+```
+
+```r
+m1.data <- match.data(m1.ps)
+```
+
+Nearest neighbour matching (NNM) is an algorithm that matches individuals with controls (it could be more two or more controls per treated unit) one by one based on a distance.
+
+```
+#Nearest neighbor matching
+```
+
+```r
+m3.ps <- matchit(ps.model, method="nearest", radio=1,data=Data)
+```
+
+```r
+summary(m3.ps, covariates = T)
+```
+
+```r
+plot(m3.ps)
+```
+
+```r
+plot(m3.ps, type="jitter")
+```
+
+```r
+plot(m3.ps, type="hist")
+```
+
+```r
+m3.data <- match.data(m3.ps)
+```
+
+```r
+m3.ps$match.matrix
+```
+
+```r
+Pairs <- cbind(Data[row.names(m3.ps$match.matrix),], Data[m3.ps$match.matrix,])
+```
+
+```r
+Pairs
+```
+
+Optimal matching solves the problem inherent to the NNM, that matches units one at a time, without taking into account any global (over the entire population) distance measure. This way, with NNM the last treated unit could could match an inappropriate unit.
+
+```r
+#Optimal matching
+```
+
+```r
+m5.ps <- matchit(ps.model, method="optimal",data=Data)
+```
+
+```r
+summary(m5.ps, covariates = T)
+```
+
+```r
+plot(m5.ps)
+```
+
+```r
+plot(m5.ps, type="jitter")
+```
+
+```r
+plot(m5.ps, type="hist")
+```
+
+```r
+m5.data <- match.data(m5.ps)
+```
+
+```r
+# m5.data[(m5.data$subclass == 1),]
+```
+
+Full matching forms subgroups in an optimal way.
+
+```r
+#Full matching
+```
+
+```r
+m4.ps <- matchit(ps.model, method="full",data=Data)
+```
+
+```r
+summary(m4.ps, covariates = T)
+```
+
+```r
+plot(m4.ps)
+```
+
+```r
+plot(m4.ps, type="jitter")
+```
+
+```r
+plot(m4.ps, type="hist")
+```
+
+```r
+m4.data <- match.data(m4.ps)
+```
+
+Caliper matching is a refinement of the NNM. It defines a constraint over the individual distant measure. So, it minimises the probability of bad matching.
+
+```r
+# Caliper matching
+```
+
+```r
+m8.ps <- matchit(ps.model, method="nearest", caliper=0.25*sd.ps,data=Data)
+```
+
+```r
+summary(m8.ps, covariates = T)
+```
+
+```r
+plot(m8.ps)
+```
+
+```r
+plot(m8.ps, type="jitter")
+```
+
+```r
+plot(m8.ps, type="hist")
+```
+
+```r
+m8.data <- match.data(m8.ps)
+```
+
+```r
+m8.data.control <- match.data(m8.ps,"control")
+```
+
+```r
+m8.data.treat <- match.data(m8.ps,"treat")
+```
+
+```r
+m8.ps$match.matrix
+```
+
+```r
+Pairs <- cbind(Data[row.names(m8.ps$match.matrix),], Data[m8.ps$match.matrix,])
+```
+
+```r
+Pairs
+```
+
+Finally, with the matched data, we estimate the average treatment effects, via automatic simulation, with the Zelig package.
+
+```r
+# Treatment Effects
+```
+
+```r
+z1.ps <- zelig(y ~ z + x1 + x2,data=m8.data, model="ls")
+```
+
+```r
+summary(z1.ps)
+```
+
+```r
+x <- setx(z1.ps, z = 0) x1 <- setx(z1.ps, z = 1)
+```
+
+```r
+s.out <- sim(z1.ps, x = x, x1 = x1)
+```
+
+```r
+summary(s.out)
+```
+
+```r
+plot(s.out)
+```
+
+Zelig package also allows to estimate the effect on the treated, and the effect on the controls.
+
+```r
+# Average Treatment Effect on the Controls
+```
+
+```r
+z1c.ps <- zelig(y ~ x1 + x2,data = m8.data.control, model="ls")
+```
+
+```r
+summary(z1c.ps)
+```
+
+```r
+x.out1 <- setx(z1c.ps,data = m8.data.treat,cond = TRUE)
+```
+
+```r
+s.out1 <- sim(z1c.ps, x = x.out1)summary(s.out1)
+```
+
+```r
+plot(s.out1)
+```
+
+```r
+# Average Treatment Effect on the Treated
+```
+
+```r
+z1t.ps <- zelig(y ~ x1 + x2,data = m8.data.treat, model="ls")
+```
+
+```r
+summary(z1t.ps)
+```
+
+```r
+x.out2 <- setx(z1t.ps,data = m8.data.control,cond = TRUE)
+```
+
+```r
+s.out2 <- sim(z1t.ps, x = x.out2)
+```
+
+```r
+summary(s.out2)
+```
+
+```r
+plot(s.out2)
+```
+
+I hope that you found this post valuable. Feel free to reproduce the code wherever you want.

@@ -1,0 +1,28 @@
+---
+title: "#PredictiveCOL (Update #7 - Final prediction for the first run)"
+author: "Andrés Gutiérrez"
+date: "2014-05-17"
+categories:
+  - "Colombia"
+  - "Estadística"
+---
+
+At this point, pollsters cannot do polls anymore. The last polls show that Zuluaga is a very serious contender to defeat the current President of Colombia, Santos. The trend of Zuluaga is the only one that still remains upward and the conditional expectation of the voting intention is higher for Zuluaga than for Santos.
+
+Now, if election were held today, this is the SNAPSHOT (mere opinion) of the run.
+
+On the other hand, having into account the auxiliary information, this is the forecast of the election for the day to be hold (May 25, 2014)
+
+That said, this is the posterior distribution of voting intention.
+
+Our simulations allow to predict some interesting parameters:
+
+The probability that Santos wins with more than 50% of the votes (which ensures that there will be no second run) is 0.19%.
+
+1. The probability that Zuluaga defeats Santos in the first run is 5.36 %.
+
+2. The probability that Zuluaga defeats Peñalosa is 95.66 %.
+
+So, with today's info, we can claim that there will be 2nd run and the contender of Santos would be Zuluaga.
+
+Stay tuned for the new predictions of the second run!!!

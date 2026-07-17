@@ -1,0 +1,13 @@
+---
+title: "My talks in Medellín"
+author: "Andrés Gutiérrez"
+date: "2009-07-21"
+categories:
+  - "Estadística"
+---
+
+El XIX simposio de estadìstica acaba de culminar con un rotundo éxito. Tuve la oportunidad de viajar y participar en este evento con investigaciones involucradas específicamente en mis áreas de interés: Muestreo e Inferencia Bayesiana.
+
+La primera charla se llama [Frequentist performance of confidence and credibility intervals for the difference of two proportions](http://predictive.files.wordpress.com/2009/07/diferencia-proporciones.pdf) y trata de la comparación, en términos de estadística clásica, de varios intervalos de confianza, entre ls que se destacan el intervalo de Newcombe y varios intervalos de credibilidad con información previa no informativa
+
+La segunda charla se titula [A multiparametric approach in multipurpose surveys](http://predictive.files.wordpress.com/2009/07/multipurpose-slides.pdf) y es la base teórica del paquete TeachingSampling y está motivada por el pensamiento de T. M. F. Smith acerca de la brecha entre los estadísticos teóricos y los prácticos en términos de encuestas que involucran la estimación de muchos parámetros y por consiguiente incorporan muchas variables en el estudio.

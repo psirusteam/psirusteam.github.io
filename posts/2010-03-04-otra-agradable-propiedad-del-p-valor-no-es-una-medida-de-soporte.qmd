@@ -1,0 +1,19 @@
+---
+title: "Otra agradable propiedad del p-valor: no es una medida de soporte"
+author: "Andrés Gutiérrez"
+date: "2010-03-04"
+categories:
+  - "Estadística"
+---
+
+[John D. Cook](http://www.johndcook.com/blog/2010/03/03/p-values-are-inconsistent/) citando un [artículo de Mark Schervish](http://predictive.files.wordpress.com/2010/03/binder1.pdf) afirma que los p-valores están siendo usados por los usuarios de la estadística como medidas de soporte (además [de algunas otras malinterpretaciones](2009-01-26-mala-practica-de-las-pruebas-de-hipotesis.qmd)) cuando éstos precisamente se caracterizan por carecer de consistencia como medidas de la evidencia a favor de un conjunto de hipótesis. Al respecto, Cook explica que si es posible obtener evidencia de que cierto animal es un oso, entonces debe existir también evidencia para afirmar que ese animal es un mamífero. Nótese que en el ejemplo de Cook existen dos hipótesis: la primera hace referencia a que el animal es un oso y la segunda a que el animal es un mamífero y, por supuesto, la primera está contenida en la segunda. Ahora, utilizar los p-valores como una medida de soporte a favor de la evidencia de la segunda hipótesis puede ser una muy mala idea.
+
+Una medida de soporte debería satisfacer la siguiente propiedad (muy útil en el contexto de comparaciones múltiples):
+
+> Si una hipótesis H1 implica una hipótesis H2, entonces una medida de soporte es coherente si el rechazo de H2 siempre implica el rechazo de H1
+
+En palabras de Cook:
+
+> Si una hipótesis H1 implica otra H2, entonces la evidencia a favor de H2 debe ser al menos tan grande como la evidencia en favor de H1
+
+Teniendo en cuenta este criterio, se sigue que el p-valor es una pésima medida de soporte. Schervish lo explica con el siguiente ejemplo: Suponga que se observa la realización de una variable aleatoria con distribución normal de varianza uno y media desconocida. Sea H1: $\mu in (-0.5, 0.5)$ y sea H2: $\mu in (-0.82, 0.52)$. Claramente el espacio paramétrico de H1 está contenido en H2 y, por consiguiente, H1 implica H2. Ahora, si la observación correspondió a *x=2.18* entonces el p-valor para H1 es de 0.0502, mientras que el p-valor para H2 es de 0.0498. Lo anterior implica que, tomando el p-valor como medidas de soporte, existe más evidencia a favor de H1 que a favor de H2, lo cual es contradictorio con el sentido común. Más aún, si el nivel de significación es de 0.05, la regla de decisión implicaría que debemos rechazar H2 y aceptar H1. En otras palabras: la media de la distribución puede estar entre (-0.5, 0.5), pero de ninguna manera puede estar entre (-0.82, 0.52), lo cual es muy contradictorio.

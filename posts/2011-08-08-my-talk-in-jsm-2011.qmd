@@ -1,0 +1,16 @@
+---
+title: "My talk in JSM 2011"
+author: "Andrés Gutiérrez"
+date: "2011-08-08"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+[YouTube](https://www.youtube.com/watch?v=c3bZRvJ7SHw&w=425&h=350)
+
+La presentación de esta charla la pueden descargar haciendo
+
+[clic acá](http://gutierrezandres.files.wordpress.com/2010/12/jsm2011ag.pdf)
+
+.

@@ -1,0 +1,17 @@
+---
+title: "Las medias de Chisini (Parte 2)"
+author: "Andrés Gutiérrez"
+date: "2010-02-13"
+categories:
+  - "Estadística"
+---
+
+Es común que el estadístico proponga la media aritmética cuando se enfrenta a un problema de promedios. Esta medida de tendencia central es una de las más utilizadas, además de ser una de las piedras angulares en el desarrollo de la estadística frecuentista paramétrica. Sin embargo, y como veremos a continuación, existen problemas muy comunes en donde el simple promedio aritmético no debería ser utilizado como media. Para esto, [el enfoque de Oscar Chisini](2010-01-18-las-medias-de-chisini-parte-1.qmd), para la escogencia de medias, no sólo brinda un acercamiento integral al problema sino que permite escoger una medida promedio que respeta las propiedades de una media.
+
+1. Velocidad media de desplazamiento: suponga que un automóvil se desplaza a una velocidad *v_i* sobre una distancia *s_i (i=1, …, n)*. Acudiendo al requisito de invariancia, se tiene que el tiempo total de viaje debe ser el mismo cuando los valores observados se reemplazan por su media. Es decir, la restricción está dada por la siguiente expresión: $ f(v_1, \ldots, v_n)=\sum_{i=1}^n s_i/\bar{v}$ Cuya solución (siguiendo el enfoque de Chisini) es la siguiente media armónica sobre las velocidades *v_i*: $\bar{v}=(\sum_{i=1}^n s_i)/(\sum_{i=1}^n s_i/v_i)$
+
+2. Tasa de interés promedio: asuma que *P* dólares se invierten en *n* periodos de tiempo, con una tasa de interés compuesto *i_k (k=1, …, n)*. Si se desea que la tasa de interés se mantenga fija después de n periodos de tiempo, entonces la restricción debe tomar la siguiente forma: $ f(i_1, \ldots, i_n)=P\prod_{k=1}^n (1+i_k)$ Por lo tanto, $\phi(\bar{i})=P(1+\bar{i})^n $ y como consecuencia, la media de Chisini corresponde a una especie de media geométrica dada por: $\bar{i}=\phi^{-1}(f(i_1, \ldots, i_n))= (\prod_{k=1}^n (1+i_k))^{1/n}-1$
+
+3. Tasa de cambio promedio: sean r_1, …, r_n las tasas de cambio de dólares a pesos, notada como USD/P, en n días. Asumiendo que la media aritmética de las tasas USD/P es $\bar{r}$, entonces, claramente, las tasas de cambio P/USD serán w_i=1/r_i y su media aritmética será $\bar{w}=(1/n)\sum r_i^{-1}$, la cual difiere de $1/\bar{r}$. Esto indica que el promedio común es incoherente dependiendo de la perspectiva de la divisa país. Ahora, suponga que se cambian x_i dólares a una tasa r_i con el fin de obtener y_i=x_ir_i pesos… El enfoque de Chisini es esencial en este tipo de problemas; luego, si se tienen y_i pesos, entonces la media de Chisini que mantiene la tasa USD/P fija en pesos es: $\bar{w}=\sum_{i=1}^n w_iy_i/\sum_{i=1}^n y_i=\sum_{i=1}^n x_i/\sum_{i=1}^n y_i $ Por tanto, una vez que se ha identificado la verdadera perspectiva del problema, el enfoque de Chisini opta por una media aritmética ponderada que resuelve el problema de la incoherencia puesto que ahora $\bar{w}=1/\bar{r}$.
+
+Existen más problemas comunes en donde el enfoque de Chisini debería estar presente; por ejemplo: el tiempo medio de erupción de los volcanes, el tamaño promedio de las familias, el número de infantes promedio en los hogares, o escuelas, entre muchos otros. El problema de la escogencia de medias no debería ser un problema automatizado supeditado a la escogencia de alguna fórmula matemática.

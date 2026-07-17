@@ -1,0 +1,21 @@
+---
+title: "El gráfico estadístico más antiguo"
+author: "Andrés Gutiérrez"
+date: "2010-06-23"
+categories:
+  - "Estadística"
+---
+
+La página WEB de [Michael Friendly, Pedro Valero-Mora y Joaquín Ibáñez Ulargui](http://datavis.ca/gallery/langren/) está dedicada a la investigación histórica acerca del primer gráfico estadístico del que hasta ahora se tenga registro (ver imagen arriba). Esta figura se remonta al siglo XVII, y actualmente se discute si su aparición data al año de 1628 o a 1644. Su creador, Miguel Florencio vanLangren, quiso mostrar las estimaciones de las diferencias en longitud entre las ciudades de Toledo y Roma. Dichas estimaciones se calcularon utilizando distintos métodos cartográficos, astronómicos y geográficos en diferentes tiempos y por diferentes hombres como el mismísimo [Thyco Brahe](http://en.wikipedia.org/wiki/Tycho_Brahe) o [Ptolomeo](http://es.wikipedia.org/wiki/Claudio_Ptolomeo). El gráfico se encuentra adjunto a un [informe presentado en 1624](http://www.math.yorku.ca/SCS/Gallery/langren/verdadera.pdf) por vanLangren a la corte de la infanta Isabel.
+
+Claramente, vanLangren estaba abordando el problema de la estimación de un parámetro desconocido, un problema netamente estadístico. Hoy se conoce con certeza el valor de este parámetro, hay 16.5° de distancia horizontal entre las dos ciudades. En el gráfico, vanLangren muestra doce estimaciones sobre una escala de razón cuyo rango es (0°, 30°). Cada estimación adjunta un rótulo vertical indicando el nombre de la persona que hizo la estimación.
+
+Friendly, Valero-Mora e Ibañez (2010) afirman que este simple gráfico tiene un gran impacto en la historia de la visualización de datos por las siguientes tres razones:
+
+1. Hubiese sido más fácil para vanLangren presentar los datos de forma tabular presentando por columnas la siguiente información: Nombre, Año, Longitud estimada, lugar en donde se realizo la estimación. La tabla podría haber estado ordenada por Longitud o por Año. Sin embargo, sólo un gráfico habla directamente a los ojos del lector y muestra la variación de las estimaciones y el rango en diferencia de estas.
+
+2. Este gráfico sirve como complemento visual para explicar la idea de sesgo en estimación estadística. Si se fijan bien, en el gráfico se muestra una pequeña flecha cerca del punto 16°. Este aspecto puede ser mejor entendido mediante la superposición del gráfico con un mapa actual (ver imagen abajo). Las estimaciones anteriores estaban extremadamente lejos del verdadero valor (flecha), e incluso situaban a Roma en algún punto del mar Adriático.
+
+3. El gráfico es el primer ejemplar conocido en mostrar el efecto del ordenamiento en la visualización de los datos. En este caso, es claro que el objetivo de vanLangren era mostrar las enormes diferencias entre las estimaciones de los más renombrados astrónomos y geógrafos de la historia.
+
+Ver también: [Seis simples técnicas para la visualización de datos](https://web.archive.org/web/20101101094609/http://predictive.wordpress.com/2008/05/03/seis-simples-tecnicas-para-la-presentacion-de-datos/).

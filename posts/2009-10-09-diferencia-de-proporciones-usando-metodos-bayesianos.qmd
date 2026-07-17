@@ -1,0 +1,15 @@
+---
+title: "Diferencia de proporciones usando métodos bayesianos"
+author: "Andrés Gutiérrez"
+date: "2009-10-09"
+categories:
+  - "Estadística"
+---
+
+Es cierto, a veces algunas técnicas estadísiticas fallan. Más aun, a veces fallan técnicas que, por ser consideradas clásicas y robustas, no deberían de hacerlo. Es bien sabido que, con repecto a la diferencia de dos proporciones, los intervalos de confianza de Wald no son la mejor opción. Pues bien, el mismo espíritu de pensamiento que concibió estos intervalos es el que está detrás de la prueba de hipótesis clásica para dos proporciones: sí, la prueba aquella de dos colas que utiliza la normalidad, la prueba clásica, la del Canavos, la del comando prop.test en R.
+
+Imagínese que a usted lo contratan en un juicio de discriminación racial. Una gran compañía metalúrgica enfrentada contra un sindicato de trabajadores de raza negra. La información es la siguiente: en el último periodo de contratación, de 80 personas de raza blanca, 41 fueron admitidos y 39 fueron rechazados; mientras que de 44 personas de raza negra, 14 fueron admitidos y 30 fueron rechazados. La proporción de admitidos de raza blanca es de casi el 50%, pero la proporción de admitidos de raza negra es de apenas el 30%.
+
+Si utilizamos una prueba de proporciones clásica, llegaríamos a la conclusión de que la diferencia de proporciones es estadísticamente igual a cero. Por tanto, concluiríamos que no existe evidencia de discriminación racial. Sin embargo, al utilizar un enfoque bayesiano, las conclusiones y el resultado final cambiarían la historia del juicio rotundamente ([si quiere conocer el final de la historia de clic acá](http://predictive.files.wordpress.com/2009/10/bayes_discrimation_1.pdf)).
+
+El objetivo de esta entrada es introducir al lector a un conjunto de soluciones computacionales, programadas en el ambiente de R, que permiten analizar, de forma bayesiana, los problemas concernientes al juzgamiento de hipótesis para dos proporciones. El conjunto de funciones (paquete propbayes)[está disponible gratuitamente acá](../software.qmdpropbayes/) junto con un [conjunto de ejemplos](../software.qmdpropbayes/) que le permitirán analizar de manera consistente sus datos.

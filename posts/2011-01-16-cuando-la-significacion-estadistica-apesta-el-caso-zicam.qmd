@@ -1,0 +1,28 @@
+---
+title: "Cuando la significación estadística apesta (el caso Zicam)"
+author: "Andrés Gutiérrez"
+date: "2011-01-16"
+categories:
+  - "Estadística"
+---
+
+[Steve Ziliak escribe](http://economistsview.typepad.com/economistsview/2011/01/does-statistical-significance-stink.html) lo siguiente:
+
+> ¿Cuándo es la anosmia - la pérdida permanente del olfato - "significativa"?
+>
+>
+> Existe un caso de la Corte Suprema [de Estados Unidos] - que se debatió el 10 de enero de 2011 - implicando la diferencia entre significación "estadística" y "práctica". ¿Deberían los fabricantes de medicamentos, y otras empresas, estar obligados a informar los efectos adversos de un producto en los usuarios, si el efecto no es estadísticamente diferente de cero al nivel del 5% [de confianza]? ¿Las personas pueden presentar reclamaciones contra las empresas que no advierten acerca de los efectos adversos que no son estadísticamente significativos al nivel del 5%? Estos son dos de las cuestiones que deben resolverse por el Tribunal Supremo a la luz de la *Securities Exchange Act de 1934*.
+>
+>
+> El caso que nos ocupa implica el fármaco [Zicam](http://en.wikipedia.org/wiki/Zicam), un medicamento a base de zinc para el resfriado común de [Matrixx](http://www.matrixxinc.com/) (una farmacéutica americana) que, evidentemente, hace que algunos usuarios tiendan a perder permanentemente su sentido del olfato. (Parece que la forma nasal de aerosol del Zicam - no la píldora – es la culpable principal de que más de 200 usuarios en los EE. UU. han presentado demandas judiciales.)
+>
+>
+> Matrixx, el fabricante del Zicam, afirma que los efectos negativos (pérdida del olfato) no fueron detectados como en los ensayos clínicos como "estadísticamente significativos" al nivel del 5% de significación estadística. Por lo tanto, también afirman que el efecto adverso no se es "importante" ni para la salud humana ni para la riqueza de los accionistas.
+>
+>
+> El procurador general interino de los EE. UU., la AARP, y otros economistas y abogados (como Joseph Mason y Robert Litan) están de acuerdo en que una cosa es "importancia estadística" y otra cosa es "importancia práctica". Ellos entienden el peligro y los costos de la actual "importancia" y contribuyeron al así declararlo ante la Corte Suprema.
+>
+>
+> Se dice que es uno de los diez casos más sonados del año puesto que la decisión del Tribunal tiene consecuencias generales y de gran responsabilidad sobre la regulación y la presentación de informes por la Comisión de Bolsa y Valores. Miles de millones de dólares están en juego, es cierto. Pero también lo son miles de millones de vidas. En los ensayos de primera instancia, la empresa alegó que no ha perjudicado a los accionistas ni a los usuarios por no reportar los efectos adversos.
+
+Por último, Ziliak vincula [el documento que ayudó a redactar para la suprema Corte](http://www.abanet.org/publiced/preview/briefs/pdfs/09-10/09-1156_RespondentAmCu2Profs.pdf), además de un [artículo en donde expone sus puntos de vista](http://www.statlit.org/pdf/2009ZiliakMcCloskeyASA.pdf) acerca de la significación práctica, junto con otros artículos que vienen al caso (ver [acá](http://www.thelancet.com/journals/lancet/article/PIIS0140673610611749/fulltext) y [acá](http://www.thelancet.com/journals/lancet/article/PIIS0140-6736(10)61955-1/fulltext)).

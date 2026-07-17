@@ -1,0 +1,19 @@
+---
+title: "Interpretación física de la mediana"
+author: "Andrés Gutiérrez"
+date: "2009-08-28"
+categories:
+  - "Estadística"
+---
+
+Es claro el altísimo nivel de importancia que han adquirido las estrategias didácticas en el aula de clase. Ya lo diría Tukey cuando afirmaba que no se deberían dar ejemplos estúpidos en el momento de la enseñanza de conceptos estadísticos puesto que esto implica que el alumno va a reconocer que la estadística sólo sirve para resolver problemas estúpidos en la vida real.
+
+Esta entrada está basada en el enfoque didáctico que Mark Lynch, de Millsaps College Jackson, plasmó en un artículo del The College Mathematics Journal, en donde se reconoce que la media de un conjunto de datos ${x_1, \ldots, x_n}$ se puede interpretar como un punto de balance, en el sentido de que si esos puntos se colocasen en una barra uniforme, entonces un fulcro debería ser colocado en el punto de equilibrio para tener equilibrio perfecto - ó el lugar en donde se debería poner un punto de apoyo para alcanzar un balance perfecto debería ser en el punto medio de la barra dado por $\sum x_i/n $ - tal y como lo muestra la siguiente figura.
+
+Por otro lado, una interpretación física de la mediana, basada en este contexto de balance, no ha sido muy difundida en la literatura. Sin embargo, Lynch propone una muy linda idea que vale la pena compartir con los estudiantes para llegar a una mejor comprensión de la definición de esta medida de tendencia central. Luego, vamos a cambiar la barra uniforme por una cuerda (¿cabuya?) y a esta le añadimos un pedazo de cuerda aún más larga que la anterior para formar un bucle, así como lo indica la siguiente figura.
+
+Además de cambiar la barra por la cuerda, vamos a cambiar el fulcro por una polea y supondremos que es una polea perfectamente lubricada de tal forma que la fricción pueda ser pasada por alto sin ningún inconveniente. Ahora, colgando la polea en un sitio seguro, es fácil observar que el bucle se estabiliza en la mediana de los datos. Al respecto se cuenta con los siguientes dos comentarios que caracterizan a la mediana como medida de tendencia central:
+
+1. No importa qué tan alejado esté algún dato del resto, el balance se mantiene en el mismo lugar y esto muestra por qué la mediana no se deja afectar por valores atípicos.
+
+2. Si el número de observaciones es impar, el balance se alcanza en el dato que está en la mitad. Si por el contrario, el número de observaciones es par, el balance se alcanza en cualquier punto físico que se encuentre localizado entre los dos valores de la mitad, luego la mediana no se restringe sólo al promedio entre estos dos datos (ver siguiente gráfica). De hecho, desde la definición ortodoxa de mediana, si el número de observaciones es par, cualquier punto entre los datos de la mitad acumula el 50% de las observaciones a derecha y a izquierda.

@@ -1,0 +1,119 @@
+---
+title: "Modelos de teoría de respuesta al ítem en STAN y R"
+author: "Andrés Gutiérrez"
+date: "2015-07-25"
+categories:
+  - "Estadística"
+  - "IRT"
+---
+
+[Stan](http://mc-stan.org) es un esfuerzo conjunto de varios investigadores de talla internacional para proporcionar a la comunidad estadística un nuevo muestreador (basado en [cadenas de Markov Hamiltonianas](http://www.mcmchandbook.net/HandbookChapter5.pdf) y [NUTS](http://www.stat.columbia.edu/~gelman/research/published/nuts.pdf), acrónimo de *No-U-Turn-Sampler*) con mejores características que BUGS, OpenBUGS o JAGS. En particular, [rstan](https://mc-stan.org/rstan/) es la interfaz de Stan en R. Sin embargo, existen interfaces para Python, Matlab, Stata, entre otros. JAGS y Stan tienen una comunidad muy activa, pero estoy seguro que la influencia directa de Andrew Gelman sobre Stan hará que éste sea el muestreador por defecto en unos pocos años.
+
+Me gustan cuatro cosas de rstan. 1) La interfaz permite procesamiento en paralelo; 2) han pensado en la visulaización de reportes a través de [shinyStan](https://mc-stan.org/shinystan/); 3) Stan es particularmente útil cuando el modelo permite estructuras jerárquicas, tanto en media como en covarianza, los cuales difícilmente convergen en BUGS; 4) No es necesario dar rodeos con la precisión (definida como el inverso de la varianza) en los modelos normales, porque Stan tiene funciones propias para las distribuciones inversaGamma e inversaWishart.
+
+Por otro lado, me incomoda tener que utilizar dos lenguajes simultáneamente en una sola programación. Lo cierto es que la lógica de Stan es parecida a la de BUGS pero, al estar construido en C++, es necesario hacer la traducción del modelo a este lenguaje, pero ejecutarlo en el leguaje de R. Supongo que esta incomodidad es típica de nuevos retos y que durará muy poco tiempo. Si usted viene de BUGS o JAGS, encontrará que el [anexo B del manual](https://github.com/stan-dev/stan/releases/download/v2.7.0/stan-reference-2.7.0.pdf) de Stan es un excelente inicio.
+
+El siguiente es un ejemplo del ajuste de un modelo de teoría de respuesta al ítem, que había sido propuesto en una entrada anterior ([ver acá](https://web.archive.org/web/20190825091650/http://hagutierrezro.blogspot.com/2015/06/item-response-theory-models-in-r-and.html)). En primer lugar realizamos la simulación de las observaciones.
+
+```r
+rm(list = ls())
+library(boot)
+p <- 10
+n <- 500
+
+theta = seq(from = -3, to = 3, length.out = n)
+b <- seq(from = -3, to = 3, length.out = p)
+
+pr <- y <- matrix(NA, nrow = n, ncol = p)
+
+for(i in 1:p){
+  x <- theta - b[i]
+  pr[, i] <- inv.logit(x)
+  y[, i] <- rbinom(n, 1, pr[, i])
+}
+```
+
+Habiendo simulado los datos, utilizamos distribuciones previas informativas para la habilidad y la dificultad (restringidas al soporte de un distribución normal estándar). Al parecer, es necesario que los datos no estén en formato matricial, sino que debe ser transformado a un formato de columnas.
+
+```r
+SimuRasch <- y
+
+library(rstan)
+library(reshape2)
+library(dplyr)
+
+Rasch.stan <- " 
+data {
+int J; // número de estudiantes 
+int K; // número de preguntas 
+int N; // número de observaciones 
+int jj[N]; // Estudiante para la observación n 
+int kk[N]; // Pregunta para la observación n 
+int y[N]; // Realización de Y para la observación n 
+} 
+
+parameters { 
+real theta[J]; // Habilidad del estudiante j 
+real b[K]; // Dificultas de la pregunta k 
+} 
+
+model { 
+theta ~ normal(0,1); // Distribución previa para theta 
+b ~ normal(0, 1); // Distribución previa para b 
+for (n in 1:N) 
+y[n] ~ bernoulli_logit(theta[jj[n]] - b[kk[n]]); 
+} 
+"
+```
+
+```r
+MeltRasch <- melt(SimuRasch)
+colnames(MeltRasch) <- c("Persona", "Item", "Respuesta")
+MeltRasch <- arrange(MeltRasch, Persona)
+
+y <- MeltRasch$Respuesta
+J <- nrow(SimuRasch)
+jj <- MeltRasch$Persona
+K <- ncol(SimuRasch)
+kk <- MeltRasch$Item
+N <- J * K #nrow(MeltRasch)
+
+Rasch.data <- list(J = J, K = K, N = N, jj = jj, kk = kk, y = y)
+Nchains <- 3
+Niter <- 500
+Rasch.fit <- stan(model_code = "Rasch.stan", data = Rasch.data, chains = Nchains, iter = Niter)
+
+print(Rasch.fit)
+plot(Rasch.fit)
+traceplot(Rasch.fit, pars = 'b')
+```
+
+Por último, al utilizar hiperparámetros sobre la media y varianza de las dificultades de los ítems, la definición del modelo tendría la siguiente forma.
+
+```r
+Rasch.stan <- " data {
+int J; 
+int K; 
+int N; 
+int jj[N]; 
+int kk[N]; 
+int y[N]; 
+} 
+
+parameters { 
+real theta[J]; 
+real b[K]; 
+real mu[K]; 
+real sigma[K]; 
+} 
+
+model { 
+theta ~ normal(0,1); 
+b ~ normal(mu, sigma); 
+mu ~ normal(0, 1000); 
+sigma ~ inv_gamma(0.001, 0.001); 
+for (n in 1:N) 
+y[n] ~ bernoulli_logit(theta[jj[n]] - b[kk[n]]); 
+} 
+"
+```

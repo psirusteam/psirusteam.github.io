@@ -1,0 +1,24 @@
+---
+title: "Big Data"
+author: "Andrés Gutiérrez"
+date: "2013-03-13"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Hace algunos días, un amigo (no estadístico) me llamó para preguntarme algo acerca de R. Después de charlar un poco me contó que tenía un proyecto muy interesante con uno de los bancos más importantes de Brasil para rehacer sus procesos de riesgo, que obviamente dependen de algunas metodologías estadísticas. En pocas palabras, se trata de desechar SAS y entrar en la onda de procesamiento paralelo mediante Hadoop, usando a R como plataforma estadística.
+
+Yo quedé muy sorprendido. Mi primera reacción ante este acontecimiento que se va a dar en el mercado de América Latina es que realmente el estadístico debe ser entrenado un poco más en las ciencias de la computación. Por supuesto, zapatero a sus zapatos, pero no es una habilidad que sobra. Estoy seguro que en unos años el papel del estadístico será otro y los que no saben (o no quieren, o no pueden) interactuar con los ingenieros de sistemas, simplemente quedaran relegados en una posición más ejecutiva (jejeje, de ejecutar procesos). Vaticino, además, que esas posiciones ejecutivas pasarán a la historia en unos años.
+
+Es cierto, aceptemos la realidad. Escogimos una profesión en donde el nivel de actualización es feroz. El estadístico debe estar muy al tanto, no solamente de las nuevas metodologías y modelos estadísticos, sino que también debe saber y conocer cómo se implementan en los sistemas computacionales de vanguardia.
+
+Espero no ofender ni preocupar a ninguno de mis lectores, pero así como van las cosas, los únicos "seguros en sus sitios de confort" serán los profesores de planta de las universidades. Al resto de los estadísticos (que conforman la gran mayoría) que trabajan en las oficinas de empresas privadas, o instituciones del sector publico, les tocará enfrentar la deliciosa tarea de la actualización. Y digo deliciosa porque para mí, y espero que para muchos de mis lectores, es una gran satisfacción saber que estoy al filo del abismo siempre. Saber que no me puedo quedar atrás, es un constante aliciente para enfrentar el devenir de los días.
+
+Quiero recomendar dos excelentes entradas de dos blogs españoles que hace tiempo vienen hablando de "Big Data". El título de la primera entrada es totalmente directa y complementa lo que he expuesto hasta acá: [Nos hemos terminado de reinventar. Acabamos con el Data Mining y empezamos con el Big Data](https://web.archive.org/web/20241111003531/https://analisisydecision.es/nos-hemos-terminado-de-reinventar-acabamos-con-el-data-mining-y-empezamos-con-el-big-data/). La segunda entrada se intitula [Siete consejos para expertos en análisis de datos](http://www.datanalytics.com/blog/2010/11/17/siete-consejos-para-expertos-en-analisis-de-datos/). Además de lo anterior, les dejo este Webinar que la compañía Revolutions ha puesto en su Web para acceder de manera gratuita.
+
+[YouTube](https://www.youtube.com/watch?v=AyQIVX8fEts&w=425&h=350)
+
+Y para quienes quieren ser entrenados por un experto mundial destacado en este tipo de procesos, la [Facultad de Estadística de la Universidad Santo Tomás](https://web.archive.org/web/20240527213655/http://estadistica.usta.edu.co/) en Bogotá, Colombia, ha organizado un workshop en Data Mining que contará con un cursillo intensivo de 12 horas (en donde el Dr George Hebrail va a enseñarle a hacer lo que él sabe) que se llama "New Advances in Data Mining: Streaming and Distributed Data". Recuerde que el Workshop es en Bogotá del 10 al 13 de abril de este año. Las inscripciones al curso son limitadas, así que no tarde mucho en realizar el pago.
+
+## [INSCRIPCIONES AL WORKSHOP](http://eventos.usta.edu.co/inscripcion_web.cfm?evento=66)

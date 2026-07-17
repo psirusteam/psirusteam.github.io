@@ -1,0 +1,121 @@
+---
+title: "El estimador de Horvitz-Thompson es insesgado II (nuevas funciones en TeachingSampling)"
+author: "Andrés Gutiérrez"
+date: "2011-03-03"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+En una entrada anterior mostraba, con la ayuda del paquete TeachingSampling, que efectivamente, el estimador de Horvitz-Thompson es insesgado incluso en diseños con reemplazo. Bien, a petición del público y dados los buenos resultados de mis estudiantes en mi cátedra de muestreo, hoy voy a mostrar que este mismo estimador es insesgado en diseños de tamaño de muestra aleatorio. Por supuesto que no hay nada escondido detrás del funcionamiento de este estimador. Pero mi experiencia docente me ha mostrado que es mucho mejor aclarar todos los diversos escenarios de las muestras. Una vez más, es un deber del docente plasmar e ilustrar en estos escenarios el comportamiento del estimador puesto que es muy fácil llegar a conclusiones erradas. Se ilustrarán algunas nuevas funciones del paquete TeachingSampling en su versión 2.0.1 para ilustrar el ejemplo.
+
+Suponga que se tiene una población *U* de tamaño *N=3* y que el diseño de muestreo es sin reemplazo de tamaño de muestra aleatorio. Es decir que es posible seleccionar muestras nulas o muestras censo y toda la gama de configuraciones que existen entre estos dos escenarios. En este caso, el soporte contiene 8 posibles muestras. Con la función IkRS podemos averiguar cuál es la configuración de estas muestras.
+
+```
+> N=3
+> y=c(10, 20, 30)
+> Ind<-IkRS(3)
+> Ind
+     [,1] [,2] [,3]
+[1,]    0    0    0
+[2,]    1    0    0
+[3,]    0    1    0
+[4,]    0    0    1
+[5,]    1    1    0
+[6,]    1    0    1
+[7,]    0    1    1
+[8,]    1    1    1
+```
+
+```
+> Q<-dim(Ind)[1]
+> Q
+[1] 8
+```
+
+Ahora, asumamos que la característica de interés toma los valores 10, 20 y 30 para cada elemento. Luego, el total poblacional es 60. Utilizando la función
+
+SupportRS
+
+se obtienen las posibles muestras de este diseño:
+
+```
+> Qy <-SupportRS(3,ID=y)
+> Qy
+     [,1] [,2] [,3]
+[1,]   NA   NA   NA
+[2,]   10   NA   NA
+[3,]   20   NA   NA
+[4,]   30   NA   NA
+[5,]   10   20   NA
+[6,]   10   30   NA
+[7,]   20   30   NA
+[8,]   10   20   30
+```
+
+Supongamos que el diseño de muestreo es Bernoulli. La siguiente función arroja las probabilidades de selección para cada posible muestra. La suma de las probabilidades es la unidad. Sin embargo, usted puede asignarle cualquier tipo de probabilidades que sean mayores que cero y sumen uno.
+
+```
+> p=rep(NA,Q)
+> for(k in 1:Q){
++ p[k]=((0.1)^(sum(Ind[k,])))*((1-0.1)^(N-sum(Ind[k,])))
++ }
+> p
+[1] 0.729 0.081 0.081 0.081 0.009 0.009 0.009 0.001
+> sum(p)
+[1] 1
+```
+
+Acudiendo a la función Pik se tiene que la probabilidad de inclusión para cada individuo es constante e igual a un décimo.
+
+```
+pik <- Pik(p, Ind)
+> pik
+     [,1] [,2] [,3]
+[1,]  0.1  0.1  0.1
+```
+
+Por lo tanto, utilizando la función HT, se calculan los ocho posibles valores para el estimador de Horvitz-Thompson.
+
+```
+> HT1<- HT(y[Ind[1,]==1], pik[Ind[1,]==1])
+> HT2<- HT(y[Ind[2,]==1], pik[Ind[2,]==1])
+> HT3<- HT(y[Ind[3,]==1], pik[Ind[3,]==1])
+> HT4<- HT(y[Ind[4,]==1], pik[Ind[4,]==1])
+> HT5<- HT(y[Ind[5,]==1], pik[Ind[5,]==1])
+> HT6<- HT(y[Ind[6,]==1], pik[Ind[6,]==1])
+> HT7<- HT(y[Ind[7,]==1], pik[Ind[7,]==1])
+> HT8<- HT(y[Ind[8,]==1], pik[Ind[8,]==1])
+```
+
+```
+> Est <- c(HT1, HT2, HT3, HT4, HT5, HT6, HT7, HT8)
+> Est
+[1]   0 100 200 300 300 400 500 600
+```
+
+Teniendo cada estimación se tiene la siguiente salida, que da cuenta de las posibles muestras, los valores del estimador y la probabilidad de selección de las muestras:
+
+```
+> data.frame(Ind, Est, p)
+  X1 X2 X3 Est     p
+1  0  0  0   0 0.729
+2  1  0  0 100 0.081
+3  0  1  0 200 0.081
+4  0  0  1 300 0.081
+5  1  1  0 300 0.009
+6  1  0  1 400 0.009
+7  0  1  1 500 0.009
+8  1  1  1 600 0.001
+```
+
+El último paso es multiplicar los valores de las estimaciones por el de las probabilidades de selección de las muestras y sumarlos.
+
+```
+> sum(Est*p)
+[1] 60
+> sum(y)
+[1] 60			
+```
+
+Ahora sí, efectivamente, se ilustra que el estimador de Horvitz-Thompson es insesgado para diseños con tamaño de muestra variable.

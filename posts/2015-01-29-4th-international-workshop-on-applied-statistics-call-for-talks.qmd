@@ -1,0 +1,42 @@
+---
+title: "4th International Workshop on Applied Statistics (call for talks)"
+author: "Andrés Gutiérrez"
+date: "2015-01-29"
+categories:
+  - "Estadística"
+  - "Teaching"
+---
+
+The Faculty of Statistics of Saint Thomas University in Colombia is pleased to invite you to the 4th International Workshop on Applied Statistics. The central theme of the event will be applied statistics in public policy evaluation. We will have the presence of four renamed authorities in these methodologies. They will be guiding the following short courses (12 hours each):
+
+- A modern but classical tour to causal inference: Donald Rubin - Harvard University (350 seats available)
+
+- Data analysis with R: Hadley Wickham - RStudio, Rice University (350 seats available)
+
+- Design of observational studies: José Zubizarreta - Columbia University (175 seats available)
+
+- Analysis of time series intervention: Victor Guerrero - Mexico ITAM (175 seats available)
+
+The lecturers are some of the most internationally renowned researchers in this field. The event will be held at Saint Thomas University (Bogotá branch) from 22 to 25 April 2015. On behalf of the Faculty team, we wish to extend you the invitation to participate in the event.
+
+The program (lectures and conferences) and other relevant stuff is available at the following link https://web.archive.org/web/20240527213655/http://estadistica.usta.edu.co/. Within the event there will be space for communications and posters whose central theme is related to applied statistics in any discipline. These can be sent for review (up to March 23, 2015) to the following email [estadística@usantotomas.edu.co](mailto:estadística@usantotomas.edu.co)
+
+The investment value starts from USD 60.
+
+_____________________________________________________________________
+
+La Facultad de Estadística de la Universidad Santo Tomás tiene el gusto de invitarlo al 4th International Workshop on Applied Statistics. En esta nueva edición, la temática central del evento será la estadística aplicada en evaluación de políticas públicas. Cuatro autoridades mundiales de esta rama de las ciencias serán responsables de impartir los siguientes talleres aplicados, cada uno con 12 horas de duración:
+
+- A modern but classical tour to causal inference: Donald Rubin – Harvard University (350 cupos)
+
+- Data analysis with R: Hadley Wickham – Rstudio, Rice University (350 cupos)
+
+- Diseño de estudios observacionales: José Zubizarreta – Columbia University (175 cupos)
+
+- Análisis de intervención en series de tiempo: Víctor Guerrero – ITAM México (175 cupos)
+
+Los invitados se encuentran entre los investigadores más reconocidos internacionalmente en este ámbito. El evento se llevará a cabo en las instalaciones de la Universidad Santo Tomás en Bogotá del 22 al 25 de Abril de 2015. En nombre de la Facultad deseamos extenderle la invitación para que pueda participar en el evento.
+
+La programación del evento (talleres y conferencias) y demás información de interés se encuentra disponible en el siguiente enlace https://web.archive.org/web/20240527213655/http://estadistica.usta.edu.co/. Dentro del programa habrá espacio para comunicaciones y posters cuyo tema central sea la estadística aplicada a cualquier disciplina. Éstas pueden ser enviadas para revisión (hasta el 23 de marzo de 2015) al correo [estadística@usantotomas.edu.co](mailto:estadística@usantotomas.edu.co).
+
+El valor de la inversión comienza desde 150 mil pesos colombianos.

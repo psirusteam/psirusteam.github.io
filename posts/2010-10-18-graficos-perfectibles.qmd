@@ -1,0 +1,13 @@
+---
+title: "Gráficos perfectibles"
+author: "Andrés Gutiérrez"
+date: "2010-10-18"
+categories:
+  - "Estadística"
+---
+
+La revista ENTER
+
+[(clic acá)](http://www.enter.co/gadgets_/¿quien-esta-ganando-la-batalla-de-los-telefonos-inteligentes/)
+
+ha publicado un estudio de marketing acerca del comportamiento de la categoría de telefonía móvil en el mundo. A parte de no haber sorpresa alguna con el repunte del iPhone, se destaca un análisis gráfico muy pobre, tal vez salido de algún procedimiento de componentes principales o análisis de correspondencias. Aunque a algunos puristas teóricos de los métodos estadísticos dirán que los gráficos deben tener mas información que colores y poligrafía, yo opino que un gerente de marketing paga un dineral no solo por el estudio y la información contenida en este sino también por cómo se presenta esta información.

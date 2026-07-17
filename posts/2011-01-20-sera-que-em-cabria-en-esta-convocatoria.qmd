@@ -1,0 +1,68 @@
+---
+title: "¿Será que EM cabría en esta convocatoria?"
+author: "Andrés Gutiérrez"
+date: "2011-01-20"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Pues les comento que hace rato estoy pensando en la publicación en inglés de [EM](../books.qmd)... Por supuesto que no es una tarea fácil, y seguramente conseguir un editor interesado no es fácil para un latino colombiano... Pero me parece que nada se pierde si intento participar en esta convocatoria. Les estaré comentando acerca de lo que suceda. Y gracias por hacer de [EM](../books.qmd) un éxito editorial. La verdad, hay que decir que acá en Colombia ya se convirtió en un éxito de piratería. Pero eso me halaga, si alguien no puede comprarlo (aunque valga la pena decir que 30 dólares no es un precio elevado para este libro) que se lo consiga en PDF... [Por ahí anda](../books.qmd)... Gracias a Dios y a todos ustedes una vez más.
+
+[Call for proposals for writing a book about R (via Chapman & Hall/CRC)](http://www.r-statistics.com/2011/01/call-for-proposals-for-writing-a-book-about-r-via-chapman-hallcrc/)
+
+Rob Calver wrote an interesting invitation [on the R mailing list today](http://www.mail-archive.com/r-help@r-project.org/msg122965.html), inviting potential authors to submit their vision of the next great book about R. The announcement originated from the [Chapman & Hall](http://en.wikipedia.org/wiki/Chapman_%26_Hall)/[CRC](http://en.wikipedia.org/wiki/CRC_Press) publishing houses, backed up by an impressive team of R celebrities, chosen as the editors of this new R books series, including:
+
+- [John M. Chambers](http://stat.stanford.edu/~jmc4/)
+
+- [Torsten Hothorn](http://www.statistik.lmu.de/~hothorn/)
+
+- [Duncan Temple Lang](http://www.stat.ucdavis.edu/~duncan/)
+
+- [Hadley Wickham](http://had.co.nz/)
+
+Bellow is the complete announcement:
+
+————————————–
+
+We are pleased to announce the launch of a new series of books on R.
+
+Chapman & Hall/CRC: The R Series
+
+### Aims and Scope
+
+This book series reflects the recent rapid growth in the development and application of R, the programming language and software environment for statistical computing and graphics. R is now widely used in academic research, education, and industry. It is constantly growing, with new versions of the core software released regularly and more than 2,600 packages available. It is difficult for the documentation to keep pace with the expansion of the software, and this vital book series provides a forum for the publication of books covering many aspects of the development and application of R.
+
+- The scope of the series is wide, covering three main threads:
+
+- Applications of R to specific disciplines such as biology, epidemiology, genetics, engineering, finance, and the social sciences.
+
+- Using R for the study of topics of statistical methodology, such as linear and mixed modeling, time series, Bayesian methods, and missing data.
+
+- The development of R, including programming, building packages, and graphics.
+
+The books will appeal to programmers and developers of R software, as well as applied statisticians and data analysts in many fields. The books will feature detailed worked examples and R code fully integrated into the text, ensuring their usefulness to researchers, practitioners and students.
+
+### Series Editors
+
+- John M. Chambers (Department of Statistics, Stanford University, USA; jmc@stat.stanford.edu)
+
+- Torsten Hothorn (Institut f?r Statistik, Ludwig-Maximilians-Universit?t, M?nchen, Germany; torsten.hothorn@stat.uni-muenchen.de)
+
+- Duncan Temple Lang (Department of Statistics, University of California, Davis, USA; duncan@wald.ucdavis.edu)
+
+- Hadley Wickham (Department of Statistics, Rice University, Houston, Texas, USA; hadley@rice.edu)
+
+### Call for Proposals
+
+We are interested in books covering all aspects of the development and application of R software. **If you have an idea for a book, please contact one of the series editors above or one of the Chapman & Hall/CRC statistics acquisitions editors below.**Please provide brief details of topic, audience, aims and scope, and include an outline if possible.
+
+We look forward to hearing from you.
+
+Best regards,
+
+- Rob Calver (rob.calver@informa.com)
+
+- David Grubbs (david.grubbs@taylorandfrancis.com)
+
+- John Kimmel (john.kimmel@taylorandfrancis.com)

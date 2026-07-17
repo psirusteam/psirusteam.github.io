@@ -1,0 +1,30 @@
+---
+title: "Common support graphics in propensity score matching (using ggplot2)"
+author: "Andrés Gutiérrez"
+date: "2014-11-15"
+categories:
+  - "Estadística"
+  - "R"
+  - "Stats"
+---
+
+Common support is a must check when doing impact evaluation of public policies (or - more widely - when verifying the causation of some factors over a population). The seminal paper of Rosenbaum and Rubin (1983) defines the propensity score as a measure of balance. Moreover, when doing matching, we must assure that propensity scores - for treatments and controls - fall between 0 and 1, strictly. This way, you ensure comparability between the groups. That condition is called *common support*.
+
+A good possibility to check that assumption is to draw two histograms along the groups for the propensity scores. I don't really like the common support graphics that most software do. Even in R, the specialised packages that match samples, do not implement nice graphics. However, package ggplot2 may help us to improve the presentation of the outcomes (in terms of common support). A well balancing example would be the one where the shape of the propensities are similar.
+
+Assuming that you have a data frame - **Ord** - where it is stored the values of the propensity scores - **ps** - in a vector and every unit is identifiable in a (factor) vector - **groups -** indicating if the unit belongs to the treatment group or to the control group, this code allow us to graph a smoothed version of the histograms in the same plot.
+
+```r
+ggplot(Ord, aes(x = ps, colour = groups))+ geom_density()+
+ggtitle("Soporte común")+
+theme(plot.title = element_text(lineheight=.8, face="bold"))
+```
+
+This code allow us to graph a very nice version of two histograms in the same plot.
+
+```r
+ggplot(Ord, aes(x = ps, fill = groups))+
+geom_histogram(aes(y = ..density..), binwidth=0.05, alpha=0.5)+
+ggtitle("Soporte común")+
+theme(plot.title = element_text(lineheight=.8, face="bold"))
+```

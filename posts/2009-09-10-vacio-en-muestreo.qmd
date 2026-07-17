@@ -1,0 +1,13 @@
+---
+title: "Vacío en muestreo"
+author: "Andrés Gutiérrez"
+date: "2009-09-10"
+categories:
+  - "Estadística"
+---
+
+Esta entrada debió haberse escrito hace mucho tiempo, cuando el maestro Leonardo Bautista aun vivía. Suponga que se realiza un diseño de muestreo en un población finita *U*de tamaño*N*. Suponga que el diseño de muestreo de es Bernoullí, en donde cada elemento es seleccionado con la misma probabilidad *p*. En general, se asigna a cada individuo un número aleatorio mediante una distribución uniforme, y para cada individuo se decide su pertenencia en la muestra si este número es menor que la probabilidad *p*. Es claro que el tamaño d emuestra para este diseño es aleatorio; por supuesto, es posible que la muestra seleccionada sea vacía.
+
+Por otro lado, es bien sabido que una medida de probabilidad bien definida es tal que la probabilidad de vacío es nula. Ahora, la probabilidad de selección de una muestra vacía en un diseño de muestreo Bernoulli es *(1-p)^N, *la cual es claramente distinta de cero. La explicación es sencilla, en muestreo es posible la selección de muestras que no contengan ningún elemento. Sin embargo, lo anterior es diferente al evento vacío. El evento vacío no es la selección de una muestra vacía. Es más, el evento vacío sería como nunca realizar la selección. Pensemos en una moneda: la probabilidad de cara es un medio, la probabilidad de sello es un medio. La probabilidad de vacio es nula.
+
+Para evitar la confusión, yo recomiEndo que en los cursos de muestreo, se defina la muestra como un vector multivariado de tamaño *N*, con entradas: uno, si pertenece a la muestra y cero si no pertence a la muestra - en un diseño sin reemplazo. Ahotra, si la muestra es vacía entonces el vector será*(0,0, ...,0)* y, es claro que, cero es muy distinto de vacío.

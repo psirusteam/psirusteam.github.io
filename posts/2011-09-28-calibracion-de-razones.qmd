@@ -1,0 +1,72 @@
+---
+title: "Calibración de razones"
+author: "Andrés Gutiérrez"
+date: "2011-09-28"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+El método de calibración es uno de los más utilizados en términos de estadísticas oficiales. De hecho, el último censo en Colombia utilizó este método para calibrar las estimaciones en la población. Un momento, si se supone que es censo, ¿de qué estimaciones está hablando?... ¡Jum! … pues fue censo pero no todos respondimos los mismos cuestionarios y los encuestadores descubrieron cómo hacer trampa en sus dispositivos y hubo 800 doctores (PhD) en chocó y muchos apartamentos en el parque nacional. En fin, el tema no es el censo, el tema de esta entrada es esta técnica que nos permite hallar nuevos ponderadores que inducen una estrategia de muestreo muy eficiente e insesgada. Estos nuevos pesos, *wk*, se construyen de tal forma que sean muy cercanos a los pesos originales, que son el inverso de la probabilidades de inclusión. Esta cercanía asegura que el estimador resultante sea insesgado asintóticamente. Además, este método tiene otras agradables propiedades, como la consistencia. Es decir, dada una característica de información auxiliar, para la cual se conoce el total poblacional, *tx*, entonces, sin importar la muestra seleccionada, siempre el estimador de calibración para la información auxiliar, reproducirá el total verdadero. Mejor, dicho
+
+Esta propiedad es buena porque si *x* está bien relacionada con *y*, entonces las estimaciones del total de *y* serán muy cercanas al total desconocido. Sin embargo, hace unos días leí este artículo de Eric Lesage, en donde advierte un resultado que me dejó "calibrado"… Tal vez ustedes ya lo sabían, pero como el artículo es de Junio de este año, entonces pienso que la mayoría de los lectores no lo saben. Así que voy a reproducir este resultado. Y espero que a usted también lo sorprenda.
+
+De manera tradicional, para calibrar es necesario conocer el total auxiliar *tx*. Sin embargo, Imagínese que no se conoce ese total, pero sí se conoce la razón poblacional, *R=ty/tx*, que es un parámetro poblacional que es estable en el tiempo. Enfatizo en que lo que sí se conoce es la razón, pero no se conoce ni el numerador ni el denominador. Entonces, siendo así, es posible utilizar el método de calibración para estimar eficientemente tanto el numerador *ty* como el denominador *tx*. Entonces, si calibramos la razón, para cualquier muestra, sea cual sea, la división de con siempre será contante e igual a *R*.
+
+**Resultado: Calibrar sobre una razón *R* es equivalente a calibrar sobre el total de una nueva característica auxiliar *zk=(y_k)-(R)(x_k)***. Es decir, después de calibrar surgen unos nuevos pesos *wk* inducidos por esta metodología. Esos pesos se utilizarán para estimar *ty*, mediante la siguiente expresión y esos mismos pesos se utilizan para estimar *tx*, mediante la siguiente expresión. Luego,
+
+**Ejemplo con Marco y Lucy: **utilizaremos la base de datos propia del paquete computacional TeachingSampling para reproducir este resultado. Suponemos que se conoce la razón entre el ingreso y los impuestos de las empresas del sector industrial en un país. Además se asume que esta razón ha presentado muy poca variación durante los últimos años y que es igual a R=36.12. Lo que quiere decir que por cada peso que las empresas declaran como impuesto, existe una ganacia de 36 pesos. El siguiente código se utiliza para la selección de una uestra MAS de tamaño n=1000.
+
+```r
+# Draws a simple random sample without replacement
+require(TeachingSampling)
+data(Marco)
+data(Lucy)
+attach(Lucy)
+
+ty=sum(Income)
+tx=sum(Taxes)
+R=ty/tx
+
+N <- dim(Marco)[1]
+n <- 1000
+sam <- S. SI(N,n)
+# The information about the units in the sample is stored in an object called data
+data <- Lucy[sam,]
+attach(data)
+names(data)
+# Vector of inclusion probabilities for units in the selected sample
+Pik<-rep(n/N,n)
+```
+
+Y el siguiente código se utiliza para hacer la calibración de las características de interés sabiendo que la razón entre las estimaciones de Ingreso e Impuestos será siempre 36.12. Note que el total *tz* es siempre cero porque se anulan algunas expresiones puesto que *tz=ty-Rtx=ty-(ty/tx) tx=ty-ty=0*.
+
+```r
+estima<-data.frame(Income, Employees, Taxes)
+z <- Income-R*Taxes
+tz <- 0
+b <- E. Beta(estima,z,Pik,ck=1,b0=FALSE)
+> GREG. SI(N,n,estima,z,tz, b, b0=FALSE)
+
+                 Income    Employees        Taxes
+Estimation 1.037084e+06 1.505399e+05 2.870518e+04
+Variance   1.002338e+08 2.414943e+06 7.679034e+04
+CVE        9.653684e-01 1.032290e+00 9.653684e-01
+```
+
+Por último, el siguiente código verifica que sí se presente la propiedad de calibración sobre la razón. Nótese que =0.
+
+```r
+> GREG. SI(N,n,estima,z,tz, b, b0=FALSE)[1,1]/GREG. SI(N,n,estima,z,tz, b, b0=FALSE)[1,3]
+[1] 36.12881
+> R
+[1] 36.12881
+
+w <- Wk(z,tz,Pik,ck=1,b0=FALSE)
+> sum(z*w)
+[1] -2.875709e-10
+> sum(Income*w)/sum(Taxes*w)
+[1] 36.12881
+```
+
+[Created by Pretty R at inside-R.org](http://www.inside-r.org/pretty-r)

@@ -1,0 +1,29 @@
+---
+title: "Los algoritmos más utilizados en Data Mining"
+author: "Andrés Gutiérrez"
+date: "2011-01-04"
+categories:
+  - "Estadística"
+---
+
+Me he enterado de [este artículo](http://www.cs.uvm.edu/~icdm/algorithms/10Algorithms-08.pdf) mediante un [twitter de Alex Zambrano](https://twitter.com/alexjzc), que a su vez replicó de [una entrada en Datanaltytics](http://www.datanalytics.com/blog/2011/01/04/%C2%BFcuales-son-los-top-10-algoritmos-para-data-mining/). Se trata de un artículo que presenta los diez algoritmos más utilizados e influyentes en tópicos de clasificación.
+
+1. C4.5. Este algoritmo genera clasificadores expresados en términos de árboles de decisión.
+
+2. El algoritmo de *k*-medias. Es un método simple iterativo que particiona un conjunto de datos en un número pre-especificado de conglomerados.
+
+3. SVM (*Support Vector Machine*). Mediante el aprendizaje, este algoritmo trata de encontrar la mejor función de clasificación para distinguir en miembros de distintas clases.
+
+4. El algoritmo *a priori*. Este método encuentra conjuntos de ítems frecuentes usando generación candidata.
+
+5. El algoritmo EM. Es utilizado para clasificar datos de naturaleza continua y para estimar su correspondiente función de densidad.
+
+6. PageRank. Es un algoritmo de búsqueda sobre hipervínculos en la web. Gracias a este método es que Google funciona.
+
+7. AdaBoost. Emplea métodos que utilizan múltiples *learners* para resolver un problema.
+
+8. *k*NN. Memoriza el conjunto de datos de entrenamiento y realiza una clasificación sólo si los atributos del objeto de prueba coinciden exactamente con los ejemplos del entrenamiento.
+
+9. Bayes ingenuo (*Naive Bayes*). Dado un conjunto de objetos, que pertenecen a una clase conocida, construye una regla que permite asignar objetos futuros a una clase.
+
+10. CART (*Classification and Regression Trees*). Se trata de un procedimiento recursivo de partición capaz de procesar atributos nominales y continuos como objetivos o predictores.

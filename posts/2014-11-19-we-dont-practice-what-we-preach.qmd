@@ -1,0 +1,26 @@
+---
+title: "We don't practice what we preach"
+author: "Andrés Gutiérrez"
+date: "2014-11-19"
+categories:
+  - "Estadística"
+  - "Teaching"
+---
+
+In an old issue of CHANCE, you can [find an excellent article](http://www.tandfonline.com/doi/pdf/10.1080/09332480.2012.668469) by Gelman & Loken about ethics and statistics. You should read it and then think about the interplay between your profession and your practice (in teaching and consulting). Here are some ideas taken from the article:
+
+- We are very serious when it comes to criticizing nonrandom samples, selection bias induced by non-randomized treatment assignment, etc.
+
+- In those cases we tear our hair out, because as statisticians that kind of methods are barely acceptable.
+
+However:
+
+- As teachers, year after year, we always use the same kind of exams yielding the same kind of grades for the same courses.
+
+- We never use pretests to improve our methodology.
+
+- If we have new ideas to include in our classes, we never do experiments, neither randomize the new treatment.
+
+They write this quote. Think about it: "*we do believe in our message of statistical data collection and analysis, but that when it comes to our own classes, we never quite feel like we have the time to do it right."*
+
+Finally I have my very own quote, not regarding education but life: "*we tend to generalize with very low sample sizes*." Think about your relationships with others. If something makes you mad at someone, you will generalize that very behavior in order to resume the attitude of the other one.

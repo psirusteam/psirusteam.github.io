@@ -1,0 +1,33 @@
+---
+title: "Creating R packages in Mavericks (OS X)"
+author: "Andrés Gutiérrez"
+date: "2014-03-06"
+categories:
+  - "Estadística"
+  - "R"
+  - "Stats"
+---
+
+Creating R packages in Mac is very simple. When I first created the [TeachingSampling](http://cran.r-project.org/web/packages/TeachingSampling/index.html) R package in Windows, it was such a trek. I remember that I had to install a lot of apps in order to compile the library.
+
+Well, times have changed and right now I am a Mac user. Actually, one of the reasons why I delay the decision about migrating from Window to Mac was my fear about the complexity of updating my TeachingSampling library in Mac. If I would have known that in Mac this process was a 500% easier, my decision would have been faster.
+
+These videos will show you how to create R package in a nutshell.
+
+[YouTube](http://www.youtube.com/watch?v=d5TvxbtMZKg?rel=0)
+
+[YouTube](http://www.youtube.com/watch?v=TX5_6L991CQ?rel=0)
+
+[YouTube](http://www.youtube.com/watch?v=qzCQHmPXax8)
+
+However, the last version of OSX (Mavericks), comes with new stuff and, of course, some files are not where they used to be in Mountain Lion. The only one problem I experienced while updating my library was the following error message in the terminal that keep off the creation of the.tar.gz file.
+
+```
+Checking for any extra files in built .tar.gz file. sh: /usr/bin/gnutar: No such file or directory
+```
+
+After some search, I realised that if you are experiencing such an issue the solution is very very easy. Just open your terminal and write the following code:
+
+sudo ln -s /usr/bin/tar /usr/bin/gnutar
+
+After writing that code, follow the normal procedure. That's it. Enjoy your Mac and enjoy R!

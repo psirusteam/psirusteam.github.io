@@ -1,0 +1,32 @@
+---
+title: "La paradoja de Lord"
+author: "Andrés Gutiérrez"
+date: "2015-12-31"
+categories:
+  - "Estadística"
+  - "Probability"
+  - "Stats"
+  - "Teaching"
+---
+
+En un artículo llamado *A Paradox in the Interpretation of Group Comparisons* publicado en ***Psychological Bulletin***, Lord (1967) hizo famosa la siguiente historia controversial:
+
+> *Una universidad está está interesada en investigar los efectos de la dieta nutricional que sus estudiantes consumen en el restaurante del campus. Se recolectaron varios tipos de datos incluyendo el peso de cada estudiante en el mes de enero y su peso en el més del junio del mismo año. El objetivo de la universidad es conocer si la dieta tiene mayores efectos sobre los hombres que sobre las mujeres. Esta información es analizada por dos estadísticos.*
+>
+> *El primer estadístico observa que al final del semestre (Junio), el peso promedio de los hombres es idéntico a su peso promedio al empezar el semestre (Enero). Esta situación ocurre también para las mujeres. La única diferencia es que las mujeres empezaron el año con un peso promedio más bajo (lo que es obvio por su contextura). En promedio, ni hombres ni mujeres ganaron o perdieron peso durante el transcurso del semestre. El primer estadístico concluye que no hay evidencia de ningún efecto significativo de la dieta (o cualquier otro factor) sobre el peso de los estudiantes. En particular, no hay evidencia de ningún efecto diferencial sobre ambos sexos, puesto que ningún grupo muestra diferencias sistemáticas.*
+>
+> *El segundo estadístico examina los datos con mayor cuidado. Nota que existe un grupo de hombres y mujeres que empezaron el semestre con el mismo peso. Este grupo estaba compuesto por hombre delgados y mujeres en sobrepeso. Él nota que esos hombres ganaron peso con respecto al promedio y esas mujeres perdieron peso con respecto al promedio. El segundo estadístico concluye que al controlar por el peso inicial, la dieta de la universidad tiene un efecto diferencial positivo en los hombres con respecto a las mujeres. Es evidente que para hombres y mujeres con el mismo peso inicial, en promedio se diferencian puesto que los hombre ganaron más peso, y las mujeres perdieron más peso.*
+
+El siguiente gráfico muestra el razonamiento de ambos estadísticos al enfrentarse al problema. Note que la línea negra describe un recta de 45 grados, los puntos verdes son los datos provenientes de los hombres y los rojos aquellos provenientes de las mujeres
+
+El razonamiento del primer estadístico se centra en la esperanza de las distribuciones. Específicamente en las coordenadas (*x = 60, y = 60*), para las mujeres y (*x = 70, y = 70*) para los hombres, en donde las líneas negra, roja y verde parecen coincidir. El razonamiento del segundo estadístico se limita al continuo inducido por el traslape de los puntos rojos y verdes. Específicamente al plano *x = (60, 70) y = (60, 70)*.
+
+Suponga que tenemos acceso a este conjunto de datos como los muestra la siguiente figura, en donde la primera columna denota el peso inicial de los estudiantes, la segunda columna denota el peso final, la tercera columna describe la diferencia entre pesos y la última define el sexo del estudiante.
+
+Los hallazgos del primer estadístico se obtienen a través de un análisis de regresión simple que, tomando como variable respuesta la diferencia entre pesos, induce un coeficiente de regresión igual a cero para la variable sexo; lo cual indica que no existen diferencias significativas en la diferencia de pesos entre hombres y mujeres.
+
+Los hallazgos del segundo estadístico se obtienen a través de un análisis de covarianza, tomando como variable respuesta el peso final y como covariables el sexo y el peso inicial del individuo. Este método induce un coeficiente de regresión igual 5.98 que implica que existe una diferencia significativa entre el peso final de los individuos, según el sexo.
+
+Para Imbens y Rubin (2015), ambos tienen la razón cuando se trata de describir los datos, aunque ambos carecen de un buen razonamiento a la hora de establecer algún tipo de causalidad entre la dieta de la universidad y la perdida o ganancia de peso en los alumnos. Independientemente de esto a mí me sigue pareciendo más interesante el análisis que surge de la comparación entre los hombres y mujeres que iniciaron con el mismo peso (es decir todos los datos restringidos a *x = (60, 70) y = (60, 70)*.
+
+**Para usted, ¿quién tiene la razón?**

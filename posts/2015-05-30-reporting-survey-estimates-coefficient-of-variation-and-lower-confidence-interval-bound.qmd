@@ -1,0 +1,19 @@
+---
+title: "Reporting survey estimates: coefficient of variation and lower confidence interval bound"
+author: "Andrés Gutiérrez"
+date: "2015-05-30"
+categories:
+  - "Colombia"
+  - "Estadística"
+  - "Stats"
+---
+
+I had already posted something on this sort before (click here) and I want to discuss on something else. In Colombia, for example, some official statistics institutions claim that any survey estimate with an estimated coefficient of variation (CV) greater than 15% is not reliable and, although it is published, the very figure is marked with an alert symbol (maybe an asterisk) that prevent the user on the precision of that estimate.
+
+However, international standards seem to be more flexible when it comes to publication of estimates. For example, the National Center for Education Statistics [allows publishing up to a CV of 50%](https://nces.ed.gov/statprog/2012/) (see standard 5-1-4).
+
+In some fields, attention focuses, not in the CV, but in the confidence interval (CI). This approach requires that lower bound of the CI be at least half the estimate. That makes sense when one realizes that CI may be written as follows:
+
+$$ CI = \theta \pm 1.96 * CV * \theta $$
+
+After some algebra one finds that, when the CV of the estimate is not greater than 25.5%, then the lower bound of the CI is half the estimate. This way, a CV of 50% leads a wider CI, and a CV of 15% leads a narrower and demanding CI. The discussion remains because rules of thumb may have no sense for some estimates as rare proportion events, that may be so small.

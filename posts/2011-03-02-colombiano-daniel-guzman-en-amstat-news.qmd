@@ -1,0 +1,34 @@
+---
+title: "Colombiano Daniel Guzmán en AMSTAT NEWS"
+author: "Andrés Gutiérrez"
+date: "2011-03-02"
+categories:
+  - "Estadística"
+---
+
+Acabo de leer la publicación de Febrero de la American Statistical Association (que entre otras cosas pareciera que sólo publican encuestas de salarios) y me encontré en la página 32 con un artículo escrito por Ann Harrison, en donde se reconoce la labor del estadístico colombiano Daniel Guzmán, quien al parecer ha desarrollado una metodología de muestreo para testificar en el juicio de algunos policias incriminados de atentar contra los derechos humanos en Guatemala.
+
+Congratulaciones a Daniel y nuestros mejores deseos desde su tierra, Colombia.
+
+> #### **Daniel Guzmán**
+>
+>
+> ##### *Submitted by Ann Harrison*
+>
+>
+> In October 2010, Colombian statistician Daniel Guzmán took the witness stand to present expert testimony in the case of Edgar Fernando García, a 26-year-old Guatemalan union leader who vanished in 1984. Guzmán, who is a member of the [Benetech Human Rights Data Analysis Group (HRDAG)](http://www.hrdag.org/), was asked by the Guatemalan attorney general to submit his analysis of records in the Guatemalan National Police Archive, which documented García's detention by police. García was one of tens of thousands of Guatemalans who disappeared during the country's 36 years of armed internal conflict.
+>
+>
+> Guzmán's testimony, given against two former police officers on trial for their alleged role in García's disappearance, was based on quantitative results from HRDAG's four-year analysis of the Guatemalan National Police Archive. Guzmán designed a coding strategy to catalog the contents of the archive. ASA advisers Paul Zador and Gary Shapiro helped Guzmán design a sampling protocol. Because the archive was too large and disorganized to be sampled directly, HRDAG analysts used a topographical sampling frame and multistaged random sample.
+>
+>
+> After three years of coding key variables from random samples of archive documents, Guzmán and his colleagues were able to calculate the percentage of documents known by different police units. Their findings helped support arguments by prosecutors that relatively high-level National Police officers were aware of the planning, design, and supervision of the type of operations that resulted in García's disappearance.
+>
+>
+> Guzmán also calculated estimates comparing the 667 documents pertaining to the García case with the representative sample of all the documents in the archive. This comparison showed that the units responsible for direction and coordination of National Police policy were acquainted with proportionately more than twice the number of documents related to the García case than with the total of all documents in the archive. By calculating the percentage of documents known by different police command structures, these findings helped analysts reach conclusions about relationships among Guatemalan security forces and communications between the army and police.
+>
+>
+> Ten days after the start of the García trial, a tribunal of the Guatemalan Supreme Court found the two police officers guilty of forced disappearance and sentenced them each to a maximum term of 40 years in prison.
+>
+>
+> Guzmán's testimony supported prosecutors' arguments about how the officers' actions against García took place within the context of National Police policies. This testimony also helped the Guatemalan judiciary and the public understand how statistical methods provide an objective approach to understanding massive collections of human rights data.

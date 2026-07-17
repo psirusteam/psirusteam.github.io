@@ -1,0 +1,64 @@
+---
+title: "Proper Inference in Public Policy Evaluation"
+author: "Andrés Gutiérrez"
+date: "2014-11-15"
+categories:
+  - "Estadística"
+  - "R"
+  - "Stats"
+---
+
+I know, I know... Did you miss me alot? I did miss you.
+
+This time I am going to write about a the role of the statistician in Public Policy evaluation. This have captured my attention during the last four years. This is what I do in my consulting at DNP. It is not easy but it I am very passionate to learn from economists and perform new things.
+
+In my class of Public Policy Evaluation at USTA I am trying to transfer my experience (as a statistician) in this field to my students. It is not easy because: 1) I am not an economist and 2) I am survey methodologist. In one hand, the economist has a lot of training about public policy theory. On the other hand, as a **survey** statistician, I am always thinking about avoiding bias by considering the (always complex) sampling design.
+
+At the end, it is a good opportunity to mix knowledge even though make the class ready takes me a lot of time. Economists view the world from the econometrics perspective: simple random samples and a lot of useful stuff - discontinuity regression, instrumental variables, double differences, structural equations, etc. But, I have to turn this perspective over to complex sampling, complex methodologies and complex inference.
+
+For example: in public policy evaluation, sometimes it is useful to evaluate the impact of an intervention. To do so, we select a complex sample (involving stratification, unequal weights and clustering). If we perform a regression, we need to take into account (and verify) the assumptions of the regression (from the causal perspective: endogenous outcomes, local treatment effects, counterfactuals, etc.), but at the same time we need to be rigorous and judicious about considering the complex survey design. This is important and there is little documentation about that. It is important because standard errors, that (after all) are the figures that decide over the impact of the intervention, are sometimes underestimated (biasedly, of course) when ignoring the complex sample design.
+
+It goes further than hypothesis testing or estimation. You have to compute proper sampling sizes to perform that regression. In one hand, you must save your resources ($$$); on the other, you do not want to waste your money when considering small sample size and then realising that your inference is neither robust nor consistent because your standard errors are terribly high. In addition, you should consider attrition, compliers, defiers, nonresponse, and design effects to give a rough estimate of the sample size.
+
+Some researchers argue that when running regression models, you should not consider the sampling weights. Ok, that could be true under the perspective of Little and Rubin that consider intricate methodologies into the estimation stage. But, when estimating model parameters, ignoring the complex sample (as if the sample were SI) is not a good idea. Consider the following example:
+
+```r
+library(survey)library(TeachingSampling)library(sqldf)
+
+data(BigLucy)attach(BigLucy)
+
+# Level is the stratifying variablesummary(Level)# Defines the size of each stratum
+N1<-summary(Level)[[1]]
+N2<-summary(Level)[[2]]
+N3<-summary(Level)[[3]]
+N1;N2;N3
+Nh <-c(N1,N2,N3)
+N <-sum(Nh)
+
+# Defines the sample size at each stratum
+n1<-500
+n2<-500
+n3<-500
+nh<-c(n1,n2,n3)
+
+# Draws a stratified sample
+sam <- S. STSI(Level, Nh, nh)
+
+# The information about the units in the sample is stored in an object called data
+datas <- BigLucy[sam,]
+cons_Nh = sqldf("select Level, count(*) as 'Nh' from BigLucy group by Level")
+datasample = merge(datas,cons_Nh,by="Level")
+datasample = cbind(N, datasample)
+
+####################################### Specifying the sampling design #####################################
+
+STSI  = svydesign(ids=~1,strata=~Level,fpc = ~ Nh,data=datasample)
+
+###################### Linear models ####################
+
+# The unknown parameterssummary(lm(Income ~1+ Taxes,data = BigLucy))$coeff
+# Unbiased estimation of parameters - Considering the complex sampling designsummary(svyglm(Income ~1+ Taxes,design = STSI,data = datasample))$coeff
+# Biased estimation of parameters - Avoiding the complex sampling designsummary(lm(Income ~1+ Taxes,data = datasample))$coeff
+```
+
+Are you convinced now? Big mistake: Avoid the complex sampling design.

@@ -1,0 +1,26 @@
+---
+title: "Mi nuevo libro... Teoría Estadística Aplicaciones y Métodos (TEAM)"
+author: "Andrés Gutiérrez"
+date: "2010-12-13"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+[Para conocer más acerca de este libro haga clic acá](../books.qmd)
+
+Este libro conduce al lector por el apasionante viaje de la práctica estadística la cual ciertamente debe estar fundamentada en una rigurosidad teórica bien definida. El análisis de datos no empieza con un modelo de probabilidad. El análisis de datos empieza con los mismos datos; en la vida práctica el profesional debe cuestionarse acerca de la naturaleza de los datos: ¿qué rango tienen? ¿cuál es la fuente de los datos? ¿cómo se obtuvieron? En la vida real no sucede que el profesional sea contratado para analizar una muestra aleatoria que proviene de una distribución continua o discreta. No, en la vida real, el profesional decide qué tipo de distribución se ajusta mejor y sobre ello utiliza las mejores herramientas para inferir y convertir su análisis en información valiosa. Este texto tiene ese enfoque y la particularidad de poner en contexto al lector y mediante ejemplos prácticos afianzar la teoría e introducir al lector en el interesante camino de la programación estadística.
+
+Hace un tiempo, un colega, a quien estimo y respeto, me preguntó un día: Andrés, no veo cuál es la relevancia de un libro con los contenidos en TEAM, aparte de que esté en español. En esa ocasión nuestra respuesta fue:
+
+La relevancia radica en que está escrito en español, tiene muchos ejemplos en R y está escrito para personas que deseen aplicar la estadística matemática de manera práctica. Aunque existen bastantes libros sobre el tema, hay pocos en nuestro idioma y más aún, hay libros que no llenan el vacío entre el estadístico teórico y el profesional que quiere aplicar los métodos estadísticos en el campo de las ciencias sociales. TEAM está escrito de una manera pragmática pero muy interesante. Deja de lado muchos supuestos y permite que el estudiante se plantee situaciones y piense no sólo en la escogencia del mejor estimador o en la demostración de un resultado, sino también en la parte práctica y el día a día del estadístico en el campo laboral.
+
+Además,
+
+En muchos libros de inferencia estadística basta con encontrar estimadores para el parámetro de la distribución de donde vienen los datos. Por ejemplo, en la Poisson muestran que theta se estima con bar{X}, pero hay otras cantidades muy interesantes para estimar, como por ejemplo suponga que se observa valores que denotan (algo típico) número de clientes que llegan a una oficina entre determinadas horas, y se utiliza la distribución poisson, entonces no sólo podemos estimar el número promedio de clientes, sino que podemos usar la muestra observada para estimar (por ejemplo) la probabilidad de que no llegue ningún cliente durante ese rango de tiempo, más aún, podemos encontrar un intervalo de confianza para esta probabilidad.
+
+Este es uno de los ejemplos que tiene el libro y muestra el enfoque práctico que hemos adoptado como estrategia de enseñanza.
+
+A continuación la contra-carátula
+
+Y las solapas del libro

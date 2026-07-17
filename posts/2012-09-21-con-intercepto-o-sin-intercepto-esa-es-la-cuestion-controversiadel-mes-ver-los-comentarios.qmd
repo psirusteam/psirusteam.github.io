@@ -1,0 +1,53 @@
+---
+title: "¿Con intercepto o sin intercepto? ¡Esa es la cuestión! (controversiadel mes... ver los comentarios)"
+author: "Andrés Gutiérrez"
+date: "2012-09-21"
+categories:
+  - "Estadística"
+---
+
+Hace varios meses he tenido que lidiar con la creación de modelos en diferentes disciplinas. Si bien cada modelo requiere que el investigador haga una contextualización adecuada de la problemática que aborda, lo cual implica que ningún modelo será igual a otro, existe una pregunta común que el investigador debe hacerse antes de la puesta en marcha del modelo.
+
+**¿Ajusto el modelo con o sin intercepto?**
+
+En la búsqueda del mejor ajuste, el investigador se ve tentado muchas veces a ejecutar procedimientos automatizados de selección de variables (stepwise, forward, backward) y muchas veces se escoge el mejor modelo; de tal manera que el coeficiente de determinación (o el AIC, o el DIC) sea el más alto. Llámenme anticuado y retrogrado (o incluso vejestorio) pero yo siempre he sido un poco reticente de meter los datos al software y esperar el mejor modelo ([ver diseño estadístico](https://web.archive.org/web/20130701015139/http://www.gutierrezandres.com/archives/2141)).
+
+Volviendo al objeto de esta entrada quisiera resaltar la importancia de la inclusión/omisión del intercepto en un modelo. Para esto voy a tener en cuenta los siguientes casos
+
+**Si la variable respuesta *Y* es continua: **
+
+- La variable explicativa *X* también es continua: este es el caso clásico de una regresión lineal, donde al incluir el intercepto, estamos asumiendo que cuando *X* toma el valor 0, el valor de Y no es 0, y corresponde a la estimación del intercepto. Mientas que al excluir el intercepto, estamos exigiendo que el valor de Y sea 0 cuando *X* sea 0. De esta forma la inclusión o exclusión del intercepto, en muchos casos, depende de la naturaleza y la interpretación de las variables.
+
+- Cuando la variable explicativa *X* es categórica, y sin pérdida de generalidad al asumimos como dicotómica (de dos niveles): en este caso, al ajustar una línea de regresión incluyendo el intercepto, se crea una variable *Dummy* que representa el primer nivel de la variable *X*, y el modelo queda definido como
+
+$ Y_i=\beta_0+\beta_1 D1_i+\E_i $
+
+Donde *D1* toma el valor 1 para los individuos que se encuentran en el primer nivel de*X* y toma el valor 0 para los demás individuos. En este caso, la interpretación de este modelo es como sigue: Para los individuos del nivel 1 de *X*, la esperanza de *Y* está dada por $\beta_0+\beta_1$. Para los individuos del nivel 2 de *X*, la esperanza de *Y* está dada por $\beta_0$. De esta forma $\beta_1$ representa la diferencia en los dos niveles, y si la estimación resulta significativa implica que la variable *X* sí tiene una influencia significativa en *Y*.
+
+Por otro lado, si se ajusta la regresión sin el intercepto, se crean dos variables Dummies representando los niveles de *X*, y el modelo queda formulado como
+
+$ Y_i=\beta_0D1_i+\beta_1D2_i+\E_i $
+
+En este modelo tenemos que: para los individuos del primer nivel de *X*, la esperanza de *Y* está dada por $\beta_0$ y para los individuos del segundo nivel de *X*, la esperanza de *Y* está dada por $\beta_1$. De esta forma, aun cuando la estimación de $\beta_0$ o de $\beta_1$ resulte significativa, no implica que *X* influye en *Y*. Lo único que podríamos afirmar en este modelo es que los dos parámetros son significativamente distintos de cero. Por lo tanto si se desea establecer si *X* influye en *Y*, entonces omitir el intercepto no resulta ser una buena opción.
+
+**Si la variable respuesta Y es discreta: **
+
+- Si la variable respuesta *Y* es continua: en este caso, el modelo que se ajusta correspondería (en general) a una regresión *logit*, modelando las probabilidades de éxito $\pi_i $ en términos de *X* de la forma
+
+$ logit(\pi_i)=\beta_0+\beta_1X_i $
+
+Si el modelo incluye intercepto, la estimación de $\beta_0$ se puede usar para estimar la probabilidad de éxito cuando *X* toma el valor 0, puesto que $\pi_i=\frac{\exp{\beta_0}}{1+\exp{\beta_0}}$. Por otro lado, si la estimación de $\beta_1$ no resulta significativa, implica que los valores de *X* no influyen en las probabilidades de éxito, y estas serán constantes; si la estimación de $\beta_1$ es significativa con un valor positivo (negativo), indica que el aumento de la variable X contribuye a obtener una mayor (menor) probabilidad de éxito, y esta interpretación se mantiene cuando la regresión se ajusta sin el intercepto.
+
+- Cuando la variable explicativa es categórica que sin pérdida de generalidad, se asume como dicotómica (de dos niveles): en este caso, al ajustar una línea de regresión incluyendo el intercepto, se crea una variable Dummy que representa el primer nivel de la variable *X*, y el modelo queda definido como
+
+$ logit(\pi_i)=\beta_0+\beta_1D1_i $
+
+La interpretación de este modelo es como sigue: para los individuos del primer nivel de X, $ logit(\pi_i)= \beta_0+\beta_1$ y para los individuos del segundo de $ X $, $ logit(\pi_i)= \beta_0$. De esta forma, si la estimación de $\beta_1$ es significativa, indica que $ logit(\pi_i)$ es diferente en los niveles de la variable *X*, y podemos concluir que la variable *X* sí tiene una influencia significativa en *Y*.
+
+Por otro lado, si se ajusta la regresión sin el intercepto, se crean dos variables Dummies representando los niveles de *X*, y el modelo queda formulado como
+
+$ logit(\pi_i) =\beta_0D1_i+\beta_1D2_i $
+
+Para este modelo, las estimaciones de $\beta_0$ y $\beta_1$ representan los valores de $ logit(\pi_i)$ en los dos niveles de *X*. De esta forma, la significación de la estimación de $\beta_1$ no da ninguna información sobre la influencia de *X* en *Y*.
+
+En resumen, podemos concluir que cuando la variable explicativa es continua, la interpretación de $\beta_1$ no varía si se incluye o se excluye el intercepto, mientras que cuando la variable explicativa es discreta, debemos tener en cuenta si el modelo incluye o no el intercepto, puesto que la interpretación de $\beta_1$ cambia. Además, si lo que se quiere es conocer la influencia de X en Y, es necesario incluir el intercepto. Lo anterior, sólo se logra si se construye un modelo con intercepto, y se dejan de lado (un poco, aunque sea un poco) los procedimiento automatizados que ajustan el mejor modelo, en términos de la bondad del ajuste.

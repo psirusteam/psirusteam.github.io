@@ -1,0 +1,11 @@
+---
+title: "Modelos bayesianos multiparamétricos"
+author: "Andrés Gutiérrez"
+date: "2009-08-26"
+categories:
+  - "Estadística"
+---
+
+[Haciendo clic acá](http://predictive.files.wordpress.com/2009/08/multiparametricos.pdf) encontrará un exhaustivo recuento de modelos (sin covariables) bayesianos que involucran la inferencia de varios parámetros simultáneamente. En la primera parte se introduce el modelo multinomial, además del modelo normal univariado con media y varianza desconocida se aborda el modelo normal multivariante con vector de medias desconocido, matriz de varianzas desconocida y/o ambos parámetros desconocidos.
+
+Esta exposición se realizó en el marco del seminario informal de estadística bayesiana que se adelanta en la Universidad Nacional de Colombia - Sede Bogotá.

@@ -1,0 +1,15 @@
+---
+title: "Muestras WEB"
+author: "Andrés Gutiérrez"
+date: "2009-11-18"
+categories:
+  - "Estadística"
+---
+
+Una colega escribe lo siguiente:
+
+Desde el muestreo conoces ¿qué se ha trabajado en relación con evaluación de la calidad de encuestas utilizando como medio de recolección de datos recursos Web?
+
+Mi respuesta:
+
+Conozco poco de muestras WEB, si estamos hablando de las famosas *web poll* pues desafortunadamente es un tema áspero para los teóricos puesto que esta tendencia se ha extendido bastante en la última década y, según dicen, no tiene la suficiente rigurosidad en términos de diseño estadístico. Sin embargo, si estamos hablando de encuestas probabilísticas que utilizan la WEB para levantar la información, te recomiendo darle una mirada al nuevo journal **Survey Research Methods**. Ésta es una publicación que ha tenido bastante trascendencia y en términos de calidad en este tipo de encuestas el volumen dos número uno [trae un excelente artículo](http://w4.ub.uni-konstanz.de/srm/article/view/598/1296) sobre el diseño y calidad de encuestas WEB. ¿Alguien más sabe de esto?

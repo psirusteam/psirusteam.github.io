@@ -1,0 +1,23 @@
+---
+title: "Top Posts"
+author: "Andrés Gutiérrez"
+date: "2010-06-25"
+categories:
+  - "Estadística"
+---
+
+Estamos en mitad de año, es tiempo de recordar y proyectarse hacia el futuro. Es tiempo de aprender de los errores y afianzar las cualidades que nos han llevado hasta acá en la carrera por alcanzar nuestras metas. A continuación algunas de las entradas más populares y más leídas del blog Apuntes de Estadística.
+
+- [Seis simples técnicas para la presentación de datos](https://web.archive.org/web/20101101094609/http://predictive.wordpress.com/2008/05/03/seis-simples-tecnicas-para-la-presentacion-de-datos/)
+
+- [Modelos estadísticos](https://web.archive.org/web/20101101165821/http://predictive.wordpress.com/2008/06/22/modelos-estadisticos-2/)
+
+- [Acerca de la estadística Bayesiana](https://web.archive.org/web/20090329224654/http://predictive.wordpress.com/2008/04/08/no-rotundo-a-la-estadistica-bayesiana/)
+
+- [Métodos multivariados en Excel](https://web.archive.org/web/20101101165513/http://predictive.wordpress.com/2008/03/31/metodos-multivariados-en-excel/)
+
+- [Muestras representativas](https://web.archive.org/web/20101205055928/http://predictive.wordpress.com/2007/09/03/muestras-representativas/)
+
+- [Tecnología en estadística](https://web.archive.org/web/20090213151141/http://predictive.wordpress.com/2008/06/07/tecnologia-en-estadistica/)
+
+- [P valores aleatorios](https://web.archive.org/web/20091106102040/http://predictive.wordpress.com/2008/08/19/p-valores-aleatorios/)

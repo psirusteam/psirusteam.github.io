@@ -1,0 +1,27 @@
+---
+title: "¡Que no y que no! No hay poblaciones infinitas"
+author: "Andrés Gutiérrez"
+date: "2011-06-17"
+categories:
+  - "Estadística"
+---
+
+- Después de 40, la población se considera como infinita.
+
+Esta es la excusa perfecta a la que convergen los profesionales de todas las disciplinas cuando quieren defender sus ideas del tamaño de muestra o simplemente cuando su impertinencia hace que hablen más de la cuenta. Lo cierto es que esa regla de los cuarenta y las poblaciones infinitas se hace muy difícil de entender. Tal vez yo no sea demasiado avezado para comprender tal "teorema" del muestreo, pero a continuación expondré mis argumentos y con eso me daré por bien servido, porque será un medio para desfogar mi ira, no contra mis colegas de otras disciplinas, sino contra la idiosincrasia impertinente que domina estas latitudes.
+
+Un buen ejemplo del dominio de este arte, diría yo oscura, de dominar el infinito, lo viví hace poco en una reunión en la que se negociaba la realización de un estudio con una firma encuestadora de renombre nacional. Uno de los presentes hizo un comentario que me hizo sentir todo un neófito en temas estadísticos. Se trataba de un profesional no estadístico, que de verdad admiro mucho por sus características administrativas, que exponía que cuando él estaba en la universidad, cursando el pregrado, tomó una clase de probabilidad en donde el profesor hacía referencia a la ley fuerte de los grandes números. Después de argumentar lo anterior, afirmó que el tamaño de muestra en el estudio en cuestión era adecuado porque después de cierto número de encuestas la población se consideraba infinita.
+
+Otro ejemplo lo viví en el marco de una asesoría que realicé a una propuesta técnica en la que me disgustaba el tamaño de muestra que habían propuesto. Yo sugerí que debían aumentar el tamaño de muestra para que se alcanzaran los errores mínimos de muestreo. Craso error… Acto seguido, me citaron a una reunión a la que asistió hasta el gerente de la compañía para indagar más acerca de mi recomendación. En esa reunión, uno de los funcionarios de la firma, con marcador en mano, me que no se debía aumentar el tamaño de muestra, puesto que la población era grande y esto era equivalente a que la población pudiera ser considerada como infinita. Por tanto, el tamaño de muestra que ellos proponían no debía cambiar. Lo más valioso, en ese proceso de aprendizaje, ocurrió cuando el funcionario dibujó en el tablero una curva y me explicó el concepto de asíntota.
+
+En primer lugar, y esto lo digo en mis clases, yo jamás he trabajado en estudios o investigaciones que involucren poblaciones infinitas. Realmente no creo que ninguno de mis colegas estadísticos lo haya hecho alguna vez. De hecho, si alguna vez me ofrecen trabajar en alguna investigación que tenga como objeto una población infinita, yo declinaría inmediatamente la oferta, simplemente porque el infinito es algo que yo no entiendo aún, incluso cuando algunos colegas estadísticos y no estadísticos parecen dominarlo con excelencia.
+
+Mi segundo argumento puntual es el siguiente: no existen poblaciones infinitas. O. K., existen las estrellas, los átomos y demás. Pero ese tipo de poblaciones no son de interés en estudios sociales, o de mercadeo, que es donde se utiliza el muestreo. Como ese tipo de poblaciones no es de interés, entonces no me gusta que me salgan con argumentos traídos de los cabellos.
+
+Tercero, aunque la teoría de probabilidad es la base del muestreo, no es posible afirmar que las poblaciones son infinitas. En realidad, si después de cuarenta, todas las poblaciones son infinitas, entonces todas las estrategias de muestreo serían iguales, todos los tamaños de muestra serían iguales y todos los errores de muestreo serían los mismos. En estudios por muestreo, el hecho de que la población sea grande, no garantiza nada.
+
+Cuarto, la inferencia que nos enseñaron en el pregrado, no es apta para ningún diseño de muestreo, a excepción del diseño de muestreo aleatorio simple con reemplazo. Espero que esto quede claro, si usted o sus clientes realizan una muestra, la inferencia que se debe utilizar es diferente a la que nos han enseñado, y esto se debe tener en cuenta cuando se realizan los diseños del tamaño de muestra.
+
+Quinto, no es cierto que entre más muestra haya, menos error de muestreo existe. Lo anterior, si bien es válido para estrategias de muestreo aleatorias simples, no es necesariamente lo que ocurre cuando se utilizan diseños de muestreo complejos. Por ejemplo, si se utiliza un diseño de muestreo de tamaño de muestra aleatorio, como Bernoulli o Poisson, así se realice un censo, va a existir error de muestreo. Por lo tanto, la asíntota en estos casos es simplemente un argumento que no aplica en nada.
+
+Seis, que por favor, por misericordia, el que no sepa de muestreo que no se meta, que no opine y que no se inmiscuya en asuntos que no le conciernen. Yo, siendo estadístico, jamás opinaría acerca de un modelo de riesgo o de un modelo de series de tiempo. Así de sencillo, un curso en pregrado no es suficiente para licitar, no es suficiente para auditar y no es suficiente para siquiera pretender dar una estimación del tamaño de muestra en un estudio. Si se quiere ser efectivo, hay que especializarse en el tema. Afortunadamente, cada vez son más los muchachos que se interesan por el muestreo. Alguien me dijo que hay más de sesenta alumnos en la UNAL-Bogotá en muestreo II y en la USTA-Bogotá la cifra, si bien no es tan alta, no es nada despreciable y es una de las electivas más pedidas.

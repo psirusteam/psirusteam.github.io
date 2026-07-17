@@ -1,0 +1,17 @@
+---
+title: "¿Datos faltantes? Utilice la imputación múltiple - Caso: regresión simple"
+author: "Andrés Gutiérrez"
+date: "2015-10-25"
+categories:
+  - "Estadística"
+  - "IRT"
+  - "Stats"
+---
+
+Una característica común en cualquier análisis estadístico es la aparición de datos faltantes después de la recolección de la información. Es bien sabido que lo mejor que el investigador puede hacer para palear este inconveniente es prevenirlo desde el diseño del estudio. Sin embargo, en caso de que aparezcan, lo peor que se puede hacer es ignorarlo.
+
+Por ejemplo, al suponer un modelo de regresión simple, cuando se ignoran los datos faltantes, las imputaciones naturales (pero ingenuas) están siempre sobre la línea de regresión. Esto causa un problema muy grave: la subestimación de la varianza. Y es que, no tener en cuenta la naturaleza estocástica de los valores imputados arroja estimaciones de la varianza mucho menores. Esto puede ser uno de los errores más graves que un estadístico puede cometer, puesto que afecta la cobertura nominal de los intervalos de confianza y a su vez influye en las pruebas de hipótesis y en el cálculo de los p-valores. El siguiente gráfico ilustra muy bien esta situación.
+
+Rubin propuso en 1987 la técnica de imputación múltiple. Básicamente se trata de una metodología que introduce la naturaleza estocástica de las variables que se van a imputar. Esta técnica supone que en vez de utilizar la esperanza basada en un modelo, la imputación se basa en valores generados desde el modelo. Nótese que el siguiente gráfico muestra que los valores imputados siguen un comportamiento aleatorio y no determinístico.
+
+La principal cualidad de esta técnica es que arroja estimaciones correctas de los errores estándar. Por ejemplo, para un modelo de regresión simple, [el siguiente documento ilustra cómo ejecutar la técnica utilizando funciones en R](http://rpubs.com/hagutierrezro/121503).

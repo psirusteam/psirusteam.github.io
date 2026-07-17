@@ -1,0 +1,12 @@
+---
+title: "¿Cómo hacemos el #PredictiveCOL?"
+author: "Andrés Gutiérrez"
+date: "2014-05-09"
+categories:
+  - "Colombia"
+  - "Estadística"
+---
+
+[SoundCloud](https://api.soundcloud.com/tracks/148751814)
+
+En el programa de la Facultad de Estadística, presentamos nuestro modelo predictivo para las elecciones presidenciales en Colombia (primera vuelta).

@@ -1,0 +1,20 @@
+---
+title: "Regression to the mean (or at the end, people are not as smart as you could expect)"
+author: "Andrés Gutiérrez"
+date: "2017-01-28"
+categories:
+  - "Colombia"
+  - "Education"
+  - "Estadística"
+  - "Teaching"
+---
+
+Francis Galton very cleverly coined the term "regression to (or towards) the mean" meaning that if a variable is shown extreme in a first measurement, then the following observed values of that very variable will tend to get closer to the average of its distribution. The classical example is height: a tall child will have (on average) parents less tall than himself. Moreover, extremely small parents tend to have children who are smaller than average, but in both cases, the children tend to be closer to the mean than were their parents (Senn, 2011).
+
+Ok, this story should be widely known by the readers of this blog. However, I want to put forward another point of view. This is from Rolf Tarrach (former president of Luxemburg University) who has written a book on logical reasoning entitled. He claims that the regression to the mean is a phenomenon that occurs not only in body measuring but also in cognitive measuring. That is: smart parents will tend to have children who are not as smart as expected.
+
+So if you consider yourself as an intelligent person and you have decided to share your life with a smart mate, it is very likely that your children won't be smarter than you two. So, do not expect your children to be geniuses. That fact goes against the common idea that insists in requesting to children of smart parents to be even more intelligent. Of course, there are some exemptions such as the Bach family or the Bernoulli family. But, those are isolated deviations from the normality of real life.
+
+I want to finish with this story about mathematician Bernard Shaw and dancer Isadora Duncan. She told him: "Would it not be wonderful if we could have a child who had your brains and my beauty?" He replied: "Yes, but suppose the child had your brains and my beauty!"
+
+PS: About geniuses, Koenker (1998) claims that Galton not only managed to invent Regression in one plot but also a bivariate kernel density estimation.

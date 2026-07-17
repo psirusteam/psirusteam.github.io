@@ -1,0 +1,25 @@
+---
+title: "Convergencia e inferencia en métodos MCMC"
+author: "Andrés Gutiérrez"
+date: "2010-04-27"
+categories:
+  - "Estadística"
+---
+
+[En este documento inédito](http://predictive.files.wordpress.com/2010/04/gelmanmcmcchapter4.pdf) del *Handbook of Markov Chain Monte Carlo*, Andrew Gelman y Kenneth Shirley resumen la manera de realizar inferencia estadística mediante simulación y diagnosticar la convergencia de las cadenas. Gelman tiene la capacidad envidiable de escribir claro y entretener al mismo tiempo. En un área tan compleja como los métodos MCMC, esta lectura es sencilla, agradable, clara y no utiliza ninguna fórmula matemática compleja.
+
+En general, al construir un algoritmo que genere valores de una cadena de Markov ellos recomiendan lo siguiente:
+
+1. Simular tres o más cadenas de forma paralela. Los valores iniciales de cada cadena deben estar dispersos entre sí.
+
+2. Comprobar la convergencia de la cadena descartando la primera mitad de los valores generados en cada cadena. Esta etapa se conoce como *burning stage*.
+
+3. Cuando las cadenas converjan, mezclar los tres conjuntos de valores generados por las cadenas. Esto garantiza, en primera instancia, que las cadenas no estén auto-correlacionadas.
+
+4. Además de realizar esta mezcla, es siempre recomendable descartar valores intermedios. Esta etapa se conoce como *thining stage*. Al final se recomienda almacenar sólo 1000 valores simulados; sin embargo, este proceso depende del contexto y del problema de inferencia.
+
+5. Calibrar el algoritmo de muestreo si la convergencia no se presenta rápidamente. Por ejemplo, en un algoritmo de Metropolis-Hastings, escoger una distribución *jumping* más acorde con la distribución de la cual se desea simular. En inferencia bayesiana lo anterior se traduciría en calibrar la distribución *jumping*para que su forma estructural sea más parecida a la distribución a posteriori.
+
+6. Con base en lo anterior, es bueno comparar y contrastar los resultados con modelos simples que permitan examinar posibles discrepancias y corregir posibles errores de programación.
+
+En términos de inferencia, el documento aclara que, aunque la tarea más común en estadística bayesiana (una de las corrientes más directamente beneficiada de los métodos MCMC) es realizar inferencias acerca de un parámetro $\theta $, también es posible realizar cálculos acerca de los momentos del parámetro. Por ejemplo su esperanza. Estas dos opciones tienen tratamientos muy diferentes en términos de la cantidad de simulaciones requeridas para inferir. Por ejemplo, si el objetivo es inferir acerca de $\theta $, basta con unas cuantas simulaciones que se resumen en un promedio y una desviación estándar. Por otro lado, si el objetivo es inferir acerca de $\E(\theta)$, se requieren más simulaciones para obtener una precisión deseada. Además, Gelman recomienda que, una vez terminado el proceso de *burning* y *thining*, se dividan los valores en *k* grupos y una estimación de $\E(\theta)$ será la gran media de las medias muestrales de cada grupo y el error estándar será la desviación estándar dividida en $\sqrt{k}$.

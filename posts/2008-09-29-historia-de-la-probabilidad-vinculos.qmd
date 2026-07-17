@@ -1,0 +1,57 @@
+---
+title: "Historia de la probabilidad (Vínculos)"
+author: "Andrés Gutiérrez"
+date: "2008-09-29"
+categories:
+  - "Estadística"
+---
+
+Empezamos una nueva ronda de historía de la estadística. En particular, profundizaremos en la historia de la probabilidad. En este primer post, quiero exponer los vínculos que nos facilitarán la travesía por esta aventura histórica. Para mayor información on-line, los siguientes vínculos serán de mucha ayuda.
+
+- Usos recientes: [Palabras](http://members.aol.com/jeff570/mathword.html) y [Símbolos](http://members.aol.com/jeff570/stat.html) detallados (particularmente referencias específicas) sobre tópicos de individuos que han contribuido a la probabilidad. (El sitio de palabras está organizado alfabéticamente. Clic [acá](http://www.economics.soton.ac.uk/staff/aldrich/Probability%20Earliest%20Uses.htm) para una lista de entradas.
+
+- [MacTutor](https://mathshistory.st-andrews.ac.uk//): para información biográfica completa sobre los principales personajes de la probabilidad. Estas biografías van más allá y cubren el trabajo de personajes no relacionados con probabilidad y estadística. Clic [acá](https://mathshistory.st-andrews.ac.uk/HistTopics/Statistics/) para accede al índice de artículos estadísticos del sitio.
+
+- ASA: [Estadísticos en la historia](http://www.amstat.org/about/statisticians/index.cfm?fuseaction=bios) para biografías de personajes recientes. Principalmente estadísticos americanos.
+
+- [Vida y obra de estadísticos](http://www.york.ac.uk/depts/maths/histstat/lifework.htm) (parte del sitio [Materiales para la historia de la estadística](http://www.york.ac.uk/depts/maths/histstat/welcome.htm)).
+
+- Oscar Sheynin: [Theoría de la Probabilidad: Un ensayo histórico](http://www.sheynin.de/download/double.pdf). Cuenta los desarrollos que han tenido lugar desde el principio del siglo XX.
+
+- [Isaac Todhunter](https://mathshistory.st-andrews.ac.uk/Biographies/Todhunter/): Un clásico desde 1865 [Una historia de la teor{ia de probabilidad matemática: desde Pascal hasta Laplace](http://gallica.bnf.fr/scripts/ConsultationTout.exe? O=N062103). Comentarios detallados sobre las contribuciones desde 1650-1800. El cubrimiento es extraodinario y las entradas aún hoy son muy interesantes.
+
+- El proyecto de Genealogía de las Matemáticas: Su abreviación en inglés es [MGP](http://www.genealogy.math.ndsu.nodak.edu/), el cual es útil para hacer seguimiento a la escuela moderna.
+
+- [Wikipedia](http://en.wikipedia.org/wiki/Main_Page): para biografías adicionales. Contiene artículos interesantes.
+
+Las próximas entradas acerca de la historia de la probabilidad contienen referencias de los siguientes libros:
+
+- Ian Hacking. The Emergence of Probability (La emergencia de la probabilidad), Cambridge, Cambridge University Press 1975. ([ver contenidos](http://www.amazon.com/gp/reader/0521318033/ref=sib_rdr_toc/102-2604076-2684105?%5Fencoding=UTF8&p=S006#reader-page)).
+
+- Stephen M Stigler. The History of Statistics: The Measurement of Uncertainty before 1900 (Historia de la estadística: La medida de incertidumbre antes de 1900), Cambridge, MA: Harvard University Press 1986. ([ver contenidos + bibliografía](https://web.archive.org/web/20081026123821/http://myriam.ulpgc.es/722576.htm)).
+
+- Anders Hald. A History of Probability and Statistics and their applications before 1750 (Historía de la probabilidad y estadística antes de 1750), New York: Wiley 1990. ([ver contenidos](http://www.amazon.com/gp/reader/0471471291/ref=sib_dp_pt/102-2604076-2684105#reader-link)).
+
+- Anders Hald. A History of Mathematical Statistics from 1750 to 1930 (Historia de la estadística matemática desde 1750 hasta 1930), New York: Wiley 1998. ([ver contenidos + bibliografía](https://web.archive.org/web/20081025175134/http://myriam.ulpgc.es/722468.htm)).
+
+- Jan von Plato. Creating Modern Probability (Creación de la probabilidad moderna), Cambridge: Cambridge University Press, 1994. ([ver contenidos](http://www.amazon.com/gp/reader/0521597358/ref=sib_rdr_toc/102-2604076-2684105?%5Fencoding=UTF8&p=S006#reader-page)).
+
+Para más información sobre la literatura de la historía de la estadística en la web, consultar los siguientes vículos:
+
+- [Retratos de estadísticos](http://www.york.ac.uk/depts/maths/histstat/people/welcome.htm) sobre el sitio de [Materiales para la historia de la estadística](http://www.york.ac.uk/depts/maths/histstat/welcome.htm).
+
+- [Desarrollo reciente de la probabilidad matemática](http://www.glennshafer.com/assets/downloads/article50.pdf). Una breve reseña desde los tiempos de Laplace por Glenn Shafer.
+
+- [Fuentes en la historia de la probabilidad y la estadística](https://web.archive.org/web/20210412202850/http://cerebro.xu.edu/math/Sources/) por Richard J. Pulskamp.
+
+- [Historias de los estadísticos](http://www.umass.edu/wsp/statistics/tales/). Viñetas por E. Bruce Brooks.
+
+- [Historia de la estadística y probabilidad](http://www.mrs.umn.edu/~sungurea/introstat/history/indexhistory.shtml) 18 biografías cortas por la Universidad de Minnesota Morris.
+
+- [Probabilidad y estadística, Ideas en el salón de clase: Lecciones de historia](http://www.stat.auckland.ac.nz/~iase/publications/jsm/bellpaper.pdf). por D. R. Bellhouse.
+
+- [Historia de la estadística en el salón de clase](https://web.archive.org/web/20060907060010/http://course1.winona.edu/cblumberg/david.pdf). Desde Gauss, Laplace y Fisher por H. A. David.
+
+- [Historia de actuaria](http://www1.fee.uva.nl/ke/act/history.htm). Una colección complete de vínculos por Henk Wolthuis.
+
+- [Exhibción de libros de la historia de la probabilidad desde Cardano hasta Finetti](http://www.mat.uniroma1.it/ricerca/convegni/deFinetti/mostra/historical-books-details.html). Notas sobre una exhibición para el aniversario del centenario de la conferencia de Bruno de Finetti.

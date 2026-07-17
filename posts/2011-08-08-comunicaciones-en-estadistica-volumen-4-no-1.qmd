@@ -1,0 +1,24 @@
+---
+title: "Comunicaciones en Estadística Volumen 4 No. 1"
+author: "Andrés Gutiérrez"
+date: "2011-08-08"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+### http://comunicacionesenestadistica.usta.edu.co/
+
+En el sexto número de la revista Comunicaciones en Estadística queremos extender un afectuoso saludo a nuestros lectores y a través de esta editorial manifestarles nuestro agradecimiento por habernos puesto en un importante lugar en el medio estadístico nacional. Cada vez se acerca más la tan anhelada indexación nacional. Esperamos que en un tiempo muy corto esta publicación esté indexada en una muy buena categoría. Por lo pronto, ya somos reconocidos por Colciencias y estamos dentro de su repositorio de revistas científicas reconocidas.
+
+Este número de la revista Comunicaciones en Estadística abre con un artículo escrito por González y Zambrano, en donde se profundiza en la implementación de cartas de control, sistematizadas en el paquete estadístico R, con el fin de monitorear la media de procesos que se desvían del supuesto usual de ausencia de autocorrelación. Con este fin, los autores implementan varios códigos computacionales que permiten el ajuste de modelos ARMA, cartas EWMA y ajuste de residuales con modelos que asumen autocorrelación.
+
+Por otro lado, Rodríguez y Cepeda consideran algunos resultados de un estudio de la concentración de la tierra en Colombia. Mediante un análisis descriptivo, establecen una relación entre porcentajes de propietarios y porcentajes de tierra acumulada. Este artículo concluye con el análisis de coeficientes de Gini para algunas regiones de Colombia.
+
+El tercer artículo de este número, escrito por Gutiérrez, trata sobre el tema del principio de representatividad en algunas estrategias de muestreo que utilizan información auxiliar para mejorar la eficiencia de las estimaciones. Se trata de un artículo que expone, mediante simulaciones empíricas, que, en algunas ocasiones, es mejor utilizar estrategias de muestreo básicas puesto que inducen mejores resultados que aquellas que utilizan información auxiliar que no está bien correlacionada estructuralmente con la característica de interés.
+
+Camacho, utilizando un modelo lineal generalizado, expone los resultados de un estudio realizado en Colombia, con el fin de encontrar asociaciones de polimorfismos genéticos de algunas razas de bovinos con el desarrollo muscular y el peso al nacimiento. El artículo finaliza con algunas conclusiones sobre el desempeño que poseen ciertas razas sobre el ganado cebuino.
+
+Por último, Ortiz explora las propiedades de la prueba hipergeométrica aleatorizada y propone algunos métodos computacionales que permiten concluir acerca de la eficiencia de la prueba, que está basada en el manejo de datos cuya naturaleza es discreta. En este artículo, Ortiz expone de manera detallada y muy pedagógica que en términos de pruebas estadísticas, la aletaorización está centrada en la regla de decisión y no en el resultado obtenido de la prueba.
+
+Una vez más, desde la Facultad de Estadística de la Universidad Santo Tomás, enviamos un mensaje de agradecimiento a nuestros lectores y les invitamos a hacerse partícipes mediante el envío de sus artículos.

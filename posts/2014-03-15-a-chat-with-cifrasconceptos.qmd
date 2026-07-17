@@ -1,0 +1,15 @@
+---
+title: "A chat with Cifras&Conceptos"
+author: "Andrés Gutiérrez"
+date: "2014-03-15"
+categories:
+  - "Estadística"
+---
+
+[SoundCloud](https://api.soundcloud.com/tracks/139606598)
+
+Did you hear about the
+
+[successful prediction of the senate in Colombia](http://www.caracol.com.co/multimedia/graficos/los-aciertos-de-la-apuesta-de-cifras-y-conceptos-para-el-senado/20140310/recurso/2121117.aspx)
+
+? Well, this was a very entertaining chat among some professors of the Faculty of Statistics of Universidad Santo Tomás and the statistical team of Cifras&Conceptos. This is just a chat; neither Universidad Santo Tomás nor I have any relationship with Cifras&Conceptos.

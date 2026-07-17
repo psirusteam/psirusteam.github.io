@@ -1,0 +1,17 @@
+---
+title: "Una mezcla factible"
+author: "Andrés Gutiérrez"
+date: "2010-05-11"
+categories:
+  - "Estadística"
+---
+
+Se ha dicho que el sector privado y la academia no siempre son compatibles; yo coincido con esa opinión pero en un sentido ligero, y en esta entrada quiero explicar por qué no son del todo compatibles y porqué sí deberían serlo. La explicación es sencilla y está enmarcada en la siguiente frase de un colega, muy respetado, describiendo el mundo laboral (empresa o academía) del estadístico egresado:
+
+> Cuando te gradúas, o te contrata una empresa en la que debes permanecer diez horas al día, o te buscas un par de universidades en las cuales dictes cursos a lo largo del día... Al final de la jornada, habrás tomado una decisión de vida.
+
+El anterior razonamiento es una realidad; sin embargo, de ninguna manera está indicando que el estadístico deba o pueda desligarse de la academia. De hecho, ni siquiera es una opción... Nuestra profesión es diferente; aunque se ha dicho que el estadístico siempre debe estar en continua actualización porque su campo de acción está en diferentes sectores (como el marketing, la farmacología, la genética, las finanzas, entre otras); yo creo que además de esto, el estadístico ha adquirido la cultura de actualizarse en materia de métodos estadísticos. En este campo de la ciencia, se debe ser proactivo y, aunque el trabajo en la oficina es monótono, cada vez que llegan datos para analizar, el estadístico debe preguntarse qué nuevo modelo arrojaría mejores resultados, o qué nueva técnica discriminaría mejor los clientes, etc. Esa cultura de la actualización es la que ha llevado a muchos colegas a ser exitosos en sus empresas sobre otro tipo de profesionales de otras disciplinas.
+
+Por el otro lado, el docente o el investigador debe estar preparado para afrontar las preguntas de los alumnos y al mismo tiempo para guiarlos en el desarrollo profesional y establecer los parámetros para el desempeño de la vida profesional. Por eso, en esta disciplina, un buen docente no es aquel que conoce al pie de la letra la teoría y las fórmulas y ecuaciones; eso no es un valor agregado. Un buen docente, a parte de conocer con exactitud la teoría debe manifestar su conocimiento con ejemplos prácticos y debe ser capaz de colocar al alumno en situaciones reales. A mi antojo, los ejemplos de los libros en estadística son a veces inocuos... Asuma la muestra aleatoria normal... bla, bla, bla... No estoy de acuerdo con eso, y lo he visto en varios escenarios. Gracias a Dios, tuve la fortuna de contar en la Universidad Nacional, en todos los niveles, con muchos profesores y colegas investigadores académicos pero a la vez profesionales que utilizaban ejemplos de sus propias consultorías para enfocar el desarrollo de la clase.
+
+De esta manera, quiero hacer un llamado a la excelencia en nuestra disciplina; el estadístico de oficina, que trabaja arduamente debe actualizarse en materia de métodos y aplicaciones estadísticas. El estadístico docente investigador debe afrontar sus clases con ejemplos reales de su desarrollo como consultor. No hacerlo representa el estancamiento profesional y académico.

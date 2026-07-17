@@ -1,0 +1,29 @@
+---
+title: "La historia incompleta"
+author: "Andrés Gutiérrez"
+date: "2010-11-06"
+categories:
+  - "Estadística"
+---
+
+Complete las siguientes frases:
+
+1. Si *cov(X, Y*) es igual a cero, entonces la correlación entre *X* y*Y*es igual a ____
+
+2. Si *X* y*Y*son independientes, entonces *cov(X, Y)* es igual a ____
+
+3. Si *X* y *Y*son independientes, entonces la correlación entre *X* y*Y*es igual a ____
+
+De seguro que la mayoría de lectores, al igual que yo en un comienzo, aseveró que la palabra correcta para completar las frases es cero. Pues bien, Nitis Mukhopadhyay [en un reciente artículo del American Statistician](http://pubs.amstat.org/doi/pdfplus/10.1198/tast.2010.08270) muestra que no siempre es así. A continuación unos ejemplos ilustrativos:
+
+1. Sea *U* una variable aleatoria con distribución normal estándar y defínase *X=U* y *Y=1/U*. Luego *XY=1* con probabilidad uno. Dado que *E(Y)* no es finita, entonces *cov(X, Y*) tampoco lo es. Luego, para dos variables aleatorias correctamente definidas, no necesariamente existe el término de covarianza.
+
+2. Sean *U_1, U_2, U_3, U_4* y *U_5* variables aleatorias independientes con distribución normal estándar y defínase *W=U_1^2+ U_2^2+ U_3^2 +U_4^2*. Ahora, sean *X=WU_5* y *Y=1/W*. Es fácil notar que *W* es una variable aleatoria con distribución ji cuadrado y que Y tiene [distribución inversa ji cuadrado](http://en.wikipedia.org/wiki/Inverse-chi-square_distribution). Luego *E(W)=4*, *E(XY)=E(U_5)=0* y *E(Y)=1/2*. De esta forma, *cov(X, Y)=0*. Sin embargo, dado que *V(Y)*es no finita, entonces el coeficiente de correlación es no finito. Entonces, aunque *cov(X, Y)=0*, la correlación no es nula.
+
+3. Suponga *U_1, U_2* variables aleatorias independientes con distribución normal estándar y defínase *X=U_1* y *Y=1/U_2*. Claramente *X* es independiente de*Y*, pero dado que *XY* define una variable aleatoria con distribución de Cauhy, entonces su esperanza no es finita y por supuesto *cov(X, Y)=E(XY)-E(X) E(Y)* no es finita. De esta manera, aunque *X*es independiente de*Y*, la covarianza no es nula.
+
+4. Sean *U_1, U_2, U_3, U_4* y *U_5* variables aleatorias independientes con distribución normal estándar y defínase *X= U_1^2* y *Y=1/(U_2^2+ U_3^2 +U_4^2+U_5^2)*. Obviamente, *X* es independiente de *Y*, además *X* tiene distribución ji cuadrado, *Y* tiene distribución ji cuadrado inversa y *XY=(1/4) Z* con *Z* una variable aleatoria con distribución F. Luego, *E(X)=1, E(Y)=1/2, E(XY)=1/2* y se tiene que *cov(X, Y)=0*. Sin embargo, dado que *E(Y^2)* no es finita, entonces *var(Y)* tampoco lo es al igual que la correlación. En resumen, se tiene que, aunque *X*es independiente de*Y*, y la covarianza es nula, la correlación no lo es.
+
+De este modo Mukhopadhyay concluye que los conceptos de covarianza, correlación e independencia deberían ser formalmente introducidos teniendo en cuenta que los momentos de orden uno y dos deben ser finitos para que, de esta manera, sea verídico que la palabra correcta para completar las frases sea cero.
+
+PD: Espero que mis lectores no encuentren incomodidad alguna en la escritura *X* y*Y*, puesto que según [la nueva edición de la ortografía](http://www.20minutos.es/noticia/864347/11/nueva/ortografia/espanola/), elaborada por las veintidós academias de la lengua, la letra Y se llamará "ye".

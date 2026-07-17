@@ -1,0 +1,36 @@
+---
+title: "Cambio de categorías base en modelos logísticos o multinomiales en R"
+author: "Andrés Gutiérrez"
+date: "2010-08-09"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Ronald escribe lo siguiente:
+
+> Saludos Andrés, ¿usted sabe cómo se cambian las categorías de base en un modelo logístico multinivel en R? Es decir, por ejemplo, si voy a estimar el efecto del Sexo hay dos categorías Masculino (M) y Femenino (F). [Yo necesito específicamente que el programa] contraste contra M. Es decir que me aparezca [en la salida del programa] el efecto estimado de F.
+
+My reply:
+
+Espero no estar malinterpretando la pregunta de Ronald… Lo que yo entiendo de este tipo de modelos logísticos (o multinomiales), sin importar si son mixtos, jerárquicos o multinivel (que vienen siendo la misma cosa al fin y al cabo) es que la estimación de sus parámetros no es regular, pues se deben evitar problemas de identificabilidad en el modelo y numéricos en la estimación.
+
+Al respecto se deben considerar que los modelos logísticos y multinomiales son considerados casos particulares de los modelos lineales generalizados, que están restringidos a la familia exponencial. Inicialmente, estas distribuciones tienen k parámetros representando las probabilidades de ocurrencia de las k categorías de la variable respuesta. En el ejemplo de Ronald, se tiene que k=2. Sin embargo, no es posible parametrizar el modelo acudiendo a las k probabilidades puesto que se debe respetar la restricción de que la suma de los k parámetros sea la unidad. Lo anterior implica que el espacio paramétrico del vector de probabilidades de ocurrencia de las categorías no es un conjunto abierto. Por tanto, no se puede garantizar que esta distribución sea de rango completo. Luego, es necesario reparametrizar la distribución. Una forma de hacerlo es definiendo una categoría base y estimar las razones de las restantes probabilidades contra la probabilidad de la categoría base. Lo anterior implica que el modelo sea de rango completo y que se respete la restricción de que la suma de las probabilidades sea la unidad (puesto que la suma de los nuevos parámetros es igual a (1-p0)/p0).
+
+El paquete lme4 con su función lmer es capaz de realizar dichas estimaciones para modelos lineales generalizados y no lineales utilizando el método de Laplace. Sin embargo, esta función escoge la categoría para realizar el análisis de los datos (la que esté codificada como uno). Creo que la pregunta de Ronald está enfocada hacia la escogencia de esta categoría base en el modelo. He aquí dos soluciones: la primera, es definiendo recodificando la variable respuesta, usando la función ifelse, y la segunda, un poco más plausible, es diciéndole a la función sobre cuál categoría hacer el análisis. Al respecto voy a utilizar un ejemplo acudiendo al conjunto de datos Exam del paquete mlmRev, que contiene entre otras variables, el resultado estandarizado de una prueba de conocimiento. En primer lugar, se define y codifica la variable respuesta. Si el resultado es mayor o igual a cero, entonces la respuesta es uno, en caso contrario cero. Luego se ajusta el modelo logístico que arroja los resultado con respecto a la categoría base que representa el éxito (en este caso y=1)
+
+library(lme4) libray(mlmRev) data(Exam) Exam $ success = 0,1,0)
+
+lmer(success~ schavg + (1|school), data=Exam, family=binomial(link = "logit"))
+
+Para obtener estimaciones con respecto a la categoría base que representa el fracaso (en este caso y=0), se puede utilizar la función ifelse para redefinir el éxito y el fracaso en la variable respuesta de la siguiente manera y ajustar nuevamente el modelo.
+
+Exam $ success = 0,0,1) lmer(success~ schavg + (1|school), data=Exam, family=binomial(link = "logit"))
+
+Aunque también es posible hacerlo directamente en la función lmer a la cual se le debe agregar un doble signo de igualdad más el código de la categoría base de nuestra preferencia justo después de la variable respuesta, así:
+
+lmer(success==0~ schavg + (1|school), data=Exam, family=binomial(link = "logit"))
+
+lmer(success==1~ schavg + (1|school), data=Exam, family=binomial(link = "logit"))
+
+Me imagino que no será la única solución… ¿alguna otra opción? [Haga clic acá](http://www.stat.wisc.edu/~bates/IMPS2008/lme4D.pdf) para obtener una introducción al paquete lme4.

@@ -1,0 +1,33 @@
+---
+title: "2009 Colombian Stata Users Group meeting embedded within the First International Workshop on Applied Statistics"
+author: "Andrés Gutiérrez"
+date: "2009-10-27"
+categories:
+  - "Estadística"
+---
+
+# http://stata.com/meeting/colombia09/
+
+### Announcement
+
+The first Colombian Stata Users Group meeting will be embedded within the Universidad Santo Tomas' "[First International Workshop on Applied Statistics](2009-10-09-first-international-workshop-on-applied-statistics-bogota-colombia.qmd)". During the conference, we will have four Stata presentations plus a Stata Press books presentation and one basic 16-hour Stata training.
+
+Stata users from all disciplines are invited to attend.
+
+**Registration**
+
+The meeting is free to those registered for the
+
+[First International Workshop on Applied Statistics](2009-10-09-first-international-workshop-on-applied-statistics-bogota-colombia.qmd)
+
+.
+
+### Organizers
+
+The meeting is organized by
+
+[SOFTWARE shop](http://www.software-shop.com/)
+
+, the distributor of Stata in Bolivia, Chile, Colombia, Ecuador, Peru, and Venezuela. To view proceedings from previous Stata Users Group meetings, visit
+
+# [**www.stata.com/meeting/proceedings.html.**](http://www.stata.com/meeting/proceedings.html)

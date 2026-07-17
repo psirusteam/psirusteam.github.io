@@ -1,0 +1,9 @@
+---
+title: "Nuestro artículo en la Revista Colombiana de Estadística: una solución directa al muestreo indirecto"
+author: "Andrés Gutiérrez"
+date: "2011-12-23"
+categories:
+  - "Estadística"
+---
+
+[Este artículo](http://www.estadistica.unal.edu.co/publicaciones/estadistica/rce/V34/v34n3a01.pdf) considera la estimación conjunta de los totales de población para las diferentes variables de interés en la polivalente encuestas mediante muestreo estratificado diseños. Cuando la población finita tiene una estructura jerárquica, diferentes métodos de estimación insesgada pueden ser aplicados. Sobre la base de simulaciones de Monte Carlo, se concluye que el enfoque propuesto es mejor, en términos de eficiencia relativa, que otros métodos adecuados, tales como el método de ponderación generalizada en el muestreo indirecto.

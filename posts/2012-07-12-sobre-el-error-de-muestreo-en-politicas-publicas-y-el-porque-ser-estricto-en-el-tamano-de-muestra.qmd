@@ -1,0 +1,45 @@
+---
+title: "Sobre el error de muestreo en políticas públicas y el porqué ser estricto en el tamaño de muestra"
+author: "Andrés Gutiérrez"
+date: "2012-07-12"
+categories:
+  - "Estadística"
+---
+
+En este documento técnico se evidencia por qué cualquier evaluación en el contexto de políticas públicas debe tener un tamaño de muestra robusto para que las inferencias sean válidas y por consiguiente los resultados sean confiables para dar un buen uso de los recursos designados y no caer en el error del detrimento del erario público.
+
+La direcciones técnicas de los gobiernos, entre otras funciones, debe hacer seguimiento objetivo a las intervenciones del Estado en la ciudadanía. Es bien sabido que una de las herramientas más utilizadas en el ámbito del monitoreo a las políticas públicas es la recolección y análisis de información articuladas a través del muestreo estadístico, el cual tiene sus bases sustentadas en el método científico de la teoría estadística.
+
+La forma más lógica, aunque no trivial, de conocer con total certeza el comportamiento de los beneficiarios de una política pública es la pregunta directa a cada uno de ellos, a través de un censo. De esta forma, se podría garantizar la exactitud de los indicadores o parámetros que guíen el seguimiento de dicha política. Sin embargo, debido a las limitaciones presupuestales y logísticas, las entidades que brindan este tipo de estadísticas oficiales, en el seguimiento a las políticas públicas en el mundo [\[1\]](/Users/Servidor/Desktop/DNP/Adolescentes%20criminales/Concepto%20T%C3%A9cnico%20sobre%20el%20tama%C3%B1o%20de%20muestra%20SRPA.docx#_ftn1), han optado por acercarse a dichos indicadores mediante el muestreo probabilístico que le permite al gobierno conocer el resultado y/o impacto de sus intervenciones con un nivel de precisión bastante alto y confiable.
+
+Por supuesto, dado que mediante una muestra no se tiene acceso a toda la población, las inferencias sobre los parámetros estarán sujetas a un error de muestreo, que se debe minimizar. Es un consenso internacional el que establece que este tipo de errores de muestreo no debe superar el 5%[\[2\]](/Users/Servidor/Desktop/DNP/Adolescentes%20criminales/Concepto%20T%C3%A9cnico%20sobre%20el%20tama%C3%B1o%20de%20muestra%20SRPA.docx#_ftn2) para que las estimaciones estadísticas sean precisas y confiables. Entonces, ¿qué tan pequeño debe ser el error de muestreo? Es una pregunta que debe ser respondida de manera particular en la práctica de cada una de las evaluaciones que se realicen. Como experto en muestreo, mi opinión es que las evaluaciones con mayor impacto social, económico y también político deben ser planeadas con un error menor al 3%.
+
+Realmente la base científica sobre la que reposa el muestreo hace que el gobierno no esté jugando a los dados a la hora de planear una evaluación sobre alguna intervención. Es por lo anterior que las muestras probabilísticas son mucho más costosas que cualquier otro tipo de acercamiento a los beneficiarios de una intervención. El proceso de muestreo requiere de la mayor rigurosidad tanto en su planeación como en su ejecución práctica. No es posible obtener buenas estimaciones si desde el escritorio, el planeamiento de la estrategia de muestreo no está bien sustentado. Por otra parte si, a pesar de haber concebido un buen plan de muestreo, no se ejecuta de la manera idónea, tampoco es posible obtener estimaciones confiables.
+
+Lo que se espera de una entidad que evalúa las políticas del Estado es que sus cifras sean precisas y que reflejen la verdadera situación de la intervención, máxime cuando estas evaluaciones afectan las futuras políticas que pueden implementarse. Por lo tanto, si no hay una buena planeación y ejecución de la estrategia de muestreo, es posible que las recomendaciones sean favorables a una política que en realidad no haya tenido los resultados/impactos esperados, o también es posible que, como resultado de la evaluación se recomiende abolir una política que en realidad sí trae beneficios al país. Cuando una evaluación deja de lado la importancia del muestreo, es posible caer en alguna de las anteriores situaciones que claramente perjudican el desarrollo de un país. Por supuesto, también es posible encontrar resultados que reflejen la realidad, pero esa opción sólo se obtendría por azar. Es decir, el gobierno estaría inmiscuyéndose en el peligroso juego de los dados.
+
+En términos prácticos, aceptar un error mayor al establecido en los estándares internacionales, y por consiguiente disminuir el tamaño de muestra requerido, es peligroso puesto que, con alta probabilidad, se podrían presentar las siguientes situaciones totalmente adversas, como se evidencia en la Figura 1. A saber:
+
+1. La situación menos peligrosa se presenta cuando, por el azar, la muestra sea representativa de la población pero las inferencias tengan poca confiabilidad puesto que el error de muestreo aumentó. Lo anterior significa que, a pesar de que la muestra es pequeña, sí contiene la información más importante de los beneficicarios, pero debido al ajuste del error de muestreo, las estimaciones puntuales están alejadas de la realidad.
+
+2. La situación más peligrosa se presenta cuando, por el azar, la muestra definitivamente no representa el comportamiento de la población, y por consiguiente las inferencias serán poco confiables y poco precisas. Lo anterior significa que, dado que la muestra es muy pequeña (consecuencia de aumentar el error de muestreo) no contiene la información de los beneficicarios, y las estimaciones puntuales están muy, pero muy, alejadas de la realidad.
+
+*Figura**1**. Posibles escenarios adversos cuando se opta por aceptar un tamaño de muestra inferior al establecido por la teoría de muestreo.*
+
+Por otro lado, mantener el error lo más pequeño posible, siguiendo los estándares estadísticos, inducirá una muestra aleatoria que no dependerá del azar para ser representativa de la población, y que será confiable y precisa, y por lo tanto las estimaciones estarán muy cercanas al verdadero valor del parámetro, como lo muestra la Figura 2.
+
+*Figura 2. Escenario óptimo cuando se decide mantener el tamaño de muestra requerido por la teoría de muestreo.*
+
+Los más adustos estadísticos pensarán que yo estoy confundiendo el concepto de precisión, ligado al sesgo, con el de confiabilidad, ligado a la varianza. Pero no, realmente los dos conceptos van de la mano en el muestreo, y mucho más cuando se manipulan los errores en pro de satisfacer un tamaño de muestra más pequeño que el requerido. Es tan sencillo como la siguiente situación: considere una encuesta con tamaño de muestra n para una determinada población de beneficiarios de una política. Asuma que el plan de muestreo fue concebido con el mayor de los cuidados, pero en la ejecución no fue posible (por x o y motivo) conseguir toda la muestra necesaria. En esta situación, inmediatamente el estadístico debe sospechar de la existencia del sesgo de selección. Por lo tanto, cuando hay sesgo (y este tipo de situaciones genera un sesgo de los más peligrosos puesto que no es medible) también se altera la confiabilidad de la estrategia de muestreo, como se evidencia en las Figuras 3 y 4.
+
+Realmente, cuando el estadístico planea el estudio con un 95% de confianza y un 3% de error, esperaría que si no hay errores en la recolección de la información, la distribución teórica del estimador fuese como lo indica la curva roja, centrada en el verdadero valor del parámetro, θ. Sin embargo, al realizar menos encuestas, se aumenta el error, y también (¿por ende?) se introduce sesgo en el estimador, y su distribución estará inducida por la curva negra, centrada en θ+B. Entonces, al utilizar las técnicas clásicas sin tener en cuenta este sesgo, tendríamos un cambio en la distribución del estimador.
+
+La siguiente figura muestra las nefastas consecuencias de no realizar todas las encuestas pertinentes. Obviamente el nivel nominal de confianza que era en principio del 95% ahora sufre un descenso dramático y puede llegar a cifras menores del 70%. La precisión del estimador ni siquiera se cuestiona puesto que, como ya se mencionó, es segado. En general, la consecuencia de esta mala práctica es ***un estudio con menos del 70% de confianza, un nivel de error mayor al establecido, digamos mayor al 10% y una distribución de muestreo sesgada***.
+
+¡Qué maravilla de escenario!
+
+---
+
+[\[1\]](/Users/Servidor/Desktop/DNP/Adolescentes%20criminales/Concepto%20T%C3%A9cnico%20sobre%20el%20tama%C3%B1o%20de%20muestra%20SRPA.docx#_ftnref1) *The magenta book: guidance notes for policy evaluation and analysis*. Great Britain Treasury. Government Social Research Unit. (2003)
+
+[\[2\]](/Users/Servidor/Desktop/DNP/Adolescentes%20criminales/Concepto%20T%C3%A9cnico%20sobre%20el%20tama%C3%B1o%20de%20muestra%20SRPA.docx#_ftnref2) *Survey Methods and Practices.*Statistics Canada. (2010)

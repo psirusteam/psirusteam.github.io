@@ -1,0 +1,31 @@
+---
+title: "For MAC users: weird messages when starting session in R"
+author: "Andrés Gutiérrez"
+date: "2015-05-29"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+If you live in a Latin American country, and you have installed R in your MAC, maybe you have noticed that, after opening R, the following messages appear:
+
+```
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C"
+```
+
+If you, like me, are obsessive about having all under control, specially when it comes to your workplace in R, then you should know that this kind of horrible messages are caused because your keyboard language is not set up to english. However, following this steps, you can easily free yourself of this nuisance:
+
+1. Open the Terminal
+
+2. Write this code:
+
+```
+defaults write org. R-project. R force. LANG en_US. UTF-8
+```
+
+3. Enjoy

@@ -1,0 +1,14 @@
+---
+title: "Estadística en los estrados judiciales"
+author: "Andrés Gutiérrez"
+date: "2011-10-10"
+categories:
+  - "Colombia"
+  - "Estadística"
+---
+
+[Ya en otra ocasión había advertido de la excelente labor que realizó el Colombiano Daniel Guzmán](2011-03-02-colombiano-daniel-guzman-en-amstat-news.qmd) al testificar en un juicio en contra de algunos oficiales de la Policía Nacional de Guatemala por la desaparición de Edgar García, un líder estudiantil. El resultado de esta influyente declaración de Daniel, fue una pena máxima de 40 años de cárcel contra los agentes involucrados. Pues bien, fue muy grato para mí saber que la revista [CHANCE](http://chance.amstat.org/) ha publicado en su último número un [vasto artículo escrito por Daniel](http://chance.amstat.org/2011/09/guatemala/) en el que relata con pelos y señales cómo fue todo el proceso. Realmente vale la pena leerlo porque la forma en que lo escribe Daniel hace que la lectura sea muy entretenida. Felicitaciones a Daniel y esperemos que sus técnicas estadísticas sirvan algún día para esclarecer las actividades delictivas que han suscitado miles de desapariciones en Colombia. Esto lo digo a título personal, porque mi familia y yo hemos sido víctimas de este insuceso y por supuesto, entenderán mi emoción al saber que hay personas cercanas por ahí, trabajando e influyendo en los estrados judiciales para evitar la impunidad. Y lo mejor de todo el armamento y la munición estadística de Daniel fue el muestreo. Claro, no faltan los jueces que impiden que la ciencia tenga lugar en las decisiones judiciales.
+
+Lo anterior lo digo porque hace pocos días [un juez inglés tumbó la regla de Bayes](http://www.theregister.co.uk/2011/10/05/bayes_formula/) como evidencia en cualquier clase de juicio criminal. Así es, se trata de un juicio por asesinato en el que el presunto asesino habría dejado en la escena del crimen las huellas de sus tennis Nike, que coincidencialmente eran idénticas a un par encontradas en su casa (la casa del sindicado). El teorema de Bayes habría entrado en acción al intentar calcular la probabilidad de coincidencia de las huellas con los tennis del acusado. Para esto, es necesario tener certeza acercad del número de existencias de esta clase específica de tennis. Como el abogado no pudo demostrar por qué se usan estimaciones gruesas en los cálculos, entonces el juez decidió no tener en cuenta al teorema de Bayes como evidencia contra el presunto asesino. Más aún, ordeno que para cualquier caso de estas características criminales en el Reino Unido, el teorema de Bayes no deberá ser tenido en cuenta. Y pues bien, tumbaron a Bayes.
+
+Eso me hace pensar que aquellos que [quieren tomarse un tinto y tumbar el muestreo](2011-04-16-me-tomo-un-tinto-y-tumbo-el-muestreo.qmd) posiblemente lo logren… Nooo, qué va, con tipos tan duros como Daniel y el reconocimiento que ha tenido les va a quedar muy difícil!!!

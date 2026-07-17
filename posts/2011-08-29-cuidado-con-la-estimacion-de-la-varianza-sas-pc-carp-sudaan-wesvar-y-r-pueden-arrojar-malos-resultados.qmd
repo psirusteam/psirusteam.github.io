@@ -1,0 +1,24 @@
+---
+title: "Cuidado con la estimación de la varianza… ¡SAS, PC-Carp, Sudaan, Wesvar, Stata, SPSS y R pueden arrojar resultados indeseados!"
+author: "Andrés Gutiérrez"
+date: "2011-08-29"
+categories:
+  - "Encuestas"
+  - "Inferencia"
+  - "Muestreo"
+  - "Software"
+---
+
+Y en principio no estoy insinuando que estos excelentes paquetes computacionales sean malos o que su programación esté errada, de ninguna manera… Sin embargo, en mi ejercicio como auditor de metodologías de muestreo, he encontrado que en algunas ocasiones, para diseños de muestreo complejos que involucran estratificación y varias etapas, los errores estándar (definidos como la raíz cuadrada de la varianza), los coeficientes de variación (definidos como el cociente entre el error estándar y la estimación puntual), la longitud de los intervalos de confianza (definida como el producto del error estándar y el percentil adecuado de la distribución del estimador) y hasta los efectos de diseño (definidos como el cociente entre la varianza del diseño complejo y la varianza del muestreo aleatorio simple) parecen ser sospechosos.
+
+De repente, para alguna muestra que se sabe que debería tener un efecto de aglomeración bastante alto, aparecen efectos de diseño muy bajos y errores estándar muy bajos. De esa manera, al revisar los informes metodológicos uno se encuentra con excelentes formulaciones de estrategias de muestreo que no responden a la sospecha de esas cifras y entonces uno infiere que el problema debe ser computacional. De esa forma, sistemáticamente he encontrado que muchos investigadores dejan el tema de la estimación de la varianza en manos del software computacional.
+
+En particular, en alguna ocasión me encontré estimando el tamaño de muestra de una gran encuesta y mis cifras diferían un poco con los tamaños de muestra propuestos por una firma. Después de revisar muy bien, me encontré con que su estimación de los errores estándar no coincidía con la mía. Así que indagué a profundidad y encontré que la expresión que se utilizó para este cálculo de los errores estándar dentro de un estrato (para una encuesta en varias etapas) es la siguiente: 
+
+Y ya… sin importar el número de etapas, sin importar si la selección dentro de las etapas haya sido proporcional o simple… sin importar nada más, esta es la fórmula que veo y veo y sigo viendo en los informes metodológicos. Ahora, por supuesto que se trata de un a aproximación a la varianza real. Por lo tanto, está bien que se utilice y me imagino que la seguiré viendo con frecuencia, máxime cuando el PROC SURVEY MEANS del SAS, el WESVAR 4.0, el SUDAAN, el PC-CARP, entre otros, utilizan dentro de sus procedimientos de estimación esta expresión para el cálculo de los errores estándar. Escribí acerca de la validez de esta aproximación en el Survey Research Methods Section de la ASA y un experto muy reconocido me respondió lo siguiente:
+
+> *Most variance estimators work with municipality level estimates. The sampling procedures at further stages of selection are typically ignored unless the fpc (1-f) is important at the municipality level; See for example Appendix D of the WesVar 4.0 manual or chapter 3 of the SUDAAN manual.*
+
+Luego, lo discutí con un amigo y colega a quien respeto y admiro mucho por su amplia visión de la estadística y el muestreo, y quien dirige la cátedra de diseño de encuestas en la Facultad de Estadística de la Universidad Santo Tomás. Cuál sería mi sorpresa al saber que en la entidad en donde él trabaja se había realizado una simulación para evaluar la validez de esta misma aproximación. Los resultados del ejercicio al parecer son muy claros: la subestimación de la varianza puede llegar a ser del orden del 30%.
+
+En conclusión, es muy plausible usar esta aproximación, pero se debe usar teniendo en cuenta que la fracción de muestreo dentro de la primera unidad de muestreo no debe ser grande… Esto implica que el factor de corrección para poblaciones finitas (1-f) debe ser pequeño, luego el submuestreo en las USM debería ser grande. Por otra parte, si se usan estas expresiones, sería muy enriquecedor para el informe aclarar que no se trata de una expresión exacta, sino lo que es, una aproximación de la varianza.

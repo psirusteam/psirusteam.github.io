@@ -1,0 +1,28 @@
+---
+title: "#PredictiveCOL - Final prediction"
+author: "Andrés Gutiérrez"
+date: "2014-06-06"
+categories:
+  - "Colombia"
+  - "Estadística"
+---
+
+Adhesions are ready: Ramírez is now supporting Zuluaga and López is supporting Santos. Peñalosa has given freedom to his voters. However, there is something interesting that can change the future of the election: Santos voters were less than voters of Unidad National voters to the congress. That is somehow explained because the abstention in the caribbean coast was very atypical. It is assumed that parties are working hard in order to "encourage" voters to get effective votes.
+
+According to pollsters, this is the evolution of voting intention:
+
+Now, if election were held today, this is the SNAPSHOT (mere opinion) of the run. The credibility interval for blank vote is (8.7 %, 15.2 %), for Santos is (39.4 %, 49.3 %) and for Zuluaga is (38.6 %, 48.5 %).
+
+On the other hand, having into account the auxiliary information, this is the forecast of the election for the day to be hold (June 15, 2014). The credibility interval for blank vote is (3.9 %, 10.4 %), for Santos is (41.9 %, 51.8 %) and for Zuluaga is (40.9 %, 50.8 %).
+
+That said, this is the posterior distribution of voting intention.
+
+Our simulations allow to predict some interesting parameters:
+
+1. The probability that Zuluaga defeats Santos in the first run is 43.64 %.
+
+2. The probability that Santos defeats Zuluaga is 52.26 %.
+
+Now, this is very interesting and just for Colombians: if Musa, Ñoño, and caribbean congressmen move the people into buses: ) then, the forecast of the election would be as the following chart shows. The credibility interval for blank vote would be (4.0 %, 10.5 %), for Santos would be (43.7 %, 53.6 %) and for Zuluaga would be (39.0 %, 48.9 %).
+
+Under that scenario, this would be the posterior distribution of voting intention.

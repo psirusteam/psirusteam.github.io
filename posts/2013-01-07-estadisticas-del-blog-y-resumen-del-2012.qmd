@@ -1,0 +1,13 @@
+---
+title: "Estadísticas del blog y resumen del 2012"
+author: "Andrés Gutiérrez"
+date: "2013-01-07"
+categories:
+  - "Estadística"
+---
+
+En el 2012 tuvimos más de 200mil visitas. Esta y otras estadísticas del blog las pueden encontrar [al hacer clic acá](http://jetpack.me/annual-report/18188927/2012/). Muchas gracias por su participación en este espacio que ya se consolidó como uno de los lugares virtuales en estadística más importantes de Hispanoamérica. Espero que este 2013 le traiga muchas cosas lindas y que Dios los bendiga.
+
+Saludos,
+
+AG

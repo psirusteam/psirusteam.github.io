@@ -1,0 +1,15 @@
+---
+title: "H. G. Wells y mi blog"
+author: "Andrés Gutiérrez"
+date: "2010-05-18"
+categories:
+  - "Estadística"
+---
+
+[Herbet George Wells](http://es.wikipedia.org/wiki/H._G._Wells), es uno de los precursores de la novela basada en la ciencia ficción… Escribió cientos de obras, pero seguramente usted habrá oído de y. Ahora, seguramente usted está pensando qué relación tiene un visionario británico con este blog que trata temas afines con la estadística. Pues bien, si se fija atentamente en el cabezote de esta página WEB podrá leer una frase del propio Wells que clama:
+
+> Llegará el día en el que el pensamiento estadístico será una condición tan necesaria para la convivencia eficiente como la capacidad de leer y escribir
+
+Esa frase me ha dado la motivación de emprender esta no fácil tarea de escribir un blog para gente interesada en la estadística. Estoy seguro que también ha sido la motivación de no pocos individuos que siguen atentamente estas líneas y para los cuales la cultura estadística en la vida diaria es un valor que abonan en su día a día. Sin embargo, en honor a la verdad, debo aclarar que la frase literal no es de inspiración de Wells… en realidad, la frase fue lanzada por el gran estadístico [Samuel S. Wilks](http://en.wikipedia.org/wiki/Samuel_S._Wilks) en su discurso de posesión presidencial de la [Asociación Americana de Estadística](http://www.amstat.org/) (JASA, vol. 46, N ° 253., p. 1-18). Wilks estaba parafraseando la obra de H. G. Wells. La cita textual afirma lo siguiente:
+
+> El gran cuerpo de la ciencia física, una gran parte de la ciencia financiera, y un sinfín de problemas sociales y políticos sólo son accesibles y pensables para aquellos que han tenido una sólida formación en análisis matemático, y no estamos lejos del día cuando se entenderá que la iniciación como ciudadano eficiente, de uno de los grandes estados que se están forjando ahora, estipula que es tan necesario poder calcular, pensar en los promedios, los máximos y mínimos, como lo es ahora poder leer y escribir.

@@ -1,0 +1,21 @@
+---
+title: "MacArthur sobre el azar y la evolución"
+author: "Andrés Gutiérrez"
+date: "2011-01-10"
+categories:
+  - "Estadística"
+---
+
+Yo no soy un creacionista ni pretendo inmiscuirme en tan intrincados asuntos y teorías que al fin y al cabo no tendrán nunca respuesta alguna si se utiliza el método científico… Sin embargo, en el libro que actualmente estoy leyendo, John MacArthur hace varios comentarios acerca del azar, que aparte de interesantes, me han puesto a pensar y quisiera compartirlos con ustedes:
+
+> El azar es el motor que pone en movimiento el proceso evolutivo. El naturalismo enseña que con el paso del tiempo y a partir del caos total, la materia evolucionó por azar hasta convertirse en todas las cosas que vemos hoy día…. De esta manera se ha asignado la distinción al azar de agente creador. John Ankerberg y John Weldom demuestran que la materia, el tiempo y el azar constituyen la santa trinidad de la evolución. En efecto, sólo existen tres cosas que pueden reconocerse como eternas y omnipotentes en el esquema evolutivo: materia, tiempo y azar. Jacques Monod, ganador del premio Nobel en 1965 por su labor en el campo de la bioquímica, en su libro *Chance and Necessity* afirma que "el hombre está solo en la inmensidad yerta del universo, de la cual surgió por azar… El azar es la fuente única de toda innovación y de toda creación en la biosfera. El azar puro, con libertad absoluta pero siempre siego, es la piedra angular del edificio de la evolución."
+
+Más adelante MacArthur agrega:
+
+> Si reflexionamos por un momento nos daremos cuenta de que el azar no puede ser la causa de alguna cosa, mucho menos de todas las cosas. El azar no es una fuerza. El único sentido legítimo en que puede emplearse el azar forma parte de la probabilidad matemática. Si usted lanza una moneda al aire en repetidas ocasiones, los cocientes estadísticos indican que la moneda tiene probabilidad de caer sobre cada uno de sus lados cincuenta veces de cada cien lanzamientos. Sin embargo el azar no es la fuerza responsable del lanzamiento de la moneda. El azar no es un intelecto que diseña el patrón exacto de las probabilidades matemáticas y tampoco puede dictar la trayectoria y el resultado final de cada lanzamiento. La probabilidad matemática sólo es una manera de medir lo posible con respecto a lo que sucede en realidad.
+
+Y se pone mejor cuando afirma que:
+
+> Los naturalistas han atribuido al azar la capacidad para causar y determinar todo lo que sucede. No puede negarse que es un concepto irracional… Todo efecto es determinado por una causa. Hasta el lanzamiento de una moneda no puede ocurrir sin una causa concreta, y el sentido común nos dice que la caída de la moneda sobre una de sus caras viene determinado por algo. Una serie de factores que incluyen la cantidad precisa de fuerza con que se lanza la moneda y la distancia que debe recorrer antes de llegar al suelo, así como la textura y la composición del suelo y muchos otros, son factores que determinan el número de vueltas y rebotes que hará antes de quedar sobre uno u otro lado. Aunque nos resulte imposible controlar con precisión las fuerzas que determinan cómo termina el lanzamiento de la moneda, no es el azar sino esas fuerzas las que determinan un resultado final de cara o sello. Algo que puede parecer arbitrario e indeterminado en la vida cotidiana, es en realidad u efecto determinado por algo muy concreto y definido. Nada es causado por azar puro, ya que el azar no existe como fuerza ni como causa. El azar no es más que un concepto humano.
+
+Esto me hace recordar un [post antiguo basado en un artículo de Andrew Gelman](https://web.archive.org/web/20110208074851/http://www.gutierrezandres.com/blog/2008/06/la-moneda-sesgada/), en donde afirmaba, en la misma vía que MacArthur, que es una tarea muy dispendiosa el separar lo aleatorio de lo determinístico. ¿Qué es un evento aleatorio? Cada vez que el ser humano adquiere nuevas herramientas y se complejiza su entorno, lo aleatorio adquiere el carácter de determinístico. Estoy en completa concordancia con MacArthur cuando afirma que el azar no es más que un concepto humano. Por mi parte, lo pensaré dos veces antes de referirme al lanzamiento de la moneda como un suceso aleatorio. Por último, si no fue el azar…. ¿Entonces? Yo sé la respuesta… DIOS.

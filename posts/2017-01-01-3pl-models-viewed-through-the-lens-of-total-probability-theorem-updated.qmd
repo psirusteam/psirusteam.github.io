@@ -1,0 +1,33 @@
+---
+title: "3PL models viewed through the lens of total probability theorem (updated)"
+author: "Andrés Gutiérrez"
+date: "2017-01-01"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+As I currently am the NPM for PISA in Colombia, I must assist to several meetings dealing with the proper implementation of this assessment in my country. Few of them are devoted to the analysis of this kind of data (coming from IRT models). As usual, OECD has hired organizations with high technical standards. The institute that handles all this data and take part in the analysis is ETS (Educational Testing Services).
+
+PISA and ETS are changing from Rasch models to 2PL models. That involves a significant technical effort to maintain comparability along time. I had the opportunity to talk with some experts from ETS last year, and I formulated them the following question: ¿why to consider 2PL models instead of 3PL models? Well, the answer was not easy, and I am not pretending to explain it here in detail, in part because I am still convinced about the advantages of 3PL models that exceed those of 2PL models. However, they yielded me to a recent paper entitled [Is There Need for the 3PL Model? Guess What?](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=18&ved=0ahUKEwjHjf7_yqHRAhXLPiYKHch5Dz44ChAWCEMwBw&url=https%3A%2F%2Fmoodle.eduhk.hk%2Fpluginfile.php%2F28242%2Fmod_forum%2Fattachment%2F3022%2FIs_There_Need_for_the_3PL_Model.pdf&usg=AFQjCNH0APvby7ExpGgKHsDejsiL8JErgQ&sig2=pgSwFFH-dZ0fIXLU9lSi5Q)
+
+The article was written by Mathias von Davier from ETS. I liked the way von Davier showed 3PL models, as coming from a total probability setup involving 2PL models. Consider the following hierarchical structure: first, the test-taker decides whether he/she is answering that item by guessing or not; then, he/she uses his/her ability to found the correct response. So, the stochastic process behind this structure can be easily shown in a tree diagram:
+
+Remember that 3PL models can be written as:
+
+$$ P_{3PL}(x=1) = P(Guess) + P(NoGuess) \times P_{2PL}(x=1|NoGuess)$$
+
+Note that, per the model, once the student has chosen to answer by guessing, a correct answer is always found (kind of weird, isn't it?). So, a major criticism against 3PL models is related to this last point. In R, you can estimate 3PL models by using the mirt package. So, for example, when using the LSAT7 data on the second item, we can estimate this guessing parameter.
+
+```
+library(mirt)
+data <- expand.table(LSAT7)
+md2  <-  mirt(data, 1, itemtype = '3PL', IRTpars = TRUE)
+coef(md2, IRTpars = TRUE)$Item.2
+```
+
+We found that the guessing parameter is estimated as 0.295. This way, the model is specified as:
+
+$$ P_{3PL}(x=1) = 0.295 + 0.705 \times P_{2PL}(x=1|NoGuess)$$.
+
+PD: Alexander Robitzsch [pointed me out to this paper (Aitkin, 2006)](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjci43R3K3RAhXIKyYKHbRnAMEQFggcMAA&url=http%3A%2F%2Fwww.ms.unimelb.edu.au%2F~maitkin%40unimelb%2FTechReports%2FNAEP_3PL.pdf&usg=AFQjCNEvSaNAyWPEq7WRCrU7bRpPXzoGwA&sig2=B18wg3cEGplVuhYKAYLz9A) where an alternative 3PL has been proposed which aims to address the critique.

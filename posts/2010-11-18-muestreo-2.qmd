@@ -1,0 +1,33 @@
+---
+title: "Muestreo 2"
+author: "Andrés Gutiérrez"
+date: "2010-11-18"
+categories:
+  - "Estadística"
+---
+
+Si usted es estadístico, por favor responda con sinceridad cada una de las preguntas que se realizan a continuación. Si su respuesta es negativa en al menos un ítem, le recomiendo muy sinceramente que asista cuanto antes a un curso de Muestreo II. Si usted es profesor de las asignaturas de Muestreo y no incluye al menos ocho de estos tópicos en su clase, le recomiendo muy enfáticamente que revise y actualice los contenidos de su clase. Hágame caso, mire que yo se lo digo… y se lo digo apoyado en Sharon Lohr, una de las más respetadas autoridades en el mundo del muestreo, y su reciente ensayo [acerca del cuidado, alimentación y entrenamiento de los.](http://www.jos.nu/entry.asp) Este ensayo fue escrito en honor a Morris Hansen y está enmarcado en el [2009 Morris Hansen Lecture](http://www.jos.nu/Articles/abstract.asp?article=263395) del [Statistics Sweden](http://www.scb.se/).
+
+1. ¿Sólo sabe estimar totales y medias? ¿qué de la estimación de razones, medianas, funciones de distribución y coeficientes de regresión? à **Estimación de diversos parámetros en encuestas complejas.**
+
+2. ¿Sabe cómo aprovechar la información auxiliar (discreta o continua) para mejorar la eficiencia del estimador? ¿conoce las técnicas avanzadas de estimación por regresión o post-estratificación? **à Técnicas avanzadas de estimación asistida por modelos poblacionales**.
+
+3. ¿Sabe calibrar una estimación? ¿qué pasa si la información auxiliar se relaciona con la característica de interés de una manera no lineal? à **Introducción a los estimadores de calibración**.
+
+4. ¿No tiene plata para levantar un marco de muestreo de elementos? ¿Quiere aumentar la eficiencia de la estrategia sin tener que invertir demasiado en recursos económicos? **à Muestreo en dos fases**.
+
+5. ¿Va a planear una encuesta para hacer sólo una pregunta? ¿ya entendió que en al momento de realizar una encuesta se quieren estimar cientos de parámetros con diferentes características de interés al mismo tiempo? ¿sabe cómo planear el mejor diseño muestral para la estimación conjunta de muchos parámetros? à ****Encuestas multi-propópsito**.**
+
+6. ¿Tiene un marco de muestreo relacionado con su población de interés? ¿quiere inferir en esa población sin gastar recursos en la consecución de un marco muestral? à **Muestreo indirecto.**
+
+7. ¿Quiere calibrar sus estimaciones desde la etapa de diseño muestral? ¿sabe cómo hacer que los estimadores más simples adquieran una mejor eficiencia que los estimadores avanzados? à **Muestreo Balanceado.**
+
+8. ¿Está trabajando en una encuesta no probabilística (cuotas, juicio, etc) y quiere hacer estimaciones estadísticas válidas? ¿cree que porque utiliza técnicas bayesianas puede no contemplar el diseño muestral de donde provienen los datos? à **Estimación de parámetros sin contemplar un diseño muestral**.
+
+9. ¿Quiere realizar inferencias en una subpoblación muy pequeña?; sin embargo, si el tamaño de muestra es muy pequeño o nulo en esa subpoblación ¿sabe cómo realizar este tipo de inferencias? à **Introducción a la estimación en áreas pequeñas**.
+
+10. ¿El porcentaje de no-respuesta en su encuesta es muy alto y, sin embargo, quiere realizar estimaciones precisas? à **Introducción a la modelación de la ausencia de respuesta (No-respuesta)**.
+
+11. Si los datos vienen de una encuesta compleja, ¿sabe usted que correr cualquier tipo de métodos estadísticos (regresión, ANOVA, clasificación, correspondencias, métodos multivariados e incluso, simples estadísticos descriptivos, etc.) con cualquier software comercial le guiará a malas e incorrectas estimaciones? ¿sabe cómo resolver este inconveniente? à **Introducción al análisis estadístico de datos en encuestas complejas**.
+
+Dado que este tipo de tópicos es muy práctico, recomiendo que la calificación de esta materia se haga 100% basado en trabajos prácticos con datos reales provenientes de encuestas reales.

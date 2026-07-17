@@ -1,0 +1,27 @@
+---
+title: "¡Las diez cosas que un estadístico no quiere oír jamás!"
+author: "Andrés Gutiérrez"
+date: "2010-06-30"
+categories:
+  - "Estadística"
+---
+
+1. Yo nunca cursé ninguna asignatura de estadística ¿qué tan difícil es?
+
+2. No tengo un diseño.
+
+3. Sé que debí haber hablado contigo antes de realizar el experimento, pero...
+
+4. ¿Por qué debo hacer réplicas? ¡podría obtener un respuesta distinta!
+
+5. ¿Que debí haber aleatorizado qué?
+
+6. ¿Puede tener el diseño muestral listo para mañana?
+
+7. Cuando estábamos a mitad del experimento, decidimos cambiar...
+
+8. ¿Puedes hacerlo de tal forma que el p-valor sea menor que...?
+
+9. Tengo muchísimas observaciones, como 23 419... de una misma vaca.
+
+10. ¿Tienes un minuto?

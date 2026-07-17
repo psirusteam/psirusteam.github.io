@@ -1,0 +1,19 @@
+---
+title: "La ventaja - Modelos politómicos en IRT"
+author: "Andrés Gutiérrez"
+date: "2015-08-02"
+categories:
+  - "Colombia"
+  - "Estadística"
+  - "IRT"
+  - "Public Policy Evaluation"
+  - "Teaching"
+---
+
+El viernes en la tarde, en medio de un seminario, pregunté lo siguiente:
+
+**¿Cuáles son las ventajas de los modelos politómicos en IRT frente a técnicas más simples como componentes principales categóricos?**
+
+Y es que en términos de construcción de índices, los analistas de las encuestas sociales tienden a escoger técnicas de análisis multivariantes para la construcción de escalas. Después de algunos minutos de discusión, hubo un argumento contundente:
+
+**Este tipo de modelos permite cambiar los ítems y mantener la escala comparable con mediciones anteriores.**

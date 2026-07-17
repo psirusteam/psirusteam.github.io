@@ -1,0 +1,10 @@
+---
+title: "Intervalos de confianza y de credibilidad para la diferencia de dos proporciones"
+author: "Andrés Gutiérrez"
+date: "2010-07-07"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Mi artículo sobre intervalos de confianza y credibilidad publicado en [REVCOLES](http://www.estadistica.unal.edu.co/publicaciones/estadistica/rce/v33_1.html)... Si usted está realizando alguna prueba acerca de proporciones, este artículo podría ser de interés para usted. Puede [leerlo haciendo clic aquí](http://www.estadistica.unal.edu.co/publicaciones/estadistica/rce/V33/v33n1a05ZhangGutierrezCepeda.pdf).

@@ -1,0 +1,21 @@
+---
+title: "La curtosis, una medida ampliamente conocida pero malinterpretada…."
+author: "Andrés Gutiérrez"
+date: "2010-02-12"
+categories:
+  - "Estadística"
+---
+
+La curtosis es uno de los conceptos peor comprendidos no solamente por estadísticos sino por los distintos profesionales que son usuarios de la estadística. Es casi imposible encontrar un libro (sea introductorio o avanzado) que se tome la molestia de hacer un alto en el camino y tratar de aclarar que es lo que significa exactamente esta medida. Usualmente los libros introductorios reducen la curtosis a una simple medida que da cuente de que tan apuntada o plana es una distribución sin tener en cuenta las colas o valores atípicos que tienen una gran influencia en el cálculo de esta medida.
+
+Entre las varias fallas que comenten los libros introductorios es de ilustrar el concepto de curtosis en distribuciones que tiene distintas varianzas, por ejemplo, en la figura a continuación se observa que la distribución con línea discontinua tiene una apariencia plana (*platicurtica*), la gráfica punteada luce como una distribución apuntada (*leptocúrtica*), y en realidad, las tres gráficas fueron generadas por una distribución normal, por tanto las tres distribuciones tienen una curtosis *mesocúrtica* (este es la medida estándar de curtosis ya que corresponde a la curtosis de nuestra querida distribución normal). La medida de curtosis es adimensional (de hecho en el denominador del cálculo de la fórmula clásica aparece la varianza), los concepto de varianza y curtosis son absolutamente distintos y no se debe prestarse para confusiones. Una buena manera de comparar de manera gráfica la curtosis de varios conjuntos de datos es estandarizar las variables con el propósito de no dar una mala interpretación a la información gráfica.
+
+Fuente: DeCarlo (1997)
+
+DeCarlo (1997) nos da una excelente explicación para comprender e interpretar mejor el concepto de curtosis. Nos explica que la curtosis representa un movimiento de masa que no afecta la varianza. Consideremos el caso por ejemplo de una distribución con una curtosis positiva, en este tipo de distribuciones colas pesadas son acompañadas de picos altos (*apuntalamiento*), notemos que si hubiera simplemente un desplazamiento importante de la distribución hacia las colas de la distribución esto conllevaría a un aumento de la varianza de la distribución, la manera como se compensa este aumento de la varianza es concentrando la distribución alrededor de la media. Por otro lado una distribución platicúrtica tiene una menor concentración de valores alrededor de la media y no suele tener colas pesadas, se compensa esa "baja varianza" con una mayor variabilidad en el resto de la distribución.
+
+Entre las muchas utilidades que tiene la curtosis es la de detección de la normalidad en un conjunto de datos en combinación con las medidas de asimetría por ejemplo la prueba de detección de normalidad de D'agostino. Es igualmente una excelente manera para detectar la existencia de datos atípicos. Debe verificarse en las pruebas de igualdad de varianzas y en todas pruebas que requieran la normalidad que se verifique al menos de manera aproximada esta propiedad.
+
+Tambien debo anotar que la curtosis tiene una interpretación extremedamente complicada cuando las distribuciones no son unimodales, en este caso convendría mejor estudiar por regiones la distribución.
+
+Les dejo [el link del artículo](http://www.columbia.edu/~ld208/psymeth97.pdf) de DeCarlo para que vean con sus propios ojos todo un discurso y una explicación de esta medida muy útil y muchas veces mal entendida.

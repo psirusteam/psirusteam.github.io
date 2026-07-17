@@ -1,0 +1,40 @@
+---
+title: "¿Efecto causal o simplemente asociación?"
+author: "Andrés Gutiérrez"
+date: "2009-09-29"
+categories:
+  - "Estadística"
+---
+
+Gran alboroto entre la comunidad internacional (como si no tuviéramos suficiente con nuestros vecinos y nuestro papá dictador interno) ha causado la divulgación de un artículo, titulado [Bases, balas y balotas: el efecto de la ayuda militar de EE. UU. en el conflicto político de Colombia](http://www.santafe.edu/~snaidu/papers/090808_bases_bullets_FULL.pdf), escrito por los reconocidos investigadores Oeindrila Dube y Suresh Naiduz del instituo Santafe. La introducción del artículo clama que:
+
+> Este documento examina el efecto de la ayuda militar de EE. UU. sobre la violencia política y la democracia en Colombia. Aprovechamos el hecho de que la ayuda militar de EE. UU. se canaliza a las brigadas del ejército colombiano que operan en bases militares para comparar cómo los cambios en las ayudas afectan a los resultados en los municipios con y sin bases. Usando datos detallados sobre la violencia perpetuada por grupos armados ilegales, encontramos que la ayuda militar de EE. UU. lleva a un aumento diferenciado en los ataques de los grupos paramilitares.
+
+En el cuerpo del documento los investigadores afirman que:
+
+> Un aumento del 1% en ayuda militar de EE. UU. hacia Colombia aumenta los ataques paramilitares en un 1,5% más en los municipios, y baja la participación en las elecciones a alcalde en 0.2% y en 0.12% más en las regiones de disputa militar.
+
+[El analista político Chris Blattman asegura](http://chrisblattman.com/2009/09/27/your-aid-dollars-at-work-suppressing-voters/) que:
+
+> Yo no diría que lo anterior condena el Plan Colombia. La lucha contra los insurgentes no es atractiva, pero sí es importante... Sin embargo, sugiere que los EE. UU. podrían tener una mayor obligación de promover la democracia local y la seguridad junto con su ayuda militar.
+
+Andrew Gelman ha subido [una entrada crítica en su blog](http://www.stat.columbia.edu/~gelman/blog/) donde advierte sobre la gravedad, en términos estadísticos, de las conclusiones de este artículo. Él afirma que:
+
+> Es un análisis interesante, pero me gustaría que se sustituya todo el lenguaje causal por "se asocia con" o algo similar... Desde un punto de vista estadístico, lo que Dubey y Naiduz están haciendo es estimar los efectos de la ayuda militar de dos maneras: primero, mediante la comparación de los resultados en años en que los EE. UU. gastan más o menos en la ayuda militar, en segundo lugar, comparar los resultados en las ciudades en Colombia, con y sin bases militares.
+>
+>
+> En este caso, los investigadores parecen haber encontrado que, al observar las diferencias en los resultados en un año determinado comparando las ciudades con y sin bases militares, estas diferencias fueron mayores, en promedio, en años donde había más ayuda militar de EE. UU. [Sin embargo, ] lo que realmente me gustaría ver son algunos diagramas de dispersión que dejaran claro este patrón. El único gráfico que es relevante para este análisis es la figura 2 (ver la figura de arriba), que revela que el gasto militar de EE. UU. ha sido mayor en períodos en los que ha habido más ataques paramilitares en las ciudades con bases militares. Pero, sin ver los datos reales, es muy difícil interpretar esto como la evidencia de que los aumentos en la ayuda militar están causando los ataques.
+
+Y concluye que:
+
+> Lo que realmente parece que está pasando, desde un punto de vista estadístico, es que se están comparando el último tercio de la serie de tiempo con los dos primeros... Pero entonces se debe aclarar que se ve tan sólo una asociación [no una causalidad] en el tiempo de la ayuda de EE. UU. en momentos de mayor conflicto.
+
+Al respecto, John Sides comenta que:
+
+> La ayuda militar de EE. UU. es distribuida a las brigadas que están más cerca de los combates. Es más probable que la violencia paramilitar ocurra en las comunidades más cercanas al conflicto. Seguramente que los EE. UU. le proporciona a Colombia ayuda alimentaria, la cual es, sin duda, distribuida en las zonas más pobres del país. ¿Significa esto que ayuda de EE. UU. provoca la desnutrición?
+
+En general, este es un ejemplo claro de cómo malinterpretar la asociación estadística con la causalidad efectiva… Recordemos que no fue sino después de una dura lucha, que llevó muchos años, que se concluyó que el cigarrillo causa el cáncer de pulmón y no fue con una simple tabla de contingencia. Más allá de mi opinión acerca de las bases y el conflicto colombiano, pienso que este artículo sirve como estrategia didáctica para que los alumnos adquieran capacidad de análisis y veracidad en la interpretación de las técnicas estadísticas.
+
+En término prácticos, una clase de regresión podría incluir el sencillo ejemplo de las emisoras y el número de dementes en las ciudades (mayor número de emisoras no implica mayor número de dementes, ni las emisoras vuelven locas a las personas… simplemente si hay más emisoras es porque la ciudad es más grande y por ende hay más personas, ergo más dementes) y luego introducir este ejemplo de la ayuda militar en Colombia, y mostrarle al estudiante de estadística que debe tener mucho cuidado con las interpretaciones de los betas, etc. De suerte que el estudiante caerá en cuenta que, más allá de aplicar una técnica estadística, su trabajo está directamente relacionado con la toma de decisiones influenciada por su interpretación acerca de los datos; es decir, su trabajo se trata de brindar información veraz con los datos recolectados.
+
+Por otro lado, auguro que este artículo traerá mayor oposición internacional hacia el gobierno Colombiano y su relación con EE. UU. y esto afectará aún más las relaciones regionales. La verdad, se me antoja que las conclusiones de estos investigadores son desafortunadas y con mucho potencial… En términos de política interior se debe revisar con rigurosidad el destino de los dineros provenientes de la ayuda militar de EE. UU. No queremos más falsos positivos, según José Obdulio Gaviria, no queremos más atentados cobardes y deliberados del estado en contra el pueblo colombiano, según el autor de esta entrada.

@@ -1,0 +1,35 @@
+---
+title: "Respuestas Bayesianas"
+author: "Andrés Gutiérrez"
+date: "2008-09-08"
+categories:
+  - "Bayes"
+---
+
+Hoy en día es posible ser no Bayesiano (non-Bayesian), pero dados los avances en métodos bayesianos aplicados de las dos décadas pasadas, ser anti bayesiano (anti-Bayesian) ya no es una opción.
+
+Andrew Gelman
+
+Una de las entradas más leídas de este blog se llama "[Acerca de la estadística bayesiana](https://web.archive.org/web/20090329224654/http://predictive.wordpress.com/2008/04/08/no-rotundo-a-la-estadistica-bayesiana/)" en ella se exponían los cuestionamientos acerca de los fundamentos de la inferencia Bayesiana. Esos cuestionamientos los hizo Andrew Gelman, uno de los autores Bayesianos más leídos de la última década.
+
+Esos cuestionamientos hicieron que el editor de una importante publicación internacional (categoría AAA... donde mi [amigo anónimo](https://web.archive.org/web/20090414025650/http://predictive.wordpress.com/2008/08/27/nueva-revista-de-estadistica/#comments) debería escribir) convenciera a Andrew Gelman para que escribiera un manuscrito al respecto. En esta entrada se dan las respuestas a esos cuestionamientos.
+
+Antes que nada Andrew Gelman hace la siguiente aclaración: La estadística Bayesiana se trata de hacer afirmaciones de probabilidad, mientras que la estadística frecuentista se trata de evaluar afirmaciones de probabilidad... De esta forma un estadístico (entendido como la persona que ejecuta métodos estadísticos) puede ser frecuentista y Bayesiano en diferentes ocasiones. Aún más un simple método de análisis puede ser frecuentista y Bayesiano al mismo tiempo.
+
+- - "Los métodos Bayesianos son presentados como un motor de inferencia automática": La inferencia Bayesiana tiene tres etapas: formulación del modelo, ajuste del modelo a los datos, comprobar el ajuste. Así que el procedimiento no es automático.
+
+- - "Como científicos debemos tratar con el conocimiento objetivo y dejar a un lado las creencias subjetivas": Las distribuciones a priori que maneja la inferencia Bayesiana son objetivas de la misma forma que lo son los métodos frecuentistas. El resultado final sólo depende del modelo asumido y de los datos recolectados.
+
+- - "Los métodos Bayesianos parecen moverse rápidamente hacia la computación elaborada": Para bien o para mal, la computación se está convirtiendo en una plataforma central para el desarrollo estadístico.
+
+- - "No existe un principio objetivo para la escogencia de una distribución a priori no informativa... De todas formas, ¿de dónde vienen esas distribuciones a priori?": Nótese que tampoco existe un principio objetivo para escoger una verosimilitud... ¿de dónde vienen las regresiones logísticas? ¿quién dijo que los datos eran normales? Bernardo dice que como toda ciencia, la estadística se basa en procedimientos subjetivos que guían a resultados que se pueden probar de una manera objetiva.
+
+- - "¿Por qué debería creer en una a priori subjetiva?": Si hay una seria diferenciación entre las creencias subjetivas y los resultados a posteriori, debería ser un indicador de reevaluar el modelo usado.
+
+- - "Es preferible la inferencia insesgada y los intervalos de confianza que permiten tener un nivel real de cobertura": Acerca de este tópico Andrew Gelman recomienda dar un vistazo al ejemplo de las páginas 248-249 de su libro Bayesian Data Analysis.
+
+- - "La gente tiende a creer en resultados que apoyan sus preconceptos y son incrédulos ante los resultados que los logran sorprender": como Bayesiano uno puede utilizar una distribución a priori débil y añadir más información si se necesita.
+
+- - "Un estimador Bayesiano es un estimador estadístico que minimiza el riesgo promedio. Sin embargo, cuando utilizamos estadística no tratamos de minimizar el riesgo promedio, ; tratamos de hacer estimación y juzgamiento de hipótesis": Es cierto, sin embargo, el lector puede referirse al capítulo 22 de Bayesian Data Analysis donde se habla de funciones de perdida y análisis de decisión como herramientas fundamentales en decisión y no en inferencia estadística.
+
+[Haciendo clic acá](http://predictive.files.wordpress.com/2008/09/bayes.pdf) encontrará el documento completo. Termino esta entrada reiterando mi punto de vista acerca de la inferencia Bayesiana: "Reconozco la magnitud y el impacto que los Bayesianos han tenido no sólo en el desarrollo de la teoría estadística sino también en el pensamiento estadístico del autor. La estadística Bayesiana debe ser utilizada con *expertise*. cuando es usada por investigadores neófitos puede ser tergiversada. Sin embargo, el mal uso que se le dé a un método no involucra su credibilidad, sino la ignorancia del investigador."

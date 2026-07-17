@@ -1,0 +1,18 @@
+---
+title: "Data Literacy"
+author: "Andrés Gutiérrez"
+date: "2016-10-30"
+categories:
+  - "Colombia"
+  - "Estadística"
+  - "Stats"
+  - "Teaching"
+---
+
+Once again I have decided to pimp my blog. This time is a significant change: the name. This blog began a long time ago. It was 2006; I was 22-year-old, and I was enrolled in a Master of Science in Statistics. I had plenty of doubts about statistics, data science, and uncertainty (fortunately, some of those questions remain) and I decided to solve them by blogging.
+
+Then it was born this blog with the name "Apuntes de Estadística." Ten years later, this blog has become an important space for researchers, teachers, and students who, like myself, want to solve questions about variability and statistics.
+
+Now, after hundreds of posts, a hundred thousand visitors per year, and being migrated from Spanish to English, from WordPress to Blogger, it is time for me to revisit the very own name of this blog. Lately, posts are not notes anymore; I am not only answering basic questions but discussing modeling, forecasting, data and even statistics epistemology.
+
+As a consequence of what I currently do in my job, now I am strongly convinced (more than ever in my life) that the time predicted by H. G. Wells has not arrived yet. Statistical thinking is not part of our culture. It should be encrusted in every one of us, but it is not. I will put in just my two cents to build an effective citizenship through data literacy: the ability to communicate information from data.

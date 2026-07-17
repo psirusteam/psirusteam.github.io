@@ -1,0 +1,11 @@
+---
+title: "Our Talk in Lima"
+author: "Andrés Gutiérrez"
+date: "2014-10-21"
+categories:
+  - "Estadística"
+  - "R"
+  - "Stats"
+---
+
+[In this talk](http://gutierrezandres.files.wordpress.com/2014/10/lima2014.pdf), we want to introduce the study of Small Area Estimation (SAE) by means of demographic and some simple statistical methodologies. The example of interest is the estimation of the size of Chocó (one of the poorest departments in Colombia). Enjoy it!

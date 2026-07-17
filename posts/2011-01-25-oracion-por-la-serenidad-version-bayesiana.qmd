@@ -1,0 +1,31 @@
+---
+title: "Oración por la Serenidad (versión Bayesiana)"
+author: "Andrés Gutiérrez"
+date: "2011-01-25"
+categories:
+  - "Estadística"
+---
+
+Querido Bayes,
+
+concédeme la serenidad
+
+de aceptar que los modelos están equivocados;
+
+el valor para limpiar los datos;
+
+y la sabiduría de elegir una distribución a priori.
+
+Actualizando un dato a la vez;
+
+seleccionando muestras de un modelo a la vez;
+
+aceptando las iteraciones como una manera de inferencia;
+
+sonsiderando, como lo hizo Bayes, este mundo incierto
+
+como podría ser, no como me gustaría que fuera.
+
+Siempre en el límite. Amén.
+
+Tomado de [acá](https://web.archive.org/web/20120129183230/http://mark.reid.name/iem/bayesian-serenity-prayer.html).

@@ -1,0 +1,73 @@
+---
+title: "Celebración de los cinco años de la Facultad de Estadística en la USTA y curso con el Dr. Lebart"
+author: "Andrés Gutiérrez"
+date: "2012-04-25"
+categories:
+  - "Estadística"
+---
+
+Durante el primer semestre del año 2012, la Facultad de Estadística de la Universidad Santo Tomás de Bogotá D. C, se enorgullece en celebrar sus primeros 5 años de funcionamiento, para lo cual ha planeado, del 9 al 11 de mayo, el Seminario Internacional de Análisis de Datos Textuales, liderado por el más reconocido investigador a nivel mundial en esta temática, el profesor francés Ludovic Lebart.
+
+[Inscripciones en línea haciendo clic acá (pilas que hay pocos cupos diponibles)](http://eventos.usta.edu.co/inscripcion_web.cfm?evento=49)
+
+El Dr. Lebart es la mayor autoridad a nivel mundial en el tema de minería de textos. Su investigación se centra en los Métodos de Análisis Estadístico de datos cualitativos y textuales. Los datos provenientes de encuestas socioeconómicas constituyen su principal ámbito de aplicación. Es autor de más de 14 libros especializados en el área de Text Mining y ha participado como coautor en decenas de publicaciones relacionadas. Ludovic Lebart es doctor en estadística matemática, ha sido director del Centro Nacional de Investigación Científica de Francia y del Centro de Investigación para el Estudio de Oberservación de las Condiciones de Vida también situado en Paris. Actualmente es profesor de Estadística Matemática en la Universitad de Neuchatel (Suiza) y desde 1990 es presidente del Comité Científico del CESP (Centre d' Etude des Supports de Publicité). Además fue el creador del software SPAD, hoy comercializado por la empresa CISIA y del DTM, que sigue siendo de libre distribución. Junto con el Profesor Campo Elias Pardo (Universidad Nacional de Colombia), el profesor Lebart dictará un curso de doce horas en análisis de datos textuales y manejo del software DTM.
+
+Adicionalmente se tiene programado un conjunto de conferencias y actos culturales de entrada libre para complementar la celebración del primer lustro de nuestro joven y dinámico programa de formación en estadística.
+
+El programa del evento es el siguiente:
+
+**DÍA 1: Miércoles 9 de Mayo de 2012**
+
+8:00 am Entrega de Material y Ubicación
+
+8:30 am Cursillo 1: Análisis de Datos Textuales (Prof. Ludovic Lebart)
+
+10:30 am Cursillo 2: Aplicación de Datos Textuales (Prof. Campo Elías Pardo)
+
+6:30 pm Instalación del Evento (Aula Magna Fray Domingo de las Casas)
+
+7:00 pm Conferencia 1 - Apertura
+
+8:00 pm Acto Social
+
+**DÍA 2: Jueves 10 de Mayo de 2012**
+
+8:00 am Cursillo 1: Análisis de Datos Textuales (Prof. Ludovic Lebart)
+
+10:00 am Cursillo 2: Aplicación de Datos Textuales (Prof. Campo Elías Pardo)
+
+4:00 pm Conversatorio: Los nuevos métodos de la estadística
+
+6:00 pm Conferencia 2
+
+7:00 pm Nuestra Facultad: Imágenes de 5 años.
+
+**DÍA 3: Viernes 11 de Mayo de 2012**
+
+8:00 am Cursillo 1: Análisis de Datos Textuales (Prof. Ludovic Lebart)
+
+10:00 am Cursillo 2: Aplicación de Datos Textuales (Prof. Campo Elías Pardo)
+
+5:00 pm Conversatorio: Mercado Laboral de la Estadística en Colombia
+
+6:00 pm Conferencia 3
+
+7:00 pm Clausura del Evento
+
+Informes:
+
+PBX: 58787987 ext: 1422 – 1450
+
+Directo: 5878869
+
+estadística@usantotomas.edu.co
+
+**Inscripciones: **
+
+**Estudiantes, docentes e investigadores USTA con cursillos: $140.000**
+
+**Estudiantes, docentes e investigadores externos con cursillos: $180.000**
+
+**Estudiantes, docentes e investigadores USTA sin cursillos: $0**
+
+**Estudiantes, docentes e investigadores externos sin cursillos: $0**

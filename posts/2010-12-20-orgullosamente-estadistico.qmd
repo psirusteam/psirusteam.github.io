@@ -1,0 +1,9 @@
+---
+title: "Orgullosamente estadístico"
+author: "Andrés Gutiérrez"
+date: "2010-12-20"
+categories:
+  - "Estadística"
+---
+
+Y gracias a Estadístico en construcción, la traducción al castellano es la siguiente:

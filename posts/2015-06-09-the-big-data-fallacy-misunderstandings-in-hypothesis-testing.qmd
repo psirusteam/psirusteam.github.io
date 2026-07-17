@@ -1,0 +1,44 @@
+---
+title: "The big data fallacy - Misunderstandings in hypothesis testing"
+author: "Andrés Gutiérrez"
+date: "2015-06-09"
+categories:
+  - "Estadística"
+  - "Stats"
+---
+
+**WARNING: Keep an open mind while reading!**
+
+**My question**: when testing hypothesis, why the critical value is always fixed at 5% level of significance?
+
+The rules of thumb in applied statistics are sometimes weird. It has no sense that, for every problem, in every discipline, in every context, in any population, the critical values are always the same. Why always 1% or 5%? Why? Is every problem the same? Is it equally important the number of deaths (in a pharmaceutical study) than the income average (in an econometric research) than the average score (in a psychometric experiment)?
+
+There are comments on the internet ([click here](http://stats.stackexchange.com/questions/2516/are-large-data-sets-inappropriate-for-hypothesis-testing)) suggesting that statistical theory fails when it comes to big data ([click here](http://magazine.amstat.org/blog/2010/09/01/statrevolution/)). I barely agree, because if you have massive data, why to keep the same level of significance? If you have a lot of observations then your level of significance should be lower, much lower. In a classical set-up you will find yourself defining your level of significance, the power of the test, etc. After defining that, you can compute your sample size. However in big data, you already have that large sample size.
+
+There should be something wrong in the use of statistics. I emphatically encourage my readers to take a look at the work of Ziliak and MacCloskey. For example, in their book [The Cult of Statistical Significance](http://www.amazon.com/The-Cult-Statistical-Significance-Economics/dp/0472050079), they give a clarifying example:
+
+> *Suppose you and your child have just purchased a hot dog. You have just come to your house and (think in these two different situations) a) you forgot the mustard, or b) you forgot your little child.Â You know that there is a probability of 0.95 that you return to home with the mustard in your hand. On the other hand, you also know that there is the same probability that you scurry across the street, dodging vehicles an returning home safely with your child.Â Two prizes - the mustard and your child - identical probability. Statistical significance ignores the difference.*
+
+I depart a little bit from the point of view of the authors: I do not agree when they say that statistical significance ignores. I think that is precisely the problem with statistics: people attribute decision-making authority to a theory. It is like entering some data in a statistical software and compute some statistics. For example, you can compute the average of the IDs, or something more stupid.
+
+There is a huge problem when you do not realize that situations are (in general) different and they deserve to be judged distinctly. For example, consider the following problem concerning big data:
+
+*You want to test if there are some differences in test scores between boys and girls. You observed more than 1M individuals. The results: boys scored 300 and girls scored 300.5. You perform your test and, because of the huge sample size, you reject the null hypothesis (subject to a significance level of 5%) and conclude that there is enough evidence to claim that the two populations are statistically similar.*
+
+Assume that, as an expert in your field, you consider that a difference of 0.5 point is not important and nonsignificant (even senseless), and suppose that the test scale has mean 250 and standard deviation 100. So, the real problem here is the level of significance. Why 5%? Why you have abandoned your job as an expert in the field? Why a senseless rule of thumb is deciding for you? At this point, I have to make a clarification: **I am a statistician, and I am not saying that you have to decide for yourself if there is a difference or not! You need to use statistical hypothesis testing theory, but you have to use it correctly.**
+
+So, why to use a significance level of 5% when you have 1M observations? If you have enough data, your critical value should be more demanding. Moreover, before data collection you would have to decide what is an important difference and what is not. That is called "the effect size" and it is noted as $ D $. In the previous example, the researcher forgot to define the effect. There is a proper way to asses this problem. Suppose that you define the effect to be 5 points. That is, an absolute difference lower than 5 points will not be considered significant. Then, you compute the critical value (or the significance level). After that, you collect the data, and then you can perform your statistical test of significance.
+
+For example, consider a test for a mean (for the sake of simplicity). This way, we are interested in proving that the true mean is 250. So, the test becomes:
+
+$ H_0 = \mu - \mu _0 = 0 \ \ \ \ vs. \ \ \ \ H_a = \mu - \mu _0 = D \neq 0$
+
+If the standard deviation is known, the size of the test will be:
+
+$\alpha = \Pr ( |\bar{x} - \mu _0| > D | \mu = \mu _0) = 2 \Phi ( - \frac{\sqrt{n}D}{\sigma})$
+
+Then, for a particular effect size $ D = 2$ (that is, an absolute difference greater than 2 units between the observed average and 250 becomes important) and $\sigma = 100$, with 1M of observations, the proper level of significance should be $\alpha=2.539629e-10$. Is it shocking for you to have that significance level? Let's check out the power of this particular test:
+
+$\beta =1 - \Phi (\frac{\sqrt{n}D}{\sigma} + Z_{1- \alpha / 2}) + \Phi (\frac{\sqrt{n}D}{\sigma} - Z_{1- \alpha / 2})$
+
+The power of this test tends to 1. So, at the end we have a test with size tending to zero and power tending to 1. Big data, big power, big confidence, big significance!

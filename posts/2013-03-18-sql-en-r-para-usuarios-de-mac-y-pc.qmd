@@ -1,0 +1,24 @@
+---
+title: "SQL en R (para usuarios de Mac y PC)"
+author: "Andrés Gutiérrez"
+date: "2013-03-18"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Existen varias formas de realizar consultas en R sirviéndose del SQL. Sin embargo, algunas librerías son más complicadas que otras. En mi corta percepción de este tema, puedo decir que la menos complicada es la librería sqldf, que no necesita interactuar con ningún motor de consulta como MySQL. Esto trae ventajas pues si MySQL ha sufrido alguna actualización, entonces es posible que la librería de R no se ejecute correctamente.
+
+Sin embargo, la librería sqldf depende de la interfaz Tcl/Tk. Se supone que al instalar la librería, se instala también la interfaz, pero no siempre es así. Por lo menos, a mí me ha pasado en Windows y ahora también en Mac.
+
+La situación es más dramática en Mac, puesto que con las actualizaciones del sistema operativo, se han dejado de lado aplicaciones importantes (específicamente la X11, que permite ejecutar la función View de R). Si usted es usuario de R, y se ha cambiado recientemente a Mac, encontrará que la librería sqldf no se ejecuta correctamente a no ser que usted:
+
+1) instale la aplicación [XQuartz](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.4.dmg) y,
+
+2) instale la interfaz [Tcl/Tk](http://socserv.mcmaster.ca/jfox/Courses/soc3h6/tcltk-8.5.5-x11.dmg).
+
+El primer paso es obligatorio y no puede ser pasado por alto. Sin embargo, el segundo paso puede ser obviado, puesto que usted puede disponer que el motor sobre el cual se ejecute la consulta sea el propio R y no cargar la interfaz Tck/Tl. Lo anterior, se realiza con la siguiente instrucción:
+
+```
+options(gsubfn.engine = "R")
+```

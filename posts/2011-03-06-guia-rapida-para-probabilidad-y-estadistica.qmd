@@ -1,0 +1,11 @@
+---
+title: "Guía rápida para probabilidad y estadística"
+author: "Andrés Gutiérrez"
+date: "2011-03-06"
+categories:
+  - "Estadística"
+---
+
+﻿﻿﻿﻿
+
+Matthias Vallentin, ads﻿crito al Berkeley California Computer Science Institute ha desarrollado [esta hoja de referencias](http://www.cs.berkeley.edu/~mavam/dl/probstat.pdf) que integra una variedad de temas de probabilidad y de teoría estadística. La versión más reciente de este documento está disponible en http://bit.ly/probstat.

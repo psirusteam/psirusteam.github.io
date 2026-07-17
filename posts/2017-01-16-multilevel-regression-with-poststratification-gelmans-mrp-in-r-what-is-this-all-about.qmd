@@ -1,0 +1,146 @@
+---
+title: "Multilevel regression with poststratification (Gelman's MrP) in R - What is this all about?"
+author: "Andrés Gutiérrez"
+date: "2017-01-16"
+categories:
+  - "Estadística"
+  - "R"
+---
+
+Multilevel regression with poststratification (MrP) is a useful technique to predict a parameter of interest within small domains through modeling the mean of the variable of interest conditional on poststratification counts. This method (or methods) was first proposed by Gelman and Little (1997) and is widely used in political science where the voting intention is modeling conditional on the interaction of classification variables.  The aim fo this methodology is to provide reliable estimates on strata based on census counts. For those who have some background on survey sampling, this method should look very similar to the Raking method, where sampling weights are adjusted due to known census cell counts. However, a significant difference with Raking is that MrP is a model-based approach, rather than a design-based method. This way, even in the presence of a (maybe complex) survey design, MrP does not take it into account for inference. In other words, sampling design will be considered as ignorable. So, the probability measure that governs the whole inference is based on modeling the voting intention (variable of interest) to demographic categories (auxiliary variables).  Is this a major technical issue to ignore the complex survey design? Yes, because in any case we are considering a probability measure to draw the sample. However, when it comes to voting intention (a major area where this technique is used), we rarely find a sophisticated complex design. Moreover, this kind of studies is barely based on probabilistic polls. So, if the survey lacks a proper sampling plan, it is always better to model the response variable.  Therefore, the ultimate goal of this technique it to estimate a parameter of interest (totals, means, proportions, etc.) for all of the strata (domains, categories or subgroups) in a finite population. From now on, let's assume that:
+
+1. a population is divided into $ H $ strata of interest (for example states),
+
+2. the parameters of interest are the means (same rules apply for proportions) in each strata $\theta_h $ ($ h=1, \ldots, H $),
+
+3. every stratum is cross-classified by some demographics $ j \in H $ (from now on defined as post-srata), besides every population count $ N_j $ is known, and
+
+4. all of the population means $\mu_j $ can be estimated by using some statistical technique, such as multilevel regression.
+
+This way, the mean in stratum $ h $ ($\theta_h $), is defined as a function of means in post-strata $ j $ ($\mu_j $), and post-strata counts ($ N_j $):  $\theta_h = \frac{\sum_{j \in h} N_j \mu_j }{\sum_{j \in h} N_j}$  The first part of MrP is defined by a multilevel regression (MR). This kind of models is a particular case of mixed effect models. The core components of this phase are
+
+- the variable of interest (for example, voting intention),
+
+- the auxiliary variables (classification on census demographic cells) and,
+
+- the random effects (strata of interest, that usually are states or counties).
+
+The second part of MrP is cell poststratification (P), and the predicted response variable is aggregated into states and adjusted by corresponding poststratification weights.
+
+## R workshop
+
+Let's consider the Lucy database of the TeachingSampling package. This population contains some economic variables of 2396 industrial companies in a particular year. Assume that we want to estimate the mean income of industries by each of the five existing zones (strata of interest) on that database. This way, our parameters of interest are $\theta_1, \ldots, \theta_5$.  Now, we also know that the population is divided into three levels (small, medium and big industries) and we have access to the total number of industries within each cross group. That is, we know exactly how many small industries are on each of the five zones, and how many medium industries are on each of the five zones, and so on.  The following code shows how to load the database and obtain the cell counts.
+
+```
+> rm(list = ls())
+> set.seed(123)
+>
+> library(TeachingSampling)
+> library(dplyr)
+> library(lme4)
+>
+> data("Lucy")
+> # Number of industries per level
+> table(Lucy$Level)
+
+   Big Medium  Small
+    83    737   1576
+> # Number of industries per zone
+> table(Lucy$Zone)
+
+  A   B   C   D   E
+307 727 974 223 165
+> # Size of post-strata
+> (Np <- table(Lucy$Level, Lucy$Zone))
+
+           A   B   C   D   E
+  Big     30  13   1  16  23
+  Medium 180 121 111 187 138
+  Small   97 593 862  20   4
+```
+
+Of course, this technique works over a selected sample. That's why we are going to select a random sample of size $ n = 1000$. We can also create some tables showing the counts on the sample.
+
+```
+> # A sample is selected
+> SLucy <- sample_n(Lucy, size = 1000)
+> table(SLucy$Level)
+
+   Big Medium  Small
+    33    280    687
+> table(SLucy$Zone)
+
+  A   B   C   D   E
+130 295 426  86  63
+```
+
+The first step of MRP is Multilevel Regression in order to estimate post-strata means. The following code shows how to estimate them by using the
+
+**lmer**
+
+function. The object
+
+**Mupred**
+
+contains the corresponding $\mu_j $ ($ j $ is defined for each level) regarding each stratum (zones).
+
+```
+> # Step 1: <<MR>> - Multilevel regression
+> M1 <- lmer(Income ~ Level + (1 | Zone), data = SLucy)
+> coef(M1)
+$Zone
+  (Intercept) LevelMedium LevelSmall
+A    1265.596   -579.1851  -893.8958
+B    1138.337   -579.1851  -893.8958
+C    1189.285   -579.1851  -893.8958
+D    1248.658   -579.1851  -893.8958
+E    1284.322   -579.1851  -893.8958
+
+attr(,"class")
+[1] "coef.mer"
+> SLucy$Pred <- predict(M1)
+>
+> # Summary
+> grouped <- group_by(SLucy, Zone, Level)
+> sum <- summarise(grouped, mean2 = mean(Pred))
+> (Mupred <- matrix(sum$mean2, ncol = 5, nrow = 3))
+          [,1]      [,2]      [,3]      [,4]      [,5]
+[1,] 1265.5959 1138.3370 1189.2852 1248.6575 1284.3224
+[2,]  686.4107  559.1518  610.1000  669.4724  705.1373
+[3,]  371.7001  244.4412  295.3894  354.7618  390.4267
+```
+
+Now we have estimated the post-strata means, it's time to weight every strata by their corresponding counts in order to obtain an estimate of the mean income by zone. As we know each post-strata size, we simply use the function
+
+**aggregate**
+
+to obtain the MRP estimator of the parameters of interest.
+
+```
+> # Step 2: <
+```
+
+> - Post-stratification
+
+>
+
+# Mean income estimation per zone
+
+>
+
+colSums(Np
+
+*
+
+Mupred) / table(Lucy $ Zone)  A B C D E 643.5724 312.8052 332.1726 682.8031 778.2428  How accurate was the estimation? It was good compared to the true parameters on the finite population.
+
+```
+> # True parameters
+> aggregate(Lucy$Income, by = list(Lucy$Zone), FUN = mean)
+  Group.1        x
+1       A 652.2834
+2       B 320.7469
+3       C 331.0195
+4       D 684.9821
+5       E 767.3879
+```

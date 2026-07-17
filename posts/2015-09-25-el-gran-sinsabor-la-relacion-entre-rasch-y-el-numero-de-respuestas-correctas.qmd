@@ -1,0 +1,18 @@
+---
+title: "El gran sinsabor: la relación entre Rasch y el número de respuestas correctas"
+author: "Andrés Gutiérrez"
+date: "2015-09-25"
+categories:
+  - "Estadística"
+  - "IRT"
+---
+
+Tal vez esta entrada sea muy inocua para algunos lectores del blog, particularmente los más avezados en temas psicométricos. Pero no deja de sorprenderme el modelo de Rasch, algunas veces lo odio, pero al mismo tiempo lo amo.
+
+Se supone que el modelo tiene en cuenta la dificultad de cada ítem. Y es que dependiendo de la configuración de las respuestas, el modelo estima una habilidad para cada individuo. Sin embargo, algo que no me gusta del modelo, es que sin importar si alguien respondió preguntas más difíciles que otro, si han respondido el mismo número de preguntas correctamente, entonces el modelo los agrupa en un mismo nivel de habilidad.
+
+El siguiente gráfico muestra la habilidad estimada (con métodos Bayesianos y usando distribuciones previas no informativas para la dificultad de los ítems y también para la habilidad de los estudiantes) en una prueba con 10 ítems. Nótese que se forman grupos de personas cuando se cruza esta habilidad con el número de respuestas correctas. Si la estimación se hubiese hecho con métodos de máxima verosimilitud, entonces el resultado sería aún más dramático, puesto que el proceso de estimación permite reducir la matriz de unos y ceros por una matriz de frecuencias entre número de respuestas correctas para cada ítem. De esta forma, siguiendo a Baker (2001, pg. 164), los individuos con el mismo número de respuestas correctas tendrán la misma habilidad estimada (aunque su verdadero valor de habilidad sea diferente).
+
+Uno podría pensar que, dado el proceso de estimación garantiza que la dificultad de los ítems es diferente para cada uno, entonces una persona que conteste los ítems más difíciles podría tener una habilidad más alta que una persona que conteste la misma cantidad de ítems pero más fáciles. Pues bien, en la estimación clásica, esto no se cumple. Sin embargo en la estimación Bayesiana sí. Aunque no se trata de lo que uno esperaría: en general se observa que una persona que contestó los ítems más difíciles efectivamente tiene mayor habilidad que una que contestó los misma cantidad de ítems correctamente, pero contestó los menos difíciles.
+
+Me queda un sinsabor porque yo esperaría que, para este ejemplo de diez ítems, una persona que contestó correctamente los cuatro ítems más difíciles tenga mayor habilidad estimada que aquel que contestó correctamente los cinco ítems más fáciles.

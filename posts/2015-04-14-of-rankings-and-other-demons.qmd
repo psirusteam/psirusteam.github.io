@@ -1,0 +1,19 @@
+---
+title: "Of rankings and other demons"
+author: "Andrés Gutiérrez"
+date: "2015-04-14"
+categories:
+  - "Colombia"
+  - "Estadística"
+  - "Public Policy Evaluation"
+---
+
+It has been caused a lot of noise the [Synthetic Index for the Quality of Education](http://www.eltiempo.com/bogota/nuevo-modelo-de-educacion-en-colombia/15399375), that has been developed jointly by ICFEs and MEN. That index is an effort to explain the reality of Colombia in terms of schools and their environment. The index has into account different components that affect the performance of schools.
+
+However, media have used that index to perform some kind of school ranking. I want to emphasize that the step between an index and a ranking is neither straightforward, nor trivial, nor obvious. You must have to take into account the inner dispersion of the schools, in terms of the index. Having said that, any index induces a scale that has a mean and a variance. This way, the comparison between schools should have been done with these two parameters in mind. However, media take advantage (abusse?) of any index and begin to compare (in this case, schools in terms of their specific scores), but they forgot to ask whether the difference between schools is statistically significant.
+
+I want to stress out that it is possible (indeed) to make a ranking from an index. But, you should take into account both, specific scores and standard deviation of the scale. For example, let's consider two schools, say, A and B. If the scale of the index has mean 5 and standard deviation 1, then it is absurd to say that a school A is better than school B, just because school A has a score of 5.32 and school B has a score of 5.18.
+
+In particular, in the field of education, we want to measure how competent a school is regarding teaching, and so on. To measure this component is not straightforward. I mean, it is not as easy as to measure the length of a desk, or to measure distance, or temperature, etc. In education, the parameters of interest are latent, and not tangible. This way, every intent of measurement has an inner error. So, you have to take into account this error when it comes to comparing schools. For example, when comparing schools from an standardized test, we cannot say that school A and B are different because, for the sake of proper inferences, one must compute the measurement error of that specific score (that it is nothing but a estimate).
+
+Then, if the error of school A and B is 0.5. Then one could say that performance of school A and school B is the same. This way, if you perform a test of differences, you will find that there is no evidence for rejecting the hypothesis of equivalence. Finally, I consider that the illiteracy of media in terms of data and information is dangerous. At the end, it is a joint responsibility between academia, media and government.
