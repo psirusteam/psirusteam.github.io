@@ -3,7 +3,7 @@ title: "Python 3 en RStudio"
 author: "Andrés Gutiérrez"
 date: "2019-11-26"
 categories:
-  - "Python"
+  - "R"
   - "Software"
 ---
 

@@ -3,7 +3,8 @@ title: "Para profesores en la región"
 author: "Andrés Gutiérrez"
 date: "2012-03-05"
 categories:
-  - "Estadística"
+  - "Teaching"
+  - "R"
 ---
 
 #### UNILA abre processo seletivo com 18 vagas para diversas áreas do conhecimento
@@ -32,7 +33,7 @@ Além disso, os candidatos devem enviar Currículo Lattes e Proposta de Atuaçã
 
 . No caso dos estrangeiros, ao invés do Currículo Lattes, pode ser enviado um currículo detalhado.
 
-A remuneração para professores doutores será de R $7.333,67, e para mestres, R $ 4.651,49.
+A remuneração para professores doutores será de R \$7.333,67, e para mestres, R \$4.651,49.
 
 ### Mais informações
 

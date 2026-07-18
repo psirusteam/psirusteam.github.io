@@ -3,17 +3,15 @@ title: "Parametric bootstrap"
 author: "Andrés Gutiérrez"
 date: "2015-08-08"
 categories:
-  - "Estadística"
+  - "Inference"
   - "R"
-  - "Stats"
-  - "Teaching"
 ---
 
 Assume we want to know the mean square error (MSE) of the *sample median* as a estimator of a *population mean*under normality. As you know, this is not a trivial problem. We may take advantage of the Bootstrap method and solve it by means of simulation.
 
-This way, for $ b=1, \ldots, B $, we generate $ X_{b1}, \ldots, X_{bn} \sim N(\hat{\mu}, \hat{\sigma}^2)$. Then, we compute the sample median $\tilde{X}_b $ for each sample in the bootstrap. Finally, an estimator of the MSE is given by
+This way, for $b=1, \ldots, B$, we generate $X_{b1}, \ldots, X_{bn} \sim N(\hat{\mu}, \hat{\sigma}^2)$. Then, we compute the sample median $\tilde{X}_b$ for each sample in the bootstrap. Finally, an estimator of the MSE is given by
 
-$$\wide\hat{MSE} = B^{-1} \sum_{b=1}^B(\tilde{X}_b - \hat{\mu})^2$$
+$$\widehat{MSE} = B^{-1} \sum_{b=1}^B(\tilde{X}_b - \hat{\mu})^2$$
 
 In R, the simulation should look like this for a sample size of ten units:
 

@@ -3,7 +3,7 @@ title: "Compressing big data files in R"
 author: "Andrés Gutiérrez"
 date: "2014-03-26"
 categories:
-  - "Estadística"
+  - "Modeling"
   - "R"
 ---
 

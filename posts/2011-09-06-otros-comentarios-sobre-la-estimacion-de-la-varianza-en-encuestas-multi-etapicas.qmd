@@ -3,7 +3,8 @@ title: "Otros comentarios sobre la estimación de la varianza en encuestas multi
 author: "Andrés Gutiérrez"
 date: "2011-09-06"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Surveys"
 ---
 
 Siguiendo con la estimación de la varianza en encuestas multi-etápicas, los programas computacionales como SAS, WesVar, entre otros, utilizan una aproximación, sesgada, para obtener esta cifra. Esta aproximación, solo tienen en cuenta la varianza de los totales estimados en la primera etapa, suponiendo que el muestreo en la primera etapa es aleatorio simple. Para la estimación de un total, suponiendo un diseño de muestreo en dos etapas, la fórmula que induce una estimación insesgada es la siguiente:

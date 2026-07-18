@@ -3,7 +3,8 @@ title: "Mi revisión del libro de Efron en el Journal of Official Statistics"
 author: "Andrés Gutiérrez"
 date: "2012-07-12"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Inference"
 ---
 
 Hace algunos meses, Jaki McCarthy me invitó a ser parte del número 2, Volumen 28 del Journal of Official Statistics para que hiciera un pequeño ensayo del libro *Large-Scale Inference: Empirical Bayes Methods for Estimation, Testing, and Prediction*de Bradley Efron. Pues bien, después de leer el libro y hacer el *review*, [aquí está el resultado](http://gutierrezandres.files.wordpress.com/2012/07/jos-review-gutic3a9rrez.pdf).

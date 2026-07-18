@@ -3,7 +3,8 @@ title: "Muestreo y análisis de encuestas en R (Parte I)"
 author: "Andrés Gutiérrez"
 date: "2010-04-29"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Sampling"
 ---
 
 Hace algunos años cuando cursaba las materias de muestreo I y II en mi *alma máter*, la Universidad Nacional de Colombia, Sede Bogotá, me preguntaba si al igual que en los métodos estadísticos tradicionales - como la regresión, el análisis de correspondencias o las pruebas t - habría algún software que permitiera realizar estimación de totales o medias para distintos diseños de muestreo. Mi búsqueda comenzó en SPSS, Minitab, Statgraphics, entre otros. El resultado fue desalentador aunque motivador. En efecto, en ese entonces no existía, y dudo que ahora exista, un paquete computacional de clic-clic amigable con el cual realizar inferencias sobre los totales o medias. Ahora, gracias a las ventajas de R y SAS existen varios paquetes de muestreo que si bien no son de clic-clic, si permiten enfocarse en el diseño de las encuestas y dejan de lado la difícil tarea de la programación.

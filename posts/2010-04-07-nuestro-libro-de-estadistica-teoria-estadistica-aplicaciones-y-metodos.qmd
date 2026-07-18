@@ -3,7 +3,8 @@ title: "Nuestro libro de estadística: Teoría Estadística, Aplicaciones y Mét
 author: "Andrés Gutiérrez"
 date: "2010-04-07"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Probability"
 ---
 
 Hace unos pocos días hemos terminado un trabajo que desde hace unos años empezamos a gestar en la Facultad de Estadística de la Universidad Santo Tomás... se trata de un libro de teoría estadística que recoge la rigurosidad teórica y al mismo tiempo conduce al lector por el apasionante destino de la práctica estadística la cual ciertamente debe estar fundamentada en la teoría. Con este enfoque empezamos a divagar sobre cuál debería ser el orden de los contenidos y qué tópicos debería abordar el texto. Después de poco tiempo, propuse que debería ser el sentido común quien le diera el orden a los contenidos. El sentido común al que tanto apelaba Leslie Kish cuando, a grandes rasgos, afirmaba que las muestras no estaban dadas sino que debían ser recolectadas y analizadas.

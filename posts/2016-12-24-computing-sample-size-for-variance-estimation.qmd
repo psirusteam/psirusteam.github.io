@@ -3,17 +3,17 @@ title: "Computing Sample Size for Variance Estimation"
 author: "Andrés Gutiérrez"
 date: "2016-12-24"
 categories:
-  - "Estadística"
   - "R"
+  - "Sampling"
 ---
 
 The R package [samplesize4surveys](https://cran.r-project.org/web/packages/samplesize4surveys/index.html) contains functions that allow to calculate sample sizes for estimating proportions, means, difference of proportions and even difference of two means. It also permits the calculation of sample error and power level for a fixed sample size.
 
 Here four functions are introduced for the estimation of a population variance and for conducting statistical hypothesis testing on this parameter of interest. Right away is the description of these functions:
 
-1. Function **ss4S2** allows calculating the sample size for estimating $ s^2_{y_U}$ subject to a particular value of the coefficient of variation or the relative margin of error. Additionally, it offers to the user the option of mapping the coefficient of variation and the margin of error as a function of the sample size, to make easier the decision about $ n $.
+1. Function **ss4S2** allows calculating the sample size for estimating $s^2_{y_U}$ subject to a particular value of the coefficient of variation or the relative margin of error. Additionally, it offers to the user the option of mapping the coefficient of variation and the margin of error as a function of the sample size, to make easier the decision about $n$.
 
-2. Function **ss4S2H** allows calculating the sample size for estimating $ s^2_{y_U}$ subject to a particular power level to detect a population variance greater than the value set in the null hypothesis. It also offers to the user the option of mapping the power level in function of the sample size.
+2. Function **ss4S2H** allows calculating the sample size for estimating $s^2_{y_U}$ subject to a particular power level to detect a population variance greater than the value set in the null hypothesis. It also offers to the user the option of mapping the power level in function of the sample size.
 
 3. Function **e4S2** allows calculating the coefficient of variation and the margin of error for a particular sample size. It also allows obtaining a mapping similar to the one of **ss4S2**.
 

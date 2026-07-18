@@ -3,7 +3,8 @@ title: "Discurso de posesión"
 author: "Andrés Gutiérrez"
 date: "2013-01-31"
 categories:
-  - "Estadística"
+  - "Teaching"
+  - "Community and Events"
 ---
 
 Estas fueron las palabras con las que empecé este periodo de decanatura en la Facultad de Estadística de la Universidad Santo Tomás:

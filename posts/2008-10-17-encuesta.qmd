@@ -3,7 +3,8 @@ title: "Encuesta"
 author: "Andrés Gutiérrez"
 date: "2008-10-17"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Teaching"
 ---
 
 Estimado lector:

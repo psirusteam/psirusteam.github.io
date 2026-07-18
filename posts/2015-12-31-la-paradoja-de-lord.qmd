@@ -3,9 +3,7 @@ title: "La paradoja de Lord"
 author: "Andrés Gutiérrez"
 date: "2015-12-31"
 categories:
-  - "Estadística"
   - "Probability"
-  - "Stats"
   - "Teaching"
 ---
 

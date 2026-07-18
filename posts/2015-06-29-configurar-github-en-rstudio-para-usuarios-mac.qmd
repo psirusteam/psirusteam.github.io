@@ -3,8 +3,8 @@ title: "Configurar GitHub en RStudio (para usuarios MAC)"
 author: "Andrés Gutiérrez"
 date: "2015-06-29"
 categories:
-  - "Estadística"
-  - "GitHub"
+  - "Software"
+  - "R"
 ---
 
 Siga las siguientes instrucciones para crear una cuenta en github y empezar a crear, modificar y actualizar proyectos en RStudio. Usted puede implementar una gran cantidad de proyectos que incluyen: paquetes para R, presentaciones, libros, artículos, etc. Además puede interactuar con proyectos de otros usuarios y sugerir cambios y actualizaciones.

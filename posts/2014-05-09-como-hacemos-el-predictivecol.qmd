@@ -3,8 +3,8 @@ title: "¿Cómo hacemos el #PredictiveCOL?"
 author: "Andrés Gutiérrez"
 date: "2014-05-09"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Modeling"
+  - "Elections"
 ---
 
 [SoundCloud](https://api.soundcloud.com/tracks/148751814)

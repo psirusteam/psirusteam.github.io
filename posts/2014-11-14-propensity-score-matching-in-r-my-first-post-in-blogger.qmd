@@ -3,10 +3,8 @@ title: "Propensity Score Matching in R (My first post in blogger)"
 author: "Andrés Gutiérrez"
 date: "2014-11-14"
 categories:
-  - "Estadística"
-  - "Public Policy Evaluation"
+  - "Policy Evaluation"
   - "R"
-  - "Stats"
 ---
 
 My first post in blogger is about Propensity Score Matching (PSM) in R. In this post I will introduce the R packages MatchIt and Zelig. The first one is devoted to perform different PSM algorithms and the other one is used in order to estimate the average treatment effect (ATE) and the effect of the treatment on the treated (ATT). First of all, I will simulate a population where some individuals receive the treatment, and the remaining ones do not.

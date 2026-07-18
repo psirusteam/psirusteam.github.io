@@ -3,8 +3,8 @@ title: "My paper in RBE - Panel Matching in PME"
 author: "Andrés Gutiérrez"
 date: "2014-04-08"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Policy Evaluation"
+  - "Publications"
 ---
 
 [This paper](http://gutierrezandres.files.wordpress.com/2014/04/rbes237.pdf)

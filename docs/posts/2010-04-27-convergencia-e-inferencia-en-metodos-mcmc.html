@@ -157,7 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Convergencia e inferencia en métodos MCMC</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Bayesian Statistics</div>
+    <div class="quarto-category">Inference</div>
   </div>
   </div>
 
@@ -197,7 +198,7 @@ window.Quarto = {
 <li><p>Calibrar el algoritmo de muestreo si la convergencia no se presenta rápidamente. Por ejemplo, en un algoritmo de Metropolis-Hastings, escoger una distribución <em>jumping</em> más acorde con la distribución de la cual se desea simular. En inferencia bayesiana lo anterior se traduciría en calibrar la distribución <em>jumping</em>para que su forma estructural sea más parecida a la distribución a posteriori.</p></li>
 <li><p>Con base en lo anterior, es bueno comparar y contrastar los resultados con modelos simples que permitan examinar posibles discrepancias y corregir posibles errores de programación.</p></li>
 </ol>
-<p>En términos de inferencia, el documento aclara que, aunque la tarea más común en estadística bayesiana (una de las corrientes más directamente beneficiada de los métodos MCMC) es realizar inferencias acerca de un parámetro $$, también es posible realizar cálculos acerca de los momentos del parámetro. Por ejemplo su esperanza. Estas dos opciones tienen tratamientos muy diferentes en términos de la cantidad de simulaciones requeridas para inferir. Por ejemplo, si el objetivo es inferir acerca de $$, basta con unas cuantas simulaciones que se resumen en un promedio y una desviación estándar. Por otro lado, si el objetivo es inferir acerca de <span class="math inline">\(\E(\theta)\)</span>, se requieren más simulaciones para obtener una precisión deseada. Además, Gelman recomienda que, una vez terminado el proceso de <em>burning</em> y <em>thining</em>, se dividan los valores en <em>k</em> grupos y una estimación de <span class="math inline">\(\E(\theta)\)</span> será la gran media de las medias muestrales de cada grupo y el error estándar será la desviación estándar dividida en <span class="math inline">\(\sqrt{k}\)</span>.</p>
+<p>En términos de inferencia, el documento aclara que, aunque la tarea más común en estadística bayesiana (una de las corrientes más directamente beneficiada de los métodos MCMC) es realizar inferencias acerca de un parámetro <span class="math inline">\(\theta\)</span>, también es posible realizar cálculos acerca de los momentos del parámetro. Por ejemplo su esperanza. Estas dos opciones tienen tratamientos muy diferentes en términos de la cantidad de simulaciones requeridas para inferir. Por ejemplo, si el objetivo es inferir acerca de <span class="math inline">\(\theta\)</span>, basta con unas cuantas simulaciones que se resumen en un promedio y una desviación estándar. Por otro lado, si el objetivo es inferir acerca de <span class="math inline">\(\mathbb{E}(\theta)\)</span>, se requieren más simulaciones para obtener una precisión deseada. Además, Gelman recomienda que, una vez terminado el proceso de <em>burning</em> y <em>thining</em>, se dividan los valores en <em>k</em> grupos y una estimación de <span class="math inline">\(\mathbb{E}(\theta)\)</span> será la gran media de las medias muestrales de cada grupo y el error estándar será la desviación estándar dividida en <span class="math inline">\(\sqrt{k}\)</span>.</p>
 
 
 

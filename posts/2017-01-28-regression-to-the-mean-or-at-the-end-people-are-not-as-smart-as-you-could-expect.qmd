@@ -3,9 +3,7 @@ title: "Regression to the mean (or at the end, people are not as smart as you co
 author: "Andrés Gutiérrez"
 date: "2017-01-28"
 categories:
-  - "Colombia"
-  - "Education"
-  - "Estadística"
+  - "Modeling"
   - "Teaching"
 ---
 

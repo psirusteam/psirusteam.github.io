@@ -3,7 +3,8 @@ title: "Videos divertidos del Statistical Planet"
 author: "Andrés Gutiérrez"
 date: "2011-08-24"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Community and Events"
 ---
 
 El Grupo de conocimiento público de la American Statistical Association (ASA) realizó un concurso de videos llamado "promoción de la práctica y profesión de la Estadística". A continuación el video más bayesiano.

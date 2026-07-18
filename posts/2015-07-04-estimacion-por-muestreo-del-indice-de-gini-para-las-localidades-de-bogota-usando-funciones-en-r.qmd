@@ -3,8 +3,8 @@ title: "Estimación por muestreo del índice de Gini para las localidades de Bog
 author: "Andrés Gutiérrez"
 date: "2015-07-04"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "R"
+  - "Sampling"
 ---
 
 [En este artículo](http://revistas.usantotomas.edu.co/index.php/estadistica/article/view/2045/2208) se estima el índice de Gini - basado en los ingresos de una población - para la ciudad de Bogotá (y sus diecinueve localidades) utilizando la Encuesta Multipropósito de Bogotá (EMB) y junto con sus módulos específicos se estima, utilizando pesos de muestreo, el índice de Gini por cada localidad, definiendo las variables que incluyen la información acerca de los ingresos por hogar. El cálculo del índice se realiza en usando funciones en el software estadístico R que son descritas paso a paso.

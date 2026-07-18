@@ -3,7 +3,8 @@ title: "Descripción de los cursillos en el 3er IWAS - Data Mining en Colombia -
 author: "Andrés Gutiérrez"
 date: "2013-03-22"
 categories:
-  - "Estadística"
+  - "Teaching"
+  - "Modeling"
 ---
 
 Si desean más información no duden en escribirnos. La página oficial de la Facultad es https://web.archive.org/web/20240527213655/http://estadistica.usta.edu.co/. La página oficial del evento en donde se pueden inscribir es http://eventos.usta.edu.co/inscripcion_web.cfm?evento=66
@@ -90,17 +91,17 @@ La Facultad de Estadística de la Universidad Santo Tomás tiene el gusto de ext
 
 Como pueden evidenciar la didáctica de nuestro evento está enfocada en proveer un entrenamiento intensivo de un experto en la temática. Es decir, se trata, no de un cursillo de dos o tres horas, sino de una capacitación brindada por autoridades internacionales y reconocidas en el medio estadístico. Los cursos serán en las mañanas y tendremos ciclos de conferencias en la noche con invitados internacionales y nacionales. **El evento empezará el día 10 de abril y finalizará el 13 de abril.** Para su información, los costos son los siguientes:
 
-**Estudiante de la USTA: $ COL 150.000**
+**Estudiante de la USTA: \$ COL 150.000**
 
-**Estudiante externo: $ COL 180.000**
+**Estudiante externo: \$ COL 180.000**
 
-**Profesor de la USTA: $ COL 200.000**
+**Profesor de la USTA: \$ COL 200.000**
 
-**Profesor externo: $ COL 250.000**
+**Profesor externo: \$ COL 250.000**
 
-**Profesional: $ COL 250.000**
+**Profesional: \$ COL 250.000**
 
-**Participantes con ponencias: $ COL 120.000**
+**Participantes con ponencias: \$ COL 120.000**
 
 Si desean más información no duden en escribirnos. La página oficial de la Facultad es https://web.archive.org/web/20240527213655/http://estadistica.usta.edu.co/. La página oficial del evento en donde se pueden inscribir es http://eventos.usta.edu.co/inscripcion_web.cfm?evento=66
 

@@ -3,7 +3,8 @@ title: "¡Que no es estadista, es estadístico!"
 author: "Andrés Gutiérrez"
 date: "2009-09-05"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 La semana pasada llegó a mi correo electrónico una oferta laboral enviada por el programa de egresados de la Universidad Nacional de Colombia. Los términos de referencia eran los siguientes:

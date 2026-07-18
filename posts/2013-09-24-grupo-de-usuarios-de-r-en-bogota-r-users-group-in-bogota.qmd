@@ -3,8 +3,8 @@ title: "Grupo de usuarios de R en Bogotá (R Users Group in Bogotá)"
 author: "Andrés Gutiérrez"
 date: "2013-09-24"
 categories:
-  - "Estadística"
   - "R"
+  - "Software"
 ---
 
 Hace pocos días creamos el [Bogotá R Users Group](http://www.meetup.com/Bogota-R-Users-Group/), como una iniciativa de algunas personas apasionadas por el software estadístico R en Bogotá. El objetivo general del grupo es compartir experiencias de los usuarios del software en Bogotá y servir de base para organizar encuentros y seminarios (presenciales y virtuales) que giren en torno al uso del software (con un sesgo muy marcado hacia la estadística y la minería de datos).

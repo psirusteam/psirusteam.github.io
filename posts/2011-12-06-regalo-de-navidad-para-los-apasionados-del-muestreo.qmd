@@ -3,7 +3,8 @@ title: "Regalo de navidad para los apasionados del muestreo"
 author: "Andrés Gutiérrez"
 date: "2011-12-06"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Bayesian Statistics"
 ---
 
 Llegó diciembre con su alegría y yo les tengo dos compendios de libre acceso que le resultarán fascinantes a todos aquellos que quieren aprender más de muestreo y que, sobre todo, no entienden por qué algunos dicen que el muestreo es una técnica rara que poco o nada tiene que ver con el desarrollo de la ciencia estadística y los modelos. Pues nada más falso, el muestreo esta circunscrito dentro de la ciencia estadística y tiene como base a, nada más y nada menos, la probabilidad.

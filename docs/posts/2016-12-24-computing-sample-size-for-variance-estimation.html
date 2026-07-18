@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,8 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Computing Sample Size for Variance Estimation</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
     <div class="quarto-category">R</div>
+    <div class="quarto-category">Sampling</div>
   </div>
   </div>
 
@@ -162,8 +191,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The R package <a href="https://cran.r-project.org/web/packages/samplesize4surveys/index.html">samplesize4surveys</a> contains functions that allow to calculate sample sizes for estimating proportions, means, difference of proportions and even difference of two means. It also permits the calculation of sample error and power level for a fixed sample size.</p>
 <p>Here four functions are introduced for the estimation of a population variance and for conducting statistical hypothesis testing on this parameter of interest. Right away is the description of these functions:</p>
 <ol type="1">
-<li><p>Function <strong>ss4S2</strong> allows calculating the sample size for estimating $ s^2_{y_U}$ subject to a particular value of the coefficient of variation or the relative margin of error. Additionally, it offers to the user the option of mapping the coefficient of variation and the margin of error as a function of the sample size, to make easier the decision about $ n $.</p></li>
-<li><p>Function <strong>ss4S2H</strong> allows calculating the sample size for estimating $ s^2_{y_U}$ subject to a particular power level to detect a population variance greater than the value set in the null hypothesis. It also offers to the user the option of mapping the power level in function of the sample size.</p></li>
+<li><p>Function <strong>ss4S2</strong> allows calculating the sample size for estimating <span class="math inline">\(s^2_{y_U}\)</span> subject to a particular value of the coefficient of variation or the relative margin of error. Additionally, it offers to the user the option of mapping the coefficient of variation and the margin of error as a function of the sample size, to make easier the decision about <span class="math inline">\(n\)</span>.</p></li>
+<li><p>Function <strong>ss4S2H</strong> allows calculating the sample size for estimating <span class="math inline">\(s^2_{y_U}\)</span> subject to a particular power level to detect a population variance greater than the value set in the null hypothesis. It also offers to the user the option of mapping the power level in function of the sample size.</p></li>
 <li><p>Function <strong>e4S2</strong> allows calculating the coefficient of variation and the margin of error for a particular sample size. It also allows obtaining a mapping similar to the one of <strong>ss4S2</strong>.</p></li>
 <li><p>Function <strong>b4S2</strong> allow calculating the power level for a fixed sample size. It also allows obtaining a mapping similar to the one of <strong>ss4S2H</strong>.</p></li>
 </ol>

@@ -3,10 +3,8 @@ title: "Making maps in R with ggplot"
 author: "Andrés Gutiérrez"
 date: "2015-04-07"
 categories:
-  - "Colombia"
-  - "Estadística"
   - "R"
-  - "Stats"
+  - "Visualization"
 ---
 
 This post is devoted with the quick (and free) solution of a problem that maybe some statisticians face in their jobs. Maps are becoming a valuable tool of information and you will find that R could be a comprehensive solution for this type of task.

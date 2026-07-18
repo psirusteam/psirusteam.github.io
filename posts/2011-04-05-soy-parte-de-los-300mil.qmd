@@ -3,7 +3,7 @@ title: "Soy parte de los 300mil"
 author: "Andrés Gutiérrez"
 date: "2011-04-05"
 categories:
-  - "Estadística"
+  - "Community and Events"
   - "R"
 ---
 

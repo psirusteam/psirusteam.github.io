@@ -3,7 +3,8 @@ title: "Top 20… ¡Tan lejos de Stanford!"
 author: "Andrés Gutiérrez"
 date: "2010-01-15"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 El departamento de estadística de la Universidad de Stanford está ubicado en el primer lugar del Top 20 del ranking del Concejo de Investigación Nacional de Estados Unidos. Se encuentra en el edificio Sequoia Hall, dentro del campus de la Universidad, al sur de San Francisco, en Santa Clara County, CA. Guardando las debidas proporciones, yo afirmo que [este departamento es](http://www.stat.ucla.edu/program/ranking.php)[la Meca de la investigación estadística en el mundo](http://www.stat.ucla.edu/program/ranking.php). Abro el contenido de este blog para el 2010 con una simple pregunta: ¿Por qué estamos tan lejos de Stanford? Tal vez estamos siempre mirando los árboles en frente nuestro y nos enfocamos en ser cabeza de ratón, sin siquiera percatarnos de que es muy posible ser cola de león y una vez en esa posición será muy asequible afrontar el amplio bosque del desarrollo estadístico.

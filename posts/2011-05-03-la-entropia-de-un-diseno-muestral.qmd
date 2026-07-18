@@ -3,14 +3,15 @@ title: "La entropía de un diseño muestral"
 author: "Andrés Gutiérrez"
 date: "2011-05-03"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Sampling"
 ---
 
 Suponga que se desea seleccionar una muestra aleatoria de una población finita de tamaño N. Para esto, usted escoge la mejor estrategia de muestreo que le permite hacer todo tipo de inferencias precisas sobre los parámetros de interés. Una estrategia de muestreo tiene dos componentes: la primera, el diseño de muestreo y la segunda, el estimador utilizado. Como ya lo he repetido en diferentes ocasiones, la planeación de un estudio por muestreo tiene que estar condicionada a la estrategia y no a l diseño o al estimador por separados. Es así como la estrategia, siguiendo la regla de oro del muestreo y el principio de representatividad, debería inducir ponderaciones cuyo comportamiento estructural sean directamente proporcional al comportamiento de la característica de interés.
 
 En esta ocasión, voy a referirme a una propiedad bastante útil, pero desconocida de un diseño de muestreo, la entropía. Recalco que un diseño de muestreo no es otra cosa que una medida de probabilidad discreta definida sobre un conjunto aleatorio (o si se quiere, sobre un vector aleatorio) que toma distintas realizaciones sobre un soporte Q. A una realización de la muestra aleatoria se le conoce con el nombre de muestra seleccionada y el soporte Q contiene todas las posibles realizaciones. De esta forma, la entropía se define como
 
-$-\sum_{s in Q}p(s)\log p(s)$
+$-\sum_{s \in Q}p(s)\log p(s)$
 
 La entropía es una medida contraria a la información. Entre más entropía exista en un diseño de muestreo, se dice que hay más incertidumbre. Por el contrario, cuando hay baja entropía, hay más información y menos dispersión. Tillé (2010) afirma que un diseño de muestreo tiene alta entropía cuando existe una gran cantidad de "sorpresa" en la muestra seleccionada y que cuando un diseño de muestreo tiene alta entropía es muy difícil predecir el tipo de muestra que se obtendrá.
 

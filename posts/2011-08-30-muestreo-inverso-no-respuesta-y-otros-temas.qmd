@@ -3,7 +3,8 @@ title: "Muestreo inverso, no-respuesta y otros temas"
 author: "Andrés Gutiérrez"
 date: "2011-08-30"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Probability"
 ---
 
 Un colega me pregunta lo siguiente:

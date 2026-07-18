@@ -3,7 +3,8 @@ title: "TEAM en Google books"
 author: "Andrés Gutiérrez"
 date: "2011-02-09"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Community and Events"
 ---
 
 El pasado sabado 5 de febrero, en el marco de la clausura del Workshop Bayesiano, se presentó mi nuevo libro Teoría estadística: aplicaciones y métodos (TEAM). Esperamos que puedan [obtener una visualización del texto acá](http://books.google.es/books?printsec=frontcover&id=62u0U46_QLsC#v=onepage&q&f=false) y, si es de su agrado, que lo compren y recomienden. Todas las críticas, quejas o sugerencias son bienvenidas en [mi correo electrónico](mailto:contacto@gutierrezandres.com).

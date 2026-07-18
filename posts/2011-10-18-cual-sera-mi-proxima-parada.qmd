@@ -3,8 +3,8 @@ title: "¿Cuál será mi próxima parada?"
 author: "Andrés Gutiérrez"
 date: "2011-10-18"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Teaching"
+  - "Community and Events"
 ---
 
 Acabo de hacer una lectura rápida del [último número de AMSTAT NEWS](https://web.archive.org/web/20231101232248/http://magazine.amstat.org/wp-content/uploads/2011an/September%202011.pdf) y hay un artículo muy interesante en donde varios estadísticos responden un chismografo (que en Colombia es una suerte de preguntas con el objetivo único de curiosear la vida de los demás). En este mismo instante estoy leyendo las respuestas de algunos personajes y lo que voy a hacer, aunque puede parecer impersonal, es constestar esas preguntas con el ánimo de hacer un balance de mi corta carrera profesional. Además, le insto a que se anime y responda también este chismografo.

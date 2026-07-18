@@ -3,10 +3,9 @@ title: "¿Qué tan Big Data estamos?"
 author: "Andrés Gutiérrez"
 date: "2020-02-29"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Visualization"
 ---
-
-**Por: Gigi.**
 
 No es ninguna novedad que estamos en la plena época de *Big Data*, época donde cada segundo se produce millones y millones de datos de toda clase, época donde al decir que somos *data* *scientist*s suena mucho más misterioro y poderoso que unos simples *estadísticos* o *analista de datos*. Los colegas hablan de SVM o *random forest* y asentimos con la cabeza mientras que por dentro pensamos -qué 🉐 ㊗️ 🈳 🈳 será, juro que mañana me pongo a estudiar eso-. El análisis de datos está impactando en la sociedad con novedosos métodos y deslumbrantes gráficas; sin embargo, sigue habiendo retos, y uno que me topé recientemente tiene que ver con la consecución de datos.
 

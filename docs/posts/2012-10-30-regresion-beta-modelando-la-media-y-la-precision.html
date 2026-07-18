@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Regresión Beta (modelando la media y la precisión)</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Modeling</div>
+    <div class="quarto-category">Bayesian Statistics</div>
   </div>
   </div>
 
@@ -160,10 +190,10 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Si su variable de interés toma valores en el intervalo (0,1), puede ser correctamente modelada con la distribución Beta. Por ejemplo, las proporciones, tasas, y porcentajes que muchas veces se consideran distribuidas normales, deberían ser consideradas como realizaciones de variables aleatorias con distribución Beta. Ahora, según <a href="http://www.jstatsoft.org/v34/i02/paper">Cribari-Neto &amp; Zeileis</a> (2010), es natural que estas regresiones sean heterocedásticas pues los datos muestran más variación cerca de la media y menos dispersión en los límites del intervalo.</p>
 <p>La regresión se lleva a cabo al realizar una <a href="http://www.ime.usp.br/~sferrari/beta.pdf">reparametrización de la distribución</a>, de la siguiente manera:</p>
-<p>$ f(y, , )=y<sup>{muphi-1}(1-y)</sup>{(1-)}$</p>
+<p><span class="math inline">\(f(y, \mu, \phi)=\frac{\Gamma(\phi)}{\Gamma(\mu\phi) \Gamma((1-\mu)\phi)}y^{\mu\phi-1}(1-y)^{(1-\mu)\phi-1}\)</span></p>
 <p>Luego, la media y la precisión se modelan de la siguiente manera, respectivamente:</p>
-<p>$ g_1(_i)=_i’ $</p>
-<p>$ g_2(_i)=_i’ $</p>
+<p><span class="math inline">\(g_1(\mu_i)=\mathbf{x}_i' \mathbf{\beta}\)</span></p>
+<p><span class="math inline">\(g_2(\phi_i)=\mathbf{z}_i' \mathbf{\gamma}\)</span></p>
 <p>La inferencia de estos modelos puede hacerse de forma clásica, por ejemplo, utilizando el paquete <a href="http://cran.r-project.org/web/packages/betareg/index.html">betareg</a>. Sin embargo, en la red también se encuentran algunos documentos de <a href="http://www.bdigital.unal.edu.co/5947/1/BayesianBetaRegresion.pdf">Cepeda &amp; Garrido</a>, que dan cuenta de la inferencia Bayesiana para esta misma configuración con algunos <a href="http://www.bdigital.unal.edu.co/6610/2/Winbugs-varBetaRegre.pdf">códigos en WinBUGS</a>. A propósito de la inferencia Bayesiana, el enfoque de Cepeda está dado en términos de la creación de nuevas variables de trabajo para la implementación de un algoritmo híbrido MCMC.</p>
 <p>El siguiente código realiza la estimación clásica para un conjunto de datos. La función de vínculo para el modelo de media es logit, y para el modelo de precisión es logarítmica.</p>
 <pre><code>library(betareg)

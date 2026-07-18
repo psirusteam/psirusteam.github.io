@@ -3,7 +3,8 @@ title: "Gráficos perfectibles"
 author: "Andrés Gutiérrez"
 date: "2010-10-18"
 categories:
-  - "Estadística"
+  - "Visualization"
+  - "Publications"
 ---
 
 La revista ENTER

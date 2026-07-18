@@ -3,7 +3,8 @@ title: "Vacío en muestreo"
 author: "Andrés Gutiérrez"
 date: "2009-09-10"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Probability"
 ---
 
 Esta entrada debió haberse escrito hace mucho tiempo, cuando el maestro Leonardo Bautista aun vivía. Suponga que se realiza un diseño de muestreo en un población finita *U*de tamaño*N*. Suponga que el diseño de muestreo de es Bernoullí, en donde cada elemento es seleccionado con la misma probabilidad *p*. En general, se asigna a cada individuo un número aleatorio mediante una distribución uniforme, y para cada individuo se decide su pertenencia en la muestra si este número es menor que la probabilidad *p*. Es claro que el tamaño d emuestra para este diseño es aleatorio; por supuesto, es posible que la muestra seleccionada sea vacía.

@@ -3,8 +3,8 @@ title: "The big data fallacy - Misunderstandings in hypothesis testing"
 author: "Andrés Gutiérrez"
 date: "2015-06-09"
 categories:
-  - "Estadística"
-  - "Stats"
+  - "Inference"
+  - "Modeling"
 ---
 
 **WARNING: Keep an open mind while reading!**
@@ -27,17 +27,17 @@ There is a huge problem when you do not realize that situations are (in general)
 
 Assume that, as an expert in your field, you consider that a difference of 0.5 point is not important and nonsignificant (even senseless), and suppose that the test scale has mean 250 and standard deviation 100. So, the real problem here is the level of significance. Why 5%? Why you have abandoned your job as an expert in the field? Why a senseless rule of thumb is deciding for you? At this point, I have to make a clarification: **I am a statistician, and I am not saying that you have to decide for yourself if there is a difference or not! You need to use statistical hypothesis testing theory, but you have to use it correctly.**
 
-So, why to use a significance level of 5% when you have 1M observations? If you have enough data, your critical value should be more demanding. Moreover, before data collection you would have to decide what is an important difference and what is not. That is called "the effect size" and it is noted as $ D $. In the previous example, the researcher forgot to define the effect. There is a proper way to asses this problem. Suppose that you define the effect to be 5 points. That is, an absolute difference lower than 5 points will not be considered significant. Then, you compute the critical value (or the significance level). After that, you collect the data, and then you can perform your statistical test of significance.
+So, why to use a significance level of 5% when you have 1M observations? If you have enough data, your critical value should be more demanding. Moreover, before data collection you would have to decide what is an important difference and what is not. That is called "the effect size" and it is noted as $D$. In the previous example, the researcher forgot to define the effect. There is a proper way to asses this problem. Suppose that you define the effect to be 5 points. That is, an absolute difference lower than 5 points will not be considered significant. Then, you compute the critical value (or the significance level). After that, you collect the data, and then you can perform your statistical test of significance.
 
 For example, consider a test for a mean (for the sake of simplicity). This way, we are interested in proving that the true mean is 250. So, the test becomes:
 
-$ H_0 = \mu - \mu _0 = 0 \ \ \ \ vs. \ \ \ \ H_a = \mu - \mu _0 = D \neq 0$
+$H_0 = \mu - \mu _0 = 0 \ \ \ \ vs. \ \ \ \ H_a = \mu - \mu _0 = D \neq 0$
 
 If the standard deviation is known, the size of the test will be:
 
 $\alpha = \Pr ( |\bar{x} - \mu _0| > D | \mu = \mu _0) = 2 \Phi ( - \frac{\sqrt{n}D}{\sigma})$
 
-Then, for a particular effect size $ D = 2$ (that is, an absolute difference greater than 2 units between the observed average and 250 becomes important) and $\sigma = 100$, with 1M of observations, the proper level of significance should be $\alpha=2.539629e-10$. Is it shocking for you to have that significance level? Let's check out the power of this particular test:
+Then, for a particular effect size $D = 2$ (that is, an absolute difference greater than 2 units between the observed average and 250 becomes important) and $\sigma = 100$, with 1M of observations, the proper level of significance should be $\alpha=2.539629e-10$. Is it shocking for you to have that significance level? Let's check out the power of this particular test:
 
 $\beta =1 - \Phi (\frac{\sqrt{n}D}{\sigma} + Z_{1- \alpha / 2}) + \Phi (\frac{\sqrt{n}D}{\sigma} - Z_{1- \alpha / 2})$
 

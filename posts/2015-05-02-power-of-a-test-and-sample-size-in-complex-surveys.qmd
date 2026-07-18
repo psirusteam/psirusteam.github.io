@@ -3,10 +3,8 @@ title: "Power of a Test and Sample Size in Complex Surveys"
 author: "Andrés Gutiérrez"
 date: "2015-05-02"
 categories:
-  - "Estadística"
-  - "Public Policy Evaluation"
-  - "R"
-  - "Stats"
+  - "Sampling"
+  - "Policy Evaluation"
 ---
 
 There are many approaches to computing sample size. In public policy evaluation, for example, one is usually tented to check if there is statistical evidence on the impact of a intervention over a population of interest. This vignette is devoted to explain the issues that you commonly find when computing sample sizes.

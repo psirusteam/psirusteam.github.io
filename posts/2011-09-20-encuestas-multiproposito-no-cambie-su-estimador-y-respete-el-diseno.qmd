@@ -3,7 +3,8 @@ title: "Encuestas multipropósito… no cambie su estimador y respete el diseño
 author: "Andrés Gutiérrez"
 date: "2011-09-20"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Inference"
 ---
 
 En la mayoría de encuestas multipropóstio, el estadístico se enfrenta con el dilema de la utilización del estimador. Es decir, su encuesta tiene ciertos tópicos que son necesarios e importantes y con los cuales usted ha propuesto la mejor opción en términos del diseño de muestreo. En la mayoría de ocasiones este diseño de muestreo induce probabilidades de inclusión (o de selección) que guían la escogencia del estimador. De esta forma, usted decide utilizar esta estrategia para estimar todos los parámetros de interés. Sin embargo, usted puede preguntarse ¿por qué utilizar la misma estrategia de muestreo para la estimación de todos los parámetros?

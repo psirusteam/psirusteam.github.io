@@ -3,8 +3,8 @@ title: "Bayesian Model Averaging (BMA) para Marco & Lucy"
 author: "Andrés Gutiérrez"
 date: "2011-02-26"
 categories:
-  - "Estadística"
-  - "R"
+  - "Bayesian Statistics"
+  - "Modeling"
 ---
 
 Hoeting et. al. (1999) afirma que la práctica habitual de la estadística hace caso omiso de la incertidumbre de los modelos. Los estadísticos suelen seleccionar un modelo de alguna familia de modelos y luego proceden como si el modelo elegido hubiese generado esos datos. Este enfoque hace caso omiso de la incertidumbre en la selección del modelo, dando lugar a inferencias muy confiadas y a la toma de decisiones más riesgosas de lo que uno pensaría.

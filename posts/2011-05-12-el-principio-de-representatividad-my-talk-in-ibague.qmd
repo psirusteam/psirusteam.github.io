@@ -3,7 +3,8 @@ title: "El principio de representatividad (My talk in Ibague)"
 author: "Andrés Gutiérrez"
 date: "2011-05-12"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Inference"
 ---
 
 La teoría y práctica de la inferencia basada en el diseño de muestreo descansa en el principio de la representatividad de las muestras; este artículo discute el papel que este principio juega en la consideración de la mejor estrategia de muestreo para la consecución de estadísticas oficiales. En algunas ocasiones, el estadístico puede diseñar un excelente plan de muestreo que al final no es considerado en la etapa de estimación debido a la escogencia de un determinado estimador; en algunas otras ocasiones, el estadístico puede agotar todos sus recursos en la búsqueda de un excelente estimador y restar importancia a la forma de consecución de la información. Aunque la práctica estadística es difícil en el sentido de determinar cuál es el mejor diseño de muestreo y cuál es el mejor estimador, el estadístico debe paliar este tipo de situaciones considerando que en realidad se trata de escoger una estrategia óptima para cada tipo de investigación. [Descargar la presentación acá](http://gutierrezandres.files.wordpress.com/2011/05/representatividad.pdf).

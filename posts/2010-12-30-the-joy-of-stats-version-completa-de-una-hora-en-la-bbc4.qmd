@@ -3,7 +3,8 @@ title: "The Joy of stats... Versión completa de una hora en la BBC4"
 author: "Andrés Gutiérrez"
 date: "2010-12-30"
 categories:
-  - "Estadística"
+  - "Visualization"
+  - "R"
 ---
 
 [YouTube](https://www.youtube.com/watch?v=oOOmqHzkkOo)

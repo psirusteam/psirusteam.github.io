@@ -3,7 +3,8 @@ title: "Feliz día estadísticos"
 author: "Andrés Gutiérrez"
 date: "2010-10-20"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Community and Events"
 ---
 
 Hoy, 20 de octubre de 2010, el mundo celebra el día mundial de la estadística. Esperemos que sea la primera de muchas celebraciones como reconocimiento al valor y aporte de los estadísticos en el mundo.

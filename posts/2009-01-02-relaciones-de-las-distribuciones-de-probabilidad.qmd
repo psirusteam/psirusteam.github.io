@@ -3,7 +3,8 @@ title: "Relaciones de las distribuciones de probabilidad"
 author: "Andrés Gutiérrez"
 date: "2009-01-02"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Visualization"
 ---
 
 Que sea esta la oportunidad para desearle a cada uno de los lectores de este blog un muy Feliz año acompañado de todo tipo de bendiciones y logros realizados.
@@ -14,7 +15,7 @@ Entre las propiedades que parametrizan las distibuciones de probabilidad se encu
 
 1. Propiedad de combinación lineal; por ejemplo, la suma de variables aleatorias normales independientes resulta tener una distribución normal
 
-2. Propiedad de convolución; por ejemplo, una variable aleatoria con ditribución Chi cuadrado y con $ n $ grados de libertad puede venir de la suma de $ n $ variables independientes con distribución Chi cuadrado y con un grado de libertad
+2. Propiedad de convolución; por ejemplo, una variable aleatoria con ditribución Chi cuadrado y con $n$ grados de libertad puede venir de la suma de $n$ variables independientes con distribución Chi cuadrado y con un grado de libertad
 
 3. Propiedad del producto; por ejemplo, el producto de lognormales resulta tener una distribución lognormal
 

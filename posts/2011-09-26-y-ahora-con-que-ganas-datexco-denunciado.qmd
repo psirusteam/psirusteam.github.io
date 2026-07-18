@@ -3,8 +3,8 @@ title: "Y ahora con qué ganas... (Datexco denunciado)"
 author: "Andrés Gutiérrez"
 date: "2011-09-26"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Surveys"
+  - "Elections"
 ---
 
 ¿Ahora con qué ganas voy a hacer [el análisis bayesiano electoral](2011-09-08-si-las-elecciones-fueran-hoy-y-ademas-1-2-3-etc-penalosa-gana-p0-973.qmd) con las [últimas denuncias](http://www.lasillavacia.com/historia/ex-colaboradores-de-datexco-dicen-que-la-firma-invento-encuestas-para-opinometro-de-el-tiem) que se han suscrito a la encuestadora Datexco? En mis pocos años de vida, no he sabido de otra empresa tan cuestionada en el ámbito de las encuestas como Datexco (no es la primera vez que se rumora de sus malas prácticas). Yo no sé si sea cierto ese rumor, pero lo que sí sé es Datexco debería aclarar su situación. El presidente de esta firma en respuesta a las declaraciones de sus antiguos gerentes ha expresado su inconformidad y ha salido, como en su momento hizo el ex-alcalde Samuel Moreno (hoy en prisión preventiva), con un [comunicado de prensa](http://www.eltiempo.com/politica/datexco-denuncia-campana-negra-en-su-contra_10437685-4) que señala que va a tomar acciones penales contra los ex-empleados de su compañía.

@@ -3,7 +3,8 @@ title: "Análisis de datos. Métodos y ejemplos (Lagrand & Pinzón)"
 author: "Andrés Gutiérrez"
 date: "2010-08-06"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Teaching"
 ---
 
 Escribir esta entrada representa para mi una gran alegría. Se trata del trabajo realizado por Claude Langrand y Luz Mary Pinzón, publicado por la editorial de la Escuela Colombiana de Ingeniería Julio Garavito. Este libro que fue publicado en el 2009, puede convertirse en una guía continua para el profesional cuyo trabajo está ligado al análisis de datos y aprovechamiento de la información, máxime cuando en sus implementaciones prácticas utiliza el software SPAD. A continuación reproduzco la presentación que los autores hacen de su libro:

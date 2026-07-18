@@ -3,7 +3,8 @@ title: "H. G. Wells y mi blog"
 author: "Andrés Gutiérrez"
 date: "2010-05-18"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 [Herbet George Wells](http://es.wikipedia.org/wiki/H._G._Wells), es uno de los precursores de la novela basada en la ciencia ficción… Escribió cientos de obras, pero seguramente usted habrá oído de y. Ahora, seguramente usted está pensando qué relación tiene un visionario británico con este blog que trata temas afines con la estadística. Pues bien, si se fija atentamente en el cabezote de esta página WEB podrá leer una frase del propio Wells que clama:

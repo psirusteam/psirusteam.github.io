@@ -3,7 +3,8 @@ title: "La causalidad y la paradoja de Simpson"
 author: "Andrés Gutiérrez"
 date: "2009-11-08"
 categories:
-  - "Estadística"
+  - "Policy Evaluation"
+  - "Probability"
 ---
 
 He estado cavilando acerca de la dramática situación por la cual está pasando nuestra querida patria Colombia con el presidente de nuestra hermana república Venezolana… sí, todo el tema de las bases militares de Estados Unidos en Suramérica, en donde vienen y van todo tipo de argumentos, incluso [argumentos de tipo estadístico](2009-09-29-efecto-causal-o-simplemente-asociacion.qmd). Por supuesto, es natural que en un blog latinoamericano de contenidos estadísticos se hable de temas estadísticos… Es bien sabido que el presidente Hugo Chavez tienen a la mano gran cantidad de estudios que "prueban" lo efectos colaterales de la política colombiana. Sin embargo, no se puede aprovechar este tipo de situaciones para malversar la significación estadística y por ende generar conclusiones equivocadas.

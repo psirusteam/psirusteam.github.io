@@ -3,7 +3,7 @@ title: "Malditas estadísticas II (No, Colombia no es el país más feliz del mu
 author: "Andrés Gutiérrez"
 date: "2010-12-18"
 categories:
-  - "Estadística"
+  - "Surveys"
   - "R"
 ---
 

@@ -3,8 +3,7 @@ title: "Llamado a árbitros"
 author: "Andrés Gutiérrez"
 date: "2012-09-04"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Publications"
   - "R"
 ---
 

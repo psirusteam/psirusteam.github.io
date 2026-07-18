@@ -3,7 +3,8 @@ title: "My talk in Sincelejo - Sample size for estimating population variances"
 author: "Andrés Gutiérrez"
 date: "2016-08-09"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Sampling"
 ---
 
 Colombian Statistical Symposium has been held this August in Sincelejo. [I will be presenting this talk](https://drive.google.com/open?id=0ByzoHkgSB8F3Sm9OZzRlNnBZUVE) about sample size and population variances. The discussion rest [on a recent paper](https://drive.google.com/open?id=0ByzoHkgSB8F3R21vSFIweHphekk) we wrote for Revista Comunicaciones en Estadística.

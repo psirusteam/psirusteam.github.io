@@ -3,7 +3,8 @@ title: "Manejando grandes volúmenes de datos con dtplyr"
 author: "Andrés Gutiérrez"
 date: "2020-03-11"
 categories:
-  - "Estadística"
+  - "R"
+  - "Software"
 ---
 
 Definitivamente dplyr es un motor de análisis de datos muy potente y flexible. Durante años lo he usado con éxito, hasta tal punto que he dejado de lado completamente cualquier otro tipo de sintaxis. Los pipes **%>%** ya están incorporados en mi genética de programación. Sin embargo, uno de los problemas de dplyr es que no se maneja muy bien ante grandes volúmenes de información. Existen otras opciones en R, por ejemplo el paquete data.table, que es bastante potente. Sin embargo la concepción de las consultas es totalmente diferente, no utiliza pipes y hay que pasar por una curva larga de aprendizaje. Hadley Wickham ha escrito el paquete [dtplyr](https://dtplyr.tidyverse.org) que permite seguir utilizando la sintaxis de dplyr, aunque la computación se realiza en data.table. A mi gusto es un traductor muy potente.

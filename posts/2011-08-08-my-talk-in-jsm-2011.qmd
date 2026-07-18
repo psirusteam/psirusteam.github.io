@@ -3,7 +3,7 @@ title: "My talk in JSM 2011"
 author: "Andrés Gutiérrez"
 date: "2011-08-08"
 categories:
-  - "Estadística"
+  - "Community and Events"
   - "R"
 ---
 

@@ -3,7 +3,8 @@ title: "A chat with Cifras&Conceptos"
 author: "Andrés Gutiérrez"
 date: "2014-03-15"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Software"
 ---
 
 [SoundCloud](https://api.soundcloud.com/tracks/139606598)

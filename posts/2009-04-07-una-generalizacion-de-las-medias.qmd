@@ -3,13 +3,20 @@ title: "Una generalización de las medias"
 author: "Andrés Gutiérrez"
 date: "2009-04-07"
 categories:
-  - "Estadística"
+  - "R"
+  - "Software"
 ---
 
-Jhon Cook trae a colación el siguiente resultado que generaliza algunas de las medidas más utilizadas en estadística. Sea $\mathbf{x}=(x_1, \ldots, x_n)$ un vector de $ n $ números reales no negativos. Se define, para $ r \neq 0$, $ M_r(\mathbf{x})$ como
+Jhon Cook trae a colación el siguiente resultado que generaliza algunas de las medidas más utilizadas en estadística. Sea $\mathbf{x}=(x_1, \ldots, x_n)$ un vector de $n$ números reales no negativos. Se define, para $r \neq 0$, $M_r(\mathbf{x})$ como
 
-$ M_r(\mathbf{x})=\frac{1}{n}\left( \sum_{i=1}^nx_i^rright)^{1/r}. $
+$$
+M_r(\mathbf{x})=\left(\frac{1}{n}\sum_{i=1}^n x_i^r\right)^{1/r}.
+$$
 
-Entonces, la media aritmética, harmónica y geométrica corresponden a $ M_1$, $ M_0$ y $ M_{-1}$. Si se define $ M_{\infty}$ como el límite cuando $ r $ tiende a ${\infty}$ y, similarmente, se define $ M_{-\infty}$ como el límite cuando $ r $ tiende a $-\infty $, entonces $ M_{\infty}=\max(x_1, \ldots, x_n)$ y $ M_{-\infty}=\min(x_1, \ldots, x_n)$.
+Entonces, la media aritmética, harmónica y geométrica corresponden a $M_1$, $M_0$ y $M_{-1}$. Si se define $M_{\infty}$ como el límite cuando $r$ tiende a ${\infty}$ y, similarmente, se define $M_{-\infty}$ como el límite cuando $r$ tiende a $-\infty$, entonces $M_{\infty}=\max(x_1, \ldots, x_n)$ y $M_{-\infty}=\min(x_1, \ldots, x_n)$.
 
-Además se tiene el siguiente resultado: Si $ r $ M_r(\mathbf{x})=\left(\sum_{i=1}^n \frac{1}{p_i}x_i^rright)^{1/r}. $
+Además se tiene el siguiente resultado: si $p_i>0$ y $\sum_{i=1}^n p_i=1$, entonces
+
+$$
+M_r(\mathbf{x})=\left(\sum_{i=1}^n p_i x_i^r\right)^{1/r}.
+$$

@@ -3,20 +3,21 @@ title: "Regresión Beta (modelando la media y la precisión)"
 author: "Andrés Gutiérrez"
 date: "2012-10-30"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Bayesian Statistics"
 ---
 
 Si su variable de interés toma valores en el intervalo (0,1), puede ser correctamente modelada con la distribución Beta. Por ejemplo, las proporciones, tasas, y porcentajes que muchas veces se consideran distribuidas normales, deberían ser consideradas como realizaciones de variables aleatorias con distribución Beta. Ahora, según [Cribari-Neto & Zeileis](http://www.jstatsoft.org/v34/i02/paper) (2010), es natural que estas regresiones sean heterocedásticas pues los datos muestran más variación cerca de la media y menos dispersión en los límites del intervalo.
 
 La regresión se lleva a cabo al realizar una [reparametrización de la distribución](http://www.ime.usp.br/~sferrari/beta.pdf), de la siguiente manera:
 
-$ f(y, \mu, \phi)=\frac{Gamma(\phi)}{Gamma(muphi) Gamma((1-\mu)\phi)}y^{muphi-1}(1-y)^{(1-\mu)\phi-1}$
+$f(y, \mu, \phi)=\frac{\Gamma(\phi)}{\Gamma(\mu\phi) \Gamma((1-\mu)\phi)}y^{\mu\phi-1}(1-y)^{(1-\mu)\phi-1}$
 
 Luego, la media y la precisión se modelan de la siguiente manera, respectivamente:
 
-$ g_1(\mu_i)=\mathbf{x}_i' \mathbf{\beta}$
+$g_1(\mu_i)=\mathbf{x}_i' \mathbf{\beta}$
 
-$ g_2(\phi_i)=\mathbf{z}_i' \mathbf{\gamma}$
+$g_2(\phi_i)=\mathbf{z}_i' \mathbf{\gamma}$
 
 La inferencia de estos modelos puede hacerse de forma clásica, por ejemplo, utilizando el paquete [betareg](http://cran.r-project.org/web/packages/betareg/index.html). Sin embargo, en la red también se encuentran algunos documentos de [Cepeda & Garrido](http://www.bdigital.unal.edu.co/5947/1/BayesianBetaRegresion.pdf), que dan cuenta de la inferencia Bayesiana para esta misma configuración con algunos [códigos en WinBUGS](http://www.bdigital.unal.edu.co/6610/2/Winbugs-varBetaRegre.pdf). A propósito de la inferencia Bayesiana, el enfoque de Cepeda está dado en términos de la creación de nuevas variables de trabajo para la implementación de un algoritmo híbrido MCMC.
 

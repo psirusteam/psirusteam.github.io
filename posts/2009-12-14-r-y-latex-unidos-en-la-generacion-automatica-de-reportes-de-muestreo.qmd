@@ -3,7 +3,8 @@ title: "R y LaTeX unidos en la generación automática de reportes de muestreo"
 author: "Andrés Gutiérrez"
 date: "2009-12-14"
 categories:
-  - "Estadística"
+  - "R"
+  - "Sampling"
 ---
 
 Se acerca navidad y esta vez el regalo es para aquellos estadísticos que trabajan generando cuadros de estimaciones de muestreo (aunque no necesariamente de muestreo probabilístico) y lo hacen utilizando R (no necesariamente el paquete TeachingSampling). Una vez más, Jorge Ortiz vuelve a sorprender al gremio con su creatividad y su perspicacia para automatizar las tareas en las que el estadístico no es tan hábil. En esta ocasión, se propone un procedimiento para y una función en lenguaje R para preparar la edición automática de grandes cantidades de tablas con estructuras similares que se generan durante las aplicaciones de encuestas.

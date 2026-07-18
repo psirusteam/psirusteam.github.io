@@ -157,7 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Contraejemplos de consistencia e insesgamiento asintótico</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Inference</div>
+    <div class="quarto-category">Sampling</div>
   </div>
   </div>
 
@@ -197,25 +198,26 @@ window.Quarto = {
 </blockquote>
 <p>Tal vez sea por mi énfasis en el muestreo, pero cuando se trata de estimadores, yo prefiero examinar primero la consistencia y después las otras propiedades estadísticas del estimador. Un ejemplo clásico de muestreo consiste en que, para estimar el promedio de patas de los perros en la tierra, un alienígena procede a utilizar el estimador de Horvitz-Thonmpson, que es insesgado, y que en sus dos posible realizaciones arroja como resultados para una muestra 2 y para otra muestra 6… Sí, 2+6=8, 8/2=4. Efectivamente, el estimador es insesgado pero inútil. Sin embargo, paradójicamente, al utilizar el estimador de Hájek, que es consistente y asintóticamente insesgado, el alienígena encuentra que para sus dos posibles muestras, el estimador siempre es 4. Hoy quiero traer dos ejemplos de lo uno y de lo otro sin entrar en detalles técnicos ni computacionales. Antes de que siga con la lectura, le recomiendo que se empape del tema <a href="../posts/2009-05-21-del-dicho-al-hecho-consistencia-eficiencia-e-insesgamiento.html">leyendo esta entrada relacionada</a>.</p>
 <p><strong>Un estimador consistente que no es asintóticamente insesgado</strong></p>
-<p>Suponga una muestra aleatoria de variables con media $$ y varianza <span class="math inline">\(\sigma^2\)</span>. El siguiente estimador</p>
-<p>$ T={X}+$</p>
+<p>Suponga una muestra aleatoria de variables con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>. El siguiente estimador</p>
+<p><span class="math inline">\(T=\bar{X}+\frac{c}{n^{1/2}}\)</span></p>
 <p>es consistente, puesto que, entre otros, a medida que el tamaño de muestra crece:</p>
 <ol type="1">
-<li><p>Su esperanza tiende al valor del parámetro $$.</p></li>
+<li><p>Su esperanza tiende al valor del parámetro <span class="math inline">\(\mu\)</span>.</p></li>
 <li><p>Su error cuadrático medio <span class="math inline">\(\frac{\sigma^2+c}{n}\)</span> tiende a cero.</p></li>
 </ol>
-<p>Sin embargo, no es asintóticamente insesgado puesto que la distribución límite de $ n^{1/2}(T-)$ no tiene media nula. Lo anterior puesto que la distirbución límite de</p>
-<p>$ n^{1/2}(T-)= n^{1/2}({X}-)+c $</p>
+<p>Sin embargo, no es asintóticamente insesgado puesto que la distribución límite de <span class="math inline">\(n^{1/2}(T-\mu)\)</span> no tiene media nula. Lo anterior puesto que la distirbución límite de</p>
+<p><span class="math inline">\(n^{1/2}(T-\mu)= n^{1/2}(\bar{X}-\mu)+c\)</span></p>
 <p>Es normal con media</p>
 <p><em>c</em></p>
 <p>y varianza <span class="math inline">\(\sigma^2\)</span>.</p>
 <p><strong>Un estimador asintóticamente insesgado que no es consistente</strong></p>
 <p>Suponga una muestra aleatoria de variables con distribución de Laplace</p>
-<p>$ f(x)=$</p>
-<p>Y considere el siguiente estimador insesgado para la media $$</p>
-<p>$ T=X_1$</p>
-<p>Dado que <em>T</em>es insesgado, también es asintóticamente insesgado. Sin embargo, dado que la varianza de<em>T</em> es <span class="math inline">\(\Var(T)=2\neq 0\)</span>, no es consistente. Por supuesto, lo anterior se verifica rápidamente cuando se nota que</p>
-<p>$(|T-|&gt;)=1-(-No depende de n, y por lo tanto esta probabilidad no tiende a cero a medida que <em>n</em> crece.</p>
+<p><span class="math inline">\(f(x)=\frac{1}{2}\exp(-|x-\theta|)\)</span></p>
+<p>Y considere el siguiente estimador insesgado para la media <span class="math inline">\(\theta\)</span></p>
+<p><span class="math inline">\(T=X_1\)</span></p>
+<p>Dado que <em>T</em>es insesgado, también es asintóticamente insesgado. Sin embargo, dado que la varianza de<em>T</em> es <span class="math inline">\(\operatorname{Var}(T)=2\neq 0\)</span>, no es consistente. Por supuesto, lo anterior se verifica rápidamente cuando se nota que</p>
+<p><span class="math inline">\(\Pr(|T-\mu|&gt;\varepsilon)=1-\Pr(-\varepsilon&lt;T-\mu&lt;\varepsilon)\)</span>.</p>
+<p>No depende de <span class="math inline">\(n\)</span>, y por lo tanto esta probabilidad no tiende a cero a medida que <em>n</em> crece.</p>
 
 
 

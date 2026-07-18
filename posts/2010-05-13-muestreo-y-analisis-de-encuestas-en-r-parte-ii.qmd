@@ -3,7 +3,8 @@ title: "Muestreo y análisis de encuestas en R (Parte II)"
 author: "Andrés Gutiérrez"
 date: "2010-05-13"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Sampling"
 ---
 
 [Haciendo clic acá encontrará la segunda part](http://www.box.net/shared/8aq4s3628c) e del curso seminario de muestreo y análisis de encuestas en R. En esta entrega, se profundiza en el diseño y estimación de encuestas con marcos muestrales para elementos pero con la bondad de que se conocen los valores de una característica de información continua para los elementos del marco de muestreo.

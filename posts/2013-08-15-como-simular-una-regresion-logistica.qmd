@@ -3,8 +3,8 @@ title: "¿Cómo simular una regresión logística?"
 author: "Andrés Gutiérrez"
 date: "2013-08-15"
 categories:
-  - "Estadística"
-  - "R"
+  - "Modeling"
+  - "Probability"
 ---
 
 Durante el semestre que acaba de pasar, dirigí dos trabajos de grados que estaban relacionados con algunas propiedades de la regresión logística. De paso diré que la regresión logística me ha sorprendido por sus inesperadas propiedades (como por ejemplo ser robusta ante los diseños de muestreo complejos). En este periplo por las propiedades de este tipo de modelos, nos encontramos con un problema nada inocuo. La correcta simulación del modelo.

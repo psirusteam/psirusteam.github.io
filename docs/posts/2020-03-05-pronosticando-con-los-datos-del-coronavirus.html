@@ -128,7 +128,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Pronosticando con los datos del Coronavirus</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Modeling</div>
+    <div class="quarto-category">Visualization</div>
   </div>
   </div>
 
@@ -158,7 +159,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Por: Gigi.</p>
 <p>Hace poco más de un mes, apareció de la nada (al menos no hay una teoría consensuada de dónde salió). El mundo ha conocido un nuevo enemigo, el <a href="https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_outbreak">coronavirus</a> (COVID-19). Las bolsas de valores esta semana han sido afectadas en gran medida; sin hablar del turismo, la economía y la paranoia generalizada. Los contagiados y fallecidos empezaron a aparecer poco después del 20 de enero. El día 19 de febrero (cuando ya había datos de 31 días consecutivos) pensé en hacer unos pronósticos a ver qué tal resultaban. Específicamente, el objetivo es <strong>pronosticar el número de fallecidos diarios sen China</strong> y_t (no acumulados, sino fallecidos ocurridos diariamente).</p>
 <p>Consideré dos modelos bastante sencillos: un modelo de regresión, y un modelo ARIMA con variable exógena. Pueden pensar en este ejercicio para un primer curso de series de tiempo o un segundo curso de econometría. Los datos utilizados fueron obtenidos del paquete nCov2019 en R, disponible solo en GitHub (pueden consultar algunas de mis reflexiones sobre la obtención de datos de coronavirus <a href="../posts/2020-02-29-que-tan-big-data-estamos.html">aquí</a>). La variable exógena que elegí para pronosticar el número de muertes es el número diario de casos confirmados de coronavirus (x_t) y también la misma y_t, pero rezagada. Los 31 datos que tenía en ese momento se comportan de la siguiente forma:</p>
 <p>De la gráfica sí puedo ver alguna relación, aunque un correlograma cruzado sería más informativo. Aquí la tenemos:</p>

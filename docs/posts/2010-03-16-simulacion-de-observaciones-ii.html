@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Simulación de observaciones II</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Bayesian Statistics</div>
+    <div class="quarto-category">Probability</div>
   </div>
   </div>
 
@@ -161,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 <p>En algunas entradas anteriores (ver <a href="../posts/2010-01-23-simulacion-de-observaciones.html">acá</a> y <a href="../posts/2009-05-26-super-armamento-y-municion-para-la-generacion-de-datos.html">acá</a>) se discutía un método que, a pesar de ser muy antiguo, es muy efectivo a la hora de simular observaciones de cualquier distribución con o sin forma conocida. Asumo que este método es enseñado a los alumnos de estadística en los cursos de computación o simulación estadística. A decir verdad, yo tomé ese curso en mi pregrado en estadística (hace no más de cinco años) y jamás me topé con algún ejercicio como este… Seguramente las cosas se han replanteado y se le ha dado a ese curso la verdadera importancia que merece mediante la actualización de sus contenidos.</p>
 <p>En este orden de ideas, y teniendo en cuenta que tanto la práctica como la investigación teórica en estadística están tomando un matiz bayesiano, este tipo de cursos computacionales debe ser uno de los más importantes. Ahora, yo sé (y lo digo porque he sido parte activa del comité curricular del pregrado en estadística en la universidad donde laboro) que replantear estos contenidos no es tarea fácil… pero no es imposible. Sencillamente, además de las destrezas matemáticas, el estadístico moderno (bayesiano o frecuentista) debe tener cierto tipo de habilidades computacionales si quiere tener éxito en su vida práctica profesional.</p>
 <p>En fin, escribiendo la sección de métodos bayesianos jerárquicos en el modelo de Poisson con aprioris gamma, me encontré con otra linda distribución. Su forma funcional se presenta a continuación:</p>
-<p>$ p(mid <em>i, , ) propto </em>{i=1}^n ^{a-1}$</p>
+<p><span class="math inline">\(p(\alpha \mid \theta_i, \beta, \mathbf{Y}) \propto \prod_{i=1}^n \frac{\theta_i^{\alpha-1}}{\Gamma(\alpha)}\alpha^{a-1}\exp(-\alpha b)\)</span></p>
 <p>Lamentablemente, ni R ni Winbugs la tiene implementada. La solución: <a href="http://predictive.files.wordpress.com/2009/05/simu.pdf">el método de la grilla</a>. Esta sencilla técnica una vez más nos saca del problema de la simulación de observaciones bajo cualquier distribución. Además es posible conocer la forma estructural que toma la densidad de probabilidad (ver imagen), y saber que aunque se trata de una forma conocida. <a href="http://predictive.files.wordpress.com/2010/03/poisson.pdf">En este sencillo documento</a> se encuentra tanto la teoría como el código computacional en R para la simulación de observaciones de esta linda distribución.</p>
 
 

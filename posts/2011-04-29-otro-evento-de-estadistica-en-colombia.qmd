@@ -3,7 +3,8 @@ title: "Otro evento de estadística en Colombia"
 author: "Andrés Gutiérrez"
 date: "2011-04-29"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Teaching"
 ---
 
 Desde el año 2000 el Departamento de Matemáticas y Estadística de la Universidad del Tolima, ha venido desarrollando encuentros de Matemáticas y Estadística donde nos reunimos para comunicar resultados de investigación llevadas a cabo por estudiantes y profesores de las carreras de Matemáticas con énfasis en Estadística y licenciatura en Matemáticas, además de egresados de dichas carreras. Tambien se ha contado con la presencia de invitados especiales a nivel nacional e internacional.

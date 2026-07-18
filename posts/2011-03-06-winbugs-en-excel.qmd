@@ -3,7 +3,8 @@ title: "WinBUGS en Excel"
 author: "Andrés Gutiérrez"
 date: "2011-03-06"
 categories:
-  - "Estadística"
+  - "Software"
+  - "Bayesian Statistics"
 ---
 
 Todos aquellos que hemos trabajado con modelos bayesianos nos hemos enfrentado con la ardua tarea de programar métodos MCMC para realizar inferencias de coeficientes de regresión o parámetros de itnerés. Para esto, una gran parte de nosotros ha encontrado en WinBUGS una herramienta eficiente. Pues bien, Phil Woodward ha hecho que este proceso sea aún más intuitivo y ha creado una adición a Excel que permite trabajar con la interface de WinBUGS en el ambiente de Excel, se trata de [BugsXLA](http://www.axrf86.dsl.pipex.com/BugsXLA/). Al parecer, funciona bajo sistemas operativos más avanzados a Windows 98 y versiones de Excel superiores a la 2000. [Acá se puede encontrar un ejemplo](http://www.axrf86.dsl.pipex.com/BugsXLA/Walk_Thru_Eg/v4.0%20Walk_Thru_Seeds.htm) de BugsXLA ajustando una regresión logística.

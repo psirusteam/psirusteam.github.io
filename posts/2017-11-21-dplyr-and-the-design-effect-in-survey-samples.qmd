@@ -3,7 +3,6 @@ title: "dplyr and the design effect in survey samples"
 author: "Andrés Gutiérrez"
 date: "2017-11-21"
 categories:
-  - "Estadística"
   - "R"
   - "Sampling"
 ---
@@ -50,9 +49,9 @@ starwars %>% filter(species == "Human") %>%
 
 Now, turning our attention to statistics, it is known that, when dealing with sample surveys, one measure of interest is the design effect defined as
 
-$ Deff \approx 1 + (\bar{m} - 1)\rho $
+$Deff \approx 1 + (\bar{m} - 1)\rho$
 
-where $\bar{m}$ is the average cluster size and $\rho $ is the intraclass correlation coefficient. If you are dealing with survey data and you want to figure out the value of $\bar{m}$ and $\rho $, you can use `dplyr`. Let's use the `Lucy` data of the `samplesize4surveys` package to show how you can do it.
+where $\bar{m}$ is the average cluster size and $\rho$ is the intraclass correlation coefficient. If you are dealing with survey data and you want to figure out the value of $\bar{m}$ and $\rho$, you can use `dplyr`. Let's use the `Lucy` data of the `samplesize4surveys` package to show how you can do it.
 
 ```
 library(samplesize4surveys)

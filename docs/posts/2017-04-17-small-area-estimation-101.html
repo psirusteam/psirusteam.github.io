@@ -163,9 +163,7 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Small Area Estimation 101</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
     <div class="quarto-category">Modeling</div>
-    <div class="quarto-category">R</div>
     <div class="quarto-category">Sampling</div>
   </div>
   </div>
@@ -206,7 +204,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="r-workshop">R workshop</h2>
 <p>This code will not produce any small area estimation, but it will help to introduce basic concepts of sampling. We will use the <strong>BigLucy</strong> database from the <strong>TeachingSampling</strong> package to illustrate how to obtain a probabilistic sample from a finite population. This database is about deals with some economic variables for a population of 85296 companies spread out into 100 counties (areas) in a particular year of some fake country. The aim of the exercise is 1) to select a stratified sample according to the size of the companies and 2) obtain accurate estimates of the total income within each of the 100 counties. Note that the parameters of interest are given by:</p>
 <p><span class="math display">\[ t_{y, d} = \sum_{k \in U_d} y_k \]</span></p>
-<p>Where $ t_{y, d}$ denotes the total income of the $ d $-th county, $ y_k $ is the income of the $ k $-th company belonging the $ d $-th county. The whole population of companies into the county is noted by $ U_d $. Thus, this code computes the total income for each county along with the number of companies belonging each county. Finally, this parameters are saved in a new database named <strong>Results</strong>.</p>
+<p>Where <span class="math inline">\(t_{y, d}\)</span> denotes the total income of the <span class="math inline">\(d\)</span>-th county, <span class="math inline">\(y_k\)</span> is the income of the <span class="math inline">\(k\)</span>-th company belonging the <span class="math inline">\(d\)</span>-th county. The whole population of companies into the county is noted by <span class="math inline">\(U_d\)</span>. Thus, this code computes the total income for each county along with the number of companies belonging each county. Finally, this parameters are saved in a new database named <strong>Results</strong>.</p>
 <pre><code>#############################
 ##### Setting things up #####
 #############################

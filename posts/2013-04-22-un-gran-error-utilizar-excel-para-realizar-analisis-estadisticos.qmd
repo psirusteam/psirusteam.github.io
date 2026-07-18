@@ -3,7 +3,8 @@ title: "Un gran error: utilizar Excel para realizar análisis estadísticos"
 author: "Andrés Gutiérrez"
 date: "2013-04-22"
 categories:
-  - "Estadística"
+  - "Software"
+  - "Modeling"
 ---
 
 Hace poco leí una discusión que debo traer a colación en este espacio. Lo hago porque sé que muchos de nosotros utilizamos hojas de cálculo para realizar nuestros análisis estadísticos. Aunque el título de la entrada se refiere a MS Excel, usted también puede caer en este error si usa hojas de cálculo en programas estadísticos más sofisticados como Minitab, SPSS, StatGraphics, entre otros.

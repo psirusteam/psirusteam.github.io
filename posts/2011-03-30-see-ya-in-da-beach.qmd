@@ -3,7 +3,8 @@ title: "See ya in da beach!!!"
 author: "Andrés Gutiérrez"
 date: "2011-03-30"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Surveys"
 ---
 
 Bueno pues... este año la cita fue en Bogotá con el Workshop Bayesiano... ahora, nos vamos para las meetings 2011 en Miami... Ya se de 3 colombianos que van a ir... déjenme saber quién más piensa asistir para atenderlos como es debido allá en los miamis... Nos vemos allá parce!!!

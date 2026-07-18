@@ -3,5 +3,7 @@ title: "Algunos enfoques de inferencia en muestreo"
 author: "Andrés Gutiérrez"
 date: "2011-03-31"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Sampling"
 ---
+

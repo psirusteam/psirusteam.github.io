@@ -157,8 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">¿Análisis de encuestas sin UPMs y sin estratos?</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Encuestas</div>
-    <div class="quarto-category">Muestreo</div>
+    <div class="quarto-category">Surveys</div>
+    <div class="quarto-category">Sampling</div>
   </div>
   </div>
 
@@ -188,23 +188,19 @@ window.Quarto = {
 </header>
 
 
-<p>Photo by</p>
-<p><a href="https://unsplash.com/@freegraphictoday?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">AbsolutVision</a></p>
-<p>on</p>
-<p><a href="https://unsplash.com/search/photos/idea?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
 <p>Hace algún tiempo que estoy pensando en el problema de - en el contexto de las encuestas de hogares - cómo estimar aproximadamente bien los errores de muestreo de un estimador cuando la base de datos únicamente incorpora los factores de expansión y omite la información de las unidades primarias de muestreo (UPMs) y de los estratos. Este no es un problema si uno está trabajando en una Oficina Nacional de Estadística (ONE), puesto que allí se tiene acceso irrestricto a la ubicación de los hogares en los sectores censales o cartográficos, y por ende la pertenencia del hogar a las UPMs y a los estratos. Sin embargo, muchos investigadores externos a las ONEs no tienen acceso a esta información, puesto que la publicación de las bases de datos pasa por un proceso de anonimización de la información, en donde se ocultan todas las evidencias que pudieran hacer que un hogar sea identificado por la información que proveyó en la encuesta. Pregunté a los que saben de muestreo y fui remitido a</p>
 <p><a href="https://journals.sagepub.com/doi/pdf/10.1177/1536867X1201200410">una solución realmente creativa y sencilla de Brady T. West</a></p>
-<p>en la que se plantea la utilización de los pesos de muestreo, que están dados en cualquier base de datos de encuestas de hogares, y la consecución del efecto de diseño general de la encuestas, que podría estar disponible en las publicaciones de las ONEs en sus páginas web. El efecto de diseño cumple la siguiente propiedad: <span class="math inline">\(\Var_p(\hat \theta) = Deff^T \times \Var_{MAS}(\hat \theta)\)</span> Además,</p>
+<p>en la que se plantea la utilización de los pesos de muestreo, que están dados en cualquier base de datos de encuestas de hogares, y la consecución del efecto de diseño general de la encuestas, que podría estar disponible en las publicaciones de las ONEs en sus páginas web. El efecto de diseño cumple la siguiente propiedad: <span class="math inline">\(\operatorname{Var}_p(\hat \theta) = Deff^T \times \operatorname{Var}_{MAS}(\hat \theta)\)</span> Además,</p>
 <p><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.617.9852&amp;rep=rep1&amp;type=pdf">Park et al.&nbsp;(2003) han propuesto</a></p>
-<p>que el efecto de diseño se puede descomponer en tres partes que se relacionan entre sí de forma multiplicativa. En primer lugar está el efecto debido a la ponderación desigual, $ Deff^W $; en segundo lugar se encuentra el efecto debido a la estratificación, $ Deff^S $; y por último se tiene el efecto debido al muestreo en varias etapas, $ Deff^C $. Por lo tanto: $ Deff^T = Deff^W Deff^S Deff^C $ A su vez, el efecto de diseño debido a la ponderación se expresa de la siguiente manera: <span class="math inline">\(\Var_{MAS}(\hat \theta) = \frac{ \Var_W(\hat \theta)}{ Deff^{W}}\)</span> Bajo la hipótesis de que se conociera una aproximación al efecto de diseño total y teniendo en cuenta de que el efecto de diseño y la varianza debido a la ponderación desigual se pueden calcular fácilmente con los datos de la encuesta, entonces una mejor aproximación a la varianza del estimador es: <span class="math inline">\(\Var_p(\hat \theta) = \Var_W(\hat \theta) \times\frac{ Deff^T }{ Deff^{W}}\)</span> En general, esta aproximación será válida siempre y cuando la correlación entre los pesos de muestreo y la variable del indicador sea despreciable; en otras palabras, cuando</p>
+<p>que el efecto de diseño se puede descomponer en tres partes que se relacionan entre sí de forma multiplicativa. En primer lugar está el efecto debido a la ponderación desigual, <span class="math inline">\(Deff^W\)</span>; en segundo lugar se encuentra el efecto debido a la estratificación, <span class="math inline">\(Deff^S\)</span>; y por último se tiene el efecto debido al muestreo en varias etapas, <span class="math inline">\(Deff^C\)</span>. Por lo tanto: <span class="math inline">\(Deff^T = Deff^W \times Deff^S \times Deff^C\)</span> A su vez, el efecto de diseño debido a la ponderación se expresa de la siguiente manera: <span class="math inline">\(\operatorname{Var}_{MAS}(\hat \theta) = \frac{ \operatorname{Var}_W(\hat \theta)}{ Deff^{W}}\)</span> Bajo la hipótesis de que se conociera una aproximación al efecto de diseño total y teniendo en cuenta de que el efecto de diseño y la varianza debido a la ponderación desigual se pueden calcular fácilmente con los datos de la encuesta, entonces una mejor aproximación a la varianza del estimador es: <span class="math inline">\(\operatorname{Var}_p(\hat \theta) = \operatorname{Var}_W(\hat \theta) \times\frac{ Deff^T }{ Deff^{W}}\)</span> En general, esta aproximación será válida siempre y cuando la correlación entre los pesos de muestreo y la variable del indicador sea despreciable; en otras palabras, cuando</p>
 <p><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.522.3665&amp;rep=rep1&amp;type=pdf">el diseño de muestreo no es informativo</a></p>
-<p>para la variable de interés. Por último, es necesario tener una aproximación al $ Deff^T $ que dependerá de la desagregación de interés. En mi experiencia, podría resumir estos efectos de la siguiente manera:</p>
+<p>para la variable de interés. Por último, es necesario tener una aproximación al <span class="math inline">\(Deff^T\)</span> que dependerá de la desagregación de interés. En mi experiencia, podría resumir estos efectos de la siguiente manera:</p>
 <ul>
-<li><p>Nacional: $ Deff^T $.</p></li>
-<li><p>Sexo: $ Deff^T $.</p></li>
-<li><p>Tramos de edad: $ Deff^T $.</p></li>
-<li><p>Zona (urbano/rural): $ Deff^T $.</p></li>
-<li><p>Edad - Zona: $ Deff^T $.</p></li>
+<li><p>Nacional: <span class="math inline">\(Deff^T \geq 2\)</span>.</p></li>
+<li><p>Sexo: <span class="math inline">\(Deff^T \geq 2\)</span>.</p></li>
+<li><p>Tramos de edad: <span class="math inline">\(Deff^T \geq 3\)</span>.</p></li>
+<li><p>Zona (urbano/rural): <span class="math inline">\(Deff^T \geq 3\)</span>.</p></li>
+<li><p>Edad - Zona: <span class="math inline">\(Deff^T \geq 5\)</span>.</p></li>
 </ul>
 <p>Note que, entre mayor sea la desagregación, mayor será la homogeneidad dentro de las UPMs, por ende mayor la correlación intraclase, y finalmente mayor el DEFF.</p>
 

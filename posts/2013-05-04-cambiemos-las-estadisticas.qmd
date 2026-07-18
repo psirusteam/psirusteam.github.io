@@ -3,7 +3,8 @@ title: "Cambiemos las estadísticas"
 author: "Andrés Gutiérrez"
 date: "2013-05-04"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 [YouTube](https://www.youtube.com/watch?v=z_TP429PlEI&w=425&h=350)

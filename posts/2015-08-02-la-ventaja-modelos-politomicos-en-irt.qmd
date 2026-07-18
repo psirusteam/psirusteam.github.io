@@ -3,11 +3,8 @@ title: "La ventaja - Modelos politómicos en IRT"
 author: "Andrés Gutiérrez"
 date: "2015-08-02"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Modeling"
   - "IRT"
-  - "Public Policy Evaluation"
-  - "Teaching"
 ---
 
 El viernes en la tarde, en medio de un seminario, pregunté lo siguiente:

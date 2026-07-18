@@ -3,7 +3,8 @@ title: "¡Me tomo un tinto y tumbo el muestreo!"
 author: "Andrés Gutiérrez"
 date: "2011-04-16"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Modeling"
 ---
 
 El título de este *post* refleja literalmente las palabras de algunos obstinados colegas que, además de arribistas, muestran su ignorancia tratando de enmarcarlo todo dentro de modelos de probabilidad, despreciando la teoría de la aleatorización. Está bien que no les guste el muestreo, pero una cosa es la antipatía por una materia y otra es llegar a tal punto de negar la realidad.

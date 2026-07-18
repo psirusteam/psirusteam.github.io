@@ -3,7 +3,8 @@ title: "Respuestas Bayesianas"
 author: "Andrés Gutiérrez"
 date: "2008-09-08"
 categories:
-  - "Bayes"
+  - "Bayesian Statistics"
+  - "Modeling"
 ---
 
 Hoy en día es posible ser no Bayesiano (non-Bayesian), pero dados los avances en métodos bayesianos aplicados de las dos décadas pasadas, ser anti bayesiano (anti-Bayesian) ya no es una opción.

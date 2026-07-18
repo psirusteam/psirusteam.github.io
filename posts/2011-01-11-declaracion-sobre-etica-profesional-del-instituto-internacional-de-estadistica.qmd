@@ -3,7 +3,7 @@ title: "Declaración sobre Ética Profesional del Instituto Internacional de Est
 author: "Andrés Gutiérrez"
 date: "2011-01-11"
 categories:
-  - "Estadística"
+  - "Community and Events"
   - "R"
 ---
 

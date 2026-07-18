@@ -3,7 +3,8 @@ title: "Estadística pragmática"
 author: "Andrés Gutiérrez"
 date: "2010-10-06"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Inference"
 ---
 
 [En este estupendo artículo](http://www.stat.cmu.edu/~kass/papers/bigpic.pdf), Robert Kass afirma que las marcadas diferencias entre las corrientes bayesiana y frecuentista han socavado - más que ayudado - al aprendizaje de la ciencia estadística. El frecuentista critica al bayesiano porque realiza inferencias subjetivas al escoger la distribución a priori de los parámetros de interés; el bayesiano critica al frecuentista porque la interpretación de confianza y significación sólo tiene sentido cuando se tiene en cuenta un número grande de experimentos controlados: por ejemplo, un intervalo de confianza del 95% se interpreta como que al calcular ese mismo intervalo 100 veces en muestras aleatorias, entonces 95 intervalos contendrán al parámetro de interés.

@@ -3,8 +3,8 @@ title: "Modelamiento conjunto de media y varianza"
 author: "Andrés Gutiérrez"
 date: "2010-09-16"
 categories:
-  - "Estadística"
-  - "R"
+  - "Modeling"
+  - "Inference"
 ---
 
 Piense en esto: usted está tratando de relacionar unas covariables X con la variable de interés Y; para esto, es natural pensar en un modelo lineal que permita esta relación mediante una combinación lineal de covariables y parámetros de regresión. Sin embargo, uno de los supuestos del modelo lineal afirma que todas las observaciones tienen diferente media dada por X'beta pero igual varianza (homoscedásticidad). Cuando no se tiene el supuesto de igualdad de varianzas, a veces, es necesario recurrir a transformaciones (como Box-Cox) que permitan paliar este incoveniente. Pero en algunas situaciones no es plausible asumir transformaciones y se necesita modelar la varianza de cada Y_i. [En el siguiente enlace](http://www.box.net/shared/txf5jvjvfx) encontrará una introducción a la modelación bayesiana de media y varianza simultáneamente. El documento está basado en el artículo publicado en diciembre de 2000 por Cepeda y Gamerman en el Brazilian Journal of Probability and Statistics titulado [Bayesian Modeling of Variance Heterogeneity in Normal Regression Models](http://www.redeabe.org.br/bjpspublishedpapers_volume14_2_pp207-221.pdf).

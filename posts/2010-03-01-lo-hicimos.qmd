@@ -3,7 +3,8 @@ title: "¡Lo hicimos!"
 author: "Andrés Gutiérrez"
 date: "2010-03-01"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 [La respuesta fue masiva](2010-02-26-nuestro-gremio-sin-profesion-oportunidad-de-agremiacion.qmd)... los estadísticos logramos ser reconocidos en la base de datos de ELEMPLEO. COM...

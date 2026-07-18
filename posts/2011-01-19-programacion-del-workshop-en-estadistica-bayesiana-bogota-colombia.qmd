@@ -3,8 +3,8 @@ title: "Programación del Workshop en Estadística Bayesiana (Bogotá - Colombia
 author: "Andrés Gutiérrez"
 date: "2011-01-19"
 categories:
-  - "Estadística"
-  - "R"
+  - "Community and Events"
+  - "Bayesian Statistics"
 ---
 
 La International Association of Survey Statisticians, junto con la Facultad de Estadística de la Universidad Santo Tomás presentan uno de los eventos más esperados por la comunidad estadística colombiana, el International Workshop on Applied Statistics en su segunda versión. Este evento bienal que tendrá lugar en la sede principal de la Universidad entre el 3 y el 5 de febrero de 2011, abordará como tema principal la **Estadística Bayesiana y sus Aplicaciones.**

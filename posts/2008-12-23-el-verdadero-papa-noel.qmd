@@ -3,7 +3,8 @@ title: "El verdadero Papá Noel"
 author: "Andrés Gutiérrez"
 date: "2008-12-23"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Inference"
 ---
 
 Estaba escribiendo un *post* y al momento de darlo de alta me pregunté si a los fieles lectores de este blog les interesaría, en esta precisa época, leer un *post* sobre métodos de pseudo-máxima verosimilitud. Me respondí que no - aunque puedo estar equivocado. Fue así, como recordé que, hace unos años, un conferencista internacional abrió su disertación con un par de estadísticas acerca de un personaje muy famoso, con el que crecí y disfrute, de manera latente, en las navidades. Este post trata acerca de este personaje… el querido Papá Noel, Santa Claus, Viejito Pascuero, Colacho o San Nicolás… En fin, el personaje legendario que según la cultura occidental trae regalos a los niños en navidad.

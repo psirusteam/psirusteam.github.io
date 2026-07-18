@@ -3,8 +3,8 @@ title: "Sublime Text 3: an alternative to RStudio"
 author: "Andrés Gutiérrez"
 date: "2016-10-17"
 categories:
-  - "Estadística"
   - "R"
+  - "Software"
 ---
 
 It was a Saturday morning; I was lecturing my students of my Item Response Theory class when I decided to run some R scripts to introduce my students with the [JAGS](http://mcmc-jags.sourceforge.net) syntax and the estimation of parameters in a Bayesian logistic regression setup.

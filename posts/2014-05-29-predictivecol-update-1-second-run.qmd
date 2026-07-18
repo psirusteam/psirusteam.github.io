@@ -3,8 +3,8 @@ title: "#PredictiveCOL (Update #1 - Second run)"
 author: "Andrés Gutiérrez"
 date: "2014-05-29"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Modeling"
 ---
 
 From the info that pollsters collected about the second run, we present the first update of the predictions for the second run of the presidential election in Colombia. The trend of Zuluaga remains upward and the conditional expectation of the voting intention is higher for Zuluaga than for Santos.

@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,9 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Scatter plots in survey sampling</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
-    <div class="quarto-category">R</div>
     <div class="quarto-category">Sampling</div>
+    <div class="quarto-category">R</div>
   </div>
   </div>
 
@@ -162,8 +190,8 @@ ul.task-list li input[type="checkbox"] {
 
 <p>When it comes to analyzing survey data, you have to take into account the stochastic structure of the sample that was selected to obtain the data. Plots and graphics should not be an exception. The main aim of such studies is to try to infer about how the behavior of the outcomes of interest in the finite population.</p>
 <p>For example, you may want to know how many people are in poverty. How about counting the poor people in the sample? I know, it is not a good idea. You have to use the sampling weights to estimate the whole number of poor people in the population. The total error paradigm follows the same approach when estimating any parameter of the finite population: you have to use the sampling weights in order to obtain unbiased estimators.</p>
-<p>The idea behind this paradigm is the representative principle. If a person $ k $ is included in the sample with a sampling weight $ w_k $, she/he represents to himself and $ w_k-1$ remaining people. That way, you obtain design-unbiasedness.</p>
-<p>I am not a big fan of using descriptive sample statistics to analyze survey data because it can mask the reality, and the fact is that person $ k $ is included in the sample, but he/she is not alone. Behind person $ k $ there are other people, not included in the sample, and you have to realize that. So, let’s apply that principle to scatter plots. I am using the Lucy population from the TeachingSampling package to recreate my idea. The following code is used to draw a $PS $ sample.</p>
+<p>The idea behind this paradigm is the representative principle. If a person <span class="math inline">\(k\)</span> is included in the sample with a sampling weight <span class="math inline">\(w_k\)</span>, she/he represents to himself and <span class="math inline">\(w_k-1\)</span> remaining people. That way, you obtain design-unbiasedness.</p>
+<p>I am not a big fan of using descriptive sample statistics to analyze survey data because it can mask the reality, and the fact is that person <span class="math inline">\(k\)</span> is included in the sample, but he/she is not alone. Behind person <span class="math inline">\(k\)</span> there are other people, not included in the sample, and you have to realize that. So, let’s apply that principle to scatter plots. I am using the Lucy population from the TeachingSampling package to recreate my idea. The following code is used to draw a <span class="math inline">\(\pi PS\)</span> sample.</p>
 <pre><code>library(TeachingSampling)
 data(Lucy)
 # The inclusion probability is proportional to Income 

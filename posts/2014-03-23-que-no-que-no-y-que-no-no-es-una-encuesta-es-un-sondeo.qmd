@@ -3,7 +3,8 @@ title: "¡Que no, que no y que no! No es una encuesta, es un sondeo"
 author: "Andrés Gutiérrez"
 date: "2014-03-23"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Elections"
 ---
 
 No puedo estar de acuerdo con todos los analistas políticos cuando se trata de las elecciones presidenciales colombianas. Todo el mundo empieza a hablar, conversar y concluir sobre lo que está sucediendo y lo que va a suceder si las elecciones se celebraran hoy. Por supuesto, la fuente de que las conclusiones (por cierto, engañosas conclusiones!) son los sondeos políticos llevadas a cabo por empresas de consultoría en Colombia.

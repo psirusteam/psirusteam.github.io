@@ -3,7 +3,8 @@ title: "2009 Colombian Stata Users Group meeting embedded within the First Inter
 author: "Andrés Gutiérrez"
 date: "2009-10-27"
 categories:
-  - "Estadística"
+  - "Software"
+  - "Community and Events"
 ---
 
 # http://stata.com/meeting/colombia09/

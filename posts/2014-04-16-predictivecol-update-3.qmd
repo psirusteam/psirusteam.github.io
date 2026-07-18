@@ -3,8 +3,8 @@ title: "#PredictiveCOL (Update #3)"
 author: "Andrés Gutiérrez"
 date: "2014-04-16"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Modeling"
 ---
 
 In case you didn't know, [some guys carried out a massive poll](http://www.partidoverde.org.co/Portals/0/Documentos/CONSOLIDADO%20NACIONAL%20ABRIL%202014.pdf) (more than 9000 interviewed households). Having into account that the sample size of this poll is larger than regular polls (more than 6 times), our methodology gave it a weighted score of 96% - As polls get older, they lose weight in our bayesian approach. Let me congratulate those guys, they are showing us that decent polls are possible in Colombia. However, I am still wondering why this particular poll did not receive proper attention in the media. That sucks!

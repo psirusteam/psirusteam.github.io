@@ -3,7 +3,7 @@ title: "Regression discontinuity plots with R (using ggplot2)"
 author: "Andrés Gutiérrez"
 date: "2014-11-15"
 categories:
-  - "Estadística"
+  - "Visualization"
   - "R"
 ---
 

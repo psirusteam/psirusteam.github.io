@@ -3,7 +3,8 @@ title: "Estrategias de muestreo: Diseño de encuestas y estimación de parámetr
 author: "Andrés Gutiérrez"
 date: "2009-11-13"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Sampling"
 ---
 
 Es un honor poder compartir con ustedes mi primer libro... pueden estar seguros que este es el comienzo de una nueva cultura de la estadística aplicada en Colombia y en hispanoamericana... vendrán más, muchísimos más. Como [había anunciado antes](../books.qmd), este libro está divido en tres partes. La primera parte trata con rigurosidad los diseños de muestreo para elementos y conglomerados y es apta para el aprendizaje exhaustivo del muestreo. La segunda parte trata con la incorporación de información auxiliar en la etapa de estimación en donde surgen los estimadores de regresión, los estimadores de calibración, el método de raking y el IPFP. Además, esta parte adjunta un muy buen capítulo de estimación de parámetros finitos bajo modelos (model-based survey sampling). La tercera parte trata con temas más complejos como diseño de muestreo y estimación en encuestas multi-propósito, muestreo balanceado, muestreo indirecto y muestreo en dos fases.

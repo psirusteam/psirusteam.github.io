@@ -3,6 +3,7 @@ title: "Diagrama de flujos en LaTeX"
 author: "Andrés Gutiérrez"
 date: "2019-06-19"
 categories:
+  - "Visualization"
   - "Software"
 ---
 

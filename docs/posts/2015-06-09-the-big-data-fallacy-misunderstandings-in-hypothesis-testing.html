@@ -157,8 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">The big data fallacy - Misunderstandings in hypothesis testing</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
-    <div class="quarto-category">Stats</div>
+    <div class="quarto-category">Inference</div>
+    <div class="quarto-category">Modeling</div>
   </div>
   </div>
 
@@ -200,12 +200,12 @@ window.Quarto = {
 <p>There is a huge problem when you do not realize that situations are (in general) different and they deserve to be judged distinctly. For example, consider the following problem concerning big data:</p>
 <p><em>You want to test if there are some differences in test scores between boys and girls. You observed more than 1M individuals. The results: boys scored 300 and girls scored 300.5. You perform your test and, because of the huge sample size, you reject the null hypothesis (subject to a significance level of 5%) and conclude that there is enough evidence to claim that the two populations are statistically similar.</em></p>
 <p>Assume that, as an expert in your field, you consider that a difference of 0.5 point is not important and nonsignificant (even senseless), and suppose that the test scale has mean 250 and standard deviation 100. So, the real problem here is the level of significance. Why 5%? Why you have abandoned your job as an expert in the field? Why a senseless rule of thumb is deciding for you? At this point, I have to make a clarification: <strong>I am a statistician, and I am not saying that you have to decide for yourself if there is a difference or not! You need to use statistical hypothesis testing theory, but you have to use it correctly.</strong></p>
-<p>So, why to use a significance level of 5% when you have 1M observations? If you have enough data, your critical value should be more demanding. Moreover, before data collection you would have to decide what is an important difference and what is not. That is called “the effect size” and it is noted as $ D $. In the previous example, the researcher forgot to define the effect. There is a proper way to asses this problem. Suppose that you define the effect to be 5 points. That is, an absolute difference lower than 5 points will not be considered significant. Then, you compute the critical value (or the significance level). After that, you collect the data, and then you can perform your statistical test of significance.</p>
+<p>So, why to use a significance level of 5% when you have 1M observations? If you have enough data, your critical value should be more demanding. Moreover, before data collection you would have to decide what is an important difference and what is not. That is called “the effect size” and it is noted as <span class="math inline">\(D\)</span>. In the previous example, the researcher forgot to define the effect. There is a proper way to asses this problem. Suppose that you define the effect to be 5 points. That is, an absolute difference lower than 5 points will not be considered significant. Then, you compute the critical value (or the significance level). After that, you collect the data, and then you can perform your statistical test of significance.</p>
 <p>For example, consider a test for a mean (for the sake of simplicity). This way, we are interested in proving that the true mean is 250. So, the test becomes:</p>
-<p>$ H_0 = - _0 = 0 &nbsp;&nbsp;&nbsp;&nbsp;vs.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H_a = - _0 = D $</p>
+<p><span class="math inline">\(H_0 = \mu - \mu _0 = 0 \ \ \ \ vs. \ \ \ \ H_a = \mu - \mu _0 = D \neq 0\)</span></p>
 <p>If the standard deviation is known, the size of the test will be:</p>
 <p><span class="math inline">\(\alpha = \Pr ( |\bar{x} - \mu _0| &gt; D | \mu = \mu _0) = 2 \Phi ( - \frac{\sqrt{n}D}{\sigma})\)</span></p>
-<p>Then, for a particular effect size $ D = 2$ (that is, an absolute difference greater than 2 units between the observed average and 250 becomes important) and <span class="math inline">\(\sigma = 100\)</span>, with 1M of observations, the proper level of significance should be <span class="math inline">\(\alpha=2.539629e-10\)</span>. Is it shocking for you to have that significance level? Let’s check out the power of this particular test:</p>
+<p>Then, for a particular effect size <span class="math inline">\(D = 2\)</span> (that is, an absolute difference greater than 2 units between the observed average and 250 becomes important) and <span class="math inline">\(\sigma = 100\)</span>, with 1M of observations, the proper level of significance should be <span class="math inline">\(\alpha=2.539629e-10\)</span>. Is it shocking for you to have that significance level? Let’s check out the power of this particular test:</p>
 <p><span class="math inline">\(\beta =1 - \Phi (\frac{\sqrt{n}D}{\sigma} + Z_{1- \alpha / 2}) + \Phi (\frac{\sqrt{n}D}{\sigma} - Z_{1- \alpha / 2})\)</span></p>
 <p>The power of this test tends to 1. So, at the end we have a test with size tending to zero and power tending to 1. Big data, big power, big confidence, big significance!</p>
 

@@ -3,7 +3,8 @@ title: "Cuando la significación estadística apesta (el caso Zicam)"
 author: "Andrés Gutiérrez"
 date: "2011-01-16"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Publications"
 ---
 
 [Steve Ziliak escribe](http://economistsview.typepad.com/economistsview/2011/01/does-statistical-significance-stink.html) lo siguiente:

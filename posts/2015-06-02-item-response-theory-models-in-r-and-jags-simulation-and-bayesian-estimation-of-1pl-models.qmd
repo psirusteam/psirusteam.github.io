@@ -3,19 +3,17 @@ title: "Item Response Theory Models in R and JAGS: simulation and bayesian estim
 author: "Andrés Gutiérrez"
 date: "2015-06-02"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
   - "IRT"
-  - "R"
-  - "Stats"
 ---
 
 In my job this kind of models are our daily bread. Item response theory models are used to asses the quality of education, and if you are serious about educational or psychological measurement, this kind of models are mandatory.
 
 First of all, IRT models are just that: stochastic models. There is nothing mysterious behind them, because they have a close link with generalized linear models. At the end a latent ability for each examinee is estimated along with item difficulties. According to Hambleton (1991) The 1PL model can be written as the probability that i-th examinee answers item j-th correctly. That is:
 
-$$ logit(\Pr(\theta_i)) = \theta_i - b_j $$
+$$ \operatorname{logit}(\Pr(\theta_i)) = \theta_i - b_j $$
 
-Where $\theta_i $ is the ability of i-th examinee and $ b_j $ is the with item difficulty. So, in order to simulate 500 responses to 10 items that follow this model, you can run this piece of code in R:
+Where $\theta_i$ is the ability of i-th examinee and $b_j$ is the with item difficulty. So, in order to simulate 500 responses to 10 items that follow this model, you can run this piece of code in R:
 
 ```r
 rm(list = ls())

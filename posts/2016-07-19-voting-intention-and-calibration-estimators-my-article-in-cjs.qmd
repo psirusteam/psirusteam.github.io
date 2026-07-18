@@ -4,9 +4,7 @@ author: "Andrés Gutiérrez"
 date: "2016-07-19"
 categories:
   - "Elections"
-  - "Estadística"
   - "Sampling"
-  - "Stats"
 ---
 
 During the last few years, I've been very interested in electoral studies. If you have been a reader of this blog, maybe you could remind that I predicted, some years ago, that Santos was going to win the presidential elections in Colombia. From that very election (Zuluaga won in the first round, while Santos won in the soon round), I learned that estimating voting intention is not a matter of sample size. Moreover, is not an issue of sampling. Elections are a very dynamic process that takes into account so many factors. However, in this paper, we strived to relate a sampling technique called "sampling calibration" with "electoral studies." So, if you are a social researcher on political issues, and if you are interested in predicting voting intention, this paper published in the Colombian Journal of Statistics is just for you.

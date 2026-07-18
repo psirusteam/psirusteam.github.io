@@ -3,7 +3,7 @@ title: "I Concurso de Análisis de Datos con R"
 author: "Andrés Gutiérrez"
 date: "2011-07-17"
 categories:
-  - "Estadística"
+  - "Community and Events"
   - "R"
 ---
 

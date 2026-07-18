@@ -3,7 +3,8 @@ title: "¿Qué tan rico eres?... Estadísticas en Colombia"
 author: "Andrés Gutiérrez"
 date: "2010-05-13"
 categories:
-  - "Estadística"
+  - "Policy Evaluation"
+  - "Visualization"
 ---
 
 El portal de Internet [Global Rich](http://globalrichlist.com/) apoyado en el Grupo de Investigación sobre el Desarrollo del Banco Mundial implementa en su página un interesante cálculo acerca de qué tan rico puede ser usted, comparado con el grueso de la población mundial. Usted sólo tiene que saber sus ingresos mensuales, multiplicarlos por 12 para llegar a una cifra anual y convertirlos a dólares. Una vez que se digite la cifra, entonces aparecerá un gráfico que le informa acerca de su situación de riqueza. Al respecto, el creador de la página afirma que es un ejercicio de caridad puesto que

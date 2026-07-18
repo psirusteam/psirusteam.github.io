@@ -3,7 +3,8 @@ title: "Oración por la Serenidad (versión Bayesiana)"
 author: "Andrés Gutiérrez"
 date: "2011-01-25"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Modeling"
 ---
 
 Querido Bayes,

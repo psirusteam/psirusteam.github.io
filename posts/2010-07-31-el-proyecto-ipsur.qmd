@@ -3,7 +3,7 @@ title: "El proyecto IPSUR"
 author: "Andrés Gutiérrez"
 date: "2010-07-31"
 categories:
-  - "Estadística"
+  - "Software"
   - "R"
 ---
 

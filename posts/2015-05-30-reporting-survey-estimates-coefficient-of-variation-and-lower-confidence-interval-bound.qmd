@@ -3,9 +3,8 @@ title: "Reporting survey estimates: coefficient of variation and lower confidenc
 author: "Andrés Gutiérrez"
 date: "2015-05-30"
 categories:
-  - "Colombia"
-  - "Estadística"
-  - "Stats"
+  - "Surveys"
+  - "Inference"
 ---
 
 I had already posted something on this sort before (click here) and I want to discuss on something else. In Colombia, for example, some official statistics institutions claim that any survey estimate with an estimated coefficient of variation (CV) greater than 15% is not reliable and, although it is published, the very figure is marked with an alert symbol (maybe an asterisk) that prevent the user on the precision of that estimate.

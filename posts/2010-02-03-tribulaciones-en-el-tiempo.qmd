@@ -3,7 +3,8 @@ title: "Tribulaciones en El Tiempo"
 author: "Andrés Gutiérrez"
 date: "2010-02-03"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Policy Evaluation"
 ---
 
 Yo no sé cuál es el proceso de edición de un periódico colombiano tan importante como El Tiempo; de lo que sí estoy seguro es que alguien (¿algunos?) debe revisar las columnas que allí se escriben. Está bien, supongamos que el supervisor del redactor no lee todos los contenidos a fondo, pero estoy seguro que el titular sí lo lee… Y un titular llamativo invita a leer el contenido de la columna. Ahora, no hay nada más llamativo que la publicación de cifras, y no hay nada más entretenido para el pueblo ignorante que las cifras manipuladas. Así que, casi se puede afirmar con seguridad que los titulares amañados de tan respetable diario no fueron un error del reportero sino que, por el contrario, dan cuenta de alguna movida política o algo por el estilo.

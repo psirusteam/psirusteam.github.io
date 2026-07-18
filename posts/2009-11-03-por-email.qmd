@@ -3,7 +3,8 @@ title: "Por email"
 author: "Andrés Gutiérrez"
 date: "2009-11-03"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 Por email

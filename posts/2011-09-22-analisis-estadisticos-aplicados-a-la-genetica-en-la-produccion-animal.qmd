@@ -3,7 +3,8 @@ title: "Análisis estadísticos aplicados a la genética en la producción anima
 author: "Andrés Gutiérrez"
 date: "2011-09-22"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 Exactamente eso... una conversación amena con un investigador en genética animal.

@@ -3,7 +3,7 @@ title: "Isolating confounding effects - What does it mean?"
 author: "Andrés Gutiérrez"
 date: "2016-06-12"
 categories:
-  - "Estadística"
+  - "Policy Evaluation"
   - "Teaching"
 ---
 
@@ -13,7 +13,7 @@ For example, let's assume that you want to assess the effect of some treatment o
 
 $$ y_i = \beta_1D_{1i} + \beta_2D_{2i} + \varepsilon_i $$
 
-Where $ D_{1i}=1-D_{2i}$ and $ D_{1i}$ is defined to be a dummy variable regarding the membership of unit $ i $ to the first stratum. Now, if you didn't stratify (because of you ignored that this specific treatment provides differential result by age category), then your model should look like this:
+Where $D_{1i}=1-D_{2i}$ and $D_{1i}$ is defined to be a dummy variable regarding the membership of unit $i$ to the first stratum. Now, if you didn't stratify (because of you ignored that this specific treatment provides differential result by age category), then your model should look like this:
 
 $$ y_i = \beta_0 + \varepsilon_i $$
 
@@ -45,11 +45,11 @@ p2 <- ggplot(data = datos, aes(D, e2)) + geom_boxplot() +
 grid.arrange(p1, p2, nrow = 1)
 ```
 
-In addition, when it comes to causal inference or more sophisticated studies, isolating confounding variables is very important, because you want a well formulated model with correct and precise estimated effects. For example, let's assume that the actual relation between the response variable and a causal variable $ D $ is given by
+In addition, when it comes to causal inference or more sophisticated studies, isolating confounding variables is very important, because you want a well formulated model with correct and precise estimated effects. For example, let's assume that the actual relation between the response variable and a causal variable $D$ is given by
 
 $$ y_i = \beta_0 + \beta_1D_{i} +\beta_2 x_i + \varepsilon_i $$
 
-Where $ x $ is a covariate. Then, if you control for the effect of that covariate, the estimate of $\beta_1$ (the causal effect) will be precise as you can see in the next code:
+Where $x$ is a covariate. Then, if you control for the effect of that covariate, the estimate of $\beta_1$ (the causal effect) will be precise as you can see in the next code:
 
 ```r
 N <- 1000

@@ -157,8 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Nunca utilice el estimador de Horvitz-Thompson</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
     <div class="quarto-category">Sampling</div>
+    <div class="quarto-category">Inference</div>
   </div>
   </div>
 
@@ -194,20 +194,20 @@ window.Quarto = {
 <p>Yo soy un tipo que en términos de estadística cree con firmeza en dos cosas: 1) la inferencia basada en la medida de probabilidad inducida por un diseño (muestral o experimental) y 2) en la incorporación de información previa en todo tipo de inferencias. Es decir, creo en el muestreo y soy bayesiano. No suena muy ortodoxo, pero hay muchas similaridades entre los dos paradigmas.</p>
 <p>Cada vez más estoy convencido de que las muestras probabilísticas deben ser planeadas con mucha pericia, de tal manera que las inferencias sean precisas en realidad. No todas las muestras, por ser probabilísticas, son buenas muestras y entiendo cada vez más la posición de los investigadores (como Rubin, Little, Gelman o Dorfman) que confían en la robustez de los modelos probabilísticos para hacer inferencias en la población finita.</p>
 <p>Retomando el título sugestivo de esta entrada, debo decir que el estimador de Horvitz-Thompson (HT) tiene propiedades agradables. Desde el punto de vista de la inferencia basada en el muestreo, es el único estimador hiperadmisible en la clase de los estimadores insesgados polinomiales: ). Pero a la hora de realizar estimaciones sobre dominios (subgrupos poblacionales para los cuales no se conoce la membresía de los elementos a cada dominio), cuando la muestra no abarca la totalidad de dominios, entonces las estimaciones son supremamente deficientes, puesto que el estimador debe repartir sus valores entre los dominios. Esto redunda en una sobre-estimación en los dominios que sí tuvieron participación en la muestra.</p>
-<p>Suponga que se planeó una muestra probabilística para la cual el total estimado de una característica de interés $ y $ es 1550. Ahora, suponga que esta muestra seleccionada para un dominio de interés particular no logra tener cobertura en dos de cinco subgrupos. Dadas las propiedades lineales del estimador HT, se tiene que:</p>
+<p>Suponga que se planeó una muestra probabilística para la cual el total estimado de una característica de interés <span class="math inline">\(y\)</span> es 1550. Ahora, suponga que esta muestra seleccionada para un dominio de interés particular no logra tener cobertura en dos de cinco subgrupos. Dadas las propiedades lineales del estimador HT, se tiene que:</p>
 <ol type="1">
 <li><p>La suma de los totales estimados sobre los tres subgrupos <strong>debe</strong> ser 1550.</p></li>
 <li><p>El total estimado sobre los dos subgrupos para los cuales no se tuvo cobertura <strong>debe</strong> ser cero.</p></li>
 <li><p>El total estimado sobre los tres dominios <strong>necesariamente</strong> estará sobre-estimado</p></li>
 </ol>
-<p>La siguiente tabla ilustra este fenómeno: $ t_{yd}$ hace referencia al total real, <span class="math inline">\(\hat{t}_{yd, HT}\)</span> es la estimación de Horvitz-Thompson.</p>
+<p>La siguiente tabla ilustra este fenómeno: <span class="math inline">\(t_{yd}\)</span> hace referencia al total real, <span class="math inline">\(\hat{t}_{yd, HT}\)</span> es la estimación de Horvitz-Thompson.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Dominio</th>
-<th>**$ t_{yd}<span class="math inline">\(** | Indicador | **\)</span>_{yd, HT}$**</th>
-<th></th>
-<th></th>
+<th><strong><span class="math inline">\(t_{yd}\)</span></strong></th>
+<th>Indicador</th>
+<th><strong><span class="math inline">\(\hat{t}_{yd, HT}\)</span></strong></th>
 </tr>
 </thead>
 <tbody>

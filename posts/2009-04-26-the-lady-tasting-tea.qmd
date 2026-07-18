@@ -3,7 +3,8 @@ title: "The Lady Tasting Tea"
 author: "Andrés Gutiérrez"
 date: "2009-04-26"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Software"
 ---
 
 Otro libro que me recomendaron...

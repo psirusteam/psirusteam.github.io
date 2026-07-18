@@ -3,7 +3,8 @@ title: "Pensamientos de un auditor en muestreo"
 author: "Andrés Gutiérrez"
 date: "2011-11-24"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Teaching"
 ---
 
 Lo cierto es que tengo la convicción de que un auditor en muestreo en un país de América Latina realizaría un trabajo arduo, que no sería nada fácil. La idiosincrasia del gremio no lo hace fácil. Desafortunadamente hay muy pocos muestristas en nuestro país y, en realidad, hay muy pocas firmas licitando. Para nadie es un secreto que habrá más calidad si la competencia es mayor. Y más allá de las calificaciones, los conceptos y los comentarios técnicos, el trabajo se trata de asegurar la calidad en un contexto en donde ésta no es producida por la interacción entre las firmas.

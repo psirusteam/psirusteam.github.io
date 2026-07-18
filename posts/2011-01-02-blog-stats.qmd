@@ -3,7 +3,8 @@ title: "Blog stats"
 author: "Andrés Gutiérrez"
 date: "2011-01-02"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Elections"
 ---
 
 Los duendes de estadísticas de WordPress.com han analizado el desempeño de este blog en 2010 y te presentan un resumen de alto nivel de la salud de tu blog:

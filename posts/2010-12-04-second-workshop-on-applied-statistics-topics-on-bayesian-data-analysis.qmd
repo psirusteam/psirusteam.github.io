@@ -3,8 +3,8 @@ title: "Second Workshop on Applied Statistics: Topics on Bayesian Data Analysis"
 author: "Andrés Gutiérrez"
 date: "2010-12-04"
 categories:
-  - "Estadística"
-  - "R"
+  - "Community and Events"
+  - "Bayesian Statistics"
 ---
 
 La **International Association of Survey Statisticians** junto con la **Facultad de Estadística de la Universidad Santo Tomás** han aprobado la organización de uno de los eventos más esperados por la comunidad estadística colombiana, el Workshop on Applied Statistics. Este evento bienal que tendrá lugar en la sede principal de la Universidad en la primera semana de febrero de 2011, en su segunda entrega tendrá como tema principal la estadística bayesiana y sus aplicaciones haciendo memoria a las palabras de Andrew Gelman (a mi leal saber y entender, el estadístico más influyente en el mundo actual) cuando afirmó que:

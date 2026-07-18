@@ -3,10 +3,8 @@ title: "Multilevel Modeling of Educational Data using R (Part 1)"
 author: "Andrés Gutiérrez"
 date: "2016-10-12"
 categories:
-  - "Education"
-  - "Estadística"
+  - "Modeling"
   - "R"
-  - "Stats"
 ---
 
 Linear models fail to recognize the effect of clustering due to intraclass correlation accurately. However, under some scenarios force you to take into account that units are clustered into subgroups that at the same time are nested within larger groups. The typical example is the analysis of standardized tests, where students are grouped in schools, and schools are grouped into districts, while districts are part of a whole system (state or country).
@@ -69,7 +67,7 @@ test <- data.frame(SES = c(x1, x2, x3, x4, x5),
 
 When analyzing data with such a type of hierarchical structures, the researcher always should fit a null model to decompose the variation due to schools. The following expression gives the functional form of this model:
 
-$ y_{ij} = \alpha_{j} + \varepsilon_{ij}$ $\alpha_{j} = \alpha_0 + u_{j}$
+$y_{ij} = \alpha_{j} + \varepsilon_{ij}$ $\alpha_{j} = \alpha_0 + u_{j}$
 
 This model allows decomposing the source of total variation into two parts: the one due to students (within schools) and the one due to schools (test score between all of the schools). The R code to fit this null multilevel model to data is given next:
 
@@ -89,7 +87,7 @@ By examining the estimates of the random effects' variance we note that the perc
 
 The previous unconditional model fails to include relevant variables, such as the socio-economic status (SES) associated to every student. The following expressions give a more elaborated model involving random intercepts and random slopes for each of the schools:
 
-$ y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$ $\alpha_{j} = \alpha_0 + u_{j}$ $\beta{j} = \beta_0 + v_{j}$
+$y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}$ $\alpha_{j} = \alpha_0 + u_{j}$ $\beta_{j} = \beta_0 + v_{j}$
 
 The R code that allows fitting this model is shown below.
 

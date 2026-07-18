@@ -3,8 +3,8 @@ title: "Respuestas al manifiesto"
 author: "Andrés Gutiérrez"
 date: "2011-05-17"
 categories:
-  - "Estadística"
-  - "R"
+  - "Community and Events"
+  - "Teaching"
 ---
 
 Algún lector anónimo escribe lo siguiente:

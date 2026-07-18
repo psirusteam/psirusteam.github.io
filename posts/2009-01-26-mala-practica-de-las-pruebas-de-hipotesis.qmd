@@ -3,7 +3,8 @@ title: "Mala práctica de las pruebas de hipótesis"
 author: "Andrés Gutiérrez"
 date: "2009-01-26"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Teaching"
 ---
 
 [Jim Berger](http://www.stat.duke.edu/~berger/p-values.html) ha diseñado un [software](http://www.stat.duke.edu/~berger/applet2/pvalue.html) que demuestra que las interpretaciones usuales acerca de los p-valores pueden ser erradas. La ayuda para manejar el software se encuentra en [este documento](http://www.stat.duke.edu/~berger/applet2/applet.pdf).

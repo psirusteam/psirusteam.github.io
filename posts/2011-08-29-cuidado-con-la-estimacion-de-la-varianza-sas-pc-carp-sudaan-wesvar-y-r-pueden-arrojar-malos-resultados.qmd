@@ -3,10 +3,8 @@ title: "Cuidado con la estimación de la varianza… ¡SAS, PC-Carp, Sudaan, Wes
 author: "Andrés Gutiérrez"
 date: "2011-08-29"
 categories:
-  - "Encuestas"
-  - "Inferencia"
-  - "Muestreo"
   - "Software"
+  - "Inference"
 ---
 
 Y en principio no estoy insinuando que estos excelentes paquetes computacionales sean malos o que su programación esté errada, de ninguna manera… Sin embargo, en mi ejercicio como auditor de metodologías de muestreo, he encontrado que en algunas ocasiones, para diseños de muestreo complejos que involucran estratificación y varias etapas, los errores estándar (definidos como la raíz cuadrada de la varianza), los coeficientes de variación (definidos como el cociente entre el error estándar y la estimación puntual), la longitud de los intervalos de confianza (definida como el producto del error estándar y el percentil adecuado de la distribución del estimador) y hasta los efectos de diseño (definidos como el cociente entre la varianza del diseño complejo y la varianza del muestreo aleatorio simple) parecen ser sospechosos.

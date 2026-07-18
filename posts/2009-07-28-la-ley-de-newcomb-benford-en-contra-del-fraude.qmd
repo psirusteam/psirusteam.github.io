@@ -3,7 +3,8 @@ title: "La ley de Newcomb-Benford en contra del fraude"
 author: "Andrés Gutiérrez"
 date: "2009-07-28"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Elections"
 ---
 
 Estimado colega estadístico, las columnas de la siguiente tabal describen el territorio de algunos países del planeta. Una de las dos columnas es verdadera y la otra columna es falsa. Cuando observa la siguiente tabla de datos, ¿podría decir con exactitud cuál de las columnas es verdadera?
@@ -16,7 +17,7 @@ En general, la ley de Newcomb-Benford afirma que la distribución de probabilida
 
 $\Pr(d)=\log(d+1)-\log(d)$
 
-para $ d= 1,2, \ldots,9$ y esta probabilidad es invariante ante transformaciones de escala de medición. A continuación presento las probabilidades para cada uno de los dígitos
+para $d= 1,2, \ldots,9$ y esta probabilidad es invariante ante transformaciones de escala de medición. A continuación presento las probabilidades para cada uno de los dígitos
 
 Como se puede notar, la probabilidad del uno es de alrededor 0.3, mientras que la del cuatro es de más o menos 0.1 y la del nueve está alrededor de 0.05.
 

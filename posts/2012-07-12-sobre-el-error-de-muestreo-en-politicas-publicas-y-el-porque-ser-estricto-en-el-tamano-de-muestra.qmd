@@ -3,7 +3,8 @@ title: "Sobre el error de muestreo en políticas públicas y el porqué ser estr
 author: "Andrés Gutiérrez"
 date: "2012-07-12"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Inference"
 ---
 
 En este documento técnico se evidencia por qué cualquier evaluación en el contexto de políticas públicas debe tener un tamaño de muestra robusto para que las inferencias sean válidas y por consiguiente los resultados sean confiables para dar un buen uso de los recursos designados y no caer en el error del detrimento del erario público.

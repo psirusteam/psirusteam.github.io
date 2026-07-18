@@ -3,20 +3,21 @@ title: "Identificabilidad en modelos bayesianos mixtos y el teorema fundamental 
 author: "Andrés Gutiérrez"
 date: "2012-04-28"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Modeling"
 ---
 
 Bien, este es el escenario general… Se tiene un modelo mixto y acudiendo a la fama, uso y fácil e intuitiva programación de WinBUGS, se definen distribuciones previas no informativas para los parámetros del modelo y además para los hiper-parámetros del modelo. Luego se realiza la inferencia Bayesiana. Por ejemplo, suponga el siguiente modelo mixto:
 
-$ y_{ij}|\beta, u_i, \sigma^2_e \sim Normal(\beta+u_i, \sigma^2_e)$ en donde $ u_isim Normal(0, \sigma^2)$
+$y_{ij}\mid\beta, u_i, \sigma^2_e \sim \operatorname{Normal}(\beta+u_i, \sigma^2_e)$ en donde $u_i \sim \operatorname{Normal}(0, \sigma^2)$
 
-Siendo así, se reescribe la función la función de densidad posterior como el producto de las verosimilitudes con las densidades previas de los parámetros, $\beta $ y $\sigma^2_e $, y de los hiper-parámetros, $\sigma^2$. De esta forma, se tiene que
+Siendo así, se reescribe la función la función de densidad posterior como el producto de las verosimilitudes con las densidades previas de los parámetros, $\beta$ y $\sigma^2_e$, y de los hiper-parámetros, $\sigma^2$. De esta forma, se tiene que
 
-$ p(\beta, \mathbf{u}, \sigma^2_e, \sigma^2|\mathbf{y}) propto p(\mathbf{y}|\beta, \mathbf{u}, \sigma^2_e) p(\mathbf{u}|\sigma^2) p(\beta) p(\sigma^2_e) p(\sigma^2)$
+$p(\beta, \mathbf{u}, \sigma^2_e, \sigma^2\mid\mathbf{y}) \propto p(\mathbf{y}\mid\beta, \mathbf{u}, \sigma^2_e) p(\mathbf{u}\mid\sigma^2) p(\beta) p(\sigma^2_e) p(\sigma^2)$
 
 Una definición muy usada para la distribución previa de los parámetros es la siguiente:
 
-$ p(\beta, \sigma^2_e|\mathbf{y}) propto 1/\sigma^{2}_e $
+$p(\beta, \sigma^2_e\mid\mathbf{y}) \propto 1/\sigma^{2}_e$
 
 Con esta distribución previa no informativa, se acude a la multiplicación de todas las verosimilitudes con las distribuciones previas y se utiliza el análisis condicional y el algoritmo de Gibbs para "supuestamente" construir una Cadena de Markov cuya distribución estacionaria coincide exactamente con la distribución posterior. Sin embargo, cuando se utilizan distribuciones previas impropias para los parámetros, resulta que la distribución posterior es también impropia. Lo anterior está demostrado en Hill (1965, Journal of the American Statistical Association, 60, pp 806-825). Por lo anterior, aunque se utilice el algoritmo de Gibbs, la distribución posterior carecerá de sentido puesto que no es integrable y esto implica que no existe una distribución condicional conjunta que coincida con las distribuciones condicionales creadas al utilizar el algoritmo de Gibbs.
 

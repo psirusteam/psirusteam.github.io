@@ -3,8 +3,8 @@ title: "Highlighting R code for the web"
 author: "Andrés Gutiérrez"
 date: "2016-12-03"
 categories:
-  - "Estadística"
   - "R"
+  - "Software"
 ---
 
 When blogging about statistics and R, it is very useful to differentiate the body text to R code. I used to manage this issue by highlighting the code and [pretty-R](http://blog.revolutionanalytics.com/2010/11/dress-your-r-code-for-the-web-with-pretty-r.html) was a valuable instrument from Revolutions Analytics to accomplish this. However, as you may know, [Microsoft acquired that company](https://blogs.technet.microsoft.com/machinelearning/2015/04/06/microsoft-closes-acquisition-of-revolution-analytics/), and now this feature (dressing R code for the web) is not available anymore.

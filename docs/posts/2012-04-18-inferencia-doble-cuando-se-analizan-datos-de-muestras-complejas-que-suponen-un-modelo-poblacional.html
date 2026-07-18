@@ -157,7 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Inferencia doble cuando se analizan datos de muestras complejas que suponen un modelo poblacional</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Modeling</div>
+    <div class="quarto-category">Sampling</div>
   </div>
   </div>
 
@@ -192,10 +193,10 @@ window.Quarto = {
 <p>1 1 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 1 0 0 0 1 1 0 0 0 1 1 0 0 1 0 0 0 1 0 0 1 1 1 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0 0 0 1 0 1 0</p>
 <p>En esta población finita, que fue generada a partir de un modelo probabilístico, hay 28 éxitos.</p>
 <p>Primer proceso inferencial: el modelo</p>
-<p>En este apartado, es notable que la medida de probabilidad que rige la inferencia hasta el momento sea la inducida por la distribución Binomial con parámetro 0.3. De esta manera, el estimador insesgado de mínima varianza (todas estas propiedades obtenidas con base en la distribución binomial) está dado por el promedio poblacional. Por supuesto, aunque la realización del promedio poblacional en la población del ejemplo es <span class="math inline">\(\bar{Y}_U=0.28\)</span>, se comprueba fácilmente que la esperanza del promedio poblacional es <span class="math inline">\(\E(\bar{Y}_U)=0.3\)</span>. Nótese que la inferencia utiliza todos los datos de la población. Ahora, para reproducirlo computacionalmente, basta con simular hartas poblaciones de 100 variables aleatorias independientes distribuidas Bernoulli con parámetro desconocido θ=0.3. El siguiente esquema trata de reproducir gráficamente este proceso de inferencia, en donde un gran número de poblaciones podrían haber sido obtenidas bajo el modelo.</p>
+<p>En este apartado, es notable que la medida de probabilidad que rige la inferencia hasta el momento sea la inducida por la distribución Binomial con parámetro 0.3. De esta manera, el estimador insesgado de mínima varianza (todas estas propiedades obtenidas con base en la distribución binomial) está dado por el promedio poblacional. Por supuesto, aunque la realización del promedio poblacional en la población del ejemplo es <span class="math inline">\(\bar{Y}_U=0.28\)</span>, se comprueba fácilmente que la esperanza del promedio poblacional es <span class="math inline">\(\mathbb{E}(\bar{Y}_U)=0.3\)</span>. Nótese que la inferencia utiliza todos los datos de la población. Ahora, para reproducirlo computacionalmente, basta con simular hartas poblaciones de 100 variables aleatorias independientes distribuidas Bernoulli con parámetro desconocido θ=0.3. El siguiente esquema trata de reproducir gráficamente este proceso de inferencia, en donde un gran número de poblaciones podrían haber sido obtenidas bajo el modelo.</p>
 <p>Con la</p>
 <p><a href="https://web.archive.org/web/20120915092242/http://www.gutierrezandres.com/wp-content/uploads/2012/04/SIMU1.txt">siguiente simulación</a></p>
-<p>de Monte Carlo se tiene un aceramiento al insesgamiento de ${Y}_U $:</p>
+<p>de Monte Carlo se tiene un aceramiento al insesgamiento de <span class="math inline">\(\bar{Y}_U\)</span>:</p>
 <pre><code>&gt; theta 
 [1] 0.3 
 &gt; Esp0 
@@ -207,12 +208,12 @@ window.Quarto = {
 <p>(1 1 0) (1 0) (0 0 0 0 0 0 1) (1 0) (0 0 0 0 0 0 1) (0 0 1) (0 0 0 0 0 0 0 1) (0 0 1) (0 0 0 1) (0 0 0 0 1) (0 0 0 0 0 0 0 1) (1 0) (1 0) (0 0 1) (1 0) (0 0 1) (1 0) (0 1) (0 0 0 1) (0 0 1) (1 1 0) (0 0 0 0 1) (0 1) (0 1) (0 0 0 0 0 0 0 0 0 1) (0 1) (0)</p>
 <p>El proceso de aglomeración en hogares es obviamente artificioso en este ejemplo, pero ilustra que en la vida real las poblaciones finitas siempre están aglomeradas. Suponga por otra parte que tomamos una muestra de <em>nI</em> hogares y en cada hogar seleccionado realizamos un censo; además la selección de los hogares se hará aleatoriamente, sin reemplazo y con probabilidades de inclusión proporcionales al tamaño del hogar <em>Ni</em>. Siendo la característica de interés <em>yi</em> el estado del individuo en la fuerza laboral (1, si está desempleado y 0, en otro caso), entonces es bien sabido que bajo este esquema de muestreo un estimador insesgado para la proporción de desempleados es el siguiente:</p>
 <p><span class="math inline">\(\bar{Y}_S=\frac{\sum_i \bar{y}_i}{nI}\)</span></p>
-<p>En donde ${y}<em>i=t</em>{y_i}/N_i $ es la proporción de desempleados en el hogar <em>i</em>-ésimo, $ t_{y_i}$ es el total de desempleados en el hogar <em>i</em>, <em>Ni</em> es el número de individuos en el hogar<em>i</em>y<em>nI</em> es el número de hogares seleccionados. Por otro lado, un estimador ingenuo, que asume que el agrupamiento de los valores no interfiere en el proceso de inferencia e ignora el diseño de muestreo es el siguiente:</p>
+<p>En donde <span class="math inline">\(\bar{y}_i=t_{y_i}/N_i\)</span> es la proporción de desempleados en el hogar <em>i</em>-ésimo, <span class="math inline">\(t_{y_i}\)</span> es el total de desempleados en el hogar <em>i</em>, <em>Ni</em> es el número de individuos en el hogar<em>i</em>y<em>nI</em> es el número de hogares seleccionados. Por otro lado, un estimador ingenuo, que asume que el agrupamiento de los valores no interfiere en el proceso de inferencia e ignora el diseño de muestreo es el siguiente:</p>
 <p><span class="math inline">\(\bar{Y}_S^*=\frac{\sum_i t_{y_i}}{\sum_i n_i}\)</span></p>
 <p>Que corresponde a la proporción general de desempleados en la muestra. En términos generales el siguiente esquema trata de reproducir gráficamente este proceso de inferencia, en donde un gran número de muestras podrían haber sido extraídas siguiendo el diseño de muestreo.</p>
 <p>Con</p>
 <p><a href="https://web.archive.org/web/20120915092235/http://www.gutierrezandres.com/wp-content/uploads/2012/04/SIMU2.txt">la siguiente simulación de Monte Carlo</a></p>
-<p>se comprueba fácilmente que ${Y}_S $ es insesgado, mientras que es <span class="math inline">\(\bar{Y}_S^*\)</span> sesgado:</p>
+<p>se comprueba fácilmente que <span class="math inline">\(\bar{Y}_S\)</span> es insesgado, mientras que es <span class="math inline">\(\bar{Y}_S^*\)</span> sesgado:</p>
 <pre><code>&gt; theta_N
 [1] 0.28
 &gt; Esp1
@@ -223,14 +224,14 @@ window.Quarto = {
 <p>Inferencia doble: los modelos y el muestreo</p>
 <p>En último lugar, suponga que los valores de las variables de interés sí constituyen realizaciones de variables aleatorias que siguen un modelo probabilístico. Ahora, una población finita está constituida por la realización particular de las variables aleatorias. Ahora, condicionado a la realización de una población finita, se extrae una muestra aleatoria de elementos, mediante un diseño de muestreo complejo. Nótese que en este tercer proceso inferencial, tanto el modelo como el diseño de muestreo constituyen dos medidas de probabilidad distintas que deben regir la inferencia del parámetro de interés.</p>
 <p>Al respecto, nótese que, dado que el diseño de muestreo es complejo, no es viable utilizar técnicas clásicas, como el método de máxima verosimilitud, puesto que los datos finales no constituyen una muestra aleatoria de variables independientes ni idénticamente distribuidas. Po lo anterior, la forma final de la función de verosimilitud, definida como la densidad conjunta de las variables en la muestra, será muy compleja, intratable e insoluble.</p>
-<p>Una solución a este problema de estimación es la técnica de máxima pseudo-verosimilitud, la cual induce estimadores que tienen en cuenta las ponderaciones del diseño de muestreo complejo. Para el ejemplo de las proporciones, el estimador ${Y}_S $ resulta ser el estimador de máxima pseudo-verosimilitud, el cual cumple la siguiente relación:</p>
-<p><span class="math inline">\(\E_{xi p}(\bar{Y}_S)=\E_{xi}\E_p(\bar{Y}_S|Y)=\E_{xi}(\bar{Y}_U)=\theta=0.3\)</span></p>
+<p>Una solución a este problema de estimación es la técnica de máxima pseudo-verosimilitud, la cual induce estimadores que tienen en cuenta las ponderaciones del diseño de muestreo complejo. Para el ejemplo de las proporciones, el estimador <span class="math inline">\(\bar{Y}_S\)</span> resulta ser el estimador de máxima pseudo-verosimilitud, el cual cumple la siguiente relación:</p>
+<p><span class="math inline">\(\mathbb{E}_{\xi p}(\bar{Y}_S)=\mathbb{E}_{\xi}\mathbb{E}_p(\bar{Y}_S|Y)=\mathbb{E}_{\xi}(\bar{Y}_U)=\theta=0.3\)</span></p>
 <p>Por otro lado, otro estimador insesgado para el parámetro de interés es el promedio poblacional, pero dado que sólo tenemos una muestra aleatoria, no es posible calcularlo. Ahora, el estimador ingenuo, , es sesgado puesto que:</p>
-<p>$_{xi p}({Y}_S^*)=_{xi}_p({Y}_S^*|Y) $</p>
+<p><span class="math inline">\(\mathbb{E}_{\xi p}(\bar{Y}_S^*)=\mathbb{E}_{\xi}\mathbb{E}_p(\bar{Y}_S^*|Y) \neq \theta\)</span></p>
 <p>El siguiente esquema trata de reproducir gráficamente este proceso de inferencia doble, en donde un gran número poblaciones podrían haber sido generadas del modelo y a su vez, para cada una de estas, un gran número de muestras podrían haber sido extraídas siguiendo el diseño de muestreo complejo.</p>
 <p>Con</p>
 <p><a href="https://web.archive.org/web/20120826150819/http://www.gutierrezandres.com/wp-content/uploads/2012/04/SIMU3.txt">la siguiente simulación de Monte Carlo</a></p>
-<p>se comprueba fácilmente que ${Y}_S $ es insesgado, mientras que es <span class="math inline">\(\bar{Y}_S^*\)</span> sesgado:</p>
+<p>se comprueba fácilmente que <span class="math inline">\(\bar{Y}_S\)</span> es insesgado, mientras que es <span class="math inline">\(\bar{Y}_S^*\)</span> sesgado:</p>
 <pre><code>&gt; theta
 [1] 0.30
 &gt; mean(Esp1)

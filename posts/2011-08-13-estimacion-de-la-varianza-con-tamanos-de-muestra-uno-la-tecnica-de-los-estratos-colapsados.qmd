@@ -3,7 +3,8 @@ title: "Estimación de la varianza con tamaños de muestra uno… La técnica de
 author: "Andrés Gutiérrez"
 date: "2011-08-13"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Surveys"
 ---
 
 Termina la clase de muestreo avanzado. Son las diez de la noche y una de mis mejores alumnas me hace una pregunta: Le respondo que sí, convencido de que sí es procedente. Llego a mi casa y comienzo a pensar un poco más en ese esquema de muestreo. Es una situación intrincada y en verdad, aunque la respuesta que di, en primera instancia es acertada, también es cierto que está condicionada. Por lo tanto, de algunos vericuetos mentales, surge esta entrada que trata de dar una solución al problema de las varianzas con tamaño de muestra uno y afianza una vez más el consejo que les di a mis estudiantes en esa misma clase: lo importante no es aprenderse las fórmulas de memoria, sino darles sentido.
@@ -12,7 +13,7 @@ El tema es el siguiente: Se tiene una encuesta probabilística en varias etapas.
 
 Bajo este contexto, con esta poca información, en términos de estimación de la varianza, la situación se divide en dos. Por una parte, es posible que el entrevistado de la vivienda esté respondiendo cuestiones inherentes al hogar. Siendo así, la unidad de interés es la vivienda y no existe ningún problema en que haya sólo un respondiente, pues está contestando preguntas de la vivienda. De esta manera, la muestra en la última etapa, no estaría dada por una sola vivienda, sino que estaría conformada por el total de viviendas pertenecientes a las manzanas seleccionadas. Ese fue mi razonamiento a priori y por ende, no deduje nada extraño en el planteamiento del problema, puesto que el tamaño de muestra (viviendas) es mayor a uno y no existiría ninguna complicación al estimar la varianza.
 
-Sin embargo, después de pensarlo un poco más, la situación cambia totalmente si se supone que el único individuo seleccionado en la muestra está respondiendo preguntas relacionadas con él mismo. De esta manera, la unidad de muestreo correspondería a la persona (no el hogar o vivienda) y por ende, la muestra de la última etapa efectivamente sería de sólo un individuo en las viviendas. En este escenario, existiría una gran complicación para estimar la varianza, puesto que es bien sabido que si el tamaño de muestra es uno ($ n=1$), entonces la probabilidad de inclusión conjunta es nula ($\pi_{kl}=0$, para todo $ kneq l $). Lo anterior se traduce en que es imposible obtener una estimación insesgada de la varianza del estimador.
+Sin embargo, después de pensarlo un poco más, la situación cambia totalmente si se supone que el único individuo seleccionado en la muestra está respondiendo preguntas relacionadas con él mismo. De esta manera, la unidad de muestreo correspondería a la persona (no el hogar o vivienda) y por ende, la muestra de la última etapa efectivamente sería de sólo un individuo en las viviendas. En este escenario, existiría una gran complicación para estimar la varianza, puesto que es bien sabido que si el tamaño de muestra es uno ($n=1$), entonces la probabilidad de inclusión conjunta es nula ($\pi_{kl}=0$, para todo $k\neq l$). Lo anterior se traduce en que es imposible obtener una estimación insesgada de la varianza del estimador.
 
 Por supuesto, es una situación difícil, pero no es el fin del mundo. Es posible que no podamos acceder a una estimación insesgada, pero siempre es posible obtener una estimación sesgada. El problema con las varianzas es que la estimación sesgada debe sobre-estimar la varianza real. Por supuesto, es mucho más grave reportar coeficientes de variación menores a la cifra real, que coeficientes de variación mayores. De la misma forma, las complicaciones son mayores si se reportan intervalos de confianza más estrechos que en la realidad, que si se reportan intervalos de confianza más anchos que en la realidad. Por lo tanto, como los coeficientes de variación y los intervalos de confianza están en función de la estimación de la varianza, entonces definitivamente optaremos por encontrar expresiones que sobre-estimen el verdadero valor de la varianza.
 
@@ -28,11 +29,11 @@ $\hat{t}_{h1}-\hat{t}_{h2}=({t}_{h1}-{t}_{h2})+(\hat{t}_{h1}-{t}_{h1})-(\hat{t}_
 
 Por lo tanto, promediando sobre todas las posibles muestras en ese par, se tiene que
 
-$\E(\hat{t}_{h1}-\hat{t}_{h2})^2=({t}_{h1}-{t}_{h2})^2+N_{h1}^2(1-1/ N_{h1}) S^2_{Uh1}+N_{h2}^2(1-1/ N_{h2}) S^2_{Uh2}$
+$\mathbb{E}(\hat{t}_{h1}-\hat{t}_{h2})^2=({t}_{h1}-{t}_{h2})^2+N_{h1}^2(1-1/ N_{h1}) S^2_{Uh1}+N_{h2}^2(1-1/ N_{h2}) S^2_{Uh2}$
 
 Por lo tanto, la esperanza de la suma sobre todos los estratos, que coincide con la esperanza de $\hat{V}_1(\hat{t}_y)$ es
 
-$\sum_{h=1}^{H/2}\E (\hat{t}_{h1}-\hat{t}_{h2})^2=\E(\hat{V}_1(\hat{t}_y))= \sum_{h=1}^{H} N_{h}^2(1-1/ N_{h}) S^2_{Uh}+\sum_{h=1}^{H/2}({t}_{h1}-{t}_{h2})^2$
+$\sum_{h=1}^{H/2}\mathbb{E} (\hat{t}_{h1}-\hat{t}_{h2})^2=\mathbb{E}(\hat{V}_1(\hat{t}_y))= \sum_{h=1}^{H} N_{h}^2(1-1/ N_{h}) S^2_{Uh}+\sum_{h=1}^{H/2}({t}_{h1}-{t}_{h2})^2$
 
 El primer término del sumando corresponde a la varianza real con tamaño de muestra uno y el segundo término es el sesgo positivo del estimador. Se dice que el tamaño del sesgo depende de qué tanto difieran los pares. Es decir, a la hora de construir estos pares, se debe procurar que se parezcan al máximo.
 

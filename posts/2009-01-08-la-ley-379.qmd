@@ -3,7 +3,8 @@ title: "La ley 379"
 author: "Andrés Gutiérrez"
 date: "2009-01-08"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Surveys"
 ---
 
 En el [blog de Alex Zambrano](https://web.archive.org/web/20141011173557/http://alexjzc.wordpress.com/) encontré un post que contenía el [documento PDF](http://predictive.files.wordpress.com/2009/01/ley-del-estadistico.pdf) de la tan misteriosa ley del estadístico. Ley que, entre otras cosas, encuentra grandes desviaciones de la realidad en algunos de sus parágrafos. Basta con leerla para darse cuenta que, en principio, la ley está descontextualizada de la realidad que atañe a esta década.

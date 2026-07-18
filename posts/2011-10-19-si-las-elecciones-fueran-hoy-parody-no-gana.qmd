@@ -3,8 +3,8 @@ title: "Si las elecciones fueran hoy… Parody no gana"
 author: "Andrés Gutiérrez"
 date: "2011-10-19"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Probability"
 ---
 
 Claro, suponiendo mil cosas que no necesariamente se cumplen. [Según este artículo](http://feeds.univision.com/feeds/article/2011-10-07/encuestas-revelan-cabeza-a-cabeza?refPath=/noticias/ultimas-noticias/), la intención de voto para la alcaldía de Bogotá está repartida de la siguiente manera: <<*Petro, del movimiento independiente Progresistas, se ubicó con 24% en el primer lugar de las preferencias de los electores, según un muestreo realizado por la firma Gallup Colombia. Peñalosa, que se postula por el Partido Verde y el Partido Social de Unidad Nacional (Partido de La U), se situó segundo con 21%, de acuerdo con el sondeo divulgado por el diario El Espectador. En el tercer lugar se ubicó la ex senadora Gina Parody, con 18%.*>>

@@ -164,7 +164,7 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Multilevel regression with poststratification (Gelman’s MrP) in R - What is this all about?</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Modeling</div>
     <div class="quarto-category">R</div>
   </div>
   </div>
@@ -197,12 +197,12 @@ window.Quarto = {
 
 <p>Multilevel regression with poststratification (MrP) is a useful technique to predict a parameter of interest within small domains through modeling the mean of the variable of interest conditional on poststratification counts. This method (or methods) was first proposed by Gelman and Little (1997) and is widely used in political science where the voting intention is modeling conditional on the interaction of classification variables. The aim fo this methodology is to provide reliable estimates on strata based on census counts. For those who have some background on survey sampling, this method should look very similar to the Raking method, where sampling weights are adjusted due to known census cell counts. However, a significant difference with Raking is that MrP is a model-based approach, rather than a design-based method. This way, even in the presence of a (maybe complex) survey design, MrP does not take it into account for inference. In other words, sampling design will be considered as ignorable. So, the probability measure that governs the whole inference is based on modeling the voting intention (variable of interest) to demographic categories (auxiliary variables). Is this a major technical issue to ignore the complex survey design? Yes, because in any case we are considering a probability measure to draw the sample. However, when it comes to voting intention (a major area where this technique is used), we rarely find a sophisticated complex design. Moreover, this kind of studies is barely based on probabilistic polls. So, if the survey lacks a proper sampling plan, it is always better to model the response variable. Therefore, the ultimate goal of this technique it to estimate a parameter of interest (totals, means, proportions, etc.) for all of the strata (domains, categories or subgroups) in a finite population. From now on, let’s assume that:</p>
 <ol type="1">
-<li><p>a population is divided into $ H $ strata of interest (for example states),</p></li>
-<li><p>the parameters of interest are the means (same rules apply for proportions) in each strata $_h $ ($ h=1, , H $),</p></li>
-<li><p>every stratum is cross-classified by some demographics $ j H $ (from now on defined as post-srata), besides every population count $ N_j $ is known, and</p></li>
-<li><p>all of the population means $_j $ can be estimated by using some statistical technique, such as multilevel regression.</p></li>
+<li><p>a population is divided into <span class="math inline">\(H\)</span> strata of interest (for example states),</p></li>
+<li><p>the parameters of interest are the means (same rules apply for proportions) in each strata <span class="math inline">\(\theta_h\)</span> (<span class="math inline">\(h=1, \ldots, H\)</span>),</p></li>
+<li><p>every stratum is cross-classified by some demographics <span class="math inline">\(j \in H\)</span> (from now on defined as post-srata), besides every population count <span class="math inline">\(N_j\)</span> is known, and</p></li>
+<li><p>all of the population means <span class="math inline">\(\mu_j\)</span> can be estimated by using some statistical technique, such as multilevel regression.</p></li>
 </ol>
-<p>This way, the mean in stratum $ h $ ($_h $), is defined as a function of means in post-strata $ j $ ($_j <span class="math inline">\(), and post-strata counts (\)</span> N_j $): <span class="math inline">\(\theta_h = \frac{\sum_{j \in h} N_j \mu_j }{\sum_{j \in h} N_j}\)</span> The first part of MrP is defined by a multilevel regression (MR). This kind of models is a particular case of mixed effect models. The core components of this phase are</p>
+<p>This way, the mean in stratum <span class="math inline">\(h\)</span> (<span class="math inline">\(\theta_h\)</span>), is defined as a function of means in post-strata <span class="math inline">\(j\)</span> (<span class="math inline">\(\mu_j\)</span>), and post-strata counts (<span class="math inline">\(N_j\)</span>): <span class="math inline">\(\theta_h = \frac{\sum_{j \in h} N_j \mu_j }{\sum_{j \in h} N_j}\)</span> The first part of MrP is defined by a multilevel regression (MR). This kind of models is a particular case of mixed effect models. The core components of this phase are</p>
 <ul>
 <li><p>the variable of interest (for example, voting intention),</p></li>
 <li><p>the auxiliary variables (classification on census demographic cells) and,</p></li>
@@ -237,7 +237,7 @@ window.Quarto = {
   Big     30  13   1  16  23
   Medium 180 121 111 187 138
   Small   97 593 862  20   4</code></pre>
-<p>Of course, this technique works over a selected sample. That’s why we are going to select a random sample of size $ n = 1000$. We can also create some tables showing the counts on the sample.</p>
+<p>Of course, this technique works over a selected sample. That’s why we are going to select a random sample of size <span class="math inline">\(n = 1000\)</span>. We can also create some tables showing the counts on the sample.</p>
 <pre><code>&gt; # A sample is selected
 &gt; SLucy &lt;- sample_n(Lucy, size = 1000)
 &gt; table(SLucy$Level)
@@ -252,7 +252,7 @@ window.Quarto = {
 <p><strong>lmer</strong></p>
 <p>function. The object</p>
 <p><strong>Mupred</strong></p>
-<p>contains the corresponding $_j $ ($ j $ is defined for each level) regarding each stratum (zones).</p>
+<p>contains the corresponding <span class="math inline">\(\mu_j\)</span> (<span class="math inline">\(j\)</span> is defined for each level) regarding each stratum (zones).</p>
 <pre><code>&gt; # Step 1: &lt;&lt;MR&gt;&gt; - Multilevel regression
 &gt; M1 &lt;- lmer(Income ~ Level + (1 | Zone), data = SLucy)
 &gt; coef(M1)
@@ -298,7 +298,7 @@ attr(,"class")
 <ul>
 <li></li>
 </ul>
-<p>Mupred) / table(Lucy $ Zone) A B C D E 643.5724 312.8052 332.1726 682.8031 778.2428 How accurate was the estimation? It was good compared to the true parameters on the finite population.</p>
+<p>Mupred) / table(Lucy$Zone) A B C D E 643.5724 312.8052 332.1726 682.8031 778.2428 How accurate was the estimation? It was good compared to the true parameters on the finite population.</p>
 <pre><code>&gt; # True parameters
 &gt; aggregate(Lucy$Income, by = list(Lucy$Zone), FUN = mean)
   Group.1        x

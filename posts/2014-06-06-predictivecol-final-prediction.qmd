@@ -3,8 +3,8 @@ title: "#PredictiveCOL - Final prediction"
 author: "Andrés Gutiérrez"
 date: "2014-06-06"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Modeling"
 ---
 
 Adhesions are ready: Ramírez is now supporting Zuluaga and López is supporting Santos. Peñalosa has given freedom to his voters. However, there is something interesting that can change the future of the election: Santos voters were less than voters of Unidad National voters to the congress. That is somehow explained because the abstention in the caribbean coast was very atypical. It is assumed that parties are working hard in order to "encourage" voters to get effective votes.

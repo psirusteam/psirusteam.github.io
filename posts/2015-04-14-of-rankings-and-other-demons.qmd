@@ -3,9 +3,8 @@ title: "Of rankings and other demons"
 author: "Andrés Gutiérrez"
 date: "2015-04-14"
 categories:
-  - "Colombia"
-  - "Estadística"
-  - "Public Policy Evaluation"
+  - "Inference"
+  - "Policy Evaluation"
 ---
 
 It has been caused a lot of noise the [Synthetic Index for the Quality of Education](http://www.eltiempo.com/bogota/nuevo-modelo-de-educacion-en-colombia/15399375), that has been developed jointly by ICFEs and MEN. That index is an effort to explain the reality of Colombia in terms of schools and their environment. The index has into account different components that affect the performance of schools.

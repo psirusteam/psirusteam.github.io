@@ -3,7 +3,7 @@ title: "Confidence and Credibility Intervals for the Difference of Two Proportio
 author: "Andrés Gutiérrez"
 date: "2010-07-08"
 categories:
-  - "Estadística"
+  - "Inference"
   - "R"
 ---
 

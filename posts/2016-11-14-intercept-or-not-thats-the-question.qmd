@@ -3,8 +3,8 @@ title: "Intercept or not? That's the question!"
 author: "Andrés Gutiérrez"
 date: "2016-11-14"
 categories:
-  - "Estadística"
   - "Modeling"
+  - "Probability"
 ---
 
 My current passion is statistical modeling. While each model requires the researcher to make a proper contextualization of the problem he/she is addressing, which means that no model is equal to another, there is a common question that the researcher should answer before estimating model parameters.
@@ -21,34 +21,34 @@ Returning to the subject of this entry I will highlight the importance of inclus
 >
 > *When the explanatory variable X is categorical*. Without loss of generality, let's assume it as dichotomous (two levels); in this case, when fitting a regression line including the intercept, one can define a dummy variable representing the first level of the variable X, and the model is set as
 >
-> $ Y_i = \beta_0 + \beta_1D_{1i} + \E_i $
+> $Y_i = \beta_0 + \beta_1D_{1i} + \varepsilon_i$
 >
-> Where D1 = 1 for units belonging to the first level of X and, D1 = 0 for units belonging to the second level of X. In this case, the interpr etation of this model is as follows: For individuals belonging to level 1, the mean value of Y is given by $\beta_0 + eta1$. For units belonging to level 2, the average value of Y is given by $\beta_0$. Coefficient $\beta_1$ is defined to be the difference between these two levels. If the estimate is significant, it implies that the variable X does have considerable influence on Y. That is, the mean value of Y at each level of X varies in a significant way.
+> Where D1 = 1 for units belonging to the first level of X and, D1 = 0 for units belonging to the second level of X. In this case, the interpr etation of this model is as follows: For individuals belonging to level 1, the mean value of Y is given by $\beta_0 + \beta_1$. For units belonging to level 2, the average value of Y is given by $\beta_0$. Coefficient $\beta_1$ is defined to be the difference between these two levels. If the estimate is significant, it implies that the variable X does have considerable influence on Y. That is, the mean value of Y at each level of X varies in a significant way.
 >
 > On the other hand, if the regression is fitted without an intercept, two dummies variables must be created, each one representing the as many levels as X has. The model is formulated as
 >
-> $ Y_i = \beta_0D_{1i} + \beta_1D_{2i} + \E_i $
+> $Y_i = \beta_0D_{1i} + \beta_1D_{2i} + \varepsilon_i$
 >
 > For units at the first level (D1 = 1), the mean value of Y is given by $\beta_0$ and, for units at the second level (D2 = 1), the average value of Y is given by $\beta_1$. Thus, even if the estimate of either $\beta_0$ or $\beta_1$ is significant, that does not imply that X has any influence over Y. All we can claim is that in this model is that the two parameters are significantly different from zero. So, if you really want to establish whether X influences Y, then omitting the intercept would not be a good choice.
 
 **2. If the response variable Y is discrete: **
 
-> *When the explanatory variable X is continuous*. In this case, the fitted is a logistic regression, modeling the probability of success (Y = 1) in terms of $ p_i = \Pr(Y=1)$:
+> *When the explanatory variable X is continuous*. In this case, the fitted is a logistic regression, modeling the probability of success (Y = 1) in terms of $p_i = \Pr(Y=1)$:
 >
-> $ logit (p_i) = \beta_0 + \beta_1X_i $
+> $\operatorname{logit}(p_i) = \beta_0 + \beta_1X_i$
 >
-> If the model includes an intercept, $\beta_0$ estimate can be used to estimate the probability of success when X = 0, since $ p_i = \frac{\exp{ \beta_0}}{ 1 + \exp{ \beta_0}}$. On the other hand, if the estimate of $\beta_1$ is not significant, that implies that the values of X do not influence the chances of success or failure over Y. If the estimate of $\beta_1$ is significant with a positive (or negative) value, it indicates that an increase in the variable X implies an increase (or decrease) on the probability of success of Y. Note that this interpr etation is the same when the regression is adjusted without an intercept.
+> If the model includes an intercept, $\beta_0$ estimate can be used to estimate the probability of success when X = 0, since $p_i = \frac{\exp(\beta_0)}{1 + \exp(\beta_0)}$. On the other hand, if the estimate of $\beta_1$ is not significant, that implies that the values of X do not influence the chances of success or failure over Y. If the estimate of $\beta_1$ is significant with a positive (or negative) value, it indicates that an increase in the variable X implies an increase (or decrease) on the probability of success of Y. Note that this interpr etation is the same when the regression is adjusted without an intercept.
 >
 > *When the explanatory variable is categorical* (let's assume it as a dichotomous variable). In this case, by fitting a regression line including the intercept a dummy variable representing the first level of the variable is created and the model is defined as
 >
-> $ logit (p_i) = \beta_0 + \beta_1D_{1i}$
+> $\operatorname{logit}(p_i) = \beta_0 + \beta_1D_{1i}$
 >
-> The interpretation of this model is as follows: for units in the first level of X, $ logit(p_i) = \beta_0 + \beta_1$. For units in the second level of X, $ logit(p_i) = \beta_0$. Thus, if $\beta_1$ is significant, it indicates that $ logit(p_i)$ is different between levels of variable X, and we can conclude that X does have an important influence on Y.
+> The interpretation of this model is as follows: for units in the first level of X, $\operatorname{logit}(p_i) = \beta_0 + \beta_1$. For units in the second level of X, $\operatorname{logit}(p_i) = \beta_0$. Thus, if $\beta_1$ is significant, it indicates that $\operatorname{logit}(p_i)$ is different between levels of variable X, and we can conclude that X does have an important influence on Y.
 >
 > On the other hand, if the intercept is not taken into account, two dummies are produced (representing X levels) and the model is formulated as
 >
-> $ logit (p_i) = \beta_0D_{1i} + \beta_1D_{2i}$
+> $\operatorname{logit}(p_i) = \beta_0D_{1i} + \beta_1D_{2i}$
 >
-> For this pattern, estimates of $\beta_0$ and $\beta_1$ represent the values of $ logit(p_i)$ in the two levels of X. Thus, the significance of X over Y cannot be estimated via $\beta_1$ or $\beta_2$. Those coefficients give no information on the influence of X on Y.
+> For this pattern, estimates of $\beta_0$ and $\beta_1$ represent the values of $\operatorname{logit}(p_i)$ in the two levels of X. Thus, the significance of X over Y cannot be estimated via $\beta_1$ or $\beta_2$. Those coefficients give no information on the influence of X on Y.
 
 In summary, we can conclude that when the explanatory variable is continuous, the interpr etation of $\beta_1$ does not change if the intercept is included (or excluded). Although when the explanatory variable is discrete, we must consider whether the model includes or not the intercept, since the interpr etation of $\beta_1$ changes. Also, if what you want is to know the influence of X on Y, it is necessary to include the intercept. That can only be achieved if the model considers the intercept, and putting aside (just for a moment) automated procedures.

@@ -3,7 +3,8 @@ title: "Promedio y varianza en poblaciones finitas"
 author: "Andrés Gutiérrez"
 date: "2009-07-04"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Teaching"
 ---
 
 Seguramente todos alguna vez nos hemos preguntado de dosnde viene tanto la formaula del promedio como la expresión para la varianza. Lo cierto es que con la definicón del promedio no tiene ningún problema puesto que es natural, lógica y plausible. Por otro lado, la formulación de la varianza no es directa. Para los que hemos tenido la oportunidad de dictar un curso básico, siempres hay dos o tres alumnos que enuentran complicado esta definición, el restante la toma sin chistar, pero sin preguntarse, a la vez, por su origen.

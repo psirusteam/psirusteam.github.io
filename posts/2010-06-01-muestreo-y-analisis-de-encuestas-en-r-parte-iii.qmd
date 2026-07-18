@@ -3,7 +3,8 @@ title: "Muestreo y análisis de encuestas en R (Parte III)"
 author: "Andrés Gutiérrez"
 date: "2010-06-01"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Sampling"
 ---
 
 [En este enlace](http://www.box.net/shared/zb5bi5s02r) usted encontrará la tercera parte del curso seminario de muestreo y análisis de encuestas en R. Esta presentación profundiza en algunos diseños estratificados con estimación en dominios y con la utilización de una característica de información auxiliar continua.

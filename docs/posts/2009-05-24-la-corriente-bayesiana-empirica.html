@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">La corriente Bayesiana empírica</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Bayesian Statistics</div>
+    <div class="quarto-category">Modeling</div>
   </div>
   </div>
 
@@ -158,11 +188,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Lo anterior ha permitido que el investigador pueda proponer modelos que siguen comportamientos estructurales distintos y en algunos casos que se encuentran anidados en modelos más complejos. En el caso bayesiano, es claro que el momento de coyuntura en el cual el investigador no contempla un punto de retorno está dado en la formulación de la distribución a priori para el vector de parámetros de interés $ btheta $. Más aún, la influencia de la distribución a priori en la resultante distribución a posteriori está dada por la asignación del vector de hiperparámetros $ bEta $ que parametriza la distribución a priori. Cuando los valores exactos de los hiperparámetros se desconocen o cuando no se tiene plena certeza del comportamiento estructural de la distribución a priori, entonces es necesario estimarlos pues de estos dependen los resultados en cualquier investigación de tipo causal. En otras palabras, una mala asignación de los valores de los hiperparámetros conduce a una distribución a priori que no es acorde con la realidad y esto puede conllevar a su vez a que la distribución a posteriori no concuerde con la realidad, produciendo así resultados engañosos.</p>
-<p>Siguiendo los fundamentos filosóficos de la estadística bayesiana, tener que estimar el vector de hiperparámetros envuelve al investigador en una paradoja cuya solución no siempre está dada por métodos bayesianos. En primer lugar, nótese la forma de la distribución a priori del vector de parámetros de interés: $ p(btheta|bEta)$. A simple vista se puede concluir que $ bEta $ hace parte de la distribución a priori la cual, según la lógica de la filosofía bayesiana, involucra el conocimiento del investigador antes de la recolección de los datos. Por tanto la pregunta directa que surge es ¿Por qué estimar algo que se debería suponer conocido?. En segundo lugar y si se concibe tal estimación, la otra pregunta natural es ¿Se deben utilizar los datos para estimar tales hiperparámetros?. Las posibles respuestas a las anteriores preguntas han creado toda una nueva corriente alterna a la bayesiana pura llamada la cual utiliza los métodos de estimación puntual frecuentista para estimar estos hiperparámetros y por consiguiente definir la distribución a priori del vector de parámetros de interés.</p>
+<p>Lo anterior ha permitido que el investigador pueda proponer modelos que siguen comportamientos estructurales distintos y en algunos casos que se encuentran anidados en modelos más complejos. En el caso bayesiano, es claro que el momento de coyuntura en el cual el investigador no contempla un punto de retorno está dado en la formulación de la distribución a priori para el vector de parámetros de interés <span class="math inline">\(btheta\)</span>. Más aún, la influencia de la distribución a priori en la resultante distribución a posteriori está dada por la asignación del vector de hiperparámetros <span class="math inline">\(bEta\)</span> que parametriza la distribución a priori. Cuando los valores exactos de los hiperparámetros se desconocen o cuando no se tiene plena certeza del comportamiento estructural de la distribución a priori, entonces es necesario estimarlos pues de estos dependen los resultados en cualquier investigación de tipo causal. En otras palabras, una mala asignación de los valores de los hiperparámetros conduce a una distribución a priori que no es acorde con la realidad y esto puede conllevar a su vez a que la distribución a posteriori no concuerde con la realidad, produciendo así resultados engañosos.</p>
+<p>Siguiendo los fundamentos filosóficos de la estadística bayesiana, tener que estimar el vector de hiperparámetros envuelve al investigador en una paradoja cuya solución no siempre está dada por métodos bayesianos. En primer lugar, nótese la forma de la distribución a priori del vector de parámetros de interés: <span class="math inline">\(p(btheta|bEta)\)</span>. A simple vista se puede concluir que <span class="math inline">\(bEta\)</span> hace parte de la distribución a priori la cual, según la lógica de la filosofía bayesiana, involucra el conocimiento del investigador antes de la recolección de los datos. Por tanto la pregunta directa que surge es ¿Por qué estimar algo que se debería suponer conocido?. En segundo lugar y si se concibe tal estimación, la otra pregunta natural es ¿Se deben utilizar los datos para estimar tales hiperparámetros?. Las posibles respuestas a las anteriores preguntas han creado toda una nueva corriente alterna a la bayesiana pura llamada la cual utiliza los métodos de estimación puntual frecuentista para estimar estos hiperparámetros y por consiguiente definir la distribución a priori del vector de parámetros de interés.</p>
 <p>En las últimas décadas la formulación de modelos estadísticos ha evolucionado demasiado. En un principio, los modelos establecidos obedecían a reglas estándar que se suponían ciertas para toda la población. Sin embargo, el estado de la naturaleza de la mayoría de los problemas práctico no sigue una regla común para todos y cada uno de los elementos de una población aleatoria. De hecho el sentido común establece que para una misma población, pueden existir tendencias comunes entre diferentes miembros de la misma y la estructura de dispersión de los elementos puede obedecer comportamientos disímiles a través de éstos.</p>
-<p>Lo anterior ha permitido que el investigador pueda proponer modelos que siguen comportamientos estructurales distintos y en algunos casos que se encuentran anidados en modelos más complejos. En el caso bayesiano, es claro que el momento de coyuntura en el cual el investigador no contempla un punto de retorno está dado en la formulación de la distribución a priori para el vector de parámetros de interés $$. Más aún, la influencia de la distribución a priori en la resultante distribución a posteriori está dada por la asignación del vector de hiperparámetros $ eta $ que parametriza la distribución a priori. Cuando los valores exactos de los hiperparámetros se desconocen o cuando no se tiene plena certeza del comportamiento estructural de la distribución a priori, entonces es necesario estimarlos pues de estos dependen los resultados en cualquier investigación de tipo causal. En otras palabras, una mala asignación de los valores de los hiperparámetros conduce a una distribución a priori que no es acorde con la realidad y esto puede conllevar a su vez a que la distribución a posteriori no concuerde con la realidad, produciendo así resultados engañosos.</p>
-<p>Siguiendo los fundamentos filosóficos de la estadística bayesiana, tener que estimar el vector de hiperparámetros envuelve al investigador en una paradoja cuya solución no siempre está dada por métodos bayesianos. En primer lugar, nótese la forma de la distribución a priori del vector de parámetros de interés: $ p(|eta)$. A simple vista se puede concluir que $ eta $ hace parte de la distribución a priori la cual, según la lógica de la filosofía bayesiana, involucra el conocimiento del investigador antes de la recolección de los datos. Por tanto la pregunta directa que surge es ¿Por qué estimar algo que se debería suponer conocido?. En segundo lugar y si se concibe tal estimación, la otra pregunta natural es ¿Se deben utilizar los datos para estimar tales hiperparámetros?. Las posibles respuestas a las anteriores preguntas han creado toda una nueva corriente alterna a la bayesiana pura llamada la cual utiliza los métodos de estimación puntual frecuentista para estimar estos hiperparámetros y por consiguiente definir la distribución a priori del vector de parámetros de interés… Aunque, por supuesto, no se trata de la única solución al problema de modelos jerárquicos, ésta pone en tela de juicio el andamiaje epistemológico de la teoría adjudicada al reverendo Bayes. Aunque, como suele suceder con lo bayeasiano, la puesta en marcha de los métodos bayesianos empíricos suelen arrojar resultados y mejor aún, resultados.</p>
+<p>Lo anterior ha permitido que el investigador pueda proponer modelos que siguen comportamientos estructurales distintos y en algunos casos que se encuentran anidados en modelos más complejos. En el caso bayesiano, es claro que el momento de coyuntura en el cual el investigador no contempla un punto de retorno está dado en la formulación de la distribución a priori para el vector de parámetros de interés <span class="math inline">\(\theta\)</span>. Más aún, la influencia de la distribución a priori en la resultante distribución a posteriori está dada por la asignación del vector de hiperparámetros <span class="math inline">\(eta\)</span> que parametriza la distribución a priori. Cuando los valores exactos de los hiperparámetros se desconocen o cuando no se tiene plena certeza del comportamiento estructural de la distribución a priori, entonces es necesario estimarlos pues de estos dependen los resultados en cualquier investigación de tipo causal. En otras palabras, una mala asignación de los valores de los hiperparámetros conduce a una distribución a priori que no es acorde con la realidad y esto puede conllevar a su vez a que la distribución a posteriori no concuerde con la realidad, produciendo así resultados engañosos.</p>
+<p>Siguiendo los fundamentos filosóficos de la estadística bayesiana, tener que estimar el vector de hiperparámetros envuelve al investigador en una paradoja cuya solución no siempre está dada por métodos bayesianos. En primer lugar, nótese la forma de la distribución a priori del vector de parámetros de interés: <span class="math inline">\(p(\theta|eta)\)</span>. A simple vista se puede concluir que <span class="math inline">\(eta\)</span> hace parte de la distribución a priori la cual, según la lógica de la filosofía bayesiana, involucra el conocimiento del investigador antes de la recolección de los datos. Por tanto la pregunta directa que surge es ¿Por qué estimar algo que se debería suponer conocido?. En segundo lugar y si se concibe tal estimación, la otra pregunta natural es ¿Se deben utilizar los datos para estimar tales hiperparámetros?. Las posibles respuestas a las anteriores preguntas han creado toda una nueva corriente alterna a la bayesiana pura llamada la cual utiliza los métodos de estimación puntual frecuentista para estimar estos hiperparámetros y por consiguiente definir la distribución a priori del vector de parámetros de interés… Aunque, por supuesto, no se trata de la única solución al problema de modelos jerárquicos, ésta pone en tela de juicio el andamiaje epistemológico de la teoría adjudicada al reverendo Bayes. Aunque, como suele suceder con lo bayeasiano, la puesta en marcha de los métodos bayesianos empíricos suelen arrojar resultados y mejor aún, resultados.</p>
 
 
 

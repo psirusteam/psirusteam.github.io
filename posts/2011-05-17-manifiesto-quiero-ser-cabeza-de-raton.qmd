@@ -3,7 +3,7 @@ title: "Manifiesto: quiero ser cabeza de ratón"
 author: "Andrés Gutiérrez"
 date: "2011-05-17"
 categories:
-  - "Estadística"
+  - "Publications"
   - "R"
 ---
 

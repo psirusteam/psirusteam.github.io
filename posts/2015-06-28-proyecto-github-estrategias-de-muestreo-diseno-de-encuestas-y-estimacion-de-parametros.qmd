@@ -3,10 +3,8 @@ title: "Proyecto GitHub - Estrategias de muestreo: diseño de encuestas y estima
 author: "Andrés Gutiérrez"
 date: "2015-06-28"
 categories:
-  - "Estadística"
-  - "GitHub"
-  - "LaTeX"
-  - "Teaching"
+  - "Surveys"
+  - "Software"
 ---
 
 Hace seis años nacía mi primer libro: [Estrategias de muestreo](http://www.amazon.com/Estrategias-Muestreo-encuestas-estimacion-parametros/dp/9586316084) (EM). Este libro abarca los contenidos más importantes del muestreo y la inferencia basada en encuestas y utiliza el software R. En los últimos años, EM ha sido utilizado por profesores y consultores a lo largo de Colombia y Latinoamérica. El éxito del libro ha implicado que a la fecha se haya vendido todo el tiraje de la primera edición.

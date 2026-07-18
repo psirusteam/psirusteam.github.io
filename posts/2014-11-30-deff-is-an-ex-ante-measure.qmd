@@ -3,8 +3,8 @@ title: "DEFF is an ex-ante measure"
 author: "Andrés Gutiérrez"
 date: "2014-11-30"
 categories:
-  - "Estadística"
-  - "Stats"
+  - "Sampling"
+  - "Surveys"
 ---
 
 The Design Effect is measure of efficiency defined as the ratio between two sampling variances: $$ DEFF=\frac{Var1}{Var2}. $$

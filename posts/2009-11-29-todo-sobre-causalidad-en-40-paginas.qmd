@@ -3,7 +3,8 @@ title: "Todo sobre causalidad en 40 páginas"
 author: "Andrés Gutiérrez"
 date: "2009-11-29"
 categories:
-  - "Estadística"
+  - "Policy Evaluation"
+  - "Publications"
 ---
 
 En primer lugar, aprovecho este espacio para promocionar la lectura de [Statistics Surveys](http://www.i-journals.org/ss/index.php), una revista patrocinada por la ASA, la sociedad Bernoulli, el IMS, entre otros. El objetivo de esta publicación anual es hacer un recuento exhaustivo de las áreas concernientes a la estadística teórica y aplicada.

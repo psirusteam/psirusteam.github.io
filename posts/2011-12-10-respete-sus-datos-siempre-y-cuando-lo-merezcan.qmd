@@ -3,7 +3,8 @@ title: "Respete sus datos, siempre y cuando lo merezcan"
 author: "Andrés Gutiérrez"
 date: "2011-12-10"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Teaching"
 ---
 
 Hace poco tuve la oportunidad de realizar una asesoría a una entidad privada que tenía sendos dilemas acerca de una metodología estadística que debían emplear para establecer un indicador. Sin entrar en mucho detalle, les comento que la cuestión se trataba básicamente de si eliminar o no un conjunto de observaciones influyentes. Este indicador no era otra cosa que una medida de tendencia central. Como cualquiera de nosotros puede pensar, la primera opción es el cálculo del promedio. Pero, como hay observaciones influyentes entonces se pensaba también en una mediana, o incluso en la eliminación de estas observaciones para el cálculo de un pseudo-promedio.

@@ -157,10 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Multilevel Modeling of Educational Data using R (Part 1)</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Education</div>
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Modeling</div>
     <div class="quarto-category">R</div>
-    <div class="quarto-category">Stats</div>
   </div>
   </div>
 
@@ -218,7 +216,7 @@ y5 &lt;- 100 + 40 * x5 + rnorm(N, 0, sigma)</code></pre>
 <pre><code>test &lt;- data.frame(SES = c(x1, x2, x3, x4, x5), 
  Score = c(y1, y2, y3, y4, y5), ID = ID)</code></pre>
 <p>When analyzing data with such a type of hierarchical structures, the researcher always should fit a null model to decompose the variation due to schools. The following expression gives the functional form of this model:</p>
-<p>$ y_{ij} = <em>{j} + </em>{ij}$ <span class="math inline">\(\alpha_{j} = \alpha_0 + u_{j}\)</span></p>
+<p><span class="math inline">\(y_{ij} = \alpha_{j} + \varepsilon_{ij}\)</span> <span class="math inline">\(\alpha_{j} = \alpha_0 + u_{j}\)</span></p>
 <p>This model allows decomposing the source of total variation into two parts: the one due to students (within schools) and the one due to schools (test score between all of the schools). The R code to fit this null multilevel model to data is given next:</p>
 <pre><code>HLM0 &lt;- lmer(Score ~ (1 | ID), data = test)
 coef(HLM0)
@@ -228,7 +226,7 @@ summary(HLM0)</code></pre>
 100 * 87346 / (87346 + 1931757)</code></pre>
 <p>By examining the estimates of the random effects’ variance we note that the percentage of variation accounted for the school (intraclass correlation) is nearly 96%; while the proportion of variance accounted for students is almost 4%. The null model claims that high achievers belong to particular schools and low achievers are not part of those specific schools. In other words, the school determines the test outcome.</p>
 <p>The previous unconditional model fails to include relevant variables, such as the socio-economic status (SES) associated to every student. The following expressions give a more elaborated model involving random intercepts and random slopes for each of the schools:</p>
-<p>$ y_{ij} = <em>{j} + </em>{j} * SES_{ij} + _{ij}$ <span class="math inline">\(\alpha_{j} = \alpha_0 + u_{j}\)</span> <span class="math inline">\(\beta{j} = \beta_0 + v_{j}\)</span></p>
+<p><span class="math inline">\(y_{ij} = \alpha_{j} + \beta_{j} * SES_{ij} + \varepsilon_{ij}\)</span> <span class="math inline">\(\alpha_{j} = \alpha_0 + u_{j}\)</span> <span class="math inline">\(\beta_{j} = \beta_0 + v_{j}\)</span></p>
 <p>The R code that allows fitting this model is shown below.</p>
 <pre><code>HLM1 &lt;- lmer(Score ~ SES + (SES | ID), data = test)
 coef(HLM1)

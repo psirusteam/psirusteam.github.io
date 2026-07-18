@@ -3,8 +3,8 @@ title: "TeachingSampling v2.0.1 now on CRAN"
 author: "Andrés Gutiérrez"
 date: "2011-04-04"
 categories:
-  - "Estadística"
   - "R"
+  - "Teaching"
 ---
 
 The latest version of the TeachingSampling package is now available for download. Discover the newest features in the package!!!

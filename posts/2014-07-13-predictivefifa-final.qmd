@@ -3,8 +3,8 @@ title: "#PredictiveFIFA (Final)"
 author: "Andrés Gutiérrez"
 date: "2014-07-13"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Modeling"
+  - "Visualization"
 ---
 
 Today is the final match for the first place of the FIFA 2014 World Cup. The match is Argentina vs. Germany. The probabilities of the final results are shown in the following plot.

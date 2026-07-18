@@ -3,7 +3,8 @@ title: "Posts más leídos en este 2010"
 author: "Andrés Gutiérrez"
 date: "2010-12-31"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Elections"
 ---
 
 Ha sido verdaderamente un año muy completo... gracias a todos por leer, comentar y compartir las entradas de este blog... Feliz y prospero 2011. A continuación los artículos más leídos:

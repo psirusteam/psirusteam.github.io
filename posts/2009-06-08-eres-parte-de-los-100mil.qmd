@@ -3,7 +3,8 @@ title: "¿Eres parte de los 100mil?"
 author: "Andrés Gutiérrez"
 date: "2009-06-08"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Community and Events"
 ---
 
 Agradezco a todos los lectores del blog de estadística más leído en hispanoamérica. Este blog empezó en abril de 2008 en la plataforma WordPress y hasta el momento cuenta con más de 100mil entradas, 99 posts, 194 comentarios, cientos de correos electrónicos, 22 categorías, 76 etiquetas, 1 encuesta satisfactoria y una comunidad virtual de seguidores en FaceBook que recoge a 387 personas.

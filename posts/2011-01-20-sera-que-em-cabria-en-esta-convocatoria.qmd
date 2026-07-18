@@ -3,7 +3,7 @@ title: "¿Será que EM cabría en esta convocatoria?"
 author: "Andrés Gutiérrez"
 date: "2011-01-20"
 categories:
-  - "Estadística"
+  - "Community and Events"
   - "R"
 ---
 

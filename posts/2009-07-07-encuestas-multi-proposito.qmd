@@ -3,7 +3,8 @@ title: "Encuestas multi-propósito"
 author: "Andrés Gutiérrez"
 date: "2009-07-07"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Sampling"
 ---
 
 Si los estad¶³sticos te¶oricos hacen caso omiso al reto de enfrentar las

@@ -3,7 +3,8 @@ title: "Muestreo 2"
 author: "Andrés Gutiérrez"
 date: "2010-11-18"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Inference"
 ---
 
 Si usted es estadístico, por favor responda con sinceridad cada una de las preguntas que se realizan a continuación. Si su respuesta es negativa en al menos un ítem, le recomiendo muy sinceramente que asista cuanto antes a un curso de Muestreo II. Si usted es profesor de las asignaturas de Muestreo y no incluye al menos ocho de estos tópicos en su clase, le recomiendo muy enfáticamente que revise y actualice los contenidos de su clase. Hágame caso, mire que yo se lo digo… y se lo digo apoyado en Sharon Lohr, una de las más respetadas autoridades en el mundo del muestreo, y su reciente ensayo [acerca del cuidado, alimentación y entrenamiento de los.](http://www.jos.nu/entry.asp) Este ensayo fue escrito en honor a Morris Hansen y está enmarcado en el [2009 Morris Hansen Lecture](http://www.jos.nu/Articles/abstract.asp?article=263395) del [Statistics Sweden](http://www.scb.se/).

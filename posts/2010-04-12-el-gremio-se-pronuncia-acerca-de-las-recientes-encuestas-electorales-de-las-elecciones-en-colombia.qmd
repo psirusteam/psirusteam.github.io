@@ -3,7 +3,8 @@ title: "El gremio se pronuncia acerca de las recientes encuestas electorales de 
 author: "Andrés Gutiérrez"
 date: "2010-04-12"
 categories:
-  - "Estadística"
+  - "Elections"
+  - "Surveys"
 ---
 
 Empiezo esta entrada con un [vínculo](http://www.semana.com/noticias-confidenciales/margen-error/137485.aspx) que el [Doctor Daniel Diaz](http://estocasticos.wordpress.com/) me hizo llegar… Se trata de un comentario con aíres de jocosidad acerca de una situación que se presentó la semana pasada con un estudio de opinión que realizó una empresa de investigación de mercados y que conmovió profundamente la situación electoral en Colombia. Al respecto la revista semana afirma que:

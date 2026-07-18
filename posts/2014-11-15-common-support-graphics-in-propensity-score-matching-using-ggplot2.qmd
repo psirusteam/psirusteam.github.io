@@ -3,9 +3,8 @@ title: "Common support graphics in propensity score matching (using ggplot2)"
 author: "Andrés Gutiérrez"
 date: "2014-11-15"
 categories:
-  - "Estadística"
+  - "Visualization"
   - "R"
-  - "Stats"
 ---
 
 Common support is a must check when doing impact evaluation of public policies (or - more widely - when verifying the causation of some factors over a population). The seminal paper of Rosenbaum and Rubin (1983) defines the propensity score as a measure of balance. Moreover, when doing matching, we must assure that propensity scores - for treatments and controls - fall between 0 and 1, strictly. This way, you ensure comparability between the groups. That condition is called *common support*.

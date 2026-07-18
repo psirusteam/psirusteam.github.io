@@ -3,7 +3,7 @@ title: "Intervalos de confianza y de credibilidad para la diferencia de dos prop
 author: "Andrés Gutiérrez"
 date: "2010-07-07"
 categories:
-  - "Estadística"
+  - "Inference"
   - "R"
 ---
 

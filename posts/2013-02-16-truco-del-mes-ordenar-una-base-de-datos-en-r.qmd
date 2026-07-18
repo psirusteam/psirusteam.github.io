@@ -3,8 +3,8 @@ title: "Truco del mes: ordenar una base de datos en R"
 author: "Andrés Gutiérrez"
 date: "2013-02-16"
 categories:
-  - "Estadística"
   - "R"
+  - "Teaching"
 ---
 
 Los lunes en la tarde es un tiempo de ocio administrativo para mí... Cierro las puertas de la oficina y me concentro en asesorar a los estudiantes que realizan investigaciones conmigo... Cada lunes sucede lo mismo... es una de esas cosas que me sacan de quicio, pero a la vez me hacen reír: "¿es *order* o es *sort*?" - le pregunto al estudiante de turno. "Jum" - responde el estudiante.

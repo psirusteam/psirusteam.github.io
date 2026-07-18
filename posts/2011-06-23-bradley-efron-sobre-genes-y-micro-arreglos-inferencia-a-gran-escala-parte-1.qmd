@@ -3,7 +3,8 @@ title: "Bradley Efron sobre genes y micro-arreglos... Inferencia a gran escala (
 author: "Andrés Gutiérrez"
 date: "2011-06-23"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Probability"
 ---
 
 Hace unas semanas el [Journal of Official Statistics](http://www.jos.nu) me envió el último libro de [Bradley Efron](http://en.wikipedia.org/wiki/Bradley_Efron) (BE), [Large-Scale Inference](http://www.amazon.com/Large-Scale-Inference-Estimation-Prediction-Mathematical/dp/0521192498/ref=sr_1_7?s=books&ie=UTF8&qid=1308857663&sr=1-7), para hacerle una reseña. A parte de que es una gran dignidad hacerle una reseña a este autor, inventor del Bootstrap y el único estadístico ganador de la Medalla Nacional de las Ciencias (el más grande honor científico en los Estados Unidos), voy a dedicar un par de entradas para abarcar este tema que es realmente apasionante y concluir con la reseña. La idea es que con sus comentarios se enriquezca la reseña.

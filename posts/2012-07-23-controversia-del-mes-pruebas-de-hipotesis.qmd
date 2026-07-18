@@ -3,7 +3,8 @@ title: "Controversia del mes: pruebas de hipótesis"
 author: "Andrés Gutiérrez"
 date: "2012-07-23"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Teaching"
 ---
 
 Imagen de https://web.archive.org/web/20120103003929/http://1pixel2.es/2009/05/17/mama-me-han-metido-algo-en-la-copa/

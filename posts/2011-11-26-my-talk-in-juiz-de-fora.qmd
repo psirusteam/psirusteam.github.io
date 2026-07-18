@@ -3,7 +3,8 @@ title: "My talk in Juiz de Fora"
 author: "Andrés Gutiérrez"
 date: "2011-11-26"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Surveys"
 ---
 
 ¿Qué hacer cuando se necesitan estimar cambios netos o *gross flows*(como por ejmeplo los cambios en el empleo/desempleo) en encuestas complejas tipo panel o panel rotativo y existe ausencia de respuesta no ignorable? [Haciendo clic acá](http://gutierrezandres.files.wordpress.com/2011/11/slides3esamp.pdf) encontrará una metodología que establece el modelamiento conjunto de la ausencia de respuesta y la clasificación en dos periodos teniendo en cuenta los pesos del diseño muestral.

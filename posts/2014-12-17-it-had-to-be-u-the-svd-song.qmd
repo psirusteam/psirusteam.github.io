@@ -3,7 +3,8 @@ title: "It had to be U - the SVD song"
 author: "Andrés Gutiérrez"
 date: "2014-12-17"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 This song reminds me the several hours that I spent in the undergraduate course of matrix algebra for statisticians in UNAL.

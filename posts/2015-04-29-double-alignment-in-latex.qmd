@@ -3,11 +3,11 @@ title: "Double alignment in LaTeX"
 author: "Andrés Gutiérrez"
 date: "2015-04-29"
 categories:
-  - "Estadística"
-  - "LaTeX"
+  - "Software"
+  - "R"
 ---
 
-Last day I was writing a proof of a theorem in $\LaTeX $, when I realized that I needed to use a symbol meaning implications for efficiency purposes. It is usual in mathematics that one thing leads to another, and it is also usual that we use $\Rightarrow $ as implication symbol. This way, I looked for this issue in the web and I found that double ampersand (&&) could be used to align, just in the same way that one is used to do it with a single ampersand (&). For example, note the implications in the following equations (along as the alignment at the equal symbol and the alignment at left):
+Last day I was writing a proof of a theorem in $\LaTeX$, when I realized that I needed to use a symbol meaning implications for efficiency purposes. It is usual in mathematics that one thing leads to another, and it is also usual that we use $\Rightarrow$ as implication symbol. This way, I looked for this issue in the web and I found that double ampersand (&&) could be used to align, just in the same way that one is used to do it with a single ampersand (&). For example, note the implications in the following equations (along as the alignment at the equal symbol and the alignment at left):
 
 Therefore, I used this piece of code in order to get things done.
 

@@ -3,8 +3,8 @@ title: "Why we do not experiment with people in surveys?"
 author: "Andrés Gutiérrez"
 date: "2014-11-15"
 categories:
-  - "Estadística"
-  - "Stats"
+  - "Surveys"
+  - "Policy Evaluation"
 ---
 
 Today I was giving a lecture on sample surveys and observational studies. When I was saying that surveys involving people are only observational and do not take part into the experimental world, some people refused to accept that fact. They argued that some researchers actually do experiments with people in the context of public policy. I do not agree with that because of:

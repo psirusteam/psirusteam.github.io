@@ -192,10 +192,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Parametric bootstrap</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Inference</div>
     <div class="quarto-category">R</div>
-    <div class="quarto-category">Stats</div>
-    <div class="quarto-category">Teaching</div>
   </div>
   </div>
 
@@ -226,8 +224,8 @@ window.Quarto = {
 
 
 <p>Assume we want to know the mean square error (MSE) of the <em>sample median</em> as a estimator of a <em>population mean</em>under normality. As you know, this is not a trivial problem. We may take advantage of the Bootstrap method and solve it by means of simulation.</p>
-<p>This way, for $ b=1, , B $, we generate $ X_{b1}, , X_{bn} N(, ^2)$. Then, we compute the sample median $_b $ for each sample in the bootstrap. Finally, an estimator of the MSE is given by</p>
-<p><span class="math display">\[\wide\hat{MSE} = B^{-1} \sum_{b=1}^B(\tilde{X}_b - \hat{\mu})^2\]</span></p>
+<p>This way, for <span class="math inline">\(b=1, \ldots, B\)</span>, we generate <span class="math inline">\(X_{b1}, \ldots, X_{bn} \sim N(\hat{\mu}, \hat{\sigma}^2)\)</span>. Then, we compute the sample median <span class="math inline">\(\tilde{X}_b\)</span> for each sample in the bootstrap. Finally, an estimator of the MSE is given by</p>
+<p><span class="math display">\[\widehat{MSE} = B^{-1} \sum_{b=1}^B(\tilde{X}_b - \hat{\mu})^2\]</span></p>
 <p>In R, the simulation should look like this for a sample size of ten units:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="dv">10</span>, <span class="dv">1</span>)</span>

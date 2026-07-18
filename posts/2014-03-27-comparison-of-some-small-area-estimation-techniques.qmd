@@ -3,8 +3,8 @@ title: "Comparison of Some Small Area Estimation Techniques"
 author: "Andrés Gutiérrez"
 date: "2014-03-27"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Modeling"
+  - "Publications"
 ---
 
 [This paper](http://gutierrezandres.files.wordpress.com/2014/03/smallarea.pdf) was published by DANE's journal in its last edition.

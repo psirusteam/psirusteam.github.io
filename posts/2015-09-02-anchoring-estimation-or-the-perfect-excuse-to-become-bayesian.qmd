@@ -3,10 +3,8 @@ title: "Anchoring estimation or the perfect excuse to become \"Bayesian\""
 author: "Andrés Gutiérrez"
 date: "2015-09-02"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
   - "IRT"
-  - "R"
-  - "Teaching"
 ---
 
 Anchoring is an usual process when estimating abilities in test equating. This is about analyzing standardized tests, while maintaining a predefined scale. For example, assume that you have a set of 60 items in your test. However, two test forms (named Form A and Form B) are given to the students in two different times. In order to guarantee comparability, you decide that both Forms A and B must have 50 unique items and 10 anchor (common) items. At the end you use a linking procedure to arrange a common scale in both forms.

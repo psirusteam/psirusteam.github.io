@@ -3,7 +3,8 @@ title: "Historia de la probabilidad (Vínculos)"
 author: "Andrés Gutiérrez"
 date: "2008-09-29"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Publications"
 ---
 
 Empezamos una nueva ronda de historía de la estadística. En particular, profundizaremos en la historia de la probabilidad. En este primer post, quiero exponer los vínculos que nos facilitarán la travesía por esta aventura histórica. Para mayor información on-line, los siguientes vínculos serán de mucha ayuda.

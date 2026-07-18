@@ -3,7 +3,8 @@ title: "La verdad de las estadísticas"
 author: "Andrés Gutiérrez"
 date: "2009-08-11"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Community and Events"
 ---
 
 Esta es una historia y una invitación. Una historia y

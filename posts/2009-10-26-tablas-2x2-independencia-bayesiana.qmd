@@ -3,7 +3,8 @@ title: "Tablas 2X2… Independencia bayesiana"
 author: "Andrés Gutiérrez"
 date: "2009-10-26"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Inference"
 ---
 
 La prueba Ji-cuadrado (más conocida como el *test* de Pearson) usualmente tiene dos connotaciones prácticas importantes en el día a día del oficio del estadístico. Una de ellas es chequear la bondad del ajuste de una distribución propuesta a los datos reales y la otra se trata de probar la independencia de dos variables aleatorias categóricas cuyos conteos se reúnen en una tabla de contingencia. Sin embargo, esta prueba utiliza resultados de teoría asintótica y por tanto sólo debe ser utilizada cuando el total de conteos marginales es grande (¿qué es grande? algunos autores afirman que es inapropiado utilizar esta prueba cuando los valores esperados por cada celda son menores que diez). Por otra parte, tampoco es apropiado utilizarlo en tablas de contingencia 2X2 puesto que, en este caso particular, la estadística de prueba "asintótica" tendría un solo grado de libertad.

@@ -3,8 +3,8 @@ title: "The success of #PredictiveCOL"
 author: "Andrés Gutiérrez"
 date: "2014-06-16"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Modeling"
 ---
 
 **[#PredictiveCOL](https://web.archive.org/web/20140730203514/http://www.gutierrezandres.com/predictivecol) not just predicted the winner (Santos), but also we were so close to the final values. This was the most accurate methodology in the Colombian presidential election.**

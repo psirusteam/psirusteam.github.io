@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,8 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Todo comienza con la “p”</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
     <div class="quarto-category">Probability</div>
+    <div class="quarto-category">Bayesian Statistics</div>
   </div>
   </div>
 
@@ -160,16 +189,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Andrew Gelman comenta que John Cook comenta que,</p>
-<p>Existe sólo un símbolo importante en estadística, $ p $. El mismo símbolo representa todo. Simplemente se debe usarlo y darse cuenta cuál $ p $ es cual, pues pueden provenir de diferentes contextos… Un ejemplo claro en donde $ p $ representa cuatro funciones distintas en una sola ecuación es el siguiente:</p>
-<p>$ p(|x)=p(x|)$</p>
+<p>Existe sólo un símbolo importante en estadística, <span class="math inline">\(p\)</span>. El mismo símbolo representa todo. Simplemente se debe usarlo y darse cuenta cuál <span class="math inline">\(p\)</span> es cual, pues pueden provenir de diferentes contextos… Un ejemplo claro en donde <span class="math inline">\(p\)</span> representa cuatro funciones distintas en una sola ecuación es el siguiente:</p>
+<p><span class="math inline">\(p(\theta|x)=p(x|\theta)\frac{p(\theta)}{p(x)}\)</span></p>
 <p>Usualmente, la regla de Bayes no requiere de mucha explicación. Sin embargo, en la anterior ecuación cada p denota funciones que son totalmente diferentes, aunque compartan el mismo símbolo. Los autores prefieren este tipo de escritura para evadir la notación engorrosa que requeriría la escritura completamente explícita.</p>
-<p>A veces, la sobrecarga de la decimonovena letra del alfabeto se convierte en un lastre y los estadísticos cambian de notación y de alfabeto y usan la contraparte griega $$. Aunque esto a veces hace las cosas un poco más confusas.</p>
+<p>A veces, la sobrecarga de la decimonovena letra del alfabeto se convierte en un lastre y los estadísticos cambian de notación y de alfabeto y usan la contraparte griega <span class="math inline">\(\pi\)</span>. Aunque esto a veces hace las cosas un poco más confusas.</p>
 <p>En su libro, <em>Bayesian Data Analysis</em>, Andrew Gelman, explica por qué la notación simple, con el uso (a veces abuso) de la letra p es más rigurosa de lo que, a simple vista, pueda parecer y comenta que,</p>
-<p>En realidad no me gusta la notación que la mayoría de los estadísticos usan… $ f $, para distribuciones de muestreo, $$, para distribuciones a priori y $ L $, para verosimilitudes. Este estilo de notación se desvía de lo que realmente es importante. La notación no debería depender del orden en que las distribuciones son especificadas. Todas ellas son distribuciones de probabilidad, eso es lo realmente importante.</p>
-<p>Esto tiene sentido, aún más cuando se estudian las propiedades estadísticas de los estimadores desde el punto de vista de la teoría de la medida. Siendo así, el símbolo p se refiere a una notación para una medida de probabilidad, quizás inducida por un elemento aleatorio. De hecho, en la ecuación que determina la regla de Bayes, cada una de las $ p $ son medidas de probabilidad que no comparten el mismo espacio de medida (ni la misma $$-álgebra, ni el mimo espacio muestral ).</p>
+<p>En realidad no me gusta la notación que la mayoría de los estadísticos usan… <span class="math inline">\(f\)</span>, para distribuciones de muestreo, <span class="math inline">\(\pi\)</span>, para distribuciones a priori y <span class="math inline">\(L\)</span>, para verosimilitudes. Este estilo de notación se desvía de lo que realmente es importante. La notación no debería depender del orden en que las distribuciones son especificadas. Todas ellas son distribuciones de probabilidad, eso es lo realmente importante.</p>
+<p>Esto tiene sentido, aún más cuando se estudian las propiedades estadísticas de los estimadores desde el punto de vista de la teoría de la medida. Siendo así, el símbolo p se refiere a una notación para una medida de probabilidad, quizás inducida por un elemento aleatorio. De hecho, en la ecuación que determina la regla de Bayes, cada una de las <span class="math inline">\(p\)</span> son medidas de probabilidad que no comparten el mismo espacio de medida (ni la misma <span class="math inline">\(\sigma\)</span>-álgebra, ni el mimo espacio muestral ).</p>
 <p>De hecho, todo queda claro al realizar un diagrama que permita ver el espacio de salida y el espacio de llegada de los elementos aleatorios que inducen (si es el caso), cada una de las distribuciones de probabilidad. Por otra parte, Bob Carpenter, concluye que</p>
-<p>[Una vez resuelto el problema de identificación de los espacios] la notación estadística depende en gran manera del contexto y aunque la regla de Bayes no necesite de mucha explicación, es necesario conocerlo todo acerca del contexto para poder interpretar las funciones que la conforman… El problema se hace mucho más agudo para los estadísticos novatos, pero eso se resuelve con la práctica. Una vez que uno sabe lo que está haciendo, se vuelve obvia la referencia de la distribución $ p $.</p>
-<p>Por lo anterior, es natural que algunos de los textos clásicos de estadística matemática, parezcan olvidar el contexto de las diferentes medidas de probabilidad. En realidad no es que lo olviden, lo que pasa es que los autores no son novatos y asumen que el lector sigue la idea de la referencia de la $ p $ en cuestión. Sin embargo, y lo digo por mi y sólo por mí, sería mejor que no asumieran esa idea. De esta manera, el estudio de estos textos sería un poco menos denso.</p>
+<p>[Una vez resuelto el problema de identificación de los espacios] la notación estadística depende en gran manera del contexto y aunque la regla de Bayes no necesite de mucha explicación, es necesario conocerlo todo acerca del contexto para poder interpretar las funciones que la conforman… El problema se hace mucho más agudo para los estadísticos novatos, pero eso se resuelve con la práctica. Una vez que uno sabe lo que está haciendo, se vuelve obvia la referencia de la distribución <span class="math inline">\(p\)</span>.</p>
+<p>Por lo anterior, es natural que algunos de los textos clásicos de estadística matemática, parezcan olvidar el contexto de las diferentes medidas de probabilidad. En realidad no es que lo olviden, lo que pasa es que los autores no son novatos y asumen que el lector sigue la idea de la referencia de la <span class="math inline">\(p\)</span> en cuestión. Sin embargo, y lo digo por mi y sólo por mí, sería mejor que no asumieran esa idea. De esta manera, el estudio de estos textos sería un poco menos denso.</p>
 
 
 

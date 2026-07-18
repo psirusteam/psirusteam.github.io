@@ -3,18 +3,17 @@ title: "Scatter plots in survey sampling"
 author: "Andrés Gutiérrez"
 date: "2017-11-27"
 categories:
-  - "Estadística"
-  - "R"
   - "Sampling"
+  - "R"
 ---
 
 When it comes to analyzing survey data, you have to take into account the stochastic structure of the sample that was selected to obtain the data. Plots and graphics should not be an exception. The main aim of such studies is to try to infer about how the behavior of the outcomes of interest in the finite population.
 
 For example, you may want to know how many people are in poverty. How about counting the poor people in the sample? I know, it is not a good idea. You have to use the sampling weights to estimate the whole number of poor people in the population. The total error paradigm follows the same approach when estimating any parameter of the finite population: you have to use the sampling weights in order to obtain unbiased estimators.
 
-The idea behind this paradigm is the representative principle. If a person $ k $ is included in the sample with a sampling weight $ w_k $, she/he represents to himself and $ w_k-1$ remaining people. That way, you obtain design-unbiasedness.
+The idea behind this paradigm is the representative principle. If a person $k$ is included in the sample with a sampling weight $w_k$, she/he represents to himself and $w_k-1$ remaining people. That way, you obtain design-unbiasedness.
 
-I am not a big fan of using descriptive sample statistics to analyze survey data because it can mask the reality, and the fact is that person $ k $ is included in the sample, but he/she is not alone. Behind person $ k $ there are other people, not included in the sample, and you have to realize that. So, let's apply that principle to scatter plots. I am using the Lucy population from the TeachingSampling package to recreate my idea. The following code is used to draw a $\pi PS $ sample.
+I am not a big fan of using descriptive sample statistics to analyze survey data because it can mask the reality, and the fact is that person $k$ is included in the sample, but he/she is not alone. Behind person $k$ there are other people, not included in the sample, and you have to realize that. So, let's apply that principle to scatter plots. I am using the Lucy population from the TeachingSampling package to recreate my idea. The following code is used to draw a $\pi PS$ sample.
 
 ```
 library(TeachingSampling)

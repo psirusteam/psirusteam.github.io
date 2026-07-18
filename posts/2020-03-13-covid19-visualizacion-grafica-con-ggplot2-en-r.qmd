@@ -3,10 +3,9 @@ title: "COVID19: visualización gráfica con ggplot2 en R"
 author: "Andrés Gutiérrez"
 date: "2020-03-13"
 categories:
-  - "Estadística"
+  - "Visualization"
+  - "R"
 ---
-
-Por Gigi y Andrés.
 
 *Nuestra adaptación gráfica del número de casos confirmados y muertes del COVID-19.*
 

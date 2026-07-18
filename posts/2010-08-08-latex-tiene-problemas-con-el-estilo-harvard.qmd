@@ -3,7 +3,8 @@ title: "LaTeX - ¿Tiene problemas con el estilo Harvard?"
 author: "Andrés Gutiérrez"
 date: "2010-08-08"
 categories:
-  - "Estadística"
+  - "Software"
+  - "R"
 ---
 
 > The Harvard LaTeX citation package is a requirement for many people when writing research documents or academic theses. However, the sample LaTeX document harvard.tex that comes with the Harvard citation package available at the CTAN TeX Archive Network does not compile correctly as provided. This can be somewhat frustrating for many authors, especially those who are quite new to LaTeX. In attempting to resolve this problem I have developed sev … [Read More](http://theseekersquill.wordpress.com/?p=389)

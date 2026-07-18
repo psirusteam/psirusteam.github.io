@@ -3,7 +3,7 @@ title: "Not a good advice (On regression over principal axis)"
 author: "Andrés Gutiérrez"
 date: "2016-06-08"
 categories:
-  - "Estadística"
+  - "Modeling"
   - "Teaching"
 ---
 

@@ -3,8 +3,8 @@ title: "Historia de la probabilidad (Era moderna)"
 author: "Andrés Gutiérrez"
 date: "2008-10-25"
 categories:
-  - "Estadística"
   - "Probability"
+  - "Modeling"
 ---
 
 **Siglo XX**

@@ -3,9 +3,8 @@ title: "No, it is not a survey, it is a poll!"
 author: "Andrés Gutiérrez"
 date: "2014-03-23"
 categories:
-  - "Estadística"
-  - "R"
-  - "Stats"
+  - "Elections"
+  - "Sampling"
 ---
 
 I disagree with all of the political analysts when it comes to Colombian Presidential Elections (CPE). Everybody start to talk, chat and conclude about what is happening and what is going to happen if elections would be held today. Of course the source of that conclusions (by the way, misleading conclusions!!!) are the political polls carried out by consulting firms (pollsters) in Colombia.

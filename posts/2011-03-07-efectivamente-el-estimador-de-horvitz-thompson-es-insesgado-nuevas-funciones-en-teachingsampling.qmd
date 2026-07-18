@@ -3,8 +3,8 @@ title: "Efectivamente, el estimador de Horvitz-Thompson es insesgado (nuevas fun
 author: "Andrés Gutiérrez"
 date: "2011-03-07"
 categories:
-  - "Estadística"
-  - "R"
+  - "Sampling"
+  - "Inference"
 ---
 
 En los parciales de muestreo, a veces acostumbro a pedirle al estudiante que demuestre o refute mediante un contraejemplo algunas afirmaciones. Por ejemplo, una de mis favoritas es la siguiente:

@@ -3,7 +3,8 @@ title: "La historia incompleta"
 author: "Andrés Gutiérrez"
 date: "2010-11-06"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Sampling"
 ---
 
 Complete las siguientes frases:

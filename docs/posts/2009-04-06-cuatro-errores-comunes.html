@@ -157,7 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Cuatro errores comunes</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Probability</div>
+    <div class="quarto-category">Inference</div>
   </div>
   </div>
 
@@ -188,21 +189,21 @@ window.Quarto = {
 
 
 <ol type="1">
-<li>Dada (pffff, ¿quién se la dio?) una muestra aleatoria de $ n $ variables con distribución normal <span class="math inline">\((\mu, \sigma^2)\)</span> ¿Cuál es la distribución de la media muestral? La respuesta más común es que si la varianza es conocida, entonces la media muestral tiene una distribución normal; si la varianza es desconocida, entonces la media muestral sigue una distribución $ t $-Student con $ n-1$ grados de libertad.</li>
+<li>Dada (pffff, ¿quién se la dio?) una muestra aleatoria de <span class="math inline">\(n\)</span> variables con distribución normal <span class="math inline">\((\mu, \sigma^2)\)</span> ¿Cuál es la distribución de la media muestral? La respuesta más común es que si la varianza es conocida, entonces la media muestral tiene una distribución normal; si la varianza es desconocida, entonces la media muestral sigue una distribución <span class="math inline">\(t\)</span>-Student con <span class="math inline">\(n-1\)</span> grados de libertad.</li>
 </ol>
-<p>R: / Falso. John Cook afirma que nuestra ignorancia acerca de $$ no cambia la distribución de los datos. Una combinación lineal de variables aleatorias con distribución normal es otra variable aleatoria con distribución normal y punto.</p>
+<p>R: / Falso. John Cook afirma que nuestra ignorancia acerca de <span class="math inline">\(\sigma\)</span> no cambia la distribución de los datos. Una combinación lineal de variables aleatorias con distribución normal es otra variable aleatoria con distribución normal y punto.</p>
 <ol start="2" type="1">
-<li>Si <span class="math inline">\([3,4]\)</span> es un intervalo de confianza del 95% para el parámetro $$, entonces la probabilidad de que el parámetro se encuentre en ese intervalo específico es de 0.95.</li>
+<li>Si <span class="math inline">\([3,4]\)</span> es un intervalo de confianza del 95% para el parámetro <span class="math inline">\(\theta\)</span>, entonces la probabilidad de que el parámetro se encuentre en ese intervalo específico es de 0.95.</li>
 </ol>
-<p>R: / Falso. En primer lugar los extremos de los intervalos de confianza son variables aleatorias. La interpretación de los intervalos de confianza frecuentistas se refiere al intervalo de la distribución muestral para $$ tal que, dados los datos observados, se podría esperar que el 5%de las futuras estimaciones de $$ no pertenecieran a dicho intervalo. La interpretación del enunciado estaría correcta si se tratase de intervalos de credibilidad.</p>
+<p>R: / Falso. En primer lugar los extremos de los intervalos de confianza son variables aleatorias. La interpretación de los intervalos de confianza frecuentistas se refiere al intervalo de la distribución muestral para <span class="math inline">\(\theta\)</span> tal que, dados los datos observados, se podría esperar que el 5%de las futuras estimaciones de <span class="math inline">\(\theta\)</span> no pertenecieran a dicho intervalo. La interpretación del enunciado estaría correcta si se tratase de intervalos de credibilidad.</p>
 <ol start="3" type="1">
-<li>El valor $ p $ es la probabilidad de rechazar la hipótesis nula.</li>
+<li>El valor <span class="math inline">\(p\)</span> es la probabilidad de rechazar la hipótesis nula.</li>
 </ol>
-<p>R: / Falso. El enfoque tradicionalista, de Fisher, Neyman y Pearson, sugiere fijar una hipótesis primaria $ H_0$ y una hipótesis alternativa $ H_a $. Después de determinar una estadística apropiada $ T(Y)$, se procede a calcular la significación observada, más conocida como valor $ p $ y definido como <span class="math inline">\(\Pr{T(Y)&gt;T(Yobs)|\theta, H_0}\)</span>. Si el valor $ p $ es más pequeño que un error Tipo I predeterminado, entonces la hipótesis $ H_0$ se rechaza.</p>
+<p>R: / Falso. El enfoque tradicionalista, de Fisher, Neyman y Pearson, sugiere fijar una hipótesis primaria <span class="math inline">\(H_0\)</span> y una hipótesis alternativa <span class="math inline">\(H_a\)</span>. Después de determinar una estadística apropiada <span class="math inline">\(T(Y)\)</span>, se procede a calcular la significación observada, más conocida como valor <span class="math inline">\(p\)</span> y definido como <span class="math inline">\(\Pr\{T(Y)&gt;T(Y_{\mathrm{obs}})\mid\theta, H_0\}\)</span>. Si el valor <span class="math inline">\(p\)</span> es más pequeño que un error Tipo I predeterminado, entonces la hipótesis <span class="math inline">\(H_0\)</span> se rechaza.</p>
 <ol start="4" type="1">
-<li>Si el valor $ p $ es mayor que el error Tipo I, entonces $ H_0$ se acepta.</li>
+<li>Si el valor <span class="math inline">\(p\)</span> es mayor que el error Tipo I, entonces <span class="math inline">\(H_0\)</span> se acepta.</li>
 </ol>
-<p>R: / Falso, muy falso. Una cosa es que los datos no ofrezcan evidencia en contra de $ H_0$ y otra es que $ H_0$ sea cierta. Y de una cosa a la otra hay mucho, pero mucho, muchísmo camino. Lo repito una vez más no es lo mismo… nunca será lo mismo. Carlin (1996) lo explica de la siguiente manera. Un valor $ p $ pequeño indica que la hipótesis alternativa tiene un poder de explicación significativamente mayor. Sin embargo, un valor $ p $ grande no sugiere que las dos hipótesis sean equivalentes, sino que se carece de evidencia para afirmar que no lo són.</p>
+<p>R: / Falso, muy falso. Una cosa es que los datos no ofrezcan evidencia en contra de <span class="math inline">\(H_0\)</span> y otra es que <span class="math inline">\(H_0\)</span> sea cierta. Y de una cosa a la otra hay mucho, pero mucho, muchísmo camino. Lo repito una vez más no es lo mismo… nunca será lo mismo. Carlin (1996) lo explica de la siguiente manera. Un valor <span class="math inline">\(p\)</span> pequeño indica que la hipótesis alternativa tiene un poder de explicación significativamente mayor. Sin embargo, un valor <span class="math inline">\(p\)</span> grande no sugiere que las dos hipótesis sean equivalentes, sino que se carece de evidencia para afirmar que no lo són.</p>
 
 
 

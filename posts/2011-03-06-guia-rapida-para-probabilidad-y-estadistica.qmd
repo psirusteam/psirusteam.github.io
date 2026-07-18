@@ -3,7 +3,8 @@ title: "Guía rápida para probabilidad y estadística"
 author: "Andrés Gutiérrez"
 date: "2011-03-06"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Inference"
 ---
 
 ﻿﻿﻿﻿

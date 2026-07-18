@@ -3,7 +3,8 @@ title: "Seleccionando muestras de café"
 author: "Andrés Gutiérrez"
 date: "2009-06-16"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Community and Events"
 ---
 
 Acabo de salir de una reunión corta pero sustanciosa...

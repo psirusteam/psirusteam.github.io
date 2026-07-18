@@ -3,7 +3,8 @@ title: "Estadísticas reales"
 author: "Andrés Gutiérrez"
 date: "2008-12-16"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 [YouTube](https://www.youtube.com/watch?v=j7FP1kgtD8U&eurl=http://blogstats.wordpress.com/&feature=player_embedded&w=425&h=350)

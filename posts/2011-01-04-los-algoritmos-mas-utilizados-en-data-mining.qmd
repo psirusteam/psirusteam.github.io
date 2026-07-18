@@ -3,7 +3,8 @@ title: "Los algoritmos más utilizados en Data Mining"
 author: "Andrés Gutiérrez"
 date: "2011-01-04"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Teaching"
 ---
 
 Me he enterado de [este artículo](http://www.cs.uvm.edu/~icdm/algorithms/10Algorithms-08.pdf) mediante un [twitter de Alex Zambrano](https://twitter.com/alexjzc), que a su vez replicó de [una entrada en Datanaltytics](http://www.datanalytics.com/blog/2011/01/04/%C2%BFcuales-son-los-top-10-algoritmos-para-data-mining/). Se trata de un artículo que presenta los diez algoritmos más utilizados e influyentes en tópicos de clasificación.

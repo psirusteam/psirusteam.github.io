@@ -3,9 +3,8 @@ title: "Leslie's Advice on Statistical Design"
 author: "Andrés Gutiérrez"
 date: "2014-12-03"
 categories:
-  - "Estadística"
-  - "Public Policy Evaluation"
-  - "Stats"
+  - "Sampling"
+  - "Policy Evaluation"
 ---
 
 An [old issue of Statistical Science](http://projecteuclid.org/download/pdf_1/euclid.ss/1032209665) includes an interview with Leslie Kish by Frankel and King. Leslie was the most influential statistician in the field of Survey Sampling and Statistical Design in the past century. I wan to stress out these words of mere wisdom:

@@ -3,7 +3,6 @@ title: "IRT equating using R functions - The calibrated pool method"
 author: "Andrés Gutiérrez"
 date: "2016-03-05"
 categories:
-  - "Estadística"
   - "IRT"
   - "R"
 ---
@@ -56,7 +55,7 @@ For the sake of easiness, we will use the dataset **LSAT** from package **ltm** 
 > mean(x0)
 > sd(x0)
 >
-> coef(fit.0, IRTpars = TRUE, simplify = TRUE)$items[, c(1, 2)]
+> coef(fit.0, IRTpars = TRUE, simplify = TRUE)\$items[, c(1, 2)]
 > hist(x0)
 > ```
 

@@ -3,7 +3,8 @@ title: "Ideas al azar (Julio)"
 author: "Andrés Gutiérrez"
 date: "2011-07-23"
 categories:
-  - "Estadística"
+  - "Teaching"
+  - "Sampling"
 ---
 
 Hoy, mientras esperaba por unas copias en la Universidad Nacional de Colombia, me encontré de pronto ojeando libros en la librería de la universidad. Sin darme cuenta, estaba leyendo los prólogos de algunos libros escritos por autores de la universidad. En uno de ellos la autora afirmaba que el libro había nacido debido a la necesidad de los estudiantes de seguir un texto así y bla, bla, bla…

@@ -3,8 +3,8 @@ title: "Más importante que el principio de representatividad"
 author: "Andrés Gutiérrez"
 date: "2019-05-28"
 categories:
-  - "Encuestas"
-  - "Muestreo"
+  - "Sampling"
+  - "Surveys"
 ---
 
 Quiero retomar mi actividad bloguera abordando un tema casi filosófico que ha marcado mi práctica profesional desde siempre. Se trata del principio de representatividad y cuándo es pertinente utilizarlo. Si ante un fenómeno desconocido, fuera posible observar de forma exhaustiva a toda la población, no dudaríamos ni un instante en utilizar la estadística descriptiva para responder a las preguntas de interés. Por ejemplo, en estadísticas sociales, si la pregunta fuese cuál es el cambio de la tasa de desempleo en dos periodos consecutivos, bastaría con observar a la población en los dos periodos consecutivos y hacer una simple operación matemática para responder a esta cuestión. Bajo este escenario, no habría necesidad de pruebas de hipótesis, ni de intervalos de confianza, ni de escoger estrategias de estimación porque simplemente no serían necesarias. Sin embargo, como este escenario no se puede ejecutar en la realidad, tenemos que conformarnos con planear encuestas, seleccionar muestras y hacer inferencias objetivas y subjetivas.

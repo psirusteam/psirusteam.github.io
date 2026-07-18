@@ -3,8 +3,8 @@ title: "My article in RCE... De haplotipos, genes y análisis bayesiano"
 author: "Andrés Gutiérrez"
 date: "2012-08-23"
 categories:
-  - "Estadística"
-  - "R"
+  - "Bayesian Statistics"
+  - "Publications"
 ---
 
 En el último número de la Revista Comunicaciones en Estadística hemos publicado un trabajo de investigación, junto con Ricardo Camacho, en el cual se expone una metodología bayesiana para el análisis de asociación de polimorfismos de nucleótido simple (SNP) y de haplotipos con una característica de interés en un contexto de producción animal. En la primera etapa del análisis, se propone un modelo lineal bayesiano para clasificar los SNPs que tienen efecto sobre el promedio del valor genético de la variable respuesta. En una segunda etapa, después de la identificación de los haplotipos compatibles con los genotipos de influencia en la primera etapa, se discute la aplicación de un modelo lineal general y de un modelo de regresión logística en la identificación de los haplotipos que presentan una mayor asociación con el aumento del valor genético. En ambas etapas, se siguen metodologías bayesianas y cuando es pertinente se incluyen métodos de simulación de Monte Carlo para generar cadenas de Markov cuya distribución estacionaria corresponda a la distribución posterior condicional de los parámetros de interés. La aplicación práctica está supeditada al área de producción animal en una raza bovina criolla colombiana, denominada como raza blanco orejinegro (BON).

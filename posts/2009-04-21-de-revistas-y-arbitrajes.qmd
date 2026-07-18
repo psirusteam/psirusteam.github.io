@@ -3,7 +3,8 @@ title: "De revistas y arbitrajes"
 author: "Andrés Gutiérrez"
 date: "2009-04-21"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Modeling"
 ---
 
 Como editor novato de una revista especializada en temas de estadística he tenido que dar instrucciones a los novatos árbitros para que su proceso de evaluación de artículos sea objetivo y profesional. Y es que una cosa es hacer una regresión o desarrollar una nueva teoría y otra muy diferente es evaluar qué tan adecuado es un artículo para una revista. La regresión la enseñan en la universidad, la nueva teoría se desarrolla en el grupo de investigación, pero no todos los árbitros saben a ciencia cierta lo que el proceso implica.
@@ -14,7 +15,7 @@ Cuando llega un artículo por primera vez, existen varias tendencias… el árbi
 
 2. El condescendiente: "El artículo es excelente, un gran aporte a la ciencia estadística, nos sentimos honrados de que el autor publique en esta revista… regálame un autógrafo"
 
-3. El terrorista: "La definición del promedio aritmético, de la sección 2.2, debe ser citada porque de lo contrario se incurre en una falta grave a las normas editoriales, lo cual constituye una base sólida para una demanda civil o penal. Por supuesto, lo anterior tiene consecuencias laborales, pecuniarias, penales y constitucionales. Ratero, ladrón, por eso estamos como estamos… porque no se respetan los derechos de autor, #$%$%"#$%#$, %$%"#$%, etc"
+3. El terrorista: "La definición del promedio aritmético, de la sección 2.2, debe ser citada porque de lo contrario se incurre en una falta grave a las normas editoriales, lo cual constituye una base sólida para una demanda civil o penal. Por supuesto, lo anterior tiene consecuencias laborales, pecuniarias, penales y constitucionales. Ratero, ladrón, por eso estamos como estamos… porque no se respetan los derechos de autor, #\$%\$%"#\$%#\$, %\$%"#\$%, etc"
 
 4. El objetivo: Este tipo de árbitro respeta el consejo que Bruce Palka, antiguo editor de *American Mathematical Monthly*, dio a sus editores asociados. "Es responsabilidad del autor examinar que el arículo se encuentre libre de errores; es responsabilidad del árbitro dar opiniones objetivas acerca de la pertinencia del artículo para ser publicado en la revista. Por tanto, el reporte debe ser relativamente corto y directo. "
 

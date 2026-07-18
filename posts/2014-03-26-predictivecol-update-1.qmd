@@ -3,8 +3,8 @@ title: "#PredictiveCOL (Update #1)"
 author: "Andrés Gutiérrez"
 date: "2014-03-26"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Modeling"
 ---
 
 This is the first update of our [predictions for the Colombian presidential run](https://web.archive.org/web/20140730203514/http://www.gutierrezandres.com/predictivecol). Note that at this time, we still do not know if Martha Lucía Ramírez will be supported by the Conservative Party. This way, if election were held today, this is the SNAPSHOT (mere opinion) of the run.

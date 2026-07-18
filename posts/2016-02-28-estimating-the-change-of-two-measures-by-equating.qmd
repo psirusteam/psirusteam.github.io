@@ -3,10 +3,8 @@ title: "Estimating the change of two measures by equating"
 author: "Andrés Gutiérrez"
 date: "2016-02-28"
 categories:
-  - "Estadística"
   - "IRT"
   - "Probability"
-  - "Stats"
 ---
 
 Suppose that we have a survey (baseline + follow-up) in which we ask to some people about a variable of interest. If we follow that cohort, or even some if we ask later to some other people, we can estimate the net change of that very variable in the scale of the baseline by means of equating the two distributions. I know, we usually do not care about the scale. We are used to subtract averages and that's it. However, if we want to compute a scale from the baseline, we should refine our techniques and begin to use some other tools.

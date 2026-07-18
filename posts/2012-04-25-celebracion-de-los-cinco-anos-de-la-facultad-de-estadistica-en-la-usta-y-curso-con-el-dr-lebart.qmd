@@ -3,7 +3,8 @@ title: "Celebración de los cinco años de la Facultad de Estadística en la UST
 author: "Andrés Gutiérrez"
 date: "2012-04-25"
 categories:
-  - "Estadística"
+  - "Teaching"
+  - "Community and Events"
 ---
 
 Durante el primer semestre del año 2012, la Facultad de Estadística de la Universidad Santo Tomás de Bogotá D. C, se enorgullece en celebrar sus primeros 5 años de funcionamiento, para lo cual ha planeado, del 9 al 11 de mayo, el Seminario Internacional de Análisis de Datos Textuales, liderado por el más reconocido investigador a nivel mundial en esta temática, el profesor francés Ludovic Lebart.
@@ -64,10 +65,10 @@ estadística@usantotomas.edu.co
 
 **Inscripciones: **
 
-**Estudiantes, docentes e investigadores USTA con cursillos: $140.000**
+**Estudiantes, docentes e investigadores USTA con cursillos: \$140.000**
 
-**Estudiantes, docentes e investigadores externos con cursillos: $180.000**
+**Estudiantes, docentes e investigadores externos con cursillos: \$180.000**
 
-**Estudiantes, docentes e investigadores USTA sin cursillos: $0**
+**Estudiantes, docentes e investigadores USTA sin cursillos: \$0**
 
-**Estudiantes, docentes e investigadores externos sin cursillos: $0**
+**Estudiantes, docentes e investigadores externos sin cursillos: \$0**

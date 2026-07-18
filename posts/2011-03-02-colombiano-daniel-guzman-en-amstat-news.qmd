@@ -3,7 +3,8 @@ title: "Colombiano Daniel Guzmán en AMSTAT NEWS"
 author: "Andrés Gutiérrez"
 date: "2011-03-02"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Bayesian Statistics"
 ---
 
 Acabo de leer la publicación de Febrero de la American Statistical Association (que entre otras cosas pareciera que sólo publican encuestas de salarios) y me encontré en la página 32 con un artículo escrito por Ann Harrison, en donde se reconoce la labor del estadístico colombiano Daniel Guzmán, quien al parecer ha desarrollado una metodología de muestreo para testificar en el juicio de algunos policias incriminados de atentar contra los derechos humanos en Guatemala.

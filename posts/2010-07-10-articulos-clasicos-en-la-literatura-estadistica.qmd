@@ -3,7 +3,8 @@ title: "Artículos clásicos en la literatura estadística"
 author: "Andrés Gutiérrez"
 date: "2010-07-10"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Sampling"
 ---
 
 En el [blog](http://xianblog.wordpress.com/2010/06/25/top-15-all-timers/) de [Christian Robert](http://www.ceremade.dauphine.fr/~xian/M2classics) se ha publicado una encuesta acerca de los artículos que se debieran considerar como clásicos de la literatura estadística. Su idea es escoger 15 artículos para que sus alumnos los expongan en un seminario. A continuación la lista de artículos competidores.

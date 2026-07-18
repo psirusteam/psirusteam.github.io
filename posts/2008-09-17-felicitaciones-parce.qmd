@@ -3,7 +3,8 @@ title: "Felicitaciones parce!!!"
 author: "Andrés Gutiérrez"
 date: "2008-09-17"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Bayesian Statistics"
 ---
 
 Continuando con nuestra sección farandulera… Let me indroduce you to Jairo… Es para mí una grato placer saber que un estadístico de la Universidad Nacional de Colombia, discípulo de Leonardo Bautista y ex-funcionario del DANE, ha ganado un [prestigioso premio](http://www.amstat.org/sections/SBSS/) de ASA (Asociación Americana de Estadística).

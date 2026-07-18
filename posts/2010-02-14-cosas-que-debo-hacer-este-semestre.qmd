@@ -3,7 +3,8 @@ title: "Cosas que debo hacer este semestre..."
 author: "Andrés Gutiérrez"
 date: "2010-02-14"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Bayesian Statistics"
 ---
 
 Recibo ideas...

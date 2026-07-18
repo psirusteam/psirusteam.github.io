@@ -3,7 +3,8 @@ title: "Publicaciones Colombianas Online II"
 author: "Andrés Gutiérrez"
 date: "2009-07-22"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Community and Events"
 ---
 
 Uno de los propósitos de este blog es que sirva para la comunicación de los esfuerzos Hispanoamericanos en materia de publicaciones científicas. En esta ocasión, las publiaciones colombianas con contenido WEB gratuito ya se encuentran disponibles para la descarga del material actualizado. En particular, el segundo número de la Revista Comunicaciones en Estadística, el cual constituye un sentido homenaje de parte de sus pupilos al profesor Leonardo Bautista y, por otro lado, el primer número del volumen 32 de la Revista Colombiana de Estadística que cada vez está alcanzando más reconocimiento internacional y en esta ocasión comprende varios artículos del exterior.

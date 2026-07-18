@@ -3,7 +3,8 @@ title: "El gráfico estadístico más antiguo"
 author: "Andrés Gutiérrez"
 date: "2010-06-23"
 categories:
-  - "Estadística"
+  - "Visualization"
+  - "Inference"
 ---
 
 La página WEB de [Michael Friendly, Pedro Valero-Mora y Joaquín Ibáñez Ulargui](http://datavis.ca/gallery/langren/) está dedicada a la investigación histórica acerca del primer gráfico estadístico del que hasta ahora se tenga registro (ver imagen arriba). Esta figura se remonta al siglo XVII, y actualmente se discute si su aparición data al año de 1628 o a 1644. Su creador, Miguel Florencio vanLangren, quiso mostrar las estimaciones de las diferencias en longitud entre las ciudades de Toledo y Roma. Dichas estimaciones se calcularon utilizando distintos métodos cartográficos, astronómicos y geográficos en diferentes tiempos y por diferentes hombres como el mismísimo [Thyco Brahe](http://en.wikipedia.org/wiki/Tycho_Brahe) o [Ptolomeo](http://es.wikipedia.org/wiki/Claudio_Ptolomeo). El gráfico se encuentra adjunto a un [informe presentado en 1624](http://www.math.yorku.ca/SCS/Gallery/langren/verdadera.pdf) por vanLangren a la corte de la infanta Isabel.

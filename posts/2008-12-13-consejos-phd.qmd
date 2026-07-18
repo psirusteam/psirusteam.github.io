@@ -3,7 +3,8 @@ title: "Consejos PhD"
 author: "Andrés Gutiérrez"
 date: "2008-12-13"
 categories:
-  - "Estadística"
+  - "Teaching"
+  - "Publications"
 ---
 
 **Michael Steele**, profesor del departamento de estadística de la escuela de Wharton, adscrita a la universidad de Pensilvania, ha escrito una serie de consejos a sus alumnos de doctorado que, en particular, me han dado mucho ánimo y han levantado mi espíritu después de un pequeño debacle académico y emocional. Estos comentarios tienen una gran trascendencia pues vienen de una persona experimentada que ha dedicado su vida entera a la enseñanza de esta linda rama del saber. A continuación mi resumen personal de los consejos de este sabio personaje.
@@ -64,7 +65,7 @@ No existe una estrategia de selección de problemas que esté garantizada. Como 
 
 - ****Enfóquese.**Recuérdelo, enfóquese en el problema, luego, el mismo problema lo llevará por rutas que no han sido consideradas.**
 
-- ****Una vez que encuentre resultados teóricos concretos o empíricos, así sean modestos, escríbalos en****$ LaTeX $****
+- ****Una vez que encuentre resultados teóricos concretos o empíricos, así sean modestos, escríbalos en****$LaTeX$****
 
 - ******Relájese un poco.**No se preocupe acerca de cómo encajar las pequeñas piezas del rompecabezas. Eventualmente éstas encajarán.****
 

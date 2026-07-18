@@ -3,8 +3,8 @@ title: "Thinking weirdly"
 author: "Andrés Gutiérrez"
 date: "2014-11-29"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 Today I was talking with an old acquaintance. This guy is an statistician that thinks different. I don't know how to describe its way of thinking, but I know how to describe our way of thinking. As Colombian statisticians:

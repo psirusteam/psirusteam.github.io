@@ -3,7 +3,8 @@ title: "EM para compra online"
 author: "Andrés Gutiérrez"
 date: "2010-02-01"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Sampling"
 ---
 
 [Estrategias de muestreo: diseño de encuentas y estimación de parámetros](../books.qmd)

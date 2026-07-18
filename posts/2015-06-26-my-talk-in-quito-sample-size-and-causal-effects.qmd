@@ -3,8 +3,7 @@ title: "My talk in Quito - Sample size and causal effects"
 author: "Andrés Gutiérrez"
 date: "2015-06-26"
 categories:
-  - "Estadística"
-  - "Public Policy Evaluation"
+  - "Policy Evaluation"
   - "R"
 ---
 

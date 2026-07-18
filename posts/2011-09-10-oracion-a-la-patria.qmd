@@ -3,8 +3,8 @@ title: "Oración a la patria"
 author: "Andrés Gutiérrez"
 date: "2011-09-10"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 Esto me llena de orgullo... Con este blog estoy aportando un poco de lo que Colombia me ha dado... No es la gran cosa, pero me siento bien porque sé que a varios les ha ayudado. Y usted ¿está haciendo algo por Colombia?

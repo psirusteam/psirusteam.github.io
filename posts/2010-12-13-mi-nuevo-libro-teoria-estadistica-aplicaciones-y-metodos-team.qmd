@@ -3,8 +3,8 @@ title: "Mi nuevo libro... Teoría Estadística Aplicaciones y Métodos (TEAM)"
 author: "Andrés Gutiérrez"
 date: "2010-12-13"
 categories:
-  - "Estadística"
-  - "R"
+  - "Probability"
+  - "Publications"
 ---
 
 [Para conocer más acerca de este libro haga clic acá](../books.qmd)

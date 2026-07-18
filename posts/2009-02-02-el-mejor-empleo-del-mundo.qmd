@@ -3,7 +3,8 @@ title: "El mejor empleo del mundo"
 author: "Andrés Gutiérrez"
 date: "2009-02-02"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Inference"
 ---
 
 Francisco García, estudiante de la Licenciatura de Ciencias y Técnicas Estadísticas de la Universidad de Granada (España), me ha contactado y me dado una muy buena noticia: se refiere a un artículo que es resultado de un estudio que concluye que los estadísticos tienen los mejores empleos de EE. UU. Me alegro profundamente por nuestra profesión y por nuestros colegas americanos (escribo americanos porque estoy seguro que este fenómeno se repite a lo largo de todo continente americano).

@@ -3,9 +3,8 @@ title: "Creating R packages in Mavericks (OS X)"
 author: "Andrés Gutiérrez"
 date: "2014-03-06"
 categories:
-  - "Estadística"
   - "R"
-  - "Stats"
+  - "Teaching"
 ---
 
 Creating R packages in Mac is very simple. When I first created the [TeachingSampling](http://cran.r-project.org/web/packages/TeachingSampling/index.html) R package in Windows, it was such a trek. I remember that I had to install a lot of apps in order to compile the library.

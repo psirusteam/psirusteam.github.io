@@ -3,7 +3,8 @@ title: "Estimadores de máxima cuasiverosimilitud en muestreo bifásico"
 author: "Andrés Gutiérrez"
 date: "2009-06-30"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Sampling"
 ---
 
 Los estimadores ¶optimos de calibraci¶on utilizan informaci¶on auxiliar completa para

@@ -3,8 +3,8 @@ title: "#PredictiveCOPA - Chile vs. Ecuador"
 author: "Andrés Gutiérrez"
 date: "2015-06-11"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Modeling"
+  - "Inference"
 ---
 
 As the author of this blog is committed with Colombia national soccer team, here we are again with our predictions (for the sake of tradition) for the Copa América 2015. The opening match is Chile - Ecuador.

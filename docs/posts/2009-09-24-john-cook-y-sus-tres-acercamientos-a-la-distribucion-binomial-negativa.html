@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">John Cook y sus tres acercamientos a la distribución binomial negativa</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Probability</div>
+    <div class="quarto-category">Modeling</div>
   </div>
   </div>
 
@@ -159,10 +189,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>John Cook plantea <a href="http://www.johndcook.com/blog/2009/09/22/negative-binomial-distribution/">acá</a> una interesante discusión acerca de la interpretación de la distribución binomial negativa. Nótese que esta distribución, según wikipedia, tiene la siguiente forma funcional:</p>
-<p>$(X=k)=p<sup>r(1-p)</sup>k $</p>
-<p>En donde $ X $ es una variable aleatoria y los parámetros de esta distribución son $ p $ y $ r $. El lector habrá notado que la forma funcional de este modelo no es familiar y tal vez dudará en que de veras corresponda a la famosa binomial negativa. La razón es clara: en la forma funcional dada arriba no hay ninguna expresión que involucre combinatorias. Pues bien, resulta que las combinatorias, definidas para números enteros, se pueden extender para números reales a través de la función gamma. Este mismo tipo de conflicto lo pueden tener los estudiantes de series de tiempo cuando se enfrentan con los modelos ARFIMA (<a href="http://estadistica.unal.edu.co/publicaciones/estadistica/rce/V31/v31n1a04CastanoGomezGallon.pdf">ver acá</a>) que inducen un orden de integración $ d $ que puede ser fraccionario y en donde el operador de rezago $ B $ debe cumplir que $(1-B)<sup>d=binom{d}{k}(-B)</sup>k $.</p>
-<p>Esta distribución siempre ha tenido lugar al resolver el famoso problema del número de ensayos necesarios para lograr tantos éxitos. Por supuesto, si $ r $ es el número de éxitos necesarios y se conoce que la probabilidad de éxito es $ p $, entonces la distribución binomial negativa corresponde a un modelo probabilístico, afianzado durante siglos, que permite la resolución de este tipo de situaciones.</p>
-<p>Con lo anterior en mente, es posible asignar al parámetro $ r $ valores que sean reales. Por supuesto, como lo afirma Cook, en este caso no hay ninguna interpretación práctica en el contexto del número de ensayos necesarios para tantos éxitos. Sin embargo, en términos de la distribución $ r $ es un parámetro más. Esto nos lleva a uno de los verdaderos usos prácticos de esta distribución: sobredispersión. Dado que la forma funcional arriba corresponde a una generalización de la función de distribución Poisson, entonces es posible suponer que los datos de conteo vienen de una distribución binomial negativa. Lo anterior tiene sus ventajas puesto que si la media de los datos recolectados no corresponde con la varianza (característica esencial de la Poisson) entonces cualquier modelo que de allí surgiese sería altamente cuestionable. Si lo anterior se presenta es mejor acudir a la distribución binomial negativa dando valores reales al parámetro $ r $.</p>
+<p><span class="math inline">\(\Pr(X=k)=\frac{\Gamma(r+k)}{k! \Gamma(r)}p^r(1-p)^k\)</span></p>
+<p>En donde <span class="math inline">\(X\)</span> es una variable aleatoria y los parámetros de esta distribución son <span class="math inline">\(p\)</span> y <span class="math inline">\(r\)</span>. El lector habrá notado que la forma funcional de este modelo no es familiar y tal vez dudará en que de veras corresponda a la famosa binomial negativa. La razón es clara: en la forma funcional dada arriba no hay ninguna expresión que involucre combinatorias. Pues bien, resulta que las combinatorias, definidas para números enteros, se pueden extender para números reales a través de la función gamma. Este mismo tipo de conflicto lo pueden tener los estudiantes de series de tiempo cuando se enfrentan con los modelos ARFIMA (<a href="http://estadistica.unal.edu.co/publicaciones/estadistica/rce/V31/v31n1a04CastanoGomezGallon.pdf">ver acá</a>) que inducen un orden de integración <span class="math inline">\(d\)</span> que puede ser fraccionario y en donde el operador de rezago <span class="math inline">\(B\)</span> debe cumplir que <span class="math inline">\((1-B)^d=\sum \binom{d}{k}(-B)^k\)</span>.</p>
+<p>Esta distribución siempre ha tenido lugar al resolver el famoso problema del número de ensayos necesarios para lograr tantos éxitos. Por supuesto, si <span class="math inline">\(r\)</span> es el número de éxitos necesarios y se conoce que la probabilidad de éxito es <span class="math inline">\(p\)</span>, entonces la distribución binomial negativa corresponde a un modelo probabilístico, afianzado durante siglos, que permite la resolución de este tipo de situaciones.</p>
+<p>Con lo anterior en mente, es posible asignar al parámetro <span class="math inline">\(r\)</span> valores que sean reales. Por supuesto, como lo afirma Cook, en este caso no hay ninguna interpretación práctica en el contexto del número de ensayos necesarios para tantos éxitos. Sin embargo, en términos de la distribución <span class="math inline">\(r\)</span> es un parámetro más. Esto nos lleva a uno de los verdaderos usos prácticos de esta distribución: sobredispersión. Dado que la forma funcional arriba corresponde a una generalización de la función de distribución Poisson, entonces es posible suponer que los datos de conteo vienen de una distribución binomial negativa. Lo anterior tiene sus ventajas puesto que si la media de los datos recolectados no corresponde con la varianza (característica esencial de la Poisson) entonces cualquier modelo que de allí surgiese sería altamente cuestionable. Si lo anterior se presenta es mejor acudir a la distribución binomial negativa dando valores reales al parámetro <span class="math inline">\(r\)</span>.</p>
 
 
 

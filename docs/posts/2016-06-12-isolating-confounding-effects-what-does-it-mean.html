@@ -192,7 +192,7 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Isolating confounding effects - What does it mean?</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Policy Evaluation</div>
     <div class="quarto-category">Teaching</div>
   </div>
   </div>
@@ -226,7 +226,7 @@ window.Quarto = {
 <p>Have you heard (or read) to those geeks (econometricians and statisticians) talking about <strong>controlling for</strong>some variable in a study? The origin of this practice lies on the design of experiments: when you plan an experimental study, you try to randomise units according to categories that you know that are important.</p>
 <p>For example, let’s assume that you want to assess the effect of some treatment over some population of humans. You know that the age of the individual is important when it comes to prove the effectivity of the treatment. Then, your experiment must be carried out by means of randomisation over age categories; that is you define, say, 2 categories, then you fit your model and everything is alright. Isn’t it? Let’s take a look at some scenarios. First, if you stratified by age and then you drew a sample for every stratum, then your model must look like this:</p>
 <p><span class="math display">\[ y_i = \beta_1D_{1i} + \beta_2D_{2i} + \varepsilon_i \]</span></p>
-<p>Where $ D_{1i}=1-D_{2i}$ and $ D_{1i}$ is defined to be a dummy variable regarding the membership of unit $ i $ to the first stratum. Now, if you didn’t stratify (because of you ignored that this specific treatment provides differential result by age category), then your model should look like this:</p>
+<p>Where <span class="math inline">\(D_{1i}=1-D_{2i}\)</span> and <span class="math inline">\(D_{1i}\)</span> is defined to be a dummy variable regarding the membership of unit <span class="math inline">\(i\)</span> to the first stratum. Now, if you didn’t stratify (because of you ignored that this specific treatment provides differential result by age category), then your model should look like this:</p>
 <p><span class="math display">\[ y_i = \beta_0 + \varepsilon_i \]</span></p>
 <p>It is straightforward to note that when you fit the first model, the estimated response is <span class="math inline">\(\hat{y}_1\)</span>, if unit belongs to stratum 1, or <span class="math inline">\(\hat{y}_2\)</span>, if unit belongs to stratum 2. However, when you fit the second model, the estimated response is always <span class="math inline">\(\hat{y}\)</span>.</p>
 <p>So, once you have fitted these two models, you realise that the relationship between residuals and age category is not the same. That is, in the second model, the variable age has a strong effect over the residuals. Why? Because of the <strong>effect</strong> of this variable is absorbed by residuals; in other words your model didn’t take into account the effect of this variable; that is to say, your model is not <strong>controlling for the effect</strong> of this variable.</p>
@@ -250,9 +250,9 @@ window.Quarto = {
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Distribution of residuals for model 2"</span>)</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In addition, when it comes to causal inference or more sophisticated studies, isolating confounding variables is very important, because you want a well formulated model with correct and precise estimated effects. For example, let’s assume that the actual relation between the response variable and a causal variable $ D $ is given by</p>
+<p>In addition, when it comes to causal inference or more sophisticated studies, isolating confounding variables is very important, because you want a well formulated model with correct and precise estimated effects. For example, let’s assume that the actual relation between the response variable and a causal variable <span class="math inline">\(D\)</span> is given by</p>
 <p><span class="math display">\[ y_i = \beta_0 + \beta_1D_{i} +\beta_2 x_i + \varepsilon_i \]</span></p>
-<p>Where $ x $ is a covariate. Then, if you control for the effect of that covariate, the estimate of <span class="math inline">\(\beta_1\)</span> (the causal effect) will be precise as you can see in the next code:</p>
+<p>Where <span class="math inline">\(x\)</span> is a covariate. Then, if you control for the effect of that covariate, the estimate of <span class="math inline">\(\beta_1\)</span> (the causal effect) will be precise as you can see in the next code:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(N, <span class="dv">1</span>, <span class="fl">0.3</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>

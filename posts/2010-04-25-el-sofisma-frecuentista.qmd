@@ -3,7 +3,8 @@ title: "El sofisma frecuentista"
 author: "Andrés Gutiérrez"
 date: "2010-04-25"
 categories:
-  - "Estadística"
+  - "Teaching"
+  - "Inference"
 ---
 
 Milan Kundera, "antiguo colaborador" expresa algunos de mis razonamientos en su magnífica obra: Primero: definición del espacio muestral:

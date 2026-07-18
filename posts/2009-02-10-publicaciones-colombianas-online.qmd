@@ -3,7 +3,8 @@ title: "Publicaciones Colombianas Online"
 author: "Andrés Gutiérrez"
 date: "2009-02-10"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Community and Events"
 ---
 
 En Colombia existen dos publicaciones cuyo tema central es la estadística. Cada una de ellas tiene diferentes características y por lo tanto llenan distintos faltantes en la escena estadística Hispanoamericana. Sin embargo, una característica común es la cultura de la divulgación de sus artículos de manera gratuita.
@@ -14,7 +15,7 @@ Con todo respeto, hoy quiero hacer un reconocimiento público a la **Revista Col
 
 Por otro lado está la revista **Comunicaciones en Estadística** que está empezando a seguir ese difícil camino de posicionamiento nacional. Esta revista tiene un lugar diferente en la escena estadística puesto que sus objetivos a mediano plazo están enfocados en el fortalecimiento teórico y práctico de los nuevos investigadores estadísticos. Sin embargo, este camino está acompañado por un antiguo editor de la Revista Colombiana de Estadística y esto augura un camino lleno de perspectivas exitosas.
 
-Detrás de estas dos publicaciones está el trabajo de diseño impecable de Camilo Cubides, experto en el lenguaje $ LaTeX $ quien también ha prestado asesoría a otras publicaciones seriadas en Colombia.
+Detrás de estas dos publicaciones está el trabajo de diseño impecable de Camilo Cubides, experto en el lenguaje $LaTeX$ quien también ha prestado asesoría a otras publicaciones seriadas en Colombia.
 
 Estimado lector, no deje de visitar los vínculos de cada una de estas publicaciones y por favor, únase a la cultura de descargar de manera gratuita los artículos de su interés. Recuerde que esto es posible gracias al esfuerzo mancomunado de personas apasionadas por la estadística que intentan poner un valioso recurso a su disposición. A continuación los vínculos a las páginas de cada publicación.
 

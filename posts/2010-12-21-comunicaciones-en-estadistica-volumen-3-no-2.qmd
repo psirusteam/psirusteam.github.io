@@ -3,8 +3,8 @@ title: "Comunicaciones en Estadística Volumen 3 No. 2"
 author: "Andrés Gutiérrez"
 date: "2010-12-21"
 categories:
-  - "Estadística"
-  - "R"
+  - "Publications"
+  - "Modeling"
 ---
 
 [En este quinto número consecutivo de la revista Comunicaciones en Estadísti­ca](http://comunicacionesenestadistica.usta.edu.co/) nos encontramos frente a un cisma generado por la globalización del conoci­miento estadístico. El día 20 de octubre de 2010, el mundo celebró el día mundial de la estadística. Desde la Facultad de Estadística de la Universidad Santo Tomás esperamos que sea la primera de muchas celebraciones como reconocimiento al valor y aporte de los profesionales en estadística en el mundo. Esta es una inicia­tiva de las Naciones Unidas, y su objetivo es celebrar el papel y la importancia de la estadística y dar a conocer muchos de los logros de las estadísticas oﬁciales. Estas celebraciones tuvieron lugar alrededor de todo el mundo tanto en los insti­tutos nacionales de estadística como en las instituciones educativas que imparten conocimiento estadístico en formación profesional y posgradual.

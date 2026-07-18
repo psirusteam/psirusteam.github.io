@@ -3,12 +3,13 @@ title: "Otra paradoja instructiva"
 author: "Andrés Gutiérrez"
 date: "2009-04-14"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Sampling"
 ---
 
 Lahiri (1968) expresa las dificultades que sobrevienen al tratar de explicarle a un hombre del común el enfoque de la inferencia en poblaciones finitas mediante la siguiente situación
 
-Suponga que dos estadísticos (¿muestristas?) son contratados para seleccionar una muestra de tamaño n de una determinada población finita. Ambos poseen la misma información acerca del comportamiento de la población. Este conocimiento incluye una característica de información auxiliar para cada unidad perteneciente a la población. Uno decide seleccionar una muestra aleatoria simple y el otro decide seleccionar una muestra con probabilidad proporcional al tamaño. Como complemento de la estrategia de muestreo, ambos deciden utilizar el estimador $\bar{y}=\sum_sy_k/n $. De manera increíble, los dos estadísticos seleccionan exactamente las mismas unidades en la muestra de tamaño n. Por supuesto, ambos saben que la desviación típica está dada en términos de $\bar{y}- \bar{Y}$; sin embargo ambos proponen medidas totalmente diferentes para la precisión de sus estimadores.
+Suponga que dos estadísticos (¿muestristas?) son contratados para seleccionar una muestra de tamaño n de una determinada población finita. Ambos poseen la misma información acerca del comportamiento de la población. Este conocimiento incluye una característica de información auxiliar para cada unidad perteneciente a la población. Uno decide seleccionar una muestra aleatoria simple y el otro decide seleccionar una muestra con probabilidad proporcional al tamaño. Como complemento de la estrategia de muestreo, ambos deciden utilizar el estimador $\bar{y}=\sum_sy_k/n$. De manera increíble, los dos estadísticos seleccionan exactamente las mismas unidades en la muestra de tamaño n. Por supuesto, ambos saben que la desviación típica está dada en términos de $\bar{y}- \bar{Y}$; sin embargo ambos proponen medidas totalmente diferentes para la precisión de sus estimadores.
 
 **¿Cómo explicar esta situación?**
 

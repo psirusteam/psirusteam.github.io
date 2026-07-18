@@ -3,7 +3,8 @@ title: "Tu eres parte de los 200mil"
 author: "Andrés Gutiérrez"
 date: "2010-06-09"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Teaching"
 ---
 
 [Hace exactamente un año](2009-06-08-eres-parte-de-los-100mil.qmd), el 8 de junio de 2009, este blog alcanzó los 100mil visitantes. Hoy, con certeza se puede afirmar que este es un espacio posicionado y reconocido por miles de personas que buscan un lugar de lectura amena y discusión de métodos estadísticos. Sea esta la oportunidad para agradezco a todos los lectores del blog, no sólo en mi amada Colombia, en donde curiosamente no es tan leido, sino en hispanoamérica y Estados Unidos.

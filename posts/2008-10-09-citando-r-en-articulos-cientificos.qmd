@@ -3,8 +3,8 @@ title: "Citando R en artículos científicos"
 author: "Andrés Gutiérrez"
 date: "2008-10-09"
 categories:
-  - "Estadística"
   - "R"
+  - "Publications"
 ---
 
 Es cierto que R es el más usado de los lenguajes estadísticos en los artículos de publicaciones seriadas. Sin embargo, también es cierto que, aunque es un software gratis, es necesario citarlo si lo hemos usado para usufructúo personal. No nos cuesta nada abrir el programa y darle la siguiente instrucción:

@@ -3,7 +3,8 @@ title: "¿Quién enseña estadística básica?"
 author: "Andrés Gutiérrez"
 date: "2010-05-10"
 categories:
-  - "Estadística"
+  - "Teaching"
+  - "Modeling"
 ---
 
 En respuesta a un [muy citado artículo del profesor Meng](http://predictive.files.wordpress.com/2010/05/tast-2009.pdf) en 2009 (Temido y deseado, ¿qué hacemos ahora y durante los próximos 50 años?), el doctor [Frank Soler escribió un corto ensayo](http://predictive.files.wordpress.com/2010/05/tast-2010.pdf) acerca de uno de los puntos críticos de los que habla Meng. En esta ocasión, Soler toca el tema de los profesores que enseñan estadística básica (refiriéndose a los cursos que se desarrollan en carreras como ingeniería o economía). En su ensayo, afirma que, a pesar de ser una ciencia joven, la estadística ha tenido un crecimiento asombroso, de alguna manera, representado en el número de estudiantes que se enrolan en un curso introductorio. En sus cálculos, él asume que anualmente cuatro mil estudiantes asisten a los cursos básicos de estadística que ofrece el departamento de matemáticas y estadística de la institución donde labora. Para servir estos cursos, alrededor de 20 o más profesores son contratados como docentes y de estos, sólo seis tienen un diploma de pregrado en estadística, el resto del cuerpo docente lo constituyen matemáticos con poca experiencia en el manejo de datos.

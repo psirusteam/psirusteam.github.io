@@ -3,7 +3,6 @@ title: "IRT classic anchoring with R functions"
 author: "Andrés Gutiérrez"
 date: "2016-03-16"
 categories:
-  - "Estadística"
   - "IRT"
   - "R"
 ---
@@ -48,8 +47,8 @@ So, in R you can use the following code in order to estimate the item parameters
 >
 > LSAT.0 <- LSAT[1:N,]
 > fit.0 <- mirt(LSAT.0, 1, itemtype = '2PL')
-> coef.fit.0 <- coef(fit.0, simplify = TRUE)$items
-> #coef.fit.0 <- coef(fit.0, IRTpars = TRUE, simplify = TRUE)$items[, c(1, 2)]
+> coef.fit.0 <- coef(fit.0, simplify = TRUE)\$items
+> #coef.fit.0 <- coef(fit.0, IRTpars = TRUE, simplify = TRUE)\$items[, c(1, 2)]
 >
 > # Mean/sigma 
 > z0 <- fscores(fit.0)
@@ -71,10 +70,10 @@ Now, you should assure that the parameters found in the baseline remains the sam
 >
 > sv <- mirt(LSAT.0, 1, itemtype = '2PL', pars = 'values')
 > #custom discrimination, easiness, and guessing values
-> sv$value[sv$name == 'a1'] <- coef.fit.0[,1]
-> sv$value[sv$name == 'd'] <- coef.fit.0[,2]
+> sv\$value[sv\$name == 'a1'] <- coef.fit.0[,1]
+> sv\$value[sv\$name == 'd'] <- coef.fit.0[,2]
 > #set the parameters as fixed
-> sv$est <- FALSE
+> sv\$est <- FALSE
 > ```
 
 Finally, you estimate abilities in the follow-up while fixing the item parameters. Note that the coefficients (item parameters) for both models [fitted in the baseline and in the follow-up] are exactly the same. Now you can compare means because the scores are in the same scale.
@@ -86,7 +85,7 @@ Finally, you estimate abilities in the follow-up while fixing the item parameter
 >
 > LSAT.1 <- LSAT[(N + 1):1000,]
 > fit.1 <- mirt(LSAT.1, 1, pars = sv)
-> coef.fit.1 <- coef(fit.1, simplify = TRUE)$items
+> coef.fit.1 <- coef(fit.1, simplify = TRUE)\$items
 >
 > coef.fit.0
 > coef.fit.1

@@ -3,7 +3,8 @@ title: "La humildad del gremio"
 author: "Andrés Gutiérrez"
 date: "2009-04-04"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 He tenido tiempo de pensarlo muy bien… y me ratifico… **los métodos estadísticos deben tener validez teórica desde el punto de vista del usuario**. Aún más, mi opinión es que en nuestro gremio nos hemos encargado de promover una falsa imagen matizada de altivez. Yo soy el primero de ellos y, voluntaria y públicamente confieso mi rebelde actitud. Aunque ésta ya fue denunciada alguna vez en el artículo de despedida de John Tukey, el famoso [Sunset Salvo](http://www.biostat.jhsph.edu/~yonchen/Sunset%20Salvo.pdf).

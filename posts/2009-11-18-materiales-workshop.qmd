@@ -3,7 +3,8 @@ title: "Materiales Workshop"
 author: "Andrés Gutiérrez"
 date: "2009-11-18"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Teaching"
 ---
 
 Haciendo clic en los enlaces correspondientes encontrará el material de los cursillos y conferencias de los invitados internacionales al first international Workshop on Applied Statistics.

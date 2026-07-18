@@ -3,8 +3,8 @@ title: "Utlizando JAGS y RJAGS (en MAC)"
 author: "Andrés Gutiérrez"
 date: "2013-11-23"
 categories:
-  - "Estadística"
-  - "R"
+  - "Bayesian Statistics"
+  - "Software"
 ---
 
 Durante mis clases de estadística bayesiana, procuro que los estudiantes construyan sus propios MCMC, para los distintos modelos estadísticos que se consideran en el curso. Sin embargo, una ayuda importante para los estudiantes y el profesor es el manejo de softwares alternativos y automáticos que ejecutan los MCMC rápidamente. Es así como WinBUGS se convierte en un recurso importante en la clase a la hora de introducir modelos avanzados.

@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">¿Está seguro de su tamaño de muestra?</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Sampling</div>
+    <div class="quarto-category">Teaching</div>
   </div>
   </div>
 
@@ -162,13 +192,13 @@ ul.task-list li input[type="checkbox"] {
 <p>En otras ocasiones el investigador decide contar con el estadístico como apoyo para el cálculo del tamaño de muestra. Este a su vez, debe implementar un camino correcto para esta importante tarea. Muchas veces ese camino está dado por una expresión matemática que vio en algún libro de muestreo o en algún artículo. Hoy quiero abordar el tema del tamaño de muestra para una diferencia de proporciones, que se utiliza en muchas ocasiones, por ejemplo en el levantamiento de una línea de base en la evaluación de alguna política pública, entre otros.</p>
 <p>Antes de abordar el tema, quiero que el lector (ya sea estudiante, profesor, consultor, asesor o empleado) tome consciencia de la importancia de utilizar una fórmula. Muchos profesores a veces no le prestamos atención a las fórmulas para los tamaños de muestra y las despreciamos, como si se tratara de una simpleza. Sin embargo, en la vida real, fuera del aula de clase, los profesionales podrían seguir esta práctica y tomar a la ligera el uso de las fórmulas. Lo que a veces olvida el profesor, que está en su burbuja académica, es que la correcta evaluación de las políticas públicas, de los estudios epidemiológicos, entre otros, depende en gran manera de este cálculo. Es tan increíblemente grande esta responsabilidad, que no encuentro las palabras para plasmarla en esta entrada. Imagínese que por negligencia o desconocimiento uno puede afectar a millones de personas. La tarea del estadístico es gigante. Por ejemplo, con un mal tamaño de muestra, la evaluación de una política pública podría arrojar resultados negativos, cuando en realidad son positivos, y de esta manera podría acabarse una intervención que sí está beneficiando a millones de niños. Pero claro, a veces no tenemos ni idea de que hay niños con hambre que necesitan ser nutridos y pasamos por alto las fórmulas y su correcto uso.</p>
 <p>Bueno, creo que no hay tantos profesores así, pero es necesario que usted no haga esto y genere cultura estadística en sus pupilos. Volviendo al tema, creo que muchos conocen la siguiente expresión para el cálculo del tamaño de muestra cuando se quiere indagar por una proporción de interés:</p>
-<section id="n" class="level5">
-<h5 class="anchored" data-anchor-id="n">$ n&gt; $</h5>
+<section id="n-dfracpqdfrace2z2dfracpqn" class="level5">
+<h5 class="anchored" data-anchor-id="n-dfracpqdfrace2z2dfracpqn"><span class="math inline">\(n&gt; \dfrac{PQ}{\dfrac{e^2}{z^2}+\dfrac{PQ}{N}}\)</span></h5>
 <p>En donde, e es el error relativo que uno quiere minimizar y z es el percentil de una normal estándar. Aquí no hay mucho misterio, simplemente el resultado de esta expresión es una cifra, y esta cifra induce un tamaño de muestra para un muestreo aleatorio simple sin reeemplazo.</p>
 <p>Sin embargo, cuando el interés se centra en la diferencias de proporciones entre dos subpoblaciones, entonces es común encontrar esta fórmula, para un diseño de muestreo aleatorio simple sin reemplazo.</p>
 </section>
-<section id="n-1" class="level5">
-<h5 class="anchored" data-anchor-id="n-1">$ n&gt; $</h5>
+<section id="n-dfracp_1q_1p_2q_2dfrace2z2dfracp_1q_1p_2q_2n" class="level5">
+<h5 class="anchored" data-anchor-id="n-dfracp_1q_1p_2q_2dfrace2z2dfracp_1q_1p_2q_2n"><span class="math inline">\(n&gt; \dfrac{P_1Q_1+P_2Q_2}{\dfrac{e^2}{z^2}+\dfrac{P_1Q_1+P_2Q_2}{N}}\)</span></h5>
 <p>y el resultado es una cifra, una cifra que induce un tamaño de muestra. Pero espere, esta cifra no indica un tamaño de muestra total. Esta cifra induce un tamaño de muestra para las dos subpoblaciones de interés; es decir, se debe seleccionar <em>n</em> elementos de la primera subpoblación y otros <em>n</em> elementos de la segunda subpoblación. La razón de lo anterior está en que para llegar a esta expresión, se debe realizar una cantidad de supuestos, uno de los cuales es que el tamaño de muestra sea igual en cada subpoblación. Algo así como <em>n1=n2=n</em>.</p>
 <p>Muchos investigadores hacen sus cálculos y en vez de duplicar el tamaño de muestra, lo dividen a la mitad. Recuerde, se debe seleccionar <em>n</em> elementos de la primera subpoblación y otros <em>n</em> elementos de la segunda subpoblación.</p>
 <p>Si tiene curiosidad por la demostración y los supuestos utilizados, puede leer <a href="http://gutierrezandres.files.wordpress.com/2012/12/untitled.pdf">este documento</a> que he preparado para usted.</p>

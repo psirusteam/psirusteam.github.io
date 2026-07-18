@@ -163,7 +163,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title">
 <h1 class="title">IRT equating using R functions - The calibrated pool method</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
     <div class="quarto-category">IRT</div>
     <div class="quarto-category">R</div>
   </div>
@@ -234,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x0)</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x0)</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit<span class="fl">.0</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items[, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit<span class="fl">.0</span>, <span class="at">IRTpars =</span> <span class="cn">TRUE</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)\<span class="sc">$</span>items[, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </blockquote>
 <p>Note that the mean and sd of the baseline is 100 and 10, respectively. We are forcing to the scale of form A to be centred at 100. From now on, we will track changes on abilities regarding this very scale. Let’s assume that we administered the form B (at a later time). Next, we join all of the students (form A along form B) and estimate the common abilities. The following code is based on steps 2 and 3.</p>

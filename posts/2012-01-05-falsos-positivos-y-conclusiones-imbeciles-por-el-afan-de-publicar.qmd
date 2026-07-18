@@ -3,7 +3,8 @@ title: "Falsos positivos y conclusiones imbéciles por el afán de publicar"
 author: "Andrés Gutiérrez"
 date: "2012-01-05"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Inference"
 ---
 
 Esta mañana me desperté escuchando las noticias de una importante cadena radial con cobertura a nivel nacional. El afamado periodista, encargado de la dirección del programa que tiene una sección de casos curiosos, muy animado declaró que según un estudio una de las formas de prevenir un ataque cardiaco es cepillándose los dientes. Así es, yo también quedé un poco estupefacto. Con la intención de respaldar la noticia, inmediatamente se comunicaron con un afamado cardiólogo colombiano, que no tuvo nada que ver con este estudio, pero que se declaraba confiado con las conclusiones del mismo, y mediante una complicada explicación intentaba dar una especie de respaldo, a mi gusto un poco recalcitrante, al estudio. Yo no soy médico ni mucho menos, pero el estudio me pareció sospechoso. Sospeché del estudio no por lo raro de las conclusiones, sino por la defensa ultranza del cardiólogo criollo. No sé, pienso que el colombiano tiene una forma suspicaz de sobresalir, así sea a costa de cosas que él nunca hizo o ni siquiera conoce. El discurso del cardiólogo era muy parecido al de los defensores de los Nule, de Arias, de Moreno, entre otros.

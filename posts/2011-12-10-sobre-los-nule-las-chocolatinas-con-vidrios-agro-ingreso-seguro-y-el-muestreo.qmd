@@ -3,7 +3,8 @@ title: "Sobre los Nule, las chocolatinas con vidrios, Agro Ingreso Seguro y el m
 author: "Andrés Gutiérrez"
 date: "2011-12-10"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Policy Evaluation"
 ---
 
 [Andrés Gutiérrez - El papel del estadístico en las evaluaciones de políticas públicas - Conferencia Fundación Universitaria Los Libertadores](http://www.gutierrezandres.com/wp-content/uploads/2011/12/w1.mp3)

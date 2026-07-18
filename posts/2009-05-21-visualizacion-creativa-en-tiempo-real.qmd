@@ -3,7 +3,8 @@ title: "Visualización creativa en tiempo real"
 author: "Andrés Gutiérrez"
 date: "2009-05-21"
 categories:
-  - "Estadística"
+  - "Visualization"
+  - "R"
 ---
 
 No se trata de publicidad acerca de la red de comunicaciones de Sprint Inc., se trata de creatividad en la visualización de estadísticas alejándose de la manera estándar. Haciendo [clic](http://now.sprint.com/nownetwork/?id9=vanity: nownetwork) en la imagen usted entrará a un portal de estadísticas en tiempo real con un nivel muy alto de creatividad. Lo mismo sucede con los siguientes videos:

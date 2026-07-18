@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Super armamento y munición para la generación de datos</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Modeling</div>
+    <div class="quarto-category">Bayesian Statistics</div>
   </div>
   </div>
 
@@ -158,8 +188,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Ajustando un modelo jerárquico bayesiano me encontré con esta perlita: ¿Cómo simular datos de una distribución horrible? Y es que, saliendo de los estándares teóricos, existen distribuciones bonitas, feas y horribles… entre las horribles está esta función de densidad con argumento $$:</p>
-<p>$ p() propto <em>{j=1}^p () </em>{j=1}<sup>p(</sup>2_j+<sup>2)</sup>{1/2}expleft( -)$</p>
+<p>Ajustando un modelo jerárquico bayesiano me encontré con esta perlita: ¿Cómo simular datos de una distribución horrible? Y es que, saliendo de los estándares teóricos, existen distribuciones bonitas, feas y horribles… entre las horribles está esta función de densidad con argumento <span class="math inline">\(\theta\)</span>:</p>
+<p><span class="math inline">\(p(\theta) \propto \sum_{j=1}^p \left(\frac{1}{\sigma^2_j+\tau^2}\right) \prod_{j=1}^p(\sigma^2_j+\tau^2)^{1/2}\exp\left( -\frac{(y_j-\mu)^2}{2\sigma^2_j+\tau^2}\right)\)</span></p>
 <p>Sin embargo existe un arma letal para estos casos: el método de la grilla que se puede combinar con el todopoderoso R que siempre tiene herramientas para solucionar esos problemas difíciles. <a href="http://predictive.files.wordpress.com/2009/05/simu.pdf">Haciendo clic acá</a> encontrará un documento que resume el método de la grilla, con el que se puede simular cualquier cosa que tenga que ver con funciones de densidad.</p>
 
 

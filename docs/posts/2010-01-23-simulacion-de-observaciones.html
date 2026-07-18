@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Simulación de observaciones</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Probability</div>
+    <div class="quarto-category">Bayesian Statistics</div>
   </div>
   </div>
 
@@ -159,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Han sido varios los comentarios acerca del método de la grilla descrito en una <a href="../posts/2009-05-26-super-armamento-y-municion-para-la-generacion-de-datos.html">entrada anterior</a>… Sin embargo, he vuelto a leer lo que escribí y me di cuenta que jamás mencioné cómo simular datos de la distribución horrible que aparecía en esa entrada, cuya forma funcional era más o menos la siguiente:</p>
-<p>$ p() propto <em>{j=1}^p () </em>{j=1}<sup>p(</sup>2_j+<sup>2)</sup>{1/2}expleft( -)$</p>
+<p><span class="math inline">\(p(\theta) \propto \sum_{j=1}^p \left(\frac{1}{\sigma^2_j+\tau^2}\right) \prod_{j=1}^p(\sigma^2_j+\tau^2)^{1/2}\exp\left( -\frac{(y_j-\mu)^2}{2\sigma^2_j+\tau^2}\right)\)</span></p>
 <p>Lo único que se dijo en ese entonces estaba relacionado con un resumen del método de la grilla (super armamento) y su aplicación a una distribución (munición) exponencial. No sé que me pasó, porque en realidad lo valioso del método es poder simular con distribuciones horribles como la de arriba y no con distribuciones fáciles como la exponencial… En fin, en <a href="http://predictive.files.wordpress.com/2010/01/librobayes_grilla.pdf">este documento</a> encontrarán (extracto del nuevo libro) la implementación del método de la grilla en el ambiente computacional de R. Por supuesto el objetivo cumplido es la simulación de datos de esa distribución horrible.</p>
 
 

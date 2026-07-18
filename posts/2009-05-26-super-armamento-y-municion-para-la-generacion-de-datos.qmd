@@ -3,11 +3,12 @@ title: "Super armamento y munición para la generación de datos"
 author: "Andrés Gutiérrez"
 date: "2009-05-26"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Bayesian Statistics"
 ---
 
-Ajustando un modelo jerárquico bayesiano me encontré con esta perlita: ¿Cómo simular datos de una distribución horrible? Y es que, saliendo de los estándares teóricos, existen distribuciones bonitas, feas y horribles... entre las horribles está esta función de densidad con argumento $\theta $:
+Ajustando un modelo jerárquico bayesiano me encontré con esta perlita: ¿Cómo simular datos de una distribución horrible? Y es que, saliendo de los estándares teóricos, existen distribuciones bonitas, feas y horribles... entre las horribles está esta función de densidad con argumento $\theta$:
 
-$ p(\theta) propto \sum_{j=1}^p \left(\frac{1}{\sigma^2_j+\tau^2}\right) \prod_{j=1}^p(\sigma^2_j+\tau^2)^{1/2}expleft( -\frac{(y_j-\mu)^2}{2\sigma^2_j+\tau^2}\right)$
+$p(\theta) \propto \sum_{j=1}^p \left(\frac{1}{\sigma^2_j+\tau^2}\right) \prod_{j=1}^p(\sigma^2_j+\tau^2)^{1/2}\exp\left( -\frac{(y_j-\mu)^2}{2\sigma^2_j+\tau^2}\right)$
 
 Sin embargo existe un arma letal para estos casos: el método de la grilla que se puede combinar con el todopoderoso R que siempre tiene herramientas para solucionar esos problemas difíciles. [Haciendo clic acá](http://predictive.files.wordpress.com/2009/05/simu.pdf) encontrará un documento que resume el método de la grilla, con el que se puede simular cualquier cosa que tenga que ver con funciones de densidad.

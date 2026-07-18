@@ -105,6 +105,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -163,9 +192,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title">
 <h1 class="title">Selecting a Real Sample for Electoral Studies</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Colombia</div>
-    <div class="quarto-category">Estadística</div>
     <div class="quarto-category">R</div>
+    <div class="quarto-category">Elections</div>
   </div>
   </div>
 
@@ -196,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>What is the sample size required to achieve a particular margin of error in electoral studies? Professor <a href="http://www.emis.de/journals/RCE/V28/V28_1_39Bautista.pdf">Leonardo Bautista found</a> that at least 15.000 people should be interviewed, distributed in 6.200 blocks, 80 municipalities and 4 strata. That is a lot of people! — In average, 188 persons per municipality. — Now, do the math. If a single (face to face) interview cost US 40 (in average), then the total cost of the survey should be around US 600.000. That’s a lot of money!</p>
-<p>Now, in order to explain this sample size approach, we could make some basic computations in R, by using my new still-in-construction package: <a href="http://cran.r-project.org/web/packages/samplesize4surveys/index.html">samplesize4surveys</a>. In particular, we could estimate the Kish design-effect (DEFF) in a multi-stage sampling design (assuming that 1) the variance estimator works well at the municipality level and 2) the total number of voters is know). This way, by using micro-data from the last presidential election in Colombia, the adjusted Intraclass Correlation Coefficient (ICC) for the winner (Santos) is 0.069. Remember that $ DEFF +(M-1)$.</p>
+<p>Now, in order to explain this sample size approach, we could make some basic computations in R, by using my new still-in-construction package: <a href="http://cran.r-project.org/web/packages/samplesize4surveys/index.html">samplesize4surveys</a>. In particular, we could estimate the Kish design-effect (DEFF) in a multi-stage sampling design (assuming that 1) the variance estimator works well at the municipality level and 2) the total number of voters is know). This way, by using micro-data from the last presidential election in Colombia, the adjusted Intraclass Correlation Coefficient (ICC) for the winner (Santos) is 0.069. Remember that <span class="math inline">\(DEFF \approx 1+(M-1)\rho\)</span>.</p>
 <p>Where M is defined to be the average number of interviews per municipality. Firstly, you must call the necessary packages for this to work. Also, you must download the <a href="https://www.dropbox.com/s/i5ok3hiaiwhlk5m/VotaPer.%20Rdata">micro-data</a> and the <a href="https://www.dropbox.com/s/fyopzvq5l3gkdna/VotaMuni.%20Rdata">aggregated municipality data</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TeachingSampling)<span class="fu">library</span>(samplesize4surveys)<span class="fu">library</span>(stratification)<span class="fu">setwd</span>(<span class="st">"/. . ./ Your Folder"</span>)<span class="fu">load</span>(<span class="st">"VotaPer. Rdata"</span>)<span class="fu">load</span>(<span class="st">"VotaMuni. Rdata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now you have to compute the ICC for the winner (Santos). As I said before, the adjusted intraclass correlation coefficient is 0.069. That means Santos is not explained by municipalities, and there is a lot of homogeneity between clusters. In other words, Santos won almost everywhere.</p>

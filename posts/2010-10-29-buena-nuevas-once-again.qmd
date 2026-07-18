@@ -3,7 +3,8 @@ title: "Buena nuevas once again"
 author: "Andrés Gutiérrez"
 date: "2010-10-29"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 Según [este informe de la sección de finanzas de CNN](https://web.archive.org/web/20240619032116/https://money.cnn.com/galleries/2010/pf/jobs/1010/gallery.best_jobs_least_stress.moneymag/3.html), la profesión de estadístico en Estados Unidos ocupa el tercer lugar entre los trabajos menos estresantes. La noticia dice así:

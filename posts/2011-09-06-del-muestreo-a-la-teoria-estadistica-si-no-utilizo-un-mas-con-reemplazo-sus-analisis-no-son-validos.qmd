@@ -3,7 +3,8 @@ title: "Del muestreo a la teoría estadística… (Si no utilizó un MAS con ree
 author: "Andrés Gutiérrez"
 date: "2011-09-06"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Probability"
 ---
 
 En la introducción de su excelente libro, *Statistical Design for Researches*, Leslie Kish afirmó que el enunciado de la mayoría de libros de inferencia estadística abren con el siguiente enunciado: y que cada palabra en el anterior enunciado es engañosa. ¿Quién le da a uno las muestras? ¿Existe algún sitio en dónde las repartan? Las muestras no son dadas, las muestras deben ser seleccionadas, asignadas o capturadas. El tamaño de la muestra no siempre es un número n fijo, en la mayoría de casos prácticos es una variable aleatoria. Los datos no siguen el supuesto de independencia ni de idéntica distribución; es más, en muchas ocasiones no existe una sola población, sino que la muestra seleccionada es el resultado de una selección de sub-poblaciones para las cuales se deben producir, no sólo una estimación sino un montón de estimaciones. Así que la historia que nos contaron no aplica en la mayoría de situaciones prácticas.

@@ -3,8 +3,8 @@ title: "My Talk in UNAL - Estimating specificity, sensitivity and prevalence und
 author: "Andrés Gutiérrez"
 date: "2014-05-29"
 categories:
-  - "Estadística"
-  - "Stats"
+  - "Community and Events"
+  - "Inference"
 ---
 
 [In this talk](http://gutierrezandres.files.wordpress.com/2014/05/beamer.pdf)

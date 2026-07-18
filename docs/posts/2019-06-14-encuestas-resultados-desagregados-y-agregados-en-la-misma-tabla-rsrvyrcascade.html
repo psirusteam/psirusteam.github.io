@@ -128,9 +128,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Encuestas - Resultados desagregados y agregados en la misma tabla (R: :srvyr: :cascade)</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Encuestas</div>
+    <div class="quarto-category">Surveys</div>
     <div class="quarto-category">R</div>
-    <div class="quarto-category">Software</div>
   </div>
   </div>
 
@@ -160,7 +159,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Photo by <a href="https://unsplash.com/@franki?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Franki Chamaki</a> on <a href="https://unsplash.com/search/photos/idea?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
 <p>Hace unos días <a href="../posts/2019-06-13-resultados-desagregados-y-agregados-en-la-misma-tabla-rdplyr.html">escribí acerca de una solución innovadora</a> a la hora de producir resultados de una estadística cualquiera para algunas desagregaciones de interés y al mismo tiempo crear una fila que mostrara el resultados de esta estadística en la base de datos completa. Cuando se trata de analizar bases de datos que vienen de una encuesta, no es posible utilizar esta solución, puesto que se estaría obviando el diseño de muestreo y por ende, la inferencia estaría sesgada. Este problema ya no es más un problema, puesto que la última versión de la librería <code>srvyr</code> incluye la función <code>cascade</code> que permite generar tablas desagregadas, con una fila al final que incluye el cálculo de las estimaciones para toda la población. A continuación un ejemplo, con una desagegración simple:</p>
 <p>HTML generated using hilite.me</p>
 <pre><code>library(survey)

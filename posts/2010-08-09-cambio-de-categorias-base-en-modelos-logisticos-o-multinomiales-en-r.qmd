@@ -3,7 +3,7 @@ title: "Cambio de categorías base en modelos logísticos o multinomiales en R"
 author: "Andrés Gutiérrez"
 date: "2010-08-09"
 categories:
-  - "Estadística"
+  - "Modeling"
   - "R"
 ---
 
@@ -19,13 +19,13 @@ Al respecto se deben considerar que los modelos logísticos y multinomiales son 
 
 El paquete lme4 con su función lmer es capaz de realizar dichas estimaciones para modelos lineales generalizados y no lineales utilizando el método de Laplace. Sin embargo, esta función escoge la categoría para realizar el análisis de los datos (la que esté codificada como uno). Creo que la pregunta de Ronald está enfocada hacia la escogencia de esta categoría base en el modelo. He aquí dos soluciones: la primera, es definiendo recodificando la variable respuesta, usando la función ifelse, y la segunda, un poco más plausible, es diciéndole a la función sobre cuál categoría hacer el análisis. Al respecto voy a utilizar un ejemplo acudiendo al conjunto de datos Exam del paquete mlmRev, que contiene entre otras variables, el resultado estandarizado de una prueba de conocimiento. En primer lugar, se define y codifica la variable respuesta. Si el resultado es mayor o igual a cero, entonces la respuesta es uno, en caso contrario cero. Luego se ajusta el modelo logístico que arroja los resultado con respecto a la categoría base que representa el éxito (en este caso y=1)
 
-library(lme4) libray(mlmRev) data(Exam) Exam $ success = 0,1,0)
+library(lme4) libray(mlmRev) data(Exam) Exam\$success = 0,1,0)
 
 lmer(success~ schavg + (1|school), data=Exam, family=binomial(link = "logit"))
 
 Para obtener estimaciones con respecto a la categoría base que representa el fracaso (en este caso y=0), se puede utilizar la función ifelse para redefinir el éxito y el fracaso en la variable respuesta de la siguiente manera y ajustar nuevamente el modelo.
 
-Exam $ success = 0,0,1) lmer(success~ schavg + (1|school), data=Exam, family=binomial(link = "logit"))
+Exam\$success = 0,0,1) lmer(success~ schavg + (1|school), data=Exam, family=binomial(link = "logit"))
 
 Aunque también es posible hacerlo directamente en la función lmer a la cual se le debe agregar un doble signo de igualdad más el código de la categoría base de nuestra preferencia justo después de la variable respuesta, así:
 

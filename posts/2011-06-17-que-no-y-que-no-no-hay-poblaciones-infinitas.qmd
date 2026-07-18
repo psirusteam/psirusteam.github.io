@@ -3,7 +3,8 @@ title: "¡Que no y que no! No hay poblaciones infinitas"
 author: "Andrés Gutiérrez"
 date: "2011-06-17"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Probability"
 ---
 
 - Después de 40, la población se considera como infinita.

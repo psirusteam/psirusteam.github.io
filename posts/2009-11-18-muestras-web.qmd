@@ -3,7 +3,8 @@ title: "Muestras WEB"
 author: "Andrés Gutiérrez"
 date: "2009-11-18"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Surveys"
 ---
 
 Una colega escribe lo siguiente:

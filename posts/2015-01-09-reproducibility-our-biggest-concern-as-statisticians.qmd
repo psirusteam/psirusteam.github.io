@@ -3,9 +3,8 @@ title: "Reproducibility: our biggest concern as statisticians"
 author: "Andrés Gutiérrez"
 date: "2015-01-09"
 categories:
-  - "Estadística"
-  - "Public Policy Evaluation"
-  - "Stats"
+  - "Surveys"
+  - "Policy Evaluation"
 ---
 
 What do identify scientists? In a nutshell, if you claim yourself as a scientist, your scientific results must be reproducible and they could be replicated. That's it.

@@ -3,7 +3,8 @@ title: "Reactivando el proyecto de la Sociedad Colombiana de Estadística"
 author: "Andrés Gutiérrez"
 date: "2013-01-11"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Teaching"
 ---
 
 Invito a todos los lectores del blog a unirse a [este grupo de LinkedIn](http://www.linkedin.com/groups?gid=4772359&trk=hb_side_g) para llevar este proyecto a feliz término.

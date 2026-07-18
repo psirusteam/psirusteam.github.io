@@ -198,8 +198,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Lord’s Paradox in R</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
     <div class="quarto-category">R</div>
+    <div class="quarto-category">Sampling</div>
   </div>
   </div>
 
@@ -243,8 +243,8 @@ window.Quarto = {
 <section id="r-workshop" class="level1">
 <h1>R workshop</h1>
 <p>Lord’s paradox summarizes the analysis of two statisticians who analyze the average weight of some students within a particular university. At the end of the semester (June), the average weight of the men is identical to their average weight at the beginning of that six months (January). This situation also occurs for women. The only difference is that women started the year with a lower average weight (which is evident from their natural contexture). On average, neither men nor women gained or lost weight during the semester.</p>
-<p>To perform the simulation, we assumed that both the final weight of the men and the women follow a linear relationship with the original weight. Thus, it is assumed that $ y_{2i}^M = _0^M + <em>1 y</em>{1i}^M + <em>i $ for the weight of women; and $ y</em>{2i}^H = <em>0^H + <em>1 y</em>{1i}^H + <em>i $, for the weight of men. Where $ y</em>{1i}^M $ denotes the weight of the $ i $-th female at the beginning of the semester, and $ y</em>{2i}^M $ denotes the weight of the $ i $-th female at the end of the semester. The notation for men (H) maintains this logic.</p>
-<p>Now, note that from their natural contexture, men must have greater weight than women. Suppose that on average the weight of men is equal to that of women plus a constant $ c $. In addition, the mean weight in both groups is identical in both times. Then, we have ${y}^M = _0^M + _1 {y}^M $ and that ${y}^H = _0^H + _1 {y}^H = _0^H + _1 ({y}^M + c). $ Hence, after some algebra, we have that $_0^M = (1 - _1) {y}^M $ and <span class="math inline">\(\beta_0^H = \bar{y}^H - \beta_1 (\bar{y}^M + c)\)</span>.</p>
+<p>To perform the simulation, we assumed that both the final weight of the men and the women follow a linear relationship with the original weight. Thus, it is assumed that <span class="math inline">\(y_{2i}^M = \beta_0^M + \beta_1 y_{1i}^M + \varepsilon_i\)</span> for the weight of women; and <span class="math inline">\(y_{2i}^H = \beta_0^H + \beta_1 y_{1i}^H + \varepsilon_i\)</span>, for the weight of men. Where <span class="math inline">\(y_{1i}^M\)</span> denotes the weight of the <span class="math inline">\(i\)</span>-th female at the beginning of the semester, and <span class="math inline">\(y_{2i}^M\)</span> denotes the weight of the <span class="math inline">\(i\)</span>-th female at the end of the semester. The notation for men (H) maintains this logic.</p>
+<p>Now, note that from their natural contexture, men must have greater weight than women. Suppose that on average the weight of men is equal to that of women plus a constant <span class="math inline">\(c\)</span>. In addition, the mean weight in both groups is identical in both times. Then, we have <span class="math inline">\(\bar{y}^M = \beta_0^M + \beta_1 \bar{y}^M\)</span> and that <span class="math inline">\(\bar{y}^H = \beta_0^H + \beta_1 \bar{y}^H = \beta_0^H + \beta_1 (\bar{y}^M + c).\)</span> Hence, after some algebra, we have that <span class="math inline">\(\beta_0^M = (1 - \beta_1) \bar{y}^M\)</span> and <span class="math inline">\(\beta_0^H = \bar{y}^H - \beta_1 (\bar{y}^M + c)\)</span>.</p>
 <p>The following code replicates a set of data that follows the relationship proposed by Lord.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>

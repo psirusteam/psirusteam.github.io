@@ -3,7 +3,8 @@ title: "Meta-Análisis estadístico de encuestas electorales en Colombia: El fen
 author: "Andrés Gutiérrez"
 date: "2010-06-08"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Elections"
 ---
 
 Hace varios días quería escribir esta entrada que, aunque al día de hoy puede parecer un poco desactualizada, tiene una connotación estadística interesante. Si no la escribí en su tiempo pertinente fue por dos motivos: el primero emocional, causado por la decepción que me produjo los resultados electorales en Colombia y el segundo terrenal, pues estaba ausente de mi sitio regular de trabajo (aunque seguía trabajando, por supuesto). Ahora que en mi vida todo vuelve a la normalidad y la interesante rutina toma su lugar, es tiempo de reflexionar y comentar este interesante fenómeno, no sin antes agradecer a mi maestro LGDM por haberme transmitido desde la distancia su parecer, el cual motivo esta entrada. En primer lugar quiero introducir algunos conceptos que el lector desprevenido debe interiorizar para un mejor entendimiento del tema y luego de contextualizar la coyuntura electoral colombiana pasaré a exponer la idea principal y las conclusiones de este fugaz estudio.

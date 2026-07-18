@@ -3,7 +3,8 @@ title: "MacArthur sobre el azar y la evolución"
 author: "Andrés Gutiérrez"
 date: "2011-01-10"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Publications"
 ---
 
 Yo no soy un creacionista ni pretendo inmiscuirme en tan intrincados asuntos y teorías que al fin y al cabo no tendrán nunca respuesta alguna si se utiliza el método científico… Sin embargo, en el libro que actualmente estoy leyendo, John MacArthur hace varios comentarios acerca del azar, que aparte de interesantes, me han puesto a pensar y quisiera compartirlos con ustedes:

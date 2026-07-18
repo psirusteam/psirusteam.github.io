@@ -3,7 +3,8 @@ title: "R and LaTeX working together in the automatic report generation of surve
 author: "Andrés Gutiérrez"
 date: "2009-12-14"
 categories:
-  - "Estadística"
+  - "R"
+  - "Sampling"
 ---
 
 Christmas is coming and this time the gift is for those who work in the generation of statistical tables and do so by using R. We propose a procedure and a function in R language to prepare the automatic editing of large amounts of tables with similar structures that are generated during the survey applications.

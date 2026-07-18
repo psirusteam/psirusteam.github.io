@@ -3,7 +3,8 @@ title: "¿Análisis de correspondencias en Marketing?"
 author: "Andrés Gutiérrez"
 date: "2009-02-27"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Visualization"
 ---
 
 Para un mejor entendimiento de la teoría aquí planteada [haga clic en este vínculo](http://predictive.files.wordpress.com/2009/02/biplot1.pdf) y encontrará el documento que sustenta las ideas expuestas a continuación.

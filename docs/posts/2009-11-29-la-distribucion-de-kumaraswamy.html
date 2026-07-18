@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">La distribución de Kumaraswamy</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Probability</div>
+    <div class="quarto-category">Modeling</div>
   </div>
   </div>
 
@@ -159,9 +189,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Esta distribución propuesta por Poondi Kumaraswamy en 1980, tiene una forma similar a la de la distribución Beta, está restringida al intervalo [0,1] y resulta muy simple puesto que su forma es cerrada; al contrario de la distribución Beta cuya expresión, como lo afirma Jhon D. Cook, no puede ser reducida a funciones elementales a menos que sus dos parámetros sean enteros. La función de densidad está dada por</p>
-<p>$ f(x; a, b)=abx<sup>{a-1}(1-x</sup>a) ^{b-1}$</p>
+<p><span class="math inline">\(f(x; a, b)=abx^{a-1}(1-x^a) ^{b-1}\)</span></p>
 <p>Un resultado importante es que si Y tiene una distribución Beta(1, b), entonces</p>
-<p>$ Y^{1/a} Beta(a, b)$</p>
+<p><span class="math inline">\(Y^{1/a} \sim \operatorname{Beta}(a, b)\)</span></p>
 <p>Sin embargo, <a href="http://www.johndcook.com/blog/2009/11/24/kumaraswamy-distribution/">Jhon D. Cook</a> afirma que la aproximación de los parámetros de las dos distribuciones no implica que la forma resultante de la distribución de Kuramaswani no sea equivalente a la forma de la distribución beta. En R, esta distribución está implementada en el paquete VGAM y la instrucción rkumar genera números aleatorios desde esta distribución. El gráfico de esta entrada se generó mediante la utilización de <a href="http://predictive.files.wordpress.com/2009/11/untitled1.pdf">este código</a>.</p>
 
 

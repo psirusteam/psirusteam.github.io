@@ -3,11 +3,8 @@ title: "#PredictiveCOL - Forecasting Colombia's peace plebiscite (final update)"
 author: "Andrés Gutiérrez"
 date: "2016-10-05"
 categories:
-  - "Colombia"
+  - "Modeling"
   - "Elections"
-  - "Estadística"
-  - "R"
-  - "Stats"
 ---
 
 For sure, this is the more exciting forecast I have ever done. On one hand, I am Colombian guy, and I really want to live in a peaceful country, and I do want a better place for raising my children. On the other hand, I am very serious when it comes to forecasting.

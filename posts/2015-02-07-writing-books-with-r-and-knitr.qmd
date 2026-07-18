@@ -3,7 +3,6 @@ title: "Writing Books with R and knitr"
 author: "Andrés Gutiérrez"
 date: "2015-02-07"
 categories:
-  - "Estadística"
   - "R"
   - "Teaching"
 ---

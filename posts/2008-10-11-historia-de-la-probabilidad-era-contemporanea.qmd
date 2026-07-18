@@ -3,8 +3,8 @@ title: "Historia de la probabilidad (Era Contemporánea)"
 author: "Andrés Gutiérrez"
 date: "2008-10-11"
 categories:
-  - "Estadística"
   - "Probability"
+  - "Bayesian Statistics"
 ---
 
 **Siglo XIX**

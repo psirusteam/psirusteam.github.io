@@ -3,7 +3,8 @@ title: "Homenaje a Leonardo Bautista"
 author: "Andrés Gutiérrez"
 date: "2009-05-04"
 categories:
-  - "Estadística"
+  - "Teaching"
+  - "Sampling"
 ---
 
 En los últimos años, el maestro **Leonardo Bautista** fue uno de los personajes más importantes e influyentes en la escena estadística colombiana. Como discípulos suyos, creemos que nuestro cometido con la ciencia requiere que como publicación se haga un homenaje al profesor Bautista, no con lamentos sobre su partida sino como a él más le hubiese gustado: divulgando las investigaciones que él realizó en conjunto con sus pupilos.

@@ -3,7 +3,8 @@ title: "A riesgo de quedar mal… Ayuda con series de tiempo"
 author: "Andrés Gutiérrez"
 date: "2010-03-26"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Visualization"
 ---
 
 Angélica Batista escribe:

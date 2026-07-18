@@ -3,7 +3,8 @@ title: "La declaración universal de los derechos humanos"
 author: "Andrés Gutiérrez"
 date: "2008-11-08"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 [YouTube](https://www.youtube.com/watch?v=hTlrSYbCbHE&w=425&h=350)

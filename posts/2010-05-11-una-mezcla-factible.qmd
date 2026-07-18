@@ -3,7 +3,8 @@ title: "Una mezcla factible"
 author: "Andrés Gutiérrez"
 date: "2010-05-11"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Teaching"
 ---
 
 Se ha dicho que el sector privado y la academia no siempre son compatibles; yo coincido con esa opinión pero en un sentido ligero, y en esta entrada quiero explicar por qué no son del todo compatibles y porqué sí deberían serlo. La explicación es sencilla y está enmarcada en la siguiente frase de un colega, muy respetado, describiendo el mundo laboral (empresa o academía) del estadístico egresado:

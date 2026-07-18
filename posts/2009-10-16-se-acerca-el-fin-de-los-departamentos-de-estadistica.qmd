@@ -3,7 +3,8 @@ title: "¿Se acerca el fin de los departamentos de estadística?"
 author: "Andrés Gutiérrez"
 date: "2009-10-16"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Community and Events"
 ---
 
 En agosto de este año recibí, como de costumbre, el magazín *AMSTAT-News* (publicación de ASA: American Statistical Association). Después de ojearla por encima y hojearla rápidamente, me di cuenta que el magazín, además de contener valiosas ofertas laborales y oportunidades de estudio para los gringos, contenía bastante publicidad de software y, más bien, poca información. Así que la remití a mi compañero de oficina para que le echara un vistazo. Algunos días después, mi avezado colega me recomendó la lectura de un artículo de Keith Crank, director de la sección de investigaciones y posgrados de la ASA, titulado *Why We Need Data on Our Profession?* (¿Por qué necesitamos de los datos en nuestra profesión?). A simple vista, el título del artículo se me antojaba aburrido, soso y hasta redundante. Pues un estadístico de profesión necesita datos, de la misma manera que un médico necesita enfermos o un carpintero necesita madera.

@@ -3,8 +3,8 @@ title: "Removing data from Workspace in RStudio (for MAC users)"
 author: "Andrés Gutiérrez"
 date: "2014-11-30"
 categories:
-  - "Estadística"
   - "R"
+  - "Software"
 ---
 
 In order to remove the data saved (maybe by mistake) in your workspace from RStudio, you gotta find the route in the first message that you can see when opening RStudio. For example, in my case I can read the following sentence when opening the software: *Workspace loaded from ~/. RData*.

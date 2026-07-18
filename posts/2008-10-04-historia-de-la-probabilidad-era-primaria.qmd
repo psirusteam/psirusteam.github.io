@@ -3,8 +3,8 @@ title: "Historia de la probabilidad (Era Primaria)"
 author: "Andrés Gutiérrez"
 date: "2008-10-04"
 categories:
-  - "Estadística"
   - "Probability"
+  - "Bayesian Statistics"
 ---
 
 **1650-1700**

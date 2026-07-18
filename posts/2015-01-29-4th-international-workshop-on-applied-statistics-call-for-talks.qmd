@@ -3,7 +3,7 @@ title: "4th International Workshop on Applied Statistics (call for talks)"
 author: "Andrés Gutiérrez"
 date: "2015-01-29"
 categories:
-  - "Estadística"
+  - "Community and Events"
   - "Teaching"
 ---
 

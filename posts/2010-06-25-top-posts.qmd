@@ -3,7 +3,8 @@ title: "Top Posts"
 author: "Andrés Gutiérrez"
 date: "2010-06-25"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Bayesian Statistics"
 ---
 
 Estamos en mitad de año, es tiempo de recordar y proyectarse hacia el futuro. Es tiempo de aprender de los errores y afianzar las cualidades que nos han llevado hasta acá en la carrera por alcanzar nuestras metas. A continuación algunas de las entradas más populares y más leídas del blog Apuntes de Estadística.

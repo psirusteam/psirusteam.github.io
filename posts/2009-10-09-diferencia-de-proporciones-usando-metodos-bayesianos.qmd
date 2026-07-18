@@ -3,7 +3,8 @@ title: "Diferencia de proporciones usando métodos bayesianos"
 author: "Andrés Gutiérrez"
 date: "2009-10-09"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Inference"
 ---
 
 Es cierto, a veces algunas técnicas estadísiticas fallan. Más aun, a veces fallan técnicas que, por ser consideradas clásicas y robustas, no deberían de hacerlo. Es bien sabido que, con repecto a la diferencia de dos proporciones, los intervalos de confianza de Wald no son la mejor opción. Pues bien, el mismo espíritu de pensamiento que concibió estos intervalos es el que está detrás de la prueba de hipótesis clásica para dos proporciones: sí, la prueba aquella de dos colas que utiliza la normalidad, la prueba clásica, la del Canavos, la del comando prop.test en R.

@@ -3,8 +3,8 @@ title: "Modelos de teoría de respuesta al ítem en STAN y R"
 author: "Andrés Gutiérrez"
 date: "2015-07-25"
 categories:
-  - "Estadística"
-  - "IRT"
+  - "Modeling"
+  - "Bayesian Statistics"
 ---
 
 [Stan](http://mc-stan.org) es un esfuerzo conjunto de varios investigadores de talla internacional para proporcionar a la comunidad estadística un nuevo muestreador (basado en [cadenas de Markov Hamiltonianas](http://www.mcmchandbook.net/HandbookChapter5.pdf) y [NUTS](http://www.stat.columbia.edu/~gelman/research/published/nuts.pdf), acrónimo de *No-U-Turn-Sampler*) con mejores características que BUGS, OpenBUGS o JAGS. En particular, [rstan](https://mc-stan.org/rstan/) es la interfaz de Stan en R. Sin embargo, existen interfaces para Python, Matlab, Stata, entre otros. JAGS y Stan tienen una comunidad muy activa, pero estoy seguro que la influencia directa de Andrew Gelman sobre Stan hará que éste sea el muestreador por defecto en unos pocos años.

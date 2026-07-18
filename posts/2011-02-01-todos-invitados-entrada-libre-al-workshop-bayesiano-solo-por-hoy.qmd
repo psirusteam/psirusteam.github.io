@@ -3,7 +3,8 @@ title: "Todos invitados... entrada libre al workshop bayesiano (sólo por hoy)"
 author: "Andrés Gutiérrez"
 date: "2011-02-01"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Bayesian Statistics"
 ---
 
 Efectivamente, la entrada es libre... sólo tiene que [inscribirse acá](http://eventos.usta.edu.co/inscripcion_web.cfm? EVENTO=16) y pagar una módica suma ( menor o igual a 150mil pesos... eso es estadísticamente insignificante) y podrá entrar libremente al evento y ser partícipe de esta reunión de profesionales y estudiantes de la ciencia estadística. Piénselo bien... la estadística bayesiana es una herramienta fundamental en cuestiones de análisis de la información. Si usted no tiene idea de qué eso de estadística bayesiana puede ingresar al curso de ***Introducción a la estadística bayesiana***, si ya tiene algunas bases sobre la materia puede ingresar al curso de ***Series de tiempo bayesianas*** o al curso de ***Inferencia bayesiana en datos longitudinales***.

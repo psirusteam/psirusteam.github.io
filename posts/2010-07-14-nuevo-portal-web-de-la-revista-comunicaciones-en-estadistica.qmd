@@ -3,7 +3,7 @@ title: "Nuevo portal WEB de la Revista Comunicaciones en Estadística"
 author: "Andrés Gutiérrez"
 date: "2010-07-14"
 categories:
-  - "Estadística"
+  - "Publications"
   - "R"
 ---
 

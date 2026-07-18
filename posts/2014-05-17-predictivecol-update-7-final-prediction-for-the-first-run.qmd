@@ -3,8 +3,8 @@ title: "#PredictiveCOL (Update #7 - Final prediction for the first run)"
 author: "Andrés Gutiérrez"
 date: "2014-05-17"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Modeling"
 ---
 
 At this point, pollsters cannot do polls anymore. The last polls show that Zuluaga is a very serious contender to defeat the current President of Colombia, Santos. The trend of Zuluaga is the only one that still remains upward and the conditional expectation of the voting intention is higher for Zuluaga than for Santos.

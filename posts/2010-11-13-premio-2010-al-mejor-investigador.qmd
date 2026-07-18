@@ -3,7 +3,8 @@ title: "Premio 2010 al mejor investigador"
 author: "Andrés Gutiérrez"
 date: "2010-11-13"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Software"
 ---
 
 El día de hoy a eso de las cuatro de la tarde obtuve el premio Santo Tomás De Aquino en reconocimiento al mejor investigador del año de la [Universidad Santo Tomás](http://www.usta.edu.co/). Sólo quiero agradecer a Dios porque Él me ha dado la oportunidad de ganar esto y me ha mostrado en un momento difícil que no estoy solo. Este premio está dedicado a las personas que han hecho posible el desarrollo de la [Facultad de Estadística](http://www.usta.edu.co/index.php?option=com_content&view=article&id=66) en la universidad Santo Tomás con su apoyo, constancia y amistad en estos cortos dos años y medio de labores. Ellos tienen nombre propio, Hanwen Zhang, amada esposa y excelente profesional y docente; Yesid Rodríguez, entrañable amigo e inigualable apoyo en todos los procesos de la Facultad; Sánder Rangel, experto estratega, estupendo jefe y decano de la Facultad; Jorge Ortiz y Francisco Rincón, un día maestros y ahora colegas cuyo conocimiento y experiencia es invaluable.

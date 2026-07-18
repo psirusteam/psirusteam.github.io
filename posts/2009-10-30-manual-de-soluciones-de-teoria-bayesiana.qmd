@@ -3,7 +3,8 @@ title: "Manual de soluciones de teoría Bayesiana"
 author: "Andrés Gutiérrez"
 date: "2009-10-30"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Publications"
 ---
 
 En las últimas décadas, la teoría estadística se ha visto enriquecida por un nuevo tipo de pensamiento, que según David Salsburg ([The Lady Testing Tea](2009-04-26-the-lady-tasting-tea.qmd)), fue desechado llevado al punto en que el investigador que manifestara su gusto por esta corriente era directamente discriminado y tildado de no riguroso. Pues bien lo tiempos han cambiado, y la verdad sea dicha, la estadística Bayesiana se ha convertido en un baluarte gigante de los métodos cuantitativos.

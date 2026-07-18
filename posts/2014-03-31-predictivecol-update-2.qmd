@@ -3,8 +3,8 @@ title: "#PredictiveCOL (Update #2)"
 author: "Andrés Gutiérrez"
 date: "2014-03-31"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Modeling"
 ---
 
 This is the second update of our [predictions for the Colombian presidential run](https://web.archive.org/web/20140730203514/http://www.gutierrezandres.com/predictivecol). Finally we have the definitive voter's card, published by Colombian Registrar's Office. That said, this is the posterior distribution of vote intention:

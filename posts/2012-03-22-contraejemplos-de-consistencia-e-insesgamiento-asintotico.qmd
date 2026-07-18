@@ -3,7 +3,8 @@ title: "Contraejemplos de consistencia e insesgamiento asintótico"
 author: "Andrés Gutiérrez"
 date: "2012-03-22"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Sampling"
 ---
 
 Alguna vez leí un libro de humor del periodista Daniel Samper Pizano y quedé encantado con esta frase:
@@ -18,19 +19,19 @@ Tal vez sea por mi énfasis en el muestreo, pero cuando se trata de estimadores,
 
 **Un estimador consistente que no es asintóticamente insesgado**
 
-Suponga una muestra aleatoria de variables con media $\mu $ y varianza $\sigma^2$. El siguiente estimador
+Suponga una muestra aleatoria de variables con media $\mu$ y varianza $\sigma^2$. El siguiente estimador
 
-$ T=\bar{X}+\frac{c}{n^{1/2}}$
+$T=\bar{X}+\frac{c}{n^{1/2}}$
 
 es consistente, puesto que, entre otros, a medida que el tamaño de muestra crece:
 
-1. Su esperanza tiende al valor del parámetro $\mu $.
+1. Su esperanza tiende al valor del parámetro $\mu$.
 
 2. Su error cuadrático medio $\frac{\sigma^2+c}{n}$ tiende a cero.
 
-Sin embargo, no es asintóticamente insesgado puesto que la distribución límite de $ n^{1/2}(T-\mu)$ no tiene media nula. Lo anterior puesto que la distirbución límite de
+Sin embargo, no es asintóticamente insesgado puesto que la distribución límite de $n^{1/2}(T-\mu)$ no tiene media nula. Lo anterior puesto que la distirbución límite de
 
-$ n^{1/2}(T-\mu)= n^{1/2}(\bar{X}-\mu)+c $
+$n^{1/2}(T-\mu)= n^{1/2}(\bar{X}-\mu)+c$
 
 Es normal con media
 
@@ -42,12 +43,14 @@ y varianza $\sigma^2$.
 
 Suponga una muestra aleatoria de variables con distribución de Laplace
 
-$ f(x)=\frac{1}{2}\exp{-|x-\theta|}$
+$f(x)=\frac{1}{2}\exp(-|x-\theta|)$
 
-Y considere el siguiente estimador insesgado para la media $\theta $
+Y considere el siguiente estimador insesgado para la media $\theta$
 
-$ T=X_1$
+$T=X_1$
 
-Dado que *T*es insesgado, también es asintóticamente insesgado. Sin embargo, dado que la varianza de*T* es $\Var(T)=2\neq 0$, no es consistente. Por supuesto, lo anterior se verifica rápidamente cuando se nota que
+Dado que *T*es insesgado, también es asintóticamente insesgado. Sin embargo, dado que la varianza de*T* es $\operatorname{Var}(T)=2\neq 0$, no es consistente. Por supuesto, lo anterior se verifica rápidamente cuando se nota que
 
-$\Pr(|T-\mu|>\varepsilon)=1-\Pr(-\varepsilon No depende de n, y por lo tanto esta probabilidad no tiende a cero a medida que *n* crece.
+$\Pr(|T-\mu|>\varepsilon)=1-\Pr(-\varepsilon<T-\mu<\varepsilon)$.
+
+No depende de $n$, y por lo tanto esta probabilidad no tiende a cero a medida que *n* crece.

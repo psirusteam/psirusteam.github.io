@@ -3,9 +3,7 @@ title: "Isolating confounding effects - Rankings and residuals"
 author: "Andrés Gutiérrez"
 date: "2016-07-09"
 categories:
-  - "Education"
-  - "Estadística"
-  - "Public Policy Evaluation"
+  - "Policy Evaluation"
   - "R"
 ---
 
@@ -13,13 +11,13 @@ In a previous entry, we talked about the meaning and importance of isolating con
 
 Let's think about education. This example is always a good illustration to understand this issue. Assume that the performance of students on a standardized test is only related to Socio-Economic Status (SES) and the Ability of students. This way, consider the following model as a description of this matter:
 
-$ y = \beta_0 + \beta_1 \times SES + \beta_2 \times Ability + \varepsilon $
+$y = \beta_0 + \beta_1 \times SES + \beta_2 \times Ability + \varepsilon$
 
 The previous model claims that a wealthy student tends to perform better in the test, besides a student with high ability will perform well. Note that Ability is a latent variable that is impossible to observe directly. However, if we control for SES, the residual term of the regression will represent the Ability of the student. This way, a model that we can fit in real life is given by:
 
-$ y = \beta_0 + \beta_1 \times SES + \epsilon = \hat{y} + \epsilon $
+$y = \beta_0 + \beta_1 \times SES + \epsilon = \hat{y} + \epsilon$
 
-Note that the term $\hat{y}$ renders the performance of the student in the test explained by SES, while the term $\epsilon $ represents the performance of the student explained by unobservable variables such as Ability.
+Note that the term $\hat{y}$ renders the performance of the student in the test explained by SES, while the term $\epsilon$ represents the performance of the student explained by unobservable variables such as Ability.
 
 For instance, let's assume that we collect data for 20 students including the performance in the test along with the SES. As the Ability is an unobservable variable, we only can adjust a model relating performance and SES. The following chart shows the ranking of students based on the test-score.
 

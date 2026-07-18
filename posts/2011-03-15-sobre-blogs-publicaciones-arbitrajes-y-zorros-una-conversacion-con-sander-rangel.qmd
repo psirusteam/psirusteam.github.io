@@ -3,7 +3,7 @@ title: "Sobre blogs, publicaciones, arbitrajes y zorros: una conversación con S
 author: "Andrés Gutiérrez"
 date: "2011-03-15"
 categories:
-  - "Estadística"
+  - "Publications"
   - "R"
 ---
 

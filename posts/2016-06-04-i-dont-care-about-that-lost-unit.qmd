@@ -3,9 +3,8 @@ title: "I don't care about that lost unit"
 author: "Andrés Gutiérrez"
 date: "2016-06-04"
 categories:
-  - "Estadística"
-  - "R"
   - "Sampling"
+  - "R"
 ---
 
 Just assume that you have planned a survey along with the necessary sample size to obtain representativity. Let's suppose the sample size is 100. However, as nonresponse is always present, unfortunately your effective sample size is 99. Consider the following figure. It shows two scatterplots, the one on the right (expected) has one more point that the one on the left (observed).
@@ -16,4 +15,4 @@ The figure shows the same scatter plot. However, this time I have weighted the p
 
 $$ LI = \frac{\hat{N} - \hat{N}_0}{\hat{N}}$$
 
-Where $\hat{N}_0$ is defined as the sum of the sampling weights over the effective sample. In this specific example, we had that $\hat{N}$ = 1000, and $\hat{N}_0$ = 250. Then $ LI $ = 75%.
+Where $\hat{N}_0$ is defined as the sum of the sampling weights over the effective sample. In this specific example, we had that $\hat{N}$= 1000, and $\hat{N}_0$= 250. Then $LI$ = 75%.

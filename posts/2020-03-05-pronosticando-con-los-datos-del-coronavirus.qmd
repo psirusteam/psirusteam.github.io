@@ -3,10 +3,9 @@ title: "Pronosticando con los datos del Coronavirus"
 author: "Andrés Gutiérrez"
 date: "2020-03-05"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Visualization"
 ---
-
-Por: Gigi.
 
 Hace poco más de un mes, apareció de la nada (al menos no hay una teoría consensuada de dónde salió). El mundo ha conocido un nuevo enemigo, el [coronavirus](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_outbreak) (COVID-19). Las bolsas de valores esta semana han sido afectadas en gran medida; sin hablar del turismo, la economía y la paranoia generalizada. Los contagiados y fallecidos empezaron a aparecer poco después del 20 de enero. El día 19 de febrero (cuando ya había datos de 31 días consecutivos) pensé en hacer unos pronósticos a ver qué tal resultaban. Específicamente, el objetivo es **pronosticar el número de fallecidos diarios sen China** y_t (no acumulados, sino fallecidos ocurridos diariamente).
 

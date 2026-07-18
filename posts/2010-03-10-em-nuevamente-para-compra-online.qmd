@@ -3,7 +3,8 @@ title: "EM nuevamente para compra online"
 author: "Andrés Gutiérrez"
 date: "2010-03-10"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Sampling"
 ---
 
 [Estrategias de muestreo](../books.qmd) ha tenido gran éxito, la primera impresión se agotó rápidamente y llegó a estar no disponible por un periodo corto en el portal de internet que lo distribuye. Sin embargo, la segunda impresión está disponible nuevamente.

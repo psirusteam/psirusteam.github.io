@@ -3,7 +3,8 @@ title: "Encuesta de prefactibilidad para posgrados en Estadística Aplicada"
 author: "Andrés Gutiérrez"
 date: "2013-05-27"
 categories:
-  - "Estadística"
+  - "Surveys"
+  - "Modeling"
 ---
 
 Después de seis años de prestar servicios a nivel de pregrado, la Facultad de Estadística de la Universidad Santo Tomás (USTA) se propone incursionar en la educación continuada a nivel de posgrados. Esta Facultad está enmarcada en la División de Ciencias Económicas y Administrativas de la USTA y su programa de pregrado tiene un sesgo importante hacia la estadística aplicada.

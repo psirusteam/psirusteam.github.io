@@ -3,7 +3,8 @@ title: "Bradley Efron sobre genes y micro-arreglos… Inferencia a gran escala (
 author: "Andrés Gutiérrez"
 date: "2011-07-12"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Probability"
 ---
 
 **Algoritmos para chequear la significión estadística**

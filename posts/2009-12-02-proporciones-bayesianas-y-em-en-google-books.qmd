@@ -3,7 +3,8 @@ title: "Proporciones bayesianas y EM en Google Books"
 author: "Andrés Gutiérrez"
 date: "2009-12-02"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Publications"
 ---
 
 Una variante de nuestro trabajo acerca de la inferencia bayesiana en el problema de la diferencia de dos proporciones - enfocada en la investigación de mercados (específicamente en pruebas de empaque o *packaging test*) - ha sido publicado por la [Revista de métodos cuantitativos para la economía y la empresa](http://www.upo.es/RevMetCuant/). Esta revista es la única publicación en español que aparece referenciada en el [raking australiano](http://www.austms.org.au/tiki-read_article.php?articleId=31) de revistas de estadística.

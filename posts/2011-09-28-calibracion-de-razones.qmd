@@ -3,7 +3,7 @@ title: "Calibración de razones"
 author: "Andrés Gutiérrez"
 date: "2011-09-28"
 categories:
-  - "Estadística"
+  - "Sampling"
   - "R"
 ---
 

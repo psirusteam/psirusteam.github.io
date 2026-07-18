@@ -3,7 +3,8 @@ title: "¿Efecto causal o simplemente asociación?"
 author: "Andrés Gutiérrez"
 date: "2009-09-29"
 categories:
-  - "Estadística"
+  - "Policy Evaluation"
+  - "Publications"
 ---
 
 Gran alboroto entre la comunidad internacional (como si no tuviéramos suficiente con nuestros vecinos y nuestro papá dictador interno) ha causado la divulgación de un artículo, titulado [Bases, balas y balotas: el efecto de la ayuda militar de EE. UU. en el conflicto político de Colombia](http://www.santafe.edu/~snaidu/papers/090808_bases_bullets_FULL.pdf), escrito por los reconocidos investigadores Oeindrila Dube y Suresh Naiduz del instituo Santafe. La introducción del artículo clama que:

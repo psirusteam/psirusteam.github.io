@@ -3,11 +3,7 @@ title: "My talk in Bogotá - Pvalues: use and abuse"
 author: "Andrés Gutiérrez"
 date: "2016-08-18"
 categories:
-  - "Colombia"
-  - "Education"
-  - "Inferencia"
-  - "Probability"
-  - "Stats"
+  - "Inference"
   - "Teaching"
 ---
 

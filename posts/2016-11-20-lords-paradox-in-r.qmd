@@ -3,8 +3,8 @@ title: "Lord's Paradox in R"
 author: "Andrés Gutiérrez"
 date: "2016-11-20"
 categories:
-  - "Estadística"
   - "R"
+  - "Sampling"
 ---
 
 In an article called A Paradox in the Interpretation of Group Comparisons published in Psychological Bulletin, Lord (1967) made famous the following controversial story:
@@ -29,9 +29,9 @@ For Imbens and Rubin (2015), both are right when it comes to describing the data
 
 Lord's paradox summarizes the analysis of two statisticians who analyze the average weight of some students within a particular university. At the end of the semester (June), the average weight of the men is identical to their average weight at the beginning of that six months (January). This situation also occurs for women. The only difference is that women started the year with a lower average weight (which is evident from their natural contexture). On average, neither men nor women gained or lost weight during the semester.
 
-To perform the simulation, we assumed that both the final weight of the men and the women follow a linear relationship with the original weight. Thus, it is assumed that $ y_{2i}^M = \beta_0^M + \beta_1 y_{1i}^M + \varepsilon_i $ for the weight of women; and $ y_{2i}^H = \beta_0^H + \beta_1 y_{1i}^H + \varepsilon_i $, for the weight of men. Where $ y_{1i}^M $ denotes the weight of the $ i $-th female at the beginning of the semester, and $ y_{2i}^M $ denotes the weight of the $ i $-th female at the end of the semester. The notation for men (H) maintains this logic.
+To perform the simulation, we assumed that both the final weight of the men and the women follow a linear relationship with the original weight. Thus, it is assumed that $y_{2i}^M = \beta_0^M + \beta_1 y_{1i}^M + \varepsilon_i$ for the weight of women; and $y_{2i}^H = \beta_0^H + \beta_1 y_{1i}^H + \varepsilon_i$, for the weight of men. Where $y_{1i}^M$ denotes the weight of the $i$-th female at the beginning of the semester, and $y_{2i}^M$ denotes the weight of the $i$-th female at the end of the semester. The notation for men (H) maintains this logic.
 
-Now, note that from their natural contexture, men must have greater weight than women. Suppose that on average the weight of men is equal to that of women plus a constant $ c $. In addition, the mean weight in both groups is identical in both times. Then, we have $\bar{y}^M = \beta_0^M + \beta_1 \bar{y}^M $ and that $\bar{y}^H = \beta_0^H + \beta_1 \bar{y}^H = \beta_0^H + \beta_1 (\bar{y}^M + c). $ Hence, after some algebra, we have that $\beta_0^M = (1 - \beta_1) \bar{y}^M $ and $\beta_0^H = \bar{y}^H - \beta_1 (\bar{y}^M + c)$.
+Now, note that from their natural contexture, men must have greater weight than women. Suppose that on average the weight of men is equal to that of women plus a constant $c$. In addition, the mean weight in both groups is identical in both times. Then, we have $\bar{y}^M = \beta_0^M + \beta_1 \bar{y}^M$ and that $\bar{y}^H = \beta_0^H + \beta_1 \bar{y}^H = \beta_0^H + \beta_1 (\bar{y}^M + c).$ Hence, after some algebra, we have that $\beta_0^M = (1 - \beta_1) \bar{y}^M$ and $\beta_0^H = \bar{y}^H - \beta_1 (\bar{y}^M + c)$.
 
 The following code replicates a set of data that follows the relationship proposed by Lord.
 

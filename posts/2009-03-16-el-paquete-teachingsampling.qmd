@@ -3,7 +3,8 @@ title: "El paquete TeachingSampling"
 author: "Andrés Gutiérrez"
 date: "2009-03-16"
 categories:
-  - "Estadística"
+  - "R"
+  - "Sampling"
 ---
 
 *¡Ojalá él estuviera aquí! Seguro que se sentiría muy feliz al saber que unos de nuestros sueños se ha cumplido…*

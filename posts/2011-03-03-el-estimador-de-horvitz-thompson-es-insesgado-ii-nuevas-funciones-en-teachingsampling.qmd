@@ -3,8 +3,8 @@ title: "El estimador de Horvitz-Thompson es insesgado II (nuevas funciones en Te
 author: "Andrés Gutiérrez"
 date: "2011-03-03"
 categories:
-  - "Estadística"
-  - "R"
+  - "Sampling"
+  - "Inference"
 ---
 
 En una entrada anterior mostraba, con la ayuda del paquete TeachingSampling, que efectivamente, el estimador de Horvitz-Thompson es insesgado incluso en diseños con reemplazo. Bien, a petición del público y dados los buenos resultados de mis estudiantes en mi cátedra de muestreo, hoy voy a mostrar que este mismo estimador es insesgado en diseños de tamaño de muestra aleatorio. Por supuesto que no hay nada escondido detrás del funcionamiento de este estimador. Pero mi experiencia docente me ha mostrado que es mucho mejor aclarar todos los diversos escenarios de las muestras. Una vez más, es un deber del docente plasmar e ilustrar en estos escenarios el comportamiento del estimador puesto que es muy fácil llegar a conclusiones erradas. Se ilustrarán algunas nuevas funciones del paquete TeachingSampling en su versión 2.0.1 para ilustrar el ejemplo.

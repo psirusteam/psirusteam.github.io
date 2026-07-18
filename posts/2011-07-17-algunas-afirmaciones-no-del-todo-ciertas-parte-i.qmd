@@ -3,7 +3,8 @@ title: "Algunas afirmaciones no del todo ciertas (parte I)"
 author: "Andrés Gutiérrez"
 date: "2011-07-17"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Inference"
 ---
 
 En muchas ocasiones, debido a mi trabajo, reviso, evalúo y audito muchas propuestas de metodologías de encuestas que abordan una determinada problemática. Me he encontrado con algunas afirmaciones que si bien, pueden llegar a ser ciertas bajo el debido contexto, son utilizadas como clichés y relleno en la propuesta metodológicas. A continuación tres de ellas:

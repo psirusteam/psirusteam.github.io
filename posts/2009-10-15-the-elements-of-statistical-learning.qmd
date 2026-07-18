@@ -3,7 +3,8 @@ title: "The elements of statistical learning"
 author: "Andrés Gutiérrez"
 date: "2009-10-15"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Inference"
 ---
 
 Con gran sorpresa me enteré que el libro The elements of statistical learning de Trevor Hastie, Robert Tibshirani y Jerome Friedman [se encuentra disponible de manera gratuita](http://www-stat.stanford.edu/~tibs/ElemStatLearn//). Este libro trata de minería de datos, inferencia y predicción estadística. en palabras de los autores:

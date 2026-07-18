@@ -3,7 +3,8 @@ title: "Vamos a participar... \"chévere si un colombiano se lo gana\""
 author: "Andrés Gutiérrez"
 date: "2011-01-28"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Bayesian Statistics"
 ---
 
 En la actualidad existen muchos eventos de caracter internacional que reunen periódicamente a la comunidad estadística internacional. No, espere... No le voy a hacer propaganda al [Second Workshop on Applied Statistics](2011-01-19-programacion-del-workshop-en-estadistica-bayesiana-bogota-colombia.qmd) organizado por la [Facultad de Estadística](http://www.usta.edu.co/index.php?option=com_content&view=article&id=66) de la Universidad Santo Tomás, y patrocinado por la [International Association of Survey Statisticians](https://web.archive.org/web/20190607032949/http://isi.cbs.nl/iass/allUK.htm), que tendrá lugar desde el 3 de febrero en Bogotá. No, de ninguna manera, esta vez quisiera divulgar por este medio las posibilidades existes para ser partícipes de los dos más importantes encuentros internacionales, según mi humilde parecer, en materia de estadística. Se trata de la 58 versión del ISI World Statistics Congress, que se llevará a cabo en Dublin (Irlanda), y de las Joint Statistical Meetings, que tendrán lugar en Miami (EE. UU.).

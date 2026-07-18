@@ -3,9 +3,7 @@ title: "Small Area Estimation 101"
 author: "Andrés Gutiérrez"
 date: "2017-04-17"
 categories:
-  - "Estadística"
   - "Modeling"
-  - "R"
   - "Sampling"
 ---
 
@@ -27,7 +25,7 @@ This code will not produce any small area estimation, but it will help to introd
 
 $$ t_{y, d} = \sum_{k \in U_d} y_k $$
 
-Where $ t_{y, d}$ denotes the total income of the $ d $-th county, $ y_k $ is the income of the $ k $-th company belonging the $ d $-th county. The whole population of companies into the county is noted by $ U_d $. Thus, this code computes the total income for each county along with the number of companies belonging each county. Finally, this parameters are saved in a new database named **Results**.
+Where $t_{y, d}$ denotes the total income of the $d$-th county, $y_k$ is the income of the $k$-th company belonging the $d$-th county. The whole population of companies into the county is noted by $U_d$. Thus, this code computes the total income for each county along with the number of companies belonging each county. Finally, this parameters are saved in a new database named **Results**.
 
 ```
 #############################

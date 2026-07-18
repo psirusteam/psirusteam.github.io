@@ -3,8 +3,8 @@ title: "¿Cómo hicimos el #PredictiveFIFA2014?"
 author: "Andrés Gutiérrez"
 date: "2014-05-30"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Modeling"
+  - "Inference"
 ---
 
 https://soundcloud.com/ustadistica-u-santo-tomas/predicciones-mundial-de-futbol-2014

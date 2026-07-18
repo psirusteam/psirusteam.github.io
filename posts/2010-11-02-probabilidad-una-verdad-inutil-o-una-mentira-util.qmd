@@ -3,7 +3,8 @@ title: "Probabilidad… ¿una verdad inútil o una mentira útil?"
 author: "Andrés Gutiérrez"
 date: "2010-11-02"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Community and Events"
 ---
 
 En la última charla que sostuve con el profe Jorge, él me hacía los siguientes comentarios que me hicieron ver un poquito más allá de lo que inicialmente entendía. Se trata acerca de la probabilidad frecuentista y recalco que esta entrada no pretende otra cosa que profundizar un poco más en el concepto de esta valiosa herramienta matemática. Espero poder expresarme en estas cortas líneas con la misma sencillez que caracteriza al profe Jorge.

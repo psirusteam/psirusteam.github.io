@@ -3,5 +3,7 @@ title: "Escribiendo emails"
 author: "Andrés Gutiérrez"
 date: "2011-03-31"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
+

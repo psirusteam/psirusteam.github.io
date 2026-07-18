@@ -3,9 +3,8 @@ title: "Write this code on Mac's Terminal if you have R issues with spanish acce
 author: "Andrés Gutiérrez"
 date: "2014-03-25"
 categories:
-  - "Estadística"
   - "R"
-  - "Stats"
+  - "Software"
 ---
 
 If you are writing in spanish inside R for MAC, maybe you will face an encoding issue when you type particular symbols as: ñ, á, é, í, ó, ú, etc. You can stop suffering by typing the following command on your terminal:

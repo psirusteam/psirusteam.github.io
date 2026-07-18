@@ -157,7 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Una generalización de las medias</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">Software</div>
   </div>
   </div>
 
@@ -187,10 +188,15 @@ window.Quarto = {
 </header>
 
 
-<p>Jhon Cook trae a colación el siguiente resultado que generaliza algunas de las medidas más utilizadas en estadística. Sea <span class="math inline">\(\mathbf{x}=(x_1, \ldots, x_n)\)</span> un vector de $ n $ números reales no negativos. Se define, para $ r $, $ M_r()$ como</p>
-<p>$ M_r()=( _{i=1}<sup>nx_i</sup>rright)^{1/r}. $</p>
-<p>Entonces, la media aritmética, harmónica y geométrica corresponden a $ M_1$, $ M_0$ y $ M_{-1}$. Si se define $ M_{}$ como el límite cuando $ r $ tiende a <span class="math inline">\({\infty}\)</span> y, similarmente, se define $ M_{-}$ como el límite cuando $ r $ tiende a $-$, entonces $ M_{}=(x_1, , x_n)$ y $ M_{-}=(x_1, , x_n)$.</p>
-<p>Además se tiene el siguiente resultado: Si $ r $ M_r()=(_{i=1}^n x_i<sup>rright)</sup>{1/r}. $</p>
+<p>Jhon Cook trae a colación el siguiente resultado que generaliza algunas de las medidas más utilizadas en estadística. Sea <span class="math inline">\(\mathbf{x}=(x_1, \ldots, x_n)\)</span> un vector de <span class="math inline">\(n\)</span> números reales no negativos. Se define, para <span class="math inline">\(r \neq 0\)</span>, <span class="math inline">\(M_r(\mathbf{x})\)</span> como</p>
+<p><span class="math display">\[
+M_r(\mathbf{x})=\left(\frac{1}{n}\sum_{i=1}^n x_i^r\right)^{1/r}.
+\]</span></p>
+<p>Entonces, la media aritmética, harmónica y geométrica corresponden a <span class="math inline">\(M_1\)</span>, <span class="math inline">\(M_0\)</span> y <span class="math inline">\(M_{-1}\)</span>. Si se define <span class="math inline">\(M_{\infty}\)</span> como el límite cuando <span class="math inline">\(r\)</span> tiende a <span class="math inline">\({\infty}\)</span> y, similarmente, se define <span class="math inline">\(M_{-\infty}\)</span> como el límite cuando <span class="math inline">\(r\)</span> tiende a <span class="math inline">\(-\infty\)</span>, entonces <span class="math inline">\(M_{\infty}=\max(x_1, \ldots, x_n)\)</span> y <span class="math inline">\(M_{-\infty}=\min(x_1, \ldots, x_n)\)</span>.</p>
+<p>Además se tiene el siguiente resultado: si <span class="math inline">\(p_i&gt;0\)</span> y <span class="math inline">\(\sum_{i=1}^n p_i=1\)</span>, entonces</p>
+<p><span class="math display">\[
+M_r(\mathbf{x})=\left(\sum_{i=1}^n p_i x_i^r\right)^{1/r}.
+\]</span></p>
 
 
 

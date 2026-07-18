@@ -3,7 +3,8 @@ title: "TeachingSampling package updated"
 author: "Andrés Gutiérrez"
 date: "2010-03-12"
 categories:
-  - "Estadística"
+  - "R"
+  - "Sampling"
 ---
 
 Now it is available the latest version (v. 1.4.9) of the TeachingSampling package. Many colleagues, students and different people (both national and international) have contributed greatly to the development of this package. Although, I must admit that there are still some things that must be adjusted (such as the English grammar in the manual of the package), this entry is dedicated to realize some of these developments that have occurred since the first version (v. 0.7.6).

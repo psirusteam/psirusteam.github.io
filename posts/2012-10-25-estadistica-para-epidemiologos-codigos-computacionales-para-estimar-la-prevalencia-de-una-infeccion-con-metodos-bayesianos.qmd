@@ -3,8 +3,8 @@ title: "(Estadística para epidemiólogos) Códigos computacionales para estimar
 author: "Andrés Gutiérrez"
 date: "2012-10-25"
 categories:
-  - "Estadística"
-  - "R"
+  - "Bayesian Statistics"
+  - "Software"
 ---
 
 [En una entrada anterior](2012-09-25-estadistica-para-epidemiologos-estimando-la-prevalencia-de-una-infeccion-con-metodos-bayesianos.qmd) se describió la teoría Bayesiana sobre la cual descansa la inferencia conjunta de la sensibilidad y especificidad de una prueba diagnóstica y de la prevalencia de la infección. En esta entrada se discuten dos aproximaciones computacionales a este problema. La primera soportada en la plataforma WinBUGS, que realiza los procesos de Monte Carlo de forma automática. La segunda, sustentada en R, en donde el muestreo de Gibbs se realiza de forma "manual". A continuación encuentra el código en WinBUGS:

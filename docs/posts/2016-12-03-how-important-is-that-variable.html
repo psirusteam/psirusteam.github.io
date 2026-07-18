@@ -157,7 +157,7 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">How important is that variable?</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Modeling</div>
     <div class="quarto-category">R</div>
   </div>
   </div>
@@ -191,9 +191,9 @@ window.Quarto = {
 <p>When modeling any phenomena by including explanatory variables that highly relates the variable of interest, one question arises: which of the auxiliary variables have a higher influence on the response? I am not writing about significance testing or something like this. I am just thinking like a researcher who wants to know the ranking of variables that influence the response and their related weight.</p>
 <p>There are a variety of methods that try to answer that question. The one inducing this thread is very simple: <strong>isolate units from variables</strong>. Assume a linear model with the following structure (for the sake of simplicity, assume only two explanatory variables):</p>
 <p><span class="math display">\[ y = \beta_1 x_1 + \beta_2 x_2 + \varepsilon \]</span></p>
-<p>If you assume this model as true and <span class="math inline">\(\beta_i &gt; 0\)</span>, then the influence of variable $ x_i $, over response $ y $ could be found when isolating measure units from variables. Then, one could fit a model over the standardized variables (explanatory and response) and then directly comparing the regression coefficients. Another way to do this is by means of the following expression:</p>
+<p>If you assume this model as true and <span class="math inline">\(\beta_i &gt; 0\)</span>, then the influence of variable <span class="math inline">\(x_i\)</span>, over response <span class="math inline">\(y\)</span> could be found when isolating measure units from variables. Then, one could fit a model over the standardized variables (explanatory and response) and then directly comparing the regression coefficients. Another way to do this is by means of the following expression:</p>
 <p><span class="math display">\[ I(i) = \frac{\beta_i}{sd(\beta_i)} = \beta_i\frac{ sd(x_i)}{sd(y)}\]</span></p>
-<p>For example, let’s consider the following model $ y = -500 x_1 + 50 x_2 + $, then the relative importance of the first and second variable is around 500/(500+50) = 0.9, and 50/(500+50) = 0.1, respectively. The following code shows how to perform this simple analysis in R.</p>
+<p>For example, let’s consider the following model <span class="math inline">\(y = -500 x_1 + 50 x_2 + \varepsilon\)</span>, then the relative importance of the first and second variable is around 500/(500+50) = 0.9, and 50/(500+50) = 0.1, respectively. The following code shows how to perform this simple analysis in R.</p>
 <pre><code>n &lt;- 10000
 
 x1 &lt;- runif(n)

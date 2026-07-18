@@ -163,7 +163,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title">
 <h1 class="title">IRT classic anchoring with R functions</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
     <div class="quarto-category">IRT</div>
     <div class="quarto-category">R</div>
   </div>
@@ -227,8 +226,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>LSAT<span class="fl">.0</span> <span class="ot">&lt;-</span> LSAT[<span class="dv">1</span><span class="sc">:</span>N,]</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>fit<span class="fl">.0</span> <span class="ot">&lt;-</span> <span class="fu">mirt</span>(LSAT<span class="fl">.0</span>, <span class="dv">1</span>, <span class="at">itemtype =</span> <span class="st">'2PL'</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>coef.fit<span class="fl">.0</span> <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit<span class="fl">.0</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">#coef.fit.0 &lt;- coef(fit.0, IRTpars = TRUE, simplify = TRUE)$items[, c(1, 2)]</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>coef.fit<span class="fl">.0</span> <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit<span class="fl">.0</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)\<span class="sc">$</span>items</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">#coef.fit.0 &lt;- coef(fit.0, IRTpars = TRUE, simplify = TRUE)\$items[, c(1, 2)]</span></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Mean/sigma </span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>z0 <span class="ot">&lt;-</span> <span class="fu">fscores</span>(fit<span class="fl">.0</span>)</span>
@@ -248,10 +247,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>sv <span class="ot">&lt;-</span> <span class="fu">mirt</span>(LSAT<span class="fl">.0</span>, <span class="dv">1</span>, <span class="at">itemtype =</span> <span class="st">'2PL'</span>, <span class="at">pars =</span> <span class="st">'values'</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#custom discrimination, easiness, and guessing values</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>sv<span class="sc">$</span>value[sv<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'a1'</span>] <span class="ot">&lt;-</span> coef.fit<span class="fl">.0</span>[,<span class="dv">1</span>]</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>sv<span class="sc">$</span>value[sv<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'d'</span>] <span class="ot">&lt;-</span> coef.fit<span class="fl">.0</span>[,<span class="dv">2</span>]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>sv\<span class="sc">$</span>value[sv\<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'a1'</span>] <span class="ot">&lt;-</span> coef.fit<span class="fl">.0</span>[,<span class="dv">1</span>]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>sv\<span class="sc">$</span>value[sv\<span class="sc">$</span>name <span class="sc">==</span> <span class="st">'d'</span>] <span class="ot">&lt;-</span> coef.fit<span class="fl">.0</span>[,<span class="dv">2</span>]</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#set the parameters as fixed</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>sv<span class="sc">$</span>est <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>sv\<span class="sc">$</span>est <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </blockquote>
 <p>Finally, you estimate abilities in the follow-up while fixing the item parameters. Note that the coefficients (item parameters) for both models [fitted in the baseline and in the follow-up] are exactly the same. Now you can compare means because the scores are in the same scale.</p>
 <blockquote class="blockquote">
@@ -261,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>LSAT<span class="fl">.1</span> <span class="ot">&lt;-</span> LSAT[(N <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span><span class="dv">1000</span>,]</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>fit<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">mirt</span>(LSAT<span class="fl">.1</span>, <span class="dv">1</span>, <span class="at">pars =</span> sv)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>coef.fit<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit<span class="fl">.1</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>items</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>coef.fit<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit<span class="fl">.1</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)\<span class="sc">$</span>items</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>coef.fit<span class="fl">.0</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>coef.fit<span class="fl">.1</span></span>

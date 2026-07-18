@@ -157,7 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">Las medias de Chisini (Parte 1)</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Teaching</div>
+    <div class="quarto-category">Publications</div>
   </div>
   </div>
 
@@ -189,12 +190,12 @@ window.Quarto = {
 
 <p>Empecemos este año con una gran revelación… El promedio aritmético no es la única media disponible en los estantes de mercado de la tienda estadística. Estoy seguro que la mayoría de lectores ha oído de la media geométrica o de la harmónica. De la misma manera, estoy seguro que a muy pocos les enseñaron de dónde venían tales esperpentos, y muy pocos saben cuándo usar una o cuándo usar la otra. Oscar Chisini en 1992 presentó un enfoque que, según Graziani y Veronesse (2009, TAS), ayuda a los estudiantes a entender el espíritu del problema al cual se enfrentan al escoger una media y no requiere una lista de fórmulas desesperadas en algún libro de texto.</p>
 <p>En primer lugar, Chisini argumenta que el requisito fundamental de una media es el requisito de invariancia con respecto a los valores originales; es decir, si reemplazamos todas las observaciones por la media, el resultado debe ser el mismo. En símbolos, una media es el número <span class="math inline">\(\bar{x}\)</span> tal que, para alguna función <em>f</em>, cumple lo siguiente:</p>
-<p>$ f({x}, , {x} )=f(x_1, , x_n)$</p>
+<p><span class="math inline">\(f(\bar{x}, \ldots, \bar{x} )=f(x_1, \ldots, x_n)\)</span></p>
 <p>De esta manera, para un conjunto de observaciones, no necesariamente existe una única solución a la anterior ecuación. La definición de la media de Chisini considera algunas restricciones sobre la función K, para que el número resultante sea único. Luego, <span class="math inline">\(\bar{x}\)</span>, la media de Chisini, se obtiene de la siguiente manera</p>
 <p><span class="math inline">\(\bar{x}=\phi^{-1}(f(x_1, \ldots, x_n))\)</span></p>
 <p>Donde <span class="math inline">\(\phi(x)=f(x, \ldots, x)\)</span>. Consideremos un ejemplo particular. Sea</p>
-<p>$ f=_{i=1}^nw_i x_i $</p>
-<p>En donde los pesos w_i son constantes no negativas. Para este caso, $=_{i=1}^n w_i x $ (una función continua y estrictamente creciente). Entonces la media de Chisini es ()</p>
+<p><span class="math inline">\(f=\sum_{i=1}^nw_i x_i\)</span></p>
+<p>En donde los pesos w_i son constantes no negativas. Para este caso, <span class="math inline">\(\phi=\sum_{i=1}^n w_i x\)</span> (una función continua y estrictamente creciente). Entonces la media de Chisini es ()</p>
 <p><span class="math inline">\(\bar{x}=\phi^{-1}(f(x_1, \ldots, x_n))= \phi^{-1} (\sum_{i=1}^n x_i)=\frac{\sum_{i=1}^nw_i x_i }{\sum_{i=1}^nw_i }\)</span></p>
 <p>Por lo tanto para cada <em>f</em>, correctamente definida, existirá una media. Luego, si cambia la función <em>f</em>, también cambiará la forma funcional de la media. En la siguiente tabla se puede observar algunas funciones con sus respectivas medias de Chisini, entre las cuales se encuentran la media aritmética, la media geométrica y la media harmónica.</p>
 

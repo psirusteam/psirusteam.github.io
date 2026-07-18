@@ -3,28 +3,29 @@ title: "La distribución predictiva en WinBUGS"
 author: "Andrés Gutiérrez"
 date: "2012-10-21"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Bayesian Statistics"
 ---
 
 A la hora de modelar un conjunto de datos, uno de los intereses principales del investigador, no sólo está en encontrar la esperanza (o la esperanza condicional, si hay covariables y otros parámetros) de las variables aleatorias, sino también encontrar la distribución condicional de nuevos datos en el modelo para realizar un proceso de predicción.
 
 El ejemplo más claro que se me ocurre es en inferencia de poblaciones finitas. Por ejemplo, nótese que un total poblacional (y tomando como medida de probabilidad la distribución de los datos ignorando el mecanismo de selección de la muestra) se puede escribir de la siguiente forma:
 
-$ T=\sum_{k in s}Y_k+\sum_{k notin s}Y_k $
+$T=\sum_{k \in s}Y_k+\sum_{k \notin s}Y_k$
 
 Por supuesto, acá se supone que T es una variable aleatoria y por lo tanto, una realización de T será:
 
-$ t=\sum_{k in s}y_k+\sum_{k notin s}y_k $
+$t=\sum_{k \in s}y_k+\sum_{k \notin s}y_k$
 
 Entonces, después de la recolección de la muestra, el primer sumando será una cantidad conocida pero la segunda parte seguirá desconocida y deberá predecirse dependiendo del modelo que se haya considerado. Es aquí donde entra la distribución predictiva. Desde el punto de vista Bayesiano, cuando esta se define, es posible simular los valores de la segunda parte de la suma y con esto obtener una predicción del total poblacional. Por el lado frecuentista, es posible obtener una estadística pivote para encontrar la probabilidad de que una nueva observación se encuentre dentro de un intervalo específico. En ambos escenarios lo que uno esperaría es que los intervalos de predicción fuesen más anchos que los intervalos de credibilidad o de confianza.
 
 La función de distribución predictiva está definida por la siguiente integral (no trivial en la mayoría de los casos):
 
-$ p(y|bold{Y})=\int_{\theta} p(y|\theta) p(\theta|bold{Y})$
+$p(y\mid\mathbf{Y})=\int_{\theta} p(y\mid\theta) p(\theta\mid\mathbf{Y})$
 
-Sin embargo, esta integral se puede ver como una esperanza condicional de la función de $ p(y|\theta)$. Es decir,
+Sin embargo, esta integral se puede ver como una esperanza condicional de la función de $p(y\mid\theta)$. Es decir,
 
-$ p(y|bold{Y})=\E_{\theta|bold{Y}}( p(y|\theta))\approx \frac{\sum_i p(y|\theta_i)}{N}$
+$p(y\mid\mathbf{Y})=\mathbb{E}_{\theta\mid\mathbf{Y}}(p(y\mid\theta))\approx \frac{\sum_i p(y\mid\theta_i)}{N}$
 
 Lo anterior permite aproximar esta distribución usando métodos MCMC y evadir el cálculo analítico, que muchas veces es intratable. Este procedimiento se enuncia a continuación:
 

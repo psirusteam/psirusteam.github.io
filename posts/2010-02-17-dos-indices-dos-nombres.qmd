@@ -3,7 +3,8 @@ title: "Dos índices, dos nombres..."
 author: "Andrés Gutiérrez"
 date: "2010-02-17"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Publications"
 ---
 
 1. ¿Qué nombre le pondría usted a un libro con [este índice](http://predictive.files.wordpress.com/2010/02/libro_teoria_contenido.pdf)?

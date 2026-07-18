@@ -3,14 +3,13 @@ title: "Selecting a Real Sample for Electoral Studies"
 author: "Andrés Gutiérrez"
 date: "2014-11-15"
 categories:
-  - "Colombia"
-  - "Estadística"
   - "R"
+  - "Elections"
 ---
 
 What is the sample size required to achieve a particular margin of error in electoral studies? Professor [Leonardo Bautista found](http://www.emis.de/journals/RCE/V28/V28_1_39Bautista.pdf) that at least 15.000 people should be interviewed, distributed in 6.200 blocks, 80 municipalities and 4 strata. That is a lot of people! — In average, 188 persons per municipality. — Now, do the math. If a single (face to face) interview cost US 40 (in average), then the total cost of the survey should be around US 600.000. That's a lot of money!
 
-Now, in order to explain this sample size approach, we could make some basic computations in R, by using my new still-in-construction package: [samplesize4surveys](http://cran.r-project.org/web/packages/samplesize4surveys/index.html). In particular, we could estimate the Kish design-effect (DEFF) in a multi-stage sampling design (assuming that 1) the variance estimator works well at the municipality level and 2) the total number of voters is know). This way, by using micro-data from the last presidential election in Colombia, the adjusted Intraclass Correlation Coefficient (ICC) for the winner (Santos) is 0.069. Remember that $ DEFF \approx 1+(M-1)\rho $.
+Now, in order to explain this sample size approach, we could make some basic computations in R, by using my new still-in-construction package: [samplesize4surveys](http://cran.r-project.org/web/packages/samplesize4surveys/index.html). In particular, we could estimate the Kish design-effect (DEFF) in a multi-stage sampling design (assuming that 1) the variance estimator works well at the municipality level and 2) the total number of voters is know). This way, by using micro-data from the last presidential election in Colombia, the adjusted Intraclass Correlation Coefficient (ICC) for the winner (Santos) is 0.069. Remember that $DEFF \approx 1+(M-1)\rho$.
 
 Where M is defined to be the average number of interviews per municipality. Firstly, you must call the necessary packages for this to work. Also, you must download the [micro-data](https://www.dropbox.com/s/i5ok3hiaiwhlk5m/VotaPer. Rdata) and the [aggregated municipality data](https://www.dropbox.com/s/fyopzvq5l3gkdna/VotaMuni. Rdata).
 

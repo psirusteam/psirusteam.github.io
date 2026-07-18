@@ -3,7 +3,8 @@ title: "My talk in Sincelejo - Small area estimation and multiple imputation"
 author: "Andrés Gutiérrez"
 date: "2016-08-09"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Community and Events"
 ---
 
 [My second talk in Sincelejo](https://drive.google.com/open?id=0ByzoHkgSB8F3alhNUFpHdzNQNFk) deals with fascinating topics: Statistical methods in education in conjunction with sample surveys and small area estimation. I am leading this research since last year, and the results are very consistent.

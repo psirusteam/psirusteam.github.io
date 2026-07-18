@@ -3,7 +3,7 @@ title: "3PL models viewed through the lens of total probability theorem (updated
 author: "Andrés Gutiérrez"
 date: "2017-01-01"
 categories:
-  - "Estadística"
+  - "IRT"
   - "R"
 ---
 

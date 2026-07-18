@@ -3,7 +3,8 @@ title: "¡Pitágoras bruto!"
 author: "Andrés Gutiérrez"
 date: "2009-04-07"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Publications"
 ---
 
 En esta semana de reflexión les dejo este mensaje [anónimo](https://web.archive.org/web/20090414025650/http://predictive.wordpress.com/2008/08/27/nueva-revista-de-estadistica/#comments) que llegó a mi correo electrónico… En verdad me ha hecho pensar mucho… ahí les va:
@@ -71,7 +72,7 @@ En esta semana de reflexión les dejo este mensaje [anónimo](https://web.archiv
 > Con un ajuste del 98% he descubierto que
 >
 >
-> $\hat{Y}=-40.91+4.54X+12.36Z $
+> $\hat{Y}=-40.91+4.54X+12.36Z$
 >
 >
 > Que nadie me diga que mi modelo no está bien. Bueno, queridos "colegas"… [voy a patentar](https://web.archive.org/web/20090206234717/http://predictive.wordpress.com/2008/07/06/patentes-bayesianas/) esto… Adios.

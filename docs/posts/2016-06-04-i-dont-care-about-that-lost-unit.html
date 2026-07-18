@@ -157,9 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">I don’t care about that lost unit</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
-    <div class="quarto-category">R</div>
     <div class="quarto-category">Sampling</div>
+    <div class="quarto-category">R</div>
   </div>
   </div>
 
@@ -193,7 +192,7 @@ window.Quarto = {
 <p>Don’t they look the same? Maybe. However, if you consider sampling weights you will rapidly change your mind. You already must know that a particular unit belongs to the selected sample by means of a sampling algorithm that follows certain probability distribution defined by a vector of inclusion probabilities. Let’s suppose that the lost unit we were talking about is the one with the lowest inclusion probability. That way, that unit has the higher sampling weight. So, that single unit matters and matters a lot. Consider the following figure.</p>
 <p>The figure shows the same scatter plot. However, this time I have weighted the plot by the sampling weights of the units in the original sample. So, next time you face an issue of nonresponse think twice about ignoring it. You always have to compute how much information are you losing. An easy way to do that is by using the lost information index (LI) defined as:</p>
 <p><span class="math display">\[ LI = \frac{\hat{N} - \hat{N}_0}{\hat{N}}\]</span></p>
-<p>Where <span class="math inline">\(\hat{N}_0\)</span> is defined as the sum of the sampling weights over the effective sample. In this specific example, we had that <span class="math inline">\(\hat{N}\)</span> = 1000, and <span class="math inline">\(\hat{N}_0\)</span> = 250. Then $ LI $ = 75%.</p>
+<p>Where <span class="math inline">\(\hat{N}_0\)</span> is defined as the sum of the sampling weights over the effective sample. In this specific example, we had that <span class="math inline">\(\hat{N}\)</span>= 1000, and <span class="math inline">\(\hat{N}_0\)</span>= 250. Then <span class="math inline">\(LI\)</span> = 75%.</p>
 
 
 

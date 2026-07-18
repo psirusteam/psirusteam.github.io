@@ -3,7 +3,8 @@ title: "My talks in Medellín"
 author: "Andrés Gutiérrez"
 date: "2009-07-21"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Community and Events"
 ---
 
 El XIX simposio de estadìstica acaba de culminar con un rotundo éxito. Tuve la oportunidad de viajar y participar en este evento con investigaciones involucradas específicamente en mis áreas de interés: Muestreo e Inferencia Bayesiana.

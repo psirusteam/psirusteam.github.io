@@ -3,11 +3,12 @@ title: "Simulación de observaciones"
 author: "Andrés Gutiérrez"
 date: "2010-01-23"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Bayesian Statistics"
 ---
 
 Han sido varios los comentarios acerca del método de la grilla descrito en una [entrada anterior](2009-05-26-super-armamento-y-municion-para-la-generacion-de-datos.qmd)… Sin embargo, he vuelto a leer lo que escribí y me di cuenta que jamás mencioné cómo simular datos de la distribución horrible que aparecía en esa entrada, cuya forma funcional era más o menos la siguiente:
 
-$ p(\theta) propto \sum_{j=1}^p \left(\frac{1}{\sigma^2_j+\tau^2}\right) \prod_{j=1}^p(\sigma^2_j+\tau^2)^{1/2}expleft( -\frac{(y_j-\mu)^2}{2\sigma^2_j+\tau^2}\right)$
+$p(\theta) \propto \sum_{j=1}^p \left(\frac{1}{\sigma^2_j+\tau^2}\right) \prod_{j=1}^p(\sigma^2_j+\tau^2)^{1/2}\exp\left( -\frac{(y_j-\mu)^2}{2\sigma^2_j+\tau^2}\right)$
 
 Lo único que se dijo en ese entonces estaba relacionado con un resumen del método de la grilla (super armamento) y su aplicación a una distribución (munición) exponencial. No sé que me pasó, porque en realidad lo valioso del método es poder simular con distribuciones horribles como la de arriba y no con distribuciones fáciles como la exponencial… En fin, en [este documento](http://predictive.files.wordpress.com/2010/01/librobayes_grilla.pdf) encontrarán (extracto del nuevo libro) la implementación del método de la grilla en el ambiente computacional de R. Por supuesto el objetivo cumplido es la simulación de datos de esa distribución horrible.

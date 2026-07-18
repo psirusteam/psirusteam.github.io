@@ -3,7 +3,8 @@ title: "La curtosis, una medida ampliamente conocida pero malinterpretada…."
 author: "Andrés Gutiérrez"
 date: "2010-02-12"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Probability"
 ---
 
 La curtosis es uno de los conceptos peor comprendidos no solamente por estadísticos sino por los distintos profesionales que son usuarios de la estadística. Es casi imposible encontrar un libro (sea introductorio o avanzado) que se tome la molestia de hacer un alto en el camino y tratar de aclarar que es lo que significa exactamente esta medida. Usualmente los libros introductorios reducen la curtosis a una simple medida que da cuente de que tan apuntada o plana es una distribución sin tener en cuenta las colas o valores atípicos que tienen una gran influencia en el cálculo de esta medida.

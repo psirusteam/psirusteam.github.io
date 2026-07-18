@@ -3,7 +3,8 @@ title: "Estadísticos de la UN celebraron primer día mundial"
 author: "Andrés Gutiérrez"
 date: "2010-10-22"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 El profe Jorge Ortiz, docente de la Universidad Santo Tomás hizo presencia en este evento.

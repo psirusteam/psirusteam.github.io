@@ -3,7 +3,8 @@ title: "Una vez más, la causalidad en el campo político colombiano"
 author: "Andrés Gutiérrez"
 date: "2009-12-02"
 categories:
-  - "Estadística"
+  - "Policy Evaluation"
+  - "Publications"
 ---
 
 El periódico El Espectador ha publicado una columna llamada <<[una cooperación contraproducente](http://www.elespectador.com/impreso/internacional/articuloimpreso175299-una-cooperacion-contraproducente?page=0,0)>> concerniente a una investigación que ha generado revuelo internacional y que ha sido materia de discusión en dos ocasiones en este blog. El columnista introduce al lector descuidado con las siguientes palabras:

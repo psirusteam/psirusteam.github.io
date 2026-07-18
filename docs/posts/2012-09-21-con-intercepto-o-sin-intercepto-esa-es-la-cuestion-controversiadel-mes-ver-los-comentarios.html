@@ -157,7 +157,8 @@ window.Quarto = {
 <div class="quarto-title">
 <h1 class="title">¿Con intercepto o sin intercepto? ¡Esa es la cuestión! (controversiadel mes… ver los comentarios)</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Modeling</div>
+    <div class="quarto-category">Probability</div>
   </div>
   </div>
 
@@ -196,25 +197,25 @@ window.Quarto = {
 <li><p>La variable explicativa <em>X</em> también es continua: este es el caso clásico de una regresión lineal, donde al incluir el intercepto, estamos asumiendo que cuando <em>X</em> toma el valor 0, el valor de Y no es 0, y corresponde a la estimación del intercepto. Mientas que al excluir el intercepto, estamos exigiendo que el valor de Y sea 0 cuando <em>X</em> sea 0. De esta forma la inclusión o exclusión del intercepto, en muchos casos, depende de la naturaleza y la interpretación de las variables.</p></li>
 <li><p>Cuando la variable explicativa <em>X</em> es categórica, y sin pérdida de generalidad al asumimos como dicotómica (de dos niveles): en este caso, al ajustar una línea de regresión incluyendo el intercepto, se crea una variable <em>Dummy</em> que representa el primer nivel de la variable <em>X</em>, y el modelo queda definido como</p></li>
 </ul>
-<p>$ Y_i=_0+_1 D1_i+_i $</p>
+<p><span class="math inline">\(Y_i=\beta_0+\beta_1 D1_i+\varepsilon_i\)</span></p>
 <p>Donde <em>D1</em> toma el valor 1 para los individuos que se encuentran en el primer nivel de<em>X</em> y toma el valor 0 para los demás individuos. En este caso, la interpretación de este modelo es como sigue: Para los individuos del nivel 1 de <em>X</em>, la esperanza de <em>Y</em> está dada por <span class="math inline">\(\beta_0+\beta_1\)</span>. Para los individuos del nivel 2 de <em>X</em>, la esperanza de <em>Y</em> está dada por <span class="math inline">\(\beta_0\)</span>. De esta forma <span class="math inline">\(\beta_1\)</span> representa la diferencia en los dos niveles, y si la estimación resulta significativa implica que la variable <em>X</em> sí tiene una influencia significativa en <em>Y</em>.</p>
 <p>Por otro lado, si se ajusta la regresión sin el intercepto, se crean dos variables Dummies representando los niveles de <em>X</em>, y el modelo queda formulado como</p>
-<p>$ Y_i=_0D1_i+_1D2_i+_i $</p>
+<p><span class="math inline">\(Y_i=\beta_0D1_i+\beta_1D2_i+\varepsilon_i\)</span></p>
 <p>En este modelo tenemos que: para los individuos del primer nivel de <em>X</em>, la esperanza de <em>Y</em> está dada por <span class="math inline">\(\beta_0\)</span> y para los individuos del segundo nivel de <em>X</em>, la esperanza de <em>Y</em> está dada por <span class="math inline">\(\beta_1\)</span>. De esta forma, aun cuando la estimación de <span class="math inline">\(\beta_0\)</span> o de <span class="math inline">\(\beta_1\)</span> resulte significativa, no implica que <em>X</em> influye en <em>Y</em>. Lo único que podríamos afirmar en este modelo es que los dos parámetros son significativamente distintos de cero. Por lo tanto si se desea establecer si <em>X</em> influye en <em>Y</em>, entonces omitir el intercepto no resulta ser una buena opción.</p>
 <p><strong>Si la variable respuesta Y es discreta: </strong></p>
 <ul>
-<li>Si la variable respuesta <em>Y</em> es continua: en este caso, el modelo que se ajusta correspondería (en general) a una regresión <em>logit</em>, modelando las probabilidades de éxito $_i $ en términos de <em>X</em> de la forma</li>
+<li>Si la variable respuesta <em>Y</em> es continua: en este caso, el modelo que se ajusta correspondería (en general) a una regresión <em>logit</em>, modelando las probabilidades de éxito <span class="math inline">\(\pi_i\)</span> en términos de <em>X</em> de la forma</li>
 </ul>
-<p>$ logit(_i)=_0+_1X_i $</p>
-<p>Si el modelo incluye intercepto, la estimación de <span class="math inline">\(\beta_0\)</span> se puede usar para estimar la probabilidad de éxito cuando <em>X</em> toma el valor 0, puesto que <span class="math inline">\(\pi_i=\frac{\exp{\beta_0}}{1+\exp{\beta_0}}\)</span>. Por otro lado, si la estimación de <span class="math inline">\(\beta_1\)</span> no resulta significativa, implica que los valores de <em>X</em> no influyen en las probabilidades de éxito, y estas serán constantes; si la estimación de <span class="math inline">\(\beta_1\)</span> es significativa con un valor positivo (negativo), indica que el aumento de la variable X contribuye a obtener una mayor (menor) probabilidad de éxito, y esta interpretación se mantiene cuando la regresión se ajusta sin el intercepto.</p>
+<p><span class="math inline">\(\operatorname{logit}(\pi_i)=\beta_0+\beta_1X_i\)</span></p>
+<p>Si el modelo incluye intercepto, la estimación de <span class="math inline">\(\beta_0\)</span> se puede usar para estimar la probabilidad de éxito cuando <em>X</em> toma el valor 0, puesto que <span class="math inline">\(\pi_i=\frac{\exp(\beta_0)}{1+\exp(\beta_0)}\)</span>. Por otro lado, si la estimación de <span class="math inline">\(\beta_1\)</span> no resulta significativa, implica que los valores de <em>X</em> no influyen en las probabilidades de éxito, y estas serán constantes; si la estimación de <span class="math inline">\(\beta_1\)</span> es significativa con un valor positivo (negativo), indica que el aumento de la variable X contribuye a obtener una mayor (menor) probabilidad de éxito, y esta interpretación se mantiene cuando la regresión se ajusta sin el intercepto.</p>
 <ul>
 <li>Cuando la variable explicativa es categórica que sin pérdida de generalidad, se asume como dicotómica (de dos niveles): en este caso, al ajustar una línea de regresión incluyendo el intercepto, se crea una variable Dummy que representa el primer nivel de la variable <em>X</em>, y el modelo queda definido como</li>
 </ul>
-<p>$ logit(_i)=_0+_1D1_i $</p>
-<p>La interpretación de este modelo es como sigue: para los individuos del primer nivel de X, $ logit(_i)= _0+_1$ y para los individuos del segundo de $ X $, $ logit(_i)= _0$. De esta forma, si la estimación de <span class="math inline">\(\beta_1\)</span> es significativa, indica que $ logit(_i)$ es diferente en los niveles de la variable <em>X</em>, y podemos concluir que la variable <em>X</em> sí tiene una influencia significativa en <em>Y</em>.</p>
+<p><span class="math inline">\(\operatorname{logit}(\pi_i)=\beta_0+\beta_1D1_i\)</span></p>
+<p>La interpretación de este modelo es como sigue: para los individuos del primer nivel de X, <span class="math inline">\(\operatorname{logit}(\pi_i)= \beta_0+\beta_1\)</span> y para los individuos del segundo de <span class="math inline">\(X\)</span>, <span class="math inline">\(\operatorname{logit}(\pi_i)= \beta_0\)</span>. De esta forma, si la estimación de <span class="math inline">\(\beta_1\)</span> es significativa, indica que <span class="math inline">\(\operatorname{logit}(\pi_i)\)</span> es diferente en los niveles de la variable <em>X</em>, y podemos concluir que la variable <em>X</em> sí tiene una influencia significativa en <em>Y</em>.</p>
 <p>Por otro lado, si se ajusta la regresión sin el intercepto, se crean dos variables Dummies representando los niveles de <em>X</em>, y el modelo queda formulado como</p>
-<p>$ logit(_i) =_0D1_i+_1D2_i $</p>
-<p>Para este modelo, las estimaciones de <span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span> representan los valores de $ logit(_i)$ en los dos niveles de <em>X</em>. De esta forma, la significación de la estimación de <span class="math inline">\(\beta_1\)</span> no da ninguna información sobre la influencia de <em>X</em> en <em>Y</em>.</p>
+<p><span class="math inline">\(\operatorname{logit}(\pi_i) =\beta_0D1_i+\beta_1D2_i\)</span></p>
+<p>Para este modelo, las estimaciones de <span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span> representan los valores de <span class="math inline">\(\operatorname{logit}(\pi_i)\)</span> en los dos niveles de <em>X</em>. De esta forma, la significación de la estimación de <span class="math inline">\(\beta_1\)</span> no da ninguna información sobre la influencia de <em>X</em> en <em>Y</em>.</p>
 <p>En resumen, podemos concluir que cuando la variable explicativa es continua, la interpretación de <span class="math inline">\(\beta_1\)</span> no varía si se incluye o se excluye el intercepto, mientras que cuando la variable explicativa es discreta, debemos tener en cuenta si el modelo incluye o no el intercepto, puesto que la interpretación de <span class="math inline">\(\beta_1\)</span> cambia. Además, si lo que se quiere es conocer la influencia de X en Y, es necesario incluir el intercepto. Lo anterior, sólo se logra si se construye un modelo con intercepto, y se dejan de lado (un poco, aunque sea un poco) los procedimiento automatizados que ajustan el mejor modelo, en términos de la bondad del ajuste.</p>
 
 

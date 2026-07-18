@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -128,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">La distribución predictiva en WinBUGS</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Probability</div>
+    <div class="quarto-category">Bayesian Statistics</div>
   </div>
   </div>
 
@@ -160,14 +190,14 @@ ul.task-list li input[type="checkbox"] {
 
 <p>A la hora de modelar un conjunto de datos, uno de los intereses principales del investigador, no sólo está en encontrar la esperanza (o la esperanza condicional, si hay covariables y otros parámetros) de las variables aleatorias, sino también encontrar la distribución condicional de nuevos datos en el modelo para realizar un proceso de predicción.</p>
 <p>El ejemplo más claro que se me ocurre es en inferencia de poblaciones finitas. Por ejemplo, nótese que un total poblacional (y tomando como medida de probabilidad la distribución de los datos ignorando el mecanismo de selección de la muestra) se puede escribir de la siguiente forma:</p>
-<p>$ T=<em>{k in s}Y_k+</em>{k notin s}Y_k $</p>
+<p><span class="math inline">\(T=\sum_{k \in s}Y_k+\sum_{k \notin s}Y_k\)</span></p>
 <p>Por supuesto, acá se supone que T es una variable aleatoria y por lo tanto, una realización de T será:</p>
-<p>$ t=<em>{k in s}y_k+</em>{k notin s}y_k $</p>
+<p><span class="math inline">\(t=\sum_{k \in s}y_k+\sum_{k \notin s}y_k\)</span></p>
 <p>Entonces, después de la recolección de la muestra, el primer sumando será una cantidad conocida pero la segunda parte seguirá desconocida y deberá predecirse dependiendo del modelo que se haya considerado. Es aquí donde entra la distribución predictiva. Desde el punto de vista Bayesiano, cuando esta se define, es posible simular los valores de la segunda parte de la suma y con esto obtener una predicción del total poblacional. Por el lado frecuentista, es posible obtener una estadística pivote para encontrar la probabilidad de que una nueva observación se encuentre dentro de un intervalo específico. En ambos escenarios lo que uno esperaría es que los intervalos de predicción fuesen más anchos que los intervalos de credibilidad o de confianza.</p>
 <p>La función de distribución predictiva está definida por la siguiente integral (no trivial en la mayoría de los casos):</p>
-<p>$ p(y|bold{Y})=_{} p(y|) p(|bold{Y})$</p>
-<p>Sin embargo, esta integral se puede ver como una esperanza condicional de la función de $ p(y|)$. Es decir,</p>
-<p>$ p(y|bold{Y})=_{|bold{Y}}( p(y|))$</p>
+<p><span class="math inline">\(p(y\mid\mathbf{Y})=\int_{\theta} p(y\mid\theta) p(\theta\mid\mathbf{Y})\)</span></p>
+<p>Sin embargo, esta integral se puede ver como una esperanza condicional de la función de <span class="math inline">\(p(y\mid\theta)\)</span>. Es decir,</p>
+<p><span class="math inline">\(p(y\mid\mathbf{Y})=\mathbb{E}_{\theta\mid\mathbf{Y}}(p(y\mid\theta))\approx \frac{\sum_i p(y\mid\theta_i)}{N}\)</span></p>
 <p>Lo anterior permite aproximar esta distribución usando métodos MCMC y evadir el cálculo analítico, que muchas veces es intratable. Este procedimiento se enuncia a continuación:</p>
 <ol type="1">
 <li><p>Generar un valor Θdesde la distribución posterior usando MCMC.</p></li>

@@ -3,7 +3,8 @@ title: "¡Las diez cosas que un estadístico no quiere oír jamás!"
 author: "Andrés Gutiérrez"
 date: "2010-06-30"
 categories:
-  - "Estadística"
+  - "Inference"
+  - "Probability"
 ---
 
 1. Yo nunca cursé ninguna asignatura de estadística ¿qué tan difícil es?

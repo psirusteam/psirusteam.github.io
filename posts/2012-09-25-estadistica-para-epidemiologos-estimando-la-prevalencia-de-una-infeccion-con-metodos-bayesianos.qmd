@@ -3,8 +3,8 @@ title: "Estadística para epidemiólogos: estimando la prevalencia de una infecc
 author: "Andrés Gutiérrez"
 date: "2012-09-25"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Probability"
 ---
 
 No sé por qué, pero este tema de la bioestadística es apasionante. Como estadístico puedo aplicar las técnicas que conozco para ayudar a mejorar la salud pública de mi país y eso es bonito. Todos los métodos estadísticos entran a colación al tratar de analizar un conjunto de datos de esta naturaleza. Además, es increíble cómo toda una amalgama de consideraciones se mezclan. Desde el muestreo de poblaciones finitas, hasta el análisis bayesiano. En esta entrada quiero abordar un problema de interés actual. Se trata de la estimación de la prevalencia de una enfermedad o una infección en una población. Como usted puede notar, este parámetro se calcula apelando a una probabilidad simple:
@@ -13,13 +13,13 @@ $\pi=\Pr(D=1)$
 
 En donde D=1 describe el evento de estar enfermo (por supuesto, D=0 define la ausencia de la enfermedad). Si tuviésemos acceso a una muestra aleatoria de la población, una estimación insesgada de la prevalencia estaría dada por una simple división, así:
 
-$\hat{\pi}=\frac{#(D)}{n}$
+$\hat{\pi}=\frac{\#(D)}{n}$
 
 Sin embargo, lo interesante de esta situación es lo siguiente: ¿cómo saber si alguien está realmente enfermo? Es decir, una cosa es que usted vaya a un laboratorio a realizarse unos exámenes para saber si tiene una infección y otra es que, a pesar del resultado, usted realmente tenga esa infección. Y es que no todas las pruebas diagnósticas son cien por ciento exactas. Entonces, usted selecciona la muestra (en muchos casos ni siquiera hay una muestra probabilística) y a cada individuo se le realiza una prueba diagnóstica. Si suponemos que de 100 individuos, 40 tienen resultados positivos, entonces afirmar que la prevalencia de la infección es de 0.4 sería incorrecto, a no ser que la prueba no tuviese error alguno.
 
 Para seguir abordando este tema debemos introducir dos conceptos importantes, que a su vez definirán algunos parámetros de interés. El primero es la **sensibilidad**de la prueba diagnóstica, dada por
 
-$ eta=\Pr(T=1|D=1)$
+$\eta=\Pr(T=1\mid D=1)$
 
 En donde T=1 representa un resultado positivo en la prueba (análogamente, T=0 representa un resultado negativo en la prueba). Este parámetro se entiende como la probabilidad de obtener un positivo verdadero. En segundo lugar, se debe definir la **especificidad** de la prueba diagnóstica.
 
@@ -27,27 +27,27 @@ $\theta=\Pr(T=0|D=0)$
 
 Y este parámetro representa la probabilidad de obtener un falso verdadero. Ahora, supongamos dos variables aleatorias que determinarán el análisis estadístico. La primera es X1, que representa el número de resultados positivos en la prueba y X2, que representa el número de resultados negativos. Nótese que
 
-$ X_1 \sim Binom(n, p)$
+$X_1 \sim \operatorname{Binom}(n, p)$
 
-Por supuesto, $ p=\Pr(T=1)$ representa la probabilidad de que el resultado de la prueba sea positivo. Ahora, nótese que $ X_2 \sim Binom(n, 1-p)$ y que *p* puede ser factorizado de la siguiente manera:
+Por supuesto, $p=\Pr(T=1)$ representa la probabilidad de que el resultado de la prueba sea positivo. Ahora, nótese que $X_2 \sim \operatorname{Binom}(n, 1-p)$ y que *p* puede ser factorizado de la siguiente manera:
 
-$ p=\Pr(T=1)=\Pr(T=1|D=1)\Pr(D=1)+ \Pr(T=1|D=0)\Pr(D=0)=etapi+(1-\theta)(1-\pi)$
+$p=\Pr(T=1)=\Pr(T=1\mid D=1)\Pr(D=1)+ \Pr(T=1\mid D=0)\Pr(D=0)=\eta\pi+(1-\theta)(1-\pi)$
 
 En virtud de lo anterior, considere las siguientes variables latentes: Z1, que representa el número de individuos infectados dentro del grupo de individuos que resultaron positivos en la prueba diagnóstica. Además, nótese que:
 
-$\Pr(D=1|T=1)=\Pr(T=1|D=1) P(D=1)/\Pr(T=1)=\frac{etapi}{p}$
+$\Pr(D=1\mid T=1)=\Pr(T=1\mid D=1)\Pr(D=1)/\Pr(T=1)=\frac{\eta\pi}{p}$
 
 Por lo tanto
 
-$ Z_1|X_1 \sim Binom(X_1, \frac{etapi}{p})$
+$Z_1\mid X_1 \sim \operatorname{Binom}(X_1, \frac{\eta\pi}{p})$
 
 Entretanto, considere a Z2, que representa el número de individuos infectados dentro del grupo de individuos que resultaron negativos. Teniendo en cuenta que
 
-$\Pr(D=1|T=0)=\Pr(T=0|D=1) P(D=1)/\Pr(T=0)=\frac{(1-eta)\pi}{1-p}$
+$\Pr(D=1\mid T=0)=\Pr(T=0\mid D=1)\Pr(D=1)/\Pr(T=0)=\frac{(1-\eta)\pi}{1-p}$
 
 Entonces, fácilmente se concluye que
 
-$ Z_2|X_2 \sim Binom(X_2, \frac{(1-eta)\pi}{1-p})$
+$Z_2\mid X_2 \sim \operatorname{Binom}(X_2, \frac{(1-\eta)\pi}{1-p})$
 
 Toda la anterior teoría puede resumirse en una sencilla tabla de contingencias que explica la dinámica de los resultados de la prueba diagnóstica:
 
@@ -59,42 +59,42 @@ Toda la anterior teoría puede resumirse en una sencilla tabla de contingencias 
 
 Por supuesto, un modelo que se ajusta a esta dinámica es el multinomial que asigna las siguientes probabilidades a las entradas de la tabla:
 
-$\Pr(T=1, D=1)=\Pr(T=1|D=1)\Pr(D=1)=etapi $
+$\Pr(T=1, D=1)=\Pr(T=1\mid D=1)\Pr(D=1)=\eta\pi$
 
-$\Pr(T=0, D=1)=\Pr(T=0|D=1)\Pr(D=1)=(1-eta)\pi $
+$\Pr(T=0, D=1)=\Pr(T=0\mid D=1)\Pr(D=1)=(1-\eta)\pi$
 
-$\Pr(T=1, D=0)=\Pr(T=1|D=0)\Pr(D=0)=(1-\theta)(1-\pi)$
+$\Pr(T=1, D=0)=\Pr(T=1\mid D=0)\Pr(D=0)=(1-\theta)(1-\pi)$
 
-$\Pr(T=0, D=0)=\Pr(T=0|D=0)\Pr(D=0)=\theta(1-\pi)$
+$\Pr(T=0, D=0)=\Pr(T=0\mid D=0)\Pr(D=0)=\theta(1-\pi)$
 
 Por lo tanto, la función de densidad multinomial para los datos observados y latentes mostrados en la tabla anterior es
 
-$ l(\mathbf{X}, \mathbf{Z}|eta, \theta, \pi) propto (etapi)^{Z_1}((1-eta) \pi)^{Z_2}((1-\theta)(1-\pi))^{ X_1-Z_1}(\theta(1-\pi))^{ X_2-Z_2}$
+$\ell(\mathbf{X}, \mathbf{Z}\mid\eta, \theta, \pi) \propto (\eta\pi)^{Z_1}((1-\eta) \pi)^{Z_2}((1-\theta)(1-\pi))^{ X_1-Z_1}(\theta(1-\pi))^{ X_2-Z_2}$
 
 Ahora sí, vamos al análisis bayesiano de esta problemática que incluye el modelamiento de la sensibilidad de la prueba, la especificidad de la prueba, la prevalencia de la infección y las variables latentes Z1 y Z2. En primer lugar, para los tres primeros parámetros vamos a definir distribuciones previas en la familia beta, así:
 
-$ eta \sim Beta(a_{eta}, b_{eta})$
+$\eta \sim \operatorname{Beta}(a_{\eta}, b_{\eta})$
 
-$\theta \sim Beta(a_{\theta}, b_{\theta})$
+$\theta \sim \operatorname{Beta}(a_{\theta}, b_{\theta})$
 
-$\pi \sim Beta(a_{\pi}, b_{\pi})$
+$\pi \sim \operatorname{Beta}(a_{\pi}, b_{\pi})$
 
-Por último, las variables Z1 y Z2 vienen inducidas por las distribuciones binomiales que se mencionaron anteriormente. Ahora, siguiendo la regla de Bayes y después de un poco de álgebra, encontramos que la distribución posterior del vector $(eta, \theta, \pi)$, es proporcional a
+Por último, las variables Z1 y Z2 vienen inducidas por las distribuciones binomiales que se mencionaron anteriormente. Ahora, siguiendo la regla de Bayes y después de un poco de álgebra, encontramos que la distribución posterior del vector $(\eta, \theta, \pi)$, es proporcional a
 
-$ f(eta, \theta, \pi|\mathbf{X}, \mathbf{Z}) propto \pi^{Z_1+Z_2+a_{\pi}}(1-\pi)^{X_1+X_2-Z_1-Z_2+b_{\pi}}eta^{Z_1+a_{eta}}(1-eta)^{Z_2+b_{eta}} \theta^{X_2-Z_2+a_{\theta}}(1-\theta)^{X_1+Z_1+b_{\theta}}$
+$f(\eta, \theta, \pi\mid\mathbf{X}, \mathbf{Z}) \propto \pi^{Z_1+Z_2+a_{\pi}}(1-\pi)^{X_1+X_2-Z_1-Z_2+b_{\pi}}\eta^{Z_1+a_{\eta}}(1-\eta)^{Z_2+b_{\eta}} \theta^{X_2-Z_2+a_{\theta}}(1-\theta)^{X_1+Z_1+b_{\theta}}$
 
 Por supuesto, la anterior expresión no tiene una forma cerrada, entonces recurrimos a los principios de simulación mediante métodos de Monte Carlo y al aplicar el muestreo de Gibbs, podemos simular desde las condicionales posteriores que si tienen una forma cerrada. De esta manera, se tiene que:
 
 - Para el parámetro de sensibilidad de la prueba diagnóstica, se encuentra que el *kernel* de la distribución condicional posterior es
 
-$ eta|Z_1, Z_2 \sim Beta(Z_1+a_{eta}, Z_2+b_{eta})$
+$\eta\mid Z_1, Z_2 \sim \operatorname{Beta}(Z_1+a_{\eta}, Z_2+b_{\eta})$
 
 - Para el parámetro de especificidad de la prueba diagnóstica, se encuentra que el *kernel* de la distribución condicional posterior es
 
-$\theta|X_1, X_2, Z_1, Z_2 \sim Beta(X_2-Z_2+a_{\theta}, X_1-Z_1+b_{\theta})$
+$\theta\mid X_1, X_2, Z_1, Z_2 \sim \operatorname{Beta}(X_2-Z_2+a_{\theta}, X_1-Z_1+b_{\theta})$
 
 - Para el parámetro de prevalencia de la enfermada, se encuentra que el *kernel*de la distribución condicional posterior es
 
-$\pi| X_1, X_2, Z_1, Z_2 \sim Beta(Z_1+Z_2+a_{\pi}, X_1+X_2-Z_1-Z_2+b_{\pi})$
+$\pi\mid X_1, X_2, Z_1, Z_2 \sim \operatorname{Beta}(Z_1+Z_2+a_{\pi}, X_1+X_2-Z_1-Z_2+b_{\pi})$
 
 Haciendo uso de los anteriores resultados, se ejecuta el procedimiento de inferencia mediante métodos de Monte Carlo. Ahora, por supuesto que es muy necesario un análisis de previo de la prueba diagnóstica en términos de la elucidación de distribuciones previas convenientes que den cuenta de la sensibilidad y especificidad de la prueba. Para ello, se recomienda ejecutar análisis previos con sueros positivos (que se sabe que sí tienen la infección), para obtener una estimación previa de la sensibilidad y con sueros negativos (que se sabe que no tienen la infección), para obtener una estimación previa de la especificidad. Pero esto es sólo el comienzo, el problema se vuelve más interesante cuando hay dos o más pruebas diagnósticas en dos o más muestras de la población.

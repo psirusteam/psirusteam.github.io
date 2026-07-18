@@ -3,7 +3,8 @@ title: "Abordando a Bayes"
 author: "Andrés Gutiérrez"
 date: "2010-02-26"
 categories:
-  - Estadística
+  - "Bayesian Statistics"
+  - "Teaching"
 ---
 
 Francisco escribe:

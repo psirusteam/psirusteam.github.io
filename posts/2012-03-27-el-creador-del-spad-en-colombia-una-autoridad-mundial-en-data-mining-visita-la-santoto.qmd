@@ -3,7 +3,8 @@ title: "El creador del SPAD en Colombia…. Una autoridad mundial en Data Mining
 author: "Andrés Gutiérrez"
 date: "2012-03-27"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Teaching"
 ---
 
 En el marco de la celebración de los cinco años de la creación de la Facultad de Estadística de la Universidad Santo Tomás en Bogotá, y gracias al apoyo del ICETEX y de la Embajada de Francia en Colombia, se ha concretado la visita del doctor Ludovic Lebart. El Dr. Lebart es autoridad a nivel mundial en el tema de minería de textos. Su investigación se centra en los Métodos de Análisis Estadístico de datos cualitativos y textuales. Los datos provenientes de encuestas socioeconómicas constituyen su principal ámbito de aplicación. Es autor de más de 14 libros especializados en el área de Text Mining y ha participado como coautor en decenas de publicaciones relacionadas.

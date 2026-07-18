@@ -3,7 +3,8 @@ title: "La competencia de SAS"
 author: "Andrés Gutiérrez"
 date: "2009-12-01"
 categories:
-  - "Estadística"
+  - "Software"
+  - "R"
 ---
 
 SAS, una de las [100 mejores empresas para trabajar](https://web.archive.org/web/20250320103528/https://money.cnn.com/magazines/fortune/bestcompanies/2008/snapshots/29.html) enfrenta un gran reto en términos de estabilidad del share de mercado que tiene (más del 90% de las Fortune 500 utilizan este software estadístico) y mantenimiento de la utilidad de más de 2.26 billones de dólares al año. La competencia no solamente viene del lado de software de uso libre como [R](http://www.nytimes.com/2009/01/07/technology/business-computing/07program.html) y/o [Python](http://www.python.org/) sino que también de parte de otras compañías como SPPS y WPS.

@@ -3,7 +3,8 @@ title: "LaTeX en Apuntes de Estadística"
 author: "Andrés Gutiérrez"
 date: "2008-09-11"
 categories:
-  - "Estadística"
+  - "Software"
+  - "R"
 ---
 
 Es increíble que los muchachos de WordPress piensen en todo… Ahora es posible añadir códigos de LaTeX a los post que así lo requieran. Esperemos que este blog siga conservando su estilo característico… un mínimo de fórmulas para una mejor comprensión de los temas. Le siguiente es un ejemplo… alguna fórmula sin contexto.

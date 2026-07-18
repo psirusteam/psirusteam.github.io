@@ -3,12 +3,9 @@ title: "Encuestas - Resultados desagregados y agregados en la misma tabla (R: :s
 author: "Andrés Gutiérrez"
 date: "2019-06-14"
 categories:
-  - "Encuestas"
+  - "Surveys"
   - "R"
-  - "Software"
 ---
-
-Photo by [Franki Chamaki](https://unsplash.com/@franki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/idea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Hace unos días [escribí acerca de una solución innovadora](2019-06-13-resultados-desagregados-y-agregados-en-la-misma-tabla-rdplyr.qmd) a la hora de producir resultados de una estadística cualquiera para algunas desagregaciones de interés y al mismo tiempo crear una fila que mostrara el resultados de esta estadística en la base de datos completa. Cuando se trata de analizar bases de datos que vienen de una encuesta, no es posible utilizar esta solución, puesto que se estaría obviando el diseño de muestreo y por ende, la inferencia estaría sesgada.  Este problema ya no es más un problema, puesto que la última versión de la librería `srvyr` incluye la función `cascade` que permite generar tablas desagregadas, con una fila al final que incluye el cálculo de las estimaciones para toda la población. A continuación un ejemplo, con una desagegración simple:
 

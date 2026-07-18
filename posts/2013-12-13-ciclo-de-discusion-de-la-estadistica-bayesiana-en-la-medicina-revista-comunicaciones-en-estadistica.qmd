@@ -3,7 +3,8 @@ title: "Ciclo de discusión de la estadística Bayesiana en la medicina - Revist
 author: "Andrés Gutiérrez"
 date: "2013-12-13"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Publications"
 ---
 
 El último número de la Revista Comunicaciones en Estadística, que edita la Facultad de Estadística de la Univerisdad Santo Tomás, trae un regalo navideño: una discusión muy interesante acerca de la aplicación de la estadística Bayesiana en la práctica médica. El reconocido estadístico Luis Carlos Silva trae a colación una discusión muy acertada acerca de la última obra del filósofo Mario Bunge, Filosofía para Médicos. Otros tres investigadores intervinieron en la discusión sobre le tema y por último, Luis Carlos dio su réplica a la discusión.

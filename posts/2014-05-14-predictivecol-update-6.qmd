@@ -3,8 +3,8 @@ title: "#PredictiveCOL (Update #6)"
 author: "Andrés Gutiérrez"
 date: "2014-05-14"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Modeling"
 ---
 
 The new poll by [CNC](http://www.cmi.com.co/?n=229447) has turned the Colombian opinion upside down. Now, there is a clear polarization between Santos and Zuluaga. This is the sixth update of our [predictions for the Colombian presidential run](https://web.archive.org/web/20140730203514/http://www.gutierrezandres.com/predictivecol). The trend of Zuluaga is the only one that still remains upward. The scores of the remaining contenders are flatlined or downward.

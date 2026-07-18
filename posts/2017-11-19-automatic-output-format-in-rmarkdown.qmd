@@ -3,8 +3,8 @@ title: "Automatic output format in Rmarkdown"
 author: "Andrés Gutiérrez"
 date: "2017-11-19"
 categories:
-  - "Estadística"
   - "R"
+  - "Software"
 ---
 
 I am writing a Rmarkdown document with plenty of tables, and I want them in a decent format, e.g. kable. However I don't want to format them one by one. For example, I have created the following data frame in dplyr

@@ -3,8 +3,8 @@ title: "Estratificación implicita usando muestreo sistemático"
 author: "Andrés Gutiérrez"
 date: "2016-01-24"
 categories:
-  - "Estadística"
   - "Sampling"
+  - "Surveys"
 ---
 
 Una de las razones por las cuales el *muestreo sistemático* es utilizado en las primeras etapas de un diseño muestral es por su facilidad de implementación. Además, si el marco de muestreo cuenta con información auxiliar categórica (o continua que pueda ser categorizada) es posible ordenar el marco de acuerdo a estas variables. Teniendo en cuenta que el muestreo sistemático define saltos sistemáticos de igual tamaño sobre esta lista ordenada, entonces al final la muestra seleccionada reproducirá aproximadamente los mismos porcentajes poblacionales de las categorías por las cuales se ordenó el marco. A este proceso se le conoce como [*estratificación implícita*](https://sites.google.com/site/drhuiliew/sampling-and-weighting/implicit-or-explicit-stratification) y es un proceso comparable con los diseños de *muestreo autoponderados*.

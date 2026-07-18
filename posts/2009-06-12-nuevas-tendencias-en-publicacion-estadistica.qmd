@@ -3,7 +3,8 @@ title: "Nuevas tendencias en publicación estadística"
 author: "Andrés Gutiérrez"
 date: "2009-06-12"
 categories:
-  - "Estadística"
+  - "Publications"
+  - "Teaching"
 ---
 
 [Haciendo clic acá](http://predictive.files.wordpress.com/2009/06/binder1.pdf) encontrará la charla titulada "Nuevas tendencias en publicación estadística" enmarcada dentro de la cátedra Estadística y Sociedad de la carrera de Estadística en la universidad Nacional de Colombia. Mis agradecimientos al profesor Pedro Nel Pacheco por la invitación y al excelente público compuesto por estudiantes, egresados y profesores.

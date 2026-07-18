@@ -3,7 +3,8 @@ title: "La regla de oro del muestreo"
 author: "Andrés Gutiérrez"
 date: "2010-08-26"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Inference"
 ---
 
 La verdad no recuerdo si el sobrenombre me lo inventé o lo leí en alguna parte. Pudo haber sido resultado de haber combinado la lectura del libro con la lectura de algún evangelio mientras meditaba en la conclusión del sermón del monte. Lo que recuerdo bien es que ese libro hablaba acerca de que una estrategia de muestreo es óptima siempre y cuando el vector de probabilidades de inclusión de primer orden fuese proporcional a la característica de interés. A eso es a lo que yo llamo la regla de oro del muestreo.

@@ -3,7 +3,8 @@ title: "Que no y que no y que no… ¡No es estratificado, es por cuotas!"
 author: "Andrés Gutiérrez"
 date: "2011-07-13"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Surveys"
 ---
 
 DG me escribe lo siguiente: Andrés, le escribo para sugerirle que incluya [este artículo](http://www.semana.com/nacion/cosa-pinta-buena/157934-3.aspx) en su blog. Puede ser un error, pero si no lo es, la comunidad estadística debe manifestarse de alguna manera.

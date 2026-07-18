@@ -3,10 +3,8 @@ title: "LaTeX for Statisticians (Our course in USTA)"
 author: "Andrés Gutiérrez"
 date: "2014-11-15"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Software"
   - "R"
-  - "Stats"
 ---
 
 What do successful statisticians do in real life? I think that success relies in effective communication. All of the time, we are in broadcast mode: our ideas, results and analysis yield to decision making and it is up to us to find compelling ways to seed our beliefs in those statistical analyses into the mind of our employers, contractors, partners, etc.

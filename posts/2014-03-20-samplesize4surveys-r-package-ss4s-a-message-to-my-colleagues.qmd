@@ -3,9 +3,8 @@ title: "samplesize4surveys R package (ss4s) - A message to my colleagues"
 author: "Andrés Gutiérrez"
 date: "2014-03-20"
 categories:
-  - "Estadística"
   - "R"
-  - "Stats"
+  - "Sampling"
 ---
 
 I have worked for more than four years for a respected institution of the government of Colombia. My consulting job there is also linked with the review of sampling plans that external companies provide in order to get information about the impact that public programs may have over the people who benefit from some interventions. Obviously, a lot of sampling designs are involved in the methodologies that those companies provides. At the end, we choose the best proposal to evaluate a public policy.

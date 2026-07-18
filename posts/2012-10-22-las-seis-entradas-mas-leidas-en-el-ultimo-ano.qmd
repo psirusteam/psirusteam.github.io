@@ -3,7 +3,8 @@ title: "Las seis entradas más leidas en el último año"
 author: "Andrés Gutiérrez"
 date: "2012-10-22"
 categories:
-  - "Estadística"
+  - "Modeling"
+  - "Sampling"
 ---
 
 Cabe aclarar que la página de

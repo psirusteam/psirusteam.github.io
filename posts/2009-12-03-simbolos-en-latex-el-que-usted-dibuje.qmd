@@ -3,10 +3,11 @@ title: "Símbolos en LaTeX, el que usted dibuje"
 author: "Andrés Gutiérrez"
 date: "2009-12-03"
 categories:
-  - "Estadística"
+  - "Software"
+  - "Publications"
 ---
 
-Originalmente, Philipp Kühl tuvo la idea de esta fabulosa herramienta para el investigador que escribe sus proyectos y resultados en $ LaTeX $, después Daniel Kirsch inventó la plataforma HTML y nació [DETEXIFY](http://detexify.kirelabs.org/classify.html). Esta simple, pero muy poderosa herramienta le permite dibujar el símbolo que desee (y del cual no recuerda ni la instrucción ni el paquete pertinente) y mediante un puntaje de predicción arroja cinco posibles símbolos junto con el código y el paquete, en caso de requerirlo.
+Originalmente, Philipp Kühl tuvo la idea de esta fabulosa herramienta para el investigador que escribe sus proyectos y resultados en $LaTeX$, después Daniel Kirsch inventó la plataforma HTML y nació [DETEXIFY](http://detexify.kirelabs.org/classify.html). Esta simple, pero muy poderosa herramienta le permite dibujar el símbolo que desee (y del cual no recuerda ni la instrucción ni el paquete pertinente) y mediante un puntaje de predicción arroja cinco posibles símbolos junto con el código y el paquete, en caso de requerirlo.
 
 Por ejemplo, usted está escribiendo su tesis, proyecto, artículo, etc. Las ideas están fluyendo y sorprendentemente, la redacción está mejor que nunca. De pronto, empieza el ambiente o y está escribiendo su intrincada expresión matemática. Usted sabe lo que quiere escribir, pero por alguna razón no recuerda el código correcto de algún símbolo. Es entonces cuando decide buscar en el libro guía: "El universo LaTeX"… es una excelente obra, piensa usted. Después de 20 minutos y de hojear y ojear el libro de 600 páginas, se da por vencido. Recurre al oráculo Google y después de 35 minutos de búsqueda y filtración manual se da cuenta que el código era el correcto pero que no compilaba bien puesto que no había cargado la librería que contenía el símbolo. Vuelve a la ventana de su editor y retoma su escritura. Un momento… pasaron 55 minutos y usted ya no se acuerda de lo que quería escribir. Cierra el portátil y se va a jugar Wii. Mañana será otro día.
 

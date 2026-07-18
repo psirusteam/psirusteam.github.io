@@ -3,8 +3,8 @@ title: "For MAC users: weird messages when starting session in R"
 author: "Andrés Gutiérrez"
 date: "2015-05-29"
 categories:
-  - "Estadística"
   - "R"
+  - "Software"
 ---
 
 If you live in a Latin American country, and you have installed R in your MAC, maybe you have noticed that, after opening R, the following messages appear:

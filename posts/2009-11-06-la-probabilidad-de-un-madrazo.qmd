@@ -3,7 +3,8 @@ title: "La probabilidad de un madrazo…"
 author: "Andrés Gutiérrez"
 date: "2009-11-06"
 categories:
-  - "Estadística"
+  - "Probability"
+  - "Inference"
 ---
 
 Pasando a temas un poco más jocosos, imagine que usted recibe una carta de un amigo suyo. Usted lee la carta y con escepticismo se da cuenta que es un escrito estructurado, que se han tomado harto tiempo para escribirlo y que, a pesar de su gran sorpresa, usted cree que es un sutil insulto. Pues bien, a simple vista la carta contiene poca información pero detalladamente, usted se da cuenta que es un acróstico y que su amigo lo está mandando al carajo. Eso suena muy real después de que el gobernador de California, el carismático Arnoldo Suarez enviara una misiva respondiendo negativamente a una petición. Al mirar detalladamente el mensaje, es fácil darse cuenta que se trata de una composición casi poética que contiene un mensaje claro y directo: FUCK YOU.

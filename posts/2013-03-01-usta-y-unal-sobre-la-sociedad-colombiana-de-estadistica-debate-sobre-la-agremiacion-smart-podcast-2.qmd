@@ -3,7 +3,8 @@ title: "USTA y UNAL sobre la Sociedad Colombiana de Estadística: debate sobre l
 author: "Andrés Gutiérrez"
 date: "2013-03-01"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Publications"
 ---
 
 [Sociedad Colombiana de Estadística: debate sobre la agremiación](http://www.gutierrezandres.com/wp-content/uploads/2013/03/PGM-02-SMART-27-02-13.mp3)

@@ -3,7 +3,8 @@ title: "Introduction to Applied Bayesian Statistics and Estimation for Social Sc
 author: "Andrés Gutiérrez"
 date: "2011-03-06"
 categories:
-  - "Estadística"
+  - "Bayesian Statistics"
+  - "Publications"
 ---
 
 Scott M. Lynch y Springer han puesto en la WEB

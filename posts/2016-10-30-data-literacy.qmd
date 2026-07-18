@@ -3,9 +3,7 @@ title: "Data Literacy"
 author: "Andrés Gutiérrez"
 date: "2016-10-30"
 categories:
-  - "Colombia"
-  - "Estadística"
-  - "Stats"
+  - "Modeling"
   - "Teaching"
 ---
 

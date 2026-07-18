@@ -3,9 +3,8 @@ title: "¿Datos faltantes? Utilice la imputación múltiple - Caso: regresión s
 author: "Andrés Gutiérrez"
 date: "2015-10-25"
 categories:
-  - "Estadística"
-  - "IRT"
-  - "Stats"
+  - "Modeling"
+  - "Inference"
 ---
 
 Una característica común en cualquier análisis estadístico es la aparición de datos faltantes después de la recolección de la información. Es bien sabido que lo mejor que el investigador puede hacer para palear este inconveniente es prevenirlo desde el diseño del estudio. Sin embargo, en caso de que aparezcan, lo peor que se puede hacer es ignorarlo.

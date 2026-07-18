@@ -3,9 +3,8 @@ title: "3rd International Workshop on Applied Statistics (Entrenamiento en miner
 author: "Andrés Gutiérrez"
 date: "2013-02-21"
 categories:
-  - "Colombia"
-  - "Estadística"
-  - "R"
+  - "Community and Events"
+  - "Teaching"
 ---
 
 ## [**INSCRIPCIONES ABIERTAS YA**](https://web.archive.org/web/20240527213655/http://estadistica.usta.edu.co/)
@@ -149,10 +148,10 @@ Formación: Doctor (de Estado) en Ciencias Matemáticas. (U. Pierre et Marie Cur
 | Columna 1 | Columna 2 |
 | --- | --- |
 | **Tipo de asistente** | **Valor Individual** |
-| Estudiante USTA | $ COL 150.000 |
-| Estudiante Externo | $ COL 180.000 |
-| Profesor USTA | $ COL 200.000,00 |
-| Profesores y profesionales externos | $ COL 250.000,00 |
-| Participante con ponencia* | $ COL 120.000,00 |
+| Estudiante USTA | \$ COL 150.000 |
+| Estudiante Externo | \$ COL 180.000 |
+| Profesor USTA | \$ COL 200.000,00 |
+| Profesores y profesionales externos | \$ COL 250.000,00 |
+| Participante con ponencia* | \$ COL 120.000,00 |
 
 * Las ponencias deben estar enmarcadas en cualquier área de la disciplina estadística (no necesariamente en Data Mining)

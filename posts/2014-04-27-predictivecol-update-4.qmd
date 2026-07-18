@@ -3,8 +3,8 @@ title: "#PredictiveCOL (Update #4)"
 author: "Andrés Gutiérrez"
 date: "2014-04-27"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Modeling"
 ---
 
 This week new polls were released (from [Datexco](http://www.eltiempo.com/elecciones-2014/presidencia/juan-manuel-santos-ganara-en-segunda-vuelta/13888615), [CNC](http://www.cmi.com.co) and [IPSOS](http://www.rcnradio.com/noticias/presidente-candidato-santos-ganaria-en-la-segunda-vuelta-segun-la-gran-encuesta-132576)). The results of voting intention are somehow obscure because of the large proportion of undecided and blank voters. As usual, media insist in elaborating fantastic stories (big winners and so on) and giving misleading conclusions. Why? Because with an undecided voting rate around 30% anything may happen! And, of course, once in the voting station you must already have taken your decision.

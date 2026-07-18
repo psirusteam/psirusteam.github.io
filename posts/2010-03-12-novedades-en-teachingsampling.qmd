@@ -3,7 +3,8 @@ title: "Novedades en TeachingSampling"
 author: "Andrés Gutiérrez"
 date: "2010-03-12"
 categories:
-  - "Estadística"
+  - "Sampling"
+  - "Teaching"
 ---
 
 Ya está disponible la más reciente versión (v. 1.4.9) del paquete para la enseñanza del muestreo TeachingSampling. Muchos colegas, alumnos y conocidos (a nivel nacional e internacional) han contribuido grandemente al desarrollo de este paquete. Aunque debo reconocer que todavía faltan algunas cosas de forma que se deben ajustar (como por ejemplo la gramática inglesa en el manual del paquete), esta entrada está dedicada a observar algunos de esos avances ocurridos desde la primera versión (v. 0.7.6).

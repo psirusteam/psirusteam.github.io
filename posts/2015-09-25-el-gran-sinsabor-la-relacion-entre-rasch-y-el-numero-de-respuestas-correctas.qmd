@@ -3,7 +3,7 @@ title: "El gran sinsabor: la relación entre Rasch y el número de respuestas co
 author: "Andrés Gutiérrez"
 date: "2015-09-25"
 categories:
-  - "Estadística"
+  - "Modeling"
   - "IRT"
 ---
 

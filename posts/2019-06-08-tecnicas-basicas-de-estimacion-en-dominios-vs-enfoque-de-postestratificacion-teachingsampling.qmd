@@ -3,36 +3,33 @@ title: "Técnicas básicas de estimación en dominios VS enfoque de postestratif
 author: "Andrés Gutiérrez"
 date: "2019-06-08"
 categories:
-  - "Encuestas"
-  - "Muestreo"
-  - "R"
+  - "Sampling"
+  - "Surveys"
 ---
 
-###### **Photo by [Ilya Pavlov](https://unsplash.com/@ilyapavlov?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)**
+Es cierto, lo he comprobado, ¡he visto La Luz y quema! Después de haber definido las [similitudes y diferencias entre los subgrupos poblaciones](2019-06-08-subgrupos-poblacionales-en-muestreo.qmd), en este post quiero que mis lectores entiendan que existe una gran precio que se paga al utilizar las técnicas básicas de la estimación en dominios, y de paso profundizar un poco en cuáles son las expresiones correctas de la varianza cuando se trabaja con dominios. Y es que, a la hora de calcular las expresiones exactas de la varianza de los estimadores en los dominios, la tendencia generalizada es que la precisión disminuye. ¿Cuánto y cuándo disminuye? Será un tema que trataré en la próxima entrada. Por el momento, empecemos por establecer que la varianza del estimador de Horvitz-Thompson para el total de la característica de interés en el dominio $U_d$, para cualquier diseño de muestreo, es
 
-Es cierto, lo he comprobado, ¡he visto La Luz y quema! Después de haber definido las [similitudes y diferencias entre los subgrupos poblaciones](2019-06-08-subgrupos-poblacionales-en-muestreo.qmd), en este post quiero que mis lectores entiendan que existe una gran precio que se paga al utilizar las técnicas básicas de la estimación en dominios, y de paso profundizar un poco en cuáles son las expresiones correctas de la varianza cuando se trabaja con dominios. Y es que, a la hora de calcular las expresiones exactas de la varianza de los estimadores en los dominios, la tendencia generalizada es que la precisión disminuye. ¿Cuánto y cuándo disminuye? Será un tema que trataré en la próxima entrada. Por el momento, empecemos por establecer que la varianza del estimador de Horvitz-Thompson para el total de la característica de interés en el dominio $ U_d $, para cualquier diseño de muestreo, es
-
-**$\Var(\hat{t}_{d \pi})=\sum\sum_{U_d}\Delta_{kl}\frac{y_k}{\pi_k}\frac{y_l}{\pi_l}$**
+**$\operatorname{Var}(\hat{t}_{d \pi})=\sum\sum_{U_d}\Delta_{kl}\frac{y_k}{\pi_k}\frac{y_l}{\pi_l}$**
 
 Con esta expresión, el estadístico se emociona y, para un diseño de muestreo aleatorio simple de tamaño de muestra *n* para una población de tamaño *N*, hace analogía de fórmulas y empieza a realizar cálculos erróneos sobre la varianza. En muchas ocasiones, se supone equivocadamente que, para este diseño de muestreo en particular, la expresión que se debe utilizar para la varianza es
 
-**$\Var_{MAS}(\hat{t}_{d \pi})=\frac{N^2_d}{n_d}(1-\frac{n_d}{N_d}) S^2_{y_{U_d}}$**
+**$\operatorname{Var}_{MAS}(\hat{t}_{d \pi})=\frac{N^2_d}{n_d}(1-\frac{n_d}{N_d}) S^2_{y_{U_d}}$**
 
-Pues bien, la anterior expresión es equivocada. En primer lugar, el hecho de que la doble suma esté definida sobre *$ U_d $*, no significa que se deba utilizar la misma fórmula del muestreo aleatorio simple. Además, las probabilidades de inclusión de primer orden, de segundo orden y la covarianza de las variables indicadoras conservan las mismas expresiones que en un muestreo aleatorio simple de una población de tamaño *N* y con una muestra de tamaño *n*. Al utilizar la expresión errada, se supondría que se planeó un diseño de muestreo aleatorio simple de tamaño de muestra $ n_d $ para una población de tamaño $ N_d $*.*La verdadera expresión para el cálculo de esta varianza debe ser la siguiente (ver Ejercicio 5.34 del Sarndal et. al., 2003):
+Pues bien, la anterior expresión es equivocada. En primer lugar, el hecho de que la doble suma esté definida sobre *$U_d$*, no significa que se deba utilizar la misma fórmula del muestreo aleatorio simple. Además, las probabilidades de inclusión de primer orden, de segundo orden y la covarianza de las variables indicadoras conservan las mismas expresiones que en un muestreo aleatorio simple de una población de tamaño *N* y con una muestra de tamaño *n*. Al utilizar la expresión errada, se supondría que se planeó un diseño de muestreo aleatorio simple de tamaño de muestra $n_d$ para una población de tamaño $N_d$*.*La verdadera expresión para el cálculo de esta varianza debe ser la siguiente (ver Ejercicio 5.34 del Sarndal et. al., 2003):
 
-$ AVar_{MAS}(\hat{t}_{d \pi})=\frac{N^2}{n}(1-\frac{n}{N})\frac{S^2_{y_{U_d}}}{P_d}$
+$AVar_{MAS}(\hat{t}_{d \pi})=\frac{N^2}{n}(1-\frac{n}{N})\frac{S^2_{y_{U_d}}}{P_d}$
 
-En principio, hay varias diferencias entre las dos expresiones: en primer lugar lugar es obvio que $ N_d $ y *N* no son semejantes; de la misma manera $ n_d $ y *n* tampoco lo son. La expresión $ S^2_{y_{U_d}}$ implica una cuasi-varianza entre los valores de la característica de interés únicamente en el dominio $ U_d $. Por otro lado, $\frac{S^2_{y_{U_d}}}{P_d}$, implica una inflación del anterior término, la cual será muy grande cuando la proporción sea pequeña. Obviamente, esta última expresión verdadera arroja cifras más grandes, y al momento de calcular los coeficientes de variación, estos serán también muy grandes.
+En principio, hay varias diferencias entre las dos expresiones: en primer lugar lugar es obvio que $N_d$ y *N* no son semejantes; de la misma manera $n_d$ y *n* tampoco lo son. La expresión $S^2_{y_{U_d}}$ implica una cuasi-varianza entre los valores de la característica de interés únicamente en el dominio $U_d$. Por otro lado, $\frac{S^2_{y_{U_d}}}{P_d}$, implica una inflación del anterior término, la cual será muy grande cuando la proporción sea pequeña. Obviamente, esta última expresión verdadera arroja cifras más grandes, y al momento de calcular los coeficientes de variación, estos serán también muy grandes.
 
-No estoy diciendo que la fórmula **$\Var_{MAS}(\hat{t}_{d \pi})=\frac{N^2_d}{n_d}(1-\frac{n_d}{N_d}) S^2_{y_{U_d}}$** no se pueda utilizar nunca. En efecto, es posible usarla solo cuando se conoce el tamaño absoluto del dominio, $ N_d $, y se controla el tamaño de la muestra del mismo, $ n_d $. Esta situación sería similar a una estratificación. Sin embargo, el control del tamaño de muestra en el dominio, $ n_d $, no siempre se tiene en la práctica. Lo anterior tampoco implica que estemos supeditados a utilizar siempre la fórmula **$ AVar_{MAS}(\hat{t}_{d \pi})=\frac{N^2}{n}(1-\frac{n}{N})\frac{S^2_{y_{U_d}}}{P_d}$**que arroja grandes coeficientes de variación. De hecho, cuando se trabaja con dominios, es posible reducir la varianza sin tener que controlar el tamaño de muestra $ n_d $. Para eso, se utiliza un enfoque de post-estratificación, en donde se requiere el conocimiento de los tamaños absolutos de los dominios, $ N_d $, que fácilmente pueden ser obtenidos mediante registros administrativos confiables, censos, o proyecciones demográficas. De esta manera, la expresión genérica de la varianza (aproximada por la linealización de Taylor) del estimador de postestratificación es la siguiente:
+No estoy diciendo que la fórmula **$\operatorname{Var}_{MAS}(\hat{t}_{d \pi})=\frac{N^2_d}{n_d}(1-\frac{n_d}{N_d}) S^2_{y_{U_d}}$** no se pueda utilizar nunca. En efecto, es posible usarla solo cuando se conoce el tamaño absoluto del dominio, $N_d$, y se controla el tamaño de la muestra del mismo, $n_d$. Esta situación sería similar a una estratificación. Sin embargo, el control del tamaño de muestra en el dominio, $n_d$, no siempre se tiene en la práctica. Lo anterior tampoco implica que estemos supeditados a utilizar siempre la fórmula **$AVar_{MAS}(\hat{t}_{d \pi})=\frac{N^2}{n}(1-\frac{n}{N})\frac{S^2_{y_{U_d}}}{P_d}$**que arroja grandes coeficientes de variación. De hecho, cuando se trabaja con dominios, es posible reducir la varianza sin tener que controlar el tamaño de muestra $n_d$. Para eso, se utiliza un enfoque de post-estratificación, en donde se requiere el conocimiento de los tamaños absolutos de los dominios, $N_d$, que fácilmente pueden ser obtenidos mediante registros administrativos confiables, censos, o proyecciones demográficas. De esta manera, la expresión genérica de la varianza (aproximada por la linealización de Taylor) del estimador de postestratificación es la siguiente:
 
-**$ AVar(\tilde{t}_{d})=\sum \sum_{U}\Delta_{kl}\frac{\E_k}{\pi_k}\frac{\E_l}{\pi_l}$**
+**$AVar(\tilde{t}_{d})=\sum \sum_{U}\Delta_{kl}\frac{e_k}{\pi_k}\frac{e_l}{\pi_l}$**
 
 La cual, bajo un diseño de muestreo aleatorio simple (expresión 9.6.21 de Gutiérrez, 2016), toma la siguiente forma:
 
-**$ AVar_{MAS}(\tilde{t}_{d})=\frac{N^2}{n}(1-\frac{n}{N}) \sum_d \frac{n_d-1}{n-1}S^2_{y_{U_d}}$**
+**$AVar_{MAS}(\tilde{t}_{d})=\frac{N^2}{n}(1-\frac{n}{N}) \sum_d \frac{n_d-1}{n-1}S^2_{y_{U_d}}$**
 
-Nótese que, se siguen manteniendo las cantidades *N* y *n*, la cuasi-varianza sólo está supeditada a los valores de la característica de interés únicamente en el dominio $ U_d $, lo cual implica una gran reducción en términos de la varianza. A continuación ilustro esta situación con ayuda de las bases de datos Marco & Lucy, del paquete TeachingSampling. En primer lugar se selecciona una muestra aleatoria simple:
+Nótese que, se siguen manteniendo las cantidades *N* y *n*, la cuasi-varianza sólo está supeditada a los valores de la característica de interés únicamente en el dominio $U_d$, lo cual implica una gran reducción en términos de la varianza. A continuación ilustro esta situación con ayuda de las bases de datos Marco & Lucy, del paquete TeachingSampling. En primer lugar se selecciona una muestra aleatoria simple:
 
 ```r
 > data(Marco)

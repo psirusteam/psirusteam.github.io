@@ -3,7 +3,8 @@ title: "ggplot2 en la WEB… una versión virtual de los más potentes gráficos
 author: "Andrés Gutiérrez"
 date: "2009-11-22"
 categories:
-  - "Estadística"
+  - "Visualization"
+  - "R"
 ---
 
 [YouTube](https://www.youtube.com/watch?v=_haIgb4nFFY&hd=1&w=425&h=350)

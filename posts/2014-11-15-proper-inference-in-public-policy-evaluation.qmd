@@ -3,9 +3,8 @@ title: "Proper Inference in Public Policy Evaluation"
 author: "Andrés Gutiérrez"
 date: "2014-11-15"
 categories:
-  - "Estadística"
-  - "R"
-  - "Stats"
+  - "Policy Evaluation"
+  - "Sampling"
 ---
 
 I know, I know... Did you miss me alot? I did miss you.
@@ -18,7 +17,7 @@ At the end, it is a good opportunity to mix knowledge even though make the class
 
 For example: in public policy evaluation, sometimes it is useful to evaluate the impact of an intervention. To do so, we select a complex sample (involving stratification, unequal weights and clustering). If we perform a regression, we need to take into account (and verify) the assumptions of the regression (from the causal perspective: endogenous outcomes, local treatment effects, counterfactuals, etc.), but at the same time we need to be rigorous and judicious about considering the complex survey design. This is important and there is little documentation about that. It is important because standard errors, that (after all) are the figures that decide over the impact of the intervention, are sometimes underestimated (biasedly, of course) when ignoring the complex sample design.
 
-It goes further than hypothesis testing or estimation. You have to compute proper sampling sizes to perform that regression. In one hand, you must save your resources ($$$); on the other, you do not want to waste your money when considering small sample size and then realising that your inference is neither robust nor consistent because your standard errors are terribly high. In addition, you should consider attrition, compliers, defiers, nonresponse, and design effects to give a rough estimate of the sample size.
+It goes further than hypothesis testing or estimation. You have to compute proper sampling sizes to perform that regression. In one hand, you must save your resources (\$\$\$); on the other, you do not want to waste your money when considering small sample size and then realising that your inference is neither robust nor consistent because your standard errors are terribly high. In addition, you should consider attrition, compliers, defiers, nonresponse, and design effects to give a rough estimate of the sample size.
 
 Some researchers argue that when running regression models, you should not consider the sampling weights. Ok, that could be true under the perspective of Little and Rubin that consider intricate methodologies into the estimation stage. But, when estimating model parameters, ignoring the complex sample (as if the sample were SI) is not a good idea. Consider the following example:
 

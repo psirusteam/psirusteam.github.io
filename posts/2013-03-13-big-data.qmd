@@ -3,7 +3,7 @@ title: "Big Data"
 author: "Andrés Gutiérrez"
 date: "2013-03-13"
 categories:
-  - "Estadística"
+  - "Modeling"
   - "R"
 ---
 

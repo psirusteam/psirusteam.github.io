@@ -3,8 +3,8 @@ title: "#PredictiveCOL (Update #5)"
 author: "Andrés Gutiérrez"
 date: "2014-05-06"
 categories:
-  - "Colombia"
-  - "Estadística"
+  - "Elections"
+  - "Modeling"
 ---
 
 The new poll by Cifras & Conceptos has been released. This is the fifth update of our [predictions for the Colombian presidential run](https://web.archive.org/web/20140730203514/http://www.gutierrezandres.com/predictivecol). The trends of Peñalosa and Zuluaga remain upward. The scores of the remaining contenders are flatlined.

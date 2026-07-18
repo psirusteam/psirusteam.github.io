@@ -3,7 +3,8 @@ title: "First International Workshop on Applied Statistics (Bogotá - Colombia)"
 author: "Andrés Gutiérrez"
 date: "2009-10-09"
 categories:
-  - "Estadística"
+  - "Community and Events"
+  - "Teaching"
 ---
 
 Hace mucho tiempo que Bogotá no era la sede de un evento que reuniera a varios de los más prestigiosos estadísticos de Colombia y el mundo. En esta ocasión la novel Facultad de Estadística de la Universidad Santo Tomás coadyuvada por su Centro de Investigaciones y Estudios Estadísticos (CIEES) serán los organizadores del **First International Workshop on Applied Statistics** ([clic acá para mayor información](http://predictive.files.wordpress.com/2009/10/programa_evento.docx)) que se realizará en las instalaciones de la Universidad Santo Tomás (sede Bogotá) del 9 al 12 de Noviembre del presente año.
@@ -18,27 +19,27 @@ Lo más interesante del evento es su mecánica. En esta oportunidad todos los in
 
 Además, el evento cuenta con la participación de varios estadísticos reconocidos a nivel nacional, no sólo de Bogotá, sino también de varias escuelas regionales en estadística. Otro tópico impresionante son las bajas tarifas del evento que se encuentran entre los cien y doscientos mil pesos.
 
-Docente -Profesional $ 200.000,00
+Docente -Profesional \$200.000,00
 
-Estudiantes Pregrado $ 120.000,00
+Estudiantes Pregrado \$120.000,00
 
-Estudiantes Posgrado $ 180.000,00
+Estudiantes Posgrado \$180.000,00
 
 > Docente -Profesional
 >
-> $ 200.000,00
+> \$200.000,00
 >
 >
 >
 > Estudiantes Pregrado
 >
-> $ 120.000,00
+> \$120.000,00
 >
 >
 >
 > Estudiantes Posgrado
 >
-> $ 180.000,00
+> \$180.000,00
 
 El lector interesado puede comunicarse al siguiente correo electrónico para obtener más información (sanderrangel@usantotomas.edu.co).
 
