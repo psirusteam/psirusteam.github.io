@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Calibración de razones – Andrés Gutiérrez</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -73,10 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -199,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>De manera tradicional, para calibrar es necesario conocer el total auxiliar <em>tx</em>. Sin embargo, Imagínese que no se conoce ese total, pero sí se conoce la razón poblacional, <em>R=ty/tx</em>, que es un parámetro poblacional que es estable en el tiempo. Enfatizo en que lo que sí se conoce es la razón, pero no se conoce ni el numerador ni el denominador. Entonces, siendo así, es posible utilizar el método de calibración para estimar eficientemente tanto el numerador <em>ty</em> como el denominador <em>tx</em>. Entonces, si calibramos la razón, para cualquier muestra, sea cual sea, la división de con siempre será contante e igual a <em>R</em>.</p>
 <p><strong>Resultado: Calibrar sobre una razón <em>R</em> es equivalente a calibrar sobre el total de una nueva característica auxiliar <em>zk=(y_k)-(R)(x_k)</em></strong>. Es decir, después de calibrar surgen unos nuevos pesos <em>wk</em> inducidos por esta metodología. Esos pesos se utilizarán para estimar <em>ty</em>, mediante la siguiente expresión y esos mismos pesos se utilizan para estimar <em>tx</em>, mediante la siguiente expresión. Luego,</p>
 <p><strong>Ejemplo con Marco y Lucy: </strong>utilizaremos la base de datos propia del paquete computacional TeachingSampling para reproducir este resultado. Suponemos que se conoce la razón entre el ingreso y los impuestos de las empresas del sector industrial en un país. Además se asume que esta razón ha presentado muy poca variación durante los últimos años y que es igual a R=36.12. Lo que quiere decir que por cada peso que las empresas declaran como impuesto, existe una ganacia de 36 pesos. El siguiente código se utiliza para la selección de una uestra MAS de tamaño n=1000.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Draws a simple random sample without replacement</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Draws a simple random sample without replacement</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(TeachingSampling)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Marco)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Lucy)</span>
@@ -217,9 +220,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(data)</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data)</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Vector of inclusion probabilities for units in the selected sample</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Pik<span class="ot">&lt;-</span><span class="fu">rep</span>(n<span class="sc">/</span>N,n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Pik<span class="ot">&lt;-</span><span class="fu">rep</span>(n<span class="sc">/</span>N,n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Y el siguiente código se utiliza para hacer la calibración de las características de interés sabiendo que la razón entre las estimaciones de Ingreso e Impuestos será siempre 36.12. Note que el total <em>tz</em> es siempre cero porque se anulan algunas expresiones puesto que <em>tz=ty-Rtx=ty-(ty/tx) tx=ty-ty=0</em>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>estima<span class="ot">&lt;-</span><span class="fu">data.frame</span>(Income, Employees, Taxes)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>estima<span class="ot">&lt;-</span><span class="fu">data.frame</span>(Income, Employees, Taxes)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> Income<span class="sc">-</span>R<span class="sc">*</span>Taxes</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>tz <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> E. <span class="fu">Beta</span>(estima,z,Pik,<span class="at">ck=</span><span class="dv">1</span>,<span class="at">b0=</span><span class="cn">FALSE</span>)</span>
@@ -228,9 +231,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                 Income    Employees        Taxes</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Estimation <span class="fl">1.037084e+06</span> <span class="fl">1.505399e+05</span> <span class="fl">2.870518e+04</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>Variance   <span class="fl">1.002338e+08</span> <span class="fl">2.414943e+06</span> <span class="fl">7.679034e+04</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>CVE        <span class="fl">9.653684e-01</span> <span class="fl">1.032290e+00</span> <span class="fl">9.653684e-01</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>CVE        <span class="fl">9.653684e-01</span> <span class="fl">1.032290e+00</span> <span class="fl">9.653684e-01</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Por último, el siguiente código verifica que sí se presente la propiedad de calibración sobre la razón. Nótese que =0.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> GREG. <span class="fu">SI</span>(N,n,estima,z,tz, b, <span class="at">b0=</span><span class="cn">FALSE</span>)[<span class="dv">1</span>,<span class="dv">1</span>]<span class="sc">/</span>GREG. <span class="fu">SI</span>(N,n,estima,z,tz, b, <span class="at">b0=</span><span class="cn">FALSE</span>)[<span class="dv">1</span>,<span class="dv">3</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> GREG. <span class="fu">SI</span>(N,n,estima,z,tz, b, <span class="at">b0=</span><span class="cn">FALSE</span>)[<span class="dv">1</span>,<span class="dv">1</span>]<span class="sc">/</span>GREG. <span class="fu">SI</span>(N,n,estima,z,tz, b, <span class="at">b0=</span><span class="cn">FALSE</span>)[<span class="dv">1</span>,<span class="dv">3</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">36.12881</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> R</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">36.12881</span></span>
@@ -239,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sum</span>(z<span class="sc">*</span>w)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">2.875709e-10</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sum</span>(Income<span class="sc">*</span>w)<span class="sc">/</span><span class="fu">sum</span>(Taxes<span class="sc">*</span>w)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">36.12881</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">36.12881</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><a href="http://www.inside-r.org/pretty-r">Created by Pretty R at inside-R.org</a></p>
 
 
@@ -296,13 +299,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

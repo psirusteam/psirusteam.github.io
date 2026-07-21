@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Y ahora con qué ganas… (Datexco denunciado) – Andrés Gutiérrez</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -38,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -159,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>¿Ahora con qué ganas voy a hacer <a href="../posts/2011-09-08-si-las-elecciones-fueran-hoy-y-ademas-1-2-3-etc-penalosa-gana-p0-973.html">el análisis bayesiano electoral</a> con las <a href="http://www.lasillavacia.com/historia/ex-colaboradores-de-datexco-dicen-que-la-firma-invento-encuestas-para-opinometro-de-el-tiem">últimas denuncias</a> que se han suscrito a la encuestadora Datexco? En mis pocos años de vida, no he sabido de otra empresa tan cuestionada en el ámbito de las encuestas como Datexco (no es la primera vez que se rumora de sus malas prácticas). Yo no sé si sea cierto ese rumor, pero lo que sí sé es Datexco debería aclarar su situación. El presidente de esta firma en respuesta a las declaraciones de sus antiguos gerentes ha expresado su inconformidad y ha salido, como en su momento hizo el ex-alcalde Samuel Moreno (hoy en prisión preventiva), con un <a href="http://www.eltiempo.com/politica/datexco-denuncia-campana-negra-en-su-contra_10437685-4">comunicado de prensa</a> que señala que va a tomar acciones penales contra los ex-empleados de su compañía.</p>
+<p>¿Ahora con qué ganas voy a hacer <a href="2011-09-08-si-las-elecciones-fueran-hoy-y-ademas-1-2-3-etc-penalosa-gana-p0-973.qmd">el análisis bayesiano electoral</a> con las <a href="http://www.lasillavacia.com/historia/ex-colaboradores-de-datexco-dicen-que-la-firma-invento-encuestas-para-opinometro-de-el-tiem">últimas denuncias</a> que se han suscrito a la encuestadora Datexco? En mis pocos años de vida, no he sabido de otra empresa tan cuestionada en el ámbito de las encuestas como Datexco (no es la primera vez que se rumora de sus malas prácticas). Yo no sé si sea cierto ese rumor, pero lo que sí sé es Datexco debería aclarar su situación. El presidente de esta firma en respuesta a las declaraciones de sus antiguos gerentes ha expresado su inconformidad y ha salido, como en su momento hizo el ex-alcalde Samuel Moreno (hoy en prisión preventiva), con un <a href="http://www.eltiempo.com/politica/datexco-denuncia-campana-negra-en-su-contra_10437685-4">comunicado de prensa</a> que señala que va a tomar acciones penales contra los ex-empleados de su compañía.</p>
 <p>Sea que los ex-empleados de Datexco estén o no calumniando a esta empresa, su presidente - además de salir con amenazas de denuncias - debería aclarar la situación.</p>
 <p>En fin, qué mal que esto pase. Yo doy fe de que muchas encuestadoras en Colombia hacen muy bien su trabajo. Son firmas que se esfuerzan en conseguir las entrevistas y que tienen muchos filtros de supervisión para que haya total transparencia en la recolección de la información. Incluso, aunque tal vez algunos de mis lectores no lo sepan, muchas firmas encuestadoras tienen procesos de selección probabilística (sí, con base en un diseño de muestreo) muy bien estructurado. Lo sé de primera mano pues yo audito y califico algunos procesos que llegan en forma de licitación.</p>
 
@@ -217,13 +220,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

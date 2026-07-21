@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Técnicas básicas de estimación en dominios VS enfoque de postestratificación (R: :TeachingSampling) – Andrés Gutiérrez</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -73,10 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -119,7 +122,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -235,7 +238,7 @@ window.Quarto = {
 <p>La cual, bajo un diseño de muestreo aleatorio simple (expresión 9.6.21 de Gutiérrez, 2016), toma la siguiente forma:</p>
 <p><strong><span class="math inline">\(AVar_{MAS}(\tilde{t}_{d})=\frac{N^2}{n}(1-\frac{n}{N}) \sum_d \frac{n_d-1}{n-1}S^2_{y_{U_d}}\)</span></strong></p>
 <p>Nótese que, se siguen manteniendo las cantidades <em>N</em> y <em>n</em>, la cuasi-varianza sólo está supeditada a los valores de la característica de interés únicamente en el dominio <span class="math inline">\(U_d\)</span>, lo cual implica una gran reducción en términos de la varianza. A continuación ilustro esta situación con ayuda de las bases de datos Marco &amp; Lucy, del paquete TeachingSampling. En primer lugar se selecciona una muestra aleatoria simple:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">data</span>(Marco)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">data</span>(Marco)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">data</span>(Lucy)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> N <span class="ot">&lt;-</span> <span class="fu">dim</span>(Marco)[<span class="dv">1</span>]</span>
@@ -243,14 +246,14 @@ window.Quarto = {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> Pik<span class="ot">&lt;-</span><span class="fu">rep</span>(n<span class="sc">/</span>N,n)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> sam <span class="ot">&lt;-</span> S. <span class="fu">SI</span>(N,n)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> data <span class="ot">&lt;-</span> Lucy[sam,]</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">attach</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">attach</span>(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Luego, se utiliza la función Domains para crear los dominios de interés como una matriz de variables indicadoras. Tantas columnas como dominios exista. Al multiplicarlas por las características de interés en la muestra, se obtiene una matriz de ceros, para los elementos que no pertenecen al dominio, y de valores, para los que sí pertenecen al dominio.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> Doma <span class="ot">&lt;-</span> <span class="fu">Domains</span>(SPAM)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> Doma <span class="ot">&lt;-</span> <span class="fu">Domains</span>(SPAM)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> estima <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Income, Employees, Taxes)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> SPAM.no <span class="ot">&lt;-</span> estima<span class="sc">*</span>Doma[,<span class="dv">1</span>]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> SPAM.yes <span class="ot">&lt;-</span> estima<span class="sc">*</span>Doma[,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> SPAM.yes <span class="ot">&lt;-</span> estima<span class="sc">*</span>Doma[,<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Las estimaciones para los dominios de interés cuentan con un coeficiente de variación estimado del orden del 7 % hasta el 11%, en el dominio SPAM. NO y del orden del 5% al 9% en el otro dominio.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> E. <span class="fu">SI</span>(N,n,SPAM.no)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> E. <span class="fu">SI</span>(N,n,SPAM.no)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                 Income    Employees        Taxes</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Estimation <span class="fl">3.799757e+05</span> <span class="fl">5.721648e+04</span> <span class="fl">1.094673e+04</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Variance   <span class="fl">8.821093e+08</span> <span class="fl">1.691118e+07</span> <span class="fl">1.647727e+06</span></span>
@@ -260,15 +263,15 @@ window.Quarto = {
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                 Income    Employees        Taxes</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Estimation <span class="fl">6.166226e+05</span> <span class="fl">9.045499e+04</span> <span class="fl">1.655636e+04</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>Variance   <span class="fl">1.013343e+09</span> <span class="fl">1.786384e+07</span> <span class="fl">2.540981e+06</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>CVE        <span class="fl">5.162485e+00</span> <span class="fl">4.672560e+00</span> <span class="fl">9.627995e+00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>CVE        <span class="fl">5.162485e+00</span> <span class="fl">4.672560e+00</span> <span class="fl">9.627995e+00</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Por supuesto que al sumar las estimaciones se tendrá el total estimado de la población y el coeficiente de variación se reduce.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> E. <span class="fu">SI</span>(N,n,estima)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> E. <span class="fu">SI</span>(N,n,estima)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                 Income    Employees        Taxes</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Estimation <span class="fl">9.965982e+05</span> <span class="fl">1.476715e+05</span> <span class="fl">2.750309e+04</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Variance   <span class="fl">9.170756e+08</span> <span class="fl">1.316354e+07</span> <span class="fl">3.431910e+06</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>CVE        <span class="fl">3.038662e+00</span> <span class="fl">2.456913e+00</span> <span class="fl">6.735759e+00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>CVE        <span class="fl">3.038662e+00</span> <span class="fl">2.456913e+00</span> <span class="fl">6.735759e+00</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Si utilizamos el estimador de postestratificación en cada dominio, se obtienen mejores estimaciones de los coeficientes de variación.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> estima<span class="ot">&lt;-</span>Doma<span class="sc">*</span>Income</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> estima<span class="ot">&lt;-</span>Doma<span class="sc">*</span>Income</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> tx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">937</span>, <span class="dv">1459</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> b <span class="ot">&lt;-</span> E. <span class="fu">Beta</span>(estima,Doma,Pik,<span class="at">ck=</span><span class="dv">1</span>,<span class="at">b0=</span><span class="cn">FALSE</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> GREG. <span class="fu">SI</span>(N,n,estima,Doma,tx, b, <span class="at">b0=</span><span class="cn">FALSE</span>)</span>
@@ -293,13 +296,13 @@ window.Quarto = {
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>                     no          yes</span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>Estimation <span class="fl">1.180943e+04</span> <span class="fl">1.581442e+04</span></span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>Variance   <span class="fl">1.207738e+06</span> <span class="fl">2.215550e+06</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>CVE        <span class="fl">9.305880e+00</span> <span class="fl">9.412124e+00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>CVE        <span class="fl">9.305880e+00</span> <span class="fl">9.412124e+00</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Las estimaciones para los dominios de interés cuentan con un coeficiente de variación estimado del orden del 3 % hasta el 9%, en el dominio SPAM. NO y del orden del 3% al 9% en el otro dominio. Lo anterior representa una pérdida significativa en la magnitud de los coeficientes de variación. Por supuesto, al sumar, obtenemos las estimaciones poblacionales con coeficientes de variación mucho menores.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> GREG. <span class="fu">SI</span>(N,n,estima,Doma,tx, b, <span class="at">b0=</span><span class="cn">FALSE</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> GREG. <span class="fu">SI</span>(N,n,estima,Doma,tx, b, <span class="at">b0=</span><span class="cn">FALSE</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                 Income    Employees        Taxes</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Estimation <span class="fl">9.989111e+05</span> <span class="fl">1.481271e+05</span> <span class="fl">2.762385e+04</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Variance   <span class="fl">9.139133e+08</span> <span class="fl">1.304082e+07</span> <span class="fl">3.423289e+06</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>CVE        <span class="fl">3.026395e+00</span> <span class="fl">2.437911e+00</span> <span class="fl">6.697884e+00</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>CVE        <span class="fl">3.026395e+00</span> <span class="fl">2.437911e+00</span> <span class="fl">6.697884e+00</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 
@@ -355,13 +358,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>La verdad de las estadísticas – Andrés Gutiérrez</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -38,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -170,18 +173,18 @@ ul.task-list li input[type="checkbox"] {
 <p>La alta tensión entre quienes tienen mayor afinidad</p>
 <p>por las matemáticas y quienes están cerca de la producci</p>
 <p>ón de los datos, de la administración de diversos</p>
-<p>“fondos” de información. Académicos y aplicados.</p>
+<p>fondos de información. Académicos y aplicados.</p>
 <p>Falsas antinomias que tal vez sólo sirvieron para alejar</p>
 <p>la discusión de los verdaderos problemas, que con</p>
 <p>tanta claridad estampara en el número 1 de Estadística,</p>
 <p>la revista del IASI, el fundador del IBGE, Mario Augusto</p>
 <p>Teixeira de Freitas, a quien Dieulefait llamaba</p>
-<p>“el Santo de la Estadística”:</p>
+<p>el Santo de la Estadística:</p>
 <p>Haga la América la Estadística que debe hacer</p>
 <p>y la Estadística hará grande a la América.</p>
 <blockquote class="blockquote">
 <p>Esta es una historia y una invitación. Una historia y balance de proyectos. El cotejo entre lo vislumbrado como posible y lo finalmente cumplido como hecho verificable. Las discusiones que hemos sostenido, en el intento siempre renovado de perfeccionar la identidad de nuestra profesión, que serviría para hacer más sólida nuestra propia posición en la sociedad.</p>
-<p>La alta tensión entre quienes tienen mayor afinidad por las matemáticas y quienes están cerca de la producción de los datos, de la administración de diversos “fondos” de información. Académicos y aplicados. Falsas antinomias que tal vez sólo sirvieron para alejar la discusión de los verdaderos problemas, que con tanta claridad estampara en el número 1 de Estadística, la revista del IASI, el fundador del IBGE, Mario Augusto Teixeira de Freitas, a quien Dieulefait llamaba “el Santo de la Estadística”: Haga la América la Estadística que debe hacer y la Estadística hará grande a la América.</p>
+<p>La alta tensión entre quienes tienen mayor afinidad por las matemáticas y quienes están cerca de la producción de los datos, de la administración de diversos fondos de información. Académicos y aplicados. Falsas antinomias que tal vez sólo sirvieron para alejar la discusión de los verdaderos problemas, que con tanta claridad estampara en el número 1 de Estadística, la revista del IASI, el fundador del IBGE, Mario Augusto Teixeira de Freitas, a quien Dieulefait llamaba el Santo de la Estadística: Haga la América la Estadística que debe hacer y la Estadística hará grande a la América.</p>
 </blockquote>
 <p>El anterior fragmento es tomado del epílogo del libro <a href="http://verdaddelasestadisticas.blogspot.com/">La verdad de las estadísticas</a>, escrito por el doctor Hugo Ambrosí y quien muy gentilmente lo ha publicado en <a href="http://verdaddelasestadisticas.blogspot.com/">su blog personal</a>. El libro merece ser leído y releído pues, aparte de que fue escrito por un estadístico influyente en el desarrollo de la estadística en Argentina, está matizado con cierto tinte filosófico que conlleva a que el lector piense y piense acerca de preguntas a las cuales es difícil dar respuestas.</p>
 <p>Es un honor para mì recomendar este texto y, desde este modesto espacio, darle todo mi apoyo.</p>
@@ -240,13 +243,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

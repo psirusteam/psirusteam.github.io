@@ -1,9 +1,0 @@
----
-title: "MAKNOVA"
-author: "Andrés Gutiérrez"
-date: "2010-12-30"
-categories:
-  - "Community and Events"
-  - "Publications"
----
-

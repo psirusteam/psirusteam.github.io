@@ -1,9 +1,0 @@
----
-title: "Calificando…"
-author: "Andrés Gutiérrez"
-date: "2011-03-31"
-categories:
-  - "Community and Events"
-  - "Publications"
----
-
