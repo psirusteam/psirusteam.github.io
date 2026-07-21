@@ -1,4 +1,4 @@
----
+﻿---
 title: "Resultados desagregados y agregados en la misma tabla (R: :dplyr)"
 author: "Andrés Gutiérrez"
 date: "2019-06-13"
@@ -13,7 +13,8 @@ Lo primero que se puede considerar es crear la tabla desagregada con el comando 
 
 HTML generated using hilite.me
 
-```
+```{r}
+#| error: false
 library(dplyr)
 data("mtcars")
 
@@ -25,30 +26,16 @@ p2 <- mtcars %>%
   summarise(mean(mpg))
 
 as.data.frame(rbind(p1, c("Total", unlist(p2))))
-
-    cyl        mean(mpg)
-1     4             26.6
-2     6             19.7
-3     8             15.1
-4 Total           20.1
 ```
-
 La solución más eficiente es utilizar el comando `mutate_at` y `bind_rows` sobre la base de datos original y después agruparlos, para finalmente obtener la tabla deseada.
 
 HTML generated using hilite.me
 
-```
+```{r}
+#| error: false
 mtcars %>% 
   mutate_at(vars(cyl), funs(as.character(.))) %>%
   bind_rows(mutate(., cyl = "Total")) %>%
   group_by(cyl) %>%
   summarise(mean(mpg))
-
-# A tibble: 4 x 2
-  cyl   `mean(mpg)`
-  <chr>       <dbl>
-1 4            26.7
-2 6            19.7
-3 8            15.1
-4 Total        20.1
 ```

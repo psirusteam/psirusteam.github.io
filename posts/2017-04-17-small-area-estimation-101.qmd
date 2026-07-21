@@ -1,10 +1,12 @@
----
+﻿---
 title: "Small Area Estimation 101"
 author: "Andrés Gutiérrez"
 date: "2017-04-17"
 categories:
   - "Modeling"
   - "Sampling"
+execute:
+  eval: false
 ---
 
 Small area estimation (SAE) has become a widely used technique in official statistics since the last decade of past century. When the sample size is not enough to provide reliable estimates at a very particular level, the power of models and auxiliary information must be applied with no hesitation. In a nutshell, SAE tries to exploits similarity and borrows strength from available information.
@@ -27,7 +29,9 @@ $$ t_{y, d} = \sum_{k \in U_d} y_k $$
 
 Where $t_{y, d}$ denotes the total income of the $d$-th county, $y_k$ is the income of the $k$-th company belonging the $d$-th county. The whole population of companies into the county is noted by $U_d$. Thus, this code computes the total income for each county along with the number of companies belonging each county. Finally, this parameters are saved in a new database named **Results**.
 
-```
+```{r}
+#| error: false
+#| eval: false
 #############################
 ##### Setting things up #####
 #############################
@@ -56,12 +60,13 @@ N <- BigLucy %>%
 Results <- data.frame(N, Total$Income.)
 
 #Checking the population total
-(Total <- sum(Results$Total. Income.))
+(Total <- sum(Results$Total.Income.))
 ```
-
 Now, once the parameters of the finite populations are computed, the time has come for us to select a sample. The sampling design we will use is an stratified sampling by taking advantage of the classification of each company into the database according to its level: small, medium and large. The selected sample will be stored into an object named **data.sample** and the sampling weights will be saved in another object called **FEX**.
 
-```
+```{r}
+#| error: false
+#| eval: false
 #######################################
 ##### Drawing a stratified sample #####
 #######################################
@@ -82,7 +87,7 @@ n2 <- round(N2 * 0.05)
 n3 <- round(N3 * 0.05)
 (nh<-c(n1,n2,n3))
 # Draws a stratified sample
-sam <- S. STSI(Level, Nh, nh)
+sam <- S.STSI(Level, Nh, nh)
 
 data.sam <- BigLucy[sam,]
 
@@ -92,12 +97,13 @@ data.sam$FEX[data.sam$Level == "Medium"] <- Nh[2] / nh[2]
 data.sam$FEX[data.sam$Level == "Small"] <- Nh[3] / nh[3]
 
 dim(data.sam)
-save(data.sam, file = "data.sam. RData")
+save(data.sam, file = "data.sam.RData")
 ```
-
 In summary, we have drawn a sample of 4265 companies: 145 big companies, 1290 medium companies and, 2830 small companies. Each of these companies is spread out through the 100 counties in the country. In the **Results** database will be stored the information about those counties (how many companies are in each county and, how many companies are in the sample for each county.) along with different estimations for the total income of the counties.
 
-```
+```{r}
+#| error: false
+#| eval: false
 ######################
 ##### In summary #####
 ######################
@@ -108,9 +114,8 @@ n <- data.sam %>%
   arrange(Zone)
 
 Results$n.county <- n$n.county
-Results <- Results[c("Zone", "N.county", "n.county", "Total. Income.")]
+Results <- Results[c("Zone", "N.county", "n.county", "Total.Income.")]
 
-save(Results, file = "Results. RData")
+save(Results, file = "Results.RData")
 ```
-
 In the following post, we will use this sample to estimate the total income for each of the hundred zones in BigLucy's population.

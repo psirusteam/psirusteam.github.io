@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2016-12-24">
 
-<title>Computing Sample Size for Variance Estimation – Andrés Gutiérrez</title>
+<title>computing-sample-size-for-variance-estimation – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -159,11 +194,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Computing Sample Size for Variance Estimation</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">Sampling</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -200,13 +231,17 @@ window.Quarto = {
 <li><p>Function <strong>b4S2</strong> allow calculating the power level for a fixed sample size. It also allows obtaining a mapping similar to the one of <strong>ss4S2H</strong>.</p></li>
 </ol>
 <p>In order to use the above functions it is necessary to install and call the package that contains them in the Comprehensive R Archive Network (CRAN). That for, it is required to type the following code lines from the console:</p>
-<pre><code>install.packages("samplesize4surveys")
-library(samplesize4surveys)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"samplesize4surveys"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(samplesize4surveys)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>For example, the following code line gives the necessary sample size to estimate the variance of a characteristic of interest in a finite population (with a coefficient of kurtosis of one) to reach an estimated coefficient of variation of maximum 5% and a relative margin of error of 3%</p>
 <pre><code>ss4S2(N = 10000, K = 1, CV = 0.05, me = 0.03, DEFF = 2, plot = TRUE)</code></pre>
 <p>On the other hand, as the package is in constant update, the authors have arranged a repository in which users can use the newest features and interact with the academic community to correct possible errors in computer codes and improve the efficiency of functions, among others. In order to access to this version control, it is necessary to type the following lines from R.</p>
-<pre><code>library(devtools)
-install_github("psirusteam/samplesize4surveys")</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"psirusteam/samplesize4surveys"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p><a href="https://drive.google.com/open?id=0ByzoHkgSB8F3d0VfZzJyQ2JKcUU">In this paper</a> you can find the mathematical background behind those R functions.</p>
 
 

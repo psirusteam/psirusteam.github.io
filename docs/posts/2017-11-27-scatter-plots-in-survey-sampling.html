@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2017-11-27">
 
-<title>Scatter plots in survey sampling – Andrés Gutiérrez</title>
+<title>scatter-plots-in-survey-sampling – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -159,11 +194,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Scatter plots in survey sampling</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Sampling</div>
-    <div class="quarto-category">R</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -195,44 +226,69 @@ window.Quarto = {
 <p>For example, you may want to know how many people are in poverty. How about counting the poor people in the sample? I know, it is not a good idea. You have to use the sampling weights to estimate the whole number of poor people in the population. The total error paradigm follows the same approach when estimating any parameter of the finite population: you have to use the sampling weights in order to obtain unbiased estimators.</p>
 <p>The idea behind this paradigm is the representative principle. If a person <span class="math inline">\(k\)</span> is included in the sample with a sampling weight <span class="math inline">\(w_k\)</span>, she/he represents to himself and <span class="math inline">\(w_k-1\)</span> remaining people. That way, you obtain design-unbiasedness.</p>
 <p>I am not a big fan of using descriptive sample statistics to analyze survey data because it can mask the reality, and the fact is that person <span class="math inline">\(k\)</span> is included in the sample, but he/she is not alone. Behind person <span class="math inline">\(k\)</span> there are other people, not included in the sample, and you have to realize that. So, let’s apply that principle to scatter plots. I am using the Lucy population from the TeachingSampling package to recreate my idea. The following code is used to draw a <span class="math inline">\(\pi PS\)</span> sample.</p>
-<pre><code>library(TeachingSampling)
-data(Lucy)
-# The inclusion probability is proportional to Income 
-# The selected sample of size n=400 
-n &lt;- 400
-set.seed(123)
-res &lt;- S.piPS(n, Lucy$Income)
-sam &lt;- res[,1]
-# The sample is stored in an data.sample 
-data.sample &lt;- Lucy[sam, ]
-attach(data.sample)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TeachingSampling)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Lucy)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The inclusion probability is proportional to Income </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The selected sample of size n=400 </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">400</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">S.piPS</span>(n, Lucy<span class="sc">$</span>Income)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>sam <span class="ot">&lt;-</span> res[,<span class="dv">1</span>]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># The sample is stored in an data.sample </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>data.sample <span class="ot">&lt;-</span> Lucy[sam, ]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(data.sample)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>The sampling weights will be stored in the data.sample data in the column wk. They will be useful to reproduce our finite popultaion from the sample data.</p>
-<pre><code># Pik.s is the inclusion probability of units in the sample
-data.sample$Pik.s &lt;- res[,2]
-# wk is the sampling weight
-data.sample$wk &lt;- 1/data.sample$Pik.s                                                                                   </code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pik.s is the inclusion probability of units in the sample</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data.sample<span class="sc">$</span>Pik.s <span class="ot">&lt;-</span> res[,<span class="dv">2</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># wk is the sampling weight</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data.sample<span class="sc">$</span>wk <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>data.sample<span class="sc">$</span>Pik.s                                                                                   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Now, let`s make a plot of the sampling data (with just 400 observations). I recall that this scenario is somehow misleading, because we want to know the behavior of the variables in the finite population.</p>
-<pre><code>library(ggplot2)
-ggplot(data = data.sample, aes(x = Income, y = Employees)) +
-geom_point()</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data.sample, <span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> Employees)) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2017-11-27-scatter-plots-in-survey-sampling_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>The first option that comes to mind is to include the sampling weights in the points of the scatter plot. However, this approach is not appealing to me, because it is not straightforward from this plot to visuzlize the entire finite population.</p>
-<pre><code>ggplot(data = data.sample, aes(x = Income, y = Employees, size = wk)) + 
-geom_point()</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data.sample, <span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> Employees, <span class="at">size =</span> wk)) <span class="sc">+</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2017-11-27-scatter-plots-in-survey-sampling_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>In order to make the finite population scatter plot from the survey sample, I will replicate the rows of the data.sample object as many times as the sampling weight wk. I am using the mefa: :rep function to achieve this goal. So, the newLucy object is an intent to mimic the finite population by using the selected sample.</p>
-<pre><code>library(mefa)
-newLucy &lt;- NULL
-
-for(i in 1:nrow(data.sample))
-{
-newLucy &lt;- rbind(newLucy,
-rep(data.sample[i, ],
-round(data.sample$wk[i])))
-}
-
-newLucy &lt;- as.data.frame(newLucy)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>replications <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">1</span>L, <span class="fu">round</span>(data.sample<span class="sc">$</span>wk))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>newLucy <span class="ot">&lt;-</span> data.sample[<span class="fu">rep</span>(<span class="fu">seq_len</span>(<span class="fu">nrow</span>(data.sample)), replications), ]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(newLucy) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Now, with the newLucy population, I will make a scatter plot. Now, as I am replicating the rows of the sample data, I will add a jitter to avoid overplotting of the points in the scatter plot. This way, this plot (with 2396 observations) looks as if it would come from the finite population.</p>
-<pre><code>ggplot(data = newLucy, aes(x = Income, y = Employees)) +
-geom_point() + geom_jitter(width = 15, height = 15)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> newLucy, <span class="fu">aes</span>(<span class="at">x =</span> Income, <span class="at">y =</span> Employees)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="dv">15</span>, <span class="at">height =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2017-11-27-scatter-plots-in-survey-sampling_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 

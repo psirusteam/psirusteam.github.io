@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2010-03-28">
 
-<title>Una nueva forma de realizar histogramas – Andrés Gutiérrez</title>
+<title>una-nueva-forma-de-realizar-histogramas – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -130,11 +165,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Una nueva forma de realizar histogramas</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Visualization</div>
-    <div class="quarto-category">Sampling</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -168,12 +199,30 @@ ul.task-list li input[type="checkbox"] {
 <p>Segundo ejemplo: Función de distribución para una razón. El histograma estándar no muestra la punta en el dato <em>x=20.2</em>. Los otros dos histogramas sí lo muestran.</p>
 <p>Tercer ejemplo: Función de distribución de unos datos simulados. El histograma propuesto sí muestra la punta cercana a <em>x=7</em> y también los valores extremos a la derecha de la distribución.</p>
 <p>La implementación computacional se realiza mediante la función dhist (<a href="http://www.box.net/shared/napicxlusf">descargar acá</a>). Básicamente, sus argumentos son: x, el conjunto de datos; a, el factor de escala (para un histograma estándar, esta argumento debe ser igual a 0.0001<em>iqr(x), para el histograma de iguales áreas debe ser igual a 1000</em>iqr(Taxes) y para la nueva propuesta es 10*iqr(Taxes)); nbin, el número de barras en el histograma. A continuación se muestra el código en R y las salidas para histogramas de las variables Ingreso e Impuestos de la población Lucy del paquete TeachingSampling.</p>
-<pre><code>library(TeachingSampling)
-data(Lucy)
-attach(Lucy)</code></pre>
-<pre><code># Función de distribución empírica para las dos variables
-plot(ecdf(Income))
-plot(ecdf(Taxes))</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TeachingSampling)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Lucy)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Lucy)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Función de distribución empírica para las dos variables</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">ecdf</span>(Income))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2010-03-28-una-nueva-forma-de-realizar-histogramas_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">ecdf</span>(Taxes))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2010-03-28-una-nueva-forma-de-realizar-histogramas_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <pre><code># Histograma tradicional
 dhist(Income,nbin=14,a=0.0001*iqr(Income))
 dhist(Taxes,nbin=14,a=0.0001*iqr(Taxes))</code></pre>

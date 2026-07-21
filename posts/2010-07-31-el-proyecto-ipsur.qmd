@@ -1,4 +1,4 @@
----
+﻿---
 title: "El proyecto IPSUR"
 author: "Andrés Gutiérrez"
 date: "2010-07-31"
@@ -11,10 +11,11 @@ En Julio de este año, salió al ciberespacio la obra maestra de G. Jay Kerns. �
 
 La segunda sección del libro de Kerns comprende técnicas estadísticas como pruebas de hipótesis, regresión o series de tiempo. No voy a ahondar en esto pues hay ya muchos libros que unifican estos conceptos con el software R. Esta obra [hace parte de un proyecto](https://web.archive.org/web/20100730113926/http://ipsur.r-forge.r-project.org/book/index.php) adelantado por el mismo Kerns y por G. Andy Chang de la Youngstown State University. Como hace parte de un proyecto GNU... pues ¿adivinen qué?... sí, es grátis... [la descarga del libro es gratis](http://www.lulu.com/product/file-download/introduction-to-probability-and-statistics-using-r/12037733) y viene acompañada de la descarga del paquete de R. Ahora, que si lo quiere tener en formato de papel y así apoyar al autor, pues sólo [debe adquirir su copia impresa por no más de 30 dólares americanos](http://www.lulu.com/product/tapa-blanda/introduction-to-probability-and-statistics-using-r/12037732). Si usted ya es usuario de R siga las siguintes instrucciones para accede al paquete y al libro:
 
-```
+```{r}
+#| error: false
+#| eval: false
 install.packages("IPSUR")
 library(IPSUR)
 read(IPSUR)
 ```
-
 Pero esto apenas empieza, dado que es parte de un proyecto GNU, el autor de esta obra ha puesto a disposición de la comunidad [los códigos LaTeX](https://web.archive.org/web/20100730114349/http://ipsur.r-forge.r-project.org/book/downloads.php) para que usted los modifique y pueda construir su propio libro (debe tener en cuenta el manejo de Sweave, LaTeX y BibTeX). Se trata de una obra sin antecedentes, no sólo por su contenido (libro y paquete) sino por el alcance que estoy seguro va a tener en el mediano plazo dadas sus técnicas de comercialización.

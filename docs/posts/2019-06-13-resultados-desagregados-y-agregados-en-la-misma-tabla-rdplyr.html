@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2019-06-13">
 
-<title>Resultados desagregados y agregados en la misma tabla (R: :dplyr) – Andrés Gutiérrez</title>
+<title>resultados-desagregados-y-agregados-en-la-misma-tabla-rdplyr – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -130,11 +165,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Resultados desagregados y agregados en la misma tabla (R: :dplyr)</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">Software</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -165,38 +196,84 @@ ul.task-list li input[type="checkbox"] {
 <p>Algunos lectores de este blog valoran la facilidad de procesamiento de tablas de algunos programas populares como <code>SPSS</code>. Más allá de la facilidad del manejo de sus procedimientos, la versatilidad de las tablas resultantes es evidente. Para los que, como yo, queremos aplicar todo en <code>dplyr</code>, existe una solución al problema de la generación de tablas desagregadas con una estadística de resumen sobre la base de datos entera; algo así como un gran total, o gran media, o gran algo. Este problema fue planteado primero en StackOverflow <a href="https://stackoverflow.com/questions/51090929/add-baseline-grand-total-with-group-by-in-dplyr">(ver acá)</a> y en esta entrada se presenta una adaptación.</p>
 <p>Lo primero que se puede considerar es crear la tabla desagregada con el comando <code>group_by</code>, luego generar la medida de resumen sobre toda la base de datos, para finalmente pegar las consultas con el comando <code>rbind</code>. Considere el siguiente código que genera la tabla deseada:</p>
 <p>HTML generated using hilite.me</p>
-<pre><code>library(dplyr)
-data("mtcars")
-
-p1 &lt;- mtcars %&gt;% 
-  group_by(cyl) %&gt;%
-  summarise(mean(mpg))
-
-p2 &lt;- mtcars %&gt;% 
-  summarise(mean(mpg))
-
-as.data.frame(rbind(p1, c("Total", unlist(p2))))
-
-    cyl        mean(mpg)
-1     4             26.6
-2     6             19.7
-3     8             15.1
-4 Total           20.1</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(mpg))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(mpg))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(p1, <span class="fu">c</span>(<span class="st">"Total"</span>, <span class="fu">unlist</span>(p2))))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">cyl</th>
+<th style="text-align: left;">mean(mpg)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">26.6636363636364</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">19.7428571428571</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">15.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: left;">20.090625</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>La solución más eficiente es utilizar el comando <code>mutate_at</code> y <code>bind_rows</code> sobre la base de datos original y después agruparlos, para finalmente obtener la tabla deseada.</p>
 <p>HTML generated using hilite.me</p>
-<pre><code>mtcars %&gt;% 
-  mutate_at(vars(cyl), funs(as.character(.))) %&gt;%
-  bind_rows(mutate(., cyl = "Total")) %&gt;%
-  group_by(cyl) %&gt;%
-  summarise(mean(mpg))
-
-# A tibble: 4 x 2
-  cyl   `mean(mpg)`
-  &lt;chr&gt;       &lt;dbl&gt;
-1 4            26.7
-2 6            19.7
-3 8            15.1
-4 Total        20.1</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(cyl), <span class="fu">funs</span>(<span class="fu">as.character</span>(.))) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(<span class="fu">mutate</span>(., <span class="at">cyl =</span> <span class="st">"Total"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(mpg))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">cyl</th>
+<th style="text-align: right;">mean(mpg)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">26.66364</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: right;">19.74286</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: right;">15.10000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">20.09062</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 

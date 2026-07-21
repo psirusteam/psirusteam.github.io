@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2017-06-15">
 
-<title>Sampling weights and multilevel modeling in R – Andrés Gutiérrez</title>
+<title>sampling-weights-and-multilevel-modeling-in-r – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -136,11 +171,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Sampling weights and multilevel modeling in R</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Sampling</div>
-    <div class="quarto-category">Modeling</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -177,55 +208,65 @@ ul.task-list li input[type="checkbox"] {
 <section id="r-workshop" class="level2">
 <h2 class="anchored" data-anchor-id="r-workshop">R workshop</h2>
 <p>We will use the student house-weight to fit a multilevel model. As stated before, the sum of these weights is equal to the sample. For the R workshop, we will use PISA 2012 data (<a href="http://www.oecd.org/pisa/pisaproducts/pisa2012database-downloadabledata.htm">available in the OECD website</a>). I have done a filter for the Colombian case and saved this data to be directly compatible with R (<a href="https://drive.google.com/open?id=0ByzoHkgSB8F3T2pDcU9mOUh0Z0U">available here</a>). Let’s load the data into R.</p>
-<pre><code>rm(list = ls())
-library(dplyr)
-library(ggplot2)
-library(lme4)
-
-setwd("/your working directory")
-load("PisaCol. RData")
-
-head(names(PisaCol))
-summary(PisaCol$STRATUM)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/your working directory"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"PisaCol. RData"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">names</span>(PisaCol))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(PisaCol<span class="sc">$</span>STRATUM)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Now, we create an object containing the student house-weights and summarize some results based on that set of weights. Notice that the total student weights are stored in the column <strong>W_FSTUWT</strong> of the PISA database. I recall you that I am working with the first plausible value of the mathematics test and that score will be defined as our (dependent) variable of interest for the modeling.</p>
-<pre><code>n &lt;- nrow(PisaCol)
-PisaCol$W_HOUSEWHT &lt;- n * PisaCol$W_FSTUWT / sum(PisaCol$W_FSTUWT)
-
-PisaCol %&gt;%
-  group_by(STRATUM) %&gt;%
-  summarise(avg1 = weighted.mean(PV1MATH, w = W_HOUSEWHT),
-            avg2 = weighted.mean(PV2MATH, w = W_HOUSEWHT))</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(PisaCol)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>PisaCol<span class="sc">$</span>W_HOUSEWHT <span class="ot">&lt;-</span> n <span class="sc">*</span> PisaCol<span class="sc">$</span>W_FSTUWT <span class="sc">/</span> <span class="fu">sum</span>(PisaCol<span class="sc">$</span>W_FSTUWT)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>PisaCol <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(STRATUM) <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg1 =</span> <span class="fu">weighted.mean</span>(PV1MATH, <span class="at">w =</span> W_HOUSEWHT),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">avg2 =</span> <span class="fu">weighted.mean</span>(PV2MATH, <span class="at">w =</span> W_HOUSEWHT))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>We use the function <strong>lmer</strong> of the <strong>lme4</strong>package to obtain the estimation of the model coefficients in the null model (where schools are defined as independent variables).</p>
-<pre><code>##################
-### Null model ###
-##################
-
-HLM0 &lt;- lmer(PV1MATH ~ (1 | SCHOOLID), data = PisaCol,
-             weights = W_HOUSEWHT)
-coef(HLM0)
-summary(HLM0)
-
-# 62.81% of the variance is due to students
-# 37.19% of the variance is due to schools
-100 * 3569 / (3569 + 2113)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">##################</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">### Null model </span><span class="al">###</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">##################</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>HLM0 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(PV1MATH <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> SCHOOLID), <span class="at">data =</span> PisaCol,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">weights =</span> W_HOUSEWHT)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(HLM0)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(HLM0)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 62.81% of the variance is due to students</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 37.19% of the variance is due to schools</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="sc">*</span> <span class="dv">3569</span> <span class="sc">/</span> (<span class="dv">3569</span> <span class="sc">+</span> <span class="dv">2113</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>As you may know, the PISA index of economic, social and cultural status has a strong relationship to student achievement, so it is a good idea to control for this variable in a more refined model.</p>
-<pre><code>#################
-### ESCS mdel ###
-#################
-
-HLM1 &lt;- lmer(PV1MATH ~ ESCS + (1 + ESCS | SCHOOLID), data = PisaCol,
-             weights = W_HOUSEWHT)
-coef(HLM1)
-summary(HLM1)
-
-# After contoling for ESCE, 34.58% of the variance is due to schools
-100 * (96.12 + 1697.36) / (3392.58 + 96.12 + 1697.36)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">#################</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">### ESCS mdel </span><span class="al">###</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="do">#################</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>HLM1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(PV1MATH <span class="sc">~</span> ESCS <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> ESCS <span class="sc">|</span> SCHOOLID), <span class="at">data =</span> PisaCol,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">weights =</span> W_HOUSEWHT)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(HLM1)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(HLM1)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># After contoling for ESCE, 34.58% of the variance is due to schools</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="sc">*</span> (<span class="fl">96.12</span> <span class="sc">+</span> <span class="fl">1697.36</span>) <span class="sc">/</span> (<span class="fl">3392.58</span> <span class="sc">+</span> <span class="fl">96.12</span> <span class="sc">+</span> <span class="fl">1697.36</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>So then, in summary: we have 3569 units of within-schools variance (63%), after controlling for ESCE that figure turns out to 3392 units (student background explains 5% of that variation). We have 2113 (37%) units of between-school variances, after controlling for ESCE that figure turns out to 1793 (student background explains 15% of that variation). The following code makes a graph that summarizes the relationship of the student achievement with ESCE.</p>
-<pre><code>ggplot(data = PisaCol, aes(x = ESCS, y = PV1MATH, size = W_HOUSEWHT)) +
-  theme_minimal() + geom_point() + theme(legend.position="none")
-
-ggplot(data = PisaCol, aes(x = ESCS, y = PV1MATH, size = W_HOUSEWHT)) +
-  geom_point(aes(colour = SCHOOLID)) + theme(legend.position="none")</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> PisaCol, <span class="fu">aes</span>(<span class="at">x =</span> ESCS, <span class="at">y =</span> PV1MATH, <span class="at">size =</span> W_HOUSEWHT)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"none"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> PisaCol, <span class="fu">aes</span>(<span class="at">x =</span> ESCS, <span class="at">y =</span> PV1MATH, <span class="at">size =</span> W_HOUSEWHT)) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> SCHOOLID)) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 </section>

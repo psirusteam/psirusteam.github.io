@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2011-03-07">
 
-<title>Efectivamente, el estimador de Horvitz-Thompson es insesgado (nuevas funciones en TeachingSampling) – Andrés Gutiérrez</title>
+<title>efectivamente-el-estimador-de-horvitz-thompson-es-insesgado-nuevas-funciones-en-teachingsampling – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -130,11 +165,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Efectivamente, el estimador de Horvitz-Thompson es insesgado (nuevas funciones en TeachingSampling)</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Sampling</div>
-    <div class="quarto-category">Inference</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -170,103 +201,166 @@ ul.task-list li input[type="checkbox"] {
 <p>Como resultado de esta búsqueda, muchos estudiantes se detienen en el escenario de muestras con reemplazo y concluyen que el estimador de Horvitz-Thompson es sesgado cuando se tienen diseños con reemplazo. La verdad, son muchos los estudiantes que llegan a esta conclusión. Ahora, no estoy diciendo que estos estudiantes no hayan comprendido efectivamente el funcionamiento del estimador. A lo que me refiero es que es un deber del docente, plasmar e ilustrar en estos escenarios el comportamiento del estimador puesto que es muy fácil llegar a conclusiones erradas. Tal vez este sencillo ejemplo sea de utilidad para docentes o estudiantes que quieran profundizar en la técnica de Horvitz-Thompson bajo muestreos con reemplazo. Se ilustrarán algunas nuevas funciones del paquete TeachingSampling en su versión 2.0.1 para ilustrar el ejemplo.</p>
 <p>A continuación ilustraré el razonamiento equivocado:</p>
 <p>Suponga que se tiene una población <em>U</em> de tamaño <em>N=3</em> y que el diseño de muestreo es con reemplazo de tamaño fijo <em>m=2</em>. En este escenario, el soporte contiene 6 posibles muestras. Dado que se trata de un muestreo con reemplazo, definamos la probabilidad de selección de las unidades como 0.9, 0.05 y 0.05 para cada elemento. Luego, es sencillo calcular las probabilidades de inclusión de primer orden, así como las probabilidades de selección de las muestras (dadas por la distribución multinomial). Para esto utilizamos la función pWr y comprobamos que, en efecto, la suma de estas probabilidades sea uno.</p>
-<pre><code>&gt; library(TeachingSampling)
-&gt; pk &lt;- c(0.9,0.05,0.05)
-&gt; pk
-[1] 0.90 0.05 0.05</code></pre>
-<pre><code>&gt; pik &lt;- 1-(1-pk)^m
-&gt; pik
-[1] 0.9900 0.0975 0.0975</code></pre>
-<pre><code>&gt; p &lt;- pWR(3,2,pk)
-&gt; p
-[1] 0.8100 0.0900 0.0900 0.0025 0.0050 0.0025</code></pre>
-<pre><code>&gt; sum(p)
-[1] 1</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TeachingSampling)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>pk <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.9</span>,<span class="fl">0.05</span>,<span class="fl">0.05</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>pk</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.90 0.05 0.05</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pik <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span>(<span class="dv">1</span><span class="sc">-</span>pk)<span class="sc">^</span>m</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pik</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9900 0.0975 0.0975</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">p.WR</span>(<span class="dv">3</span>, <span class="dv">2</span>, pk)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8100 0.0900 0.0900 0.0025 0.0050 0.0025</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
 <p>Ahora, asumamos que la característica de interés toma los valores 10, 20 y 30 para cada elemento. Luego, el total poblacional es 60. Utilizando la función SupportWR se obtienen las posibles muestras de este diseño:</p>
-<pre><code>&gt; Q &lt;- SupportWR(N,m)
-&gt; Q
-[,1] [,2]
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="fu">SupportWR</span>(N,m)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Q</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
 [1,]    1    1
 [2,]    1    2
 [3,]    1    3
 [4,]    2    2
 [5,]    2    3
 [6,]    3    3</code></pre>
+</div>
+</div>
 <p>La función nk arroja el número de veces que un elemento es seleccionado en las muestras:</p>
-<pre><code>&gt; IndWR &lt;- nk(3,2)
-&gt; IndWR
-     [,1] [,2] [,3]
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>IndWR <span class="ot">&lt;-</span> <span class="fu">nk</span>(<span class="dv">3</span>,<span class="dv">2</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>IndWR</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
 [1,]    2    0    0
 [2,]    1    1    0
 [3,]    1    0    1
 [4,]    0    2    0
 [5,]    0    1    1
 [6,]    0    0    2</code></pre>
+</div>
+</div>
 <p>Justo acá se presenta el inconveniente en donde es fácil confundirse. Alguien podría pensar: ok, el primer elemento ha sido seleccionado dos veces para la primera, luego el estimador debería incluir la información de este elemento dos veces. Con esto en mente, los posibles valores de la característica de interés son:</p>
-<pre><code>&gt; Qy &lt;- SupportWR(N,m, ID=y)
-&gt; Qy
-[,1] [,2]
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Qy <span class="ot">&lt;-</span> <span class="fu">SupportWR</span>(N,m, <span class="at">ID=</span>y)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Qy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
 [1,]   10   10
 [2,]   10   20
 [3,]   10   30
 [4,]   20   20
 [5,]   20   30
 [6,]   30   30</code></pre>
+</div>
+</div>
 <p>Por lo tanto, utilizando la función HT, se calculan los seis posibles valores para el estimador de Horvitz-Thompson, y en las muestras donde algún elemento se repite, también se repite la información en el estimador:</p>
-<pre><code>&gt; HT1&lt;- HT(Qy[1,], pik[Q[1,]])
-&gt; HT2&lt;- HT(Qy[2,], pik[Q[2,]])
-&gt; HT3&lt;- HT(Qy[3,], pik[Q[3,]])
-&gt; HT4&lt;- HT(Qy[4,], pik[Q[4,]])
-&gt; HT5&lt;- HT(Qy[5,], pik[Q[5,]])
-&gt; HT6&lt;- HT(Qy[6,], pik[Q[6,]])</code></pre>
-<pre><code>&gt; Est &lt;- c(HT1, HT2, HT3, HT4, HT5, HT6)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>HT1<span class="ot">&lt;-</span> <span class="fu">HT</span>(Qy[<span class="dv">1</span>,], pik[Q[<span class="dv">1</span>,]])</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>HT2<span class="ot">&lt;-</span> <span class="fu">HT</span>(Qy[<span class="dv">2</span>,], pik[Q[<span class="dv">2</span>,]])</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>HT3<span class="ot">&lt;-</span> <span class="fu">HT</span>(Qy[<span class="dv">3</span>,], pik[Q[<span class="dv">3</span>,]])</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>HT4<span class="ot">&lt;-</span> <span class="fu">HT</span>(Qy[<span class="dv">4</span>,], pik[Q[<span class="dv">4</span>,]])</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>HT5<span class="ot">&lt;-</span> <span class="fu">HT</span>(Qy[<span class="dv">5</span>,], pik[Q[<span class="dv">5</span>,]])</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>HT6<span class="ot">&lt;-</span> <span class="fu">HT</span>(Qy[<span class="dv">6</span>,], pik[Q[<span class="dv">6</span>,]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Est <span class="ot">&lt;-</span> <span class="fu">c</span>(HT1, HT2, HT3, HT4, HT5, HT6)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Teniendo cada estimación se tiene la siguiente salida, que da cuenta de los valores de y, los valores del estimador y la probabilidad de selección de las muestras:</p>
-<pre><code>&gt; data.frame(IndWR, Est, p)
-  X1 X2 X3       Est      p
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(IndWR, Est, p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  X1 X2 X3       Est      p
 1  2  0  0  20.20202 0.8100
 2  1  1  0 215.22922 0.0900
 3  1  0  1 317.79332 0.0900
 4  0  2  0 410.25641 0.0025
 5  0  1  1 512.82051 0.0050
 6  0  0  2 615.38462 0.0025</code></pre>
+</div>
+</div>
 <p>El último paso es multiplicar los valores de las estimaciones por el de las probabilidades de selección de las muestras y sumarlos. Este valor difiere del parámetro de interés y por lo tanto el alumno concluye que el estimador de Horvitz-Thompson no es insesgado para diseños con reemplazo.</p>
-<pre><code>&gt; sum(Est*p)
-[1] 69.46387
-&gt; sum(y)
-[1] 60</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(Est<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 69.46387</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 60</code></pre>
+</div>
+</div>
 <p>Pero, un momento, todo aquel que ha pasado por un curso de muestreo ha hecho aquella demostración en donde se expande la suma en la muestra al universo, se incluyen las variables Ik y se tiene que en esperanza, el estimador de Horvitz-Thompson reproduce el total de la población. Esa demostración no está supeditada al tipo de muestreo que se realice.</p>
 <p>A continuación expondré la forma correcta de ilustrar el insesgamiento en diseños con reemplazo. En primer lugar, la clave del ejemplo es darse cuenta que la fundamentación teórica del estimador está centrada en las variables aleatorias Ik que sólo toman dos valores: uno, si el individuo pertenece a la muestra y cero, en otro caso. Esto indica que si el elemento fue incluido en la muestra una vez, la variable Ik toma el valor uno, si el elemento fue incluido en la muestra más una vez, la variable Ik sigue tomando el valor uno. Lo anterior indica que el estimador de Horvitz-Thompson sólo incluye una vez la información de los elementos repetidos. Utilizando la función IkWR se tiene esta matriz de variables Ik para el muestreo con reemplazo.</p>
-<pre><code>&gt; Ind &lt;- IkWR(N,m)
-&gt; Ind
-     [,1] [,2] [,3]
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>Ind <span class="ot">&lt;-</span> <span class="fu">IkWR</span>(N,m)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Ind</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
 [1,]    1    0    0
 [2,]    1    1    0
 [3,]    1    0    1
 [4,]    0    1    0
 [5,]    0    1    1
 [6,]    0    0    1</code></pre>
+</div>
+</div>
 <p>Utilizando la función HT, se calculan los seis posibles valores para el estimador de Horvitz-Thompson, y en las muestras donde algún elemento se repite sólo se incluye esta información una sola vez:</p>
-<pre><code>&gt; HT1&lt;- HT(y[Ind[1,]==1], pik[Ind[1,]==1])
-&gt; HT2&lt;- HT(y[Ind[2,]==1], pik[Ind[2,]==1])
-&gt; HT3&lt;- HT(y[Ind[3,]==1], pik[Ind[3,]==1])
-&gt; HT4&lt;- HT(y[Ind[4,]==1], pik[Ind[4,]==1])
-&gt; HT5&lt;- HT(y[Ind[5,]==1], pik[Ind[5,]==1])
-&gt; HT6&lt;- HT(y[Ind[6,]==1], pik[Ind[6,]==1])</code></pre>
-<pre><code>&gt; Est &lt;- c(HT1, HT2, HT3, HT4, HT5, HT6)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>HT1<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">1</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">1</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>HT2<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">2</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">2</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>HT3<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">3</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">3</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>HT4<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">4</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">4</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>HT5<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">5</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">5</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>HT6<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">6</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">6</span>,]<span class="sc">==</span><span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>Est <span class="ot">&lt;-</span> <span class="fu">c</span>(HT1, HT2, HT3, HT4, HT5, HT6)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Teniendo cada estimación se tiene la siguiente salida, que da cuenta de los valores de y, los valores del estimador y la probabilidad de selección de las muestras:</p>
-<pre><code>&gt; data.frame(Ind, Est, p)
-  X1 X2 X3       Est      p
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(Ind, Est, p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  X1 X2 X3       Est      p
 1  1  0  0  10.10101 0.8100
 2  1  1  0 215.22922 0.0900
 3  1  0  1 317.79332 0.0900
 4  0  1  0 205.12821 0.0025
 5  0  1  1 512.82051 0.0050
 6  0  0  1 307.69231 0.0025</code></pre>
+</div>
+</div>
 <p>El último paso es multiplicar los valores de las estimaciones por el de las probabilidades de selección de las muestras y sumarlos.</p>
-<pre><code>&gt; sum(Est*p)
-[1] 60
-&gt; sum(y)
-[1] 60          </code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(Est<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 60</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 60</code></pre>
+</div>
+</div>
 <p>Ahora sí, efectivamente, se ilustra que el estimador de Horvitz-Thompson es insesgado para diseños con reemplazo.</p>
 
 

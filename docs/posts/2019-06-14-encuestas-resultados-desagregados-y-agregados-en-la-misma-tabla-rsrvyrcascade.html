@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2019-06-14">
 
-<title>Encuestas - Resultados desagregados y agregados en la misma tabla (R: :srvyr: :cascade) – Andrés Gutiérrez</title>
+<title>encuestas-resultados-desagregados-y-agregados-en-la-misma-tabla-rsrvyrcascade – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -130,11 +165,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Encuestas - Resultados desagregados y agregados en la misma tabla (R: :srvyr: :cascade)</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Surveys</div>
-    <div class="quarto-category">R</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -164,27 +195,75 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Hace unos días <a href="../posts/2019-06-13-resultados-desagregados-y-agregados-en-la-misma-tabla-rdplyr.html">escribí acerca de una solución innovadora</a> a la hora de producir resultados de una estadística cualquiera para algunas desagregaciones de interés y al mismo tiempo crear una fila que mostrara el resultados de esta estadística en la base de datos completa. Cuando se trata de analizar bases de datos que vienen de una encuesta, no es posible utilizar esta solución, puesto que se estaría obviando el diseño de muestreo y por ende, la inferencia estaría sesgada. Este problema ya no es más un problema, puesto que la última versión de la librería <code>srvyr</code> incluye la función <code>cascade</code> que permite generar tablas desagregadas, con una fila al final que incluye el cálculo de las estimaciones para toda la población. A continuación un ejemplo, con una desagegración simple:</p>
 <p>HTML generated using hilite.me</p>
-<pre><code>library(survey)
-library(srvyr)
-data(api)
-
-dstrata &lt;- apistrat %&gt;%
-  as_survey_design(strata = stype, weights = pw)
-
-dstrata %&gt;%
-  group_by(awards) %&gt;%
-  cascade(api99 = survey_mean(api99),
-          api00 = survey_mean(api00),
-          api_diff = survey_mean(api00 - api99),
-          .fill = "Total")
-
-# A tibble: 4 x 7
-  stype api99 api99_se api00 api00_se api_diff api_diff_se
-  &lt;chr&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;
-1 E      636.     13.3  674.    12.5     38.6         2.76
-2 H      617.     15.8  626.    15.5      8.46        3.41
-3 M      610.     16.8  637.    16.6     26.4         3.05
-4 Total  629.     10.1  662.     9.54    32.9         2.08</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survey)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(srvyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(api, <span class="at">package =</span> <span class="st">"survey"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>apistrat<span class="sc">$</span>api_diff <span class="ot">&lt;-</span> apistrat<span class="sc">$</span>api00 <span class="sc">-</span> apistrat<span class="sc">$</span>api99</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>dstrata <span class="ot">&lt;-</span> apistrat <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_survey_design</span>(<span class="at">strata =</span> stype, <span class="at">weights =</span> pw)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>dstrata <span class="sc">%&gt;%</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(awards) <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cascade</span>(<span class="at">api99 =</span> <span class="fu">survey_mean</span>(api99),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">api00 =</span> <span class="fu">survey_mean</span>(api00),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">api_diff =</span> <span class="fu">survey_mean</span>(api_diff),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">.fill =</span> <span class="st">"Total"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 15%">
+<col style="width: 13%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">awards</th>
+<th style="text-align: right;">api99</th>
+<th style="text-align: right;">api99_se</th>
+<th style="text-align: right;">api00</th>
+<th style="text-align: right;">api00_se</th>
+<th style="text-align: right;">api_diff</th>
+<th style="text-align: right;">api_diff_se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">623.6716</td>
+<td style="text-align: right;">15.79628</td>
+<td style="text-align: right;">633.7349</td>
+<td style="text-align: right;">15.556996</td>
+<td style="text-align: right;">10.06332</td>
+<td style="text-align: right;">2.079237</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">632.6291</td>
+<td style="text-align: right;">13.05207</td>
+<td style="text-align: right;">678.4224</td>
+<td style="text-align: right;">12.008496</td>
+<td style="text-align: right;">45.79334</td>
+<td style="text-align: right;">2.434877</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">629.3948</td>
+<td style="text-align: right;">10.09699</td>
+<td style="text-align: right;">662.2874</td>
+<td style="text-align: right;">9.536132</td>
+<td style="text-align: right;">32.89252</td>
+<td style="text-align: right;">2.078207</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Y por acá, otro ejemplo con una desagregación en dos niveles. Nótese que la opción <code>.fill = "Total"</code> etiqueta las celdas agrupadas convenientemente.</p>
 <p>HTML generated using hilite.me</p>
 <pre><code>dstrata %&gt;%

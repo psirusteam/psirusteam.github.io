@@ -1,4 +1,4 @@
----
+﻿---
 title: "Automatic output format in Rmarkdown"
 author: "Andrés Gutiérrez"
 date: "2017-11-19"
@@ -9,26 +9,28 @@ categories:
 
 I am writing a Rmarkdown document with plenty of tables, and I want them in a decent format, e.g. kable. However I don't want to format them one by one. For example, I have created the following data frame in dplyr
 
-```
+```{r}
+#| error: false
+library(dplyr)
+data2 <- data.frame(uf = sample(state.abb[1:8], 100, replace = TRUE))
 data2 %>% group_by(uf) %>%
   summarise(n = n(), ) %>%
   arrange(desc(n))
 ```
-
 One solution to the output format of this data frame would be to name it as an object in R, and then give it a format by using the kable function.
 
-```
+```{r}
+#| error: false
 t1 <- data2 %>%
   group_by(uf) %>%
   summarise(n = n(), ) %>% arrange(desc(n))
 
 knitr::kable(t1)
 ```
-
 However, if your document has hundreds of these queries and you need a faster way to compile the document, while keeping the kable style automatically, avoiding giving a name to the data frame and even avoiding to call the kable function over that name, you can use the [printr package](https://yihui.name/printr/). Just add the following piece of code inside a chunk at the beginning of your document and *voilá.*
 
-```
+```{r}
+#| error: false
 library(printr)
 ```
-
 Now, all of your data frames will have a decent style, and you do not need to worry about this issue. For example, I have knitted a presentation by using *printr*and the first code in this post, and this is the result:

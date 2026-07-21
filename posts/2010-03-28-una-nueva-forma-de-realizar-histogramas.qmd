@@ -1,4 +1,4 @@
----
+﻿---
 title: "Una nueva forma de realizar histogramas"
 author: "Andrés Gutiérrez"
 date: "2010-03-28"
@@ -19,18 +19,18 @@ Tercer ejemplo: Función de distribución de unos datos simulados. El histograma
 
 La implementación computacional se realiza mediante la función dhist ([descargar acá](http://www.box.net/shared/napicxlusf)). Básicamente, sus argumentos son: x, el conjunto de datos; a, el factor de escala (para un histograma estándar, esta argumento debe ser igual a 0.0001*iqr(x), para el histograma de iguales áreas debe ser igual a 1000*iqr(Taxes) y para la nueva propuesta es 10*iqr(Taxes)); nbin, el número de barras en el histograma. A continuación se muestra el código en R y las salidas para histogramas de las variables Ingreso e Impuestos de la población Lucy del paquete TeachingSampling.
 
-```
+```{r}
+#| error: false
 library(TeachingSampling)
 data(Lucy)
 attach(Lucy)
 ```
-
-```
+```{r}
+#| error: false
 # Función de distribución empírica para las dos variables
 plot(ecdf(Income))
 plot(ecdf(Taxes))
 ```
-
 ```
 # Histograma tradicional
 dhist(Income,nbin=14,a=0.0001*iqr(Income))

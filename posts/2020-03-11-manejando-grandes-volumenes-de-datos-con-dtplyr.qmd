@@ -1,4 +1,4 @@
----
+﻿---
 title: "Manejando grandes volúmenes de datos con dtplyr"
 author: "Andrés Gutiérrez"
 date: "2020-03-11"
@@ -11,28 +11,32 @@ Definitivamente dplyr es un motor de análisis de datos muy potente y flexible. 
 
 Bien, empecemos con un ejemplo rápido. Voy a cargar un censo con alrededor de 30 millones de registros y 100 variables.
 
-```
+```{r}
+#| error: false
 rm(list = ls())
 
 library(data.table)
 library(dtplyr)
 library(dplyr, warn.conflicts = FALSE)
 
-censo <- readRDS("YourData.rds")
+set.seed(123)
+censo <- data.table(
+  Ciudad = sample(sprintf("Ciudad %02d", 1:20), 100000, replace = TRUE),
+  Escolaridad = pmax(0, round(rnorm(100000, 11, 4)))
+)
 ```
-
 El siguiente paso es convertir esos datos que acabo de cargar al formato apropiado para dtplyr.
 
-```
+```{r}
+#| error: false
 censo_lazy <- lazy_dt(censo)
 ```
-
 ¡Listo! Es así de fácil, ahora podemos utilizar la sintaxis de siempre sobre este nuevo objeto. La computación es infinitamente más rápida que al utilizar dplyr.
 
-```
+```{r}
+#| error: false
 censo_lazy %>% 
   group_by(Ciudad) %>%
   summarise(average = mean(Escolaridad))
 ```
-
 Por ejemplo, una consulta un poco más robusta le toma a dtplyr **1.01 minutos**, mientras que la misma consulta en dplyr se ejecuta en... Bueno, ya llevo esperando más de seis horas y no termina de ejecutarse el código.

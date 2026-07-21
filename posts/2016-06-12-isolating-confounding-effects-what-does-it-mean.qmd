@@ -1,4 +1,4 @@
----
+﻿---
 title: "Isolating confounding effects - What does it mean?"
 author: "Andrés Gutiérrez"
 date: "2016-06-12"
@@ -23,7 +23,13 @@ So, once you have fitted these two models, you realise that the relationship bet
 
 Here I present some R code useful to reproduce the previous plots.
 
-```r
+```{r}
+#| error: false
+set.seed(123)
+N <- 1000
+D1 <- rbinom(N, 1, 0.5)
+D2 <- 1 - D1
+y <- numeric(N)
 y[D1 == 1] <- rnorm(sum(D1), 10, 1)
 y[D2 == 1] <- rnorm(sum(D2), 5, 1)
 
@@ -44,14 +50,14 @@ p2 <- ggplot(data = datos, aes(D, e2)) + geom_boxplot() +
 
 grid.arrange(p1, p2, nrow = 1)
 ```
-
 In addition, when it comes to causal inference or more sophisticated studies, isolating confounding variables is very important, because you want a well formulated model with correct and precise estimated effects. For example, let's assume that the actual relation between the response variable and a causal variable $D$ is given by
 
 $$ y_i = \beta_0 + \beta_1D_{i} +\beta_2 x_i + \varepsilon_i $$
 
 Where $x$ is a covariate. Then, if you control for the effect of that covariate, the estimate of $\beta_1$ (the causal effect) will be precise as you can see in the next code:
 
-```r
+```{r}
+#| error: false
 N <- 1000
 D <- rbinom(N, 1, 0.3)
 
@@ -65,33 +71,21 @@ plot(y)
 m1 <- lm(y ~ D + x)
 m1
 ```
-
 ```
 Call
 ```
 
 :
 
-```r
+```{r}
+#| error: false
 lm(formula = y ~ D + x)
-
-Coefficients:
-(Intercept)            D            x
-     10.225        5.431        2.993
 ```
-
 On the other hand, if you do **not** control for the effect of that covariate, the estimate of $\beta_1$ (the causal effect) will be **biased** as you can see in the next code:
 
-```r
+```{r}
+#| error: false
 m2 <- lm(y ~ D)
 m2
-
-Call:
-lm(formula = y ~ D)
-
-Coefficients:
-(Intercept)           D1
-    160.200        8.967
 ```
-
 Finally, note that the residuals of both models have different behaviours, the correlation of the covariate with the residuals of the right model is null, while the correlation of the covariate with the residuals of the wrong model is very large.

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Parametric bootstrap"
 author: "Andrés Gutiérrez"
 date: "2015-08-08"
@@ -15,18 +15,19 @@ $$\widehat{MSE} = B^{-1} \sum_{b=1}^B(\tilde{X}_b - \hat{\mu})^2$$
 
 In R, the simulation should look like this for a sample size of ten units:
 
-```r
+```{r}
+#| error: false
 n <- 10
 x <- rnorm(n, 10, 1)
 (mu.hat <- mean(x))
 (sigma.hat <- sd(x))
 
-boot. MSE.median <- function(B, mu.hat, sigma.hat){
+boot.MSE.median <- function(B, mu.hat, sigma.hat){
   x.s <- rnorm(n, mu.hat, sigma.hat)
   SE <- (median(x.s) - mean(mu.hat)) ^ 2
 }
 
 B <- 500
-boot. SE <- replicate(B, boot. MSE.median(B, mu.hat, sigma.hat))
-(MSE.hat <- mean(boot. SE))
+boot.SE <- replicate(B, boot.MSE.median(B, mu.hat, sigma.hat))
+(MSE.hat <- mean(boot.SE))
 ```

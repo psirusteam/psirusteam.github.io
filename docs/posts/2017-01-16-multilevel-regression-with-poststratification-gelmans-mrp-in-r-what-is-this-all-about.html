@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2017-01-16">
 
-<title>Multilevel regression with poststratification (Gelman’s MrP) in R - What is this all about? – Andrés Gutiérrez</title>
+<title>multilevel-regression-with-poststratification-gelmans-mrp-in-r-what-is-this-all-about – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -166,11 +201,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Multilevel regression with poststratification (Gelman’s MrP) in R - What is this all about?</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Modeling</div>
-    <div class="quarto-category">R</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -215,74 +246,96 @@ window.Quarto = {
 <section id="r-workshop" class="level2">
 <h2 class="anchored" data-anchor-id="r-workshop">R workshop</h2>
 <p>Let’s consider the Lucy database of the TeachingSampling package. This population contains some economic variables of 2396 industrial companies in a particular year. Assume that we want to estimate the mean income of industries by each of the five existing zones (strata of interest) on that database. This way, our parameters of interest are <span class="math inline">\(\theta_1, \ldots, \theta_5\)</span>. Now, we also know that the population is divided into three levels (small, medium and big industries) and we have access to the total number of industries within each cross group. That is, we know exactly how many small industries are on each of the five zones, and how many medium industries are on each of the five zones, and so on. The following code shows how to load the database and obtain the cell counts.</p>
-<pre><code>&gt; rm(list = ls())
-&gt; set.seed(123)
-&gt;
-&gt; library(TeachingSampling)
-&gt; library(dplyr)
-&gt; library(lme4)
-&gt;
-&gt; data("Lucy")
-&gt; # Number of industries per level
-&gt; table(Lucy$Level)
-
-   Big Medium  Small
-    83    737   1576
-&gt; # Number of industries per zone
-&gt; table(Lucy$Zone)
-
-  A   B   C   D   E
-307 727 974 223 165
-&gt; # Size of post-strata
-&gt; (Np &lt;- table(Lucy$Level, Lucy$Zone))
-
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TeachingSampling)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"Lucy"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of industries per level</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Lucy<span class="sc">$</span>Level)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   Big Medium  Small 
+    83    737   1576 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of industries per zone</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Lucy<span class="sc">$</span>Zone)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  A   B   C   D   E 
+307 727 974 223 165 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Size of post-strata</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>(Np <span class="ot">&lt;-</span> <span class="fu">table</span>(Lucy<span class="sc">$</span>Level, Lucy<span class="sc">$</span>Zone))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        
            A   B   C   D   E
   Big     30  13   1  16  23
   Medium 180 121 111 187 138
   Small   97 593 862  20   4</code></pre>
+</div>
+</div>
 <p>Of course, this technique works over a selected sample. That’s why we are going to select a random sample of size <span class="math inline">\(n = 1000\)</span>. We can also create some tables showing the counts on the sample.</p>
-<pre><code>&gt; # A sample is selected
-&gt; SLucy &lt;- sample_n(Lucy, size = 1000)
-&gt; table(SLucy$Level)
-
-   Big Medium  Small
-    33    280    687
-&gt; table(SLucy$Zone)
-
-  A   B   C   D   E
-130 295 426  86  63</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A sample is selected</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>SLucy <span class="ot">&lt;-</span> <span class="fu">sample_n</span>(Lucy, <span class="at">size =</span> <span class="dv">1000</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(SLucy<span class="sc">$</span>Level)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   Big Medium  Small 
+    30    298    672 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(SLucy<span class="sc">$</span>Zone)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  A   B   C   D   E 
+121 307 413  87  72 </code></pre>
+</div>
+</div>
 <p>The first step of MRP is Multilevel Regression in order to estimate post-strata means. The following code shows how to estimate them by using the</p>
 <p><strong>lmer</strong></p>
 <p>function. The object</p>
 <p><strong>Mupred</strong></p>
 <p>contains the corresponding <span class="math inline">\(\mu_j\)</span> (<span class="math inline">\(j\)</span> is defined for each level) regarding each stratum (zones).</p>
-<pre><code>&gt; # Step 1: &lt;&lt;MR&gt;&gt; - Multilevel regression
-&gt; M1 &lt;- lmer(Income ~ Level + (1 | Zone), data = SLucy)
-&gt; coef(M1)
-$Zone
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: &lt;&lt;MR&gt;&gt; - Multilevel regression</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>M1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(Income <span class="sc">~</span> Level <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Zone), <span class="at">data =</span> SLucy)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(M1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$Zone
   (Intercept) LevelMedium LevelSmall
-A    1265.596   -579.1851  -893.8958
-B    1138.337   -579.1851  -893.8958
-C    1189.285   -579.1851  -893.8958
-D    1248.658   -579.1851  -893.8958
-E    1284.322   -579.1851  -893.8958
+A    1229.998   -529.7583  -867.2332
+B    1107.354   -529.7583  -867.2332
+C    1148.683   -529.7583  -867.2332
+D    1211.435   -529.7583  -867.2332
+E    1229.810   -529.7583  -867.2332
 
 attr(,"class")
-[1] "coef.mer"
-&gt; SLucy$Pred &lt;- predict(M1)
-&gt;
-&gt; # Summary
-&gt; grouped &lt;- group_by(SLucy, Zone, Level)
-&gt; sum &lt;- summarise(grouped, mean2 = mean(Pred))
-&gt; (Mupred &lt;- matrix(sum$mean2, ncol = 5, nrow = 3))
-          [,1]      [,2]      [,3]      [,4]      [,5]
-[1,] 1265.5959 1138.3370 1189.2852 1248.6575 1284.3224
-[2,]  686.4107  559.1518  610.1000  669.4724  705.1373
-[3,]  371.7001  244.4412  295.3894  354.7618  390.4267</code></pre>
+[1] "coef.mer"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>SLucy<span class="sc">$</span>Pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(M1)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>grouped <span class="ot">&lt;-</span> <span class="fu">group_by</span>(SLucy, Zone, Level)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>sum <span class="ot">&lt;-</span> <span class="fu">summarise</span>(grouped, <span class="at">mean2 =</span> <span class="fu">mean</span>(Pred))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>(Mupred <span class="ot">&lt;-</span> <span class="fu">matrix</span>(sum<span class="sc">$</span>mean2, <span class="at">ncol =</span> <span class="dv">5</span>, <span class="at">nrow =</span> <span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          [,1]      [,2]      [,3]      [,4]      [,5]
+[1,] 1229.9984 1107.3538 1148.6831 1211.4353 1229.8096
+[2,]  700.2402  577.5955  618.9248  681.6771  700.0514
+[3,]  362.7652  240.1205  281.4499  344.2021  362.5764</code></pre>
+</div>
+</div>
 <p>Now we have estimated the post-strata means, it’s time to weight every strata by their corresponding counts in order to obtain an estimate of the mean income by zone. As we know each post-strata size, we simply use the function</p>
 <p><strong>aggregate</strong></p>
 <p>to obtain the MRP estimator of the parameters of interest.</p>
-<pre><code>&gt; # Step 2: &lt;</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: &lt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <blockquote class="blockquote">
 <ul>
 <li>Post-stratification</li>
@@ -302,14 +355,18 @@ attr(,"class")
 <li></li>
 </ul>
 <p>Mupred) / table(Lucy$Zone) A B C D E 643.5724 312.8052 332.1726 682.8031 778.2428 How accurate was the estimation? It was good compared to the true parameters on the finite population.</p>
-<pre><code>&gt; # True parameters
-&gt; aggregate(Lucy$Income, by = list(Lucy$Zone), FUN = mean)
-  Group.1        x
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># True parameters</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(Lucy<span class="sc">$</span>Income, <span class="at">by =</span> <span class="fu">list</span>(Lucy<span class="sc">$</span>Zone), <span class="at">FUN =</span> mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Group.1        x
 1       A 652.2834
 2       B 320.7469
 3       C 331.0195
 4       D 684.9821
 5       E 767.3879</code></pre>
+</div>
+</div>
 
 
 </section>

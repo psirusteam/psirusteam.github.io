@@ -1,10 +1,12 @@
----
+﻿---
 title: "(Estadística para epidemiólogos) Códigos computacionales para estimar la prevalencia de una infección con métodos bayesianos"
 author: "Andrés Gutiérrez"
 date: "2012-10-25"
 categories:
   - "Bayesian Statistics"
   - "Software"
+execute:
+  eval: false
 ---
 
 [En una entrada anterior](2012-09-25-estadistica-para-epidemiologos-estimando-la-prevalencia-de-una-infeccion-con-metodos-bayesianos.qmd) se describió la teoría Bayesiana sobre la cual descansa la inferencia conjunta de la sensibilidad y especificidad de una prueba diagnóstica y de la prevalencia de la infección. En esta entrada se discuten dos aproximaciones computacionales a este problema. La primera soportada en la plataforma WinBUGS, que realiza los procesos de Monte Carlo de forma automática. La segunda, sustentada en R, en donde el muestreo de Gibbs se realiza de forma "manual". A continuación encuentra el código en WinBUGS:
@@ -70,7 +72,9 @@ zeta2=rep(NA,nsim)
 zeta2[1]=5
 ```
 
-```
+```{r}
+#| error: false
+#| eval: false
 zeta1.fun <- function(x1, p, eta, pi)
 {
 p.z1 = eta*pi/p
@@ -80,8 +84,9 @@ if(p.z1 >= 1) {zeta1.now <- x1}
 return(zeta1.now)
 }
 ```
-
-```
+```{r}
+#| error: false
+#| eval: false
 zeta2.fun <- function(x2, p, eta, pi)
 {
 p.z2 = (1-eta)*pi/(1-p)
@@ -91,7 +96,6 @@ if(p.z2 >= 1) {zeta2.now <- x2}
 return(zeta2.now)
 }
 ```
-
 ```
 for (i in 1:nsim){
 p.val[i+1]=eta.val[i]*pi.val[i]+(1-teta.val[i])*(1-pi.val[i])
@@ -114,12 +118,13 @@ colnames(valores)=c("p","zeta1","zeta2","eta","teta","pi")
 colMeans(valores)
 ```
 
-```
+```{r}
+#| error: false
+#| eval: false
 pi.pos <- quantile(pi.val, c(0.025, 0.05, 0.25, 0.5, 0.75, 0.95, 0.975))
 eta.pos <- quantile(eta.val, c(0.025, 0.05, 0.25, 0.5, 0.75, 0.95, 0.975))
 teta.pos <- quantile(teta.val, c(0.025, 0.05, 0.25, 0.5, 0.75, 0.95, 0.975))
 ```
-
 ```
 list(pi.pos=pi.pos, eta.pos=eta.pos, teta.pos=teta.pos)
 ```

@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2016-12-03">
 
-<title>How important is that variable? – Andrés Gutiérrez</title>
+<title>how-important-is-that-variable – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -159,11 +194,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">How important is that variable?</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Modeling</div>
-    <div class="quarto-category">R</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -197,33 +228,73 @@ window.Quarto = {
 <p>If you assume this model as true and <span class="math inline">\(\beta_i &gt; 0\)</span>, then the influence of variable <span class="math inline">\(x_i\)</span>, over response <span class="math inline">\(y\)</span> could be found when isolating measure units from variables. Then, one could fit a model over the standardized variables (explanatory and response) and then directly comparing the regression coefficients. Another way to do this is by means of the following expression:</p>
 <p><span class="math display">\[ I(i) = \frac{\beta_i}{sd(\beta_i)} = \beta_i\frac{ sd(x_i)}{sd(y)}\]</span></p>
 <p>For example, let’s consider the following model <span class="math inline">\(y = -500 x_1 + 50 x_2 + \varepsilon\)</span>, then the relative importance of the first and second variable is around 500/(500+50) = 0.9, and 50/(500+50) = 0.1, respectively. The following code shows how to perform this simple analysis in R.</p>
-<pre><code>n &lt;- 10000
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">runif</span>(n)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">runif</span>(n)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">500</span> <span class="sc">*</span> x1 <span class="sc">+</span> <span class="dv">50</span> <span class="sc">*</span> x2 <span class="sc">+</span> <span class="fu">rnorm</span>(n)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> x1 <span class="sc">+</span> x2)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 1a. Standardized betas</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)<span class="sc">$</span>coe[,<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        x1         x2 
+0.02606664 0.02631853 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sd.betas <span class="ot">&lt;-</span> <span class="fu">summary</span>(model)<span class="sc">$</span>coe[,<span class="dv">2</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>betas <span class="ot">&lt;-</span> model<span class="sc">$</span>coefficients</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>imp <span class="ot">&lt;-</span> <span class="fu">abs</span>(betas)<span class="sc">/</span>sd.betas</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>imp <span class="ot">&lt;-</span> imp<span class="sc">/</span><span class="fu">sum</span>(imp)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>imp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        x1         x2 
+0.90984229 0.09015771 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1b. Standardized betas</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>imp1 <span class="ot">&lt;-</span> <span class="fu">abs</span>(model<span class="sc">$</span>coefficients[<span class="dv">1</span>] <span class="sc">*</span> <span class="fu">sd</span>(x1)<span class="sc">/</span><span class="fu">sd</span>(y))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>imp2 <span class="ot">&lt;-</span> <span class="fu">abs</span>(model<span class="sc">$</span>coefficients[<span class="dv">2</span>] <span class="sc">*</span> <span class="fu">sd</span>(x2)<span class="sc">/</span><span class="fu">sd</span>(y))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>imp1 <span class="sc">/</span> (imp1 <span class="sc">+</span> imp2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       x1 
+0.9101441 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>imp2 <span class="sc">/</span> (imp1 <span class="sc">+</span> imp2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        x2 
+0.08985589 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Standardized variables</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">I</span>(<span class="fu">scale</span>(y)) <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> <span class="fu">I</span>(<span class="fu">scale</span>(x1)) <span class="sc">+</span> <span class="fu">I</span>(<span class="fu">scale</span>(x2)))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = I(scale(y)) ~ 0 + I(scale(x1)) + I(scale(x2)))
 
-x1 &lt;- runif(n)
-x2 &lt;- runif(n)
-y &lt;- -500 * x1 + 50 * x2 + rnorm(n)
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0278954 -0.0045720 -0.0000242  0.0045388  0.0281068 
 
-model &lt;- lm(y ~ 0 + x1 + x2)
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+I(scale(x1)) -9.954e-01  6.844e-05  -14545   &lt;2e-16 ***
+I(scale(x2))  9.828e-02  6.844e-05    1436   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-# 1a. Standardized betas
-summary(model)$coe[,2]
-sd.betas &lt;- summary(model)$coe[,2]
-betas &lt;- model$coefficients
-imp &lt;- abs(betas)/sd.betas
-imp &lt;- imp/sum(imp)
-imp
-
-# 1b. Standardized betas
-imp1 &lt;- abs(model$coefficients[1] * sd(x1)/sd(y))
-imp2 &lt;- abs(model$coefficients[2] * sd(x2)/sd(y))
-
-imp1 / (imp1 + imp2)
-imp2 / (imp1 + imp2)
-
-# 2. Standardized variables
-model2 &lt;- lm(I(scale(y)) ~ 0 + I(scale(x1)) + I(scale(x2)))
-summary(model2)
-abs(model2$coefficients)/sum(abs(model2$coefficients))</code></pre>
+Residual standard error: 0.006843 on 9998 degrees of freedom
+Multiple R-squared:      1, Adjusted R-squared:      1 
+F-statistic: 1.068e+08 on 2 and 9998 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(model2<span class="sc">$</span>coefficients)<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">abs</span>(model2<span class="sc">$</span>coefficients))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I(scale(x1)) I(scale(x2)) 
+  0.91014264   0.08985736 </code></pre>
+</div>
+</div>
 
 
 

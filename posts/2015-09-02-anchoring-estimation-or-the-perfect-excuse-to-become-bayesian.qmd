@@ -1,10 +1,12 @@
----
+﻿---
 title: "Anchoring estimation or the perfect excuse to become \"Bayesian\""
 author: "Andrés Gutiérrez"
 date: "2015-09-02"
 categories:
   - "Bayesian Statistics"
   - "IRT"
+execute:
+  eval: false
 ---
 
 Anchoring is an usual process when estimating abilities in test equating. This is about analyzing standardized tests, while maintaining a predefined scale. For example, assume that you have a set of 60 items in your test. However, two test forms (named Form A and Form B) are given to the students in two different times. In order to guarantee comparability, you decide that both Forms A and B must have 50 unique items and 10 anchor (common) items. At the end you use a linking procedure to arrange a common scale in both forms.
@@ -15,7 +17,9 @@ However, bayesian statistics offer (fortunately) a natural and logical way to in
 
 Consider [this example](https://web.archive.org/web/20190825101721/http://hagutierrezro.blogspot.com/2015/07/modelos-de-teoria-de-respuesta-al-item.html) I have discussed before. Let's assume that the first two items are anchored from a previous application. Assume that we obtained a difficulty estimate of -7 with standard error of 0.1, for the first item; and a difficulty estimate of -5 with standard error of 0.2, for the second one. Then, by using bayesian statistics, we obtain posterior difficulty estimate of -6.44 with standard error of 0.09, for the first item; and posterior difficulty estimate of -3.1 with standard error of 0.1, for the second one. Note that the estimation of the remaining items is (almost) invariant to this kind of anchoring technique. You may use this piece of code (Stan and R) in order to follow this example.
 
-```r
+```{r}
+#| error: false
+#| eval: false
 rm(list=ls(all=TRUE))
 setwd("/Users/psirusteam/Desktop/Dropbox/Cursos/USTA/IRT/R")
 load("SimuRasch.rda")
@@ -41,23 +45,26 @@ real mu[K];
 real sigma[K]; 
 }
 ```
-
-```r
+```{r}
+#| error: false
+#| eval: false
 model { 
 theta ~ normal(0,1); 
 b[1] ~ normal(-7, 0.1); 
 b[2] ~ normal(-5, 0.2);
 ```
-
-```r
+```{r}
+#| error: false
+#| eval: false
 for (k in 3:K)
 b[k] ~ normal(mu, sigma);
 
 mu ~ normal(0, 1000);
 sigma ~ inv_gamma(0.001, 0.001);
 ```
-
-```r
+```{r}
+#| error: false
+#| eval: false
 for (n in 1:N) 
 y[n] ~ bernoulli_logit(theta[jj[n]] - b[kk[n]]);
 }
@@ -87,5 +94,4 @@ traceplot(Rasch.fit, pars = 'b')
 Rasch.mcmc <- extract(Rasch.fit)
 (b.est <- colMeans(Rasch.mcmc$b))
 ```
-
 Did you get that? Anchoring is the perfect excuse to realize the power of the bayesian statistics.

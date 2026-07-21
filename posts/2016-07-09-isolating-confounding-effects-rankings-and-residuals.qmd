@@ -1,4 +1,4 @@
----
+﻿---
 title: "Isolating confounding effects - Rankings and residuals"
 author: "Andrés Gutiérrez"
 date: "2016-07-09"
@@ -29,7 +29,8 @@ When deflacting by SES, things change. Now, the best one is not Student K (wealt
 
 Here is the R code I applied to obtain the plots of this post.
 
-```r
+```{r}
+#| error: false
 rm(list = ls())
 
 library(ggplot2)

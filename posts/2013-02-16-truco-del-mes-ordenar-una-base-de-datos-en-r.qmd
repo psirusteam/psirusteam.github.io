@@ -1,4 +1,4 @@
----
+﻿---
 title: "Truco del mes: ordenar una base de datos en R"
 author: "Andrés Gutiérrez"
 date: "2013-02-16"
@@ -15,21 +15,22 @@ Mi reacción ante esa situación siempre es la misma: llamar a Jorge Ortiz, para
 
 Para todos ustedes, desde mi correo electrónico, el ejemplo de Jorge:
 
-```
+```{r}
+#| error: false
 # ---- Ejemplo de base de datos Base con 4 variables: Id, A, B, C
 N = 100
 Base = data.frame(Id = 1:N, A = rbinom(N, 5, 0.5), B = rnorm(N, 160, 10), C = runif(N, 100, 200))
 
 View(Base)
 ```
-
 Como pueden notar, esta base de datos tiene cuatro variables y el objetivo es ordenarla por la variable B. Ahora, viene lo que realmente es importante, la función que hace el ordenamiento es
 
 *order*
 
 .
 
-```
+```{r}
+#| error: false
 # ---- Se quiere ordenar la base por por la columna B
 Orden_B = order(Base$B)
 BaseOrdenada = Base[Orden_B,]
@@ -43,7 +44,8 @@ Y listo... Además, para ordenar de forma anidada sólo se debe añadir una segu
 
 :
 
-```
+```{r}
+#| error: false
 Orden_AC = order(Base$A, Base$C)
 BaseOrdenada_AC = Base[Orden_AC,]
 

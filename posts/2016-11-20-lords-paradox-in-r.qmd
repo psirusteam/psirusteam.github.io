@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lord's Paradox in R"
 author: "Andrés Gutiérrez"
 date: "2016-11-20"
@@ -35,7 +35,8 @@ Now, note that from their natural contexture, men must have greater weight than 
 
 The following code replicates a set of data that follows the relationship proposed by Lord.
 
-```r
+```{r}
+#| error: false
 N <- 1000
 
 b <- 10
@@ -52,10 +53,10 @@ sds <- 1
 Mujer2 <- Mujerb0 + beta1 * Mujer1 + rnorm(N, sd=sds)
 Hombre2 <- Hombreb0 + beta1 * Hombre1 + rnorm(N, sd=sds)
 ```
-
 The graph can be done with the following piece of code:
 
-```r
+```{r}
+#| error: false
 datos <- data.frame(inicio = c(Mujer1, Hombre1), final = c(Mujer2, Hombre2))
 datos$dif <- datos$final - datos$inicio
 datos$sexo = c(rep(0, N), rep(1, N))

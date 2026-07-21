@@ -1,4 +1,4 @@
----
+﻿---
 title: "Encuestas - Resultados desagregados y agregados en la misma tabla (R: :srvyr: :cascade)"
 author: "Andrés Gutiérrez"
 date: "2019-06-14"
@@ -11,10 +11,12 @@ Hace unos días [escribí acerca de una solución innovadora](2019-06-13-resulta
 
 HTML generated using hilite.me
 
-```
+```{r}
+#| error: false
 library(survey)
 library(srvyr)
-data(api)
+data(api, package = "survey")
+apistrat$api_diff <- apistrat$api00 - apistrat$api99
 
 dstrata <- apistrat %>%
   as_survey_design(strata = stype, weights = pw)
@@ -23,18 +25,9 @@ dstrata %>%
   group_by(awards) %>%
   cascade(api99 = survey_mean(api99),
           api00 = survey_mean(api00),
-          api_diff = survey_mean(api00 - api99),
+          api_diff = survey_mean(api_diff),
           .fill = "Total")
-
-# A tibble: 4 x 7
-  stype api99 api99_se api00 api00_se api_diff api_diff_se
-  <chr> <dbl>    <dbl> <dbl>    <dbl>    <dbl>       <dbl>
-1 E      636.     13.3  674.    12.5     38.6         2.76
-2 H      617.     15.8  626.    15.5      8.46        3.41
-3 M      610.     16.8  637.    16.6     26.4         3.05
-4 Total  629.     10.1  662.     9.54    32.9         2.08
 ```
-
 Y por acá, otro ejemplo con una desagregación en dos niveles. Nótese que la opción `.fill = "Total"` etiqueta las celdas agrupadas convenientemente.
 
 HTML generated using hilite.me

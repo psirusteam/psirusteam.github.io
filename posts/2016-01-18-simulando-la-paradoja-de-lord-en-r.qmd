@@ -1,4 +1,4 @@
----
+﻿---
 title: "Simulando la paradoja de Lord en R"
 author: "Andrés Gutiérrez"
 date: "2016-01-18"
@@ -15,7 +15,8 @@ Para realizar la simulación de los datos, se supone que tanto el peso final de 
 
 El siguiente código replica un conjunto de datos que siguen la relación propuesta por Lord.
 
-```r
+```{r}
+#| error: false
 N <- 1000
 
 b <- 10
@@ -32,10 +33,10 @@ sds <- 1
 Mujer2 <- Mujerb0 + beta1 * Mujer1 + rnorm(N, sd=sds)
 Hombre2 <- Hombreb0 + beta1 * Hombre1 + rnorm(N, sd=sds)
 ```
-
 La gráfica que muestra las relaciones de la paradoja se genera con el siguiente código:
 
-```r
+```{r}
+#| error: false
 datos <- data.frame(inicio = c(Mujer1, Hombre1), final = c(Mujer2, Hombre2))
 datos$dif <- datos$final - datos$inicio
 datos$sexo = c(rep(0, N), rep(1, N))

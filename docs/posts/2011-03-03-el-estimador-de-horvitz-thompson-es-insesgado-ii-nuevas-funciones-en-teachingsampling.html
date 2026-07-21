@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -164,11 +199,14 @@ ul.task-list li input[type="checkbox"] {
 
 <p>En una entrada anterior mostraba, con la ayuda del paquete TeachingSampling, que efectivamente, el estimador de Horvitz-Thompson es insesgado incluso en diseños con reemplazo. Bien, a petición del público y dados los buenos resultados de mis estudiantes en mi cátedra de muestreo, hoy voy a mostrar que este mismo estimador es insesgado en diseños de tamaño de muestra aleatorio. Por supuesto que no hay nada escondido detrás del funcionamiento de este estimador. Pero mi experiencia docente me ha mostrado que es mucho mejor aclarar todos los diversos escenarios de las muestras. Una vez más, es un deber del docente plasmar e ilustrar en estos escenarios el comportamiento del estimador puesto que es muy fácil llegar a conclusiones erradas. Se ilustrarán algunas nuevas funciones del paquete TeachingSampling en su versión 2.0.1 para ilustrar el ejemplo.</p>
 <p>Suponga que se tiene una población <em>U</em> de tamaño <em>N=3</em> y que el diseño de muestreo es sin reemplazo de tamaño de muestra aleatorio. Es decir que es posible seleccionar muestras nulas o muestras censo y toda la gama de configuraciones que existen entre estos dos escenarios. En este caso, el soporte contiene 8 posibles muestras. Con la función IkRS podemos averiguar cuál es la configuración de estas muestras.</p>
-<pre><code>&gt; N=3
-&gt; y=c(10, 20, 30)
-&gt; Ind&lt;-IkRS(3)
-&gt; Ind
-     [,1] [,2] [,3]
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TeachingSampling)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span><span class="dv">3</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Ind<span class="ot">&lt;-</span><span class="fu">IkRS</span>(<span class="dv">3</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Ind</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
 [1,]    0    0    0
 [2,]    1    0    0
 [3,]    0    1    0
@@ -177,15 +215,23 @@ ul.task-list li input[type="checkbox"] {
 [6,]    1    0    1
 [7,]    0    1    1
 [8,]    1    1    1</code></pre>
-<pre><code>&gt; Q&lt;-dim(Ind)[1]
-&gt; Q
-[1] 8</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Q<span class="ot">&lt;-</span><span class="fu">dim</span>(Ind)[<span class="dv">1</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Q</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
 <p>Ahora, asumamos que la característica de interés toma los valores 10, 20 y 30 para cada elemento. Luego, el total poblacional es 60. Utilizando la función</p>
 <p>SupportRS</p>
 <p>se obtienen las posibles muestras de este diseño:</p>
-<pre><code>&gt; Qy &lt;-SupportRS(3,ID=y)
-&gt; Qy
-     [,1] [,2] [,3]
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Qy <span class="ot">&lt;-</span><span class="fu">SupportRS</span>(<span class="dv">3</span>,<span class="at">ID=</span>y)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Qy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
 [1,]   NA   NA   NA
 [2,]   10   NA   NA
 [3,]   20   NA   NA
@@ -194,35 +240,55 @@ ul.task-list li input[type="checkbox"] {
 [6,]   10   30   NA
 [7,]   20   30   NA
 [8,]   10   20   30</code></pre>
+</div>
+</div>
 <p>Supongamos que el diseño de muestreo es Bernoulli. La siguiente función arroja las probabilidades de selección para cada posible muestra. La suma de las probabilidades es la unidad. Sin embargo, usted puede asignarle cualquier tipo de probabilidades que sean mayores que cero y sumen uno.</p>
-<pre><code>&gt; p=rep(NA,Q)
-&gt; for(k in 1:Q){
-+ p[k]=((0.1)^(sum(Ind[k,])))*((1-0.1)^(N-sum(Ind[k,])))
-+ }
-&gt; p
-[1] 0.729 0.081 0.081 0.081 0.009 0.009 0.009 0.001
-&gt; sum(p)
-[1] 1</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span><span class="fu">rep</span>(<span class="cn">NA</span>,Q)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>Q){</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>p[k]<span class="ot">=</span>((<span class="fl">0.1</span>)<span class="sc">^</span>(<span class="fu">sum</span>(Ind[k,])))<span class="sc">*</span>((<span class="dv">1</span><span class="fl">-0.1</span>)<span class="sc">^</span>(N<span class="sc">-</span><span class="fu">sum</span>(Ind[k,])))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.729 0.081 0.081 0.081 0.009 0.009 0.009 0.001</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pik <span class="ot">&lt;-</span> <span class="fu">Pik</span>(p, Ind)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Acudiendo a la función Pik se tiene que la probabilidad de inclusión para cada individuo es constante e igual a un décimo.</p>
-<pre><code>pik &lt;- Pik(p, Ind)
-&gt; pik
-     [,1] [,2] [,3]
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pik</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
 [1,]  0.1  0.1  0.1</code></pre>
+</div>
+</div>
 <p>Por lo tanto, utilizando la función HT, se calculan los ocho posibles valores para el estimador de Horvitz-Thompson.</p>
-<pre><code>&gt; HT1&lt;- HT(y[Ind[1,]==1], pik[Ind[1,]==1])
-&gt; HT2&lt;- HT(y[Ind[2,]==1], pik[Ind[2,]==1])
-&gt; HT3&lt;- HT(y[Ind[3,]==1], pik[Ind[3,]==1])
-&gt; HT4&lt;- HT(y[Ind[4,]==1], pik[Ind[4,]==1])
-&gt; HT5&lt;- HT(y[Ind[5,]==1], pik[Ind[5,]==1])
-&gt; HT6&lt;- HT(y[Ind[6,]==1], pik[Ind[6,]==1])
-&gt; HT7&lt;- HT(y[Ind[7,]==1], pik[Ind[7,]==1])
-&gt; HT8&lt;- HT(y[Ind[8,]==1], pik[Ind[8,]==1])</code></pre>
-<pre><code>&gt; Est &lt;- c(HT1, HT2, HT3, HT4, HT5, HT6, HT7, HT8)
-&gt; Est
-[1]   0 100 200 300 300 400 500 600</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>HT1<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">1</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">1</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>HT2<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">2</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">2</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>HT3<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">3</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">3</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>HT4<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">4</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">4</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>HT5<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">5</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">5</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>HT6<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">6</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">6</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>HT7<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">7</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">7</span>,]<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>HT8<span class="ot">&lt;-</span> <span class="fu">HT</span>(y[Ind[<span class="dv">8</span>,]<span class="sc">==</span><span class="dv">1</span>], pik[Ind[<span class="dv">8</span>,]<span class="sc">==</span><span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Est <span class="ot">&lt;-</span> <span class="fu">c</span>(HT1, HT2, HT3, HT4, HT5, HT6, HT7, HT8)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>Est</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]   0 100 200 300 300 400 500 600</code></pre>
+</div>
+</div>
 <p>Teniendo cada estimación se tiene la siguiente salida, que da cuenta de las posibles muestras, los valores del estimador y la probabilidad de selección de las muestras:</p>
-<pre><code>&gt; data.frame(Ind, Est, p)
-  X1 X2 X3 Est     p
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(Ind, Est, p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  X1 X2 X3 Est     p
 1  0  0  0   0 0.729
 2  1  0  0 100 0.081
 3  0  1  0 200 0.081
@@ -231,11 +297,19 @@ ul.task-list li input[type="checkbox"] {
 6  1  0  1 400 0.009
 7  0  1  1 500 0.009
 8  1  1  1 600 0.001</code></pre>
+</div>
+</div>
 <p>El último paso es multiplicar los valores de las estimaciones por el de las probabilidades de selección de las muestras y sumarlos.</p>
-<pre><code>&gt; sum(Est*p)
-[1] 60
-&gt; sum(y)
-[1] 60          </code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(Est<span class="sc">*</span>p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 60</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 60</code></pre>
+</div>
+</div>
 <p>Ahora sí, efectivamente, se ilustra que el estimador de Horvitz-Thompson es insesgado para diseños con tamaño de muestra variable.</p>
 
 

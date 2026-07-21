@@ -1,4 +1,4 @@
----
+﻿---
 title: "Common support graphics in propensity score matching (using ggplot2)"
 author: "Andrés Gutiérrez"
 date: "2014-11-15"
@@ -13,15 +13,22 @@ A good possibility to check that assumption is to draw two histograms along the 
 
 Assuming that you have a data frame - **Ord** - where it is stored the values of the propensity scores - **ps** - in a vector and every unit is identifiable in a (factor) vector - **groups -** indicating if the unit belongs to the treatment group or to the control group, this code allow us to graph a smoothed version of the histograms in the same plot.
 
-```r
+```{r}
+#| error: false
+library(ggplot2)
+set.seed(123)
+Ord <- data.frame(
+  ps = c(rbeta(500, 3, 4), rbeta(500, 4, 3)),
+  groups = factor(rep(c("Control", "Treatment"), each = 500))
+)
 ggplot(Ord, aes(x = ps, colour = groups))+ geom_density()+
 ggtitle("Soporte común")+
 theme(plot.title = element_text(lineheight=.8, face="bold"))
 ```
-
 This code allow us to graph a very nice version of two histograms in the same plot.
 
-```r
+```{r}
+#| error: false
 ggplot(Ord, aes(x = ps, fill = groups))+
 geom_histogram(aes(y = ..density..), binwidth=0.05, alpha=0.5)+
 ggtitle("Soporte común")+

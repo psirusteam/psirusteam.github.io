@@ -1,4 +1,4 @@
----
+﻿---
 title: "La aproximación al último conglomerado (parte 2: dominios y estratos)"
 author: "Andrés Gutiérrez"
 date: "2019-06-12"
@@ -17,7 +17,8 @@ Recuerde que la forma funcional de la aproximación del último conglomerado es 
 
 Estas propiedades son fácilmente verificables haciendo uso del software. A continuación, usaré la base de datos `apistrat` de la librería `survey` para mostrar que cuando se define un diseño de muestreo estratificado, la varianza de los dominios es mayor que la varianza en los estratos. Partamos entonces por cargar el ambiente de programación, subir las bases de datos y definir un diseño de muestreo con UPMs, estratos y pesos.
 
-```
+```{r}
+#| error: false
 rm(list = ls())
 library(survey)
 library(srvyr)
@@ -30,10 +31,10 @@ D1 <- apistrat %>%
                    weights = pw,
                    nest = TRUE)
 ```
-
 A continuación voy a crear una nueva base de datos que está filtrada por una categoría del estrato `stype == "M"` y con esta base de datos voy a definir el mismo diseño de muestreo anterior.
 
-```
+```{r}
+#| error: false
 strt.api <- apistrat %>% filter(stype == "M")
 D1s <- strt.api %>% 
   as_survey_design(id = dnum, 
@@ -41,34 +42,21 @@ D1s <- strt.api %>%
                    weights = pw,
                    nest = TRUE)
 ```
-
 Ahora voy a hacer los cálculos utilizando ambas bases de datos: la original y la filtrada por el estrato. Dado que el filtro se hizo por un estrato, esperaría encontrar el mismo valor para la estimación puntual y el mismo valor para la estimación de la varianza, puesto que en el caso de la base original, todos los individuos que estén por fuera del estrato tendrán un valor de cero y no contribuyen a la varianza; en el caso de la base filtrada, estos individuos no existen. En efecto, así es para `stype == "M"`:
 
 HTML generated using hilite.me
 
-```
+```{r}
+#| error: false
 D1s %>% group_by(stype) %>% 
    summarise(Total = survey_total(api00))
-
-# A tibble: 1 x 3
-  stype   Total Total_se
-  <fct>   <dbl>    <dbl>
-1 M     648059.   24898.
-
 D1 %>% group_by(stype) %>%
    summarise(Total = survey_total(api00))
-
-# A tibble: 3 x 3
-  stype    Total Total_se
-  <fct>    <dbl>    <dbl>
-1 E     2981655.  301196.
-2 H      472494.   27808.
-3 M      648059.   24898.
 ```
-
 Ahora vamos a realizar un proceso similar con los dominios. En particular, voy a crear una nueva base de datos que está filtrada por una categoría de un dominio `awards == "Yes"` y con esta base de datos voy a definir el mismo diseño de muestreo usado anteriormente.
 
-```
+```{r}
+#| error: false
 dmns.api <- apistrat %>% filter(awards == "Yes")
 D1d <- dmns.api %>% 
   as_survey_design(id = dnum, 
@@ -76,24 +64,12 @@ D1d <- dmns.api %>%
                    weights = pw,
                    nest = TRUE)
 ```
-
 Por último voy a hacer los cálculos utilizando ambas bases de datos: la original y la filtrada por el dominio. Dado que el filtro **no** se hizo por un estrato, esperaría encontrar el mismo valor para la estimación puntual, pero un valor de varianza más grande en la base que no está filtrada, puesto que en el caso de la base original, todos los individuos que estén por fuera del dominio tendrán un valor de cero y estarán mezclados dentro de los estratos con otros individuos con valores distintos de cero, contribuyendo a la varianza; en el caso de la base filtrada, estos individuos no existen. En efecto, así es para `awards == "Yes"`:
 
-```
+```{r}
+#| error: false
 D1d %>% group_by(awards) %>%
   summarise(Total = survey_total(api00))
-
-# A tibble: 1 x 3
-  awards    Total Total_se
-  <fct>     <dbl>    <dbl>
-1 Yes    2684904.  223778.
-
 D1 %>% group_by(awards) %>%
   summarise(Total = survey_total(api00))
-
-# A tibble: 2 x 3
-  awards    Total Total_se
-  <fct>     <dbl>    <dbl>
-1 No     1417304.  192228.
-2 Yes    2684904.  266503.
 ```

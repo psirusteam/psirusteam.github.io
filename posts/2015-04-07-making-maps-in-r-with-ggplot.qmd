@@ -1,10 +1,12 @@
----
+﻿---
 title: "Making maps in R with ggplot"
 author: "Andrés Gutiérrez"
 date: "2015-04-07"
 categories:
   - "R"
   - "Visualization"
+execute:
+  eval: false
 ---
 
 This post is devoted with the quick (and free) solution of a problem that maybe some statisticians face in their jobs. Maps are becoming a valuable tool of information and you will find that R could be a comprehensive solution for this type of task.
@@ -13,7 +15,9 @@ You will need to distinguish two types of data: the cartography data (containing
 
 First, you call the proper libraries:
 
-```r
+```{r}
+#| error: false
+#| eval: false
 rm(list=ls(all=TRUE))
 options(encoding = "UTF-8")
 
@@ -23,10 +27,11 @@ library(ggplot2)
 library(maptools)
 library(scales)
 ```
-
 Then, you read the shapes of your map. For example, Colombia is divided into departments. This shape is given by the file "**COL_adm1.shp**". After that, you must merge this data with your variable of interest. For this particular case, I will generate some random senseless numbers.
 
-```r
+```{r}
+#| error: false
+#| eval: false
 setwd("~/Desktop/COL_adm")
 ohsCol2 <- readShapeSpatial("COL_adm1.shp")
 ohsColI2 <- fortify(ohsCol2)
@@ -34,10 +39,11 @@ grupo2 <- data.frame(id = unique(ohsColI2[ , c("id")]))
 grupo2[ , "Porcentaje"] <- runif(nrow(grupo2), 0, 1)
 ohsColI2 <- merge(ohsColI2, grupo2, by = "id")
 ```
-
 Later, you make the map by using the **ggplot2** library. Notice that you can customize your map as you want. This is a mere example:
 
-```r
+```{r}
+#| error: false
+#| eval: false
 mapColDep <- ggplot() +
 geom_polygon(data=ohsColI2, aes(x=long, y=lat, group = group,
 fill = Porcentaje), colour ="black", size = 0.1) +
@@ -46,18 +52,19 @@ labs(x="",y="",title="Colombia") +
 scale_x_continuous(limits=c(-80,-65))+
 scale_y_continuous(limits=c(-5,13))
 ```
-
-```r
+```{r}
+#| error: false
+#| eval: false
 mapColDep
 ```
-
 It's time to save your map. Just write down these lines in your code:
 
-```r
+```{r}
+#| error: false
+#| eval: false
 ggsave(mapColDep, file = "mapColDep.png", width = 5, height = 4.5, type =
 "cairo-png")
 ```
-
 This is it. If you want to go deeper (for example, making the map by municipalities), you just use the shape: "**COL_adm2.shp**" and you assure that the variable of interest is properly defined. This is the final map:
 
 PD: Thanks to Daniel, Jesús and William for valuable feedback and suggestions.

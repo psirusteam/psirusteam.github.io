@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2012-10-25">
 
-<title>(Estadística para epidemiólogos) Códigos computacionales para estimar la prevalencia de una infección con métodos bayesianos – Andrés Gutiérrez</title>
+<title>estadistica-para-epidemiologos-codigos-computacionales-para-estimar-la-prevalencia-de-una-infeccion-con-metodos-bayesianos – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -130,11 +165,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">(Estadística para epidemiólogos) Códigos computacionales para estimar la prevalencia de una infección con métodos bayesianos</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Bayesian Statistics</div>
-    <div class="quarto-category">Software</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -207,22 +238,26 @@ zeta1=rep(NA,nsim)
 zeta1[1]=5
 zeta2=rep(NA,nsim)
 zeta2[1]=5</code></pre>
-<pre><code>zeta1.fun &lt;- function(x1, p, eta, pi)
-{
-p.z1 = eta*pi/p
-if(0&lt;p.z1 &amp;&amp; p.z1&lt;1) {zeta1.now &lt;- rbinom(1, x1, p.z1)}
-if(p.z1 &lt;= 0) {zeta1.now &lt;- 0}
-if(p.z1 &gt;= 1) {zeta1.now &lt;- x1}
-return(zeta1.now)
-}</code></pre>
-<pre><code>zeta2.fun &lt;- function(x2, p, eta, pi)
-{
-p.z2 = (1-eta)*pi/(1-p)
-if(0&lt;p.z2 &amp;&amp; p.z2&lt;1) {zeta2.now &lt;- rbinom(1, x2, p.z2)}
-if(p.z2 &lt;= 0) {zeta2.now &lt;- 0}
-if(p.z2 &gt;= 1) {zeta2.now &lt;- x2}
-return(zeta2.now)
-}</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>zeta1.fun <span class="ot">&lt;-</span> <span class="cf">function</span>(x1, p, eta, pi)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>p.z1 <span class="ot">=</span> eta<span class="sc">*</span>pi<span class="sc">/</span>p</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="dv">0</span><span class="sc">&lt;</span>p.z1 <span class="sc">&amp;&amp;</span> p.z1<span class="sc">&lt;</span><span class="dv">1</span>) {zeta1.now <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, x1, p.z1)}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(p.z1 <span class="sc">&lt;=</span> <span class="dv">0</span>) {zeta1.now <span class="ot">&lt;-</span> <span class="dv">0</span>}</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(p.z1 <span class="sc">&gt;=</span> <span class="dv">1</span>) {zeta1.now <span class="ot">&lt;-</span> x1}</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(zeta1.now)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>zeta2.fun <span class="ot">&lt;-</span> <span class="cf">function</span>(x2, p, eta, pi)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>p.z2 <span class="ot">=</span> (<span class="dv">1</span><span class="sc">-</span>eta)<span class="sc">*</span>pi<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>p)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="dv">0</span><span class="sc">&lt;</span>p.z2 <span class="sc">&amp;&amp;</span> p.z2<span class="sc">&lt;</span><span class="dv">1</span>) {zeta2.now <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, x2, p.z2)}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(p.z2 <span class="sc">&lt;=</span> <span class="dv">0</span>) {zeta2.now <span class="ot">&lt;-</span> <span class="dv">0</span>}</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(p.z2 <span class="sc">&gt;=</span> <span class="dv">1</span>) {zeta2.now <span class="ot">&lt;-</span> x2}</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(zeta2.now)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <pre><code>for (i in 1:nsim){
 p.val[i+1]=eta.val[i]*pi.val[i]+(1-teta.val[i])*(1-pi.val[i])
 zeta1[i+1]=zeta1.fun(x1, p.val[i], eta.val[i], pi.val[i])
@@ -239,9 +274,11 @@ valores[i,6]=pi.val[i]
 }</code></pre>
 <pre><code>colnames(valores)=c("p","zeta1","zeta2","eta","teta","pi")
 colMeans(valores)</code></pre>
-<pre><code>pi.pos &lt;- quantile(pi.val, c(0.025, 0.05, 0.25, 0.5, 0.75, 0.95, 0.975))
-eta.pos &lt;- quantile(eta.val, c(0.025, 0.05, 0.25, 0.5, 0.75, 0.95, 0.975))
-teta.pos &lt;- quantile(teta.val, c(0.025, 0.05, 0.25, 0.5, 0.75, 0.95, 0.975))</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pi.pos <span class="ot">&lt;-</span> <span class="fu">quantile</span>(pi.val, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.05</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.95</span>, <span class="fl">0.975</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>eta.pos <span class="ot">&lt;-</span> <span class="fu">quantile</span>(eta.val, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.05</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.95</span>, <span class="fl">0.975</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>teta.pos <span class="ot">&lt;-</span> <span class="fu">quantile</span>(teta.val, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.05</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.95</span>, <span class="fl">0.975</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <pre><code>list(pi.pos=pi.pos, eta.pos=eta.pos, teta.pos=teta.pos)</code></pre>
 <p>Estos códigos computacionales fueron desarrollados por el autor de este blog, en conjunto con Carlos Reyes de la Facultad de Estadística de la USTA y son de libre uso y su distribución debe ser no comercial. Por supuesto, si se utiliza el código, debe citar esta fuente en la respectiva bibliografía.</p>
 

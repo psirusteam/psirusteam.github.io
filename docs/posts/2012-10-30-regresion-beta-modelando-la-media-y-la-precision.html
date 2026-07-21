@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2012-10-30">
 
-<title>Regresión Beta (modelando la media y la precisión) – Andrés Gutiérrez</title>
+<title>regresion-beta-modelando-la-media-y-la-precision – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -159,11 +194,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Regresión Beta (modelando la media y la precisión)</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Modeling</div>
-    <div class="quarto-category">Bayesian Statistics</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -199,11 +230,41 @@ window.Quarto = {
 <p><span class="math inline">\(g_2(\phi_i)=\mathbf{z}_i' \mathbf{\gamma}\)</span></p>
 <p>La inferencia de estos modelos puede hacerse de forma clásica, por ejemplo, utilizando el paquete <a href="http://cran.r-project.org/web/packages/betareg/index.html">betareg</a>. Sin embargo, en la red también se encuentran algunos documentos de <a href="http://www.bdigital.unal.edu.co/5947/1/BayesianBetaRegresion.pdf">Cepeda &amp; Garrido</a>, que dan cuenta de la inferencia Bayesiana para esta misma configuración con algunos <a href="http://www.bdigital.unal.edu.co/6610/2/Winbugs-varBetaRegre.pdf">códigos en WinBUGS</a>. A propósito de la inferencia Bayesiana, el enfoque de Cepeda está dado en términos de la creación de nuevas variables de trabajo para la implementación de un algoritmo híbrido MCMC.</p>
 <p>El siguiente código realiza la estimación clásica para un conjunto de datos. La función de vínculo para el modelo de media es logit, y para el modelo de precisión es logarítmica.</p>
-<pre><code>library(betareg)
-data(FoodExpenditure)
-attach(FoodExpenditure)
-model.beta &lt;- betareg(I(food/income) ~ income + persons| income, data = FoodExpenditure, link = "logit", link.phi = "log")
-summary(model.beta)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(betareg)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(FoodExpenditure)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(FoodExpenditure)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>model.beta <span class="ot">&lt;-</span> <span class="fu">betareg</span>(<span class="fu">I</span>(food<span class="sc">/</span>income) <span class="sc">~</span> income <span class="sc">+</span> persons<span class="sc">|</span> income, <span class="at">data =</span> FoodExpenditure, <span class="at">link =</span> <span class="st">"logit"</span>, <span class="at">link.phi =</span> <span class="st">"log"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model.beta)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+betareg(formula = I(food/income) ~ income + persons | income, data = FoodExpenditure, 
+    link = "logit", link.phi = "log")
+
+Quantile residuals:
+    Min      1Q  Median      3Q     Max 
+-2.5072 -0.4506  0.1752  0.6413  1.7985 
+
+Coefficients (mean model with logit link):
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -0.626613   0.223146  -2.808 0.004984 ** 
+income      -0.012396   0.003055  -4.058 4.95e-05 ***
+persons      0.121050   0.035298   3.429 0.000605 ***
+
+Phi coefficients (precision model with log link):
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  3.661300   0.710323   5.154 2.54e-07 ***
+income      -0.001498   0.011525  -0.130    0.897    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+
+Type of estimator: ML (maximum likelihood)
+Log-likelihood: 45.34 on 5 Df
+Pseudo R-squared: 0.3878
+Number of iterations: 10 (BFGS) + 1 (Fisher scoring) </code></pre>
+</div>
+</div>
 <p>Desde el punto de vista Bayesiano, se debe implementar un algoritmo híbrido. El <a href="http://www.gutierrezandres.com/wp-content/uploads/2012/10/RegBETA.rtf">siguiente código</a> puede ser usado para encontrar las estimaciones con distribuciones previas planas y no informativas para los parámetros de regresión, tanto en la media, como en la precisión.</p>
 
 

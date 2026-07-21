@@ -1,4 +1,4 @@
----
+﻿---
 title: "Multilevel regression with poststratification (Gelman's MrP) in R - What is this all about?"
 author: "Andrés Gutiérrez"
 date: "2017-01-16"
@@ -31,49 +31,32 @@ The second part of MrP is cell poststratification (P), and the predicted respons
 
 Let's consider the Lucy database of the TeachingSampling package. This population contains some economic variables of 2396 industrial companies in a particular year. Assume that we want to estimate the mean income of industries by each of the five existing zones (strata of interest) on that database. This way, our parameters of interest are $\theta_1, \ldots, \theta_5$.  Now, we also know that the population is divided into three levels (small, medium and big industries) and we have access to the total number of industries within each cross group. That is, we know exactly how many small industries are on each of the five zones, and how many medium industries are on each of the five zones, and so on.  The following code shows how to load the database and obtain the cell counts.
 
+```{r}
+#| error: false
+rm(list = ls())
+set.seed(123)
+
+library(TeachingSampling)
+library(dplyr)
+library(lme4)
+
+data("Lucy")
+# Number of industries per level
+table(Lucy$Level)
+# Number of industries per zone
+table(Lucy$Zone)
+# Size of post-strata
+(Np <- table(Lucy$Level, Lucy$Zone))
 ```
-> rm(list = ls())
-> set.seed(123)
->
-> library(TeachingSampling)
-> library(dplyr)
-> library(lme4)
->
-> data("Lucy")
-> # Number of industries per level
-> table(Lucy$Level)
-
-   Big Medium  Small
-    83    737   1576
-> # Number of industries per zone
-> table(Lucy$Zone)
-
-  A   B   C   D   E
-307 727 974 223 165
-> # Size of post-strata
-> (Np <- table(Lucy$Level, Lucy$Zone))
-
-           A   B   C   D   E
-  Big     30  13   1  16  23
-  Medium 180 121 111 187 138
-  Small   97 593 862  20   4
-```
-
 Of course, this technique works over a selected sample. That's why we are going to select a random sample of size $n = 1000$. We can also create some tables showing the counts on the sample.
 
+```{r}
+#| error: false
+# A sample is selected
+SLucy <- sample_n(Lucy, size = 1000)
+table(SLucy$Level)
+table(SLucy$Zone)
 ```
-> # A sample is selected
-> SLucy <- sample_n(Lucy, size = 1000)
-> table(SLucy$Level)
-
-   Big Medium  Small
-    33    280    687
-> table(SLucy$Zone)
-
-  A   B   C   D   E
-130 295 426  86  63
-```
-
 The first step of MRP is Multilevel Regression in order to estimate post-strata means. The following code shows how to estimate them by using the
 
 **lmer**
@@ -84,42 +67,28 @@ function. The object
 
 contains the corresponding $\mu_j$ ($j$ is defined for each level) regarding each stratum (zones).
 
-```
-> # Step 1: <<MR>> - Multilevel regression
-> M1 <- lmer(Income ~ Level + (1 | Zone), data = SLucy)
-> coef(M1)
-$Zone
-  (Intercept) LevelMedium LevelSmall
-A    1265.596   -579.1851  -893.8958
-B    1138.337   -579.1851  -893.8958
-C    1189.285   -579.1851  -893.8958
-D    1248.658   -579.1851  -893.8958
-E    1284.322   -579.1851  -893.8958
+```{r}
+#| error: false
+# Step 1: <<MR>> - Multilevel regression
+M1 <- lmer(Income ~ Level + (1 | Zone), data = SLucy)
+coef(M1)
+SLucy$Pred <- predict(M1)
 
-attr(,"class")
-[1] "coef.mer"
-> SLucy$Pred <- predict(M1)
->
-> # Summary
-> grouped <- group_by(SLucy, Zone, Level)
-> sum <- summarise(grouped, mean2 = mean(Pred))
-> (Mupred <- matrix(sum$mean2, ncol = 5, nrow = 3))
-          [,1]      [,2]      [,3]      [,4]      [,5]
-[1,] 1265.5959 1138.3370 1189.2852 1248.6575 1284.3224
-[2,]  686.4107  559.1518  610.1000  669.4724  705.1373
-[3,]  371.7001  244.4412  295.3894  354.7618  390.4267
+# Summary
+grouped <- group_by(SLucy, Zone, Level)
+sum <- summarise(grouped, mean2 = mean(Pred))
+(Mupred <- matrix(sum$mean2, ncol = 5, nrow = 3))
 ```
-
 Now we have estimated the post-strata means, it's time to weight every strata by their corresponding counts in order to obtain an estimate of the mean income by zone. As we know each post-strata size, we simply use the function
 
 **aggregate**
 
 to obtain the MRP estimator of the parameters of interest.
 
+```{r}
+#| error: false
+# Step 2: <
 ```
-> # Step 2: <
-```
-
 > - Post-stratification
 
 >
@@ -134,13 +103,8 @@ colSums(Np
 
 Mupred) / table(Lucy\$Zone)  A B C D E 643.5724 312.8052 332.1726 682.8031 778.2428  How accurate was the estimation? It was good compared to the true parameters on the finite population.
 
-```
-> # True parameters
-> aggregate(Lucy$Income, by = list(Lucy$Zone), FUN = mean)
-  Group.1        x
-1       A 652.2834
-2       B 320.7469
-3       C 331.0195
-4       D 684.9821
-5       E 767.3879
+```{r}
+#| error: false
+# True parameters
+aggregate(Lucy$Income, by = list(Lucy$Zone), FUN = mean)
 ```

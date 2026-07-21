@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2015-08-08">
 
-<title>Parametric bootstrap – Andrés Gutiérrez</title>
+<title>parametric-bootstrap – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -194,11 +194,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Parametric bootstrap</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Inference</div>
-    <div class="quarto-category">R</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -230,19 +226,29 @@ window.Quarto = {
 <p>This way, for <span class="math inline">\(b=1, \ldots, B\)</span>, we generate <span class="math inline">\(X_{b1}, \ldots, X_{bn} \sim N(\hat{\mu}, \hat{\sigma}^2)\)</span>. Then, we compute the sample median <span class="math inline">\(\tilde{X}_b\)</span> for each sample in the bootstrap. Finally, an estimator of the MSE is given by</p>
 <p><span class="math display">\[\widehat{MSE} = B^{-1} \sum_{b=1}^B(\tilde{X}_b - \hat{\mu})^2\]</span></p>
 <p>In R, the simulation should look like this for a sample size of ten units:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="dv">10</span>, <span class="dv">1</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>(mu.hat <span class="ot">&lt;-</span> <span class="fu">mean</span>(x))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>(sigma.hat <span class="ot">&lt;-</span> <span class="fu">sd</span>(x))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>boot. MSE.median <span class="ot">&lt;-</span> <span class="cf">function</span>(B, mu.hat, sigma.hat){</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  x.s <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, mu.hat, sigma.hat)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  SE <span class="ot">&lt;-</span> (<span class="fu">median</span>(x.s) <span class="sc">-</span> <span class="fu">mean</span>(mu.hat)) <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="dv">500</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>boot. SE <span class="ot">&lt;-</span> <span class="fu">replicate</span>(B, boot. <span class="fu">MSE.median</span>(B, mu.hat, sigma.hat))</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>(MSE.hat <span class="ot">&lt;-</span> <span class="fu">mean</span>(boot. SE))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>(mu.hat <span class="ot">&lt;-</span> <span class="fu">mean</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10.59846</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(sigma.hat <span class="ot">&lt;-</span> <span class="fu">sd</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9950385</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>boot.MSE.median <span class="ot">&lt;-</span> <span class="cf">function</span>(B, mu.hat, sigma.hat){</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  x.s <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, mu.hat, sigma.hat)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  SE <span class="ot">&lt;-</span> (<span class="fu">median</span>(x.s) <span class="sc">-</span> <span class="fu">mean</span>(mu.hat)) <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>boot.SE <span class="ot">&lt;-</span> <span class="fu">replicate</span>(B, <span class="fu">boot.MSE.median</span>(B, mu.hat, sigma.hat))</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>(MSE.hat <span class="ot">&lt;-</span> <span class="fu">mean</span>(boot.SE))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1324423</code></pre>
+</div>
+</div>
 
 
 

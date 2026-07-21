@@ -1,4 +1,4 @@
----
+﻿---
 title: "Regresión Beta (modelando la media y la precisión)"
 author: "Andrés Gutiérrez"
 date: "2012-10-30"
@@ -23,12 +23,12 @@ La inferencia de estos modelos puede hacerse de forma clásica, por ejemplo, uti
 
 El siguiente código realiza la estimación clásica para un conjunto de datos. La función de vínculo para el modelo de media es logit, y para el modelo de precisión es logarítmica.
 
-```
+```{r}
+#| error: false
 library(betareg)
 data(FoodExpenditure)
 attach(FoodExpenditure)
 model.beta <- betareg(I(food/income) ~ income + persons| income, data = FoodExpenditure, link = "logit", link.phi = "log")
 summary(model.beta)
 ```
-
 Desde el punto de vista Bayesiano, se debe implementar un algoritmo híbrido. El [siguiente código](http://www.gutierrezandres.com/wp-content/uploads/2012/10/RegBETA.rtf) puede ser usado para encontrar las estimaciones con distribuciones previas planas y no informativas para los parámetros de regresión, tanto en la media, como en la precisión.

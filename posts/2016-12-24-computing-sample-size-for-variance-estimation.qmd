@@ -1,4 +1,4 @@
----
+﻿---
 title: "Computing Sample Size for Variance Estimation"
 author: "Andrés Gutiérrez"
 date: "2016-12-24"
@@ -21,11 +21,12 @@ Here four functions are introduced for the estimation of a population variance a
 
 In order to use the above functions it is necessary to install and call the package that contains them in the Comprehensive R Archive Network (CRAN). That for, it is required to type the following code lines from the console:
 
-```
+```{r}
+#| error: false
+#| eval: false
 install.packages("samplesize4surveys")
 library(samplesize4surveys)
 ```
-
 For example, the following code line gives the necessary sample size to estimate the variance of a characteristic of interest in a finite population (with a coefficient of kurtosis of one) to reach an estimated coefficient of variation of maximum 5% and a relative margin of error of 3%
 
 ```
@@ -34,9 +35,10 @@ ss4S2(N = 10000, K = 1, CV = 0.05, me = 0.03, DEFF = 2, plot = TRUE)
 
 On the other hand, as the package is in constant update, the authors have arranged a repository in which users can use the newest features and interact with the academic community to correct possible errors in computer codes and improve the efficiency of functions, among others. In order to access to this version control, it is necessary to type the following lines from R.
 
-```
+```{r}
+#| error: false
+#| eval: false
 library(devtools)
 install_github("psirusteam/samplesize4surveys")
 ```
-
 [In this paper](https://drive.google.com/open?id=0ByzoHkgSB8F3d0VfZzJyQ2JKcUU) you can find the mathematical background behind those R functions.

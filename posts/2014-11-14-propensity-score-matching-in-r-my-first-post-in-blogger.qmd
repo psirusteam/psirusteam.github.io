@@ -1,4 +1,4 @@
----
+﻿---
 title: "Propensity Score Matching in R (My first post in blogger)"
 author: "Andrés Gutiérrez"
 date: "2014-11-14"
@@ -9,380 +9,389 @@ categories:
 
 My first post in blogger is about Propensity Score Matching (PSM) in R. In this post I will introduce the R packages MatchIt and Zelig. The first one is devoted to perform different PSM algorithms and the other one is used in order to estimate the average treatment effect (ATE) and the effect of the treatment on the treated (ATT). First of all, I will simulate a population where some individuals receive the treatment, and the remaining ones do not.
 
-```r
+```{r}
+#| error: false
 rm(list=ls())
 ```
-
-```r
+```{r}
+#| error: false
 library(MatchIt)
 ```
-
-```r
-library(Zelig)
+```{r}
+#| error: false
+# Zelig is no longer available on CRAN; the equivalent analyses below use lm().
 ```
-
-```r
+```{r}
+#| error: false
 N <- 1000
 ```
-
-```r
+```{r}
+#| error: false
 x1 <- round(rnorm(N,20,4))
 ```
-
-```r
+```{r}
+#| error: false
 x2 <- round(rnorm(N,80,10))
 ```
-
-```r
+```{r}
+#| error: false
 f <- 1 + 1*x1 - 0.28*x2
 ```
-
-```r
-p <- exp(f)/(1+exp(f))plot(p)
+```{r}
+#| error: false
+p <- exp(f)/(1+exp(f))
+plot(p)
 ```
-
-```r
-z <- rbinom(N,1, p)table(z)
+```{r}
+#| error: false
+z <- rbinom(N,1, p)
+table(z)
 ```
-
-```r
+```{r}
+#| error: false
 y <- rep(0, times=N)
 ```
-
-```r
+```{r}
+#| error: false
 # Different values for y over z# The mean difference for y is 5000
 ```
-
-```r
+```{r}
+#| error: false
 y[z == 1] <- 9000 + 2*x1[z == 1] + 0.5*x2[z == 1]
 ```
-
-```r
+```{r}
+#| error: false
 y[z == 0] <- 4000 + 2*x1[z == 0] + 0.5*x2[z == 0]
 ```
-
-```r
+```{r}
+#| error: false
 y <- jitter(y, amount=1000,factor=2)
 ```
-
-```r
+```{r}
+#| error: false
 Data <- data.frame(y=y, x1=x1, x2=x2, z)
 ```
-
-```r
+```{r}
+#| error: false
 # The treatment population
 ```
-
-```r
+```{r}
+#| error: false
 Treats <- subset(Data, z == 1)
 ```
-
-```r
+```{r}
+#| error: false
 colMeans(Treats)
 ```
-
-```r
+```{r}
+#| error: false
 # The control population
 ```
-
-```r
-Control <- subset(Data, z == 0)colMeans(Control)
+```{r}
+#| error: false
+Control <- subset(Data, z == 0)
+colMeans(Control)
 ```
-
-```r
+```{r}
+#| error: false
 # Computing the real effect of the treatment
 ```
-
-```r
+```{r}
+#| error: false
 model <- lm(y ~ z + x1 + x2,data=Data)
 ```
-
-```r
-Effect <- model$coeff[2] Effect
+```{r}
+#| error: false
+Effect <- model$coeff[2]
+Effect
 ```
-
 Then I will run a logistic regression in order to estimate the propensity scores. That is the probability of receiving the treatment.
 
-```r
+```{r}
+#| error: false
 # The propensity scores
 ```
-
-```r
+```{r}
+#| error: false
 ps.model <- glm(z ~ x1 + x2,family = binomial(link = "logit"),data = Data)
 ```
-
-```r
-plot(ps.model$fitted)summary(ps.model)
+```{r}
+#| error: false
+plot(ps.model$fitted)
+summary(ps.model)
 ```
-
-```r
-Data$ps <- ps.model$fitted table(Data$z)
+```{r}
+#| error: false
+Data$ps <- ps.model$fitted
+table(Data$z)
 ```
-
-```r
+```{r}
+#| error: false
 hist(Data$ps[z==1])
 ```
-
-```r
+```{r}
+#| error: false
 hist(Data$ps[z==0])
 ```
-
 After that, one may use different matching algorithms. Exact matching is a technique used to match individuals based on the exact values of covariates.
 
-```r
+```{r}
+#| error: false
 # Exact matching
 ```
-
-```r
-m1.ps <- matchit(ps.model, method="exact",data=Data)
+```{r}
+#| error: false
+m1.ps <- matchit(z ~ x1 + x2, method = "exact", data = Data)
 ```
-
-```r
+```{r}
+#| error: false
 summary(m1.ps, covariates = T)
 ```
-
-```r
+```{r}
+#| error: false
 m1.data <- match.data(m1.ps)
 ```
-
 Nearest neighbour matching (NNM) is an algorithm that matches individuals with controls (it could be more two or more controls per treated unit) one by one based on a distance.
 
 ```
 #Nearest neighbor matching
 ```
 
-```r
-m3.ps <- matchit(ps.model, method="nearest", radio=1,data=Data)
+```{r}
+#| error: false
+m3.ps <- matchit(z ~ x1 + x2, method = "nearest", ratio = 1, data = Data)
 ```
-
-```r
+```{r}
+#| error: false
 summary(m3.ps, covariates = T)
 ```
-
-```r
+```{r}
+#| error: false
 plot(m3.ps)
 ```
-
-```r
+```{r}
+#| error: false
 plot(m3.ps, type="jitter")
 ```
-
-```r
+```{r}
+#| error: false
 plot(m3.ps, type="hist")
 ```
-
-```r
+```{r}
+#| error: false
 m3.data <- match.data(m3.ps)
 ```
-
-```r
+```{r}
+#| error: false
 m3.ps$match.matrix
 ```
-
-```r
+```{r}
+#| error: false
 Pairs <- cbind(Data[row.names(m3.ps$match.matrix),], Data[m3.ps$match.matrix,])
 ```
-
-```r
+```{r}
+#| error: false
 Pairs
 ```
-
 Optimal matching solves the problem inherent to the NNM, that matches units one at a time, without taking into account any global (over the entire population) distance measure. This way, with NNM the last treated unit could could match an inappropriate unit.
 
-```r
+```{r}
+#| error: false
 #Optimal matching
 ```
-
-```r
-m5.ps <- matchit(ps.model, method="optimal",data=Data)
+```{r}
+#| error: false
+m5.ps <- matchit(z ~ x1 + x2, method = "optimal", data = Data)
 ```
-
-```r
+```{r}
+#| error: false
 summary(m5.ps, covariates = T)
 ```
-
-```r
+```{r}
+#| error: false
 plot(m5.ps)
 ```
-
-```r
+```{r}
+#| error: false
 plot(m5.ps, type="jitter")
 ```
-
-```r
+```{r}
+#| error: false
 plot(m5.ps, type="hist")
 ```
-
-```r
+```{r}
+#| error: false
 m5.data <- match.data(m5.ps)
 ```
-
-```r
+```{r}
+#| error: false
 # m5.data[(m5.data$subclass == 1),]
 ```
-
 Full matching forms subgroups in an optimal way.
 
-```r
+```{r}
+#| error: false
 #Full matching
 ```
-
-```r
-m4.ps <- matchit(ps.model, method="full",data=Data)
+```{r}
+#| error: false
+m4.ps <- matchit(z ~ x1 + x2, method = "full", data = Data)
 ```
-
-```r
+```{r}
+#| error: false
 summary(m4.ps, covariates = T)
 ```
-
-```r
+```{r}
+#| error: false
 plot(m4.ps)
 ```
-
-```r
+```{r}
+#| error: false
 plot(m4.ps, type="jitter")
 ```
-
-```r
+```{r}
+#| error: false
 plot(m4.ps, type="hist")
 ```
-
-```r
+```{r}
+#| error: false
 m4.data <- match.data(m4.ps)
 ```
-
 Caliper matching is a refinement of the NNM. It defines a constraint over the individual distant measure. So, it minimises the probability of bad matching.
 
-```r
+```{r}
+#| error: false
 # Caliper matching
 ```
-
-```r
-m8.ps <- matchit(ps.model, method="nearest", caliper=0.25*sd.ps,data=Data)
+```{r}
+#| error: false
+sd.ps <- sd(Data$ps)
+m8.ps <- matchit(z ~ x1 + x2, method = "nearest", caliper = 0.25 * sd.ps, data = Data)
 ```
-
-```r
+```{r}
+#| error: false
 summary(m8.ps, covariates = T)
 ```
-
-```r
+```{r}
+#| error: false
 plot(m8.ps)
 ```
-
-```r
+```{r}
+#| error: false
 plot(m8.ps, type="jitter")
 ```
-
-```r
+```{r}
+#| error: false
 plot(m8.ps, type="hist")
 ```
-
-```r
+```{r}
+#| error: false
 m8.data <- match.data(m8.ps)
 ```
-
-```r
+```{r}
+#| error: false
 m8.data.control <- match.data(m8.ps,"control")
 ```
-
-```r
+```{r}
+#| error: false
 m8.data.treat <- match.data(m8.ps,"treat")
 ```
-
-```r
+```{r}
+#| error: false
 m8.ps$match.matrix
 ```
-
-```r
+```{r}
+#| error: false
 Pairs <- cbind(Data[row.names(m8.ps$match.matrix),], Data[m8.ps$match.matrix,])
 ```
-
-```r
+```{r}
+#| error: false
 Pairs
 ```
-
 Finally, with the matched data, we estimate the average treatment effects, via automatic simulation, with the Zelig package.
 
-```r
+```{r}
+#| error: false
 # Treatment Effects
 ```
-
-```r
-z1.ps <- zelig(y ~ z + x1 + x2,data=m8.data, model="ls")
+```{r}
+#| error: false
+z1.ps <- lm(y ~ z + x1 + x2, data = m8.data)
 ```
-
-```r
+```{r}
+#| error: false
 summary(z1.ps)
 ```
-
-```r
-x <- setx(z1.ps, z = 0) x1 <- setx(z1.ps, z = 1)
+```{r}
+#| error: false
+x <- transform(m8.data, z = 0)
+x1 <- transform(m8.data, z = 1)
 ```
-
-```r
-s.out <- sim(z1.ps, x = x, x1 = x1)
+```{r}
+#| error: false
+s.out <- mean(predict(z1.ps, newdata = x1) - predict(z1.ps, newdata = x))
 ```
-
-```r
-summary(s.out)
+```{r}
+#| error: false
+s.out
 ```
-
-```r
-plot(s.out)
+```{r}
+#| error: false
+barplot(s.out, main = "Estimated average treatment effect")
 ```
-
 Zelig package also allows to estimate the effect on the treated, and the effect on the controls.
 
-```r
+```{r}
+#| error: false
 # Average Treatment Effect on the Controls
 ```
-
-```r
-z1c.ps <- zelig(y ~ x1 + x2,data = m8.data.control, model="ls")
+```{r}
+#| error: false
+z1c.ps <- lm(y ~ x1 + x2, data = m8.data.control)
 ```
-
-```r
+```{r}
+#| error: false
 summary(z1c.ps)
 ```
-
-```r
-x.out1 <- setx(z1c.ps,data = m8.data.treat,cond = TRUE)
+```{r}
+#| error: false
+x.out1 <- predict(z1c.ps, newdata = m8.data.treat)
 ```
-
-```r
-s.out1 <- sim(z1c.ps, x = x.out1)summary(s.out1)
+```{r}
+#| error: false
+s.out1 <- mean(m8.data.treat$y - x.out1)
+s.out1
 ```
-
-```r
-plot(s.out1)
+```{r}
+#| error: false
+barplot(s.out1, main = "Estimated effect on the treated")
 ```
-
-```r
+```{r}
+#| error: false
 # Average Treatment Effect on the Treated
 ```
-
-```r
-z1t.ps <- zelig(y ~ x1 + x2,data = m8.data.treat, model="ls")
+```{r}
+#| error: false
+z1t.ps <- lm(y ~ x1 + x2, data = m8.data.treat)
 ```
-
-```r
+```{r}
+#| error: false
 summary(z1t.ps)
 ```
-
-```r
-x.out2 <- setx(z1t.ps,data = m8.data.control,cond = TRUE)
+```{r}
+#| error: false
+x.out2 <- predict(z1t.ps, newdata = m8.data.control)
 ```
-
-```r
-s.out2 <- sim(z1t.ps, x = x.out2)
+```{r}
+#| error: false
+s.out2 <- mean(x.out2 - m8.data.control$y)
 ```
-
-```r
-summary(s.out2)
+```{r}
+#| error: false
+s.out2
 ```
-
-```r
-plot(s.out2)
+```{r}
+#| error: false
+barplot(s.out2, main = "Estimated effect on the controls")
 ```
-
 I hope that you found this post valuable. Feel free to reproduce the code wherever you want.

@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2019-06-12">
 
-<title>La aproximación al último conglomerado (parte 2: dominios y estratos) – Andrés Gutiérrez</title>
+<title>la-aproximacion-al-ultimo-conglomerado-parte-2-dominios-y-estratos – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -159,11 +194,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">La aproximación al último conglomerado (parte 2: dominios y estratos)</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Surveys</div>
-    <div class="quarto-category">Sampling</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -198,67 +229,139 @@ window.Quarto = {
 </blockquote>
 <p>Recuerde que la forma funcional de la aproximación del último conglomerado es la siguiente: <span class="math inline">\(\widehat{\operatorname{Var}}(\hat{t}_y)=\sum_{h=1}^H \frac{n_{Ih}}{n_{Ih} -1}\sum_{i \in sI_h}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h} \right)^2\)</span> Cuando se requiere una estimación sobre un subgrupo poblacional que coincide con un estrato <span class="math inline">\(h'\)</span>(o es una agregación de estratos), y teniendo en cuenta que los individuos de las UPMs que no son de este estrato tomarán un valor nulo, tanto en para la estimación del total, como para la aproximación de la varianza, entonces la forma de la aproximación se escribe de la siguiente manera: <span class="math inline">\(\widehat{\operatorname{Var}}(\hat{t}_y)=\frac{n_{Ih'}}{n_{Ih'} -1}\sum_{i \in sI_h'}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h'} \right)^2 + \sum_{h \neq h'} \frac{n_{Ih}}{n_{Ih} -1}\sum_{i \in sI_h}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h} \right)^2=\frac{n_{Ih'}}{n_{Ih'} -1}\sum_{i \in sI_h'}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h'} \right)^2\)</span> La anterior igualdad se tiene puesto que <span class="math inline">\(\sum_{h \neq h'} \frac{n_{Ih}}{n_{Ih} -1}\sum_{i \in sI_h}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h} \right)^2=0\)</span>, dado que <span class="math inline">\(\breve{t}_{y_i} =0\)</span> en estas UPMs que no pertenecen al estrato <span class="math inline">\(h'\)</span>. Sin embargo, esta reducción en la varianza no se tiene cuando los subgrupos poblacionales son dominios, puesto que <span class="math inline">\(\breve{t}_{y_i} \neq 0\)</span>. Es decir, la cuantificación del precio que se debe pagar ante el desconocimiento de la membresía de las unidades al subgrupo es <span class="math inline">\(\sum_{h \neq h'} \frac{n_{Ih}}{n_{Ih} -1}\sum_{i \in sI_h}\left( \breve{t}_{y_i} - \bar{\breve{t}}_{y_h} \right)^2\)</span>.</p>
 <p>Estas propiedades son fácilmente verificables haciendo uso del software. A continuación, usaré la base de datos <code>apistrat</code> de la librería <code>survey</code> para mostrar que cuando se define un diseño de muestreo estratificado, la varianza de los dominios es mayor que la varianza en los estratos. Partamos entonces por cargar el ambiente de programación, subir las bases de datos y definir un diseño de muestreo con UPMs, estratos y pesos.</p>
-<pre><code>rm(list = ls())
-library(survey)
-library(srvyr)
-
-data(api)
-
-D1 &lt;- apistrat %&gt;% 
-  as_survey_design(id = dnum, 
-                   strata = stype, 
-                   weights = pw,
-                   nest = TRUE)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survey)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(srvyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(api)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>D1 <span class="ot">&lt;-</span> apistrat <span class="sc">%&gt;%</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_survey_design</span>(<span class="at">id =</span> dnum, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">strata =</span> stype, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">weights =</span> pw,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">nest =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>A continuación voy a crear una nueva base de datos que está filtrada por una categoría del estrato <code>stype == "M"</code> y con esta base de datos voy a definir el mismo diseño de muestreo anterior.</p>
-<pre><code>strt.api &lt;- apistrat %&gt;% filter(stype == "M")
-D1s &lt;- strt.api %&gt;% 
-  as_survey_design(id = dnum, 
-                   strata = stype, 
-                   weights = pw,
-                   nest = TRUE)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>strt.api <span class="ot">&lt;-</span> apistrat <span class="sc">%&gt;%</span> <span class="fu">filter</span>(stype <span class="sc">==</span> <span class="st">"M"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>D1s <span class="ot">&lt;-</span> strt.api <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_survey_design</span>(<span class="at">id =</span> dnum, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">strata =</span> stype, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">weights =</span> pw,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">nest =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Ahora voy a hacer los cálculos utilizando ambas bases de datos: la original y la filtrada por el estrato. Dado que el filtro se hizo por un estrato, esperaría encontrar el mismo valor para la estimación puntual y el mismo valor para la estimación de la varianza, puesto que en el caso de la base original, todos los individuos que estén por fuera del estrato tendrán un valor de cero y no contribuyen a la varianza; en el caso de la base filtrada, estos individuos no existen. En efecto, así es para <code>stype == "M"</code>:</p>
 <p>HTML generated using hilite.me</p>
-<pre><code>D1s %&gt;% group_by(stype) %&gt;% 
-   summarise(Total = survey_total(api00))
-
-# A tibble: 1 x 3
-  stype   Total Total_se
-  &lt;fct&gt;   &lt;dbl&gt;    &lt;dbl&gt;
-1 M     648059.   24898.
-
-D1 %&gt;% group_by(stype) %&gt;%
-   summarise(Total = survey_total(api00))
-
-# A tibble: 3 x 3
-  stype    Total Total_se
-  &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;
-1 E     2981655.  301196.
-2 H      472494.   27808.
-3 M      648059.   24898.</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>D1s <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(stype) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarise</span>(<span class="at">Total =</span> <span class="fu">survey_total</span>(api00))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">stype</th>
+<th style="text-align: right;">Total</th>
+<th style="text-align: right;">Total_se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">648058.8</td>
+<td style="text-align: right;">24898.37</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>D1 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(stype) <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarise</span>(<span class="at">Total =</span> <span class="fu">survey_total</span>(api00))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">stype</th>
+<th style="text-align: right;">Total</th>
+<th style="text-align: right;">Total_se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">E</td>
+<td style="text-align: right;">2981655.0</td>
+<td style="text-align: right;">301196.34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">H</td>
+<td style="text-align: right;">472494.1</td>
+<td style="text-align: right;">27807.82</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">M</td>
+<td style="text-align: right;">648058.8</td>
+<td style="text-align: right;">24898.37</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Ahora vamos a realizar un proceso similar con los dominios. En particular, voy a crear una nueva base de datos que está filtrada por una categoría de un dominio <code>awards == "Yes"</code> y con esta base de datos voy a definir el mismo diseño de muestreo usado anteriormente.</p>
-<pre><code>dmns.api &lt;- apistrat %&gt;% filter(awards == "Yes")
-D1d &lt;- dmns.api %&gt;% 
-  as_survey_design(id = dnum, 
-                   strata = stype, 
-                   weights = pw,
-                   nest = TRUE)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dmns.api <span class="ot">&lt;-</span> apistrat <span class="sc">%&gt;%</span> <span class="fu">filter</span>(awards <span class="sc">==</span> <span class="st">"Yes"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>D1d <span class="ot">&lt;-</span> dmns.api <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_survey_design</span>(<span class="at">id =</span> dnum, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">strata =</span> stype, </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">weights =</span> pw,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">nest =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Por último voy a hacer los cálculos utilizando ambas bases de datos: la original y la filtrada por el dominio. Dado que el filtro <strong>no</strong> se hizo por un estrato, esperaría encontrar el mismo valor para la estimación puntual, pero un valor de varianza más grande en la base que no está filtrada, puesto que en el caso de la base original, todos los individuos que estén por fuera del dominio tendrán un valor de cero y estarán mezclados dentro de los estratos con otros individuos con valores distintos de cero, contribuyendo a la varianza; en el caso de la base filtrada, estos individuos no existen. En efecto, así es para <code>awards == "Yes"</code>:</p>
-<pre><code>D1d %&gt;% group_by(awards) %&gt;%
-  summarise(Total = survey_total(api00))
-
-# A tibble: 1 x 3
-  awards    Total Total_se
-  &lt;fct&gt;     &lt;dbl&gt;    &lt;dbl&gt;
-1 Yes    2684904.  223778.
-
-D1 %&gt;% group_by(awards) %&gt;%
-  summarise(Total = survey_total(api00))
-
-# A tibble: 2 x 3
-  awards    Total Total_se
-  &lt;fct&gt;     &lt;dbl&gt;    &lt;dbl&gt;
-1 No     1417304.  192228.
-2 Yes    2684904.  266503.</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>D1d <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(awards) <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Total =</span> <span class="fu">survey_total</span>(api00))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">awards</th>
+<th style="text-align: right;">Total</th>
+<th style="text-align: right;">Total_se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">2684904</td>
+<td style="text-align: right;">223778.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>D1 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(awards) <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Total =</span> <span class="fu">survey_total</span>(api00))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">awards</th>
+<th style="text-align: right;">Total</th>
+<th style="text-align: right;">Total_se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">1417304</td>
+<td style="text-align: right;">192228.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">2684904</td>
+<td style="text-align: right;">266503.3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 

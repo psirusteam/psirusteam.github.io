@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2015-09-02">
 
-<title>Anchoring estimation or the perfect excuse to become “Bayesian” – Andrés Gutiérrez</title>
+<title>anchoring-estimation-or-the-perfect-excuse-to-become-bayesian – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -165,11 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Anchoring estimation or the perfect excuse to become “Bayesian”</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Bayesian Statistics</div>
-    <div class="quarto-category">IRT</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -201,7 +197,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The methodology behind this kind of techniques is focused on anchoring the parameters of the 10 items in Form A in order to obtain estimates of the item parameters in Form B. However, you have to realize that you are anchoring <strong>estimates</strong> of the unknown item parameters. So, if you are anchoring estimates, you have to consider two sources of error: the measurement error and the linking error.</p>
 <p>However, bayesian statistics offer (fortunately) a natural and logical way to incorporate the uncertainty of the unknown parameter through a prior distribution on the anchoring items. This way, I would analyze Form B like this: for the 50 unique items, I would define uninformative priors; for the 10 common items, I would define informative priors based on the behavior of the estimated parameters in Form A. This way, I am not anchoring items based on estimates, I am anchoring the uncertainty of the items parameters. Two points of view that (philosophically) differ.</p>
 <p>Consider <a href="https://web.archive.org/web/20190825101721/http://hagutierrezro.blogspot.com/2015/07/modelos-de-teoria-de-respuesta-al-item.html">this example</a> I have discussed before. Let’s assume that the first two items are anchored from a previous application. Assume that we obtained a difficulty estimate of -7 with standard error of 0.1, for the first item; and a difficulty estimate of -5 with standard error of 0.2, for the second one. Then, by using bayesian statistics, we obtain posterior difficulty estimate of -6.44 with standard error of 0.09, for the first item; and posterior difficulty estimate of -3.1 with standard error of 0.1, for the second one. Note that the estimation of the remaining items is (almost) invariant to this kind of anchoring technique. You may use this piece of code (Stan and R) in order to follow this example.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>(<span class="at">all=</span><span class="cn">TRUE</span>))</span>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>(<span class="at">all=</span><span class="cn">TRUE</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/Users/psirusteam/Desktop/Dropbox/Cursos/USTA/IRT/R"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"SimuRasch.rda"</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -225,16 +222,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="st">real mu[K];</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="st">real sigma[K]; </span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model { </span>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model { </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>theta <span class="sc">~</span> <span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">1</span>); </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">1</span>] <span class="sc">~</span> <span class="fu">normal</span>(<span class="sc">-</span><span class="dv">7</span>, <span class="fl">0.1</span>); </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>b[<span class="dv">2</span>] <span class="sc">~</span> <span class="fu">normal</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="fl">0.2</span>);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">3</span><span class="sc">:</span>K)</span>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">3</span><span class="sc">:</span>K)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b[k] <span class="sc">~</span> <span class="fu">normal</span>(mu, sigma);</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>mu <span class="sc">~</span> <span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1000</span>);</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sigma <span class="sc">~</span> <span class="fu">inv_gamma</span>(<span class="fl">0.001</span>, <span class="fl">0.001</span>);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) </span>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y[n] <span class="sc">~</span> <span class="fu">bernoulli_logit</span>(theta[jj[n]] <span class="sc">-</span> b[kk[n]]);</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
@@ -262,6 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="st"># Extract estimates</span></span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="st">Rasch.mcmc &lt;- extract(Rasch.fit)</span></span>
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="st">(b.est &lt;- colMeans(Rasch.mcmc$b))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Did you get that? Anchoring is the perfect excuse to realize the power of the bayesian statistics.</p>
 
 

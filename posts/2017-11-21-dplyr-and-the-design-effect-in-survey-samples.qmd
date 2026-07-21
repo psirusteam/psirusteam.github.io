@@ -1,4 +1,4 @@
----
+﻿---
 title: "dplyr and the design effect in survey samples"
 author: "Andrés Gutiérrez"
 date: "2017-11-21"
@@ -11,14 +11,14 @@ categories:
 
 For those guys like me who are not such `R` geeks, this trick could be of interest. The package `dplyr` can be very useful when it comes to data manipulation and you can extract valuable information from a data frame. For example, when using if you want to count how many humans have a particular hair color, you can run the following piece of code:
 
-```
+```{r}
+#| error: false
 library(dplyr)
 
 starwars %>% filter(species == "Human") %>%
   group_by(hair_color) %>%
   summarise(n = n())
 ```
-
 | hair_color | n |
 | --- | --- |
 | auburn | 1 |
@@ -34,7 +34,8 @@ starwars %>% filter(species == "Human") %>%
 
 As a result the former query gives you a data frame and you can use it to make another query. For example, if you want to know the average number of individuals in the data frame you can use the `summarise` twice:
 
-```
+```{r}
+#| error: false
 library(dplyr)
 
 starwars %>% filter(species == "Human") %>%
@@ -42,7 +43,6 @@ starwars %>% filter(species == "Human") %>%
   summarise(n = n()) %>%
   summarise(x.b = mean(n))
 ```
-
 | x.b |
 | --- |
 | 3.5 |
@@ -53,7 +53,8 @@ $Deff \approx 1 + (\bar{m} - 1)\rho$
 
 where $\bar{m}$ is the average cluster size and $\rho$ is the intraclass correlation coefficient. If you are dealing with survey data and you want to figure out the value of $\bar{m}$ and $\rho$, you can use `dplyr`. Let's use the `Lucy` data of the `samplesize4surveys` package to show how you can do it.
 
-```
+```{r}
+#| error: false
 library(samplesize4surveys)
 data(Lucy)
 

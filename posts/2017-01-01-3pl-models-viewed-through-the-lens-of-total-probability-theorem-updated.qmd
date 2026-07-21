@@ -1,4 +1,4 @@
----
+﻿---
 title: "3PL models viewed through the lens of total probability theorem (updated)"
 author: "Andrés Gutiérrez"
 date: "2017-01-01"
@@ -19,13 +19,13 @@ $$ P_{3PL}(x=1) = P(Guess) + P(NoGuess) \times P_{2PL}(x=1|NoGuess)$$
 
 Note that, per the model, once the student has chosen to answer by guessing, a correct answer is always found (kind of weird, isn't it?). So, a major criticism against 3PL models is related to this last point. In R, you can estimate 3PL models by using the mirt package. So, for example, when using the LSAT7 data on the second item, we can estimate this guessing parameter.
 
-```
+```{r}
+#| error: false
 library(mirt)
 data <- expand.table(LSAT7)
 md2  <-  mirt(data, 1, itemtype = '3PL', IRTpars = TRUE)
 coef(md2, IRTpars = TRUE)$Item.2
 ```
-
 We found that the guessing parameter is estimated as 0.295. This way, the model is specified as:
 
 $$ P_{3PL}(x=1) = 0.295 + 0.705 \times P_{2PL}(x=1|NoGuess)$$.

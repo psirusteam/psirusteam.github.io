@@ -1,4 +1,4 @@
----
+﻿---
 title: "How important is that variable?"
 author: "Andrés Gutiérrez"
 date: "2016-12-03"
@@ -19,7 +19,8 @@ $$ I(i) = \frac{\beta_i}{sd(\beta_i)} = \beta_i\frac{ sd(x_i)}{sd(y)}$$
 
 For example, let's consider the following model $y = -500 x_1 + 50 x_2 + \varepsilon$, then the relative importance of the first and second variable is around 500/(500+50) = 0.9, and 50/(500+50) = 0.1, respectively. The following code shows how to perform this simple analysis in R.
 
-```
+```{r}
+#| error: false
 n <- 10000
 
 x1 <- runif(n)

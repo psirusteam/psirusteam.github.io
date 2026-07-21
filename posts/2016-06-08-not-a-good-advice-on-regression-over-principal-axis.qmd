@@ -1,4 +1,4 @@
----
+﻿---
 title: "Not a good advice (On regression over principal axis)"
 author: "Andrés Gutiérrez"
 date: "2016-06-08"
@@ -13,7 +13,8 @@ The good advice was: define a model between the factor scores and the variables 
 
 So, I wrote some R code and found the obvious thing. Take a look. First I perform a principal component analysis on a data set.
 
-```r
+```{r}
+#| error: false
 data("iris")
 attach(iris)
 Ex1 <- iris[, 1:4]
@@ -25,27 +26,20 @@ print(acp4$c1) # column normed scores - principal axes
 #score <- Ex1 %*% as.matrix(acp4$co)
 score <- acp4$li # row normed scores
 ```
-
 Then I fitted the model by using the first principal component as the response variable.
 
-```r
+```{r}
+#| error: false
 datos <- data.frame(Ex1, score = score[, 1])
 model <- lm(score ~ 0 + ., data = datos)
 summary(model)
 ```
-
 Then I found that every variable were significant. I repeated the exercise for the second, third and fourth factor and I found the same behaviour: every variable was significant for every factor. It is not over, I found that the values of regression coefficients were exactly the same to those defining the factor loads.
 
-```r
+```{r}
+#| error: false
 cbind(model$coefficients, acp4$c1[, 1])
-
-                   [,1]       [,2]
-Sepal. Length  0.5228115  0.5210659
-Sepal. Width  -0.2702498 -0.2693474
-Petal. Length  0.5823575  0.5804131
-Petal. Width   0.5667489  0.5648565
 ```
-
 Then, I realised that by definition a factor is defined to be a linear combination of the variables. That way, it is evident that every variable is not only significant but share the same value of regression coefficients and factor loads. So, if the response is defined as
 
 $$ F = a_1X_1 + a_2X_2 + a_3X_3 + a_4X_4$$

@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2013-02-16">
 
-<title>Truco del mes: ordenar una base de datos en R – Andrés Gutiérrez</title>
+<title>truco-del-mes-ordenar-una-base-de-datos-en-r – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -130,11 +165,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Truco del mes: ordenar una base de datos en R</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">Teaching</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -166,19 +197,23 @@ ul.task-list li input[type="checkbox"] {
 <p>Es sistemático, la misma pregunta, la misma respuesta, el mismo profesor, diferentes estudiantes. Y es que resulta que, dado que me gusta el muestreo, las bases de datos son el pan de cada lunes. Por supuesto, el software de rigor es <strong>R</strong>.</p>
 <p>Mi reacción ante esa situación siempre es la misma: llamar a Jorge Ortiz, para que me refresque la memoria. La reacción de Jorge, curiosamente, también es exactamente igual en cada ocasión: “Andrés, le envié un correo con un ejemplo”… Ahora que lo pienso bien, siempre es el mismo correo, y el mismo ejemplo.</p>
 <p>Para todos ustedes, desde mi correo electrónico, el ejemplo de Jorge:</p>
-<pre><code># ---- Ejemplo de base de datos Base con 4 variables: Id, A, B, C
-N = 100
-Base = data.frame(Id = 1:N, A = rbinom(N, 5, 0.5), B = rnorm(N, 160, 10), C = runif(N, 100, 200))
-
-View(Base)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ---- Ejemplo de base de datos Base con 4 variables: Id, A, B, C</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">100</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Base <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Id =</span> <span class="dv">1</span><span class="sc">:</span>N, <span class="at">A =</span> <span class="fu">rbinom</span>(N, <span class="dv">5</span>, <span class="fl">0.5</span>), <span class="at">B =</span> <span class="fu">rnorm</span>(N, <span class="dv">160</span>, <span class="dv">10</span>), <span class="at">C =</span> <span class="fu">runif</span>(N, <span class="dv">100</span>, <span class="dv">200</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(Base)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Como pueden notar, esta base de datos tiene cuatro variables y el objetivo es ordenarla por la variable B. Ahora, viene lo que realmente es importante, la función que hace el ordenamiento es</p>
 <p><em>order</em></p>
 <p>.</p>
-<pre><code># ---- Se quiere ordenar la base por por la columna B
-Orden_B = order(Base$B)
-BaseOrdenada = Base[Orden_B,]
-
-View(BaseOrdenada)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ---- Se quiere ordenar la base por por la columna B</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Orden_B <span class="ot">=</span> <span class="fu">order</span>(Base<span class="sc">$</span>B)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>BaseOrdenada <span class="ot">=</span> Base[Orden_B,]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(BaseOrdenada)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Y listo… Además, para ordenar de forma anidada sólo se debe añadir una segunda variable (o tantas variables como sea necesario) a la función</p>
 <dl>
 <dt><em>order</em></dt>
@@ -186,10 +221,12 @@ View(BaseOrdenada)</code></pre>
 
 </dd>
 </dl>
-<pre><code>Orden_AC = order(Base$A, Base$C)
-BaseOrdenada_AC = Base[Orden_AC,]
-
-View(BaseOrdenada_AC)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Orden_AC <span class="ot">=</span> <span class="fu">order</span>(Base<span class="sc">$</span>A, Base<span class="sc">$</span>C)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>BaseOrdenada_AC <span class="ot">=</span> Base[Orden_AC,]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(BaseOrdenada_AC)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 

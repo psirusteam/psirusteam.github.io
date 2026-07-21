@@ -1,4 +1,4 @@
----
+﻿---
 title: "Regression discontinuity plots with R (using ggplot2)"
 author: "Andrés Gutiérrez"
 date: "2014-11-15"
@@ -15,7 +15,8 @@ For those like me who make consulting in public policy, and use R as a default s
 
 No statistical significance:
 
-```r
+```{r}
+#| error: false
 library(ggplot2)
 threshold = 10.5
 
@@ -27,15 +28,16 @@ ggplot(group1, aes(time1, score1, color = factor(interv1))) +
   geom_point() + stat_smooth(method = "lm") +
   geom_vline(xintercept=c(threshold), linetype=3)
 ```
-
 So, the final plot is:
 
 Main and interaction effect:
 
-```r
-group4<-data.frame(time4=1:20,score4=c(50:59,80,85,90,95,100,105,110,115,120,125), interv4=(factor(rep(0:1,each=10)))) group4$score4<-jitter(group4$score4,factor=20) ggplot(group4, aes(time4, score4, color = factor(interv4))) +
+```{r}
+#| error: false
+group4<-data.frame(time4=1:20,score4=c(50:59,80,85,90,95,100,105,110,115,120,125), interv4=(factor(rep(0:1,each=10))))
+group4$score4<-jitter(group4$score4,factor=20)
+ggplot(group4, aes(time4, score4, color = factor(interv4))) +
   geom_point() + stat_smooth(method = "lm") +
   geom_vline(xintercept=c(threshold), linetype=3)
 ```
-
 So, the final plot is:

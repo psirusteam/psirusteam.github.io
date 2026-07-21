@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2014-11-15">
 
-<title>Proper Inference in Public Policy Evaluation – Andrés Gutiérrez</title>
+<title>proper-inference-in-public-policy-evaluation – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -165,11 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Proper Inference in Public Policy Evaluation</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Policy Evaluation</div>
-    <div class="quarto-category">Sampling</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -204,42 +200,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For example: in public policy evaluation, sometimes it is useful to evaluate the impact of an intervention. To do so, we select a complex sample (involving stratification, unequal weights and clustering). If we perform a regression, we need to take into account (and verify) the assumptions of the regression (from the causal perspective: endogenous outcomes, local treatment effects, counterfactuals, etc.), but at the same time we need to be rigorous and judicious about considering the complex survey design. This is important and there is little documentation about that. It is important because standard errors, that (after all) are the figures that decide over the impact of the intervention, are sometimes underestimated (biasedly, of course) when ignoring the complex sample design.</p>
 <p>It goes further than hypothesis testing or estimation. You have to compute proper sampling sizes to perform that regression. In one hand, you must save your resources ($$$); on the other, you do not want to waste your money when considering small sample size and then realising that your inference is neither robust nor consistent because your standard errors are terribly high. In addition, you should consider attrition, compliers, defiers, nonresponse, and design effects to give a rough estimate of the sample size.</p>
 <p>Some researchers argue that when running regression models, you should not consider the sampling weights. Ok, that could be true under the perspective of Little and Rubin that consider intricate methodologies into the estimation stage. But, when estimating model parameters, ignoring the complex sample (as if the sample were SI) is not a good idea. Consider the following example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survey)<span class="fu">library</span>(TeachingSampling)<span class="fu">library</span>(sqldf)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(BigLucy)<span class="fu">attach</span>(BigLucy)</span>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survey)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TeachingSampling)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sqldf)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Level is the stratifying variablesummary(Level)# Defines the size of each stratum</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>N1<span class="ot">&lt;-</span><span class="fu">summary</span>(Level)[[<span class="dv">1</span>]]</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>N2<span class="ot">&lt;-</span><span class="fu">summary</span>(Level)[[<span class="dv">2</span>]]</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>N3<span class="ot">&lt;-</span><span class="fu">summary</span>(Level)[[<span class="dv">3</span>]]</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>N1;N2;N3</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Nh <span class="ot">&lt;-</span><span class="fu">c</span>(N1,N2,N3)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span><span class="fu">sum</span>(Nh)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Defines the sample size at each stratum</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">&lt;-</span><span class="dv">500</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">&lt;-</span><span class="dv">500</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>n3<span class="ot">&lt;-</span><span class="dv">500</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>nh<span class="ot">&lt;-</span><span class="fu">c</span>(n1,n2,n3)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Draws a stratified sample</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>sam <span class="ot">&lt;-</span> S. <span class="fu">STSI</span>(Level, Nh, nh)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># The information about the units in the sample is stored in an object called data</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>datas <span class="ot">&lt;-</span> BigLucy[sam,]</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>cons_Nh <span class="ot">=</span> <span class="fu">sqldf</span>(<span class="st">"select Level, count(*) as 'Nh' from BigLucy group by Level"</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>datasample <span class="ot">=</span> <span class="fu">merge</span>(datas,cons_Nh,<span class="at">by=</span><span class="st">"Level"</span>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>datasample <span class="ot">=</span> <span class="fu">cbind</span>(N, datasample)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="do">####################################### Specifying the sampling design #####################################</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>STSI  <span class="ot">=</span> <span class="fu">svydesign</span>(<span class="at">ids=</span><span class="sc">~</span><span class="dv">1</span>,<span class="at">strata=</span><span class="sc">~</span>Level,<span class="at">fpc =</span> <span class="sc">~</span> Nh,<span class="at">data=</span>datasample)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="do">###################### Linear models ####################</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># The unknown parameterssummary(lm(Income ~1+ Taxes,data = BigLucy))$coeff</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Unbiased estimation of parameters - Considering the complex sampling designsummary(svyglm(Income ~1+ Taxes,design = STSI,data = datasample))$coeff</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Biased estimation of parameters - Avoiding the complex sampling designsummary(lm(Income ~1+ Taxes,data = datasample))$coeff</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(BigLucy)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(BigLucy)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Level is the stratifying variable</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Level)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Big Medium  Small 
+  2905  25795  56596 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defines the size of each stratum</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>N1<span class="ot">&lt;-</span><span class="fu">summary</span>(Level)[[<span class="dv">1</span>]]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>N2<span class="ot">&lt;-</span><span class="fu">summary</span>(Level)[[<span class="dv">2</span>]]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>N3<span class="ot">&lt;-</span><span class="fu">summary</span>(Level)[[<span class="dv">3</span>]]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>N1;N2;N3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2905</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25795</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 56596</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Nh <span class="ot">&lt;-</span><span class="fu">c</span>(N1,N2,N3)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span><span class="fu">sum</span>(Nh)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Defines the sample size at each stratum</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">&lt;-</span><span class="dv">500</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">&lt;-</span><span class="dv">500</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>n3<span class="ot">&lt;-</span><span class="dv">500</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>nh<span class="ot">&lt;-</span><span class="fu">c</span>(n1,n2,n3)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Draws a stratified sample</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>sam <span class="ot">&lt;-</span> <span class="fu">S.STSI</span>(Level, Nh, nh)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># The information about the units in the sample is stored in an object called data</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>datas <span class="ot">&lt;-</span> BigLucy[sam,]</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>cons_Nh <span class="ot">=</span> <span class="fu">sqldf</span>(<span class="st">"select Level, count(*) as 'Nh' from BigLucy group by Level"</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>datasample <span class="ot">=</span> <span class="fu">merge</span>(datas,cons_Nh,<span class="at">by=</span><span class="st">"Level"</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>datasample <span class="ot">=</span> <span class="fu">cbind</span>(N, datasample)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="do">####################################### Specifying the sampling design #####################################</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>STSI  <span class="ot">=</span> <span class="fu">svydesign</span>(<span class="at">ids=</span><span class="sc">~</span><span class="dv">1</span>,<span class="at">strata=</span><span class="sc">~</span>Level,<span class="at">fpc =</span> <span class="sc">~</span> Nh,<span class="at">data=</span>datasample)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="do">###################### Linear models ####################</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># The unknown parameters</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(Income <span class="sc">~</span><span class="dv">1</span><span class="sc">+</span> Taxes,<span class="at">data =</span> BigLucy))<span class="sc">$</span>coeff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Estimate Std. Error  t value Pr(&gt;|t|)
+(Intercept) 262.17807 0.44131772 594.0801        0
+Taxes        14.15274 0.02112677 669.8962        0</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unbiased estimation of parameters - Considering the complex sampling design</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">svyglm</span>(Income <span class="sc">~</span><span class="dv">1</span><span class="sc">+</span> Taxes,<span class="at">design =</span> STSI,<span class="at">data =</span> datasample))<span class="sc">$</span>coeff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Estimate Std. Error  t value      Pr(&gt;|t|)
+(Intercept) 264.26445  5.3309067 49.57214 5.400355e-318
+Taxes        13.81965  0.3823164 36.14716 3.555300e-206</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Biased estimation of parameters - Avoiding the complex sampling design</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(Income <span class="sc">~</span><span class="dv">1</span><span class="sc">+</span> Taxes,<span class="at">data =</span> datasample))<span class="sc">$</span>coeff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Estimate Std. Error  t value Pr(&gt;|t|)
+(Intercept) 382.80599  5.6155718 68.16866        0
+Taxes        10.24016  0.1053674 97.18530        0</code></pre>
+</div>
+</div>
 <p>Are you convinced now? Big mistake: Avoid the complex sampling design.</p>
 
 

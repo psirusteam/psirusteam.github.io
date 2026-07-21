@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2011-02-26">
 
-<title>Bayesian Model Averaging (BMA) para Marco &amp; Lucy – Andrés Gutiérrez</title>
+<title>bayesian-model-averaging-bma-para-marco-lucy – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -130,11 +165,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Bayesian Model Averaging (BMA) para Marco &amp; Lucy</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Bayesian Statistics</div>
-    <div class="quarto-category">Modeling</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -166,15 +197,58 @@ ul.task-list li input[type="checkbox"] {
 <p>Un promedio de modelos Bayesianos (BMA, por sus siglas en inglés) proporciona un mecanismo coherente para dar cuenta de la incertidumbre de los modelos. Existen varios métodos de aplicación del BMA que han surgido recientemente y en esta entrada voy a utilizar la información del archivo de datos principal del paquete TeachingSampling para explicar paso a paso la adecuación de esta metodología que arroja coeficientes de regresión que resultan ser un promedio de los coeficientes de cada posible modelo. Más aún, se trata de un promedio ponderado por la respectiva probabilidad a posteriori de cada modelo.</p>
 <p>Siguiendo la regla de Bayes, la probabilidad a posteriori de cada modelo (PMP, por sus siglas en inglés) resulta ser proporcional a la verosimilitud marginal del modelo (la probabilidad de los datos dado el modelo) multiplicado por la distribución previa del modelo. En muchas ocasiones, la distribución previa del modelo se asume tipo <em>g</em>-Zelnner, que es una distribución normal con media nula y varianza dependiendo de un hiperparámetro de incertidumbre <em>g</em>. Un valor pequeño de <em>g</em> implica un gran conocimiento previo de que los coeficientes del modelo son nulos, y un valor grande para <em>g</em> implica que el investigador no está muy seguro de que los coeficientes del modelo sean cero.</p>
 <p>Con base en el anterior razonamiento, se utilizará la base de datos Lucy para ilustrar el ajuste de un promedio de modelos bayesianos. En primer lugar, cargamos la librería TeachingSampling para poder acceder a los daros y también la librería BMS para realizar el ajuste de los modelos. La base de datos la constituyen 2396 empresas del sector industrial, la variable de interés es el número de empleados de cada empresa y las variables regresoras son el total de impuestos declarados, el total de ingresos, el nivel de industrialización, la zona de ubicación y el tipo de publicidad en el último año fiscal.</p>
-<pre><code>&gt; library(TeachingSampling)
-&gt; library(BMS)
-&gt; data(Lucy)</code></pre>
-<pre><code>&gt; databma &lt;- data.frame(Emp=Lucy$Employees, Tax=Lucy$Taxes, Inc=Lucy$Income,
-+ Lev=as.double(Lucy$Level), Zon=as.double(Lucy$Zone), Spa=as.double(Lucy$SPAM))</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TeachingSampling)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BMS)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Lucy)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>databma <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Emp=</span>Lucy<span class="sc">$</span>Employees, <span class="at">Tax=</span>Lucy<span class="sc">$</span>Taxes, <span class="at">Inc=</span>Lucy<span class="sc">$</span>Income,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">Lev=</span><span class="fu">as.double</span>(Lucy<span class="sc">$</span>Level), <span class="at">Zon=</span><span class="fu">as.double</span>(Lucy<span class="sc">$</span>Zone), <span class="at">Spa=</span><span class="fu">as.double</span>(Lucy<span class="sc">$</span>SPAM))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p><code>Para ajustar los modelos, se utiliza la función bms de la librería BMS. Esta función ajusta todos los 2^k posibles modelos (siendo k el número total de variables regresoras), computa todas las PMPs, calcula todos los coeficientes de regresión en cada uno de esos modelos, y al final promedia estos coeficientes utilizando como ponderador las PMPs. Una característica importante en esta función es que la primera columna del archivo de datos debe ser la variable de interés.</code></p>
-<pre><code>&gt; Lucybma &lt;- bms(databma, burn=100000, iter=200000, g="BRIC", mprior="uniform", mcmc="bd", user.int=T)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Lucybma <span class="ot">&lt;-</span> <span class="fu">bms</span>(databma, <span class="at">burn=</span><span class="dv">100000</span>, <span class="at">iter=</span><span class="dv">200000</span>, <span class="at">g=</span><span class="st">"BRIC"</span>, <span class="at">mprior=</span><span class="st">"uniform"</span>, <span class="at">mcmc=</span><span class="st">"bd"</span>, <span class="at">user.int=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         PIP    Post Mean     Post SD Cond.Pos.Sign Idx
+Tax 1.000000  0.661389000 0.073000588             1   1
+Inc 0.999865  0.030072698 0.006754132             1   2
+Lev 0.893710 -5.630209484 2.590534202             0   3
+Spa 0.054865 -0.081511197 0.415881305             0   5
+Zon 0.020335 -0.002913074 0.073804012             0   4
+
+Mean no. regressors               Draws             Burnins                Time 
+           "2.9688"             "2e+05"             "1e+05"     "22.67311 secs" 
+ No. models visited      Modelspace 2^K           % visited         % Topmodels 
+            "21568"                "32"             "67400"               "100" 
+           Corr PMP            No. Obs.         Model Prior             g-Prior 
+           "1.0000"              "2396"     "uniform / 2.5"              "BRIC" 
+    Shrinkage-Stats 
+        "Av=0.9996" 
+
+Time difference of 22.67311 secs</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2011-02-26-bayesian-model-averaging-bma-para-marco-lucy_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <p><code>La función coef arroja las probabilidades de inclusión posteriores (PIP) de cada variable en los modelos, la media posterior de cada coeficiente de regresión (la misma estimación bayesiana) y el error estándar posterior. Cada PIP se calcula como la suma de las PMPs para cada modelo en donde esa covariable fue incluida. Por ejemplo, para Lucy, la variable más importante es Tax, la cual tiene probabilidad de inclusión igual a uno pues fue incluida en todos los posibles modelos. Luego le sigue la variable Inc, con probabilidad de inclusión 0.99, y luego la variable Lev, con probabilidad de inclusión 0.89. Para estas variables, la estimación bayesiana de sus respectivos coeficientes de regresión son 0.66, 0.03 y -5.63, respectivamente.</code></p>
-<pre><code>&gt; coef(Lucybma, std.coefs = T, include.constant = T)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(Lucybma, <span class="at">std.coefs =</span> T, <span class="at">include.constant =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 PIP     Post Mean     Post SD Cond.Pos.Sign Idx
+Tax         1.000000  3.485939e-01 0.038475935             1   1
+Inc         0.999865  2.441106e-01 0.054825658             1   2
+Lev         0.893710 -9.442279e-02 0.043445182             0   3
+Spa         0.054865 -1.209638e-03 0.006171739             0   5
+Zon         0.020335 -9.190687e-05 0.002328501             0   4
+(Intercept) 1.000000  1.745918e+00          NA            NA   0</code></pre>
+</div>
+</div>
 <pre><code>PIP     Post Mean     Post SD Cond. Pos. Sign Idx
 Tax         1.000000  3.486176e-01 0.038496653             1   1
 Inc         0.999785  2.437994e-01 0.054688020             1   2
@@ -183,7 +257,27 @@ Spa         0.054590 -1.203361e-03 0.006156046             0   5
 Zon         0.020045 -9.232616e-05 0.002313997             0   4
 (Intercept) 1.000000  1.747969e+00          NA            NA   0</code></pre>
 <p><code>La función topmodels.bma arroja una matriz de unos y ceros, donde las columnas representan el modelo ajustado y las filas las variables regresoras. Las entradas de esta matriz son uno, si la variable regresora fue incluida en el modelo, y cero, en otro caso. En las últimas filas, se presentan las PMP. Para este caso, el mejor modelo, con una probabilidad a posteriori de 0.82, es el que incluye las variables regresoras Tax, Inc y Lev.</code></p>
-<pre><code>&gt; topmodels.bma(Lucybma) ## Mejores modelos según la PMP</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">topmodels.bma</span>(Lucybma) <span class="do">## Mejores modelos según la PMP</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   1c         18         1d        1e          19          1a
+Tax         1.0000000 1.00000000 1.00000000 1.0000000 1.000000000 1.000000000
+Inc         1.0000000 1.00000000 1.00000000 1.0000000 1.000000000 1.000000000
+Lev         1.0000000 0.00000000 1.00000000 1.0000000 0.000000000 0.000000000
+Zon         0.0000000 0.00000000 0.00000000 1.0000000 0.000000000 1.000000000
+Spa         0.0000000 0.00000000 1.00000000 0.0000000 1.000000000 0.000000000
+PMP (Exact) 0.8278007 0.09783477 0.04749329 0.0177994 0.005750773 0.002000094
+PMP (MCMC)  0.8280450 0.09797500 0.04742000 0.0169300 0.006090000 0.002050000
+                     1f           14           1b
+Tax         1.000000000 1.0000000000 1.0000000000
+Inc         1.000000000 0.0000000000 1.0000000000
+Lev         1.000000000 1.0000000000 0.0000000000
+Zon         1.000000000 0.0000000000 1.0000000000
+Spa         1.000000000 0.0000000000 1.0000000000
+PMP (Exact) 0.001015738 0.0001877065 0.0001174992
+PMP (MCMC)  0.001180000 0.0001350000 0.0001750000</code></pre>
+</div>
+</div>
 <pre><code>1c         18         1d        1e          19          1a
 Tax         1.0000000 1.00000000 1.00000000 1.0000000 1.000000000 1.000000000
 Inc         1.0000000 1.00000000 1.00000000 1.0000000 1.000000000 1.000000000
@@ -201,9 +295,28 @@ Spa         1.000000000 0.0000000000 1.0000000000 1.000000e+00
 PMP (Exact) 0.001015727 0.0001877044 0.0001174979 1.129789e-05
 PMP (MCMC)  0.000885000 0.0001850000 0.0000600000 3.000000e-05</code></pre>
 <p><code>La función plot. Conv grafica las distribuciones previa y posterior para los tamaños (número de variables incluidas) en el modelo. Para nuestro ejemplo, la distribución previa daba mayor probabilidad a los modelos que incluían dos o tres variables regresoras, mientras que la distribución posterior da mayor peso a los modelos de tres variables regresoras.</code></p>
-<pre><code>&gt; plotConv(Lucybma)</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotConv</span>(Lucybma)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2011-02-26-bayesian-model-averaging-bma-para-marco-lucy_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <p><code>La función beta.draws.bma da como resultado los coeficientes de regresión para todos los modelos. Nótese que promediando estos valores, con su respectiva ponderación, se tiene la estimación bayesiana posterior del promedio de modelos dada por la segunda columna de la función coef.</code></p>
-<pre><code>&gt; beta.draws.bma(Lucybma[1:5])  ## Los coeficientes de los 5 mejores modelos</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">beta.draws.bma</span>(Lucybma[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])  <span class="do">## Los coeficientes de los 5 mejores modelos</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             1c         18         1d          1e         19
+Tax  0.66206081 0.65436602  0.6646682  0.66017039  0.6570294
+Inc  0.02883466 0.04053246  0.0287666  0.02896933  0.0404346
+Lev -6.29892336 0.00000000 -6.2836101 -6.34535538  0.0000000
+Zon  0.00000000 0.00000000  0.0000000 -0.15891039  0.0000000
+Spa  0.00000000 0.00000000 -1.4833467  0.00000000 -1.5043990</code></pre>
+</div>
+</div>
 <pre><code>1c         18          1d          1e         19
 Tax  0.66206081 0.65436602  0.66466816  0.66017039  0.6570294
 Inc  0.02883466 0.04053246  0.02876660  0.02896933  0.0404346
@@ -211,10 +324,35 @@ Lev -6.29892336 0.00000000 -6.28361012 -6.34535538  0.0000000
 Zon  0.00000000 0.00000000  0.00000000 -0.15891039  0.0000000
 Spa  0.00000000 0.00000000 -1.48334674  0.00000000 -1.5043990</code></pre>
 <p><code>La función image arroja una gráfica que incluye cada variable. Si para esta variable el color es blanco, significa que no fue incluida en ese modelo, si el color es rojo, implica que el signo del coeficiente de regresión es negativo, y si el color es azul, significa que el signo del coeficiente de regresión es positivo. Nótese que esta figura está basada en probabilidades acumuladas; así que entre más ancha sean los cuadros, implica que el modelo tiene una mayor PMP.</code></p>
-<pre><code>&gt; image(Lucybma[1:5])</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(Lucybma[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2011-02-26-bayesian-model-averaging-bma-para-marco-lucy_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <p><code>Para tener un acercamiento completo a la distribución posterior de los coeficientes, la función density proyecta una gráfica de la densidad posterior del coeficiente.</code></p>
-<pre><code>&gt; density(Lucybma,"Tax")
-&gt; density(Lucybma,"Inc")</code></pre>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">density</span>(Lucybma,<span class="st">"Tax"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2011-02-26-bayesian-model-averaging-bma-para-marco-lucy_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">density</span>(Lucybma,<span class="st">"Inc"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2011-02-26-bayesian-model-averaging-bma-para-marco-lucy_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 

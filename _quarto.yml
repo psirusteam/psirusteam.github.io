@@ -2,6 +2,16 @@ project:
   type: website
   output-dir: docs
 
+execute:
+  cache: true
+  warning: false
+  message: false
+  error: false
+
+knitr:
+  opts_chunk:
+    cache.path: "_cache/"
+
 website:
   title: "Andrés Gutiérrez"
   site-url: https://psirusteam.github.io

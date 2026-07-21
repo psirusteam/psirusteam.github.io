@@ -1,4 +1,4 @@
----
+﻿---
 title: "Bayesian Model Averaging (BMA) para Marco & Lucy"
 author: "Andrés Gutiérrez"
 date: "2011-02-26"
@@ -15,29 +15,29 @@ Siguiendo la regla de Bayes, la probabilidad a posteriori de cada modelo (PMP, p
 
 Con base en el anterior razonamiento, se utilizará la base de datos Lucy para ilustrar el ajuste de un promedio de modelos bayesianos. En primer lugar, cargamos la librería TeachingSampling para poder acceder a los daros y también la librería BMS para realizar el ajuste de los modelos. La base de datos la constituyen 2396 empresas del sector industrial, la variable de interés es el número de empleados de cada empresa y las variables regresoras son el total de impuestos declarados, el total de ingresos, el nivel de industrialización, la zona de ubicación y el tipo de publicidad en el último año fiscal.
 
+```{r}
+#| error: false
+library(TeachingSampling)
+library(BMS)
+data(Lucy)
 ```
-> library(TeachingSampling)
-> library(BMS)
-> data(Lucy)
+```{r}
+#| error: false
+databma <- data.frame(Emp=Lucy$Employees, Tax=Lucy$Taxes, Inc=Lucy$Income,
+Lev=as.double(Lucy$Level), Zon=as.double(Lucy$Zone), Spa=as.double(Lucy$SPAM))
 ```
-
-```
-> databma <- data.frame(Emp=Lucy$Employees, Tax=Lucy$Taxes, Inc=Lucy$Income,
-+ Lev=as.double(Lucy$Level), Zon=as.double(Lucy$Zone), Spa=as.double(Lucy$SPAM))
-```
-
 `Para ajustar los modelos, se utiliza la función bms de la librería BMS. Esta función ajusta todos los 2^k posibles modelos (siendo k el número total de variables regresoras), computa todas las PMPs, calcula todos los coeficientes de regresión en cada uno de esos modelos, y al final promedia estos coeficientes utilizando como ponderador las PMPs. Una característica importante en esta función es que la primera columna del archivo de datos debe ser la variable de interés.`
 
+```{r}
+#| error: false
+Lucybma <- bms(databma, burn=100000, iter=200000, g="BRIC", mprior="uniform", mcmc="bd", user.int=T)
 ```
-> Lucybma <- bms(databma, burn=100000, iter=200000, g="BRIC", mprior="uniform", mcmc="bd", user.int=T)
-```
-
 `La función coef arroja las probabilidades de inclusión posteriores (PIP) de cada variable en los modelos, la media posterior de cada coeficiente de regresión (la misma estimación bayesiana) y el error estándar posterior. Cada PIP se calcula como la suma de las PMPs para cada modelo en donde esa covariable fue incluida. Por ejemplo, para Lucy, la variable más importante es Tax, la cual tiene probabilidad de inclusión igual a uno pues fue incluida en todos los posibles modelos. Luego le sigue la variable Inc, con probabilidad de inclusión 0.99, y luego la variable Lev, con probabilidad de inclusión 0.89. Para estas variables, la estimación bayesiana de sus respectivos coeficientes de regresión son 0.66, 0.03 y -5.63, respectivamente.`
 
+```{r}
+#| error: false
+coef(Lucybma, std.coefs = T, include.constant = T)
 ```
-> coef(Lucybma, std.coefs = T, include.constant = T)
-```
-
 ```
 PIP     Post Mean     Post SD Cond. Pos. Sign Idx
 Tax         1.000000  3.486176e-01 0.038496653             1   1
@@ -50,10 +50,10 @@ Zon         0.020045 -9.232616e-05 0.002313997             0   4
 
 `La función topmodels.bma arroja una matriz de unos y ceros, donde las columnas representan el modelo ajustado y las filas las variables regresoras. Las entradas de esta matriz son uno, si la variable regresora fue incluida en el modelo, y cero, en otro caso. En las últimas filas, se presentan las PMP. Para este caso, el mejor modelo, con una probabilidad a posteriori de 0.82, es el que incluye las variables regresoras Tax, Inc y Lev.`
 
+```{r}
+#| error: false
+topmodels.bma(Lucybma) ## Mejores modelos según la PMP
 ```
-> topmodels.bma(Lucybma) ## Mejores modelos según la PMP
-```
-
 ```
 1c         18         1d        1e          19          1a
 Tax         1.0000000 1.00000000 1.00000000 1.0000000 1.000000000 1.000000000
@@ -78,16 +78,16 @@ PMP (MCMC)  0.000885000 0.0001850000 0.0000600000 3.000000e-05
 
 `La función plot. Conv grafica las distribuciones previa y posterior para los tamaños (número de variables incluidas) en el modelo. Para nuestro ejemplo, la distribución previa daba mayor probabilidad a los modelos que incluían dos o tres variables regresoras, mientras que la distribución posterior da mayor peso a los modelos de tres variables regresoras.`
 
+```{r}
+#| error: false
+plotConv(Lucybma)
 ```
-> plotConv(Lucybma)
-```
-
 `La función beta.draws.bma da como resultado los coeficientes de regresión para todos los modelos. Nótese que promediando estos valores, con su respectiva ponderación, se tiene la estimación bayesiana posterior del promedio de modelos dada por la segunda columna de la función coef.`
 
+```{r}
+#| error: false
+beta.draws.bma(Lucybma[1:5])  ## Los coeficientes de los 5 mejores modelos
 ```
-> beta.draws.bma(Lucybma[1:5])  ## Los coeficientes de los 5 mejores modelos
-```
-
 ```
 1c         18          1d          1e         19
 Tax  0.66206081 0.65436602  0.66466816  0.66017039  0.6570294
@@ -99,13 +99,14 @@ Spa  0.00000000 0.00000000 -1.48334674  0.00000000 -1.5043990
 
 `La función image arroja una gráfica que incluye cada variable. Si para esta variable el color es blanco, significa que no fue incluida en ese modelo, si el color es rojo, implica que el signo del coeficiente de regresión es negativo, y si el color es azul, significa que el signo del coeficiente de regresión es positivo. Nótese que esta figura está basada en probabilidades acumuladas; así que entre más ancha sean los cuadros, implica que el modelo tiene una mayor PMP.`
 
+```{r}
+#| error: false
+image(Lucybma[1:5])
 ```
-> image(Lucybma[1:5])
-```
-
 `Para tener un acercamiento completo a la distribución posterior de los coeficientes, la función density proyecta una gráfica de la densidad posterior del coeficiente.`
 
-```
-> density(Lucybma,"Tax")
-> density(Lucybma,"Inc")
+```{r}
+#| error: false
+density(Lucybma,"Tax")
+density(Lucybma,"Inc")
 ```

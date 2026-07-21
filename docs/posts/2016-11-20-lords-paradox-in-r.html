@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2016-11-20">
 
-<title>Lord’s Paradox in R – Andrés Gutiérrez</title>
+<title>lords-paradox-in-r – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -200,11 +200,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lord’s Paradox in R</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">Sampling</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -249,7 +245,8 @@ window.Quarto = {
 <p>To perform the simulation, we assumed that both the final weight of the men and the women follow a linear relationship with the original weight. Thus, it is assumed that <span class="math inline">\(y_{2i}^M = \beta_0^M + \beta_1 y_{1i}^M + \varepsilon_i\)</span> for the weight of women; and <span class="math inline">\(y_{2i}^H = \beta_0^H + \beta_1 y_{1i}^H + \varepsilon_i\)</span>, for the weight of men. Where <span class="math inline">\(y_{1i}^M\)</span> denotes the weight of the <span class="math inline">\(i\)</span>-th female at the beginning of the semester, and <span class="math inline">\(y_{2i}^M\)</span> denotes the weight of the <span class="math inline">\(i\)</span>-th female at the end of the semester. The notation for men (H) maintains this logic.</p>
 <p>Now, note that from their natural contexture, men must have greater weight than women. Suppose that on average the weight of men is equal to that of women plus a constant <span class="math inline">\(c\)</span>. In addition, the mean weight in both groups is identical in both times. Then, we have <span class="math inline">\(\bar{y}^M = \beta_0^M + \beta_1 \bar{y}^M\)</span> and that <span class="math inline">\(\bar{y}^H = \beta_0^H + \beta_1 \bar{y}^H = \beta_0^H + \beta_1 (\bar{y}^M + c).\)</span> Hence, after some algebra, we have that <span class="math inline">\(\beta_0^M = (1 - \beta_1) \bar{y}^M\)</span> and <span class="math inline">\(\beta_0^H = \bar{y}^H - \beta_1 (\bar{y}^M + c)\)</span>.</p>
 <p>The following code replicates a set of data that follows the relationship proposed by Lord.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>l <span class="ot">&lt;-</span> <span class="dv">50</span></span>
@@ -264,8 +261,10 @@ window.Quarto = {
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>sds <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Mujer2 <span class="ot">&lt;-</span> Mujerb0 <span class="sc">+</span> beta1 <span class="sc">*</span> Mujer1 <span class="sc">+</span> <span class="fu">rnorm</span>(N, <span class="at">sd=</span>sds)</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Hombre2 <span class="ot">&lt;-</span> Hombreb0 <span class="sc">+</span> beta1 <span class="sc">*</span> Hombre1 <span class="sc">+</span> <span class="fu">rnorm</span>(N, <span class="at">sd=</span>sds)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>The graph can be done with the following piece of code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">inicio =</span> <span class="fu">c</span>(Mujer1, Hombre1), <span class="at">final =</span> <span class="fu">c</span>(Mujer2, Hombre2))</span>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">inicio =</span> <span class="fu">c</span>(Mujer1, Hombre1), <span class="at">final =</span> <span class="fu">c</span>(Mujer2, Hombre2))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>dif <span class="ot">&lt;-</span> datos<span class="sc">$</span>final <span class="sc">-</span> datos<span class="sc">$</span>inicio</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>sexo <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>, N), <span class="fu">rep</span>(<span class="dv">1</span>, N))</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -274,6 +273,14 @@ window.Quarto = {
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)  <span class="sc">+</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Paradoja de Lord"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2016-11-20-lords-paradox-in-r_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>

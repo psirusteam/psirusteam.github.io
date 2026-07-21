@@ -1,4 +1,4 @@
----
+﻿---
 title: "Proper Inference in Public Policy Evaluation"
 author: "Andrés Gutiérrez"
 date: "2014-11-15"
@@ -21,12 +21,18 @@ It goes further than hypothesis testing or estimation. You have to compute prope
 
 Some researchers argue that when running regression models, you should not consider the sampling weights. Ok, that could be true under the perspective of Little and Rubin that consider intricate methodologies into the estimation stage. But, when estimating model parameters, ignoring the complex sample (as if the sample were SI) is not a good idea. Consider the following example:
 
-```r
-library(survey)library(TeachingSampling)library(sqldf)
+```{r}
+#| error: false
+library(survey)
+library(TeachingSampling)
+library(sqldf)
 
-data(BigLucy)attach(BigLucy)
+data(BigLucy)
+attach(BigLucy)
 
-# Level is the stratifying variablesummary(Level)# Defines the size of each stratum
+# Level is the stratifying variable
+summary(Level)
+# Defines the size of each stratum
 N1<-summary(Level)[[1]]
 N2<-summary(Level)[[2]]
 N3<-summary(Level)[[3]]
@@ -41,7 +47,7 @@ n3<-500
 nh<-c(n1,n2,n3)
 
 # Draws a stratified sample
-sam <- S. STSI(Level, Nh, nh)
+sam <- S.STSI(Level, Nh, nh)
 
 # The information about the units in the sample is stored in an object called data
 datas <- BigLucy[sam,]
@@ -55,9 +61,11 @@ STSI  = svydesign(ids=~1,strata=~Level,fpc = ~ Nh,data=datasample)
 
 ###################### Linear models ####################
 
-# The unknown parameterssummary(lm(Income ~1+ Taxes,data = BigLucy))$coeff
-# Unbiased estimation of parameters - Considering the complex sampling designsummary(svyglm(Income ~1+ Taxes,design = STSI,data = datasample))$coeff
-# Biased estimation of parameters - Avoiding the complex sampling designsummary(lm(Income ~1+ Taxes,data = datasample))$coeff
+# The unknown parameters
+summary(lm(Income ~1+ Taxes,data = BigLucy))$coeff
+# Unbiased estimation of parameters - Considering the complex sampling design
+summary(svyglm(Income ~1+ Taxes,design = STSI,data = datasample))$coeff
+# Biased estimation of parameters - Avoiding the complex sampling design
+summary(lm(Income ~1+ Taxes,data = datasample))$coeff
 ```
-
 Are you convinced now? Big mistake: Avoid the complex sampling design.

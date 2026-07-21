@@ -9,7 +9,7 @@
 <meta name="author" content="Andrés Gutiérrez">
 <meta name="dcterms.date" content="2016-06-08">
 
-<title>Not a good advice (On regression over principal axis) – Andrés Gutiérrez</title>
+<title>not-a-good-advice-on-regression-over-principal-axis – Andrés Gutiérrez</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -194,11 +194,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Not a good advice (On regression over principal axis)</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Modeling</div>
-    <div class="quarto-category">Teaching</div>
-  </div>
-  </div>
+</div>
 
 
 
@@ -229,28 +225,64 @@ window.Quarto = {
 <p>Some time ago, someone told me about a robust methodology that was used in order to select the significant variables on a factor. Long story short: he was performing some factor analysis and he wanted to know which variables were more important than others on that very factor.</p>
 <p>The good advice was: define a model between the factor scores and the variables on the data set and then use a stepwise regression methodology in order to identify which variables were significant. This way, his response variable was defined to be the factor score on every unit and the explanatory variables were exactly the same variables used to perform the factor analysis.</p>
 <p>So, I wrote some R code and found the obvious thing. Take a look. First I perform a principal component analysis on a data set.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"iris"</span>)</span>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"iris"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(iris)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Ex1 <span class="ot">&lt;-</span> iris[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ade4)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Ex1 <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">scale</span>(Ex1))</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>acp4 <span class="ot">&lt;-</span> <span class="fu">dudi.pca</span>(Ex1,<span class="at">scannf=</span>F,<span class="at">nf=</span><span class="dv">10</span>) <span class="do">### Analisis de componentes principales</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(acp4<span class="sc">$</span>c1) <span class="co"># column normed scores - principal axes</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#score &lt;- Ex1 %*% as.matrix(acp4$co)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> acp4<span class="sc">$</span>li <span class="co"># row normed scores</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(acp4<span class="sc">$</span>c1) <span class="co"># column normed scores - principal axes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    CS1         CS2        CS3        CS4
+Sepal.Length  0.5210659 -0.37741762  0.7195664  0.2612863
+Sepal.Width  -0.2693474 -0.92329566 -0.2443818 -0.1235096
+Petal.Length  0.5804131 -0.02449161 -0.1421264 -0.8014492
+Petal.Width   0.5648565 -0.06694199 -0.6342727  0.5235971</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#score &lt;- Ex1 %*% as.matrix(acp4$co)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>score <span class="ot">&lt;-</span> acp4<span class="sc">$</span>li <span class="co"># row normed scores</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Then I fitted the model by using the first principal component as the response variable.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Ex1, <span class="at">score =</span> score[, <span class="dv">1</span>])</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> ., <span class="at">data =</span> datos)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Ex1, <span class="at">score =</span> score[, <span class="dv">1</span>])</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> ., <span class="at">data =</span> datos)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = score ~ 0 + ., data = datos)
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-2.256e-15  2.688e-16  3.640e-16  4.607e-16  8.576e-15 
+
+Coefficients:
+               Estimate Std. Error    t value Pr(&gt;|t|)    
+Sepal.Length  5.228e-01  2.249e-16  2.325e+15   &lt;2e-16 ***
+Sepal.Width  -2.702e-01  1.226e-16 -2.205e+15   &lt;2e-16 ***
+Petal.Length  5.824e-01  4.728e-16  1.232e+15   &lt;2e-16 ***
+Petal.Width   5.667e-01  3.392e-16  1.671e+15   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.032e-15 on 146 degrees of freedom
+Multiple R-squared:      1, Adjusted R-squared:      1 
+F-statistic: 1.027e+32 on 4 and 146 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
 <p>Then I found that every variable were significant. I repeated the exercise for the second, third and fourth factor and I found the same behaviour: every variable was significant for every factor. It is not over, I found that the values of regression coefficients were exactly the same to those defining the factor loads.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(model<span class="sc">$</span>coefficients, acp4<span class="sc">$</span>c1[, <span class="dv">1</span>])</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                   [,<span class="dv">1</span>]       [,<span class="dv">2</span>]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Sepal. Length  <span class="fl">0.5228115</span>  <span class="fl">0.5210659</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Sepal. Width  <span class="sc">-</span><span class="fl">0.2702498</span> <span class="sc">-</span><span class="fl">0.2693474</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Petal. Length  <span class="fl">0.5823575</span>  <span class="fl">0.5804131</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Petal. Width   <span class="fl">0.5667489</span>  <span class="fl">0.5648565</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(model<span class="sc">$</span>coefficients, acp4<span class="sc">$</span>c1[, <span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   [,1]       [,2]
+Sepal.Length  0.5228115  0.5210659
+Sepal.Width  -0.2702498 -0.2693474
+Petal.Length  0.5823575  0.5804131
+Petal.Width   0.5667489  0.5648565</code></pre>
+</div>
+</div>
 <p>Then, I realised that by definition a factor is defined to be a linear combination of the variables. That way, it is evident that every variable is not only significant but share the same value of regression coefficients and factor loads. So, if the response is defined as</p>
 <p><span class="math display">\[ F = a_1X_1 + a_2X_2 + a_3X_3 + a_4X_4\]</span></p>
 <p>Then the regression coefficients of the following model</p>

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Scatter plots in survey sampling"
 author: "Andrés Gutiérrez"
 date: "2017-11-27"
@@ -15,7 +15,8 @@ The idea behind this paradigm is the representative principle. If a person $k$ i
 
 I am not a big fan of using descriptive sample statistics to analyze survey data because it can mask the reality, and the fact is that person $k$ is included in the sample, but he/she is not alone. Behind person $k$ there are other people, not included in the sample, and you have to realize that. So, let's apply that principle to scatter plots. I am using the Lucy population from the TeachingSampling package to recreate my idea. The following code is used to draw a $\pi PS$ sample.
 
-```
+```{r}
+#| error: false
 library(TeachingSampling)
 data(Lucy)
 # The inclusion probability is proportional to Income 
@@ -28,50 +29,42 @@ sam <- res[,1]
 data.sample <- Lucy[sam, ]
 attach(data.sample)
 ```
-
 The sampling weights will be stored in the data.sample data in the column wk. They will be useful to reproduce our finite popultaion from the sample data.
 
-```
+```{r}
+#| error: false
 # Pik.s is the inclusion probability of units in the sample
 data.sample$Pik.s <- res[,2]
 # wk is the sampling weight
 data.sample$wk <- 1/data.sample$Pik.s																					
 ```
-
 Now, let`s make a plot of the sampling data (with just 400 observations). I recall that this scenario is somehow misleading, because we want to know the behavior of the variables in the finite population.
 
-```
+```{r}
+#| error: false
 library(ggplot2)
 ggplot(data = data.sample, aes(x = Income, y = Employees)) +
 geom_point()
 ```
-
 The first option that comes to mind is to include the sampling weights in the points of the scatter plot. However, this approach is not appealing to me, because it is not straightforward from this plot to visuzlize the entire finite population.
 
-```
+```{r}
+#| error: false
 ggplot(data = data.sample, aes(x = Income, y = Employees, size = wk)) + 
 geom_point()
 ```
-
 In order to make the finite population scatter plot from the survey sample, I will replicate the rows of the data.sample object as many times as the sampling weight wk. I am using the mefa: :rep function to achieve this goal. So, the newLucy object is an intent to mimic the finite population by using the selected sample.
 
+```{r}
+#| error: false
+replications <- pmax(1L, round(data.sample$wk))
+newLucy <- data.sample[rep(seq_len(nrow(data.sample)), replications), ]
+rownames(newLucy) <- NULL
 ```
-library(mefa)
-newLucy <- NULL
-
-for(i in 1:nrow(data.sample))
-{
-newLucy <- rbind(newLucy,
-rep(data.sample[i, ],
-round(data.sample$wk[i])))
-}
-
-newLucy <- as.data.frame(newLucy)
-```
-
 Now, with the newLucy population, I will make a scatter plot. Now, as I am replicating the rows of the sample data, I will add a jitter to avoid overplotting of the points in the scatter plot. This way, this plot (with 2396 observations) looks as if it would come from the finite population.
 
-```
+```{r}
+#| error: false
 ggplot(data = newLucy, aes(x = Income, y = Employees)) +
 geom_point() + geom_jitter(width = 15, height = 15)
 ```
