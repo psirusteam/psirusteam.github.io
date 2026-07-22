@@ -37,11 +37,11 @@ Written in Spanish, this book provides a broad introduction to probability sampl
 
 ### [Survey Sampling](https://psirusteam.github.io/SurveySamplingBook/){target="_blank"}
 
-This book is an introductory resource for learning the foundations of survey sampling and applying them with R, moving from basic ideas such as populations, samples, estimators, and sampling weights to reproducible examples that help readers compare designs, simulate finite populations, and understand how design choices affect precision and bias. [Spanish version.](https://psirusteam.github.io/LibroEncuestasR/){target="_blank"}
+This book is an introductory resource for learning the foundations of survey sampling and applying them with R, moving from basic ideas such as populations, samples, estimators, and sampling weights to reproducible examples that help readers compare designs, simulate finite populations, and understand how design choices affect precision and bias. 
 
-### [Household Surveys Analysis with R](https://psirusteam.github.io/HouseholdSurveysR/){target="_blank"}
+### [Household Surveys Analysis with R](https://psirusteam.github.io/HouseholdSurveysR/){target="_blank"} 
 
-This book focuses on the analysis of household survey data using R, with emphasis on sampling weights, stratification, clustering, domains of analysis, uncertainty estimation, and the production of reliable descriptive statistics, indicators, tables, and visual summaries from complex survey microdata.
+This book focuses on the analysis of household survey data using R, with emphasis on sampling weights, stratification, clustering, domains of analysis, uncertainty estimation, and the production of reliable descriptive statistics, indicators, tables, and visual summaries from complex survey microdata. [(Spanish version here)](https://psirusteam.github.io/LibroEncuestasR/){target="_blank"}
 
 ### [Modelos Bayesianos con R y STAN](https://psirusteam.github.io/bookdownBayesiano/){target="_blank"}
 
