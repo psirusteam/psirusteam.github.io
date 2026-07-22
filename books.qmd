@@ -37,7 +37,7 @@ Written in Spanish, this book provides a broad introduction to probability sampl
 
 ### [Survey Sampling](https://psirusteam.github.io/SurveySamplingBook/){target="_blank"}
 
-This book is an introductory resource for learning the foundations of survey sampling and applying them with R, moving from basic ideas such as populations, samples, estimators, and sampling weights to reproducible examples that help readers compare designs, simulate finite populations, and understand how design choices affect precision and bias.
+This book is an introductory resource for learning the foundations of survey sampling and applying them with R, moving from basic ideas such as populations, samples, estimators, and sampling weights to reproducible examples that help readers compare designs, simulate finite populations, and understand how design choices affect precision and bias. [Spanish version.](https://psirusteam.github.io/LibroEncuestasR/){target="_blank"}
 
 ### [Household Surveys Analysis with R](https://psirusteam.github.io/HouseholdSurveysR/){target="_blank"}
 
